@@ -6,10 +6,10 @@
  * Last-Reviewed: 2025-08-28T00:00:00Z
  */
 
-import { describe, it, expect } from 'vitest';
-import { ContextEngine } from '../core/ContextEngine.js';
-import { EmotionalArc } from '../core/EmotionalArc.js';
-import { SymbolicResonance } from '../core/SymbolicResonance.js';
+const { describe, it, expect } = require('@jest/globals');
+const { ContextEngine } = require('../src/core/ContextEngine.js');
+const { EmotionalArc } = require('../src/core/EmotionalArc.js');
+const { SymbolicResonance } = require('../src/core/SymbolicResonance.js');
 
 describe('ContextEngine', () => {
   it('should initialize user context', () => {

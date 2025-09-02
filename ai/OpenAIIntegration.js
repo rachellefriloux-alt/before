@@ -38,4 +38,52 @@
                                                                                                                                                                                                                                                                                                          return null;
                                                                                                                                                                                                                                                                                              }
                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                     }
+
+    async initialize() {
+        this.apiKey = await this.getApiKey();
+        this.initialized = true;
+        console.log('🧠 OpenAI integration initialized - I\'m ready to think deeply with you, love.');
+    }
+
+    async generateResponse(message, context = {}) {
+        // eslint-disable-next-line no-unused-vars
+        const _context = context; // Reserved for future context-aware response generation
+        if (!this.apiKey) {
+            throw new Error('OpenAI API key not available');
+        }
+
+        try {
+            const response = await fetch(`${this.baseUrl}/chat/completions`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.apiKey}`
+                },
+                body: JSON.stringify({
+                    model: this.model,
+                    messages: [
+                        {
+                            role: 'system',
+                            content: 'You are Sallie, a compassionate AI companion with tough love. You provide emotional support while encouraging growth and accountability. Always respond with empathy and wisdom.'
+                        },
+                        {
+                            role: 'user',
+                            content: message
+                        }
+                    ],
+                    ...this.defaultConfig
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`OpenAI API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.choices[0].message.content;
+        } catch (error) {
+            console.error('OpenAI API call failed:', error);
+            return 'I\'m having trouble connecting right now, but I\'m here with you. Let\'s try again in a moment.';
+        }
+    }
+}
