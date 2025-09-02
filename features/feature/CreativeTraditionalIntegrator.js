@@ -18,7 +18,7 @@ class CreativeTraditionalIntegrator {
   /**
    * Determines if a response should be enhanced creatively
    */
-  shouldEnhanceCreatively(userMessage, response) {
+  shouldEnhanceCreatively(userMessage) {
     const creativeTriggers = [
       'creative', 'resourceful', 'idea', 'innovate', 'brainstorm',
       'tradition', 'modern', 'value', 'change', 'limited', 'constraint', "can't afford", "don't have"
@@ -29,7 +29,7 @@ class CreativeTraditionalIntegrator {
   /**
    * Enhance a response with creative, resourceful, and balanced value perspectives
    */
-  enhanceResponseCreatively(response, userMessage, context = {}) {
+  enhanceResponseCreatively(response, userMessage) {
     const creativeIdeas = this.creativeSystem.generateCreativeIdeas(userMessage, [], 1);
     const isResourceConstrained = [
       'limited', 'constraint', "can't afford", "don't have"
@@ -80,7 +80,7 @@ class CreativeTraditionalIntegrator {
   /**
    * Generate a response focused on creativity and resourcefulness
    */
-  generateCreativeResponse(input, context = {}) {
+  generateCreativeResponse(input) {
     const ideas = this.creativeSystem.generateCreativeIdeas(input, [], 3);
     const solution = this.creativeSystem.findResourcefulSolutions(input);
     const reasoning = this.creativeSystem.applyLogicalReasoning(input);
@@ -93,7 +93,7 @@ class CreativeTraditionalIntegrator {
     response += '\n**Resourceful Approach**:\n';
     response += `${solution.approach}\n`;
     response += 'Key steps:\n';
-    solution.steps.slice(0, 2).forEach((step, index) => {
+    solution.steps.slice(0, 2).forEach((step) => {
       response += `- ${step}\n`;
     });
     if ([

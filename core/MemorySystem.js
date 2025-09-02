@@ -78,8 +78,8 @@ export class MemorySystem {
                                 const entries = JSON.parse(raw);
                                 this.memories = new Map(entries);
                                 this.episodicMemory = Array.from(this.memories.values()).filter(m => m.type === 'episodic');
-                                this.semanticMemory = new Map(Array.from(this.memories.entries()).filter(([_, m]) => m.type === 'semantic'));
-                                this.emotionalMemory = new Map(Array.from(this.memories.entries()).filter(([_, m]) => m.type === 'emotional'));
+                                this.semanticMemory = new Map(Array.from(this.memories.entries()).filter(([, m]) => m.type === 'semantic'));
+                                this.emotionalMemory = new Map(Array.from(this.memories.entries()).filter(([, m]) => m.type === 'emotional'));
                                 this.workingMemory = Array.from(this.memories.values()).filter(m => m.type === 'working');
                         }
                 }
@@ -89,7 +89,7 @@ export class MemorySystem {
                 return 'mem_' + Math.random().toString(36).substr(2, 9);
         }
 
-        async transferToDevice(targetDevice) {
+        async transferToDevice() {
                 if (!this.privacySettings.allowDeviceTransfer) throw new Error('Device transfer not allowed');
                 // Implement secure transfer logic here (e.g., encrypted payload)
                 // ...real transfer code...

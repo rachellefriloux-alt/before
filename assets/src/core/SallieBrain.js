@@ -67,7 +67,7 @@ export class SallieBrain {
                 return this.onboarding.startOnboarding(userId);
         }
 
-        generateResponse(message, userId) {
+        generateResponse(message) {
                 const tone = this.toneManager.analyzeTone(message);
                 const template = this.responseTemplates.getTemplate(tone);
                 // Persona evolution and emotional analysis

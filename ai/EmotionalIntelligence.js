@@ -16,11 +16,7 @@
     async initialize() {
         await this.loadFromStorage();
         this.initialized = true;
-        if (process.env.NODE_ENV === 'development') {
-            console.log('💝 Emotional intelligence system initialized');
-        } else {
-            console.log('Emotional intelligence system initialized');
-        }
+        // Emotional intelligence system initialized
     }
 
     async analyzeMessage(message) {
@@ -68,7 +64,7 @@
         return {};
     }
 
-    detectEmotionsFromText(_message) {
+    detectEmotionsFromText() {
         // Placeholder for emotion detection logic
         return [];
     }

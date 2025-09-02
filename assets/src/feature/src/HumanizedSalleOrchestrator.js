@@ -42,7 +42,7 @@ class HumanizedSalleOrchestrator {
         return response;
     }
 
-    generateProactiveSuggestion(userId) {
+    generateProactiveSuggestion() {
         return this.proactive.suggestNextAction();
     }
 

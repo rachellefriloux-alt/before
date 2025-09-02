@@ -25,7 +25,7 @@ class VoiceASRIntegration extends EventEmitter {
   /**
    * Identify user by voice biometrics (mocked)
    */
-  identifyUser(audioInput) {
+  identifyUser() {
     // Simulate biometric identification
     const userId = 'user-001';
     this.emit('userIdentified', userId);
