@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multimodal_input_demo">Multimodal Input Demo</string>
+    <string name="input_demo_instructions">Enter text, or use voice or image input to see how Sallie processes and analyzes different input types. Processing results will appear below.</string>
+</resources>

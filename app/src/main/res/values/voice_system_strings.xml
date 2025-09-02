@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Voice System Demo Strings -->
+    <string name="voice_system_demo_title">Sallie Voice System Demo</string>
+    <string name="status_initializing">Initializing voice system…</string>
+    <string name="status_ready">Ready</string>
+    <string name="status_listening">Listening…</string>
+    <string name="status_processing">Processing…</string>
+    <string name="status_speaking">Speaking…</string>
+    <string name="transcription_hint">Transcription will appear here…</string>
+    <string name="speak_button_text">Speak Text</string>
+    <string name="enable_wake_word">Enable Wake Word</string>
+    <string name="disable_wake_word">Disable Wake Word</string>
+    <string name="permission_denied">Microphone permission denied</string>
+    <string name="permission_granted">Microphone permission granted</string>
+    <string name="wake_word_detected">Wake word detected</string>
+    <string name="speech_detected">Speech detected</string>
+    <string name="silence_detected">Silence detected</string>
+    <string name="transcription_complete">Transcription complete</string>
+    <string name="wake_word_enabled">Wake word detection enabled</string>
+    <string name="wake_word_disabled">Wake word detection disabled</string>
+    <string name="default_greeting">Hello, I am Sallie. How can I help you today?</string>
+</resources>
