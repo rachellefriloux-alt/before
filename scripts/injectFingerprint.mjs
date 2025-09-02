@@ -32,8 +32,7 @@ export const getBuildInfo = () => fingerprint;
 `;
   
   writeFileSync(resolve('core/fingerprint.js'), fingerprintContent);
-  // Build fingerprint injected: ${fingerprint.buildId}
-}
+  console.log(`Build fingerprint injected: ${fingerprint.buildId}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
