@@ -329,7 +329,6 @@ class MicroMilestoneCelebrations {
         };
 
         // Simulate playing audio
-        console.log(`Playing celebration audio: ${celebration.asset.filename}`);
 
         return result;
     }
@@ -350,7 +349,6 @@ class MicroMilestoneCelebrations {
         };
 
         // Simulate visual effect
-        console.log(`Displaying visual celebration: ${celebration.id}`);
 
         return result;
     }
@@ -371,7 +369,6 @@ class MicroMilestoneCelebrations {
         };
 
         // Simulate text effect
-        console.log(`Applying text celebration effect: ${celebration.id}`);
 
         return result;
     }

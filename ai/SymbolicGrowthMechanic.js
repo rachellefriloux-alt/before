@@ -432,7 +432,6 @@ class SymbolicGrowthMechanic {
         };
 
         // Simulate visual element generation
-        console.log(`Generating visual elements for ${milestone.symbol} at stage ${milestone.stage}`);
 
         return elements;
     }

@@ -182,7 +182,6 @@ export class EmotionalArcMemory {
     async initialize() {
         await this.loadEmotionalHistory();
         this.startEmotionalTracking();
-        console.log('💭 Emotional Arc Memory initialized - I remember your journey, love.');
     }
 
     async recordEmotionalBeat(userId, message, emotionalState, context = {}) {
@@ -1035,7 +1034,7 @@ export class EmotionalArcMemory {
                 this.arcPatterns = new Map(Object.entries(data.patterns || {}));
             }
         } catch (error) {
-            console.warn('Could not load emotional history:', error);
+            // Could not load emotional history
         }
     }
 
@@ -1049,7 +1048,7 @@ export class EmotionalArcMemory {
             };
             localStorage.setItem('sallie_emotional_arcs', JSON.stringify(data));
         } catch (error) {
-            console.warn('Could not save emotional history:', error);
+            // Could not save emotional history
         }
     }
 

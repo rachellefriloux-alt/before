@@ -52,7 +52,6 @@ export class OpenAIIntegration {
     async initialize() {
         this.apiKey = await this.getApiKey();
         this.initialized = true;
-        console.log('🧠 OpenAI integration initialized - I\'m ready to think deeply with you, love.');
     }
 
     async generateResponse(message, context = {}) {

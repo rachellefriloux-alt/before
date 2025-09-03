@@ -30,7 +30,6 @@ export class AdaptiveDialogue {
 
     async initialize() {
         await this.loadDialogueHistory();
-        console.log('💬 Adaptive Dialogue initialized - I\'m here to really listen to you, love.');
     }
 
     async generateResponse(message, userId, context = {}) {
@@ -487,7 +486,7 @@ export class AdaptiveDialogue {
                 this.conversationHistory = JSON.parse(stored);
             }
         } catch (error) {
-            console.warn('Could not load dialogue history:', error);
+            // Could not load dialogue history
         }
     }
 
@@ -495,7 +494,7 @@ export class AdaptiveDialogue {
         try {
             localStorage.setItem('sallie_dialogue_history', JSON.stringify(this.conversationHistory));
         } catch (error) {
-            console.warn('Could not save dialogue history:', error);
+            // Could not save dialogue history
         }
     }
 }

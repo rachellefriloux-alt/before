@@ -33,7 +33,6 @@ export class PredictiveCompanion {
         await this.loadPatternsFromStorage();
         await this.initializePredictiveModels();
         this.startContextMonitoring();
-        console.log('🧠 Predictive Companion initialized - I\'m watching out for you, love.');
     }
 
     async analyzeContext(message, userId) {
@@ -336,7 +335,7 @@ export class PredictiveCompanion {
                 this.userPatterns = new Map(Object.entries(patterns));
             }
         } catch (error) {
-            console.warn('Could not load user patterns:', error);
+            // Could not load user patterns
         }
     }
 
@@ -345,7 +344,7 @@ export class PredictiveCompanion {
             const patternsObj = Object.fromEntries(this.userPatterns);
             localStorage.setItem('sallie_user_patterns', JSON.stringify(patternsObj));
         } catch (error) {
-            console.warn('Could not save user patterns:', error);
+            // Could not save user patterns
         }
     }
 
@@ -369,14 +368,6 @@ export class PredictiveCompanion {
 
         // Prime the environment before content delivery
         await this.primeEnvironment(sceneSetting, userId);
-
-        // Log the anticipatory scene setting
-        console.log(`[PredictiveCompanion] Applied anticipatory scene setting for user ${userId}:`, {
-            predictedContent: predictedContent.type || 'general',
-            emotionalArc: emotionalArc.currentMood,
-            sceneSetting,
-            timestamp: Date.now()
-        });
 
         return sceneSetting;
     }
@@ -426,13 +417,6 @@ export class PredictiveCompanion {
 
         // Adjust dialogue pacing based on time signature
         await this.adjustDialoguePacing(timeSignature, userId);
-
-        console.log(`[PredictiveCompanion] Applied time signature for user ${userId}:`, {
-            emotionalArc: emotionalArc.currentMood,
-            dialogueContext: dialogueContext.type || 'general',
-            timeSignature,
-            timestamp: Date.now()
-        });
 
         return timeSignature;
     }
@@ -489,15 +473,13 @@ export class PredictiveCompanion {
     }
 
     // Placeholder methods for applying the new features (to be implemented in UI integration)
-    async primeEnvironment(sceneSetting, userId) {
+    async primeEnvironment(sceneSetting, userId) { // eslint-disable-line no-unused-vars
         // Prime the environment before content delivery
         // This would integrate with the pre-delivery system
-        console.log(`Priming environment for user ${userId}:`, sceneSetting);
     }
 
-    async adjustDialoguePacing(timeSignature, userId) {
+    async adjustDialoguePacing(timeSignature, userId) { // eslint-disable-line no-unused-vars
         // Adjust dialogue pacing based on time signature
         // This would integrate with the dialogue system
-        console.log(`Adjusting dialogue pacing for user ${userId}:`, timeSignature);
     }
 }

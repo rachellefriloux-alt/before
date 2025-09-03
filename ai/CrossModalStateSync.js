@@ -268,7 +268,6 @@ class CrossModalStateSync {
         };
 
         // Simulate applying visual changes
-        console.log(`Applying visual update for ${userId}:`, visualUpdate);
 
         return visualUpdate;
     }
@@ -287,7 +286,6 @@ class CrossModalStateSync {
         };
 
         // Simulate applying auditory changes
-        console.log(`Applying auditory update for ${userId}:`, auditoryUpdate);
 
         return auditoryUpdate;
     }
@@ -306,7 +304,6 @@ class CrossModalStateSync {
         };
 
         // Simulate applying haptic changes
-        console.log(`Applying haptic update for ${userId}:`, hapticUpdate);
 
         return hapticUpdate;
     }
@@ -325,7 +322,6 @@ class CrossModalStateSync {
         };
 
         // Simulate applying text changes
-        console.log(`Applying text update for ${userId}:`, textUpdate);
 
         return textUpdate;
     }
@@ -359,7 +355,7 @@ class CrossModalStateSync {
         const invalidStates = stateIds.filter(id => !this.stateRegistry.has(id));
 
         if (invalidStates.length > 0) {
-            console.warn(`Invalid states ignored: ${invalidStates.join(', ')}`);
+            // Invalid states ignored
         }
 
         this.activeStates.set(userId, new Set(validStates));

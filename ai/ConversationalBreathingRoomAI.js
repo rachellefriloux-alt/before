@@ -409,7 +409,6 @@ class ConversationalBreathingRoomAI {
         };
 
         // Simulate pause execution
-        console.log(`Executing pause: ${action.pattern} for ${action.duration}ms`);
 
         return result;
     }
@@ -429,7 +428,6 @@ class ConversationalBreathingRoomAI {
         };
 
         // Simulate transition execution
-        console.log(`Executing transition: ${action.pattern} for ${action.duration}ms`);
 
         return result;
     }
@@ -449,7 +447,6 @@ class ConversationalBreathingRoomAI {
         };
 
         // Simulate reflection space execution
-        console.log(`Executing reflection space: ${action.pattern} for ${action.duration}ms`);
 
         return result;
     }

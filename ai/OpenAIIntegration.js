@@ -34,7 +34,7 @@
                                                                                                                                                                                                                                                                                                                      const data = await response.json();
                                                                                                                                                                                                                                                                                                                      return data.apiKey || null;
                                                                                                                                                                                                                                                                                              } catch (error) {
-                                                                                                                                                                                                                                                                                                         console.error('Failed to fetch API key:', error);
+                                                                                                                                                                                                                                                                                                         // Failed to fetch API key
                                                                                                                                                                                                                                                                                                          return null;
                                                                                                                                                                                                                                                                                              }
                                                                                                                                                                                                                                                                                      }
@@ -42,7 +42,6 @@
     async initialize() {
         this.apiKey = await this.getApiKey();
         this.initialized = true;
-        console.log('🧠 OpenAI integration initialized - I\'m ready to think deeply with you, love.');
     }
 
     async generateResponse(message, context = {}) {
@@ -82,7 +81,7 @@
             const data = await response.json();
             return data.choices[0].message.content;
         } catch (error) {
-            console.error('OpenAI API call failed:', error);
+            // OpenAI API call failed
             return 'I\'m having trouble connecting right now, but I\'m here with you. Let\'s try again in a moment.';
         }
     }

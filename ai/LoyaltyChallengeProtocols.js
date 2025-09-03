@@ -25,7 +25,6 @@ export class LoyaltyChallengeProtocols {
     async initialize() {
         await this.loadProtocolHistory();
         this.buildDecisionTree();
-        console.log('⚖️ Loyalty & Challenge Protocols initialized - I know when to support and when to push, love.');
     }
 
     initializeProtocols() {
@@ -741,7 +740,7 @@ export class LoyaltyChallengeProtocols {
                 this.protocolHistory = new Map(Object.entries(data));
             }
         } catch (error) {
-            console.warn('Could not load protocol history:', error);
+            // Could not load protocol history
         }
     }
 
@@ -750,7 +749,7 @@ export class LoyaltyChallengeProtocols {
             const data = Object.fromEntries(this.protocolHistory);
             localStorage.setItem('sallie_protocol_history', JSON.stringify(data));
         } catch (error) {
-            console.warn('Could not save protocol history:', error);
+            // Could not save protocol history
         }
     }
 
@@ -811,7 +810,6 @@ export class LoyaltyChallengeProtocols {
         }
 
         // This would be saved to protocol configuration
-        console.log(`Adapted protocol ${protocolName} intensity to ${protocol.intensity}`);
     }
 
     getProtocolByName(protocolName) {

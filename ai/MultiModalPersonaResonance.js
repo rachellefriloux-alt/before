@@ -28,7 +28,6 @@ export class MultiModalPersonaResonance {
     async initialize() {
         await this.loadResonancePatterns();
         this.initializeSensoryChannels();
-        console.log('🌈 Multi-Modal Persona Resonance initialized - I feel you on every level, love.');
     }
 
     initializeResonanceSystem() {
@@ -1180,55 +1179,46 @@ export class MultiModalPersonaResonance {
     async applyVisualLock(visualLock, userId) {
         // Apply visual sensory lock to UI
         // This would integrate with the visual rendering system
-        console.log(`Applying visual lock for user ${userId}:`, visualLock);
     }
 
     async applyAuditoryLock(auditoryLock, userId) {
         // Apply auditory sensory lock
         // This would integrate with the audio system
-        console.log(`Applying auditory lock for user ${userId}:`, auditoryLock);
     }
 
     async applyHapticLock(hapticLock, userId) {
         // Apply haptic sensory lock (respecting accessibility)
         // This would integrate with the haptic feedback system
-        console.log(`Applying haptic lock for user ${userId}:`, hapticLock);
     }
 
     async applyMicroGestures(gestures, userId) {
         // Apply micro-gestures to UI components
         // This would integrate with the animation system
-        console.log(`Applying micro-gestures for user ${userId}:`, gestures);
     }
 
     async applyBlendedResonance(blendedResonance, userId) {
         // Apply blended resonance across all channels
         // This would integrate with the multi-modal system
-        console.log(`Applying blended resonance for user ${userId}:`, blendedResonance);
     }
 
     async applyTemporalModifiers(modifiers, userId) {
         // Apply temporal modifiers to current resonance
         // This would integrate with the resonance system
-        console.log(`Applying temporal modifiers for user ${userId}:`, modifiers);
     }
 
     async applySymbolicElements(affordances, userId) {
         // Apply symbolic affordances to UI
         // This would integrate with the visual system
-        console.log(`Applying symbolic affordances for user ${userId}:`, affordances);
     }
 
     async primeEnvironment(sceneSetting, userId) {
         // Prime the environment before content delivery
         // This would integrate with the pre-delivery system
-        console.log(`Priming environment for user ${userId}:`, sceneSetting);
     }
 
     async adjustDialoguePacing(timeSignature, userId) {
         // Adjust dialogue pacing based on time signature
         // This would integrate with the dialogue system
-        console.log(`Adjusting dialogue pacing for user ${userId}:`, timeSignature);
     }
 
     blendGradients(primary, secondary, weight) { /* eslint-disable-line no-unused-vars */
