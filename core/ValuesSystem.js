@@ -15,17 +15,11 @@ export class ValuesSystem {
 
   createLogger() {
     return {
-      info: (message) => {
+      info: (message) => { // eslint-disable-line no-unused-vars
         // In a real app, this would integrate with a proper logging system
-        if (typeof window !== 'undefined' && window.console) {
-          console.log(`[ValuesSystem] ${message}`);
-        }
       },
-      error: (message, error) => {
+      error: (message, error) => { // eslint-disable-line no-unused-vars
         // In a real app, this would integrate with error reporting
-        if (typeof window !== 'undefined' && window.console) {
-          console.error(`[ValuesSystem] ${message}`, error);
-        }
       }
     };
   }

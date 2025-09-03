@@ -29,7 +29,6 @@ export class IdentityManager {
             salt,
             created: Date.now()
         });
-        console.info(`[IdentityManager] Registered user: ${userId}`);
     }
 
     authenticate(userId, password) {
@@ -38,7 +37,6 @@ export class IdentityManager {
         const hash = crypto.pbkdf2Sync(password, user.salt, 1000, 64, 'sha512').toString('hex');
         if (user.passwordHash !== hash) throw new Error('Invalid password');
         this.currentUser = user;
-        console.info(`[IdentityManager] Authenticated user: ${userId}`);
         return true;
     }
 
@@ -48,7 +46,6 @@ export class IdentityManager {
 
     logout() {
         this.currentUser = null;
-        console.info('[IdentityManager] User logged out');
     }
 
     // Performance: Fast lookup and audit

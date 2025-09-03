@@ -14,7 +14,6 @@ export class OmniDomainResearch {
 
   async initialize() {
     this.initialized = true;
-    console.log('🔬 Omni-domain research initialized');
   }
 
   registerDomain(name, analyzer) {
@@ -34,7 +33,7 @@ export class OmniDomainResearch {
       try {
         results[domainName] = await analyzer.analyze(query);
       } catch (error) {
-        console.error(`Error analyzing ${domainName}:`, error);
+        // Error analyzing domain
         results[domainName] = { error: error.message };
       }
     }

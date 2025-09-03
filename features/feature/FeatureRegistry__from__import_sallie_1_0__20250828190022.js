@@ -49,17 +49,14 @@
                                                                                                                                                                                  return registry.getAllMetrics();
                                                                                                                                                                                      }
 
-                                                                                                                                                                                         async initialize() {
-                                                                                                                                                                                                 try {
-                                                                                                                                                                                                         this.initialized = true;
-                                                                                                                                                                                                                 console.log('Feature registry initialized');
-                                                                                                                                                                                                                         } catch (error) {
-                                                                                                                                                                                                                                         console.error('Failed to initialize feature registry:', error);
-                                                                                                                                                                                                                                                         throw error;
-                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                 }
-
-                                                                                                                                                                                                     register(name, implementation) {
+                                                                async initialize() {
+                                                                        try {
+                                                                                this.initialized = true;
+                                                                                } catch (error) {
+                                                                                        // Failed to initialize feature registry
+                                                                                        throw error;
+                                                                                }
+                                                                }                                                                                                                                                                                                     register(name, implementation) {
                                                                                                                                                                                                              if (!name || !implementation) {
                                                                                                                                                                                                                          throw new Error('Feature name and implementation are required');
                                                                                                                                                                                                                                  }
