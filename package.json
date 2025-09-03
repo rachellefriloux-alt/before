@@ -99,5 +99,12 @@
     "sovereign"
   ],
   "author": "Sallie Sovereign Team",
-  "license": "MIT"
+  "license": "MIT",
+  "overrides": {
+    "jest-expo": {
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1",
+      "react-test-renderer": "^18.3.1"
+    }
+  }
 }
