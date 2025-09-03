@@ -48,7 +48,7 @@ export class PersonalityEvolutionBridge {
         const result = JSON.parse(jsonResult);
         resolve(result);
       } catch (error) {
-        console.error("Error fetching native evolution data:", error);
+        // Error fetching native evolution data
         reject(error);
       }
     });
@@ -238,14 +238,13 @@ export class PersonalityEvolutionBridge {
           const result = this.nativeConnector.recordContextChange(contextDescription);
           resolve(result);
         } catch (error) {
-          console.error("Error recording context change:", error);
+          // Error recording context change
           reject(error);
         }
       });
     } else {
       // In mock mode, add to mock data
-      console.log("Recording mock context change:", contextDescription);
-      
+
       if (this.mockData) {
         const now = Date.now();
         this.mockData.events.push({
@@ -271,12 +270,11 @@ export class PersonalityEvolutionBridge {
           const result = this.nativeConnector.recordCurrentState();
           resolve(result);
         } catch (error) {
-          console.error("Error recording current state:", error);
+          // Error recording current state
           reject(error);
         }
       });
     } else {
-      console.log("Recording mock current state");
       return Promise.resolve(true);
     }
   }
@@ -293,7 +291,7 @@ export class PersonalityEvolutionBridge {
           const result = JSON.parse(jsonResult);
           resolve(result);
         } catch (error) {
-          console.error("Error getting available traits:", error);
+          // Error getting available traits
           reject(error);
         }
       });

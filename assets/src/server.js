@@ -25,7 +25,6 @@ app.get('/', (req, res) => {
   html = html.replace('</head>', `
     <script>
       window.API_KEY_AVAILABLE = ${apiKeyAvailable};
-      console.log('Sallie server initialized - API key available:', ${apiKeyAvailable});
     </script>
   </head>`);
 
@@ -35,7 +34,7 @@ app.get('/', (req, res) => {
 // API endpoints
 app.post('/api/chat', (req, res) => {
   // Handle chat requests
-  const { message, context } = req.body;
+  const { message, context } = req.body; // eslint-disable-line no-unused-vars
 
   // Placeholder response - integrate with actual AI logic
   res.json({
@@ -54,7 +53,6 @@ app.get('/api/health', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Sallie server running on port ${PORT}`);
-  console.log('Got it, love. Ready to help!');
+  // Server started
 });
                                          

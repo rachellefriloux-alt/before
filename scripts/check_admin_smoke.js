@@ -6,11 +6,10 @@ const admin = require('firebase-admin');
   try {
     admin.initializeApp({});
     const db = admin.firestore();
-    const cols = await db.listCollections();
-    console.log('Firestore collections (count):', cols.length);
+    await db.listCollections();
     process.exit(0);
   } catch (e) {
-    console.error('Admin SDK smoke test failed:', e.message || e);
+    // Admin SDK smoke test failed
     process.exit(2);
   }
 })();

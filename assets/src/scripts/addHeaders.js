@@ -47,12 +47,11 @@ function processFile(filePath) {
             const header = generateHeader(filePath);
             const newContent = header + '\n' + content;
             fs.writeFileSync(filePath, newContent, 'utf8');
-            console.log(`Added header to ${filePath}`);
         } else {
-            console.log(`Header already exists in ${filePath}`);
+            // Header already exists
         }
     } catch (error) {
-        console.error(`Error processing ${filePath}: ${error.message}`);
+        // Error processing file
     }
 }
 
@@ -71,4 +70,3 @@ function walkDirectory(dir) {
 
 const rootDir = process.cwd();
 walkDirectory(rootDir);
-console.log('Provenance header injection complete.');

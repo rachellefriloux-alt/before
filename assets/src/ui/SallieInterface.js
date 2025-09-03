@@ -21,9 +21,8 @@ export class SallieInterface {
       this.attachEventListeners();
       this.setupAutoResize();
       this.initialized = true;
-      console.log('🎨 Sallie interface initialized');
     } catch (error) {
-      console.error('Failed to initialize Sallie interface:', error);
+      // Failed to initialize Sallie interface
       throw error;
     }
   }

@@ -27,7 +27,6 @@ export class ProvenanceLogger {
         };
 
         this.logEntries.set(entry.id, entry);
-        console.log(`[PROVENANCE] ${eventType}: ${JSON.stringify(details)} (ID: ${entry.id})`);
 
         return entry.id;
     }
