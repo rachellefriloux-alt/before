@@ -200,10 +200,14 @@ export class CodeOptimizationSystem {
       case 'javascript':
       case 'typescript':
         optimizedCode = this.optimizeJavaScript(optimizedCode, profile, changes);
+        // Apply advanced optimizations for JS/TS
+        optimizedCode = this.applyAdvancedOptimizations(optimizedCode, language, changes);
         break;
         
       case 'python':
         optimizedCode = this.optimizePython(optimizedCode, profile, changes);
+        // Apply advanced optimizations for Python
+        optimizedCode = this.applyAdvancedOptimizations(optimizedCode, language, changes);
         break;
         
       default:
@@ -667,19 +671,247 @@ export class CodeOptimizationSystem {
    * Extract common code patterns into shared functions
    */
   private extractCommonPatterns(code: string, changes: OptimizationChange[]): string {
-    // This is a placeholder for a more complex implementation
-    // In a real system, this would identify repeated code blocks and extract them
+    let optimizedCode = code;
     
-    // For demonstration, we'll just log that this would happen
-    changes.push({
-      type: 'extract',
-      description: 'Pattern extraction would identify repeated code patterns for refactoring',
-      lineStart: 1,
-      lineEnd: 1,
-      impact: 'medium'
-    });
+    // Find repeated function calls that could be cached
+    const functionCallPattern = /(\w+)\(([^)]*)\)/g;
+    const functionCalls = new Map();
+    let match;
     
-    return code;
+    while ((match = functionCallPattern.exec(code)) !== null) {
+      const funcName = match[1];
+      const args = match[2];
+      const callSignature = `${funcName}(${args})`;
+      
+      if (!functionCalls.has(callSignature)) {
+        functionCalls.set(callSignature, 0);
+      }
+      functionCalls.set(callSignature, functionCalls.get(callSignature) + 1);
+    }
+    
+    // Report on cacheable function calls
+    for (const [signature, count] of functionCalls.entries()) {
+      if (count > 3) {
+        changes.push({
+          type: 'extract',
+          description: `Function call "${signature}" appears ${count} times and could benefit from result caching`,
+          lineStart: 1,
+          lineEnd: 1,
+          impact: 'medium'
+        });
+      }
+    }
+    
+    // Find repeated string literals that could be constants
+    const stringLiteralPattern = /(['"`])([^'"`]+)\1/g;
+    const stringLiterals = new Map();
+    
+    while ((match = stringLiteralPattern.exec(code)) !== null) {
+      const literal = match[0];
+      const content = match[2];
+      
+      // Only consider longer strings
+      if (content.length > 10) {
+        if (!stringLiterals.has(literal)) {
+          stringLiterals.set(literal, 0);
+        }
+        stringLiterals.set(literal, stringLiterals.get(literal) + 1);
+      }
+    }
+    
+    // Report on repeated string literals
+    for (const [literal, count] of stringLiterals.entries()) {
+      if (count > 2) {
+        changes.push({
+          type: 'extract',
+          description: `String literal ${literal} appears ${count} times and should be extracted to a constant`,
+          lineStart: 1,
+          lineEnd: 1,
+          impact: 'low'
+        });
+      }
+    }
+    
+    return optimizedCode;
+  }
+  
+  /**
+   * Apply advanced performance optimizations
+   */
+  private applyAdvancedOptimizations(
+    code: string,
+    language: string,
+    changes: OptimizationChange[]
+  ): string {
+    let optimizedCode = code;
+    
+    // Async/await optimization for JavaScript/TypeScript
+    if (language.toLowerCase().includes('javascript') || language.toLowerCase().includes('typescript')) {
+      optimizedCode = this.optimizeAsyncPatterns(optimizedCode, changes);
+    }
+    
+    // Memory optimization patterns
+    optimizedCode = this.optimizeMemoryUsage(optimizedCode, changes);
+    
+    // Performance bottleneck detection
+    optimizedCode = this.detectPerformanceBottlenecks(optimizedCode, changes);
+    
+    return optimizedCode;
+  }
+  
+  /**
+   * Optimize async/await patterns
+   */
+  private optimizeAsyncPatterns(code: string, changes: OptimizationChange[]): string {
+    let optimizedCode = code;
+    
+    // Find sequential awaits that could be parallelized
+    const sequentialAwaitPattern = /await\s+(\w+)\([^)]*\);\s*\n\s*await\s+(\w+)\([^)]*\);/g;
+    let match;
+    
+    while ((match = sequentialAwaitPattern.exec(code)) !== null) {
+      const fullMatch = match[0];
+      const func1 = match[1];
+      const func2 = match[2];
+      
+      // Check if these are independent calls (simplified check)
+      if (func1 !== func2) {
+        const lineStart = code.substring(0, match.index).split('\n').length;
+        const lineEnd = lineStart + 1;
+        
+        changes.push({
+          type: 'algorithm',
+          description: `Sequential await calls to ${func1} and ${func2} could be parallelized with Promise.all`,
+          lineStart,
+          lineEnd,
+          impact: 'high'
+        });
+      }
+    }
+    
+    // Find unnecessary async wrappers
+    const unnecessaryAsyncPattern = /async\s+function\s+(\w+)\([^)]*\)\s*{\s*return\s+([^;]+);\s*}/g;
+    
+    while ((match = unnecessaryAsyncPattern.exec(code)) !== null) {
+      const functionName = match[1];
+      const returnValue = match[2];
+      
+      // If return value doesn't contain await, async is unnecessary
+      if (!returnValue.includes('await')) {
+        const lineStart = code.substring(0, match.index).split('\n').length;
+        const lineEnd = lineStart + 2;
+        
+        changes.push({
+          type: 'refactor',
+          description: `Function "${functionName}" doesn't need async keyword as it doesn't await anything`,
+          lineStart,
+          lineEnd,
+          impact: 'low'
+        });
+      }
+    }
+    
+    return optimizedCode;
+  }
+  
+  /**
+   * Optimize memory usage patterns
+   */
+  private optimizeMemoryUsage(code: string, changes: OptimizationChange[]): string {
+    let optimizedCode = code;
+    
+    // Find large array operations that could be optimized
+    const largeArrayPattern = /new\s+Array\((\d+)\)/g;
+    let match;
+    
+    while ((match = largeArrayPattern.exec(code)) !== null) {
+      const size = parseInt(match[1]);
+      if (size > 1000) {
+        const lineStart = code.substring(0, match.index).split('\n').length;
+        
+        changes.push({
+          type: 'algorithm',
+          description: `Large array allocation (${size} elements) could benefit from lazy initialization or streaming`,
+          lineStart,
+          lineEnd: lineStart,
+          impact: 'medium'
+        });
+      }
+    }
+    
+    // Find potential memory leaks in event listeners
+    const eventListenerPattern = /addEventListener\s*\(\s*['"`](\w+)['"`]\s*,\s*([^)]+)\)/g;
+    
+    while ((match = eventListenerPattern.exec(code)) !== null) {
+      const eventType = match[1];
+      const handler = match[2];
+      
+      // Check if there's a corresponding removeEventListener
+      const removePattern = new RegExp(`removeEventListener\\s*\\(\\s*['"\`]${eventType}['"\`]\\s*,\\s*${handler.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\)`);
+      
+      if (!removePattern.test(code)) {
+        const lineStart = code.substring(0, match.index).split('\n').length;
+        
+        changes.push({
+          type: 'refactor',
+          description: `Event listener for "${eventType}" should have corresponding removeEventListener to prevent memory leaks`,
+          lineStart,
+          lineEnd: lineStart,
+          impact: 'medium'
+        });
+      }
+    }
+    
+    return optimizedCode;
+  }
+  
+  /**
+   * Detect performance bottlenecks
+   */
+  private detectPerformanceBottlenecks(code: string, changes: OptimizationChange[]): string {
+    let optimizedCode = code;
+    
+    // Find nested loops that could be expensive
+    const nestedLoopPattern = /for\s*\([^}]+\)\s*{[^}]*for\s*\([^}]+\)\s*{/g;
+    let match;
+    
+    while ((match = nestedLoopPattern.exec(code)) !== null) {
+      const lineStart = code.substring(0, match.index).split('\n').length;
+      
+      changes.push({
+        type: 'algorithm',
+        description: 'Nested loops detected - consider algorithm optimization or caching to reduce time complexity',
+        lineStart,
+        lineEnd: lineStart + 2,
+        impact: 'high'
+      });
+    }
+    
+    // Find DOM queries that could be cached
+    const domQueryPattern = /(document\.querySelector|document\.getElementById|document\.getElementsBy\w+)\s*\(\s*['"`]([^'"`]+)['"`]\s*\)/g;
+    const domQueries = new Map();
+    
+    while ((match = domQueryPattern.exec(code)) !== null) {
+      const query = match[2];
+      if (!domQueries.has(query)) {
+        domQueries.set(query, 0);
+      }
+      domQueries.set(query, domQueries.get(query) + 1);
+    }
+    
+    for (const [query, count] of domQueries.entries()) {
+      if (count > 3) {
+        changes.push({
+          type: 'refactor',
+          description: `DOM query for "${query}" appears ${count} times and should be cached for better performance`,
+          lineStart: 1,
+          lineEnd: 1,
+          impact: 'medium'
+        });
+      }
+    }
+    
+    return optimizedCode;
   }
   
   /**
