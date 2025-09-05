@@ -4,23 +4,52 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@app/*": ["./app/*"],
-      "@core/*": ["./core/*"],
-      "@ui/*": ["./app/ui/*"],
-      "@store/*": ["./app/store/*"],
-      "@components/*": ["./app/components/*"],
-      "@screens/*": ["./app/screens/*"],
-      "@utils/*": ["./app/utils/*"],
-      "@types/*": ["./app/types/*"],
-      "@ai/*": ["./app/ai/*"],
-      "@assets/*": ["./assets/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@app/*": [
+        "./app/*"
+      ],
+      "@core/*": [
+        "./core/*"
+      ],
+      "@ui/*": [
+        "./app/ui/*"
+      ],
+      "@store/*": [
+        "./app/store/*"
+      ],
+      "@components/*": [
+        "./app/components/*"
+      ],
+      "@screens/*": [
+        "./app/screens/*"
+      ],
+      "@utils/*": [
+        "./app/utils/*"
+      ],
+      "@types/*": [
+        "./app/types/*"
+      ],
+      "@ai/*": [
+        "./app/ai/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ]
     },
-    "types": ["react-native", "jest", "node"],
+    "types": [
+      "react-native",
+      "jest",
+      "node"
+    ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "moduleResolution": "node",
     "noEmit": true,
     "skipLibCheck": true,
@@ -30,7 +59,9 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "**/*.jsx"
+    "**/*.jsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
   ],
   "exclude": [
     "node_modules",
