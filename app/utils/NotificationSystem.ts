@@ -256,8 +256,8 @@ export class NotificationSystem {
         trigger: {
           // Use a time interval trigger compliant with Expo types
           type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
-          seconds: trigger?.seconds ?? 5,
-          repeats: trigger?.repeats ?? false,
+          seconds: notification.scheduledDate ? Math.max(1, Math.floor((notification.scheduledDate.getTime() - Date.now()) / 1000)) : 5,
+          repeats: false,
         },
       });
 

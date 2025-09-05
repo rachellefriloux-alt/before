@@ -124,7 +124,7 @@ export class SystemMonitor {
       this.currentNetworkInfo = {
         isConnected: networkState.isConnected ?? false,
         isInternetReachable: networkState.isInternetReachable ?? false,
-        type: networkState.type ?? 'unknown',
+        type: networkState.type ?? Network.NetworkStateType.UNKNOWN,
         details: {
           isConnectionExpensive: false,
         },
@@ -436,7 +436,7 @@ export class SystemMonitor {
   async getNetworkStatus(): Promise<boolean> {
     try {
       const networkState = await Network.getNetworkStateAsync();
-      return networkState.isConnected;
+      return networkState.isConnected ?? false;
     } catch (error) {
       console.error('Error checking network connection:', error);
       return false;
@@ -446,7 +446,7 @@ export class SystemMonitor {
   async isInternetReachable(): Promise<boolean> {
     try {
       const networkState = await Network.getNetworkStateAsync();
-      return networkState.isInternetReachable;
+      return networkState.isInternetReachable ?? false;
     } catch (error) {
       console.error('Error checking internet reachability:', error);
       return false;
