@@ -2,7 +2,7 @@
   "name": "sallie_sovereign",
   "version": "1.0.0",
   "description": "Sallie Sovereign - A beautiful, owner-only, offline-first React Native + Android launcher hybrid with advanced AI capabilities",
-  "main": "index.js",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
