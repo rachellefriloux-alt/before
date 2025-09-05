@@ -95,6 +95,13 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-Wno-dollar-in-identifier-extension"
+                // Use shorter build paths to avoid CMake path length issues
+                arguments "-DCMAKE_OBJECT_PATH_MAX=500"
+            }
+        }
     }
     signingConfigs {
         debug {
@@ -107,6 +114,11 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            externalNativeBuild {
+                cmake {
+                    cppFlags "-Wno-dollar-in-identifier-extension"
+                }
+            }
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -116,6 +128,11 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             crunchPngs (findProperty('android.enablePngCrunchInReleaseBuilds')?.toBoolean() ?: true)
+            externalNativeBuild {
+                cmake {
+                    cppFlags "-Wno-dollar-in-identifier-extension"
+                }
+            }
         }
     }
     packagingOptions {
