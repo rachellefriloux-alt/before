@@ -447,10 +447,15 @@ class CrossDeviceSyncManager {
   }
 
   destroy() {
-    if (this.syncTimer) {
-      clearInterval(this.syncTimer);
+    try {
+      if (this.syncTimer) {
+        clearInterval(this.syncTimer);
+        this.syncTimer = null;
+      }
+      this.saveSyncState();
+    } catch (error) {
+      console.warn('Error cleaning up CrossDeviceSyncManager:', error);
     }
-    this.saveSyncState();
   }
 }
 
