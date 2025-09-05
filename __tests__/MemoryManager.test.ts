@@ -34,6 +34,7 @@ describe('MemoryManager', () => {
     jest.clearAllMocks();
     memoryManager = MemoryManager.getInstance();
     await memoryManager.initialize();
+    await memoryManager.clearAll(); // Clear all memories between tests
   });
   
   it('should be a singleton', () => {

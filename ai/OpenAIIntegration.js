@@ -64,13 +64,13 @@ Always respond with empathy, wisdom, and the right balance of support and challe
         
         // Check cache first
         if (this.responseCache.has(cacheKey)) {
-            console.log('Returning cached response for:', message.substring(0, 50));
+            // Returning cached response
             return this.responseCache.get(cacheKey);
         }
         
         // Prevent duplicate concurrent requests
         if (this.pendingRequests.has(cacheKey)) {
-            console.log('Request already in progress for:', message.substring(0, 50));
+            // Request already in progress
             return new Promise((resolve, reject) => {
                 const checkPending = () => {
                     if (this.responseCache.has(cacheKey)) {
@@ -178,7 +178,7 @@ Always respond with empathy, wisdom, and the right balance of support and challe
 
             return aiResponse;
         } catch (error) {
-            console.error('OpenAI API call failed:', error);
+            // OpenAI API call failed - returning fallback response
             return 'I\'m having trouble connecting right now, but I\'m here with you. Let\'s try again in a moment.';
         }
     }
@@ -192,6 +192,13 @@ Always respond with empathy, wisdom, and the right balance of support and challe
             config: context.config
         };
         return btoa(JSON.stringify(keyData)).substring(0, 50); // Base64 encode and limit length
+    }
+
+    getConversationHistory(userId) {
+        if (!this.conversationHistory.has(userId)) {
+            this.conversationHistory.set(userId, []);
+        }
+        return this.conversationHistory.get(userId);
     }
 
     getConversationSummary(userId) {

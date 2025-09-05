@@ -474,6 +474,19 @@ class MemoryManager {
     
     return { formattedDate, title, subtitle };
   }
+  
+  /**
+   * Clear all memories and reset the manager (for testing)
+   */
+  public async clearAll(): Promise<void> {
+    this.memoryCache.clear();
+    
+    // Clear AsyncStorage
+    const keys = ['memories_TASK', 'memories_QUICK_CAPTURE', 'memories_EMOTION', 'memories_PREFERENCE'];
+    for (const key of keys) {
+      await AsyncStorage.removeItem(key);
+    }
+  }
 }
 
 export default MemoryManager;

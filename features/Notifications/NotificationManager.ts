@@ -120,12 +120,20 @@ class NotificationManager {
     try {
       // Configure notification behavior
       Notifications.setNotificationHandler({
-        handleNotification: async () => ({
-          shouldShowAlert: true,
-          shouldPlaySound: this.config.enableSound,
-          shouldSetBadge: true,
-          priority: this.getPriorityLevel(this.config.defaultPriority),
-        }),
+        handleNotification: async () => {
+          const notificationBehavior: Notifications.NotificationBehavior = {
+            shouldShowAlert: true,
+            shouldPlaySound: this.config.enableSound,
+            shouldSetBadge: true,
+          };
+          
+          // Only add priority for Android
+          if (Platform.OS === 'android') {
+            notificationBehavior.priority = this.getPriorityLevel(this.config.defaultPriority);
+          }
+          
+          return notificationBehavior;
+        },
       });
       
       // Load saved configuration
@@ -603,26 +611,19 @@ class NotificationManager {
   /**
    * Get notification priority level for the platform
    */
-  private getPriorityLevel(priority: NotificationPriority): string | number {
+  private getPriorityLevel(priority: NotificationPriority): Notifications.AndroidNotificationPriority | undefined {
     if (Platform.OS === 'android') {
       switch (priority) {
         case NotificationPriority.LOW:
-          return 'low';
+          return Notifications.AndroidNotificationPriority.LOW;
         case NotificationPriority.HIGH:
-          return 'high';
+          return Notifications.AndroidNotificationPriority.HIGH;
         default:
-          return 'default';
+          return Notifications.AndroidNotificationPriority.DEFAULT;
       }
     } else {
-      // iOS priority
-      switch (priority) {
-        case NotificationPriority.LOW:
-          return 0;
-        case NotificationPriority.HIGH:
-          return 10;
-        default:
-          return 5;
-      }
+      // iOS doesn't use the same priority system, return undefined
+      return undefined;
     }
   }
   

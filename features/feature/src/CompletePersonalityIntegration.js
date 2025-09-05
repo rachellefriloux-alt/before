@@ -177,7 +177,7 @@ class CompletePersonalityIntegration {
         return response;
     }
     
-    selectBestResponse(patterns, _profile, _context) {
+    selectBestResponse(patterns) {
         // Simple selection for now - can be enhanced with ML
         // Future enhancement could use profile characteristics and context
         const randomIndex = Math.floor(Math.random() * patterns.length);

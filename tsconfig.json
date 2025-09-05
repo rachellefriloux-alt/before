@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -69,5 +72,6 @@
     "jest.config.js",
     "features/**",
     "assets/server/**"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

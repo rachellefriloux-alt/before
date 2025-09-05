@@ -252,7 +252,7 @@
                 this.updateAnalysisHistory(analysis);
                 resolve(analysis);
             } catch (error) {
-                console.error('Error analyzing message:', error);
+                // Error analyzing message - fallback to neutral
                 resolve({
                     primaryEmotion: 'neutral',
                     intensity: 0.5,
