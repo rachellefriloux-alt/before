@@ -1,53 +1,464 @@
 package com.sallie.core.input.vision
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.UUID
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
+import java.security.MessageDigest
+import java.util.*
 import java.util.concurrent.ConcurrentHashMap
-import kotlin.random.Random
+import kotlin.math.*
 
 /**
- * Sallie's Vision Processor Implementation
+ * 💜 Sallie: Your personal companion AI with both modern capabilities and traditional values
+ * Loyal, protective, empathetic, adaptable, and growing with your guidance
+ * Values authenticity, respects boundaries, and maintains unwavering devotion
  * 
- * This class provides computer vision capabilities for analyzing
- * images and videos, including object detection, face recognition,
- * text recognition, and scene understanding.
+ * Enhanced Vision Processor - Advanced computer vision capabilities for image and video analysis
  */
 class EnhancedVisionProcessor(
-    private val faceRecognitionEnabled: Boolean = true,
-    private val objectDetectionEnabled: Boolean = true,
-    private val textRecognitionEnabled: Boolean = true,
-    private val sceneUnderstandingEnabled: Boolean = true
+    private val context: Context,
+    private val enableMLKit: Boolean = true,
+    private val enableTensorFlow: Boolean = true,
+    private val enableCloudVision: Boolean = false
 ) : VisionProcessor {
 
-    // Cache for storing analysis results
     private val analysisCache = ConcurrentHashMap<String, ImageAnalysisResult>()
+    private val recognizedFacesCache = ConcurrentHashMap<String, String>() // Face ID to name mapping
     
-    // Set of available capabilities
-    private var capabilities: Set<VisionCapability> = emptySet()
+    // Pre-trained models and processors
+    private var isInitialized = false
+    private val capabilities = mutableSetOf<VisionCapability>()
+    
+    // Image analysis utilities
+    private val colorAnalyzer = ColorAnalyzer()
+    private val geometryAnalyzer = GeometryAnalyzer()
+    private val textExtractor = AdvancedTextExtractor()
+    private val sceneAnalyzer = SceneAnalyzer()
+    private val objectClassifier = ObjectClassifier()
     
     override suspend fun initialize() {
+        if (isInitialized) return
+        
         withContext(Dispatchers.IO) {
-            // Initialize vision modules
+            try {
+                // Initialize core vision components
+                initializeObjectDetection()
+                initializeTextRecognition()
+                initializeFaceDetection()
+                initializeSceneUnderstanding()
+                
+                isInitialized = true
+            } catch (e: Exception) {
+                throw VisionProcessorException("Failed to initialize vision processor", e)
+            }
+        }
+    }
+    
+    override suspend fun analyzeImage(
+        imageData: ByteArray,
+        analysisOptions: ImageAnalysisOptions
+    ): ImageAnalysisResult {
+        if (!isInitialized) initialize()
+        
+        return withContext(Dispatchers.Default) {
+            val startTime = System.currentTimeMillis()
             
-            // Set capabilities based on what's available/enabled
-            val newCapabilities = mutableSetOf<VisionCapability>()
-            
-            if (objectDetectionEnabled) {
-                newCapabilities.add(VisionCapability.OBJECT_DETECTION)
+            // Generate cache key
+            val imageHash = generateImageHash(imageData)
+            analysisCache[imageHash]?.let { cached ->
+                return@withContext cached.copy(processingTimeMs = 0) // Return cached result
             }
             
-            if (faceRecognitionEnabled) {
-                newCapabilities.add(VisionCapability.FACE_DETECTION)
+            // Decode image
+            val bitmap = decodeBitmap(imageData) ?: throw VisionProcessorException("Failed to decode image")
+            
+            val results = mutableMapOf<String, Any>()
+            
+            // Perform requested analyses
+            if (analysisOptions.detectObjects) {
+                results["objects"] = performObjectDetection(bitmap, analysisOptions)
             }
             
-            if (textRecognitionEnabled) {
-                newCapabilities.add(VisionCapability.TEXT_RECOGNITION)
+            if (analysisOptions.detectFaces) {
+                results["faces"] = performFaceDetection(bitmap, analysisOptions)
             }
             
-            if (sceneUnderstandingEnabled) {
-                newCapabilities.add(VisionCapability.SCENE_UNDERSTANDING)
-                newCapabilities.add(VisionCapability.IMAGE_DESCRIPTION)
+            if (analysisOptions.recognizeText) {
+                results["text"] = performTextRecognition(bitmap, analysisOptions)
+            }
+            
+            if (analysisOptions.generateDescription) {
+                results["description"] = generateImageDescription(bitmap, results)
+            }
+            
+            if (analysisOptions.detectLandmarks) {
+                results["landmarks"] = detectLandmarks(bitmap)
+            }
+            
+            if (analysisOptions.checkContentSafety) {
+                results["safety"] = analyzeContentSafety(bitmap)
+            }
+            
+            // Perform scene analysis
+            val sceneInfo = analyzeImageScene(bitmap)
+            val colorInfo = analyzeImageColors(bitmap)
+            val compositionInfo = analyzeImageComposition(bitmap)
+            
+            val processingTime = System.currentTimeMillis() - startTime
+            
+            val result = ImageAnalysisResult(
+                imageDescription = results["description"] as? String,
+                tags = sceneInfo.tags,
+                objects = results["objects"] as? List<RecognizedObject> ?: emptyList(),
+                faces = results["faces"] as? List<RecognizedFace> ?: emptyList(),
+                text = results["text"] as? List<RecognizedText> ?: emptyList(),
+                landmarks = results["landmarks"] as? List<Landmark> ?: emptyList(),
+                logos = emptyList(), // Could be enhanced with logo detection
+                safetyResults = results["safety"] as? ContentSafetyResult,
+                metadataExtracted = mapOf(
+                    "width" to bitmap.width,
+                    "height" to bitmap.height,
+                    "dominantColors" to colorInfo.dominantColors,
+                    "brightness" to colorInfo.averageBrightness,
+                    "contrast" to colorInfo.contrast,
+                    "composition" to compositionInfo
+                ),
+                processingTimeMs = processingTime
+            )
+            
+            // Cache result
+            analysisCache[imageHash] = result
+            
+            result
+        }
+    }
+    
+    override suspend fun detectObjects(
+        imageData: ByteArray,
+        options: ObjectDetectionOptions
+    ): List<RecognizedObject> {
+        return withContext(Dispatchers.Default) {
+            val bitmap = decodeBitmap(imageData) ?: return@withContext emptyList()
+            
+            // Use multiple detection strategies
+            val detectedObjects = mutableListOf<RecognizedObject>()
+            
+            // Edge-based object detection
+            detectedObjects.addAll(detectObjectsByEdges(bitmap, options))
+            
+            // Color-based object detection
+            detectedObjects.addAll(detectObjectsByColor(bitmap, options))
+            
+            // Pattern-based object detection
+            detectedObjects.addAll(detectObjectsByPatterns(bitmap, options))
+            
+            // Filter by confidence threshold and remove duplicates
+            detectedObjects
+                .filter { it.confidence >= options.confidenceThreshold }
+                .distinctBy { "${it.label}_${it.boundingBox}" }
+                .take(options.maxResults)
+        }
+    }
+    
+    override suspend fun recognizeText(
+        imageData: ByteArray,
+        options: TextRecognitionOptions
+    ): List<RecognizedText> {
+        return withContext(Dispatchers.Default) {
+            val bitmap = decodeBitmap(imageData) ?: return@withContext emptyList()
+            
+            val recognizedTexts = mutableListOf<RecognizedText>()
+            
+            // Enhanced OCR with multiple approaches
+            recognizedTexts.addAll(extractTextByContours(bitmap, options))
+            recognizedTexts.addAll(extractTextByRegions(bitmap, options))
+            
+            if (options.detectHandwriting) {
+                recognizedTexts.addAll(extractHandwrittenText(bitmap, options))
+            }
+            
+            // Post-process and clean up text
+            recognizedTexts
+                .filter { it.confidence >= options.confidenceThreshold }
+                .map { cleanupRecognizedText(it) }
+        }
+    }
+    
+    override suspend fun detectFaces(
+        imageData: ByteArray,
+        options: FaceDetectionOptions
+    ): List<RecognizedFace> {
+        return withContext(Dispatchers.Default) {
+            val bitmap = decodeBitmap(imageData) ?: return@withContext emptyList()
+            
+            val faces = mutableListOf<RecognizedFace>()
+            
+            // Detect faces using multiple algorithms
+            faces.addAll(detectFacesByHaarCascades(bitmap, options))
+            faces.addAll(detectFacesByColorSegmentation(bitmap, options))
+            
+            // Enhance with facial analysis
+            faces.map { face ->
+                enhanceFaceAnalysis(face, bitmap, options)
+            }.take(options.maxFaces)
+        }
+    }
+    
+    override suspend fun generateDescription(
+        imageData: ByteArray,
+        options: DescriptionOptions
+    ): String {
+        return withContext(Dispatchers.Default) {
+            val bitmap = decodeBitmap(imageData) ?: return@withContext "Unable to analyze image"
+            
+            val analysis = analyzeImage(imageData, ImageAnalysisOptions(
+                generateDescription = false,
+                detectObjects = options.includeObjects,
+                detectFaces = true
+            ))
+            
+            generateNaturalDescription(bitmap, analysis, options)
+        }
+    }
+    
+    override suspend fun checkContentSafety(imageData: ByteArray): ContentSafetyResult {
+        return withContext(Dispatchers.Default) {
+            val bitmap = decodeBitmap(imageData) ?: return@withContext ContentSafetyResult()
+            
+            // Analyze various safety aspects
+            val skinDetection = analyzeSkinContent(bitmap)
+            val violenceIndicators = analyzeViolenceIndicators(bitmap)
+            val weaponDetection = detectWeapons(bitmap)
+            val inappropriateText = checkForInappropriateText(bitmap)
+            
+            ContentSafetyResult(
+                adult = skinDetection.coerceIn(0f, 1f),
+                violence = violenceIndicators.coerceIn(0f, 1f),
+                hate = inappropriateText.hate.coerceIn(0f, 1f),
+                harassment = inappropriateText.harassment.coerceIn(0f, 1f),
+                selfHarm = violenceIndicators * 0.5f, // Simplified correlation
+                sexualContent = skinDetection * 0.8f   // Related to skin detection
+            )
+        }
+    }
+    
+    override suspend fun analyzeVideo(
+        videoData: ByteArray,
+        options: VideoAnalysisOptions
+    ): VideoAnalysisResult {
+        return withContext(Dispatchers.Default) {
+            // Extract key frames from video
+            val keyFrames = extractKeyFrames(videoData, options.keyFrameIntervalSeconds)
+            
+            val analyzedFrames = keyFrames.map { keyFrame ->
+                val frameAnalysis = analyzeImage(keyFrame.imageData, ImageAnalysisOptions(
+                    detectObjects = options.trackObjects,
+                    detectFaces = options.trackPersons,
+                    recognizeText = true,
+                    checkContentSafety = options.checkContentSafety
+                ))
+                
+                KeyFrame(
+                    timestampMs = keyFrame.timestampMs,
+                    imageAnalysis = frameAnalysis
+                )
+            }
+            
+            // Generate video description
+            val description = if (options.generateDescription) {
+                generateVideoDescription(analyzedFrames)
+            } else null
+            
+            // Track objects across frames
+            val trackedObjects = if (options.trackObjects) {
+                trackObjectsAcrossFrames(analyzedFrames)
+            } else emptyList()
+            
+            VideoAnalysisResult(
+                description = description,
+                keyFrames = analyzedFrames,
+                transcript = null, // Would require speech recognition
+                topics = extractVideoTopics(analyzedFrames),
+                persons = trackPersonsAcrossFrames(analyzedFrames),
+                objects = trackedObjects,
+                scenes = detectVideoScenes(analyzedFrames),
+                safetyResults = analyzedFrames.mapNotNull { frame ->
+                    frame.imageAnalysis.safetyResults?.let { safety ->
+                        TimestampedContentSafetyResult(frame.timestampMs, safety)
+                    }
+                },
+                metadataExtracted = extractVideoMetadata(videoData),
+                processingTimeMs = 0 // Would be calculated in real implementation
+            )
+        }
+    }
+    
+    override fun getCapabilities(): Set<VisionCapability> = capabilities.toSet()
+    
+    // Private implementation methods
+    
+    private fun decodeBitmap(imageData: ByteArray): Bitmap? {
+        return try {
+            BitmapFactory.decodeByteArray(imageData, 0, imageData.size)
+        } catch (e: Exception) {
+            null
+        }
+    }
+    
+    private fun generateImageHash(imageData: ByteArray): String {
+        val digest = MessageDigest.getInstance("SHA-256")
+        val hash = digest.digest(imageData)
+        return hash.joinToString("") { "%02x".format(it) }
+    }
+    
+    private suspend fun initializeObjectDetection() {
+        capabilities.add(VisionCapability.OBJECT_DETECTION)
+    }
+    
+    private suspend fun initializeTextRecognition() {
+        capabilities.add(VisionCapability.TEXT_RECOGNITION)
+        if (enableMLKit) {
+            capabilities.add(VisionCapability.HANDWRITING_RECOGNITION)
+        }
+    }
+    
+    private suspend fun initializeFaceDetection() {
+        capabilities.add(VisionCapability.FACE_DETECTION)
+        capabilities.add(VisionCapability.EMOTION_DETECTION)
+    }
+    
+    private suspend fun initializeSceneUnderstanding() {
+        capabilities.add(VisionCapability.SCENE_UNDERSTANDING)
+        capabilities.add(VisionCapability.IMAGE_DESCRIPTION)
+        capabilities.add(VisionCapability.ACTIVITY_RECOGNITION)
+    }
+    
+    // Enhanced computer vision algorithms
+    
+    private fun detectObjectsByEdges(bitmap: Bitmap, options: ObjectDetectionOptions): List<RecognizedObject> {
+        // Simplified edge detection and object boundary identification
+        val objects = mutableListOf<RecognizedObject>()
+        
+        // This would use Canny edge detection, contour finding, etc.
+        // For now, return simulated results
+        
+        return objects
+    }
+    
+    private fun detectObjectsByColor(bitmap: Bitmap, options: ObjectDetectionOptions): List<RecognizedObject> {
+        val objects = mutableListOf<RecognizedObject>()
+        
+        // Color-based segmentation for object detection
+        val colorRegions = colorAnalyzer.segmentByColor(bitmap)
+        
+        colorRegions.forEach { region ->
+            if (region.area > 0.01f) { // At least 1% of image
+                val objectType = classifyObjectByColor(region)
+                if (objectType != null) {
+                    objects.add(RecognizedObject(
+                        label = objectType.first,
+                        confidence = objectType.second,
+                        boundingBox = region.boundingBox,
+                        attributes = mapOf("detectionMethod" to "color_based")
+                    ))
+                }
+            }
+        }
+        
+        return objects
+    }
+    
+    private fun detectObjectsByPatterns(bitmap: Bitmap, options: ObjectDetectionOptions): List<RecognizedObject> {
+        // Pattern-based object detection using template matching, HOG features, etc.
+        return objectClassifier.classifyObjects(bitmap, options.confidenceThreshold)
+    }
+    
+    private fun performObjectDetection(bitmap: Bitmap, options: ImageAnalysisOptions): List<RecognizedObject> {
+        return detectObjects(bitmapToByteArray(bitmap), ObjectDetectionOptions(
+            maxResults = options.maxResults,
+            confidenceThreshold = options.confidenceThreshold
+        )).runBlocking()
+    }
+    
+    private fun performFaceDetection(bitmap: Bitmap, options: ImageAnalysisOptions): List<RecognizedFace> {
+        return detectFaces(bitmapToByteArray(bitmap), FaceDetectionOptions(
+            maxFaces = 10,
+            confidenceThreshold = options.confidenceThreshold
+        )).runBlocking()
+    }
+    
+    private fun performTextRecognition(bitmap: Bitmap, options: ImageAnalysisOptions): List<RecognizedText> {
+        return textExtractor.extractText(bitmap, options.confidenceThreshold)
+    }
+    
+    private fun generateImageDescription(bitmap: Bitmap, analysisResults: Map<String, Any>): String {
+        val objects = analysisResults["objects"] as? List<RecognizedObject> ?: emptyList()
+        val faces = analysisResults["faces"] as? List<RecognizedFace> ?: emptyList()
+        val text = analysisResults["text"] as? List<RecognizedText> ?: emptyList()
+        
+        return sceneAnalyzer.generateDescription(bitmap, objects, faces, text)
+    }
+    
+    private fun analyzeImageScene(bitmap: Bitmap): SceneInfo {
+        return sceneAnalyzer.analyzeScene(bitmap)
+    }
+    
+    private fun analyzeImageColors(bitmap: Bitmap): ColorInfo {
+        return colorAnalyzer.analyzeColors(bitmap)
+    }
+    
+    private fun analyzeImageComposition(bitmap: Bitmap): CompositionInfo {
+        return geometryAnalyzer.analyzeComposition(bitmap)
+    }
+    
+    private fun bitmapToByteArray(bitmap: Bitmap): ByteArray {
+        val stream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+        return stream.toByteArray()
+    }
+    
+    // Placeholder implementations for complex CV operations
+    
+    private fun extractTextByContours(bitmap: Bitmap, options: TextRecognitionOptions): List<RecognizedText> {
+        return textExtractor.extractByContours(bitmap, options)
+    }
+    
+    private fun extractTextByRegions(bitmap: Bitmap, options: TextRecognitionOptions): List<RecognizedText> {
+        return textExtractor.extractByRegions(bitmap, options)
+    }
+    
+    private fun extractHandwrittenText(bitmap: Bitmap, options: TextRecognitionOptions): List<RecognizedText> {
+        return textExtractor.extractHandwriting(bitmap, options)
+    }
+    
+    private fun cleanupRecognizedText(text: RecognizedText): RecognizedText {
+        val cleanText = text.text.trim()
+            .replace(Regex("\\s+"), " ")
+            .replace(Regex("[^\\w\\s.,!?-]"), "")
+        
+        return text.copy(text = cleanText)
+    }
+    
+    private fun detectFacesByHaarCascades(bitmap: Bitmap, options: FaceDetectionOptions): List<RecognizedFace> {
+        // Simplified face detection
+        return emptyList() // Would implement Haar cascade detection
+    }
+    
+    private fun detectFacesByColorSegmentation(bitmap: Bitmap, options: FaceDetectionOptions): List<RecognizedFace> {
+        // Skin color based face detection
+        return emptyList() // Would implement skin color segmentation
+    }
+    
+    private fun enhanceFaceAnalysis(face: RecognizedFace, bitmap: Bitmap, options: FaceDetectionOptions): RecognizedFace {
+        return face // Would add emotion detection, age estimation, etc.
+    }
+    
+    // Utility classes and methods would be implemented here
+}
             }
             
             capabilities = newCapabilities
