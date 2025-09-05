@@ -103,8 +103,8 @@ export const useDeviceStore = create<DeviceState>()(
         set((state) => ({
           isActive: active,
           lastActive: active ? now : state.lastActive,
-          sessionStart: active && !state.isActive ? now : state.sessionStart,
-        }));
+          sessionStart: active && !state.isActive ? now : state.sessionStart
+        });
       },
       
       getSessionDuration: () => {

@@ -92,6 +92,7 @@ export class EnhancedContacts {
           Contacts.Fields.ImageAvailable,
           Contacts.Fields.Image,
           Contacts.Fields.IsFavorite,
+          Contacts.Fields.IsFavorite,
         ],
       });
 

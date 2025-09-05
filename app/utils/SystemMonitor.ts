@@ -52,7 +52,7 @@ export interface SystemHealth {
 export class SystemMonitor {
   private static instance: SystemMonitor;
   private batterySubscription: Battery.Subscription | null = null;
-  private networkSubscription: any = null;
+  private networkSubscription: any | null = null;
   private performanceInterval: NodeJS.Timeout | null = null;
   
   private currentBatteryInfo: BatteryInfo | null = null;
@@ -124,7 +124,10 @@ export class SystemMonitor {
       this.currentNetworkInfo = {
         isConnected: networkState.isConnected ?? false,
         isInternetReachable: networkState.isInternetReachable ?? false,
-        type: networkState.type ?? Network.NetworkStateType.UNKNOWN,
+        type: networkState.type ?? 'unknown',
+        details: {
+          isConnectionExpensive: false,
+        },
       };
 
       // Subscribe to network changes
@@ -372,9 +375,8 @@ export class SystemMonitor {
 
   async getInstallationTime(): Promise<Date | null> {
     try {
-      // Installation time is not available in current Expo version
-      console.warn('Installation time not available in current Expo version');
-      return null;
+      const installationTime = await Application.getInstallationTimeAsync();
+      return installationTime ? new Date(installationTime) : null;
     } catch (error) {
       console.error('Error getting installation time:', error);
       return null;
@@ -383,9 +385,8 @@ export class SystemMonitor {
 
   async getLastUpdateTime(): Promise<Date | null> {
     try {
-      // Last update time is not available in current Expo version
-      console.warn('Last update time not available in current Expo version');
-      return null;
+      const lastUpdateTime = await Application.getLastUpdateTimeAsync();
+      return lastUpdateTime ? new Date(lastUpdateTime) : null;
     } catch (error) {
       console.error('Error getting last update time:', error);
       return null;
@@ -432,20 +433,20 @@ export class SystemMonitor {
     }
   }
 
-  async isConnectedAsync(): Promise<boolean> {
+  async getNetworkStatus(): Promise<boolean> {
     try {
       const networkState = await Network.getNetworkStateAsync();
-      return networkState.isConnected ?? false;
+      return networkState.isConnected;
     } catch (error) {
       console.error('Error checking network connection:', error);
       return false;
     }
   }
 
-  async isInternetReachableAsync(): Promise<boolean> {
+  async isInternetReachable(): Promise<boolean> {
     try {
       const networkState = await Network.getNetworkStateAsync();
-      return networkState.isInternetReachable ?? false;
+      return networkState.isInternetReachable;
     } catch (error) {
       console.error('Error checking internet reachability:', error);
       return false;

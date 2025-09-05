@@ -87,7 +87,6 @@ export class VoiceInteractionSystem {
       this.recording = new Audio.Recording();
       await this.recording.prepareToRecordAsync({
         ...Audio.RecordingOptionsPresets.HIGH_QUALITY,
-        // Ensure web options present per RecordingOptions type
         web: {
           mimeType: 'audio/webm',
           bitsPerSecond: 128000,
