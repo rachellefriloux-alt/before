@@ -154,6 +154,9 @@ android {
             ndk {
                 abiFilters "armeabi-v7a", "arm64-v8a"
             }
+            buildFeatures {
+                buildConfig true
+            }
             signingConfig signingConfigs.debug
             externalNativeBuild {
                 cmake {
@@ -177,6 +180,9 @@ android {
             }
             ndk {
                 abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+            buildFeatures {
+                buildConfig true
             }
         }
     }
