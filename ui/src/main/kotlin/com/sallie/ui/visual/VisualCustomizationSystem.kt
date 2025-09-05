@@ -804,10 +804,15 @@ class VisualCustomizationSystem {
             }
             "morning" -> {
                 // Brighter accent colors in the morning
-                val brighterAccent = adjustColor(baseTheme.accentColor, 0)
-                // TODO: Implement brightness adjustment
+                val brighterAccent = adjustBrightness(baseTheme.accentColor, 0.2f)
+                val brighterPrimary = adjustBrightness(baseTheme.primaryColor, 0.15f)
                 customizations["header"] = mapOf(
-                    "backgroundColor" to brighterAccent
+                    "backgroundColor" to brighterAccent,
+                    "borderColor" to brighterPrimary
+                )
+                customizations["button"] = mapOf(
+                    "backgroundColor" to brighterPrimary,
+                    "hoverColor" to brighterAccent
                 )
             }
         }
@@ -892,5 +897,155 @@ class VisualCustomizationSystem {
             pose = pose,
             animation = animation
         )
+    }
+    
+    /**
+     * Adjust the brightness of a color
+     */
+    private fun adjustBrightness(colorHex: String, adjustment: Float): String {
+        if (!colorHex.startsWith("#") || colorHex.length != 7) {
+            return colorHex // Return original if invalid format
+        }
+        
+        try {
+            val r = colorHex.substring(1, 3).toInt(16)
+            val g = colorHex.substring(3, 5).toInt(16)
+            val b = colorHex.substring(5, 7).toInt(16)
+            
+            // Apply brightness adjustment
+            val newR = (r + (255 - r) * adjustment).toInt().coerceIn(0, 255)
+            val newG = (g + (255 - g) * adjustment).toInt().coerceIn(0, 255)
+            val newB = (b + (255 - b) * adjustment).toInt().coerceIn(0, 255)
+            
+            return String.format("#%02x%02x%02x", newR, newG, newB)
+        } catch (e: Exception) {
+            return colorHex // Return original on error
+        }
+    }
+    
+    /**
+     * Adjust the saturation of a color
+     */
+    private fun adjustSaturation(colorHex: String, adjustment: Float): String {
+        if (!colorHex.startsWith("#") || colorHex.length != 7) {
+            return colorHex
+        }
+        
+        try {
+            val r = colorHex.substring(1, 3).toInt(16) / 255f
+            val g = colorHex.substring(3, 5).toInt(16) / 255f
+            val b = colorHex.substring(5, 7).toInt(16) / 255f
+            
+            // Convert to HSL
+            val max = maxOf(r, g, b)
+            val min = minOf(r, g, b)
+            val lightness = (max + min) / 2f
+            
+            val saturation = if (max == min) {
+                0f
+            } else {
+                val delta = max - min
+                if (lightness < 0.5f) {
+                    delta / (max + min)
+                } else {
+                    delta / (2f - max - min)
+                }
+            }
+            
+            // Adjust saturation
+            val newSaturation = (saturation * (1f + adjustment)).coerceIn(0f, 1f)
+            
+            // Convert back to RGB
+            val (newR, newG, newB) = hslToRgb(
+                when {
+                    max == min -> 0f
+                    max == r -> ((g - b) / (max - min) + 6f) % 6f * 60f
+                    max == g -> ((b - r) / (max - min) + 2f) * 60f
+                    else -> ((r - g) / (max - min) + 4f) * 60f
+                },
+                newSaturation,
+                lightness
+            )
+            
+            return String.format("#%02x%02x%02x", 
+                (newR * 255).toInt().coerceIn(0, 255),
+                (newG * 255).toInt().coerceIn(0, 255),
+                (newB * 255).toInt().coerceIn(0, 255)
+            )
+        } catch (e: Exception) {
+            return colorHex
+        }
+    }
+    
+    /**
+     * Convert HSL to RGB
+     */
+    private fun hslToRgb(h: Float, s: Float, l: Float): Triple<Float, Float, Float> {
+        val c = (1f - kotlin.math.abs(2f * l - 1f)) * s
+        val x = c * (1f - kotlin.math.abs((h / 60f) % 2f - 1f))
+        val m = l - c / 2f
+        
+        val (r1, g1, b1) = when {
+            h < 60f -> Triple(c, x, 0f)
+            h < 120f -> Triple(x, c, 0f)
+            h < 180f -> Triple(0f, c, x)
+            h < 240f -> Triple(0f, x, c)
+            h < 300f -> Triple(x, 0f, c)
+            else -> Triple(c, 0f, x)
+        }
+        
+        return Triple(r1 + m, g1 + m, b1 + m)
+    }
+    
+    /**
+     * Create a complementary color
+     */
+    private fun getComplementaryColor(colorHex: String): String {
+        if (!colorHex.startsWith("#") || colorHex.length != 7) {
+            return colorHex
+        }
+        
+        try {
+            val r = colorHex.substring(1, 3).toInt(16)
+            val g = colorHex.substring(3, 5).toInt(16)
+            val b = colorHex.substring(5, 7).toInt(16)
+            
+            // Simple complementary calculation
+            val newR = 255 - r
+            val newG = 255 - g
+            val newB = 255 - b
+            
+            return String.format("#%02x%02x%02x", newR, newG, newB)
+        } catch (e: Exception) {
+            return colorHex
+        }
+    }
+    
+    /**
+     * Blend two colors together
+     */
+    private fun blendColors(color1: String, color2: String, ratio: Float): String {
+        if (!color1.startsWith("#") || color1.length != 7 ||
+            !color2.startsWith("#") || color2.length != 7) {
+            return color1
+        }
+        
+        try {
+            val r1 = color1.substring(1, 3).toInt(16)
+            val g1 = color1.substring(3, 5).toInt(16)
+            val b1 = color1.substring(5, 7).toInt(16)
+            
+            val r2 = color2.substring(1, 3).toInt(16)
+            val g2 = color2.substring(3, 5).toInt(16)
+            val b2 = color2.substring(5, 7).toInt(16)
+            
+            val r = (r1 * (1f - ratio) + r2 * ratio).toInt().coerceIn(0, 255)
+            val g = (g1 * (1f - ratio) + g2 * ratio).toInt().coerceIn(0, 255)
+            val b = (b1 * (1f - ratio) + b2 * ratio).toInt().coerceIn(0, 255)
+            
+            return String.format("#%02x%02x%02x", r, g, b)
+        } catch (e: Exception) {
+            return color1
+        }
     }
 }
