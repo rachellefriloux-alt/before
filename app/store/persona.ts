@@ -31,6 +31,7 @@ export interface PersonaState {
   setPersonality: (personality: string) => void;
   updateEmotionalState: (updates: Partial<PersonaState>) => void;
   getEmotionalContext: () => string;
+  clearEmotionHistory: () => void;
 }
 
 export const usePersonaStore = create<PersonaState>()(
@@ -68,7 +69,9 @@ export const usePersonaStore = create<PersonaState>()(
       getEmotionalContext: () => {
         const state = get();
         return `Emotion: ${state.emotion} (${state.intensity}), Tone: ${state.tone}, Mood: ${state.mood}`;
-      }
+      },
+      
+      clearEmotionHistory: () => set({ emotionHistory: [] })
     }),
     {
       name: 'persona-storage',

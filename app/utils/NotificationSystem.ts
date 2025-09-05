@@ -241,10 +241,13 @@ export class NotificationSystem {
         throw new Error('Scheduled date is required for scheduling notifications');
       }
 
-      const trigger = {
+      const trigger = notification.repeatInterval ? {
+        type: 'timeInterval' as const,
+        seconds: this.getRepeatIntervalSeconds(notification.repeatInterval),
+        repeats: true,
+      } : {
+        type: 'date' as const,
         date: notification.scheduledDate,
-        repeats: !!notification.repeatInterval,
-        seconds: notification.repeatInterval ? this.getRepeatIntervalSeconds(notification.repeatInterval) : undefined,
       };
 
       const notificationId = await Notifications.scheduleNotificationAsync({

@@ -85,7 +85,7 @@ export class CameraIntegration {
           type: 'video',
           width: asset.width,
           height: asset.height,
-          duration: asset.duration,
+          duration: asset.duration ?? undefined,
         };
       }
       return null;

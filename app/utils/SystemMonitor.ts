@@ -16,12 +16,8 @@ export interface NetworkInfo {
   isConnected: boolean;
   isInternetReachable: boolean;
   type: Network.NetworkStateType;
-  isConnected: boolean;
-  isInternetReachable: boolean;
-  type: Network.NetworkStateType;
   details?: {
     isConnectionExpensive?: boolean;
-    cellularGeneration?: Network.CellularGeneration;
   };
 }
 
@@ -35,7 +31,6 @@ export interface DeviceInfo {
   manufacturer: string;
   brand: string;
   isDevice: boolean;
-  isEmulator: boolean;
 }
 
 export interface PerformanceMetrics {
@@ -271,7 +266,6 @@ export class SystemMonitor {
       manufacturer: Device.manufacturer || 'Unknown',
       brand: Device.brand || 'Unknown',
       isDevice: Device.isDevice,
-      isEmulator: Device.isEmulator,
     };
   }
 
@@ -387,7 +381,7 @@ export class SystemMonitor {
 
   async getInstallationTime(): Promise<Date | null> {
     try {
-      const installationTime = Application.installationTime;
+      const installationTime = await Application.getInstallationTimeAsync();
       return installationTime ? new Date(installationTime) : null;
     } catch (error) {
       console.error('Error getting installation time:', error);
@@ -397,7 +391,7 @@ export class SystemMonitor {
 
   async getLastUpdateTime(): Promise<Date | null> {
     try {
-      const lastUpdateTime = Application.lastUpdateTime;
+      const lastUpdateTime = await Application.getLastUpdateTimeAsync();
       return lastUpdateTime ? new Date(lastUpdateTime) : null;
     } catch (error) {
       console.error('Error getting last update time:', error);
@@ -445,18 +439,20 @@ export class SystemMonitor {
     }
   }
 
-  async isConnectedAsync(): Promise<boolean> {
+  async getNetworkStatus(): Promise<boolean> {
     try {
-      return await Network.isConnectedAsync();
+      const networkState = await Network.getNetworkStateAsync();
+      return networkState.isConnected;
     } catch (error) {
       console.error('Error checking network connection:', error);
       return false;
     }
   }
 
-  async isInternetReachableAsync(): Promise<boolean> {
+  async isInternetReachable(): Promise<boolean> {
     try {
-      return await Network.isInternetReachableAsync();
+      const networkState = await Network.getNetworkStateAsync();
+      return networkState.isInternetReachable;
     } catch (error) {
       console.error('Error checking internet reachability:', error);
       return false;

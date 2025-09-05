@@ -31,7 +31,6 @@ export interface ContactInfo {
   imageAvailable?: boolean;
   imageUri?: string;
   favorite?: boolean;
-  lastUpdated?: number;
 }
 
 export interface ContactGroup {
@@ -92,8 +91,7 @@ export class EnhancedContacts {
           Contacts.Fields.Note,
           Contacts.Fields.ImageAvailable,
           Contacts.Fields.Image,
-          Contacts.Fields.Favorite,
-          Contacts.Fields.LastUpdated,
+          Contacts.Fields.IsFavorite,
         ],
       });
 
@@ -165,13 +163,10 @@ export class EnhancedContacts {
         groups['Favorites'] = favoriteGroup;
       }
 
-      // Group by recent contacts (updated in last 30 days)
-      const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
-      const recentGroup = contacts.filter(contact => 
-        contact.lastUpdated && contact.lastUpdated > thirtyDaysAgo
-      );
-      if (recentGroup.length > 0) {
-        groups['Recent'] = recentGroup;
+      // Group by favorites
+      const favoriteGroup = contacts.filter(contact => contact.favorite);
+      if (favoriteGroup.length > 0) {
+        groups['Favorites'] = favoriteGroup;
       }
 
       return Object.entries(groups).map(([name, contacts]) => ({
@@ -209,10 +204,8 @@ export class EnhancedContacts {
   async getRecentContacts(limit: number = 10): Promise<ContactInfo[]> {
     try {
       const contacts = await this.getAllContacts();
-      return contacts
-        .filter(contact => contact.lastUpdated)
-        .sort((a, b) => (b.lastUpdated || 0) - (a.lastUpdated || 0))
-        .slice(0, limit);
+      // Return most recently added contacts (by id order)
+      return contacts.slice(-limit).reverse();
     } catch (error) {
       console.error('Error getting recent contacts:', error);
       return [];
@@ -284,7 +277,6 @@ export class EnhancedContacts {
       imageAvailable: contact.imageAvailable,
       imageUri: contact.image?.uri,
       favorite: contact.favorite,
-      lastUpdated: contact.lastUpdated,
     };
   }
 
