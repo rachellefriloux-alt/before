@@ -69,6 +69,18 @@ react {
  */
 def enableProguardInReleaseBuilds = (findProperty('android.enableProguardInReleaseBuilds') ?: false).toBoolean()
 
+// Apply path shortening for CMake to avoid Windows path length issues
+afterEvaluate {
+    android {
+        externalNativeBuild {
+            cmake {
+                arguments "-DCMAKE_RULE_MESSAGES=OFF", "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DPROJECT_PATH_SHORTER=1"
+                version "3.22.1"
+            }
+        }
+    }
+}
+
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
  *

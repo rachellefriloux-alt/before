@@ -1,0 +1,36 @@
+// Enable shorter build paths to avoid Windows path length issues
+// To apply this, add "cmakePathPrefix=build/cmake-prefix"
+// to your gradle.properties
+// (See: https://github.com/android/ndk-samples/issues/778)
+
+def getShortcutName(path) {
+    def parts = path.split("/")
+    if (parts.size() > 3) {
+        return parts[parts.size() - 2] + "_" + parts[parts.size() - 1]
+    }
+    return parts.join("_")
+}
+
+ext.applyShortModuleName = { project, String path ->
+    def shortName = getShortcutName(path)
+    project.tasks.withType(com.android.build.gradle.tasks.ExternalNativeBuildTask) { task ->
+        task.getVariantName().each { variant ->
+            def paths = new File("${project.buildDir}/intermediates/cmake/${variant}")
+            if (paths.exists()) {
+                def files = paths.listFiles()
+                if (files) {
+                    files.each { abi ->
+                        if (abi.isDirectory()) {
+                            File shortcutDir = new File(abi, "cmake/build/modules/${shortName}")
+                            shortcutDir.mkdirs()
+                            File linkFile = new File(shortcutDir, "build.ninja")
+                            if (!linkFile.exists()) {
+                                linkFile.write("# This is a shortcut file. The real build.ninja file is in ${path}")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
