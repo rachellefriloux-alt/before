@@ -1,16 +1,24 @@
 /*
- * Sallie 1.0 Module
-  * Persona: Tough love meets soul care.
-   * Function: Emotional analysis and tone adaptation system.
-    * Got it, love.
-     */
+ * Persona: Tough love meets soul care.
+ * Module: EmotionalIntelligence
+ * Intent: Handle emotional analysis and tone adaptation
+ * Provenance-ID: d19e43f5-62a7-4824-9f60-a508b382c8d3
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
 
-     export class EmotionalIntelligence {
-            constructor() {
-                        this.initialized = false;
-                                this.emotionHistory = [];
-                                        this.lastAnalysis = null;
-                                        this.emotionPatterns = this.initializeEmotionPatterns();
+/*
+ * Sallie 1.0 Module
+ * Persona: Tough love meets soul care.
+ * Function: Emotional analysis and tone adaptation system.
+ * Got it, love.
+ */
+
+export class EmotionalIntelligence {
+    constructor() {
+        this.initialized = false;
+        this.emotionHistory = [];
+        this.lastAnalysis = null;
+        this.emotionPatterns = this.initializeEmotionPatterns();
     }
 
     async initialize() {

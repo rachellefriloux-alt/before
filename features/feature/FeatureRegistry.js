@@ -1,4 +1,12 @@
 /*
+ * Persona: Tough love meets soul care.
+ * Module: FeatureRegistry
+ * Intent: Handle functionality for FeatureRegistry
+ * Provenance-ID: b283a549-f760-4d6e-9a68-1aa203c3f709
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+
+/*
  * Sallie 1.0 Module
  * Persona: Tough love meets soul care.
  * Function: Central registry for all Sallie features and metrics.
@@ -135,6 +143,15 @@ export class FeatureRegistry {
   static getUsageStats(name) {
     const registry = FeatureRegistry.getInstance();
     return registry.getUsageStats(name);
+  }
+  
+  async initialize() {
+    try {
+      this.initialized = true;
+    } catch (error) {
+      // Failed to initialize feature registry
+      throw error;
+    }
   }
 }
                                                                                                                                                                                  
