@@ -308,8 +308,8 @@ class MemoryManager {
           return false;
         }
         
-        // Filter by importance if specified (return items with importance >= specified value)
-        if (options.importance !== undefined && (!memory.importance || memory.importance < options.importance)) {
+        // Filter by priority if specified
+        if (options.priority !== undefined && memory.priority !== options.priority) {
           return false;
         }
         
@@ -382,13 +382,14 @@ class MemoryManager {
           case 'timestamp':
             comparison = (a.timestamp || 0) - (b.timestamp || 0);
             break;
-          case 'importance':
-            comparison = (a.importance || 0) - (b.importance || 0);
+          case 'priority':
+            comparison = (a.priority === 'HIGH' ? 3 : a.priority === 'MEDIUM' ? 2 : 1) - 
+                        (b.priority === 'HIGH' ? 3 : b.priority === 'MEDIUM' ? 2 : 1);
             break;
           case 'relevance':
             // Basic relevance scoring based on recency and importance
-            comparison = ((b.importance || 0) * 0.6 + ((b.timestamp || 0) / Date.now()) * 0.4) -
-                        ((a.importance || 0) * 0.6 + ((a.timestamp || 0) / Date.now()) * 0.4);
+            comparison = ((b.priority === 'HIGH' ? 3 : b.priority === 'MEDIUM' ? 2 : 1) * 0.6 + ((b.timestamp || 0) / Date.now()) * 0.4) -
+                        ((a.priority === 'HIGH' ? 3 : a.priority === 'MEDIUM' ? 2 : 1) * 0.6 + ((a.timestamp || 0) / Date.now()) * 0.4);
             break;
         }
         

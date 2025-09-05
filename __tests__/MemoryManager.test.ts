@@ -133,7 +133,8 @@ describe('MemoryManager', () => {
         id: 'high_task',
         content: 'High priority task',
         type: MemoryType.TASK,
-        importance: 5,
+        createdAt: new Date().toISOString(),
+        priority: MemoryPriority.HIGH,
         tags: ['high', 'priority'],
         timestamp: Date.now()
       },
@@ -141,7 +142,8 @@ describe('MemoryManager', () => {
         id: 'low_task',
         content: 'Low priority task',
         type: MemoryType.TASK,
-        importance: 1,
+        createdAt: new Date().toISOString(),
+        priority: MemoryPriority.LOW,
         tags: ['low', 'priority'],
         timestamp: Date.now() - 1000
       }
@@ -151,10 +153,10 @@ describe('MemoryManager', () => {
       Promise.resolve(JSON.stringify(mockTasks))
     );
     
-    // Search for high importance tasks
+    // Search for high priority tasks
     const highPriorityResults = await memoryManager.searchMemories({
       type: MemoryType.TASK,
-      importance: 3
+      priority: MemoryPriority.HIGH
     });
     
     expect(highPriorityResults.length).toBe(1);

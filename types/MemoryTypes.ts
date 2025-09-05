@@ -125,12 +125,12 @@ export interface MemorySearchParams {
 
 export interface SearchOptions {
   limit?: number;
-  sortBy?: 'timestamp' | 'importance' | 'relevance';
+  sortBy?: 'timestamp' | 'priority' | 'relevance';
   sortOrder?: 'asc' | 'desc';
   type?: MemoryType;
   fromDate?: number;
   toDate?: number;
-  importance?: number;
+  priority?: MemoryPriority;
   tags?: string[];
   contentKeywords?: string[];
   fuzzySearch?: boolean;
