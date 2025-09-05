@@ -58,7 +58,7 @@ react {
     // hermesCommand = "$rootDir/my-custom-hermesc/bin/hermesc"
     //
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
-    // hermesFlags = ["-O", "-output-source-map"]
+    hermesFlags = ["-O3", "-output-source-map", "-Werror", "-w"]
 
     /* Autolinking */
     autolinkLibrariesWithApp()
@@ -67,7 +67,17 @@ react {
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
-def enableProguardInReleaseBuilds = (findProperty('android.enableProguardInReleaseBuilds') ?: false).toBoolean()
+def enableProguardInReleaseBuilds = true
+
+/**
+ * Enable or disable split APKs for better performance.
+ */
+def enableSeparateBuildPerCPUArchitecture = true
+
+/**
+ * Enable optimization of resources for release builds
+ */
+def enableResourceOptimization = true
 
 // Apply path shortening for CMake to avoid Windows path length issues
 afterEvaluate {
@@ -78,6 +88,18 @@ afterEvaluate {
                     arguments "-DCMAKE_RULE_MESSAGES=OFF", "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DPROJECT_PATH_SHORTER=1"
                 }
             }
+        }
+        
+        dexOptions {
+            javaMaxHeapSize "4g"
+            jumboMode true
+            preDexLibraries true
+            threadCount 8
+        }
+        
+        aaptOptions {
+            cruncherEnabled true
+            cruncherProcesses 4
         }
     }
 }
@@ -126,6 +148,12 @@ android {
     }
     buildTypes {
         debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
             signingConfig signingConfigs.debug
             externalNativeBuild {
                 cmake {
@@ -137,14 +165,18 @@ android {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
-            shrinkResources (findProperty('android.enableShrinkResourcesInReleaseBuilds')?.toBoolean() ?: false)
+            shrinkResources true
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            crunchPngs (findProperty('android.enablePngCrunchInReleaseBuilds')?.toBoolean() ?: true)
+            crunchPngs true
             externalNativeBuild {
                 cmake {
                     cppFlags "-Wno-dollar-in-identifier-extension"
+                    arguments "-DANDROID_STL=c++_shared", "-DCMAKE_BUILD_TYPE=Release"
                 }
+            }
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
             }
         }
     }
@@ -152,9 +184,22 @@ android {
         jniLibs {
             useLegacyPackaging (findProperty('expo.useLegacyPackaging')?.toBoolean() ?: false)
         }
+        resources {
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0', 'META-INF/*.kotlin_module']
+        }
     }
     androidResources {
         ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~'
+    }
+    
+    // Enable split APKs for faster downloads and reduced size
+    splits {
+        abi {
+            reset()
+            enable true
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            universalApk false
+        }
     }
 }
 
