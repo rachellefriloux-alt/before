@@ -309,7 +309,7 @@ class MemoryManager {
         }
         
         // Filter by importance if specified (return items with importance >= specified value)
-        if (options.importance !== undefined && memory.importance && memory.importance < options.importance) {
+        if (options.importance !== undefined && (!memory.importance || memory.importance < options.importance)) {
           return false;
         }
         
