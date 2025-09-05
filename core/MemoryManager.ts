@@ -5,52 +5,19 @@
  * Got it, love.
  */
 
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { encryptData, decryptData } from '../utils/securityUtils';
 import { debounce, memoize } from '../utils/performanceUtils';
 import { formatDate } from '../utils/dateUtils';
+import { MemoryItem, MemoryType, SearchOptions } from '../types/MemoryTypes';
 
-export interface MemoryItem {
-  id: string;
-  content: string;
-  type: MemoryType;
-  importance: number;
-  timestamp: number;
-  tags: string[];
-  context?: {
-    location?: string;
-    activity?: string;
-    emotion?: string;
-    associatedPersons?: string[];
-  };
-}
-
-export enum MemoryType {
-  QUICK_CAPTURE = 'quick_capture',
-  PERSON = 'person',
-  PLACE = 'place',
-  TASK = 'task',
-  PREFERENCE = 'preference',
-  GOAL = 'goal',
-  JOURNAL = 'journal',
-  ROUTINE = 'routine',
-}
-
-export interface SearchOptions {
-  type?: MemoryType;
-  tags?: string[];
-  fromDate?: number;
-  toDate?: number;
-  context?: {
-    location?: string;
-    activity?: string;
-    emotion?: string;
-    associatedPersons?: string[];
-  };
-  limit?: number;
-  importance?: number;
-}
-
+/**
+ * Salle 1.0 Module
+ * Persona: Tough love meets soul care.
+ * Function: Advanced memory system with context awareness, quick capture, and retrieval.
+ * Got it, love.
+ */
 class MemoryManager {
   private static instance: MemoryManager;
   private memoryCache: Map<string, MemoryItem[]>;
@@ -75,6 +42,9 @@ class MemoryManager {
     );
   }
   
+  /**
+   * Get the singleton instance of MemoryManager
+   */
   public static getInstance(): MemoryManager {
     if (!MemoryManager.instance) {
       MemoryManager.instance = new MemoryManager();
@@ -82,6 +52,9 @@ class MemoryManager {
     return MemoryManager.instance;
   }
   
+  /**
+   * Initialize the memory manager and preload caches
+   */
   public async initialize(): Promise<boolean> {
     if (this.initialized) {
       return true;
@@ -104,6 +77,9 @@ class MemoryManager {
     }
   }
   
+  /**
+   * Enable or disable encryption for memory storage
+   */
   public async setEncryptionEnabled(enabled: boolean): Promise<void> {
     if (this.encryptionEnabled === enabled) {
       return;
@@ -173,6 +149,9 @@ class MemoryManager {
     }
   }
   
+  /**
+   * Add a new memory item
+   */
   public async addMemory(memory: Omit<MemoryItem, 'id' | 'timestamp'>): Promise<MemoryItem> {
     await this.ensureInitialized();
     
@@ -194,6 +173,9 @@ class MemoryManager {
     return newMemory;
   }
   
+  /**
+   * Retrieve a memory item by its ID
+   */
   public async getMemoryById(id: string): Promise<MemoryItem | null> {
     await this.ensureInitialized();
     
@@ -217,6 +199,9 @@ class MemoryManager {
     return null;
   }
   
+  /**
+   * Update a memory item by its ID
+   */
   public async updateMemory(id: string, updates: Partial<Omit<MemoryItem, 'id' | 'timestamp'>>): Promise<MemoryItem | null> {
     await this.ensureInitialized();
     
@@ -250,6 +235,9 @@ class MemoryManager {
     return null;
   }
   
+  /**
+   * Delete a memory item by its ID
+   */
   public async deleteMemory(id: string): Promise<boolean> {
     await this.ensureInitialized();
     
@@ -275,6 +263,9 @@ class MemoryManager {
     return false;
   }
   
+  /**
+   * Get all memories of a specific type
+   */
   public async getAllMemoriesByType(type: MemoryType): Promise<MemoryItem[]> {
     await this.ensureInitialized();
     
@@ -357,12 +348,18 @@ class MemoryManager {
     return allMatches;
   }
   
+  /**
+   * Search memories using various filters
+   */
   public async searchMemories(options: SearchOptions): Promise<MemoryItem[]> {
     await this.ensureInitialized();
     
     return this.memoizedSearch(options);
   }
   
+  /**
+   * Quickly capture a memory
+   */
   public async quickCapture(content: string, tags: string[] = []): Promise<MemoryItem> {
     return this.addMemory({
       content,
@@ -372,6 +369,9 @@ class MemoryManager {
     });
   }
   
+  /**
+   * Get quick capture memories
+   */
   public async getQuickCaptures(limit: number = 10): Promise<MemoryItem[]> {
     const options: SearchOptions = {
       type: MemoryType.QUICK_CAPTURE,
@@ -381,6 +381,9 @@ class MemoryManager {
     return this.searchMemories(options);
   }
   
+  /**
+   * Add a preference memory
+   */
   public async addPreference(key: string, value: string, importance: number = 3): Promise<MemoryItem> {
     return this.addMemory({
       content: JSON.stringify({ key, value }),
@@ -390,6 +393,9 @@ class MemoryManager {
     });
   }
   
+  /**
+   * Get a preference value by key
+   */
   public async getPreference(key: string): Promise<string | null> {
     const options: SearchOptions = {
       type: MemoryType.PREFERENCE,
@@ -412,6 +418,9 @@ class MemoryManager {
     }
   }
   
+  /**
+   * Clear all memories of a specific type
+   */
   public async clearMemoriesByType(type: MemoryType): Promise<void> {
     await this.ensureInitialized();
     
@@ -419,6 +428,9 @@ class MemoryManager {
     this.debouncedSave(type, []);
   }
   
+  /**
+   * Clear all memories of all types
+   */
   public async clearAllMemories(): Promise<void> {
     await this.ensureInitialized();
     
@@ -433,6 +445,9 @@ class MemoryManager {
     }
   }
   
+  /**
+   * Format a memory item for display
+   */
   public formatMemoryForDisplay(memory: MemoryItem): {
     formattedDate: string;
     title: string;
@@ -475,6 +490,9 @@ class MemoryManager {
     return { formattedDate, title, subtitle };
   }
   
+  /**
+   * Clear all memories and reset the manager (for testing)
+   */
   /**
    * Clear all memories and reset the manager (for testing)
    */
