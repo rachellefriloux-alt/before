@@ -11,4 +11,11 @@ module.exports = [
       'no-console': 'warn',
     },
   },
+  // Allow console usage in asset and script folders (flat config entry)
+  {
+    files: ['assets/**', 'onboarding-new/**', 'assets/scripts/**', 'scripts/**', 'onboarding-new/scripts/**'],
+    rules: {
+      'no-console': 'off'
+    }
+  },
 ];

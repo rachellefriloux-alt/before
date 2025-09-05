@@ -87,13 +87,13 @@ class CreativeTraditionalIntegrator {
     const valueBalance = this.creativeSystem.balanceValues(input);
     let response = 'Here are some creative perspectives on your request:\n\n';
     response += '**Creative Ideas**:\n';
-    ideas.forEach((idea, index) => {
-      response += `${index + 1}. ${idea}\n`;
+    ideas.forEach((idea, _index) => {
+      response += `${_index + 1}. ${idea}\n`;
     });
     response += '\n**Resourceful Approach**:\n';
     response += `${solution.approach}\n`;
     response += 'Key steps:\n';
-    solution.steps.slice(0, 2).forEach((step, index) => {
+    solution.steps.slice(0, 2).forEach((step) => {
       response += `- ${step}\n`;
     });
     if ([

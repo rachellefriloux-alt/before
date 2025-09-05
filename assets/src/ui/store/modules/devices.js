@@ -95,7 +95,7 @@ export default {
     /**
      * Get list of discovered devices
      */
-    async getDevices({ commit }) {
+  async getDevices({ commit }) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       const devices = this.deviceControl.getDiscoveredDevices();
@@ -106,7 +106,7 @@ export default {
     /**
      * Start device discovery
      */
-    async startDiscovery({ commit }, protocols) {
+  async startDiscovery(_, protocols) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       return await this.deviceControl.startDiscovery(protocols);
@@ -115,7 +115,7 @@ export default {
     /**
      * Stop device discovery
      */
-    async stopDiscovery({ commit }) {
+  async stopDiscovery() {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       this.deviceControl.stopDiscovery();
@@ -124,7 +124,7 @@ export default {
     /**
      * Connect to device
      */
-    async connectToDevice({ commit }, deviceId) {
+  async connectToDevice(_, deviceId) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       return await this.deviceControl.connectToDevice(deviceId);
@@ -133,7 +133,7 @@ export default {
     /**
      * Disconnect from device
      */
-    async disconnectFromDevice({ commit }, deviceId) {
+  async disconnectFromDevice(_, deviceId) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       return await this.deviceControl.disconnectFromDevice(deviceId);
@@ -142,7 +142,7 @@ export default {
     /**
      * Send command to device
      */
-    async sendCommand({ commit }, { deviceId, command }) {
+  async sendCommand(_, { deviceId, command }) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       return await this.deviceControl.sendCommand(deviceId, command);
@@ -151,7 +151,7 @@ export default {
     /**
      * Get device status
      */
-    async getDeviceStatus({ commit }, deviceId) {
+  async getDeviceStatus(_, deviceId) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       return await this.deviceControl.getDeviceStatus(deviceId);
@@ -160,7 +160,7 @@ export default {
     /**
      * Get device recommendations
      */
-    async getDeviceRecommendations({ commit }, context) {
+  async getDeviceRecommendations(_, context) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       return this.deviceControl.getDeviceRecommendations(context);
@@ -169,7 +169,7 @@ export default {
     /**
      * Subscribe to device events
      */
-    async subscribeToEvents({ commit, state }) {
+  async subscribeToEvents({ commit }) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       // Create event emitter
@@ -208,7 +208,7 @@ export default {
     /**
      * Handle device events
      */
-    async handleDeviceEvent({ commit, state, dispatch }, event) {
+  async handleDeviceEvent({ commit, state, dispatch }, event) {
       // Process event based on type
       if (event instanceof DeviceEvent.DeviceDiscoveryEvent) {
         // Refresh device list
@@ -230,7 +230,7 @@ export default {
     /**
      * Get automation rules
      */
-    async getAutomationRules({ commit }) {
+  async getAutomationRules({ commit }) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       const rules = this.deviceControl.getAutomationRules();
@@ -241,7 +241,7 @@ export default {
     /**
      * Create automation rule
      */
-    async createAutomationRule({ commit, dispatch }, rule) {
+  async createAutomationRule({ dispatch }, rule) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       const ruleId = await this.deviceControl.createAutomationRule(rule);
@@ -255,7 +255,7 @@ export default {
     /**
      * Update automation rule
      */
-    async updateAutomationRule({ commit, dispatch }, { ruleId, rule }) {
+  async updateAutomationRule({ dispatch }, { ruleId, rule }) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       const result = await this.deviceControl.updateAutomationRule(ruleId, rule);
@@ -269,7 +269,7 @@ export default {
     /**
      * Delete automation rule
      */
-    async deleteAutomationRule({ commit, dispatch }, ruleId) {
+  async deleteAutomationRule({ dispatch }, ruleId) {
       if (!this.deviceControl) throw new Error('Device control system not initialized');
       
       const result = await this.deviceControl.deleteAutomationRule(ruleId);

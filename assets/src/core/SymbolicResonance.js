@@ -141,7 +141,7 @@ export class SymbolicResonance {
     extractSymbolicThemes(space) {
         // Extract themes based on symbol meanings
         const themes = new Set();
-        for (const [symbolKey, entry] of space.symbols) {
+        for (const entry of space.symbols.values()) {
             if (entry.meaning) {
                 const words = entry.meaning.toLowerCase().split(/\s+/);
                 words.forEach(word => {
