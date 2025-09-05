@@ -116,7 +116,7 @@ export class CameraIntegration {
           type: asset.type === 'video' ? 'video' : 'photo',
           width: asset.width,
           height: asset.height,
-          duration: asset.duration,
+          duration: asset.duration ?? undefined,
         };
       }
       return null;

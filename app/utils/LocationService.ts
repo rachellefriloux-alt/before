@@ -200,7 +200,9 @@ export class LocationService {
     this.currentLocation = locationInfo;
     
     // Check geofences
-    this.checkGeofences(locationInfo);
+    this.checkGeofences(locationInfo).catch(error => 
+      console.error('Error checking geofences:', error)
+    );
     
     // Emit location update event (you can implement an event system here)
     console.log('Location updated:', locationInfo);
@@ -294,11 +296,11 @@ export class LocationService {
     }
   }
 
-  private checkGeofences(location: LocationInfo): void {
-    this.geofences.forEach((geofence) => {
-      if (!geofence.isActive) return;
+  private async checkGeofences(location: LocationInfo): Promise<void> {
+    for (const [id, geofence] of this.geofences) {
+      if (!geofence.isActive) continue;
 
-      const distance = this.calculateDistance(
+      const distance = await this.calculateDistance(
         location.latitude,
         location.longitude,
         geofence.latitude,
@@ -316,10 +318,10 @@ export class LocationService {
           geofence.onExit();
         }
       }
-    });
+    }
   }
 
-  getCurrentLocation(): LocationInfo | null {
+  getCachedLocation(): LocationInfo | null {
     return this.currentLocation;
   }
 

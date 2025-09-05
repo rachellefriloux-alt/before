@@ -52,7 +52,7 @@ export interface SystemHealth {
 export class SystemMonitor {
   private static instance: SystemMonitor;
   private batterySubscription: Battery.Subscription | null = null;
-  private networkSubscription: Network.Subscription | null = null;
+  private networkSubscription: any | null = null;
   private performanceInterval: NodeJS.Timeout | null = null;
   
   private currentBatteryInfo: BatteryInfo | null = null;
@@ -102,10 +102,9 @@ export class SystemMonitor {
       };
 
       // Subscribe to battery changes
-      this.batterySubscription = Battery.addBatteryStateListener(({ batteryState, batteryLevel }) => {
+      this.batterySubscription = Battery.addBatteryStateListener(({ batteryState }) => {
         this.currentBatteryInfo = {
           ...this.currentBatteryInfo!,
-          batteryLevel,
           isCharging: batteryState === Battery.BatteryState.CHARGING,
           batteryState,
           lastUpdated: Date.now(),
@@ -123,12 +122,11 @@ export class SystemMonitor {
       const networkState = await Network.getNetworkStateAsync();
       
       this.currentNetworkInfo = {
-        isConnected: networkState.isConnected,
-        isInternetReachable: networkState.isInternetReachable,
-        type: networkState.type,
+        isConnected: networkState.isConnected ?? false,
+        isInternetReachable: networkState.isInternetReachable ?? false,
+        type: networkState.type ?? 'unknown',
         details: {
-          isConnectionExpensive: networkState.details?.isConnectionExpensive,
-          cellularGeneration: networkState.details?.cellularGeneration,
+          isConnectionExpensive: false,
         },
       };
 

@@ -163,12 +163,6 @@ export class EnhancedContacts {
         groups['Favorites'] = favoriteGroup;
       }
 
-      // Group by favorites
-      const favoriteGroup = contacts.filter(contact => contact.favorite);
-      if (favoriteGroup.length > 0) {
-        groups['Favorites'] = favoriteGroup;
-      }
-
       return Object.entries(groups).map(([name, contacts]) => ({
         id: name,
         name,
