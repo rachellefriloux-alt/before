@@ -262,13 +262,13 @@ class PhoneControlManager {
 
   // Cleanup
   destroy() {
-    if (this.batterySubscription) {
+    if (this.batterySubscription && typeof this.batterySubscription.remove === 'function') {
       this.batterySubscription.remove();
     }
-    if (this.locationSubscription) {
+    if (this.locationSubscription && typeof this.locationSubscription.remove === 'function') {
       this.locationSubscription.remove();
     }
-    if (this.networkSubscription) {
+    if (this.networkSubscription && typeof this.networkSubscription.remove === 'function') {
       this.networkSubscription.remove();
     }
   }
