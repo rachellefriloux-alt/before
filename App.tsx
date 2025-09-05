@@ -15,27 +15,38 @@ import MemoriesScreen from './app/screens/MemoriesScreen';
 import DebugConsoleScreen from './app/screens/DebugConsoleScreen';
 
 // Import components
-import SallieOverlay from './app/components/SallieOverlay';
+import EnhancedSallieOverlay from './app/components/EnhancedSallieOverlay';
 
 // Import stores
 import { usePersonaStore } from './app/store/persona';
 import { useMemoryStore } from './app/store/memory';
 import { useDeviceStore } from './app/store/device';
+import { useThemeStore } from './app/store/theme';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function TabNavigator() {
+  const { currentTheme } = useThemeStore();
+  
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#1a1a2e',
-          borderTopColor: '#16213e',
+          backgroundColor: currentTheme.colors.surface,
+          borderTopColor: currentTheme.colors.border,
+          borderTopWidth: 1,
+          height: 70,
+          paddingBottom: 10,
+          paddingTop: 10,
         },
-        tabBarActiveTintColor: '#0f3460',
-        tabBarInactiveTintColor: '#533483',
+        tabBarActiveTintColor: currentTheme.colors.primary,
+        tabBarInactiveTintColor: currentTheme.colors.textSecondary,
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: '600',
+        },
       }}
     >
       <Tab.Screen 
@@ -81,6 +92,7 @@ export default function App() {
   const { emotion, tone } = usePersonaStore();
   const { shortTerm, episodic } = useMemoryStore();
   const { isLauncher } = useDeviceStore();
+  const { currentTheme } = useThemeStore();
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -89,19 +101,36 @@ export default function App() {
           <Stack.Navigator
             screenOptions={{
               headerShown: false,
-              animation: 'fade',
+              animation: 'slide_from_right',
+              gestureEnabled: true,
             }}
           >
             <Stack.Screen name="Main" component={TabNavigator} />
-            <Stack.Screen name="SalliePanel" component={SalliePanelScreen} />
-            <Stack.Screen name="DebugConsole" component={DebugConsoleScreen} />
+            <Stack.Screen 
+              name="SalliePanel" 
+              component={SalliePanelScreen}
+              options={{
+                animation: 'slide_from_bottom',
+                presentation: 'modal',
+              }}
+            />
+            <Stack.Screen 
+              name="DebugConsole" 
+              component={DebugConsoleScreen}
+              options={{
+                animation: 'fade',
+              }}
+            />
           </Stack.Navigator>
           
-          {/* Sallie Overlay - Always accessible */}
-          <SallieOverlay />
+          {/* Enhanced Sallie Overlay - Always accessible with dragging support */}
+          <EnhancedSallieOverlay />
         </NavigationContainer>
         
-        <StatusBar style="light" />
+        <StatusBar 
+          style={currentTheme.name.includes('light') ? 'dark' : 'light'} 
+          backgroundColor={currentTheme.colors.background}
+        />
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

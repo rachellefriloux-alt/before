@@ -10,9 +10,11 @@ import {
   Modal,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { LinearGradient } from 'react-native-linear-gradient';
 import { useDeviceStore } from '../store/device';
 import { usePersonaStore } from '../store/persona';
 import { useMemoryStore } from '../store/memory';
+import { useThemeStore } from '../store/theme';
 import SettingsSection from '../components/SettingsSection';
 import SettingsItem from '../components/SettingsItem';
 
@@ -29,11 +31,23 @@ export default function SettingsScreen() {
   const persona = usePersonaStore();
   const { personality, setPersonality } = persona;
   const { clearShortTerm } = useMemoryStore();
+  const { 
+    currentTheme, 
+    themeName, 
+    setTheme, 
+    getAvailableThemes, 
+    animations, 
+    setAnimations,
+    reducedMotion,
+    setReducedMotion
+  } = useThemeStore();
   
   const [showPersonalityModal, setShowPersonalityModal] = useState(false);
+  const [showThemeModal, setShowThemeModal] = useState(false);
 
-  const handleThemeChange = (theme: 'light' | 'dark' | 'auto') => {
-    updateSettings({ theme });
+  const handleThemeChange = (newTheme: string) => {
+    setTheme(newTheme);
+    setShowThemeModal(false);
   };
 
   const handleLanguageChange = () => {
@@ -129,14 +143,57 @@ export default function SettingsScreen() {
   ];
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: currentTheme.colors.background }]}>
+      {/* Background Gradient */}
+      <LinearGradient
+        colors={currentTheme.gradients.background}
+        style={styles.backgroundGradient}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+      />
+
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         
-        {/* Header */}
-        <View style={styles.header}>
-          <Text style={styles.title}>Settings</Text>
-          <Text style={styles.subtitle}>Customize your Sallie experience</Text>
+        {/* Enhanced Header */}
+        <View style={[styles.header, { backgroundColor: currentTheme.colors.surface }]}>
+          <Text style={[styles.title, { color: currentTheme.colors.text }]}>Settings</Text>
+          <Text style={[styles.subtitle, { color: currentTheme.colors.textSecondary }]}>
+            Customize your Sallie experience
+          </Text>
         </View>
+
+        {/* Theme Settings */}
+        <SettingsSection title="Appearance" icon="🎨">
+          <SettingsItem
+            title="Theme"
+            subtitle={currentTheme.displayName}
+            type="button"
+            onPress={() => setShowThemeModal(true)}
+          />
+          
+          <SettingsItem
+            title="Animations"
+            subtitle="Enable smooth animations and transitions"
+            type="switch"
+            value={animations}
+            onValueChange={setAnimations}
+          />
+          
+          <SettingsItem
+            title="Reduced Motion"
+            subtitle="Minimize motion for accessibility"
+            type="switch"
+            value={reducedMotion}
+            onValueChange={setReducedMotion}
+          />
+          
+          <SettingsItem
+            title="Language"
+            subtitle={settings.language.toUpperCase()}
+            type="button"
+            onPress={handleLanguageChange}
+          />
+        </SettingsSection>
 
         {/* Launcher Settings */}
         <SettingsSection title="Launcher" icon="🏠">
@@ -181,29 +238,6 @@ export default function SettingsScreen() {
             subtitle={personality.replace('_', ' ')}
             type="button"
             onPress={() => setShowPersonalityModal(true)}
-          />
-        </SettingsSection>
-
-        {/* Appearance Settings */}
-        <SettingsSection title="Appearance" icon="🎨">
-          <SettingsItem
-            title="Theme"
-            subtitle={settings.theme}
-            type="selector"
-            options={[
-              { label: 'Auto', value: 'auto' },
-              { label: 'Dark', value: 'dark' },
-              { label: 'Light', value: 'light' },
-            ]}
-            value={settings.theme}
-            onValueChange={handleThemeChange}
-          />
-          
-          <SettingsItem
-            title="Language"
-            subtitle={settings.language.toUpperCase()}
-            type="button"
-            onPress={handleLanguageChange}
           />
         </SettingsSection>
 
@@ -289,7 +323,7 @@ export default function SettingsScreen() {
         <SettingsSection title="About" icon="ℹ️">
           <SettingsItem
             title="Version"
-            subtitle="1.0.0"
+            subtitle="1.0.0 - Advanced & Beautiful Edition"
             type="info"
           />
           
@@ -306,6 +340,64 @@ export default function SettingsScreen() {
           />
         </SettingsSection>
 
+        {/* Theme Selection Modal */}
+        <Modal
+          visible={showThemeModal}
+          transparent
+          animationType="slide"
+          onRequestClose={() => setShowThemeModal(false)}
+        >
+          <View style={[styles.modalOverlay, { backgroundColor: currentTheme.colors.overlay }]}>
+            <View style={[styles.modalContent, { backgroundColor: currentTheme.colors.surface }]}>
+              <View style={[styles.modalHeader, { borderBottomColor: currentTheme.colors.border }]}>
+                <Text style={[styles.modalTitle, { color: currentTheme.colors.text }]}>
+                  Choose Theme
+                </Text>
+                <TouchableOpacity onPress={() => setShowThemeModal(false)}>
+                  <Text style={[styles.modalClose, { color: currentTheme.colors.textSecondary }]}>✕</Text>
+                </TouchableOpacity>
+              </View>
+              
+              <ScrollView style={styles.modalBody}>
+                {getAvailableThemes().map((theme) => (
+                  <TouchableOpacity
+                    key={theme}
+                    style={[
+                      styles.themeOption,
+                      { backgroundColor: currentTheme.colors.card },
+                      themeName === theme && { backgroundColor: currentTheme.colors.primary }
+                    ]}
+                    onPress={() => handleThemeChange(theme)}
+                  >
+                    <LinearGradient
+                      colors={currentTheme.gradients.primary}
+                      style={styles.themePreview}
+                      start={{ x: 0, y: 0 }}
+                      end={{ x: 1, y: 1 }}
+                    />
+                    <View style={styles.themeInfo}>
+                      <Text style={[
+                        styles.themeName,
+                        { color: currentTheme.colors.text },
+                        themeName === theme && { color: currentTheme.colors.background }
+                      ]}>
+                        {theme.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      </Text>
+                      <Text style={[
+                        styles.themeDescription,
+                        { color: currentTheme.colors.textSecondary },
+                        themeName === theme && { color: currentTheme.colors.surface }
+                      ]}>
+                        {getThemeDescription(theme)}
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </View>
+          </View>
+        </Modal>
+
         {/* Personality Selection Modal */}
         <Modal
           visible={showPersonalityModal}
@@ -313,12 +405,14 @@ export default function SettingsScreen() {
           animationType="slide"
           onRequestClose={() => setShowPersonalityModal(false)}
         >
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalContent}>
-              <View style={styles.modalHeader}>
-                <Text style={styles.modalTitle}>Choose Personality</Text>
+          <View style={[styles.modalOverlay, { backgroundColor: currentTheme.colors.overlay }]}>
+            <View style={[styles.modalContent, { backgroundColor: currentTheme.colors.surface }]}>
+              <View style={[styles.modalHeader, { borderBottomColor: currentTheme.colors.border }]}>
+                <Text style={[styles.modalTitle, { color: currentTheme.colors.text }]}>
+                  Choose Personality
+                </Text>
                 <TouchableOpacity onPress={() => setShowPersonalityModal(false)}>
-                  <Text style={styles.modalClose}>✕</Text>
+                  <Text style={[styles.modalClose, { color: currentTheme.colors.textSecondary }]}>✕</Text>
                 </TouchableOpacity>
               </View>
               
@@ -328,17 +422,23 @@ export default function SettingsScreen() {
                     key={option.id}
                     style={[
                       styles.personalityOption,
-                      personality === option.id && styles.selectedPersonality
+                      { backgroundColor: currentTheme.colors.card },
+                      personality === option.id && { backgroundColor: currentTheme.colors.primary }
                     ]}
                     onPress={() => handlePersonalityChange(option.id)}
                   >
                     <Text style={[
                       styles.personalityName,
-                      personality === option.id && styles.selectedPersonalityText
+                      { color: currentTheme.colors.text },
+                      personality === option.id && { color: currentTheme.colors.background }
                     ]}>
                       {option.name}
                     </Text>
-                    <Text style={styles.personalityDescription}>
+                    <Text style={[
+                      styles.personalityDescription,
+                      { color: currentTheme.colors.textSecondary },
+                      personality === option.id && { color: currentTheme.colors.surface }
+                    ]}>
                       {option.description}
                     </Text>
                   </TouchableOpacity>
@@ -350,42 +450,76 @@ export default function SettingsScreen() {
       </ScrollView>
     </SafeAreaView>
   );
+
+  function getThemeDescription(theme: string): string {
+    const descriptions: Record<string, string> = {
+      'grace-grind': 'Warm browns and golds for elegance and determination',
+      'southern-grit': 'Deep reds and earth tones for strength and tradition',
+      'hustle-legacy': 'Purple and gold for ambition and royalty',
+      'soul-care': 'Soft grays and yellows for peace and comfort',
+      'quiet-power': 'Subtle grays and purples for understated strength',
+      'midnight-hustle': 'Dark blues and oranges for late-night productivity',
+    };
+    return descriptions[theme] || 'Beautiful color palette';
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1a2e',
+  },
+  backgroundGradient: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
   },
   scrollView: {
     flex: 1,
   },
   header: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
+    marginHorizontal: 20,
+    marginTop: 10,
+    marginBottom: 20,
+    padding: 20,
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#ffffff',
-    marginBottom: 5,
+    fontSize: 32,
+    fontWeight: '800',
+    marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#a0a0a0',
+    opacity: 0.8,
   },
   modalOverlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   modalContent: {
-    backgroundColor: '#16213e',
     borderRadius: 20,
     margin: 20,
     maxHeight: '80%',
     width: '90%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+    elevation: 16,
   },
   modalHeader: {
     flexDirection: 'row',
@@ -393,40 +527,71 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#1a1a2e',
   },
   modalTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#ffffff',
+    fontWeight: '700',
   },
   modalClose: {
     fontSize: 20,
-    color: '#a0a0a0',
+    padding: 5,
   },
   modalBody: {
     padding: 20,
   },
-  personalityOption: {
-    padding: 15,
-    borderRadius: 10,
-    marginBottom: 10,
-    backgroundColor: '#1a1a2e',
+  themeOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
-  selectedPersonality: {
-    backgroundColor: '#0f3460',
+  themePreview: {
+    width: 40,
+    height: 40,
+    borderRadius: 8,
+    marginRight: 16,
+  },
+  themeInfo: {
+    flex: 1,
+  },
+  themeName: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 4,
+  },
+  themeDescription: {
+    fontSize: 14,
+    opacity: 0.8,
+  },
+  personalityOption: {
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   personalityName: {
-    color: '#ffffff',
     fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  selectedPersonalityText: {
-    color: '#ffffff',
+    fontWeight: '600',
+    marginBottom: 6,
   },
   personalityDescription: {
-    color: '#a0a0a0',
     fontSize: 14,
+    opacity: 0.8,
   },
 });
