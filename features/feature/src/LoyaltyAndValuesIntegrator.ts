@@ -59,7 +59,7 @@ export class LoyaltyAndValuesIntegrator {
    */
   private setupEventListeners(): void {
     // Listen for response generation events to check value alignment
-    this.technicalIntegrator.addEventListener('sallie:generate_response', (event) => {
+    this.technicalIntegrator.addEventListener('sallie:generate_response', (event: any) => {
       const response = event.data.response;
       
       // Check if response aligns with pro-life values

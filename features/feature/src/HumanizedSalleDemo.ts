@@ -5,7 +5,7 @@ Follows Salle architecture, modularity, and privacy rules.
 */
 
 import { HumanizedSallePlugin } from './HumanizedSallePlugin';
-import { PluginRegistry } from '../../core/PluginRegistry';
+import { PluginRegistry } from '@core/PluginRegistry';
 import { HumanizedSalleInitializer } from './HumanizedSalleInitializer';
 
 export class HumanizedSalleDemo {

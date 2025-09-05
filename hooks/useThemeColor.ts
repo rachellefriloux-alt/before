@@ -16,6 +16,8 @@ export function useThemeColor(
   if (colorFromProps) {
     return colorFromProps;
   } else {
-    return Colors[theme][colorName];
+    const colorValue = Colors[theme][colorName];
+    // Ensure we only return string values for colors
+    return typeof colorValue === 'string' ? colorValue : '#000000';
   }
 }

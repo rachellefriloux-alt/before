@@ -26,7 +26,8 @@ export default function SettingsScreen() {
     setLauncherMode 
   } = useDeviceStore();
   
-  const { personality, setPersonality, clearEmotionHistory } = usePersonaStore();
+  const persona = usePersonaStore();
+  const { personality, setPersonality } = persona;
   const { clearShortTerm } = useMemoryStore();
   
   const [showPersonalityModal, setShowPersonalityModal] = useState(false);
@@ -63,14 +64,14 @@ export default function SettingsScreen() {
       emotions: {
         title: 'Clear Emotion History',
         message: 'This will clear all emotional history. Are you sure?',
-        action: () => clearEmotionHistory?.(),
+        action: () => persona.updateEmotionalState?.({ emotionHistory: [] }),
       },
       all: {
         title: 'Reset All Data',
         message: 'This will reset all data including memories, emotions, and settings. Are you sure?',
         action: () => {
           clearShortTerm();
-          clearEmotionHistory?.();
+          persona.updateEmotionalState?.({ emotionHistory: [] });
           updateSettings({
             autoLaunch: true,
             keepAwake: false,

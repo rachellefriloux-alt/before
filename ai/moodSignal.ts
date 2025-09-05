@@ -28,13 +28,13 @@ export function parseMoodSignal(input: string, context: MoodContext = {}, person
     let pacing = 'steady';
     let urgency = 'normal';
     let validation = 'gentle';
-  if (sentiment === 'negative' || (context.stressLevel || 0) > 7) {
+  if (sentiment.valence === 'negative' || (context.stressLevel || 0) > 7) {
       tone = 'sad';
     }
-    if (sentiment === 'positive' || persona === 'optimist' || keywords.includes('happy')) {
+    if (sentiment.valence === 'positive' || persona === 'optimist' || keywords.topics.includes('happy')) {
       tone = 'joy';
     }
-    if (keywords.includes('angry') || sentiment === 'angry') {
+    if (keywords.topics.includes('angry') || sentiment.primaryEmotion === 'anger') {
       tone = 'anger';
     }
   if (input.match(/urgent|now|asap/i)) urgency = 'high';

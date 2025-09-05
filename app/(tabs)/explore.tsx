@@ -198,6 +198,7 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 14,
     marginBottom: 8,
-    lineHeight: 20,m: 4,
+    lineHeight: 20,
+    margin: 4,
   },
 });

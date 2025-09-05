@@ -65,15 +65,16 @@ export class LocationService {
 
   private async setupBackgroundTask(): Promise<void> {
     try {
-      TaskManager.defineTask(this.backgroundTaskName, ({ data, error }) => {
+      TaskManager.defineTask(this.backgroundTaskName, async ({ data, error }) => {
         if (error) {
           console.error('Background location task error:', error);
           return;
         }
-        
         if (data) {
           const { locations } = data as { locations: Location.LocationObject[] };
-          this.handleLocationUpdate(locations[0]);
+          if (locations && locations[0]) {
+            this.handleLocationUpdate(locations[0]);
+          }
         }
       });
     } catch (error) {
@@ -109,14 +110,15 @@ export class LocationService {
         distanceInterval: 10,
       });
 
+      const { coords, timestamp } = location;
       const locationInfo: LocationInfo = {
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        accuracy: location.coords.accuracy,
-        altitude: location.coords.altitude,
-        heading: location.coords.heading,
-        speed: location.coords.speed,
-        timestamp: location.timestamp,
+        latitude: coords.latitude,
+        longitude: coords.longitude,
+        accuracy: coords.accuracy ?? undefined,
+        altitude: coords.altitude ?? undefined,
+        heading: coords.heading ?? undefined,
+        speed: coords.speed ?? undefined,
+        timestamp,
       };
 
       // Get address information
@@ -187,14 +189,15 @@ export class LocationService {
   }
 
   private handleLocationUpdate(location: Location.LocationObject): void {
+    const { coords, timestamp } = location;
     const locationInfo: LocationInfo = {
-      latitude: location.coords.latitude,
-      longitude: location.coords.longitude,
-      accuracy: location.coords.accuracy,
-      altitude: location.coords.altitude,
-      heading: location.coords.heading,
-      speed: location.coords.speed,
-      timestamp: location.timestamp,
+      latitude: coords.latitude,
+      longitude: coords.longitude,
+      accuracy: coords.accuracy ?? undefined,
+      altitude: coords.altitude ?? undefined,
+      heading: coords.heading ?? undefined,
+      speed: coords.speed ?? undefined,
+      timestamp,
     };
 
     this.currentLocation = locationInfo;
@@ -252,22 +255,18 @@ export class LocationService {
     }
   }
 
-  async calculateDistance(
-    lat1: number,
-    lon1: number,
-    lat2: number,
-    lon2: number
-  ): Promise<number> {
-    try {
-      const distance = await Location.distanceAsync(
-        { latitude: lat1, longitude: lon1 },
-        { latitude: lat2, longitude: lon2 }
-      );
-      return distance;
-    } catch (error) {
-      console.error('Error calculating distance:', error);
-      return 0;
-    }
+  calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+    // Haversine formula in meters
+    const toRad = (v: number) => (v * Math.PI) / 180;
+    const R = 6371000;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
   }
 
   addGeofence(geofence: Geofence): void {
@@ -310,7 +309,8 @@ export class LocationService {
     });
   }
 
-  getCurrentLocation(): LocationInfo | null {
+  // getCurrentLocation sync accessor removed to avoid conflict; use getCachedLocation instead
+  getCachedLocation(): LocationInfo | null {
     return this.currentLocation;
   }
 

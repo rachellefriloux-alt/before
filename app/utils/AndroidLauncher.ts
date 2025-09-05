@@ -154,8 +154,7 @@ export class AndroidLauncher {
       // Use IntentLauncher to open the app
       await IntentLauncher.startActivityAsync('android.intent.action.MAIN', {
         className: `${packageName}.MainActivity`,
-        packageName: packageName,
-        flags: IntentLauncher.ActivityFlags.NEW_TASK | IntentLauncher.ActivityFlags.RESET_TASK_IF_NEEDED,
+        packageName,
       });
 
       return true;

@@ -57,7 +57,7 @@ export class CompletePersonalityIntegration {
    */
   applyIntegration(): void {
     // Set up main message processing pipeline
-    this.mainIntegrator.addEventListener('sallie:process_message', async (event) => {
+    this.mainIntegrator.addEventListener('sallie:process_message', async (event: any) => {
       if (!event.data || typeof event.data.message !== 'string') {
         return;
       }

@@ -1,15 +1,18 @@
-/* Merged master for logical file: features\omni-domain-research\index
-Sources:
- - C:\Users\chell\Desktop\Sallie\merged_sallie\features\omni-domain-research\index.ts (hash:77FF746BDD1448A71D1760AA3472BD0617D69BDFCD3C7EA783F6B1926791AF65)
- - C:\Users\chell\Desktop\Sallie\merged_sallie\features\omni-domain-research\index.js (hash:4120B9DB6AD2C97EDD12AE49BE521D91625281072882644EA03F833623234AD1)
- */
+// TypeScript shim for JS implementation.
+// The original implementation exists in index.js alongside this file.
+// We re-export with loose typing to keep TS builds green until full typing is added.
 
-/* ---- source: C:\Users\chell\Desktop\Sallie\merged_sallie\features\omni-domain-research\index.ts | ext: .ts | sha: 77FF746BDD1448A71D1760AA3472BD0617D69BDFCD3C7EA783F6B1926791AF65 ---- */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export * from './index.js';
 
-[BINARY FILE - original copied to merged_sources: features\omni-domain-research\index.ts]
+// Provide a default export if the JS module has one, to avoid interop issues.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import def from './index.js';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const defaultExport: any = def;
+// eslint-disable-next-line import/no-default-export
+export default defaultExport;
 
-/* ---- source: C:\Users\chell\Desktop\Sallie\merged_sallie\features\omni-domain-research\index.js | ext: .js | sha: 4120B9DB6AD2C97EDD12AE49BE521D91625281072882644EA03F833623234AD1 ---- */
 
-[BINARY FILE - original copied to merged_sources: features\omni-domain-research\index.js]
 
 

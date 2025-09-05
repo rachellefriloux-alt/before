@@ -257,7 +257,12 @@ export class NotificationSystem {
           sound: notification.sound !== false,
           badge: notification.badge,
         },
-        trigger,
+        trigger: {
+          // Use a time interval trigger compliant with Expo types
+          type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+          seconds: trigger?.seconds ?? 5,
+          repeats: trigger?.repeats ?? false,
+        },
       });
 
       return notificationId;
@@ -314,12 +319,13 @@ export class NotificationSystem {
     }
   }
 
-  async getNotificationPermissions(): Promise<Notifications.PermissionStatus> {
+  async getNotificationPermissions(): Promise<Notifications.NotificationPermissionsStatus> {
     try {
       return await Notifications.getPermissionsAsync();
     } catch (error) {
       console.error('Error getting notification permissions:', error);
-      return { granted: false, status: 'denied' };
+      // Fallback minimal shape
+      return { granted: false, status: Notifications.PermissionStatus.DENIED, expires: 'never', canAskAgain: true } as Notifications.NotificationPermissionsStatus;
     }
   }
 

@@ -40,7 +40,7 @@ export class ValuesSystemIntegration {
    */
   applyIntegration(): void {
     // Register event listeners to intercept Sallie's responses
-    this.mainIntegrator.addEventListener('sallie:pre_response', (event) => {
+    this.mainIntegrator.addEventListener('sallie:pre_response', (event: any) => {
       // Process the response through the values integrator
       this.processResponse(event);
     });

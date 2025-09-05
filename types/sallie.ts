@@ -1,6 +1,6 @@
 
 export interface SalliePersona {
-  archetype: 'Loyal Strategist' | 'Soul Sister' | 'Systems Architect' | 'Myth-Keeper';
+  archetype: 'Loyal Strategist' | 'Wise Counselor' | 'Creative Catalyst' | 'Protective Guardian' | 'Empathetic Healer' | 'Soul Sister' | 'Systems Architect' | 'Myth-Keeper';
   essence: {
     tacticalPrecision: boolean;
     emotionalResonance: boolean;
