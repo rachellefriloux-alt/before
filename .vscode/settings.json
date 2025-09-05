@@ -21,5 +21,6 @@
     "docs/Sallie_2.0_Implementation_Plan.md",
     "docs/configuration.md",
     "docs/roadmap.md"
-  ]
+  ],
+  "todo-tree.tree.disableCompactFolders": false
 }

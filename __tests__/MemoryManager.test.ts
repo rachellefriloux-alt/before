@@ -6,6 +6,7 @@
  */
 
 import MemoryManager, { MemoryType } from '../core/MemoryManager';
+import { MemoryPriority } from '../types/MemoryTypes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Mock AsyncStorage
@@ -47,7 +48,8 @@ describe('MemoryManager', () => {
     const newMemory = {
       content: 'Test memory content',
       type: MemoryType.QUICK_CAPTURE,
-      importance: 2,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.MEDIUM,
       tags: ['test', 'memory']
     };
     
@@ -56,7 +58,7 @@ describe('MemoryManager', () => {
     expect(result).toMatchObject({
       content: newMemory.content,
       type: newMemory.type,
-      importance: newMemory.importance,
+      priority: newMemory.priority,
       tags: newMemory.tags,
     });
     
@@ -75,7 +77,8 @@ describe('MemoryManager', () => {
     await memoryManager.addMemory({
       content: 'Test preference',
       type: MemoryType.PREFERENCE,
-      importance: 3,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.MEDIUM,
       tags: ['pref']
     });
     
@@ -108,14 +111,16 @@ describe('MemoryManager', () => {
     await memoryManager.addMemory({
       content: 'High priority task',
       type: MemoryType.TASK,
-      importance: 5,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.HIGH,
       tags: ['high', 'priority']
     });
     
     await memoryManager.addMemory({
       content: 'Low priority task',
       type: MemoryType.TASK,
-      importance: 1,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.LOW,
       tags: ['low', 'priority']
     });
     
@@ -175,7 +180,8 @@ describe('MemoryManager', () => {
     const addedMemory = await memoryManager.addMemory({
       content: 'Original content',
       type: MemoryType.QUICK_CAPTURE,
-      importance: 2,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.MEDIUM,
       tags: ['original']
     });
     
@@ -208,7 +214,8 @@ describe('MemoryManager', () => {
     const addedMemory = await memoryManager.addMemory({
       content: 'Memory to delete',
       type: MemoryType.QUICK_CAPTURE,
-      importance: 2,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.MEDIUM,
       tags: ['delete']
     });
     
@@ -251,7 +258,7 @@ describe('MemoryManager', () => {
   });
   
   it('should handle preferences', async () => {
-    await memoryManager.addPreference('theme', 'dark', 4);
+    await memoryManager.addPreference('theme', 'dark', MemoryPriority.HIGH);
     
     // Allow debounced save to complete
     await new Promise(resolve => setTimeout(resolve, 2100));
@@ -261,7 +268,7 @@ describe('MemoryManager', () => {
       id: 'pref_id',
       content: JSON.stringify({ key: 'theme', value: 'dark' }),
       type: MemoryType.PREFERENCE,
-      importance: 4,
+      importance: MemoryPriority.HIGH,
       tags: ['theme'],
       timestamp: Date.now()
     };

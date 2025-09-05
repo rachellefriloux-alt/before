@@ -186,6 +186,29 @@ android {
             }
         }
     }
+
+    productFlavors {
+        // Cloud-enabled flavor with full features
+        cloud {
+            dimension "mode"
+            applicationIdSuffix ".cloud"
+            buildConfigField "boolean", "LOCAL_ONLY", "false"
+            manifestPlaceholders = [
+                appLabel: "Sallie Cloud"
+            ]
+        }
+
+        // Local-only flavor with encrypted local storage
+        localOnly {
+            dimension "mode"
+            applicationIdSuffix ".local"
+            buildConfigField "boolean", "LOCAL_ONLY", "true"
+            manifestPlaceholders = [
+                appLabel: "Sallie Local"
+            ]
+        }
+    }
+
     packagingOptions {
         jniLibs {
             useLegacyPackaging (findProperty('expo.useLegacyPackaging')?.toBoolean() ?: false)

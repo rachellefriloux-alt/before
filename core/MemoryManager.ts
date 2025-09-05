@@ -10,7 +10,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { encryptData, decryptData } from '../utils/securityUtils';
 import { debounce, memoize } from '../utils/performanceUtils';
 import { formatDate } from '../utils/dateUtils';
-import { MemoryItem, MemoryType, SearchOptions } from '../types/MemoryTypes';
+import { MemoryItem, MemoryType, SearchOptions, PersonData, TaskData, EmotionData, MemoryPriority } from '../types/MemoryTypes';
+import MemoryAnalytics from './MemoryAnalytics';
+import LocalEncryptedStorage from './LocalEncryptedStorage';
 
 /**
  * Salle 1.0 Module
@@ -24,12 +26,21 @@ class MemoryManager {
   private encryptionEnabled: boolean;
   private cacheTtl: number;
   private initialized: boolean;
+  private localStorage: LocalEncryptedStorage | null = null;
+  private isLocalOnly: boolean = false;
   
   private constructor() {
     this.memoryCache = new Map();
     this.encryptionEnabled = true; // Default to true
     this.cacheTtl = 15 * 60 * 1000; // 15 minutes default
     this.initialized = false;
+    
+    // Check if we're in local-only mode
+    this.isLocalOnly = this.checkLocalOnlyMode();
+    
+    if (this.isLocalOnly) {
+      this.initializeLocalStorage();
+    }
     
     // Initialize debounced save
     this.debouncedSave = debounce(this.saveMemoriesByType.bind(this), 2000);
@@ -153,6 +164,7 @@ class MemoryManager {
    * Add a new memory item
    */
   public async addMemory(memory: Omit<MemoryItem, 'id' | 'timestamp'>): Promise<MemoryItem> {
+    const startTime = Date.now();
     await this.ensureInitialized();
     
     const newMemory: MemoryItem = {
@@ -165,10 +177,13 @@ class MemoryManager {
     memories.push(newMemory);
     
     // Sort by timestamp, newest first
-    memories.sort((a, b) => b.timestamp - a.timestamp);
+    memories.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
     
     // Debounced save to avoid frequent writes
     this.debouncedSave(newMemory.type, memories);
+    
+    // Track analytics
+    MemoryAnalytics.getInstance().trackOperation('add_memory', Date.now() - startTime);
     
     return newMemory;
   }
@@ -286,46 +301,67 @@ class MemoryManager {
       
       const matches = memories.filter(memory => {
         // Filter by date range if specified
-        if (options.fromDate && memory.timestamp < options.fromDate) {
+        if (options.fromDate && memory.timestamp && memory.timestamp < options.fromDate) {
           return false;
         }
-        if (options.toDate && memory.timestamp > options.toDate) {
+        if (options.toDate && memory.timestamp && memory.timestamp > options.toDate) {
           return false;
         }
         
-        // Filter by importance if specified
-        if (options.importance !== undefined && memory.importance < options.importance) {
+        // Filter by importance if specified (return items with importance >= specified value)
+        if (options.importance !== undefined && memory.importance && memory.importance < options.importance) {
           return false;
         }
         
         // Filter by tags if specified
         if (options.tags && options.tags.length > 0) {
-          if (!options.tags.some(tag => memory.tags.includes(tag))) {
+          if (!options.tags.some((tag: string) => memory.tags?.includes(tag))) {
             return false;
           }
         }
         
-        // Filter by context if specified
-        if (options.context) {
-          if (options.context.location && 
-              memory.context?.location !== options.context.location) {
+        // Enhanced content search with fuzzy matching
+        if (options.contentKeywords && options.contentKeywords.length > 0) {
+          const content = memory.content.toLowerCase();
+          const hasMatch = options.contentKeywords.some((keyword: string) => {
+            if (options.fuzzySearch) {
+              // Simple fuzzy search - check if all characters of keyword appear in order
+              return this.fuzzyMatch(content, keyword.toLowerCase());
+            } else {
+              return content.includes(keyword.toLowerCase());
+            }
+          });
+          if (!hasMatch) return false;
+        }
+        
+        // Semantic search (basic implementation)
+        if (options.semanticQuery) {
+          if (!this.semanticMatch(memory, options.semanticQuery)) {
+            return false;
+          }
+        }
+        
+        // Enhanced context filters
+        if (options.contextFilters) {
+          if (options.contextFilters.location && 
+              memory.context?.location !== options.contextFilters.location) {
             return false;
           }
           
-          if (options.context.activity && 
-              memory.context?.activity !== options.context.activity) {
+          if (options.contextFilters.activity && 
+              memory.context?.activity !== options.contextFilters.activity) {
             return false;
           }
           
-          if (options.context.emotion && 
-              memory.context?.emotion !== options.context.emotion) {
+          if (options.contextFilters.emotion && 
+              memory.context?.emotion !== options.contextFilters.emotion) {
             return false;
           }
           
-          if (options.context.associatedPersons && 
-              options.context.associatedPersons.length > 0) {
+          if (options.contextFilters.associatedPersons && 
+              options.contextFilters.associatedPersons.length > 0) {
             const memoryPersons = memory.context?.associatedPersons || [];
-            if (!options.context.associatedPersons.some(p => memoryPersons.includes(p))) {
+            if (!options.contextFilters.associatedPersons.some((p: string) => memoryPersons.includes(p))) {
               return false;
             }
           }
@@ -337,8 +373,31 @@ class MemoryManager {
       allMatches = [...allMatches, ...matches];
     }
     
-    // Sort by timestamp, newest first
-    allMatches.sort((a, b) => b.timestamp - a.timestamp);
+    // Enhanced sorting
+    if (options.sortBy) {
+      allMatches.sort((a, b) => {
+        let comparison = 0;
+        
+        switch (options.sortBy) {
+          case 'timestamp':
+            comparison = (a.timestamp || 0) - (b.timestamp || 0);
+            break;
+          case 'importance':
+            comparison = (a.importance || 0) - (b.importance || 0);
+            break;
+          case 'relevance':
+            // Basic relevance scoring based on recency and importance
+            comparison = ((b.importance || 0) * 0.6 + ((b.timestamp || 0) / Date.now()) * 0.4) -
+                        ((a.importance || 0) * 0.6 + ((a.timestamp || 0) / Date.now()) * 0.4);
+            break;
+        }
+        
+        return options.sortOrder === 'asc' ? comparison : -comparison;
+      });
+    } else {
+      // Default sort by timestamp, newest first
+      allMatches.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+    }
     
     // Apply limit if specified
     if (options.limit && options.limit > 0 && allMatches.length > options.limit) {
@@ -352,9 +411,19 @@ class MemoryManager {
    * Search memories using various filters
    */
   public async searchMemories(options: SearchOptions): Promise<MemoryItem[]> {
+    const startTime = Date.now();
     await this.ensureInitialized();
     
-    return this.memoizedSearch(options);
+    const results = await this.memoizedSearch(options);
+    
+    // Track analytics
+    MemoryAnalytics.getInstance().trackSearch(
+      options.contentKeywords?.join(' ') || options.semanticQuery || 'no-query',
+      results.length,
+      Date.now() - startTime
+    );
+    
+    return results;
   }
   
   /**
@@ -364,7 +433,8 @@ class MemoryManager {
     return this.addMemory({
       content,
       type: MemoryType.QUICK_CAPTURE,
-      importance: 2, // Medium importance by default
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.MEDIUM,
       tags
     });
   }
@@ -384,38 +454,60 @@ class MemoryManager {
   /**
    * Add a preference memory
    */
-  public async addPreference(key: string, value: string, importance: number = 3): Promise<MemoryItem> {
+  public async addPreference(key: string, value: string, priority: MemoryPriority = MemoryPriority.MEDIUM): Promise<MemoryItem> {
     return this.addMemory({
       content: JSON.stringify({ key, value }),
       type: MemoryType.PREFERENCE,
-      importance,
+      createdAt: new Date().toISOString(),
+      priority,
       tags: [key]
     });
   }
   
   /**
-   * Get a preference value by key
+   * Add a person memory
    */
-  public async getPreference(key: string): Promise<string | null> {
-    const options: SearchOptions = {
-      type: MemoryType.PREFERENCE,
-      tags: [key],
-      limit: 1
-    };
-    
-    const results = await this.searchMemories(options);
-    
-    if (results.length === 0) {
-      return null;
-    }
-    
-    try {
-      const { value } = JSON.parse(results[0].content);
-      return value;
-    } catch (error) {
-      console.error('Failed to parse preference:', error);
-      return null;
-    }
+  public async addPerson(personData: PersonData, tags: string[] = []): Promise<MemoryItem> {
+    return this.addMemory({
+      content: `Person: ${personData.name}`,
+      type: MemoryType.PERSON,
+      createdAt: new Date().toISOString(),
+      priority: MemoryPriority.HIGH,
+      tags,
+      personData
+    });
+  }
+
+  /**
+   * Add a task memory
+   */
+  public async addTask(taskData: TaskData, tags: string[] = []): Promise<MemoryItem> {
+    const memoryPriority = taskData.priority === 'urgent' ? MemoryPriority.HIGH :
+                          taskData.priority === 'high' ? MemoryPriority.HIGH :
+                          taskData.priority === 'medium' ? MemoryPriority.MEDIUM : MemoryPriority.LOW;
+
+    return this.addMemory({
+      content: `Task: ${taskData.title}`,
+      type: MemoryType.TASK,
+      createdAt: new Date().toISOString(),
+      priority: memoryPriority,
+      tags,
+      taskData
+    });
+  }
+
+  /**
+   * Add an emotion memory
+   */
+  public async addEmotion(emotionData: EmotionData, tags: string[] = []): Promise<MemoryItem> {
+    return this.addMemory({
+      content: `Emotion: ${emotionData.emotion} (${emotionData.intensity}/10)`,
+      type: MemoryType.EMOTION,
+      createdAt: new Date().toISOString(),
+      priority: emotionData.intensity > 7 ? MemoryPriority.HIGH : MemoryPriority.MEDIUM,
+      tags,
+      emotionData
+    });
   }
   
   /**
@@ -453,23 +545,47 @@ class MemoryManager {
     title: string;
     subtitle: string;
   } {
-    const formattedDate = formatDate(memory.timestamp);
+    const formattedDate = formatDate(memory.timestamp || Date.now());
     let title = '';
     let subtitle = '';
     
     switch (memory.type) {
       case MemoryType.QUICK_CAPTURE:
         title = memory.content;
-        subtitle = `Quick capture • ${memory.tags.join(', ')}`;
+        subtitle = `Quick capture • ${memory.tags?.join(', ') || 'No tags'}`;
         break;
       case MemoryType.PERSON:
-        try {
-          const personData = JSON.parse(memory.content);
-          title = personData.name || 'Unnamed person';
-          subtitle = personData.relationship || '';
-        } catch {
+        if (memory.personData) {
+          title = memory.personData.name;
+          subtitle = `${memory.personData.relationship} • Last interaction: ${memory.personData.lastInteraction || 'Unknown'}`;
+        } else {
+          // Fallback for legacy format
+          try {
+            const personData = JSON.parse(memory.content);
+            title = personData.name || 'Unnamed person';
+            subtitle = personData.relationship || '';
+          } catch {
+            title = memory.content;
+            subtitle = 'Person';
+          }
+        }
+        break;
+      case MemoryType.TASK:
+        if (memory.taskData) {
+          title = memory.taskData.title;
+          subtitle = `${memory.taskData.status} • Due: ${memory.taskData.dueDate || 'No due date'} • Priority: ${memory.taskData.priority}`;
+        } else {
           title = memory.content;
-          subtitle = 'Person';
+          subtitle = 'Task';
+        }
+        break;
+      case MemoryType.EMOTION:
+        if (memory.emotionData) {
+          title = `${memory.emotionData.emotion} (${memory.emotionData.intensity}/10)`;
+          subtitle = `Trigger: ${memory.emotionData.trigger || 'Unknown'} • Duration: ${memory.emotionData.duration || 0} min`;
+        } else {
+          title = memory.content;
+          subtitle = 'Emotion';
         }
         break;
       case MemoryType.PREFERENCE:
@@ -482,6 +598,10 @@ class MemoryManager {
           subtitle = 'Preference';
         }
         break;
+      case MemoryType.FACT:
+        title = memory.content;
+        subtitle = `Fact • ${memory.tags?.join(', ') || 'No tags'}`;
+        break;
       default:
         title = memory.content;
         subtitle = memory.type;
@@ -491,20 +611,151 @@ class MemoryManager {
   }
   
   /**
-   * Clear all memories and reset the manager (for testing)
+   * Simple fuzzy string matching
    */
+  private fuzzyMatch(text: string, pattern: string): boolean {
+    let patternIndex = 0;
+    for (let i = 0; i < text.length && patternIndex < pattern.length; i++) {
+      if (text[i] === pattern[patternIndex]) {
+        patternIndex++;
+      }
+    }
+    return patternIndex === pattern.length;
+  }
+
   /**
-   * Clear all memories and reset the manager (for testing)
+   * Basic semantic matching for memory content
+   */
+  private semanticMatch(memory: MemoryItem, query: string): boolean {
+    const queryWords = query.toLowerCase().split(' ');
+    const content = memory.content.toLowerCase();
+    
+    // Check for semantic relationships
+    const semanticMatches = queryWords.some((word: string) => {
+      // Direct word match
+      if (content.includes(word)) return true;
+      
+      // Check tags for semantic matches
+      if (memory.tags?.some((tag: string) => tag.toLowerCase().includes(word))) return true;
+      
+      // Check person data
+      if (memory.personData) {
+        if (memory.personData.name.toLowerCase().includes(word) ||
+            memory.personData.relationship.toLowerCase().includes(word)) {
+          return true;
+        }
+      }
+      
+      // Check task data
+      if (memory.taskData) {
+        if (memory.taskData.title.toLowerCase().includes(word) ||
+            memory.taskData.description?.toLowerCase().includes(word)) {
+          return true;
+        }
+      }
+      
+      return false;
+    });
+    
+    return semanticMatches;
+  }
+  
+  /**
+   * Advanced search with fuzzy matching
+   */
+  public async fuzzySearch(query: string, options: Partial<SearchOptions> = {}): Promise<MemoryItem[]> {
+    return this.searchMemories({
+      ...options,
+      contentKeywords: [query],
+      fuzzySearch: true
+    });
+  }
+
+  /**
+   * Semantic search for related memories
+   */
+  public async semanticSearch(query: string, options: Partial<SearchOptions> = {}): Promise<MemoryItem[]> {
+    return this.searchMemories({
+      ...options,
+      semanticQuery: query
+    });
+  }
+
+  /**
+   * Check if we're running in local-only mode
+   */
+  private checkLocalOnlyMode(): boolean {
+    // Check for React Native build config
+    if (typeof global !== 'undefined' && (global as any).__DEV__ !== undefined) {
+      // In development, check for environment variable
+      return process.env.EXPO_PUBLIC_LOCAL_ONLY === 'true';
+    }
+    
+    // For production builds, this would be set by the build.gradle
+    // For now, default to false in web/development
+    return false;
+  }
+
+  /**
+   * Initialize local encrypted storage
+   */
+  private async initializeLocalStorage(): Promise<void> {
+    try {
+      this.localStorage = new LocalEncryptedStorage({
+        databaseName: 'sallie_memories.db',
+        encryptionKey: 'sallie_local_encryption_key_2024', // In production, this should be dynamically generated
+        tableName: 'memories'
+      });
+      
+      await this.localStorage.initialize();
+    } catch (error) {
+      console.error('Failed to initialize local storage:', error);
+      // Fallback to AsyncStorage if local storage fails
+      this.isLocalOnly = false;
+    }
+  }
+
+  /**
+   * Clear all memories (for testing purposes)
    */
   public async clearAll(): Promise<void> {
-    this.memoryCache.clear();
+    await this.ensureInitialized();
     
-    // Clear AsyncStorage
-    const keys = ['memories_TASK', 'memories_QUICK_CAPTURE', 'memories_EMOTION', 'memories_PREFERENCE'];
-    for (const key of keys) {
-      await AsyncStorage.removeItem(key);
+    // Clear all memory types
+    for (const type of Object.values(MemoryType)) {
+      this.memoryCache.set(type, []);
+      const storageKey = this.getStorageKeyForType(type);
+      await AsyncStorage.removeItem(storageKey);
     }
+    
+    // Clear local storage if in local-only mode
+    if (this.isLocalOnly && this.localStorage) {
+      await this.localStorage.clearAll();
+    }
+  }
+
+  /**
+   * Get a preference value
+   */
+  public async getPreference(key: string): Promise<any> {
+    const preferences = await this.searchMemories({
+      type: MemoryType.PREFERENCE,
+      contentKeywords: [key]
+    });
+    
+    if (preferences.length > 0) {
+      const pref = preferences[0];
+      try {
+        const parsed = JSON.parse(pref.content);
+        return parsed.value;
+      } catch {
+        return pref.content;
+      }
+    }
+    
+    return null;
   }
 }
 
 export default MemoryManager;
+export { MemoryType };
