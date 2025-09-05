@@ -1,33 +1,8 @@
 // Salle Persona Module
 // AdaptiveConversationSystem.js (converted from TypeScript)
-// TypeScript compatibility adapted for JS
+// TODO: Review and adapt TypeScript-specific logic for JS compatibility
 
-/**
- * @typedef {Object} ConversationThread
- * @property {string} id - Unique identifier for the thread
- * @property {Message[]} messages - Messages in the thread
- * @property {Object} metadata - Additional data about the thread
- * @property {number} lastUpdated - Timestamp of last update
- */
-
-/**
- * @typedef {Object} Message
- * @property {string} id - Unique identifier for the message
- * @property {string} content - Content of the message
- * @property {string} role - Role of the sender (user or assistant)
- * @property {number} timestamp - When the message was sent
- * @property {Object} metadata - Additional data about the message
- */
-
-/**
- * Adaptive Conversation System provides conversation thread management
- * with memory integration and context adaptation
- */
 class AdaptiveConversationSystem {
-    /**
-     * Create a new AdaptiveConversationSystem
-     * @param {Object} memorySystem - Memory system for conversation context
-     */
     constructor(memorySystem) {
         this.memorySystem = memorySystem;
         this.threads = new Map();

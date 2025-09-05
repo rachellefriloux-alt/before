@@ -662,52 +662,6 @@ class VisualCustomizationSystem {
     }
     
     /**
-     * Adjust the brightness of a color
-     * 
-     * @param color The color in hex format (#RRGGBB)
-     * @param factor The factor to adjust brightness by (0.0 to 2.0, where 1.0 is original brightness)
-     * @return The adjusted color in hex format
-     */
-    private fun adjustBrightness(color: String, factor: Double): String {
-        // Convert hex to HSL, adjust lightness, convert back to hex
-        val r = color.substring(1, 3).toInt(16) / 255.0
-        val g = color.substring(3, 5).toInt(16) / 255.0
-        val b = color.substring(5, 7).toInt(16) / 255.0
-        
-        val max = maxOf(r, g, b)
-        val min = minOf(r, g, b)
-        var h: Double
-        val s: Double
-        var l = (max + min) / 2.0
-        
-        if (max == min) {
-            h = 0.0 // achromatic
-            s = 0.0
-        } else {
-            val d = max - min
-            s = if (l > 0.5) d / (2.0 - max - min) else d / (max + min)
-            h = when {
-                r == max -> (g - b) / d + (if (g < b) 6 else 0)
-                g == max -> (b - r) / d + 2
-                else -> (r - g) / d + 4
-            }
-            h /= 6.0
-        }
-        
-        // Adjust lightness (brightness)
-        l = (l * factor).coerceIn(0.0, 1.0)
-        
-        // Convert back to RGB
-        val newRgb = hslToRgb(h, s, l)
-        
-        val newR = (newRgb[0] * 255).toInt().toString(16).padStart(2, '0')
-        val newG = (newRgb[1] * 255).toInt().toString(16).padStart(2, '0')
-        val newB = (newRgb[2] * 255).toInt().toString(16).padStart(2, '0')
-        
-        return "#$newR$newG$newB"
-    }
-    
-    /**
      * Convert HSL to RGB
      */
     private fun hslToRgb(h: Double, s: Double, l: Double): List<Double> {
@@ -850,14 +804,10 @@ class VisualCustomizationSystem {
             }
             "morning" -> {
                 // Brighter accent colors in the morning
-                val brighterAccent = adjustBrightness(baseTheme.accentColor, 1.3)
-                val brightenedPrimary = adjustBrightness(baseTheme.primaryColor, 1.2)
+                val brighterAccent = adjustColor(baseTheme.accentColor, 0)
+                // TODO: Implement brightness adjustment
                 customizations["header"] = mapOf(
                     "backgroundColor" to brighterAccent
-                )
-                customizations["body"] = mapOf(
-                    "backgroundColor" to brightenedPrimary,
-                    "borderColor" to adjustBrightness(baseTheme.secondaryColor, 1.15)
                 )
             }
         }

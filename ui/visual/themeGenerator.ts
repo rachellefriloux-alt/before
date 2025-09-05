@@ -23,7 +23,6 @@ export interface GradientTheme extends ThemeColors {
   gradient: string;
   cardGradient: string;
   shadowColor: string;
-  name?: string;
 }
 
 const emotionColorMap: Record<string, Partial<ThemeColors>> = {
@@ -159,74 +158,8 @@ export function applyThemeToDocument(theme: GradientTheme): void {
   Object.entries(theme).forEach(([key, value]) => {
     root.style.setProperty(`--sallie-${key}`, value);
   });
-
-  // Apply special properties
-  if (theme.gradient) {
-    document.body.style.background = theme.gradient;
-  }
-
-  // Apply card gradients to all card elements
-  const cards = document.querySelectorAll('.sallie-card');
-  cards.forEach(card => {
-    if (card instanceof HTMLElement) {
-      card.style.background = theme.cardGradient || '';
-    }
-  });
   
-  // Apply text color
-  document.body.style.color = theme.text;
-  
-  // Apply surface color to appropriate containers
-  const surfaces = document.querySelectorAll('.sallie-surface');
-  surfaces.forEach(surface => {
-    if (surface instanceof HTMLElement) {
-      surface.style.backgroundColor = theme.surface;
-      surface.style.color = theme.text;
-    }
-  });
-  
-  // Add theme info as a data attribute on body
-  document.body.dataset.sallieTheme = JSON.stringify({
-    timestamp: Date.now(),
-    themeName: theme.name || 'custom',
-    isDark: isDarkTheme(theme)
-  });
-  
-  // Add CSS custom properties for animations and shadows
+  // Add CSS custom properties for animations
   root.style.setProperty('--sallie-transition', 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)');
   root.style.setProperty('--sallie-shadow-elevated', `0 10px 15px -3px ${theme.shadowColor}, 0 4px 6px -2px ${theme.shadowColor}`);
-}
-
-// Helper function to determine if a theme is dark
-function isDarkTheme(theme: GradientTheme): boolean {
-  // Convert hex to RGB and check luminance
-  const hexToRgb = (hex: string): { r: number; g: number; b: number } | null => {
-    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    const formattedHex = hex.replace(shorthandRegex, (_, r, g, b) => r + r + g + g + b + b);
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(formattedHex);
-    
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
-  };
-  
-  // Calculate relative luminance (perceived brightness)
-  const getLuminance = (color: string): number => {
-    const rgb = hexToRgb(color);
-    if (!rgb) return 0.5;
-    
-    // Using the formula for relative luminance from WCAG 2.0
-    const { r, g, b } = rgb;
-    const a = [r, g, b].map(v => {
-      v /= 255;
-      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-    });
-    
-    return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
-  };
-  
-  const backgroundLuminance = getLuminance(theme.background);
-  return backgroundLuminance < 0.5;
 }
