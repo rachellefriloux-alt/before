@@ -241,11 +241,7 @@ export class NotificationSystem {
         throw new Error('Scheduled date is required for scheduling notifications');
       }
 
-      const trigger = {
-        date: notification.scheduledDate,
-        repeats: !!notification.repeatInterval,
-        seconds: notification.repeatInterval ? this.getRepeatIntervalSeconds(notification.repeatInterval) : undefined,
-      };
+      const trigger = notification.scheduledDate;
 
       const notificationId = await Notifications.scheduleNotificationAsync({
         content: {
@@ -314,12 +310,12 @@ export class NotificationSystem {
     }
   }
 
-  async getNotificationPermissions(): Promise<Notifications.PermissionStatus> {
+  async getNotificationPermissions() {
     try {
       return await Notifications.getPermissionsAsync();
     } catch (error) {
       console.error('Error getting notification permissions:', error);
-      return { granted: false, status: 'denied' };
+      return null;
     }
   }
 

@@ -16,12 +16,8 @@ export interface NetworkInfo {
   isConnected: boolean;
   isInternetReachable: boolean;
   type: Network.NetworkStateType;
-  isConnected: boolean;
-  isInternetReachable: boolean;
-  type: Network.NetworkStateType;
   details?: {
     isConnectionExpensive?: boolean;
-    cellularGeneration?: Network.CellularGeneration;
   };
 }
 
@@ -35,7 +31,6 @@ export interface DeviceInfo {
   manufacturer: string;
   brand: string;
   isDevice: boolean;
-  isEmulator: boolean;
 }
 
 export interface PerformanceMetrics {
@@ -57,7 +52,7 @@ export interface SystemHealth {
 export class SystemMonitor {
   private static instance: SystemMonitor;
   private batterySubscription: Battery.Subscription | null = null;
-  private networkSubscription: Network.Subscription | null = null;
+  private networkSubscription: any | null = null;
   private performanceInterval: NodeJS.Timeout | null = null;
   
   private currentBatteryInfo: BatteryInfo | null = null;
@@ -107,10 +102,9 @@ export class SystemMonitor {
       };
 
       // Subscribe to battery changes
-      this.batterySubscription = Battery.addBatteryStateListener(({ batteryState, batteryLevel }) => {
+      this.batterySubscription = Battery.addBatteryStateListener(({ batteryState }) => {
         this.currentBatteryInfo = {
           ...this.currentBatteryInfo!,
-          batteryLevel,
           isCharging: batteryState === Battery.BatteryState.CHARGING,
           batteryState,
           lastUpdated: Date.now(),
@@ -128,12 +122,11 @@ export class SystemMonitor {
       const networkState = await Network.getNetworkStateAsync();
       
       this.currentNetworkInfo = {
-        isConnected: networkState.isConnected,
-        isInternetReachable: networkState.isInternetReachable,
-        type: networkState.type,
+        isConnected: networkState.isConnected ?? false,
+        isInternetReachable: networkState.isInternetReachable ?? false,
+        type: networkState.type ?? 'unknown',
         details: {
-          isConnectionExpensive: networkState.details?.isConnectionExpensive,
-          cellularGeneration: networkState.details?.cellularGeneration,
+          isConnectionExpensive: false,
         },
       };
 
@@ -271,7 +264,6 @@ export class SystemMonitor {
       manufacturer: Device.manufacturer || 'Unknown',
       brand: Device.brand || 'Unknown',
       isDevice: Device.isDevice,
-      isEmulator: Device.isEmulator,
     };
   }
 
@@ -387,7 +379,7 @@ export class SystemMonitor {
 
   async getInstallationTime(): Promise<Date | null> {
     try {
-      const installationTime = Application.installationTime;
+      const installationTime = await Application.getInstallationTimeAsync();
       return installationTime ? new Date(installationTime) : null;
     } catch (error) {
       console.error('Error getting installation time:', error);
@@ -397,7 +389,7 @@ export class SystemMonitor {
 
   async getLastUpdateTime(): Promise<Date | null> {
     try {
-      const lastUpdateTime = Application.lastUpdateTime;
+      const lastUpdateTime = await Application.getLastUpdateTimeAsync();
       return lastUpdateTime ? new Date(lastUpdateTime) : null;
     } catch (error) {
       console.error('Error getting last update time:', error);
@@ -445,18 +437,20 @@ export class SystemMonitor {
     }
   }
 
-  async isConnectedAsync(): Promise<boolean> {
+  async getNetworkStatus(): Promise<boolean> {
     try {
-      return await Network.isConnectedAsync();
+      const networkState = await Network.getNetworkStateAsync();
+      return networkState.isConnected;
     } catch (error) {
       console.error('Error checking network connection:', error);
       return false;
     }
   }
 
-  async isInternetReachableAsync(): Promise<boolean> {
+  async isInternetReachable(): Promise<boolean> {
     try {
-      return await Network.isInternetReachableAsync();
+      const networkState = await Network.getNetworkStateAsync();
+      return networkState.isInternetReachable;
     } catch (error) {
       console.error('Error checking internet reachability:', error);
       return false;

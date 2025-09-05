@@ -65,7 +65,7 @@ export class LocationService {
 
   private async setupBackgroundTask(): Promise<void> {
     try {
-      TaskManager.defineTask(this.backgroundTaskName, ({ data, error }) => {
+      TaskManager.defineTask(this.backgroundTaskName, async ({ data, error }) => {
         if (error) {
           console.error('Background location task error:', error);
           return;
@@ -112,10 +112,10 @@ export class LocationService {
       const locationInfo: LocationInfo = {
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
-        accuracy: location.coords.accuracy,
-        altitude: location.coords.altitude,
-        heading: location.coords.heading,
-        speed: location.coords.speed,
+        accuracy: location.coords.accuracy ?? undefined,
+        altitude: location.coords.altitude ?? undefined,
+        heading: location.coords.heading ?? undefined,
+        speed: location.coords.speed ?? undefined,
         timestamp: location.timestamp,
       };
 
@@ -190,17 +190,19 @@ export class LocationService {
     const locationInfo: LocationInfo = {
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
-      accuracy: location.coords.accuracy,
-      altitude: location.coords.altitude,
-      heading: location.coords.heading,
-      speed: location.coords.speed,
+      accuracy: location.coords.accuracy ?? undefined,
+      altitude: location.coords.altitude ?? undefined,
+      heading: location.coords.heading ?? undefined,
+      speed: location.coords.speed ?? undefined,
       timestamp: location.timestamp,
     };
 
     this.currentLocation = locationInfo;
     
     // Check geofences
-    this.checkGeofences(locationInfo);
+    this.checkGeofences(locationInfo).catch(error => 
+      console.error('Error checking geofences:', error)
+    );
     
     // Emit location update event (you can implement an event system here)
     console.log('Location updated:', locationInfo);
@@ -259,10 +261,19 @@ export class LocationService {
     lon2: number
   ): Promise<number> {
     try {
-      const distance = await Location.distanceAsync(
-        { latitude: lat1, longitude: lon1 },
-        { latitude: lat2, longitude: lon2 }
-      );
+      // Calculate distance using Haversine formula
+      const R = 6371e3; // Earth's radius in meters
+      const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+      const φ2 = lat2 * Math.PI/180;
+      const Δφ = (lat2-lat1) * Math.PI/180;
+      const Δλ = (lon2-lon1) * Math.PI/180;
+
+      const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ/2) * Math.sin(Δλ/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+      const distance = R * c; // in meters
       return distance;
     } catch (error) {
       console.error('Error calculating distance:', error);
@@ -285,11 +296,11 @@ export class LocationService {
     }
   }
 
-  private checkGeofences(location: LocationInfo): void {
-    this.geofences.forEach((geofence) => {
-      if (!geofence.isActive) return;
+  private async checkGeofences(location: LocationInfo): Promise<void> {
+    for (const [id, geofence] of this.geofences) {
+      if (!geofence.isActive) continue;
 
-      const distance = this.calculateDistance(
+      const distance = await this.calculateDistance(
         location.latitude,
         location.longitude,
         geofence.latitude,
@@ -307,10 +318,10 @@ export class LocationService {
           geofence.onExit();
         }
       }
-    });
+    }
   }
 
-  getCurrentLocation(): LocationInfo | null {
+  getCachedLocation(): LocationInfo | null {
     return this.currentLocation;
   }
 
