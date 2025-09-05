@@ -1,0 +1,18 @@
+/*
+ * Salle 1.0 Module
+ * Persona: Tough love meets soul care.
+ * Function: Method for proper cleanup of BackendSyncService.
+ * Got it, love.
+ */
+
+  // Cleanup resources
+  destroy() {
+    try {
+      if (this.networkSubscription && typeof this.networkSubscription.remove === 'function') {
+        this.networkSubscription.remove();
+        this.networkSubscription = null;
+      }
+    } catch (error) {
+      console.warn('Error cleaning up BackendSyncService:', error);
+    }
+  }

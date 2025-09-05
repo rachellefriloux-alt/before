@@ -29,6 +29,10 @@ export const Colors = {
     card: '#ffffff',
     mystical: '#8b5cf6',
     shadow: '#000000',
+    switchTrackFalse: '#cbd5e1',
+    switchTrackTrue: tintColorLight,
+    switchThumb: '#ffffff',
+    cardTransparent: 'rgba(255, 255, 255, 0.8)',
     // Non-color properties moved to separate object
     gradients: {
       primary: `linear-gradient(135deg, ${tintColorLight} 0%, #8b5cf6 100%)`,
@@ -64,6 +68,10 @@ export const Colors = {
     card: '#1e293b',
     mystical: '#a855f7',
     shadow: '#000000',
+    switchTrackFalse: '#475569',
+    switchTrackTrue: tintColorDark,
+    switchThumb: '#ffffff',
+    cardTransparent: 'rgba(30, 41, 59, 0.8)',
     // Non-color properties moved to separate object
     gradients: {
       primary: `linear-gradient(135deg, ${tintColorDark} 0%, #a855f7 100%)`,

@@ -335,10 +335,15 @@ class AdvancedMemoryManager {
 
   // Cleanup
   destroy() {
-    if (this.cleanupTimer) {
-      clearInterval(this.cleanupTimer);
+    try {
+      if (this.cleanupTimer) {
+        clearInterval(this.cleanupTimer);
+        this.cleanupTimer = null;
+      }
+      this.persistCache();
+    } catch (error) {
+      console.warn('Error cleaning up AdvancedMemoryManager:', error);
     }
-    this.persistCache();
   }
 }
 

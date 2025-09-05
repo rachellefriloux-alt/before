@@ -81,7 +81,7 @@ class PhoneControlManager {
   }
 
   private async requestPermissions() {
-    if (Platform.OS === 'android') {
+    if (Platform.OS === 'android' && PermissionsAndroid && PermissionsAndroid.requestMultiple) {
       await PermissionsAndroid.requestMultiple([
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
         PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
@@ -113,8 +113,8 @@ class PhoneControlManager {
     // Network monitoring
     if (this.config.enableNetworkMonitoring) {
       this.networkSubscription = Network.addNetworkStateListener((state) => {
-        this.deviceState.networkType = state.type;
-        this.deviceState.wifiEnabled = state.isConnected && state.type === 'wifi';
+        this.deviceState.networkType = state.type || 'unknown';
+        this.deviceState.wifiEnabled = (state.isConnected || false) && state.type === Network.NetworkStateType.WIFI;
         this.updateDeviceState();
       });
     }

@@ -189,10 +189,6 @@ describe('Advanced Features Integration', () => {
  * Got it, love.
  */
 
-import PhoneControlManager from '../core/PhoneControlManager';
-import AdvancedMemoryManager from '../core/AdvancedMemoryManager';
-import CrossDeviceSyncManager from '../core/CrossDeviceSyncManager';
-
 describe('Advanced Features Integration', () => {
   let phoneManager: PhoneControlManager;
   let memoryManager: AdvancedMemoryManager;

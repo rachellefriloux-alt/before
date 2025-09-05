@@ -14,16 +14,16 @@ import * as Haptics from 'expo-haptics';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BlurView } from 'expo-blur';
 
-import Colors from '../../constants/Colors';
-import { useColorScheme } from '../../components/useColorScheme';
+import { Colors } from '../../constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme';
 import { NativeModules } from 'react-native';
-import type { 
+import type {
   SyncConfiguration,
   PairedDevice,
   SyncSession,
   TransportType,
   DeviceType
-} from '../types/CrossDeviceSyncTypes';
+} from '../../components/types/CrossDeviceSyncTypes';
 
 const { CrossDeviceSyncModule } = NativeModules;
 
@@ -43,47 +43,52 @@ const DeviceSyncCard: React.FC<DeviceSyncCardProps> = ({
   onUnpairPress,
   syncSession 
 }) => {
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme() ?? 'light';
   const colors = Colors[colorScheme];
   
-  // Get icon based on device type
+  // Normalize device type (supports legacy uppercase and new lowercase values)
   const getDeviceIcon = () => {
-    switch (device.type) {
+    const rawType = (device.type || device.deviceType || '').toString().toUpperCase();
+    switch (rawType) {
       case 'PHONE':
+      case 'PHONE'.toUpperCase():
         return 'phone-portrait';
       case 'TABLET':
         return 'tablet-portrait';
       case 'DESKTOP':
+      case 'LAPTOP':
         return 'desktop';
+      case 'WEARABLE':
+        return 'watch-outline';
       default:
         return 'hardware-chip';
     }
   };
   
-  // Get transport icon
+  // Get transport icon (normalize legacy uppercase names)
   const getTransportIcon = () => {
-    switch (device.transportType) {
+    const tt = (device.transportType || '').toString().toUpperCase();
+    switch (tt) {
       case 'BLUETOOTH':
-        return 'bluetooth';
+        return 'bluetooth' as const;
       case 'WIFI_DIRECT':
       case 'WIFI':
-        return 'wifi';
+      case 'WIFI_DIRECT'.toUpperCase():
+        return 'wifi' as const;
       case 'CLOUD':
-        return 'cloud';
+        return 'cloud' as const;
       case 'USB':
-        return 'usb';
+        return 'hardware-chip' as const;
       default:
-        return 'swap-horizontal';
+        return 'swap-horizontal' as const;
     }
   };
   
   // Format last sync time
   const getLastSyncText = () => {
-    if (!device.lastSyncTime || device.lastSyncTime === 0) {
-      return 'Never synced';
-    }
-    
-    const date = new Date(device.lastSyncTime);
+    const ts = device.lastSyncTime ?? device.lastSeen ?? 0;
+    if (!ts || ts === 0) return 'Never synced';
+    const date = new Date(typeof ts === 'number' ? ts : new Date(ts).getTime());
     return `Last synced: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
   };
   
@@ -105,16 +110,16 @@ const DeviceSyncCard: React.FC<DeviceSyncCardProps> = ({
         
         {syncSession ? (
           <View style={styles.syncStatusContainer}>
-            {syncSession.status === 'TRANSFERRING' ? (
+            {(syncSession && (syncSession.status === 'TRANSFERRING' || syncSession.status === 'active' || syncSession.status === 'ACTIVE')) ? (
               <>
                 <ActivityIndicator size="small" color={colors.primary} />
                 <Text style={[styles.syncProgress, { color: colors.primary }]}>
-                  {syncSession.progress}%
+                  {Number(syncSession.progress ?? 0)}%
                 </Text>
               </>
-            ) : syncSession.status === 'COMPLETED' ? (
+            ) : (syncSession.status === 'COMPLETED' || syncSession.status === 'completed' || syncSession.status === 'COMPLETED') ? (
               <Ionicons name="checkmark-circle" size={24} color="green" />
-            ) : syncSession.status === 'FAILED' ? (
+            ) : (syncSession.status === 'FAILED' || syncSession.status === 'failed' || syncSession.status === 'FAILED') ? (
               <Ionicons name="alert-circle" size={24} color="red" />
             ) : (
               <ActivityIndicator size="small" color={colors.primary} />
@@ -158,7 +163,7 @@ const DeviceSyncCard: React.FC<DeviceSyncCardProps> = ({
  * Cross-Device Sync Screen component
  */
 export default function CrossDeviceSyncScreen() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme() ?? 'light';
   const colors = Colors[colorScheme];
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
@@ -166,7 +171,7 @@ export default function CrossDeviceSyncScreen() {
   // State
   const [isLoading, setIsLoading] = useState(true);
   const [syncEnabled, setSyncEnabled] = useState(false);
-  const [syncConfig, setSyncConfig] = useState<SyncConfiguration>({
+  const [syncConfig, setSyncConfig] = useState<Partial<SyncConfiguration>>({
     syncMemory: true,
     syncPreferences: true,
     syncPersonality: true,
@@ -203,7 +208,7 @@ export default function CrossDeviceSyncScreen() {
     initSync();
     
     // Setup event listener for sync events
-    const eventListener = CrossDeviceSyncModule.addSyncEventListener((event) => {
+    const eventListener = CrossDeviceSyncModule.addSyncEventListener((event: { type: any; sessionId: string | number; progress: any; error: any; device: { id: any; }; }) => {
       switch (event.type) {
         case 'SyncProgress':
           setSyncSessions(prev => ({
@@ -227,8 +232,8 @@ export default function CrossDeviceSyncScreen() {
           
           // Refresh paired devices to update last sync time
           CrossDeviceSyncModule.getPairedDevices()
-            .then(devices => setPairedDevices(devices))
-            .catch(err => console.error('Failed to refresh devices:', err));
+            .then((devices: React.SetStateAction<PairedDevice[]>) => setPairedDevices(devices))
+            .catch((err: any) => console.error('Failed to refresh devices:', err));
           break;
           
         case 'SyncFailed':
@@ -243,7 +248,8 @@ export default function CrossDeviceSyncScreen() {
           break;
           
         case 'DevicePaired':
-          setPairedDevices(prev => [...prev, event.device]);
+          // Cast incoming event.device to PairedDevice shape (some native events are partial)
+          setPairedDevices(prev => [...prev, (event.device as PairedDevice)]);
           setIsDiscovering(false);
           break;
           
@@ -275,10 +281,11 @@ export default function CrossDeviceSyncScreen() {
   };
   
   // Handle sync config change
-  const handleConfigChange = async (key: keyof SyncConfiguration, value: boolean) => {
+  const handleConfigChange = async (key: keyof Partial<SyncConfiguration>, value: boolean) => {
     try {
-      const newConfig = { ...syncConfig, [key]: value };
-      await CrossDeviceSyncModule.updateSyncConfig(newConfig);
+      const newConfig: Partial<SyncConfiguration> = { ...(syncConfig || {}), [key]: value };
+      // Native module expects a plain object; cast to any to accommodate legacy keys
+      await CrossDeviceSyncModule.updateSyncConfig(newConfig as any);
       setSyncConfig(newConfig);
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     } catch (error) {
