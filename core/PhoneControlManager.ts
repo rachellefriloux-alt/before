@@ -262,14 +262,23 @@ class PhoneControlManager {
 
   // Cleanup
   destroy() {
-    if (this.batterySubscription && typeof this.batterySubscription.remove === 'function') {
-      this.batterySubscription.remove();
-    }
-    if (this.locationSubscription && typeof this.locationSubscription.remove === 'function') {
-      this.locationSubscription.remove();
-    }
-    if (this.networkSubscription && typeof this.networkSubscription.remove === 'function') {
-      this.networkSubscription.remove();
+    try {
+      if (this.batterySubscription && typeof this.batterySubscription.remove === 'function') {
+        this.batterySubscription.remove();
+        this.batterySubscription = null;
+      }
+      
+      if (this.locationSubscription && typeof this.locationSubscription.remove === 'function') {
+        this.locationSubscription.remove();
+        this.locationSubscription = null;
+      }
+      
+      if (this.networkSubscription && typeof this.networkSubscription.remove === 'function') {
+        this.networkSubscription.remove();
+        this.networkSubscription = null;
+      }
+    } catch (error) {
+      console.warn('Error cleaning up PhoneControlManager subscriptions:', error);
     }
   }
 }

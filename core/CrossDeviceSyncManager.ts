@@ -10,6 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Network from 'expo-network';
 import * as Device from 'expo-device';
 import { MMKV } from 'react-native-mmkv';
+import BackendSyncService from './BackendSyncService';
 
 interface SyncConfig {
   enableAutoSync: boolean;
@@ -55,6 +56,7 @@ class CrossDeviceSyncManager {
   private mmkv: MMKV;
   private deviceId: string;
   private isOnline: boolean = false;
+  private backendService: BackendSyncService;
 
   constructor(config: Partial<SyncConfig> = {}) {
     this.config = {
@@ -78,6 +80,7 @@ class CrossDeviceSyncManager {
 
     this.mmkv = new MMKV();
     this.deviceId = Device.modelId || `device_${Date.now()}`;
+    this.backendService = new BackendSyncService();
     this.initialize();
   }
 
@@ -94,7 +97,7 @@ class CrossDeviceSyncManager {
       this.isOnline = networkState.isConnected || false;
 
       if (this.config.syncOnWifiOnly) {
-        this.isOnline = this.isOnline && networkState.type === 'wifi';
+        this.isOnline = this.isOnline && networkState.type === Network.NetworkStateType.WIFI;
       }
     } catch (error) {
       console.warn('Failed to check network status:', error);
@@ -109,7 +112,7 @@ class CrossDeviceSyncManager {
       this.isOnline = state.isConnected || false;
 
       if (this.config.syncOnWifiOnly) {
-        this.isOnline = this.isOnline && state.type === 'wifi';
+        this.isOnline = this.isOnline && state.type === Network.NetworkStateType.WIFI;
       }
 
       // Trigger sync if we just came online
@@ -185,7 +188,7 @@ class CrossDeviceSyncManager {
       return false;
     } catch (error) {
       console.error('Sync failed:', error);
-      DeviceEventEmitter.emit('syncCompleted', { success: false, error: error.message });
+      DeviceEventEmitter.emit('syncCompleted', { success: false, error: error instanceof Error ? error.message : 'Unknown error' });
       return false;
     } finally {
       this.syncState.isSyncing = false;
@@ -203,30 +206,53 @@ class CrossDeviceSyncManager {
   }
 
   private async syncWithRemote(localChanges: SyncData[]): Promise<boolean> {
-    // This would integrate with your backend/sync service
-    // For now, we'll simulate the sync process
-
     try {
-      // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Upload local changes
+      const uploadSuccess = await this.backendService.uploadSyncData(localChanges);
+      if (!uploadSuccess) {
+        console.warn('Failed to upload local changes');
+        return false;
+      }
 
-      // In a real implementation, you would:
-      // 1. Send local changes to server
-      // 2. Receive remote changes
-      // 3. Handle conflicts
-      // 4. Update local data
+      // Download remote changes
+      const remoteChanges = await this.backendService.downloadSyncData(this.deviceId, this.syncState.lastSyncTime || undefined);
+      if (remoteChanges.length > 0) {
+        await this.processRemoteChanges(remoteChanges);
+      }
 
-      // For demo purposes, we'll just mark as successful
-      console.log(`Synced ${localChanges.length} changes`);
+      // Check for conflicts
+      const conflicts = await this.backendService.getConflicts(this.deviceId);
+      if (conflicts.length > 0) {
+        this.syncState.conflicts = conflicts;
+        await this.saveSyncState();
+      }
 
-      // Clear pending changes after successful sync
-      this.mmkv.delete('sallie_pending_changes');
+      // Update device status
+      await this.backendService.updateDeviceStatus(this.deviceId, {
+        lastSync: new Date(),
+        isOnline: this.isOnline
+      });
 
       return true;
     } catch (error) {
       console.error('Remote sync failed:', error);
       return false;
     }
+  }
+
+  private async processRemoteChanges(remoteChanges: SyncData[]) {
+    // Process and merge remote changes
+    for (const change of remoteChanges) {
+      // Store remote data (implementation depends on your data structure)
+      await this.storeRemoteData(change);
+    }
+  }
+
+  private async storeRemoteData(change: SyncData) {
+    // Implementation for storing remote data
+    // This would depend on your specific data storage strategy
+    const key = `remote_${change.type}_${change.id}`;
+    this.mmkv.set(key, JSON.stringify(change));
   }
 
   // Data Management
@@ -281,6 +307,13 @@ class CrossDeviceSyncManager {
       ...deviceInfo
     };
 
+    // Register with backend
+    const backendSuccess = await this.backendService.registerDevice(device);
+    if (!backendSuccess) {
+      console.warn('Failed to register device with backend');
+    }
+
+    // Store locally
     const devices = await this.getRegisteredDevices();
     const existingIndex = devices.findIndex(d => d.id === device.id);
 
@@ -297,6 +330,17 @@ class CrossDeviceSyncManager {
 
   async getRegisteredDevices(): Promise<DeviceInfo[]> {
     try {
+      // Try to get from backend first
+      if (this.backendService.isConnected()) {
+        const backendDevices = await this.backendService.getConnectedDevices();
+        if (backendDevices.length > 0) {
+          this.mmkv.set('sallie_registered_devices', JSON.stringify(backendDevices));
+          this.syncState.connectedDevices = backendDevices;
+          return backendDevices;
+        }
+      }
+
+      // Fallback to local storage
       const devices = this.mmkv.getString('sallie_registered_devices');
       return devices ? JSON.parse(devices) : [];
     } catch (error) {
