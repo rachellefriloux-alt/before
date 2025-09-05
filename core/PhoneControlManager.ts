@@ -12,6 +12,7 @@ import * as Device from 'expo-device';
 import * as Network from 'expo-network';
 import * as Location from 'expo-location';
 import * as Notifications from 'expo-notifications';
+import * as Haptics from 'expo-haptics';
 import { PermissionsAndroid } from 'react-native';
 
 interface PhoneControlConfig {
@@ -46,6 +47,11 @@ class PhoneControlManager {
   private batterySubscription: any;
   private locationSubscription: any;
   private networkSubscription: any;
+  // Performance optimization: Cache device state updates
+  private stateUpdateQueue: Array<Partial<DeviceState>> = [];
+  private isUpdatingState = false;
+  private lastStateUpdate = 0;
+  private readonly STATE_UPDATE_THROTTLE = 1000; // 1 second throttle
 
   constructor(config: Partial<PhoneControlConfig> = {}) {
     this.config = {
@@ -140,8 +146,23 @@ class PhoneControlManager {
   }
 
   private async updateDeviceState() {
+    // Throttled state updates for performance
+    const now = Date.now();
+    if (now - this.lastStateUpdate < this.STATE_UPDATE_THROTTLE) {
+      // Queue the update for later
+      this.stateUpdateQueue.push({});
+      return;
+    }
+
+    this.lastStateUpdate = now;
+
     // Emit device state changes
     DeviceEventEmitter.emit('deviceStateChanged', this.deviceState);
+
+    // Process queued updates
+    if (this.stateUpdateQueue.length > 0) {
+      this.stateUpdateQueue = [];
+    }
   }
 
   // Phone Control Methods
@@ -183,7 +204,6 @@ class PhoneControlManager {
 
   async vibrate(pattern: number[] = [0, 100, 50, 100]) {
     // Use expo-haptics for vibration
-    const Haptics = require('expo-haptics');
     await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
   }
 

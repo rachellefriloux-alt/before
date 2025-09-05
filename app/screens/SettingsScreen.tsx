@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'react-native-linear-gradient';
+import { router } from 'expo-router';
 import { useDeviceStore } from '../store/device';
 import { usePersonaStore } from '../store/persona';
 import { useMemoryStore } from '../store/memory';
@@ -282,6 +283,15 @@ export default function SettingsScreen() {
             value={permissions.notifications}
             onValueChange={(value) => setPermission('notifications', value)}
           />
+          
+          {permissions.notifications && (
+            <SettingsItem
+              title="Notification Settings"
+              subtitle="Configure notification preferences"
+              type="button"
+              onPress={() => router.push('/screens/notification-settings' as any)}
+            />
+          )}
           
           <SettingsItem
             title="Storage"

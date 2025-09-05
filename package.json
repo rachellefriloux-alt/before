@@ -75,7 +75,8 @@
     "react-native-web": "~0.19.13",
     "uuid": "^11.0.3",
     "zod": "^3.23.8",
-    "zustand": "^5.0.0"
+    "zustand": "^5.0.0",
+    "expo-crypto": "~14.0.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.13",
