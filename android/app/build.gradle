@@ -3,6 +3,7 @@ apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.sallie.plugin-injection'
 
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
@@ -287,3 +288,82 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:21.0.0'
     implementation 'com.google.firebase:firebase-crashlytics:19.0.3'
 }
+
+/*
+ * Sallie 1.0 Plugin Injection Configuration
+ * Persona: Tough love meets soul care.
+ * Function: Configure plugin injection for nested builds.
+ * Got it, love.
+ */
+sallieBuildInjection {
+    // Enable essential plugins for all nested builds
+    plugin('com.android.application')
+    plugin('org.jetbrains.kotlin.android')
+    
+    // Add Sallie-specific plugins based on build variant
+    if (project.hasProperty('localOnly') && project.localOnly == 'true') {
+        plugin('com.sallie.local-encryption', 'encryption { algorithm = "AES-256-GCM" }')
+        plugin('com.sallie.offline-analytics', 'analytics { localStorageOnly = true }')
+    } else {
+        plugin('com.google.gms.google-services')
+        plugin('com.google.firebase.crashlytics')
+        plugin('com.sallie.cloud-sync', 'cloudSync { enableRealtime = true }')
+    }
+    
+    // Add performance optimization plugins
+    plugin('com.sallie.performance-monitor')
+    plugin('com.sallie.memory-optimization')
+    
+    // Default build arguments for nested builds
+    argument('-PenableSallieFeatures=true')
+    argument('-PverifyPersonaHeaders=true')
+}
+
+// Create convenience tasks for common nested build scenarios
+task buildSallieModule(type: GradleBuildWithPlugins) {
+    description = 'Build a Sallie module with appropriate plugins injected'
+    group = 'sallie'
+    
+    // These will be configured per-module
+    buildName = project.findProperty('moduleName') ?: 'sallie-module'
+    projectDirectory = file(project.findProperty('moduleDir') ?: '../modules/default')
+    tasks = ['clean', 'assemble', 'test']
+    
+    // Enable plugin injection by default
+    enablePluginInjection = true
+}
+
+task buildSallieCore(type: GradleBuildWithPlugins) {
+    description = 'Build Sallie core components with full plugin suite'
+    group = 'sallie'
+    
+    buildName = 'sallie-core'
+    projectDirectory = file('../core')
+    tasks = ['clean', 'build', 'verifySalleFeatures']
+    
+    // Inject additional core-specific plugins
+    injectedPlugins = ['com.sallie.core-validation', 'com.sallie.persona-enforcement']
+    pluginConfigurations = [
+        'com.sallie.core-validation': 'validation { strictMode = true }',
+        'com.sallie.persona-enforcement': 'persona { requireHeaders = true, slogan = "Got it, love." }'
+    ]
+}
+
+// Verify plugin injection system during build
+task verifyPluginInjection {
+    description = 'Verify that plugin injection system is working correctly'
+    group = 'verification'
+    
+    doLast {
+        def injectionExtension = project.extensions.findByName('sallieBuildInjection')
+        if (injectionExtension == null) {
+            throw new RuntimeException('Plugin injection extension not found')
+        }
+        
+        println "✅ Plugin injection system verified - plugins: ${injectionExtension.enabledPlugins}"
+        println "🛡️ Sallie 1.0 modular architecture protected - Got it, love."
+    }
+}
+
+// Add verification to build process
+build.dependsOn verifyPluginInjection
