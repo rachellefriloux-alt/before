@@ -4,11 +4,51 @@ OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\
 exports.createForm = exports.multipartFormRequestOptions = exports.maybeMultipartFormRequestOptions = exports.isAsyncIterable = exports.checkFileSupport = void 0;
 exports.makeFile = makeFile;
 exports.getName = getName;
+exports.NESTED_FORMATS_PRESETS = exports.multipartFormRequestOptionsWithConfig = exports.createFormWithConfig = void 0;
 const shims_1 = require("./shims.js");
+
+// Configurable nested formats support
+const DEFAULT_FORMATS_CONFIG = {
+    arrayFormat: 'brackets',
+    objectFormat: 'brackets'
+};
+
+function formatArrayKey(baseKey, index, config) {
+    if (config.customArrayFormatter) {
+        return config.customArrayFormatter(baseKey, index);
+    }
+    switch (config.arrayFormat) {
+        case 'brackets':
+            return `${baseKey}[]`;
+        case 'indexed':
+            return `${baseKey}[${index}]`;
+        case 'repeat':
+            return baseKey;
+        default:
+            return `${baseKey}[]`;
+    }
+}
+
+function formatObjectKey(baseKey, property, config) {
+    if (config.customObjectFormatter) {
+        return config.customObjectFormatter(baseKey, property);
+    }
+    switch (config.objectFormat) {
+        case 'brackets':
+            return `${baseKey}[${property}]`;
+        case 'dot':
+            return `${baseKey}.${property}`;
+        case 'underscore':
+            return `${baseKey}_${property}`;
+        default:
+            return `${baseKey}[${property}]`;
+    }
+}
+
 const checkFileSupport = () => {
     if (typeof File === 'undefined') {
         const { process } = globalThis;
-        const isOldNode = typeof process?.versions?.node === 'string' && parseInt(process.versions.node.split('.')) < 20;
+        const isOldNode = typeof process?.versions?.node === 'string' && parseInt(process.versions.node.split('.')[0]) < 20;
         throw new Error('`File` is not defined as a global, which is required for file uploads.' +
             (isOldNode ?
                 " Update to Node 20 LTS or newer, or set `globalThis.File` to `import('node:buffer').File`."
@@ -51,6 +91,13 @@ const multipartFormRequestOptions = async (opts, fetch) => {
     return { ...opts, body: await (0, exports.createForm)(opts.body, fetch) };
 };
 exports.multipartFormRequestOptions = multipartFormRequestOptions;
+
+// New configurable version
+const multipartFormRequestOptionsWithConfig = async (opts, fetch, formatsConfig) => {
+    return { ...opts, body: await (0, exports.createFormWithConfig)(opts.body, fetch, formatsConfig) };
+};
+exports.multipartFormRequestOptionsWithConfig = multipartFormRequestOptionsWithConfig;
+
 const supportsFormDataMap = /* @__PURE__ */ new WeakMap();
 /**
  * node-fetch doesn't support the global FormData object in recent node versions. Instead of sending
@@ -87,10 +134,23 @@ const createForm = async (body, fetch) => {
         throw new TypeError('The provided fetch function does not support file uploads with the current global FormData class.');
     }
     const form = new FormData();
-    await Promise.all(Object.entries(body || {}).map(([key, value]) => addFormValue(form, key, value)));
+    await Promise.all(Object.entries(body || {}).map(([key, value]) => addFormValue(form, key, value, DEFAULT_FORMATS_CONFIG)));
     return form;
 };
 exports.createForm = createForm;
+
+// New configurable version
+const createFormWithConfig = async (body, fetch, formatsConfig) => {
+    if (!(await supportsFormData(fetch))) {
+        throw new TypeError('The provided fetch function does not support file uploads with the current global FormData class.');
+    }
+    const form = new FormData();
+    const config = { ...DEFAULT_FORMATS_CONFIG, ...formatsConfig };
+    await Promise.all(Object.entries(body || {}).map(([key, value]) => addFormValue(form, key, value, config)));
+    return form;
+};
+exports.createFormWithConfig = createFormWithConfig;
+
 // We check for Blob not File because Bun.File doesn't inherit from File,
 // but they both inherit from Blob and have a `name` property at runtime.
 const isNamedBlob = (value) => value instanceof Blob && 'name' in value;
@@ -110,13 +170,13 @@ const hasUploadableValue = (value) => {
     }
     return false;
 };
-const addFormValue = async (form, key, value) => {
+const addFormValue = async (form, key, value, config = DEFAULT_FORMATS_CONFIG) => {
     if (value === undefined)
         return;
     if (value == null) {
         throw new TypeError(`Received null for "${key}"; to pass null in FormData, you must use the string 'null'`);
     }
-    // TODO: make nested formats configurable
+    // RESOLVED: nested formats are now configurable
     if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
         form.append(key, String(value));
     }
@@ -130,15 +190,36 @@ const addFormValue = async (form, key, value) => {
         form.append(key, value, getName(value));
     }
     else if (Array.isArray(value)) {
-        await Promise.all(value.map((entry) => addFormValue(form, key + '[]', entry)));
+        // Configurable array formatting
+        await Promise.all(value.map((entry, index) => addFormValue(form, formatArrayKey(key, index, config), entry, config)));
     }
     else if (typeof value === 'object') {
-        await Promise.all(Object.entries(value).map(([name, prop]) => addFormValue(form, `${key}[${name}]`, prop)));
+        // Configurable object formatting
+        await Promise.all(Object.entries(value).map(([name, prop]) => addFormValue(form, formatObjectKey(key, name, config), prop, config)));
     }
     else {
         throw new TypeError(`Invalid value given to form, expected a string, number, boolean, object, Array, File or Blob but got ${value} instead`);
     }
 };
+
+// Predefined configurations
+const NESTED_FORMATS_PRESETS = {
+    STANDARD: {
+        arrayFormat: 'brackets',
+        objectFormat: 'brackets'
+    },
+    INDEXED_DOT: {
+        arrayFormat: 'indexed',
+        objectFormat: 'dot'
+    },
+    UNDERSCORE: {
+        arrayFormat: 'repeat',
+        objectFormat: 'underscore',
+        customArrayFormatter: (key, index) => `${key}_${index}`
+    }
+};
+exports.NESTED_FORMATS_PRESETS = NESTED_FORMATS_PRESETS;
+
 const tslib_1 = require("./internal/tslib.js");
 /** @deprecated Import from ./core/uploads instead */
 tslib_1.__exportStar(require("./core/uploads.js"), exports);
