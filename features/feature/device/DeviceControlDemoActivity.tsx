@@ -51,10 +51,12 @@ const DeviceControlDemo: React.FC = () => {
 
   useEffect(() => {
     initializeDeviceState();
-    setupBatteryListener();
+    const cleanupBatteryListener = setupBatteryListener();
 
     return () => {
-      // Cleanup
+      if (cleanupBatteryListener) {
+        cleanupBatteryListener();
+      }
     };
   }, []);
 
@@ -99,7 +101,7 @@ const DeviceControlDemo: React.FC = () => {
     };
   };
 
-  const handleBrightnessChange = async (value: number) => {
+  const handleBrightnessChange = async (value: number, hapticEnabled: boolean) => {
     if (Platform.OS === 'web') return;
 
     try {
@@ -107,7 +109,7 @@ const DeviceControlDemo: React.FC = () => {
       await Brightness.setBrightnessAsync(value);
       setDeviceState(prev => ({ ...prev, brightness: value }));
 
-      if (deviceState.hapticEnabled) {
+      if (hapticEnabled) {
         await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
       }
     } catch (error) {
@@ -139,11 +141,12 @@ const DeviceControlDemo: React.FC = () => {
 
   const handleAudioModeChange = async (mode: 'normal' | 'silent' | 'vibrate') => {
     try {
-      setDeviceState(prev => ({ ...prev, audioMode: mode }));
-
-      if (deviceState.hapticEnabled) {
-        await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      }
+      setDeviceState(prev => {
+        if (prev.hapticEnabled) {
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+        }
+        return { ...prev, audioMode: mode };
+      });
 
       Alert.alert('Audio Mode Changed', `Switched to ${mode} mode`);
     } catch (error) {
@@ -152,7 +155,10 @@ const DeviceControlDemo: React.FC = () => {
   };
 
   const handleVoiceCommand = async (command: string, params?: any) => {
-    setVoiceCommands(prev => [...prev.slice(-4), `${command}${params ? ` (${JSON.stringify(params)})` : ''}`]);
+    setVoiceCommands(prev => {
+      const updated = [...prev, `${command}${params ? ` (${JSON.stringify(params)})` : ''}`];
+      return updated.slice(-5);
+    });
 
     switch (command) {
       case 'wake_up':
@@ -189,7 +195,8 @@ const DeviceControlDemo: React.FC = () => {
         }
         Alert.alert('Routine Triggered', `Starting ${routineName} routine`, [
           {
-            text: 'View Progress',
+              // TODO: Implement navigation to routine progress
+              // TASK: Track this TODO in your project management tool or implement navigation here.
             onPress: () => {
               console.log('Navigate to routine progress screen');
               // TODO: Implement navigation to routine progress
@@ -297,11 +304,15 @@ const DeviceControlDemo: React.FC = () => {
       if (Platform.OS !== 'web') {
         await Brightness.setBrightnessAsync(0.5); // Reset to 50%
       }
-
       Alert.alert('Emergency Stop', 'All device controls have been reset to safe defaults.');
 
-      if (deviceState.hapticEnabled) {
-        await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+      // Use latest hapticEnabled value after state update
+      setDeviceState(prev => {
+        if (prev.hapticEnabled) {
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        }
+        return prev;
+      });
       }
     } catch (error) {
       Alert.alert('Error', 'Failed to perform emergency stop');
@@ -336,21 +347,16 @@ const DeviceControlDemo: React.FC = () => {
             <Text style={styles.statusLabel}>Audio Mode</Text>
             <Text style={styles.statusValue}>{deviceState.audioMode}</Text>
           </View>
-        </View>
-      </View>
-
       {/* Brightness Control */}
       {Platform.OS !== 'web' && (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Brightness Control</Text>
           <View style={styles.sliderContainer}>
             <TouchableOpacity
               style={styles.sliderButton}
-              onPress={() => handleBrightnessChange(Math.max(0.1, deviceState.brightness - 0.1))}
+              onPress={() => handleBrightnessChange(Math.max(0.1, deviceState.brightness - 0.1), deviceState.hapticEnabled)}
             >
               <Text style={styles.sliderButtonText}>-</Text>
             </TouchableOpacity>
-
             <View style={styles.sliderTrack}>
               <View
                 style={[
@@ -359,13 +365,15 @@ const DeviceControlDemo: React.FC = () => {
                 ]}
               />
             </View>
-
             <TouchableOpacity
               style={styles.sliderButton}
-              onPress={() => handleBrightnessChange(Math.min(1, deviceState.brightness + 0.1))}
+              onPress={() => handleBrightnessChange(Math.min(1, deviceState.brightness + 0.1), deviceState.hapticEnabled)}
             >
               <Text style={styles.sliderButtonText}>+</Text>
             </TouchableOpacity>
+          </View>
+        </View>
+      )}
           </View>
         </View>
       )}
