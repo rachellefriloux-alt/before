@@ -25,6 +25,7 @@ class PluginRegistry {
      * @param {string} name - Plugin name
      * @param {Object} plugin - Plugin instance
      * @throws {Error} If plugin name is invalid or already registered
+     * @returns {void}
      */
     registerPlugin(name, plugin) {
         if (!name || typeof name !== 'string') {
@@ -66,6 +67,7 @@ class PluginRegistry {
      * Unregister a plugin
      * @param {string} name - Plugin name to unregister
      * @throws {Error} If plugin is not registered
+     * @returns {void}
      */
     unregisterPlugin(name) {
         if (!name || typeof name !== 'string') {
@@ -98,7 +100,7 @@ class PluginRegistry {
     /**
      * Get a registered plugin
      * @param {string} name - Plugin name
-     * @returns {Object|null} Plugin instance or null if not found
+     * @returns {(Object|null)} Plugin instance or null if not found
      */
     getPlugin(name) {
         if (!name || typeof name !== 'string') {
@@ -109,7 +111,7 @@ class PluginRegistry {
 
     /**
      * Get all registered plugins
-     * @returns {Array} Array of [name, plugin] pairs
+     * @returns {Array.<[string, Object]>} Array of [name, plugin] pairs
      */
     getAllPlugins() {
         return Array.from(this.plugins.entries());
@@ -118,7 +120,7 @@ class PluginRegistry {
     /**
      * Check health of a specific plugin with enhanced checks
      * @param {string} name - Plugin name
-     * @returns {string} Health status ('healthy', 'warning', 'error', 'not-found')
+     * @returns {'healthy'|'warning'|'error'|'not-found'} Health status
      */
     checkPluginHealth(name) {
         if (!name || typeof name !== 'string') {
@@ -197,7 +199,7 @@ class PluginRegistry {
 
     /**
      * Check health of all plugins
-     * @returns {Object} Health status for all plugins
+     * @returns {Object.<string, string>} Health status for all plugins
      */
     checkAllHealth() {
         const results = {};
@@ -211,6 +213,7 @@ class PluginRegistry {
      * Emit an event to all registered listeners
      * @param {string} eventName - Event name
      * @param {*} data - Event data
+     * @returns {void}
      */
     emitEvent(eventName, data) {
         if (!eventName || typeof eventName !== 'string') {
@@ -231,6 +234,7 @@ class PluginRegistry {
      * Register an event listener
      * @param {string} eventName - Event name
      * @param {Function} callback - Event callback function
+     * @returns {void}
      */
     onEvent(eventName, callback) {
         if (!eventName || typeof eventName !== 'string' || typeof callback !== 'function') {
@@ -247,6 +251,7 @@ class PluginRegistry {
      * Remove an event listener
      * @param {string} eventName - Event name
      * @param {Function} callback - Event callback function
+     * @returns {void}
      */
     offEvent(eventName, callback) {
         if (!eventName || typeof eventName !== 'string' || typeof callback !== 'function') {
@@ -305,7 +310,7 @@ class PluginRegistry {
     /**
      * Get statistics for a plugin
      * @param {string} name - Plugin name
-     * @returns {Object|null} Plugin statistics
+     * @returns {(Object|null)} Plugin statistics
      */
     getPluginStats(name) {
         if (!name || typeof name !== 'string') {
@@ -335,6 +340,8 @@ class PluginRegistry {
     /**
      * Clean up old or unhealthy plugins
      * @param {Object} options - Cleanup options
+     * @param {boolean} [options.removeUnhealthy=false] - Remove unhealthy plugins
+     * @param {number|null} [options.maxAge=null] - Maximum age in ms
      * @returns {number} Number of plugins cleaned up
      */
     cleanup(options = {}) {
