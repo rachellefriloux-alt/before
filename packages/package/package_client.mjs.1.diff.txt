@@ -364,13 +364,15 @@ class ViteNodeRunner {
 	*/
 	shouldInterop(path, mod) {
 		if (this.options.interopDefault === false) return false;
-		// never interop ESM modules
-		// TODO: should also skip for `.js` with `type="module"`
-		return !path.endsWith(".mjs") && "default" in mod;
-	importExternalModule(path) {
-		return import(
-			/* @vite-ignore */
-			path
+		This code snippet appears to be a modification to the `shouldInterop` method within the `ViteNodeRunner` class (from a Vite-related module, likely `vite-node`). Here's a breakdown:
+
+		- **Purpose**: The `shouldInterop` method determines whether to apply interop (compatibility wrapping) for modules, typically to handle differences between CommonJS and ESM formats.
+		- **Key Changes**:
+			- The return statement checks if the module path does **not** end with `.mjs` (indicating an ESM module) and if the module object has a `"default"` property. This avoids interoping pure ESM modules unless they have a default export.
+			- Comments note skipping interop for ESM modules and a TODO for handling `.js` files with `type="module"`.
+		- **Additional Method**: `importExternalModule` is a new method that dynamically imports a module at the given path, using a Vite-specific ignore comment to bypass static analysis.
+
+		This ensures better handling of modern ESM modules in Vite's runtime environment. If you need to integrate or modify this further, provide more context from your project.
 	/**
 	* Import a module and interop it
 	*/

@@ -159,10 +159,10 @@ const hasUploadableValue = (value: unknown): boolean => {
 };
 
 const addFormValue = async (form: FormData, key: string, value: unknown): Promise<void> => {
-  if (value === undefined) return;
+  if (value === undefined) return; // undefined values are silently ignored
   if (value == null) {
     throw new TypeError(
-      `Received null for "${key}"; to pass null in FormData, you must use the string 'null'`,
+      `Received null for "${key}"; to pass null in FormData, you must use the string 'null'. Note: undefined values are silently ignored.`,
     );
   }
 
@@ -176,9 +176,11 @@ const addFormValue = async (form: FormData, key: string, value: unknown): Promis
   } else if (isNamedBlob(value)) {
     form.append(key, value, getName(value));
   } else if (Array.isArray(value)) {
-    await Promise.all(value.map((entry) => addFormValue(form, key + '[]', entry)));
-  } else if (typeof value === 'object') {
-    await Promise.all(
+    for (const entry of value) {
+      await addFormValue(form, key + '[]', entry);
+    for (const [name, prop] of Object.entries(value)) {
+      await addFormValue(form, `${key}[${name}]`, prop);
+    }
       Object.entries(value).map(([name, prop]) => addFormValue(form, `${key}[${name}]`, prop)),
     );
   } else {

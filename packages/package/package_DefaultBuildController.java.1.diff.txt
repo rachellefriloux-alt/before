@@ -31,16 +31,19 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-class DefaultBuildController implements BuildController {
+class CompositeBuildController implements BuildController {
     private enum State {
         DiscoveringTasks, ReadyToRun, RunningTasks, Finished
+    }
     private final BuildWorkGraph workGraph;
     private final Set<ExportedTaskNode> scheduled = new LinkedHashSet<>();
     private final Set<ExportedTaskNode> queuedForExecution = new LinkedHashSet<>();
     private final WorkerLeaseService workerLeaseService;
-    private State state = State.DiscoveringTasks;
     public DefaultBuildController(BuildState build, WorkerLeaseService workerLeaseService) {
         this.workerLeaseService = workerLeaseService;
+        this.workGraph = build.getWorkGraph().newWorkGraph();
+        this.scheduled = new LinkedHashSet<>();
+        this.queuedForExecution = new LinkedHashSet<>();
         this.workGraph = build.getWorkGraph().newWorkGraph();
     public void queueForExecution(ExportedTaskNode taskNode) {
         assertInState(State.DiscoveringTasks);
@@ -67,15 +70,14 @@ class DefaultBuildController implements BuildController {
     public void finalizeWorkGraph() {
         assertInState(State.DiscoveringTasks);
         if (!queuedForExecution.isEmpty()) {
-            throw new IllegalStateException("Queued tasks have not been scheduled.");
-
-        // TODO - This check should live in the task execution plan, so that it can reuse checks that have already been performed and
-        //   also check for cycles across all nodes
-        Set<TaskInternal> visited = new HashSet<>();
-        Set<TaskInternal> visiting = new HashSet<>();
-        for (ExportedTaskNode node : scheduled) {
-            checkForCyclesFor(node.getTask(), visited, visiting);
-        workGraph.finalizeGraph();
+            StringBuilder sb = new StringBuilder("Queued tasks have not been scheduled:");
+            for (ExportedTaskNode node : queuedForExecution) {
+                sb.append(System.lineSeparator()).append("  - ").append(node);
+            }
+            throw new IllegalStateException(sb.toString());
+            for (ExportedTaskNode taskNode : scheduled) {
+                checkForCyclesFor(taskNode.getTask(), new HashSet<>(), new HashSet<>());
+            }
 
         state = State.ReadyToRun;
     public void startExecution(ExecutorService executorService, Consumer<ExecutionResult<Void>> completionHandler) {
@@ -127,12 +129,13 @@ class DefaultBuildController implements BuildController {
                 consumer.accept(((TaskNode) dependency).getTask());
             }
         }
-    }
-
     private ExecutionResult<Void> doRun() {
+        try {
             return workerLeaseService.runAsWorkerThread(workGraph::runWork);
         } catch (Throwable t) {
             return ExecutionResult.failed(t);
+        }
+    }
         }
     }
 
@@ -150,8 +153,8 @@ class DefaultBuildController implements BuildController {
             CurrentBuildOperationRef.instance().with(parentBuildOperation, () -> completionHandler.accept(doRun()));
         }
     }
-
- * Copyright 2013 the original author or authors.
+ * Copyright 2021 the original author or authors.
+package org.gradle.tooling.internal.provider.runner;
 package org.gradle.tooling.internal.provider.runner;
 import org.gradle.api.BuildCancelledException;
 import org.gradle.initialization.BuildCancellationToken;

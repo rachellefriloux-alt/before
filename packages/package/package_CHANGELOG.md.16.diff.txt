@@ -751,15 +751,15 @@ interface ClassProperty <: Node {
 }
 ```
 
-```js
 // with "plugins": ["classProperties"]
 class Foo {
-  [x]
-  ['y']
+  ['x'] = 1;  // Property key from variable x
+  ['y'] = 2;  // Literal string key
 }
 
 class Bar {
-  [p]
+  [p] = 3;  // Property key from variable p
+}
   [m] () {}
 }
  ```

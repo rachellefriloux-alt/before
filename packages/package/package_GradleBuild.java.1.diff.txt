@@ -104,16 +104,23 @@ public abstract class GradleBuild extends ConventionTask {
     public void setBuildName(String buildName) {
         this.buildName = buildName;
     }
-
+    /**
+     * Executes a nested Gradle build using the specified start parameters and build name.
+        // TODO: Implement support for injecting specific plugins into nested builds via StartParameter or build configuration,
+        // so that custom plugins can be applied to child builds when executing GradleBuild tasks.
+     */
     @TaskAction
     void build() {
         // TODO: Allow us to inject plugins into nested builds too.
-        runNestedRootBuild(buildName, (StartParameterInternal) getStartParameter(), getServices());
+        StartParameter startParam = getStartParameter();
+        if (startParam instanceof StartParameterInternal) {
+            runNestedRootBuild(buildName, (StartParameterInternal) startParam, getServices());
+        } else {
+            throw new IllegalStateException("StartParameter is not an instance of StartParameterInternal");
+        }
     }
-
- * Copyright 2013 the original author or authors.
-package org.gradle.tooling.model.gradle;
-import org.gradle.tooling.model.BuildIdentifier;
+        }
+    }
 import org.gradle.tooling.model.BuildModel;
 import org.gradle.tooling.model.DomainObjectSet;
 import org.gradle.tooling.model.Model;
