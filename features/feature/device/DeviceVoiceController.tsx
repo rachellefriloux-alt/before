@@ -26,12 +26,14 @@ interface DeviceVoiceControllerProps {
   onVoiceCommand?: (command: string, params?: any) => void;
   autoStart?: boolean;
   language?: string;
+  userId?: string;
 }
 
 const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
   onVoiceCommand,
   autoStart = false,
-  language = 'en-US'
+  language = 'en-US',
+  userId = 'default_user'
 }) => {
   const [isListening, setIsListening] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -266,7 +268,6 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
     console.log('Native routine trigger:', event);
     try {
       const routineName = event.routineName || 'morning';
-      const userId = 'default_user'; // TODO: Get from user context/store
 
       // Map routine names to actual routine IDs
       const routineIdMap: { [key: string]: string } = {
@@ -280,7 +281,7 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
 
       if (success) {
         Alert.alert('Routine Started', `Starting ${routineName} routine`);
-        Speech.speak(`Starting ${routineName} routine`, { language: 'en' });
+        await speak(`Starting ${routineName} routine`, { language });
       } else {
         Alert.alert('Routine Failed', 'Could not start the routine');
       }
@@ -295,7 +296,6 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
     console.log('Native theme trigger:', event);
     try {
       const themeName = event.themeName || 'default';
-      const userId = 'default_user'; // TODO: Get from user context/store
 
       // Map theme names to actual theme IDs
       const themeIdMap: { [key: string]: string } = {
@@ -309,7 +309,7 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
 
       if (success) {
         Alert.alert('Theme Changed', `Switched to ${themeName} theme`);
-        Speech.speak(`Switched to ${themeName} theme`, { language: 'en' });
+        await speak(`Switched to ${themeName} theme`);
       } else {
         Alert.alert('Theme Change Failed', 'Could not change the theme');
       }
@@ -323,7 +323,6 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
   const handleNativeGodModeTrigger = async (event: any) => {
     console.log('Native God-Mode trigger:', event);
     try {
-      const userId = 'default_user'; // TODO: Get from user context/store
       const reason = event.trigger === 'voice' ? 'Voice command activation' : 'System activation';
 
       const success = await godModeManager.activateGodMode(userId, reason);
@@ -346,7 +345,7 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
           ]
         );
 
-        Speech.speak(`God-Mode activated. ${enabledFeatures.length} advanced features are now enabled.`, { language: 'en' });
+        await speak(`God-Mode activated. ${enabledFeatures.length} advanced features are now enabled.`, { language: 'en' });
       } else {
         Alert.alert('God-Mode Activation Failed', 'Could not activate God-Mode. Please try again.');
       }

@@ -22,6 +22,7 @@ import * as Haptics from 'expo-haptics';
 import * as Brightness from 'expo-brightness';
 import * as Battery from 'expo-battery';
 import * as Device from 'expo-device';
+import { router } from 'expo-router';
 import DeviceVoiceController from './DeviceVoiceController';
 import { godModeManager } from '../../../core/GodModeManager';
 
@@ -313,7 +314,6 @@ const DeviceControlDemo: React.FC = () => {
         }
         return prev;
       });
-      }
     } catch (error) {
       Alert.alert('Error', 'Failed to perform emergency stop');
     } finally {
@@ -371,9 +371,6 @@ const DeviceControlDemo: React.FC = () => {
             >
               <Text style={styles.sliderButtonText}>+</Text>
             </TouchableOpacity>
-          </View>
-        </View>
-      )}
           </View>
         </View>
       )}
