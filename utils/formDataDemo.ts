@@ -5,7 +5,7 @@
  * Got it, love.
  */
 
-import { ConfigurableFormData, PRESET_CONFIGS } from './formDataUtils';
+import { ConfigurableFormData, PRESET_CONFIGS, NestedFormatConfig } from './formDataUtils';
 
 // Example data that would be sent to an API
 const sampleData = {
@@ -90,7 +90,7 @@ export function showConfigurationOptions() {
 export class APIClient {
   private formDataConfig: ConfigurableFormData;
 
-  constructor(formatConfig = PRESET_CONFIGS.STANDARD) {
+  constructor(formatConfig: NestedFormatConfig = PRESET_CONFIGS.STANDARD) {
     this.formDataConfig = new ConfigurableFormData(formatConfig);
   }
 
