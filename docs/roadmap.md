@@ -21,8 +21,8 @@ Integrate, expand, and enhance all migrated and pending modules from `sallie_1.0
 
 - [x] All migrated modules reviewed for completeness
 - [x] All modules expanded with advanced features:
- 	- Context-aware conversation (see PersonaEngine.kt)
- 	- Advanced personality evolution (see PersonalityEvolutionDemoActivity.kt)
+	- Context-aware conversation (see PersonaEngine.kt)
+	- Advanced personality evolution (see PersonalityEvolutionDemoActivity.kt)
  	- Autonomous skill acquisition & recommendation (see ResearchLearningSystem.js)
  	- Device transfer & control (see DeviceControlDemoActivity.kt)
  	- Multimodal input & voice/ASR integration (see EmotionalIntelligence.js)
