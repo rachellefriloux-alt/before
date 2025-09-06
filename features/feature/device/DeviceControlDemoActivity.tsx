@@ -310,7 +310,7 @@ const DeviceControlDemo: React.FC = () => {
       // Use latest hapticEnabled value after state update
       setDeviceState(prev => {
         if (prev.hapticEnabled) {
-          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+          await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
         }
         return prev;
       });
@@ -347,6 +347,9 @@ const DeviceControlDemo: React.FC = () => {
             <Text style={styles.statusLabel}>Audio Mode</Text>
             <Text style={styles.statusValue}>{deviceState.audioMode}</Text>
           </View>
+        </View>
+      </View>
+
       {/* Brightness Control */}
       {Platform.OS !== 'web' && (
         <View style={styles.section}>
