@@ -5,6 +5,8 @@
  * Got it, love.
  */
 
+import AIContextManager from './AIContextManager.ts';
+
 export class OpenAIIntegration {
     constructor() {
         this.apiKey = null;
@@ -60,17 +62,33 @@ Always respond with empathy, wisdom, and the right balance of support and challe
     }
 
     async generateResponse(message, context = {}) {
-        const cacheKey = this.generateCacheKey(message, context);
+        const userId = context.userId || 'default';
+        
+        // Build comprehensive context using AIContextManager
+        const aiContextManager = AIContextManager.getInstance();
+        const fullContext = await aiContextManager.buildContext(userId, message);
+        
+        // Merge provided context with AI context
+        const enhancedContext = {
+            ...context,
+            emotionalState: fullContext.emotionalState,
+            userPreferences: fullContext.preferences,
+            recentMemories: fullContext.recentMemories.slice(0, 3), // Include recent memories
+            activeTasks: fullContext.activeTasks,
+            relevantPeople: fullContext.relevantPeople
+        };
+        
+        const cacheKey = this.generateCacheKey(message, enhancedContext);
         
         // Check cache first
         if (this.responseCache.has(cacheKey)) {
-            // Returning cached response
+            // Learn from this interaction even with cached response
+            await aiContextManager.learnFromInteraction(userId, message, this.responseCache.get(cacheKey));
             return this.responseCache.get(cacheKey);
         }
         
         // Prevent duplicate concurrent requests
         if (this.pendingRequests.has(cacheKey)) {
-            // Request already in progress
             return new Promise((resolve, reject) => {
                 const checkPending = () => {
                     if (this.responseCache.has(cacheKey)) {
@@ -88,7 +106,7 @@ Always respond with empathy, wisdom, and the right balance of support and challe
         this.pendingRequests.add(cacheKey);
         
         try {
-            const response = await this.makeOpenAIRequest(message, context);
+            const response = await this.makeOpenAIRequest(message, enhancedContext);
             
             // Cache the response
             this.responseCache.set(cacheKey, response);
@@ -175,6 +193,10 @@ Always respond with empathy, wisdom, and the right balance of support and challe
             if (conversationHistory.length > this.maxHistoryLength) {
                 conversationHistory.splice(0, conversationHistory.length - this.maxHistoryLength);
             }
+
+            // Learn from this interaction
+            const aiContextManager = AIContextManager.getInstance();
+            await aiContextManager.learnFromInteraction(userId, message, aiResponse);
 
             return aiResponse;
         } catch (error) {

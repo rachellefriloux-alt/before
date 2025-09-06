@@ -4,6 +4,21 @@
  */
 
 const { describe, it, expect, beforeEach, jest } = require('@jest/globals');
+
+// Mock AIContextManager at the top level
+jest.mock('./AIContextManager.ts', () => ({
+    getInstance: jest.fn(() => ({
+        buildContext: jest.fn(() => Promise.resolve({
+            emotionalState: { sentiment: 'neutral', intensity: 0.5 },
+            preferences: {},
+            recentMemories: [],
+            activeTasks: [],
+            relevantPeople: []
+        })),
+        learnFromInteraction: jest.fn(() => Promise.resolve())
+    }))
+}));
+
 const { OpenAIIntegration } = require('./OpenAIIntegration');
 
 describe('OpenAIIntegration', () => {

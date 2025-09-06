@@ -30,6 +30,17 @@ jest.mock('expo-network', () => ({
   },
 }));
 
+jest.mock('expo-secure-store', () => ({
+  setItemAsync: jest.fn(() => Promise.resolve()),
+  getItemAsync: jest.fn(() => Promise.resolve(null)),
+  deleteItemAsync: jest.fn(() => Promise.resolve()),
+}));
+
+jest.mock('expo-crypto', () => ({
+  getRandomBytesAsync: jest.fn((length) => Promise.resolve(new Uint8Array(length))),
+  digestStringAsync: jest.fn(() => Promise.resolve('mocked-hash')),
+}));
+
 jest.mock('expo-device', () => ({
   deviceName: 'Test Device',
   osVersion: '13',
