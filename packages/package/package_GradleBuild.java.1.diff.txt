@@ -119,7 +119,6 @@ public abstract class GradleBuild extends ConventionTask {
             throw new IllegalStateException("StartParameter is not an instance of StartParameterInternal");
         }
     }
-            throw new IllegalStateException("StartParameter is not an instance of StartParameterInternal");
         }
     }
 import org.gradle.tooling.model.BuildModel;
