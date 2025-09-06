@@ -244,3 +244,37 @@ enum class AudioDeviceType {
     SPDIF,
     UNKNOWN
 }
+
+/**
+ * Speech recognition states
+ */
+enum class RecognitionState {
+    INACTIVE,
+    LISTENING,
+    PROCESSING,
+    ERROR
+}
+
+/**
+ * Result of speech recognition
+ */
+data class RecognitionResult(
+    val text: String,
+    val confidence: Float,
+    val isPartial: Boolean = false,
+    val languageCode: String? = null,
+    val wordTimestamps: List<WordTimestamp> = emptyList(),
+    val alternatives: List<String> = emptyList(),
+    val duration: Long? = null,
+    val error: String? = null
+)
+
+/**
+ * Word timestamp information
+ */
+data class WordTimestamp(
+    val word: String,
+    val startTime: Long,
+    val endTime: Long,
+    val confidence: Float
+)

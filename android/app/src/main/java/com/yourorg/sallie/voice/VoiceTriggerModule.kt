@@ -1,10 +1,11 @@
 /*
  * Salle 1.0 Module
  * Persona: Tough love meets soul care.
- * Function: VoiceTriggerModule - Voice trigger support for God-Mode commands and routines.
+ * Function: Voice trigger module for routines, theme swaps, and God-Mode activation.
  * Got it, love.
  */
-package com.sallie.voice
+
+package com.yourorg.sallie.voice
 
 import android.content.Context
 import android.speech.SpeechRecognizer
@@ -14,9 +15,10 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.coroutines.*
 import java.util.*
+import com.facebook.react.ReactApplication
+import com.facebook.react.ReactInstanceManager
 import com.facebook.react.bridge.ReactContext
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.modules.core.DeviceEventManagerModule
+import com.facebook.react.modules.core.RCTDeviceEventEmitter
 
 object VoiceTriggerModule {
     private const val TAG = "VoiceTriggerModule"
@@ -24,7 +26,6 @@ object VoiceTriggerModule {
     private var isListening = false
     private val triggerActions = mutableMapOf<String, TriggerAction>()
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
-    private var reactContext: ReactContext? = null
 
     // Sealed class for trigger actions
     sealed class TriggerAction {
@@ -133,59 +134,67 @@ object VoiceTriggerModule {
 
     private fun executeRoutine(routineName: String) {
         Log.d(TAG, "Executing routine: $routineName")
-
-        // Emit event to React Native side
-        reactContext?.let { context ->
-            val params = Arguments.createMap().apply {
-                putString("routineName", routineName)
-                putString("trigger", "voice")
+        try {
+            // Send event to React Native RoutineSequencerModule
+            val reactContext = getReactApplicationContext()
+            if (reactContext != null) {
+                reactContext
+                    .getJSModule(RCTDeviceEventEmitter::class.java)
+                    .emit("VoiceTriggerRoutine", mapOf(
+                        "routineName" to routineName,
+                        "trigger" to "voice",
+                        "timestamp" to System.currentTimeMillis()
+                    ))
+                Log.d(TAG, "Sent routine execution event to React Native: $routineName")
+            } else {
+                Log.w(TAG, "React context not available for routine execution")
             }
-            context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-                ?.emit("VoiceTriggerRoutine", params)
-        }
-
-        // Fallback: Log for debugging if React context not available
-        if (reactContext == null) {
-            Log.w(TAG, "ReactContext not available, routine execution logged only")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to execute routine via React Native", e)
         }
     }
 
     private fun swapTheme(themeName: String) {
         Log.d(TAG, "Swapping to theme: $themeName")
-
-        // Emit event to React Native side
-        reactContext?.let { context ->
-            val params = Arguments.createMap().apply {
-                putString("themeName", themeName)
-                putString("trigger", "voice")
+        try {
+            // Send event to React Native ThemeComposerUI
+            val reactContext = getReactApplicationContext()
+            if (reactContext != null) {
+                reactContext
+                    .getJSModule(RCTDeviceEventEmitter::class.java)
+                    .emit("VoiceTriggerTheme", mapOf(
+                        "themeName" to themeName,
+                        "trigger" to "voice",
+                        "timestamp" to System.currentTimeMillis()
+                    ))
+                Log.d(TAG, "Sent theme swap event to React Native: $themeName")
+            } else {
+                Log.w(TAG, "React context not available for theme swap")
             }
-            context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-                ?.emit("VoiceTriggerTheme", params)
-        }
-
-        // Fallback: Log for debugging if React context not available
-        if (reactContext == null) {
-            Log.w(TAG, "ReactContext not available, theme swap logged only")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to swap theme via React Native", e)
         }
     }
 
     private fun activateGodMode() {
         Log.d(TAG, "Activating God-Mode")
-
-        // Emit event to React Native side
-        reactContext?.let { context ->
-            val params = Arguments.createMap().apply {
-                putBoolean("activated", true)
-                putString("trigger", "voice")
-                putDouble("timestamp", System.currentTimeMillis().toDouble())
+        try {
+            // Send event to React Native for God-Mode activation
+            val reactContext = getReactApplicationContext()
+            if (reactContext != null) {
+                reactContext
+                    .getJSModule(RCTDeviceEventEmitter::class.java)
+                    .emit("VoiceTriggerGodMode", mapOf(
+                        "action" to "activate",
+                        "trigger" to "voice",
+                        "timestamp" to System.currentTimeMillis()
+                    ))
+                Log.d(TAG, "Sent God-Mode activation event to React Native")
+            } else {
+                Log.w(TAG, "React context not available for God-Mode activation")
             }
-            context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-                ?.emit("VoiceTriggerGodMode", params)
-        }
-
-        // Fallback: Log for debugging if React context not available
-        if (reactContext == null) {
-            Log.w(TAG, "ReactContext not available, God-Mode activation logged only")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to activate God-Mode via React Native", e)
         }
     }
 
@@ -217,4 +226,30 @@ object VoiceTriggerModule {
     }
 
     fun isListening(): Boolean = isListening
+
+    private var reactContext: ReactContext? = null
+
+    fun setReactContext(context: ReactContext) {
+        reactContext = context
+    }
+
+    private fun getReactApplicationContext(): ReactContext? {
+        return reactContext ?: try {
+            // Fallback: try to get from application
+            val app = android.app.Application.getProcessName()?.let {
+                android.app.Application()
+            } ?: return null
+
+            if (app is ReactApplication) {
+                val reactInstanceManager = app.reactNativeHost.reactInstanceManager
+                reactInstanceManager.currentReactContext
+            } else {
+                Log.w(TAG, "Application is not a ReactApplication")
+                null
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to get React application context", e)
+            null
+        }
+    }
 }
