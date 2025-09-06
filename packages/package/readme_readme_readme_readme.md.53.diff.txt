@@ -9,7 +9,7 @@ recursive traversing functionality.
 The following code will output all variables declared at the root of a file.
 ```javascript
 esrecurse.visit(ast, {
-    XXXStatement: function (node) {
+    BinaryExpression: function (node) {
         this.visit(node.left);
         // do something...
         this.visit(node.right);
@@ -18,7 +18,7 @@ esrecurse.visit(ast, {
 We can use `Visitor` instance.
 ```javascript
 var visitor = new esrecurse.Visitor({
-    XXXStatement: function (node) {
+    BinaryExpression: function (node) {
         this.visit(node.left);
         // do something...
         this.visit(node.right);
@@ -32,7 +32,7 @@ class Derived extends esrecurse.Visitor {
     {
         super(null);
     }
-    XXXStatement(node) {
+    BinaryExpression(node) {
     }
 }
 ```javascript
@@ -40,7 +40,7 @@ function DerivedVisitor() {
     esrecurse.Visitor.call(/* this for constructor */  this  /* visitor object automatically becomes this. */);
 }
 util.inherits(DerivedVisitor, esrecurse.Visitor);
-DerivedVisitor.prototype.XXXStatement = function (node) {
+DerivedVisitor.prototype.BinaryExpression = function (node) {
     this.visit(node.left);
     // do something...
     this.visit(node.right);
@@ -52,7 +52,7 @@ function DerivedVisitor() {
     esrecurse.Visitor.call(/* this for constructor */  this  /* visitor object automatically becomes this. */);
 }
 util.inherits(DerivedVisitor, esrecurse.Visitor);
-DerivedVisitor.prototype.XXXStatement = function (node) {
+DerivedVisitor.prototype.BinaryExpression = function (node) {
     // do something...
     this.visitChildren(node);
 };
