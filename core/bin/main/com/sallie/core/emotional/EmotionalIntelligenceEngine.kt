@@ -113,78 +113,399 @@ class EmotionalIntelligenceEngine private constructor(
     }
     
     /**
-     * Perform lexical analysis of text using emotional word databases
+     * Perform comprehensive lexical analysis using emotion lexicons
      */
     private fun performLexicalAnalysis(text: String): EmotionalDimensions {
-        // TODO: Implement comprehensive lexical analysis using NRC, LIWC or similar lexicons
-        // This is a simplified placeholder implementation
         val normalizedText = text.lowercase()
-        
+
+        // Initialize emotion scores
+        val emotionScores = mutableMapOf<String, Float>()
+        Emotion.values().forEach { emotion ->
+            emotionScores[emotion.name] = 0f
+        }
+
+        // Initialize linguistic category scores
+        val linguisticScores = mutableMapOf<String, Int>()
+
+        // Split text into words and analyze
+        val words = tokenizeText(normalizedText)
+        var wordIndex = 0
+
+        while (wordIndex < words.size) {
+            val word = words[wordIndex]
+            val nextWord = if (wordIndex + 1 < words.size) words[wordIndex + 1] else null
+            val prevWord = if (wordIndex > 0) words[wordIndex - 1] else null
+
+            // Check for multi-word expressions first
+            val multiWordResult = analyzeMultiWordExpression(word, nextWord, prevWord)
+            if (multiWordResult != null) {
+                // Apply multi-word scores
+                multiWordResult.emotions.forEach { (emotion, score) ->
+                    emotionScores[emotion] = (emotionScores[emotion] ?: 0f) + score
+                }
+                multiWordResult.linguisticCategories.forEach { category ->
+                    linguisticScores[category] = (linguisticScores[category] ?: 0) + 1
+                }
+                wordIndex += multiWordResult.wordCount
+                continue
+            }
+
+            // Analyze single word
+            val wordResult = analyzeWord(word, prevWord, nextWord)
+            wordResult.emotions.forEach { (emotion, score) ->
+                emotionScores[emotion] = (emotionScores[emotion] ?: 0f) + score
+            }
+            wordResult.linguisticCategories.forEach { category ->
+                linguisticScores[category] = (linguisticScores[category] ?: 0) + 1
+            }
+
+            wordIndex++
+        }
+
+        // Convert emotion scores to dimensional values
+        return convertEmotionScoresToDimensions(emotionScores, linguisticScores, words.size)
+    }
+
+    /**
+     * Tokenize text into words, handling punctuation and contractions
+     */
+    private fun tokenizeText(text: String): List<String> {
+        // Handle contractions and punctuation
+        val processedText = text
+            .replace(Regex("(?<!\\w)'(?!\\w)"), "") // Remove apostrophes not part of contractions
+            .replace(Regex("(?<!\\w)\"(?!\\w)"), "") // Remove quotes
+            .replace(Regex("[^\\w\\s]"), " $0 ") // Add spaces around punctuation
+            .replace(Regex("\\s+"), " ") // Normalize whitespace
+            .trim()
+
+        return processedText.split(" ").filter { it.isNotEmpty() }
+    }
+
+    /**
+     * Analyze multi-word expressions (idioms, phrases, etc.)
+     */
+    private fun analyzeMultiWordExpression(
+        word: String,
+        nextWord: String?,
+        prevWord: String?
+    ): LexicalAnalysisResult? {
+        val expressions = getMultiWordExpressions()
+
+        // Check for 2-word expressions
+        if (nextWord != null) {
+            val twoWordKey = "$word $nextWord"
+            expressions[twoWordKey]?.let { return it }
+        }
+
+        // Check for 3-word expressions
+        if (prevWord != null && nextWord != null) {
+            val threeWordKey = "$prevWord $word $nextWord"
+            expressions[threeWordKey]?.let { return it }
+        }
+
+        return null
+    }
+
+    /**
+     * Analyze individual word with context
+     */
+    private fun analyzeWord(
+        word: String,
+        prevWord: String?,
+        nextWord: String?
+    ): LexicalAnalysisResult {
+        val emotions = mutableMapOf<String, Float>()
+        val linguisticCategories = mutableSetOf<String>()
+
+        // Get base word scores
+        val lexiconEntry = getEmotionLexicon()[word]
+        if (lexiconEntry != null) {
+            emotions.putAll(lexiconEntry.emotions)
+            linguisticCategories.addAll(lexiconEntry.linguisticCategories)
+        }
+
+        // Apply modifiers
+        var intensityModifier = 1.0f
+
+        // Check for negations
+        if (isNegation(prevWord) || isNegation(word)) {
+            intensityModifier *= -0.7f // Reduce intensity and flip valence
+            linguisticCategories.add("NEGATION")
+        }
+
+        // Check for intensifiers
+        if (isIntensifier(prevWord)) {
+            intensityModifier *= 1.5f
+            linguisticCategories.add("INTENSIFIER")
+        }
+
+        // Check for diminishers
+        if (isDiminisher(prevWord)) {
+            intensityModifier *= 0.7f
+            linguisticCategories.add("DIMINISHER")
+        }
+
+        // Apply intensity modifier
+        emotions.forEach { (emotion, score) ->
+            emotions[emotion] = score * intensityModifier
+        }
+
+        return LexicalAnalysisResult(
+            emotions = emotions,
+            linguisticCategories = linguisticCategories,
+            wordCount = 1
+        )
+    }
+
+    /**
+     * Convert emotion scores to VAD dimensions
+     */
+    private fun convertEmotionScoresToDimensions(
+        emotionScores: Map<String, Float>,
+        linguisticScores: Map<String, Int>,
+        totalWords: Int
+    ): EmotionalDimensions {
         var valence = DIMENSION_NEUTRAL
         var arousal = DIMENSION_NEUTRAL
         var dominance = DIMENSION_NEUTRAL
-        
-        // Positive valence words
-        val positiveWords = listOf("happy", "good", "great", "excellent", "wonderful", 
-            "love", "joy", "amazing", "beautiful", "hope", "pleased", "delighted")
-        
-        // Negative valence words
-        val negativeWords = listOf("sad", "bad", "terrible", "awful", "horrible", 
-            "hate", "angry", "upset", "disappointed", "worried", "frustrated")
-        
-        // High arousal words
-        val highArousalWords = listOf("excited", "thrilled", "energetic", "angry", 
-            "furious", "terrified", "ecstatic", "anxious", "passionate")
-        
-        // Low arousal words
-        val lowArousalWords = listOf("calm", "relaxed", "peaceful", "tired", 
-            "bored", "sleepy", "serene", "tranquil")
-        
-        // High dominance words
-        val highDominanceWords = listOf("confident", "strong", "powerful", "in control", 
-            "certain", "sure", "determined", "decisive")
-        
-        // Low dominance words
-        val lowDominanceWords = listOf("helpless", "weak", "powerless", "small", 
-            "insignificant", "uncertain", "confused", "overwhelmed")
-        
-        // Count word occurrences and calculate dimension values
-        val words = normalizedText.split(Regex("\\s+"))
-        for (word in words) {
-            // Valence calculation
-            if (positiveWords.any { word.contains(it) }) {
-                valence += 0.1f
-            }
-            if (negativeWords.any { word.contains(it) }) {
-                valence -= 0.1f
-            }
-            
-            // Arousal calculation
-            if (highArousalWords.any { word.contains(it) }) {
-                arousal += 0.1f
-            }
-            if (lowArousalWords.any { word.contains(it) }) {
-                arousal -= 0.1f
-            }
-            
-            // Dominance calculation
-            if (highDominanceWords.any { word.contains(it) }) {
-                dominance += 0.1f
-            }
-            if (lowDominanceWords.any { word.contains(it) }) {
-                dominance -= 0.1f
-            }
+
+        // Calculate valence from emotion scores
+        val positiveEmotions = listOf("JOY", "CONTENTMENT", "EXCITEMENT", "RELAXATION",
+            "PRIDE", "GRATITUDE", "INTEREST", "ANTICIPATION", "HOPE", "LOVE",
+            "AMUSEMENT", "TRUST")
+        val negativeEmotions = listOf("SADNESS", "ANGER", "FEAR", "DISGUST",
+            "DISAPPOINTMENT", "SHAME", "GUILT", "ENVY", "ANXIETY", "CONTEMPT",
+            "FRUSTRATION")
+
+        val positiveScore = positiveEmotions.sumOf { emotionScores[it]?.toDouble() ?: 0.0 }.toFloat()
+        val negativeScore = negativeEmotions.sumOf { emotionScores[it]?.toDouble() ?: 0.0 }.toFloat()
+
+        if (positiveScore + negativeScore > 0) {
+            valence = (positiveScore - negativeScore) / (positiveScore + negativeScore)
         }
-        
-        // Clamp values to valid range
-        valence = valence.coerceIn(DIMENSION_MIN, DIMENSION_MAX)
-        arousal = arousal.coerceIn(DIMENSION_MIN, DIMENSION_MAX)
-        dominance = dominance.coerceIn(DIMENSION_MIN, DIMENSION_MAX)
-        
+
+        // Calculate arousal from emotion intensity and linguistic markers
+        val highArousalEmotions = listOf("EXCITEMENT", "ANGER", "FEAR", "SURPRISE",
+            "ANXIETY", "FRUSTRATION", "JOY")
+        val lowArousalEmotions = listOf("CONTENTMENT", "RELAXATION", "SADNESS",
+            "BOREDOM", "FATIGUE")
+
+        val highArousalScore = highArousalEmotions.sumOf { emotionScores[it]?.toDouble() ?: 0.0 }.toFloat()
+        val lowArousalScore = lowArousalEmotions.sumOf { emotionScores[it]?.toDouble() ?: 0.0 }.toFloat()
+
+        if (highArousalScore + lowArousalScore > 0) {
+            arousal = (highArousalScore - lowArousalScore) / (highArousalScore + lowArousalScore)
+        }
+
+        // Factor in punctuation and capitalization intensity
+        val punctuationIntensity = linguisticScores["INTENSIFIER"] ?: 0
+        val questionIntensity = linguisticScores["QUESTION"] ?: 0
+
+        arousal += (punctuationIntensity * 0.1f).coerceAtMost(0.3f)
+        arousal += (questionIntensity * 0.05f).coerceAtMost(0.2f)
+
+        // Calculate dominance from emotion types
+        val highDominanceEmotions = listOf("PRIDE", "ANGER", "CONTEMPT", "TRUST")
+        val lowDominanceEmotions = listOf("FEAR", "SHAME", "GUILT", "ANXIETY")
+
+        val highDominanceScore = highDominanceEmotions.sumOf { emotionScores[it]?.toDouble() ?: 0.0 }.toFloat()
+        val lowDominanceScore = lowDominanceEmotions.sumOf { emotionScores[it]?.toDouble() ?: 0.0 }.toFloat()
+
+        if (highDominanceScore + lowDominanceScore > 0) {
+            dominance = (highDominanceScore - lowDominanceScore) / (highDominanceScore + lowDominanceScore)
+        }
+
+        // Normalize scores based on text length
+        val lengthFactor = (totalWords.coerceAtMost(50) / 50f).coerceAtLeast(0.1f)
+        valence *= lengthFactor
+        arousal *= lengthFactor
+        dominance *= lengthFactor
+
+        // Clamp to valid ranges
         return EmotionalDimensions(
-            valence = valence,
-            arousal = arousal,
-            dominance = dominance
+            valence = valence.coerceIn(DIMENSION_MIN, DIMENSION_MAX),
+            arousal = arousal.coerceIn(DIMENSION_MIN, DIMENSION_MAX),
+            dominance = dominance.coerceIn(DIMENSION_MIN, DIMENSION_MAX)
+        )
+    }
+
+    /**
+     * Check if word is a negation
+     */
+    private fun isNegation(word: String?): Boolean {
+        if (word == null) return false
+        val negations = setOf("not", "no", "never", "none", "nothing", "nowhere",
+            "neither", "nor", "cannot", "can't", "won't", "don't", "doesn't",
+            "isn't", "aren't", "wasn't", "weren't", "haven't", "hasn't", "hadn't")
+        return negations.contains(word.lowercase())
+    }
+
+    /**
+     * Check if word is an intensifier
+     */
+    private fun isIntensifier(word: String?): Boolean {
+        if (word == null) return false
+        val intensifiers = setOf("very", "really", "so", "extremely", "incredibly",
+            "absolutely", "totally", "completely", "utterly", "highly", "super",
+            "amazingly", "awfully", "terribly", "especially")
+        return intensifiers.contains(word.lowercase())
+    }
+
+    /**
+     * Check if word is a diminisher
+     */
+    private fun isDiminisher(word: String?): Boolean {
+        if (word == null) return false
+        val diminishers = setOf("slightly", "somewhat", "kind", "sort", "fairly",
+            "rather", "pretty", "quite", "a bit", "a little")
+        return diminishers.contains(word.lowercase())
+    }
+
+    /**
+     * Get comprehensive emotion lexicon
+     */
+    private fun getEmotionLexicon(): Map<String, LexiconEntry> {
+        return mapOf(
+            // Positive emotions - Joy cluster
+            "happy" to LexiconEntry(mapOf("JOY" to 0.8f), setOf("POSITIVE")),
+            "joy" to LexiconEntry(mapOf("JOY" to 0.9f), setOf("POSITIVE")),
+            "delight" to LexiconEntry(mapOf("JOY" to 0.7f), setOf("POSITIVE")),
+            "pleasure" to LexiconEntry(mapOf("JOY" to 0.6f), setOf("POSITIVE")),
+            "cheerful" to LexiconEntry(mapOf("JOY" to 0.7f), setOf("POSITIVE")),
+            "glad" to LexiconEntry(mapOf("JOY" to 0.6f), setOf("POSITIVE")),
+            "excited" to LexiconEntry(mapOf("EXCITEMENT" to 0.8f, "JOY" to 0.4f), setOf("POSITIVE")),
+            "thrilled" to LexiconEntry(mapOf("EXCITEMENT" to 0.9f, "JOY" to 0.5f), setOf("POSITIVE")),
+            "ecstatic" to LexiconEntry(mapOf("EXCITEMENT" to 1.0f, "JOY" to 0.6f), setOf("POSITIVE")),
+
+            // Positive emotions - Contentment cluster
+            "content" to LexiconEntry(mapOf("CONTENTMENT" to 0.7f), setOf("POSITIVE")),
+            "peaceful" to LexiconEntry(mapOf("CONTENTMENT" to 0.8f, "RELAXATION" to 0.4f), setOf("POSITIVE")),
+            "calm" to LexiconEntry(mapOf("CONTENTMENT" to 0.6f, "RELAXATION" to 0.5f), setOf("POSITIVE")),
+            "relaxed" to LexiconEntry(mapOf("RELAXATION" to 0.8f, "CONTENTMENT" to 0.4f), setOf("POSITIVE")),
+            "serene" to LexiconEntry(mapOf("CONTENTMENT" to 0.9f, "RELAXATION" to 0.5f), setOf("POSITIVE")),
+
+            // Positive emotions - Pride cluster
+            "proud" to LexiconEntry(mapOf("PRIDE" to 0.8f), setOf("POSITIVE")),
+            "accomplished" to LexiconEntry(mapOf("PRIDE" to 0.7f), setOf("POSITIVE")),
+            "confident" to LexiconEntry(mapOf("PRIDE" to 0.6f, "TRUST" to 0.3f), setOf("POSITIVE")),
+
+            // Positive emotions - Gratitude cluster
+            "grateful" to LexiconEntry(mapOf("GRATITUDE" to 0.8f), setOf("POSITIVE")),
+            "thankful" to LexiconEntry(mapOf("GRATITUDE" to 0.7f), setOf("POSITIVE")),
+            "appreciative" to LexiconEntry(mapOf("GRATITUDE" to 0.6f), setOf("POSITIVE")),
+
+            // Negative emotions - Sadness cluster
+            "sad" to LexiconEntry(mapOf("SADNESS" to 0.8f), setOf("NEGATIVE")),
+            "unhappy" to LexiconEntry(mapOf("SADNESS" to 0.7f), setOf("NEGATIVE")),
+            "depressed" to LexiconEntry(mapOf("SADNESS" to 0.9f), setOf("NEGATIVE")),
+            "melancholy" to LexiconEntry(mapOf("SADNESS" to 0.6f), setOf("NEGATIVE")),
+            "gloomy" to LexiconEntry(mapOf("SADNESS" to 0.5f), setOf("NEGATIVE")),
+
+            // Negative emotions - Anger cluster
+            "angry" to LexiconEntry(mapOf("ANGER" to 0.8f), setOf("NEGATIVE")),
+            "mad" to LexiconEntry(mapOf("ANGER" to 0.7f), setOf("NEGATIVE")),
+            "furious" to LexiconEntry(mapOf("ANGER" to 0.9f), setOf("NEGATIVE")),
+            "irritated" to LexiconEntry(mapOf("ANGER" to 0.5f), setOf("NEGATIVE")),
+            "annoyed" to LexiconEntry(mapOf("ANGER" to 0.4f), setOf("NEGATIVE")),
+
+            // Negative emotions - Fear cluster
+            "afraid" to LexiconEntry(mapOf("FEAR" to 0.8f), setOf("NEGATIVE")),
+            "scared" to LexiconEntry(mapOf("FEAR" to 0.7f), setOf("NEGATIVE")),
+            "terrified" to LexiconEntry(mapOf("FEAR" to 0.9f), setOf("NEGATIVE")),
+            "anxious" to LexiconEntry(mapOf("ANXIETY" to 0.8f, "FEAR" to 0.4f), setOf("NEGATIVE")),
+            "worried" to LexiconEntry(mapOf("ANXIETY" to 0.7f, "FEAR" to 0.3f), setOf("NEGATIVE")),
+
+            // Negative emotions - Disgust cluster
+            "disgusted" to LexiconEntry(mapOf("DISGUST" to 0.8f), setOf("NEGATIVE")),
+            "repulsed" to LexiconEntry(mapOf("DISGUST" to 0.7f), setOf("NEGATIVE")),
+            "grossed" to LexiconEntry(mapOf("DISGUST" to 0.6f), setOf("NEGATIVE")),
+
+            // Complex emotions
+            "hopeful" to LexiconEntry(mapOf("HOPE" to 0.7f, "ANTICIPATION" to 0.4f), setOf("POSITIVE")),
+            "optimistic" to LexiconEntry(mapOf("HOPE" to 0.6f), setOf("POSITIVE")),
+            "pessimistic" to LexiconEntry(mapOf("SADNESS" to 0.4f, "FEAR" to 0.3f), setOf("NEGATIVE")),
+            "frustrated" to LexiconEntry(mapOf("FRUSTRATION" to 0.8f, "ANGER" to 0.3f), setOf("NEGATIVE")),
+            "overwhelmed" to LexiconEntry(mapOf("ANXIETY" to 0.7f, "FEAR" to 0.4f), setOf("NEGATIVE")),
+            "confused" to LexiconEntry(mapOf("CONFUSION" to 0.7f), setOf("NEUTRAL")),
+            "surprised" to LexiconEntry(mapOf("SURPRISE" to 0.8f), setOf("NEUTRAL")),
+            "bored" to LexiconEntry(mapOf("BOREDOM" to 0.6f), setOf("NEGATIVE")),
+            "tired" to LexiconEntry(mapOf("FATIGUE" to 0.7f), setOf("NEGATIVE")),
+            "amused" to LexiconEntry(mapOf("AMUSEMENT" to 0.7f, "JOY" to 0.3f), setOf("POSITIVE")),
+            "interested" to LexiconEntry(mapOf("INTEREST" to 0.6f), setOf("POSITIVE")),
+            "disappointed" to LexiconEntry(mapOf("DISAPPOINTMENT" to 0.8f, "SADNESS" to 0.3f), setOf("NEGATIVE")),
+            "guilty" to LexiconEntry(mapOf("GUILT" to 0.7f), setOf("NEGATIVE")),
+            "ashamed" to LexiconEntry(mapOf("SHAME" to 0.8f), setOf("NEGATIVE")),
+            "envious" to LexiconEntry(mapOf("ENVY" to 0.6f), setOf("NEGATIVE")),
+            "jealous" to LexiconEntry(mapOf("ENVY" to 0.7f), setOf("NEGATIVE")),
+            "loved" to LexiconEntry(mapOf("LOVE" to 0.9f), setOf("POSITIVE")),
+            "loving" to LexiconEntry(mapOf("LOVE" to 0.8f), setOf("POSITIVE")),
+            "trusted" to LexiconEntry(mapOf("TRUST" to 0.7f), setOf("POSITIVE")),
+            "trusting" to LexiconEntry(mapOf("TRUST" to 0.6f), setOf("POSITIVE"))
+        )
+    }
+
+    /**
+     * Get multi-word expressions and idioms
+     */
+    private fun getMultiWordExpressions(): Map<String, LexicalAnalysisResult> {
+        return mapOf(
+            // Positive expressions
+            "on cloud nine" to LexicalAnalysisResult(
+                emotions = mapOf("JOY" to 0.9f, "EXCITEMENT" to 0.5f),
+                linguisticCategories = setOf("POSITIVE", "IDIOM"),
+                wordCount = 3
+            ),
+            "over the moon" to LexicalAnalysisResult(
+                emotions = mapOf("JOY" to 0.8f, "EXCITEMENT" to 0.4f),
+                linguisticCategories = setOf("POSITIVE", "IDIOM"),
+                wordCount = 3
+            ),
+            "head over heels" to LexicalAnalysisResult(
+                emotions = mapOf("LOVE" to 0.8f, "JOY" to 0.4f),
+                linguisticCategories = setOf("POSITIVE", "IDIOM"),
+                wordCount = 3
+            ),
+
+            // Negative expressions
+            "down in dumps" to LexicalAnalysisResult(
+                emotions = mapOf("SADNESS" to 0.8f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 3
+            ),
+            "feeling blue" to LexicalAnalysisResult(
+                emotions = mapOf("SADNESS" to 0.7f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 2
+            ),
+            "at wits end" to LexiconEntry(
+                emotions = mapOf("FRUSTRATION" to 0.8f, "ANGER" to 0.3f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 3
+            ),
+
+            // Anxiety expressions
+            "on pins needles" to LexicalAnalysisResult(
+                emotions = mapOf("ANXIETY" to 0.8f, "FEAR" to 0.3f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 3
+            ),
+            "biting nails" to LexicalAnalysisResult(
+                emotions = mapOf("ANXIETY" to 0.7f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 2
+            ),
+
+            // Anger expressions
+            "seeing red" to LexicalAnalysisResult(
+                emotions = mapOf("ANGER" to 0.9f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 2
+            ),
+            "hot under collar" to LexicalAnalysisResult(
+                emotions = mapOf("ANGER" to 0.8f),
+                linguisticCategories = setOf("NEGATIVE", "IDIOM"),
+                wordCount = 3
+            )
         )
     }
     
@@ -730,3 +1051,21 @@ class EmotionalStateHistory(private val maxHistorySize: Int) {
         }
     }
 }
+
+/**
+ * Result of lexical analysis for a word or phrase
+ */
+data class LexicalAnalysisResult(
+    val emotions: Map<String, Float>,
+    val linguisticCategories: Set<String>,
+    val wordCount: Int
+)
+
+/**
+ * Entry in the emotion lexicon
+ */
+data class LexiconEntry(
+    val emotions: Map<String, Float>,
+    val linguisticCategories: Set<String>,
+    val wordCount: Int = 1
+)

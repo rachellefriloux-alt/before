@@ -6,10 +6,14 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Platform, Modal } from 'react-native';
 import { Audio } from 'expo-av';
 import * as Speech from 'expo-speech';
 import { DeviceEventEmitter } from 'react-native';
+import { routineManager } from '../../../ui/RoutineSequencerModule';
+import { themeManager } from '../../../ui/ThemeComposerUI';
+import { godModeManager } from '../../../core/GodModeManager';
+import GodModeManagementScreen from './GodModeManagementScreen';
 
 interface VoiceCommand {
   id: string;
@@ -33,6 +37,8 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [lastCommand, setLastCommand] = useState<string>('');
   const [available, setAvailable] = useState(false);
+  const [godModeActive, setGodModeActive] = useState(false);
+  const [showGodModeManagement, setShowGodModeManagement] = useState(false);
   const recognitionRef = useRef<any>(null);
 
   // Voice commands registry
@@ -87,10 +93,22 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
     const themeSubscription = DeviceEventEmitter.addListener('VoiceTriggerTheme', handleNativeThemeTrigger);
     const godModeSubscription = DeviceEventEmitter.addListener('VoiceTriggerGodMode', handleNativeGodModeTrigger);
 
+    // Monitor God-Mode state
+    const checkGodModeStatus = () => {
+      setGodModeActive(godModeManager.isActive());
+    };
+
+    // Check initial status
+    checkGodModeStatus();
+
+    // Set up periodic check for God-Mode status
+    const godModeCheckInterval = setInterval(checkGodModeStatus, 1000);
+
     return () => {
       subscription.remove();
       themeSubscription.remove();
       godModeSubscription.remove();
+      clearInterval(godModeCheckInterval);
       stopListening();
     };
   }, []);
@@ -244,18 +262,98 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
     });
   };
 
-  const handleNativeTrigger = (event: any) => {
+  const handleNativeTrigger = async (event: any) => {
     console.log('Native routine trigger:', event);
+    try {
+      const routineName = event.routineName || 'morning';
+      const userId = 'default_user'; // TODO: Get from user context/store
+
+      // Map routine names to actual routine IDs
+      const routineIdMap: { [key: string]: string } = {
+        'morning': 'morning_routine',
+        'evening': 'evening_routine',
+        'workout': 'workout_routine'
+      };
+
+      const routineId = routineIdMap[routineName] || 'morning_routine';
+      const success = await routineManager.executeRoutine(routineId, userId);
+
+      if (success) {
+        Alert.alert('Routine Started', `Starting ${routineName} routine`);
+        Speech.speak(`Starting ${routineName} routine`, { language: 'en' });
+      } else {
+        Alert.alert('Routine Failed', 'Could not start the routine');
+      }
+    } catch (error) {
+      console.error('Error executing routine:', error);
+      Alert.alert('Error', 'Failed to execute routine');
+    }
     onVoiceCommand?.('native_routine', event);
   };
 
-  const handleNativeThemeTrigger = (event: any) => {
+  const handleNativeThemeTrigger = async (event: any) => {
     console.log('Native theme trigger:', event);
+    try {
+      const themeName = event.themeName || 'default';
+      const userId = 'default_user'; // TODO: Get from user context/store
+
+      // Map theme names to actual theme IDs
+      const themeIdMap: { [key: string]: string } = {
+        'dark': 'dark',
+        'light': 'light',
+        'nature': 'nature'
+      };
+
+      const themeId = themeIdMap[themeName] || 'default';
+      const success = await themeManager.applyTheme(themeId, userId);
+
+      if (success) {
+        Alert.alert('Theme Changed', `Switched to ${themeName} theme`);
+        Speech.speak(`Switched to ${themeName} theme`, { language: 'en' });
+      } else {
+        Alert.alert('Theme Change Failed', 'Could not change the theme');
+      }
+    } catch (error) {
+      console.error('Error changing theme:', error);
+      Alert.alert('Error', 'Failed to change theme');
+    }
     onVoiceCommand?.('native_theme', event);
   };
 
-  const handleNativeGodModeTrigger = (event: any) => {
+  const handleNativeGodModeTrigger = async (event: any) => {
     console.log('Native God-Mode trigger:', event);
+    try {
+      const userId = 'default_user'; // TODO: Get from user context/store
+      const reason = event.trigger === 'voice' ? 'Voice command activation' : 'System activation';
+
+      const success = await godModeManager.activateGodMode(userId, reason);
+
+      if (success) {
+        const enabledFeatures = godModeManager.getEnabledFeatures();
+        const featureNames = enabledFeatures.map(f => f.name).join(', ');
+
+        Alert.alert(
+          'God-Mode Activated',
+          `Advanced features enabled!\n\nActivated features:\n${featureNames}`,
+          [
+            {
+              text: 'Manage Features',
+              onPress: () => {
+                setShowGodModeManagement(true);
+              }
+            },
+            { text: 'OK' }
+          ]
+        );
+
+        Speech.speak(`God-Mode activated. ${enabledFeatures.length} advanced features are now enabled.`, { language: 'en' });
+      } else {
+        Alert.alert('God-Mode Activation Failed', 'Could not activate God-Mode. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error activating God-Mode:', error);
+      Alert.alert('Error', 'Failed to activate God-Mode');
+    }
     onVoiceCommand?.('native_godmode', event);
   };
 
@@ -272,6 +370,9 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
         </Text>
         <Text style={styles.statusText}>
           Speaking: {isSpeaking ? 'Yes' : 'No'}
+        </Text>
+        <Text style={[styles.statusText, godModeActive && styles.godModeActive]}>
+          God-Mode: {godModeActive ? 'ACTIVE' : 'Inactive'}
         </Text>
       </View>
 
@@ -306,6 +407,21 @@ const DeviceVoiceController: React.FC<DeviceVoiceControllerProps> = ({
           </Text>
         ))}
       </View>
+
+      {/* God-Mode Management Modal */}
+      <Modal
+        visible={showGodModeManagement}
+        animationType="slide"
+        presentationStyle="pageSheet"
+        onRequestClose={() => setShowGodModeManagement(false)}
+      >
+        <GodModeManagementScreen
+          onClose={() => setShowGodModeManagement(false)}
+          onFeatureToggle={(featureId, enabled) => {
+            console.log(`Feature ${featureId} ${enabled ? 'enabled' : 'disabled'}`);
+          }}
+        />
+      </Modal>
     </View>
   );
 };
@@ -331,6 +447,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#666',
     marginBottom: 2,
+  },
+  godModeActive: {
+    color: '#FF3B30',
+    fontWeight: 'bold',
   },
   lastCommand: {
     fontSize: 16,

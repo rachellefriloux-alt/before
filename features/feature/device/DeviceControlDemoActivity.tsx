@@ -23,6 +23,7 @@ import * as Brightness from 'expo-brightness';
 import * as Battery from 'expo-battery';
 import * as Device from 'expo-device';
 import DeviceVoiceController from './DeviceVoiceController';
+import { godModeManager } from '../../../core/GodModeManager';
 
 const { width } = Dimensions.get('window');
 
@@ -150,27 +151,105 @@ const DeviceControlDemo: React.FC = () => {
     }
   };
 
-  const handleVoiceCommand = (command: string, params?: any) => {
+  const handleVoiceCommand = async (command: string, params?: any) => {
     setVoiceCommands(prev => [...prev.slice(-4), `${command}${params ? ` (${JSON.stringify(params)})` : ''}`]);
 
     switch (command) {
       case 'wake_up':
-        handleHapticFeedback('medium');
+        if (deviceState.hapticEnabled) {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        }
         break;
       case 'goodbye':
-        handleHapticFeedback('light');
+        if (deviceState.hapticEnabled) {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        }
         break;
       case 'status':
-        Alert.alert('Status', `Battery: ${(deviceState.batteryLevel * 100).toFixed(0)}%`);
+        const batteryPercent = (deviceState.batteryLevel * 100).toFixed(0);
+        const chargingStatus = deviceState.isCharging ? ' (Charging)' : '';
+        const brightnessInfo = Platform.OS !== 'web' ? `\nBrightness: ${(deviceState.brightness * 100).toFixed(0)}%` : '';
+
+        Alert.alert(
+          'Device Status',
+          `Battery: ${batteryPercent}%${chargingStatus}${brightnessInfo}\nAudio Mode: ${deviceState.audioMode}`,
+          [
+            {
+              text: 'Run Diagnostics',
+              onPress: runDeviceDiagnostics
+            },
+            { text: 'OK' }
+          ]
+        );
         break;
       case 'native_routine':
-        Alert.alert('Routine Triggered', `Starting ${params?.routineName} routine`);
+        const routineName = params?.routineName || 'unknown';
+        if (deviceState.hapticEnabled) {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        }
+        Alert.alert('Routine Triggered', `Starting ${routineName} routine`, [
+          {
+            text: 'View Progress',
+            onPress: () => {
+              console.log('Navigate to routine progress screen');
+              // TODO: Implement navigation to routine progress
+            }
+          },
+          { text: 'OK' }
+        ]);
         break;
       case 'native_theme':
-        Alert.alert('Theme Changed', `Switched to ${params?.themeName} theme`);
+        const themeName = params?.themeName || 'default';
+        if (deviceState.hapticEnabled) {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        }
+        Alert.alert('Theme Changed', `Switched to ${themeName} theme`, [
+          {
+            text: 'View Theme',
+            onPress: () => {
+              console.log('Navigate to theme preview screen');
+              // TODO: Implement navigation to theme preview
+            }
+          },
+          { text: 'OK' }
+        ]);
         break;
       case 'native_godmode':
-        Alert.alert('God-Mode Activated', 'Advanced features enabled!');
+        try {
+          const userId = 'default_user'; // TODO: Get from user context/store
+          const godModeSuccess = await godModeManager.activateGodMode(userId, 'Demo activation');
+
+          if (godModeSuccess) {
+            const features = godModeManager.getEnabledFeatures();
+            const featureCount = features.length;
+            const featureNames = features.map(f => f.name).join(', ');
+
+            // Provide haptic feedback for God-Mode activation
+            if (deviceState.hapticEnabled) {
+              await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+            }
+
+            Alert.alert(
+              'God-Mode Activated! ⚡',
+              `Advanced features enabled!\n\n${featureCount} features activated:\n${featureNames}`,
+              [
+                {
+                  text: 'Manage Features',
+                  onPress: () => {
+                    console.log('Navigate to God-Mode management screen');
+                    // TODO: Implement navigation to God-Mode management
+                  }
+                },
+                { text: 'OK' }
+              ]
+            );
+          } else {
+            Alert.alert('God-Mode Activation Failed', 'Could not activate God-Mode. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error activating God-Mode:', error);
+          Alert.alert('Error', 'An error occurred while activating God-Mode.');
+        }
         break;
     }
   };
