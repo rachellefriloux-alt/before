@@ -5,6 +5,10 @@
  * Got it, love.
  */
 
+import AdvancedMemoryManager from './AdvancedMemoryManager';
+import { PerformanceMonitoringSystem } from '../features/feature/src/PerformanceMonitoringSystem';
+import SystemMonitor from '../app/utils/SystemMonitor';
+
 export interface GodModeState {
   isActive: boolean;
   activatedAt: Date | null;
@@ -268,10 +272,82 @@ class GodModeManager {
   }
 
   private async performSystemOptimization(params?: any): Promise<boolean> {
-    // TODO: Implement system optimization
     console.log('Performing system optimization...');
-    return true;
     
+    try {
+      const optimizationResults = {
+        memoryOptimization: false,
+        performanceAnalysis: false,
+        systemHealth: false,
+        errors: [] as string[]
+      };
+
+      // 1. Memory optimization - cleanup cache and optimize memory usage
+      try {
+        const memoryManager = new AdvancedMemoryManager();
+        await memoryManager.performCleanup();
+        optimizationResults.memoryOptimization = true;
+        console.log('✓ Memory optimization completed');
+      } catch (error) {
+        const errorMsg = `Memory optimization failed: ${error}`;
+        console.error(errorMsg);
+        optimizationResults.errors.push(errorMsg);
+      }
+
+      // 2. Performance monitoring and analysis
+      try {
+        const perfMonitor = new PerformanceMonitoringSystem();
+        const suggestions = perfMonitor.getOptimizationSuggestions();
+        const report = perfMonitor.generateReport();
+        
+        optimizationResults.performanceAnalysis = true;
+        console.log('✓ Performance analysis completed');
+        console.log('Performance Score:', report.overall.score);
+        
+        if (suggestions.length > 0) {
+          console.log('Optimization suggestions:', suggestions);
+        }
+      } catch (error) {
+        const errorMsg = `Performance analysis failed: ${error}`;
+        console.error(errorMsg);
+        optimizationResults.errors.push(errorMsg);
+      }
+
+      // 3. System health check and optimization
+      try {
+        const systemMonitor = new SystemMonitor();
+        const systemHealth = systemMonitor.getSystemHealth();
+        
+        optimizationResults.systemHealth = true;
+        console.log('✓ System health check completed');
+        console.log('System Health:', systemHealth.overall);
+        
+        if (systemHealth.recommendations.length > 0) {
+          console.log('System recommendations:', systemHealth.recommendations);
+        }
+      } catch (error) {
+        const errorMsg = `System health check failed: ${error}`;
+        console.error(errorMsg);
+        optimizationResults.errors.push(errorMsg);
+      }
+
+      // Log completion status
+      const successCount = Object.values(optimizationResults).filter(val => val === true).length;
+      const totalTasks = 3;
+      
+      console.log(`System optimization completed: ${successCount}/${totalTasks} tasks successful`);
+      
+      if (optimizationResults.errors.length > 0) {
+        console.warn('Optimization errors:', optimizationResults.errors);
+      }
+
+      // Return true if at least one optimization succeeded
+      return successCount > 0;
+      
+    } catch (error) {
+      console.error('Critical error during system optimization:', error);
+      return false;
+    }
   }
 
   private async performEmergencyOverride(params?: any): Promise<boolean> {
