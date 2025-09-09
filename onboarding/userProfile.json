@@ -1,0 +1,22 @@
+{
+  "name": "Rachelle Friloux",
+  "recognizedUsers": [
+    {
+      "name": "Austin",
+      "relationship": "family",
+      "notes": "Recognized as trusted, can interact with Sallie."
+    },
+    {
+      "name": "Bella",
+      "relationship": "family",
+      "notes": "Recognized as trusted, can interact with Sallie."
+    }
+  ],
+  "preferences": {
+    "persona": "Just Me",
+    "theme": "Dreamer",
+    "privacy": "offlineMode"
+  },
+  "tasks": [],
+  "onboardingStatus": "incomplete"
+}

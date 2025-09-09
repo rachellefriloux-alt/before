@@ -1,0 +1,32 @@
+{
+  "icons": [
+    "icon_shield.svg",
+    "icon_heartline.svg",
+    "icon_compass.svg",
+    "icon_puzzle.svg",
+    "icon_achievement.svg",
+    "icon_milestone.svg"
+  ],
+  "avatars": [
+    "avatar_loyal.svg",
+    "avatar_playful.svg",
+    "avatar_resourceful.svg",
+    "avatar_critical.svg",
+    "avatar_strategic.svg",
+    "avatar_empathic.svg"
+  ],
+  "audio": [
+    "wakeword.wav",
+    "response.mp3",
+    "notification.mp3"
+  ],
+  "vectors": [
+    "mood_ring.svg",
+    "mood_stripe.svg",
+    "animated_overlay.svg"
+  ],
+  "animations": [
+    "anim_confetti.json",
+    "anim_avatar_pulse.json"
+  ]
+}

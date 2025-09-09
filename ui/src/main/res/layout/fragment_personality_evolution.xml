@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Sallie 2.0 Module
+    Persona: Tough love meets soul care.
+    Function: Layout for personality evolution fragment.
+    Got it, love.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sallie.ui.personality.PersonalityEvolutionFragment">
+
+    <WebView
+        android:id="@+id/evolution_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

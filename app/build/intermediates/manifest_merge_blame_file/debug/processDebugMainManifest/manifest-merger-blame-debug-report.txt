@@ -1,0 +1,944 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sallie.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.12.0] C:\Users\chell\.gradle\caches\8.13\transforms\4500d51c5704246dcb082ab08c1197f1\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+12        android:name="com.sallie.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.12.0] C:\Users\chell\.gradle\caches\8.13\transforms\4500d51c5704246dcb082ab08c1197f1\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.12.0] C:\Users\chell\.gradle\caches\8.13\transforms\4500d51c5704246dcb082ab08c1197f1\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.sallie.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.12.0] C:\Users\chell\.gradle\caches\8.13\transforms\4500d51c5704246dcb082ab08c1197f1\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.12.0] C:\Users\chell\.gradle\caches\8.13\transforms\4500d51c5704246dcb082ab08c1197f1\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:3:5-363:19
+18        android:allowBackup="true"
+18-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:4:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.12.0] C:\Users\chell\.gradle\caches\8.13\transforms\4500d51c5704246dcb082ab08c1197f1\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+20        android:debuggable="true"
+21        android:extractNativeLibs="false"
+22        android:icon="@mipmap/ic_launcher"
+22-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:5:9-43
+23        android:label="@string/app_name"
+23-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:6:9-41
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:7:9-54
+25        android:supportsRtl="true"
+25-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:8:9-35
+26        android:theme="@style/Theme.App" >
+26-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:9:9-41
+27        <activity
+27-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:10:9-17:20
+28            android:name="com.sallie.app.MainActivity"
+28-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:11:13-41
+29            android:exported="true" >
+29-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:12:13-36
+30            <intent-filter>
+30-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+31                <action android:name="android.intent.action.MAIN" />
+31-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+31-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+33-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+34            </intent-filter>
+35        </activity>
+36
+37        <activity-alias
+37-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:352:9-362:26
+38            android:name="com.sallie.app.MainActivityAlias35"
+38-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:353:13-48
+39            android:enabled="false"
+39-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:354:13-36
+40            android:exported="true"
+40-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:355:13-36
+41            android:icon="@mipmap/ic_launcher35"
+41-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:356:13-49
+42            android:targetActivity="com.sallie.app.MainActivity" >
+42-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:357:13-51
+43            <intent-filter>
+43-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+44-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+46-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+47            </intent-filter>
+48        </activity-alias>
+49        <activity-alias
+49-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:341:9-351:26
+50            android:name="com.sallie.app.MainActivityAlias34"
+50-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:342:13-48
+51            android:enabled="false"
+51-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:343:13-36
+52            android:exported="true"
+52-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:344:13-36
+53            android:icon="@mipmap/ic_launcher34"
+53-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:345:13-49
+54            android:targetActivity="com.sallie.app.MainActivity" >
+54-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:346:13-51
+55            <intent-filter>
+55-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+56-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+58-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+59            </intent-filter>
+60        </activity-alias>
+61        <activity-alias
+61-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:330:9-340:26
+62            android:name="com.sallie.app.MainActivityAlias33"
+62-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:331:13-48
+63            android:enabled="false"
+63-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:332:13-36
+64            android:exported="true"
+64-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:333:13-36
+65            android:icon="@mipmap/ic_launcher33"
+65-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:334:13-49
+66            android:targetActivity="com.sallie.app.MainActivity" >
+66-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:335:13-51
+67            <intent-filter>
+67-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+68-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+70-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+71            </intent-filter>
+72        </activity-alias>
+73        <activity-alias
+73-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:319:9-329:26
+74            android:name="com.sallie.app.MainActivityAlias32"
+74-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:320:13-48
+75            android:enabled="false"
+75-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:321:13-36
+76            android:exported="true"
+76-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:322:13-36
+77            android:icon="@mipmap/ic_launcher32"
+77-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:323:13-49
+78            android:targetActivity="com.sallie.app.MainActivity" >
+78-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:324:13-51
+79            <intent-filter>
+79-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+80-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+82-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+83            </intent-filter>
+84        </activity-alias>
+85        <activity-alias
+85-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:308:9-318:26
+86            android:name="com.sallie.app.MainActivityAlias31"
+86-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:309:13-48
+87            android:enabled="false"
+87-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:310:13-36
+88            android:exported="true"
+88-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:311:13-36
+89            android:icon="@mipmap/ic_launcher31"
+89-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:312:13-49
+90            android:targetActivity="com.sallie.app.MainActivity" >
+90-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:313:13-51
+91            <intent-filter>
+91-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+92                <action android:name="android.intent.action.MAIN" />
+92-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+92-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+93
+94                <category android:name="android.intent.category.LAUNCHER" />
+94-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+94-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+95            </intent-filter>
+96        </activity-alias>
+97        <activity-alias
+97-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:297:9-307:26
+98            android:name="com.sallie.app.MainActivityAlias30"
+98-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:298:13-48
+99            android:enabled="false"
+99-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:299:13-36
+100            android:exported="true"
+100-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:300:13-36
+101            android:icon="@mipmap/ic_launcher30"
+101-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:301:13-49
+102            android:targetActivity="com.sallie.app.MainActivity" >
+102-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:302:13-51
+103            <intent-filter>
+103-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+104                <action android:name="android.intent.action.MAIN" />
+104-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+104-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+105
+106                <category android:name="android.intent.category.LAUNCHER" />
+106-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+106-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+107            </intent-filter>
+108        </activity-alias>
+109        <activity-alias
+109-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:286:9-296:26
+110            android:name="com.sallie.app.MainActivityAlias29"
+110-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:287:13-48
+111            android:enabled="false"
+111-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:288:13-36
+112            android:exported="true"
+112-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:289:13-36
+113            android:icon="@mipmap/ic_launcher29"
+113-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:290:13-49
+114            android:targetActivity="com.sallie.app.MainActivity" >
+114-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:291:13-51
+115            <intent-filter>
+115-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+116                <action android:name="android.intent.action.MAIN" />
+116-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+116-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+117
+118                <category android:name="android.intent.category.LAUNCHER" />
+118-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+118-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+119            </intent-filter>
+120        </activity-alias>
+121        <activity-alias
+121-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:275:9-285:26
+122            android:name="com.sallie.app.MainActivityAlias28"
+122-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:276:13-48
+123            android:enabled="false"
+123-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:277:13-36
+124            android:exported="true"
+124-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:278:13-36
+125            android:icon="@mipmap/ic_launcher28"
+125-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:279:13-49
+126            android:targetActivity="com.sallie.app.MainActivity" >
+126-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:280:13-51
+127            <intent-filter>
+127-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+128                <action android:name="android.intent.action.MAIN" />
+128-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+128-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+129
+130                <category android:name="android.intent.category.LAUNCHER" />
+130-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+130-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+131            </intent-filter>
+132        </activity-alias>
+133        <activity-alias
+133-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:264:9-274:26
+134            android:name="com.sallie.app.MainActivityAlias27"
+134-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:265:13-48
+135            android:enabled="false"
+135-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:266:13-36
+136            android:exported="true"
+136-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:267:13-36
+137            android:icon="@mipmap/ic_launcher27"
+137-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:268:13-49
+138            android:targetActivity="com.sallie.app.MainActivity" >
+138-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:269:13-51
+139            <intent-filter>
+139-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+140                <action android:name="android.intent.action.MAIN" />
+140-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+140-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+141
+142                <category android:name="android.intent.category.LAUNCHER" />
+142-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+142-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+143            </intent-filter>
+144        </activity-alias>
+145        <activity-alias
+145-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:253:9-263:26
+146            android:name="com.sallie.app.MainActivityAlias26"
+146-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:254:13-48
+147            android:enabled="false"
+147-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:255:13-36
+148            android:exported="true"
+148-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:256:13-36
+149            android:icon="@mipmap/ic_launcher26"
+149-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:257:13-49
+150            android:targetActivity="com.sallie.app.MainActivity" >
+150-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:258:13-51
+151            <intent-filter>
+151-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+152                <action android:name="android.intent.action.MAIN" />
+152-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+152-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+153
+154                <category android:name="android.intent.category.LAUNCHER" />
+154-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+154-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+155            </intent-filter>
+156        </activity-alias>
+157        <activity-alias
+157-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:242:9-252:26
+158            android:name="com.sallie.app.MainActivityAlias25"
+158-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:243:13-48
+159            android:enabled="false"
+159-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:244:13-36
+160            android:exported="true"
+160-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:245:13-36
+161            android:icon="@mipmap/ic_launcher25"
+161-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:246:13-49
+162            android:targetActivity="com.sallie.app.MainActivity" >
+162-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:247:13-51
+163            <intent-filter>
+163-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+164                <action android:name="android.intent.action.MAIN" />
+164-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+164-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+165
+166                <category android:name="android.intent.category.LAUNCHER" />
+166-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+166-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+167            </intent-filter>
+168        </activity-alias>
+169        <activity-alias
+169-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:231:9-241:26
+170            android:name="com.sallie.app.MainActivityAlias24"
+170-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:232:13-48
+171            android:enabled="false"
+171-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:233:13-36
+172            android:exported="true"
+172-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:234:13-36
+173            android:icon="@mipmap/ic_launcher24"
+173-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:235:13-49
+174            android:targetActivity="com.sallie.app.MainActivity" >
+174-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:236:13-51
+175            <intent-filter>
+175-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+176                <action android:name="android.intent.action.MAIN" />
+176-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+176-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+177
+178                <category android:name="android.intent.category.LAUNCHER" />
+178-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+178-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+179            </intent-filter>
+180        </activity-alias>
+181        <activity-alias
+181-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:220:9-230:26
+182            android:name="com.sallie.app.MainActivityAlias23"
+182-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:221:13-48
+183            android:enabled="false"
+183-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:222:13-36
+184            android:exported="true"
+184-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:223:13-36
+185            android:icon="@mipmap/ic_launcher23"
+185-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:224:13-49
+186            android:targetActivity="com.sallie.app.MainActivity" >
+186-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:225:13-51
+187            <intent-filter>
+187-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+188                <action android:name="android.intent.action.MAIN" />
+188-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+188-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+189
+190                <category android:name="android.intent.category.LAUNCHER" />
+190-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+190-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+191            </intent-filter>
+192        </activity-alias>
+193        <activity-alias
+193-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:209:9-219:26
+194            android:name="com.sallie.app.MainActivityAlias22"
+194-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:210:13-48
+195            android:enabled="false"
+195-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:211:13-36
+196            android:exported="true"
+196-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:212:13-36
+197            android:icon="@mipmap/ic_launcher22"
+197-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:213:13-49
+198            android:targetActivity="com.sallie.app.MainActivity" >
+198-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:214:13-51
+199            <intent-filter>
+199-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+200                <action android:name="android.intent.action.MAIN" />
+200-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+200-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+201
+202                <category android:name="android.intent.category.LAUNCHER" />
+202-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+202-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+203            </intent-filter>
+204        </activity-alias>
+205        <activity-alias
+205-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:198:9-208:26
+206            android:name="com.sallie.app.MainActivityAlias21"
+206-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:199:13-48
+207            android:enabled="false"
+207-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:200:13-36
+208            android:exported="true"
+208-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:201:13-36
+209            android:icon="@mipmap/ic_launcher21"
+209-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:202:13-49
+210            android:targetActivity="com.sallie.app.MainActivity" >
+210-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:203:13-51
+211            <intent-filter>
+211-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+212                <action android:name="android.intent.action.MAIN" />
+212-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+212-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+213
+214                <category android:name="android.intent.category.LAUNCHER" />
+214-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+214-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+215            </intent-filter>
+216        </activity-alias>
+217        <activity-alias
+217-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:187:9-197:26
+218            android:name="com.sallie.app.MainActivityAlias20"
+218-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:188:13-48
+219            android:enabled="false"
+219-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:189:13-36
+220            android:exported="true"
+220-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:190:13-36
+221            android:icon="@mipmap/ic_launcher20"
+221-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:191:13-49
+222            android:targetActivity="com.sallie.app.MainActivity" >
+222-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:192:13-51
+223            <intent-filter>
+223-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+224                <action android:name="android.intent.action.MAIN" />
+224-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+224-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+225
+226                <category android:name="android.intent.category.LAUNCHER" />
+226-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+226-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+227            </intent-filter>
+228        </activity-alias>
+229        <activity-alias
+229-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:176:9-186:26
+230            android:name="com.sallie.app.MainActivityAlias19"
+230-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:177:13-48
+231            android:enabled="false"
+231-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:178:13-36
+232            android:exported="true"
+232-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:179:13-36
+233            android:icon="@mipmap/ic_launcher19"
+233-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:180:13-49
+234            android:targetActivity="com.sallie.app.MainActivity" >
+234-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:181:13-51
+235            <intent-filter>
+235-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+236                <action android:name="android.intent.action.MAIN" />
+236-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+236-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+237
+238                <category android:name="android.intent.category.LAUNCHER" />
+238-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+238-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+239            </intent-filter>
+240        </activity-alias>
+241        <activity-alias
+241-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:165:9-175:26
+242            android:name="com.sallie.app.MainActivityAlias18"
+242-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:166:13-48
+243            android:enabled="false"
+243-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:167:13-36
+244            android:exported="true"
+244-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:168:13-36
+245            android:icon="@mipmap/ic_launcher18"
+245-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:169:13-49
+246            android:targetActivity="com.sallie.app.MainActivity" >
+246-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:170:13-51
+247            <intent-filter>
+247-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+248                <action android:name="android.intent.action.MAIN" />
+248-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+248-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+249
+250                <category android:name="android.intent.category.LAUNCHER" />
+250-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+250-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+251            </intent-filter>
+252        </activity-alias>
+253        <activity-alias
+253-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:154:9-164:26
+254            android:name="com.sallie.app.MainActivityAlias17"
+254-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:155:13-48
+255            android:enabled="false"
+255-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:156:13-36
+256            android:exported="true"
+256-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:157:13-36
+257            android:icon="@mipmap/ic_launcher17"
+257-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:158:13-49
+258            android:targetActivity="com.sallie.app.MainActivity" >
+258-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:159:13-51
+259            <intent-filter>
+259-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+260                <action android:name="android.intent.action.MAIN" />
+260-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+260-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+261
+262                <category android:name="android.intent.category.LAUNCHER" />
+262-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+262-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+263            </intent-filter>
+264        </activity-alias>
+265        <activity-alias
+265-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:143:9-153:26
+266            android:name="com.sallie.app.MainActivityAlias16"
+266-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:144:13-48
+267            android:enabled="false"
+267-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:145:13-36
+268            android:exported="true"
+268-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:146:13-36
+269            android:icon="@mipmap/ic_launcher16"
+269-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:147:13-49
+270            android:targetActivity="com.sallie.app.MainActivity" >
+270-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:148:13-51
+271            <intent-filter>
+271-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+272                <action android:name="android.intent.action.MAIN" />
+272-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+272-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+273
+274                <category android:name="android.intent.category.LAUNCHER" />
+274-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+274-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+275            </intent-filter>
+276        </activity-alias>
+277        <activity-alias
+277-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:132:9-142:26
+278            android:name="com.sallie.app.MainActivityAlias15"
+278-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:133:13-48
+279            android:enabled="false"
+279-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:134:13-36
+280            android:exported="true"
+280-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:135:13-36
+281            android:icon="@mipmap/ic_launcher15"
+281-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:136:13-49
+282            android:targetActivity="com.sallie.app.MainActivity" >
+282-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:137:13-51
+283            <intent-filter>
+283-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+284                <action android:name="android.intent.action.MAIN" />
+284-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+284-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+285
+286                <category android:name="android.intent.category.LAUNCHER" />
+286-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+286-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+287            </intent-filter>
+288        </activity-alias>
+289        <activity-alias
+289-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:121:9-131:26
+290            android:name="com.sallie.app.MainActivityAlias14"
+290-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:122:13-48
+291            android:enabled="false"
+291-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:123:13-36
+292            android:exported="true"
+292-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:124:13-36
+293            android:icon="@mipmap/ic_launcher14"
+293-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:125:13-49
+294            android:targetActivity="com.sallie.app.MainActivity" >
+294-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:126:13-51
+295            <intent-filter>
+295-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+296                <action android:name="android.intent.action.MAIN" />
+296-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+296-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+297
+298                <category android:name="android.intent.category.LAUNCHER" />
+298-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+298-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+299            </intent-filter>
+300        </activity-alias>
+301        <activity-alias
+301-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:110:9-120:26
+302            android:name="com.sallie.app.MainActivityAlias13"
+302-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:111:13-48
+303            android:enabled="false"
+303-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:112:13-36
+304            android:exported="true"
+304-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:113:13-36
+305            android:icon="@mipmap/ic_launcher13"
+305-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:114:13-49
+306            android:targetActivity="com.sallie.app.MainActivity" >
+306-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:115:13-51
+307            <intent-filter>
+307-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+308                <action android:name="android.intent.action.MAIN" />
+308-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+308-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+309
+310                <category android:name="android.intent.category.LAUNCHER" />
+310-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+310-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+311            </intent-filter>
+312        </activity-alias>
+313        <activity-alias
+313-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:99:9-109:26
+314            android:name="com.sallie.app.MainActivityAlias12"
+314-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:100:13-48
+315            android:enabled="false"
+315-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:101:13-36
+316            android:exported="true"
+316-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:102:13-36
+317            android:icon="@mipmap/ic_launcher12"
+317-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:103:13-49
+318            android:targetActivity="com.sallie.app.MainActivity" >
+318-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:104:13-51
+319            <intent-filter>
+319-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+320                <action android:name="android.intent.action.MAIN" />
+320-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+320-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+321
+322                <category android:name="android.intent.category.LAUNCHER" />
+322-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+322-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+323            </intent-filter>
+324        </activity-alias> <!-- ...repeat for 35 aliases... -->
+325        <activity-alias
+325-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:88:9-98:26
+326            android:name="com.sallie.app.MainActivityAlias11"
+326-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:89:13-48
+327            android:enabled="false"
+327-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:90:13-36
+328            android:exported="true"
+328-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:91:13-36
+329            android:icon="@mipmap/ic_launcher11"
+329-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:92:13-49
+330            android:targetActivity="com.sallie.app.MainActivity" >
+330-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:93:13-51
+331            <intent-filter>
+331-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+332                <action android:name="android.intent.action.MAIN" />
+332-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+332-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+333
+334                <category android:name="android.intent.category.LAUNCHER" />
+334-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+334-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+335            </intent-filter>
+336        </activity-alias>
+337        <activity-alias
+337-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:81:9-86:26
+338            android:name="com.sallie.app.MainActivityAlias10"
+338-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:81:25-60
+339            android:enabled="false"
+339-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:81:61-84
+340            android:exported="true"
+340-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:81:85-108
+341            android:icon="@mipmap/ic_launcher10"
+341-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:81:109-145
+342            android:targetActivity="com.sallie.app.MainActivity" >
+342-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:81:146-184
+343            <intent-filter>
+343-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+344                <action android:name="android.intent.action.MAIN" />
+344-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+344-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+345
+346                <category android:name="android.intent.category.LAUNCHER" />
+346-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+346-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+347            </intent-filter>
+348        </activity-alias>
+349        <activity-alias
+349-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:75:9-80:26
+350            android:name="com.sallie.app.MainActivityAlias9"
+350-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:75:25-59
+351            android:enabled="false"
+351-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:75:60-83
+352            android:exported="true"
+352-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:75:84-107
+353            android:icon="@mipmap/ic_launcher9"
+353-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:75:108-143
+354            android:targetActivity="com.sallie.app.MainActivity" >
+354-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:75:144-182
+355            <intent-filter>
+355-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+356                <action android:name="android.intent.action.MAIN" />
+356-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+356-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+357
+358                <category android:name="android.intent.category.LAUNCHER" />
+358-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+358-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+359            </intent-filter>
+360        </activity-alias>
+361        <activity-alias
+361-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:69:9-74:26
+362            android:name="com.sallie.app.MainActivityAlias8"
+362-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:69:25-59
+363            android:enabled="false"
+363-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:69:60-83
+364            android:exported="true"
+364-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:69:84-107
+365            android:icon="@mipmap/ic_launcher8"
+365-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:69:108-143
+366            android:targetActivity="com.sallie.app.MainActivity" >
+366-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:69:144-182
+367            <intent-filter>
+367-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+368                <action android:name="android.intent.action.MAIN" />
+368-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+368-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+369
+370                <category android:name="android.intent.category.LAUNCHER" />
+370-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+370-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+371            </intent-filter>
+372        </activity-alias>
+373        <activity-alias
+373-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:63:9-68:26
+374            android:name="com.sallie.app.MainActivityAlias7"
+374-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:63:25-59
+375            android:enabled="false"
+375-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:63:60-83
+376            android:exported="true"
+376-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:63:84-107
+377            android:icon="@mipmap/ic_launcher7"
+377-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:63:108-143
+378            android:targetActivity="com.sallie.app.MainActivity" >
+378-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:63:144-182
+379            <intent-filter>
+379-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+380                <action android:name="android.intent.action.MAIN" />
+380-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+380-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+381
+382                <category android:name="android.intent.category.LAUNCHER" />
+382-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+382-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+383            </intent-filter>
+384        </activity-alias>
+385        <activity-alias
+385-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:57:9-62:26
+386            android:name="com.sallie.app.MainActivityAlias6"
+386-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:57:25-59
+387            android:enabled="false"
+387-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:57:60-83
+388            android:exported="true"
+388-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:57:84-107
+389            android:icon="@mipmap/ic_launcher6"
+389-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:57:108-143
+390            android:targetActivity="com.sallie.app.MainActivity" >
+390-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:57:144-182
+391            <intent-filter>
+391-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+392                <action android:name="android.intent.action.MAIN" />
+392-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+392-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+393
+394                <category android:name="android.intent.category.LAUNCHER" />
+394-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+394-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+395            </intent-filter>
+396        </activity-alias>
+397        <activity-alias
+397-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:51:9-56:26
+398            android:name="com.sallie.app.MainActivityAlias5"
+398-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:51:25-59
+399            android:enabled="false"
+399-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:51:60-83
+400            android:exported="true"
+400-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:51:84-107
+401            android:icon="@mipmap/ic_launcher5"
+401-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:51:108-143
+402            android:targetActivity="com.sallie.app.MainActivity" >
+402-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:51:144-182
+403            <intent-filter>
+403-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+404                <action android:name="android.intent.action.MAIN" />
+404-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+404-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+405
+406                <category android:name="android.intent.category.LAUNCHER" />
+406-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+406-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+407            </intent-filter>
+408        </activity-alias>
+409        <activity-alias
+409-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:45:9-50:26
+410            android:name="com.sallie.app.MainActivityAlias4"
+410-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:45:25-59
+411            android:enabled="false"
+411-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:45:60-83
+412            android:exported="true"
+412-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:45:84-107
+413            android:icon="@mipmap/ic_launcher4"
+413-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:45:108-143
+414            android:targetActivity="com.sallie.app.MainActivity" >
+414-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:45:144-182
+415            <intent-filter>
+415-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+416                <action android:name="android.intent.action.MAIN" />
+416-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+416-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+417
+418                <category android:name="android.intent.category.LAUNCHER" />
+418-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+418-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+419            </intent-filter>
+420        </activity-alias>
+421        <activity-alias
+421-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:39:9-44:26
+422            android:name="com.sallie.app.MainActivityAlias3"
+422-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:39:25-59
+423            android:enabled="false"
+423-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:39:60-83
+424            android:exported="true"
+424-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:39:84-107
+425            android:icon="@mipmap/ic_launcher3"
+425-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:39:108-143
+426            android:targetActivity="com.sallie.app.MainActivity" >
+426-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:39:144-182
+427            <intent-filter>
+427-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+428                <action android:name="android.intent.action.MAIN" />
+428-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+428-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+429
+430                <category android:name="android.intent.category.LAUNCHER" />
+430-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+430-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+431            </intent-filter>
+432        </activity-alias>
+433        <activity-alias
+433-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:33:9-38:26
+434            android:name="com.sallie.app.MainActivityAlias2"
+434-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:33:25-59
+435            android:enabled="false"
+435-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:33:60-83
+436            android:exported="true"
+436-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:33:84-107
+437            android:icon="@mipmap/ic_launcher2"
+437-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:33:108-143
+438            android:targetActivity="com.sallie.app.MainActivity" >
+438-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:33:144-182
+439            <intent-filter>
+439-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+440                <action android:name="android.intent.action.MAIN" />
+440-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+440-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+441
+442                <category android:name="android.intent.category.LAUNCHER" />
+442-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+442-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+443            </intent-filter>
+444        </activity-alias> <!-- 35 activity-alias entries for dynamic launcher icons -->
+445        <!-- Generated by Copilot for dynamic icon switching -->
+446        <!-- Only one alias should be enabled at a time for launcher icon switching -->
+447        <!-- Example: To switch icon, enable the desired alias and disable others -->
+448        <!-- You can add more aliases if needed -->
+449        <activity-alias
+449-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:27:9-32:26
+450            android:name="com.sallie.app.MainActivityAlias1"
+450-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:27:25-59
+451            android:enabled="false"
+451-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:27:60-83
+452            android:exported="true"
+452-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:27:84-107
+453            android:icon="@mipmap/ic_launcher1"
+453-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:27:108-143
+454            android:targetActivity="com.sallie.app.MainActivity" >
+454-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:27:144-182
+455            <intent-filter>
+455-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:13:13-16:29
+456                <action android:name="android.intent.action.MAIN" />
+456-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:17-69
+456-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:14:25-66
+457
+458                <category android:name="android.intent.category.LAUNCHER" />
+458-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:17-77
+458-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:15:27-74
+459            </intent-filter>
+460        </activity-alias>
+461
+462        <activity
+462-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:18:9-21:43
+463            android:name="com.sallie.app.IconPickerActivity"
+463-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:19:13-47
+464            android:exported="true"
+464-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:20:13-36
+465            android:label="Icon Picker" />
+465-->C:\Users\chell\Desktop\Sallie\app\src\main\AndroidManifest.xml:21:13-40
+466
+467        <provider
+467-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+468            android:name="androidx.startup.InitializationProvider"
+468-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+469            android:authorities="com.sallie.app.androidx-startup"
+469-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+470            android:exported="false" >
+470-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+471            <meta-data
+471-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+472                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+472-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+473                android:value="androidx.startup" />
+473-->[androidx.emoji2:emoji2:1.2.0] C:\Users\chell\.gradle\caches\8.13\transforms\1bced01217c2a652a603696b22cb4856\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+474            <meta-data
+474-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\chell\.gradle\caches\8.13\transforms\c468cce33e448a545e44593a4c2d08b6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+475                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+475-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\chell\.gradle\caches\8.13\transforms\c468cce33e448a545e44593a4c2d08b6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+476                android:value="androidx.startup" />
+476-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\chell\.gradle\caches\8.13\transforms\c468cce33e448a545e44593a4c2d08b6\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+477            <meta-data
+477-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+478                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+478-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+479                android:value="androidx.startup" />
+479-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+480        </provider>
+481
+482        <receiver
+482-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+483            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+483-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+484            android:directBootAware="false"
+484-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+485            android:enabled="true"
+485-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+486            android:exported="true"
+486-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+487            android:permission="android.permission.DUMP" >
+487-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+488            <intent-filter>
+488-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+489                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+489-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+489-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+490            </intent-filter>
+491            <intent-filter>
+491-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+492                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+492-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+492-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+493            </intent-filter>
+494            <intent-filter>
+494-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+495                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+495-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+495-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+496            </intent-filter>
+497            <intent-filter>
+497-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+498                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+498-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+498-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\chell\.gradle\caches\8.13\transforms\b5c6f07e40ee4218b83fed0192be1aa5\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+499            </intent-filter>
+500        </receiver>
+501    </application>
+502
+503</manifest>

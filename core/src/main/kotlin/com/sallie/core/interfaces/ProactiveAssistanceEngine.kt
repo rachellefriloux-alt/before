@@ -1,0 +1,25 @@
+/*
+ * Sallie 1.0 Module
+ * Persona: Tough love meets soul care.
+ * Function: Interface for proactive assistance capabilities.
+ * Got it, love.
+ */
+package com.sallie.core.interfaces
+
+/**
+ * Interface defining the contract for proactive assistance capabilities.
+ * This resolves circular dependency issues between core and feature modules.
+ */
+interface IProactiveAssistanceEngine {
+    fun generateProactiveInsights(userContext: Map<String, Any>): List<String>
+    fun suggestAutomation(taskDescription: String): List<String>
+    fun anticipateUserNeeds(recentActions: List<String>): List<String>
+    fun prioritizeSuggestions(suggestions: List<String>, urgency: Int): List<String>
+    
+    // Additional methods for task management
+    suspend fun analyzeAndBreakdownTask(taskDescription: String, userContext: String = ""): Any
+    suspend fun attemptAutonomousTaskCompletion(task: String, userPermissions: List<String>): String
+    fun provideStepByStepGuidance(taskId: String, userExperience: String, stepCallback: (String) -> Unit): String
+    fun monitorForOpportunities(userActivity: String, interval: Long): List<String>
+    fun getTaskManagementInsights(): Map<String, Any>
+}

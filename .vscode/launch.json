@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Sallie — Build + Install + Debug + Logs",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "preFlight",
+      "postDebugTask": "stopLogcat"
+    }
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "preFlight",
+        "type": "shell",
+        "command": "gradlew.bat ktlintCheck && npm run lint && npm test",
+        "options": { "cwd": "${workspaceFolder}" },
+        "problemMatcher": []
+      },
+      {
+        "label": "assembleAndInstall",
+        "type": "shell",
+        "command": "gradlew.bat clean assembleDebug installDebug && start cmd /k \"adb logcat | findstr Sallie\"",
+        "options": { "cwd": "${workspaceFolder}" },
+        "problemMatcher": []
+      },
+      {
+        "label": "stopLogcat",
+        "type": "shell",
+        "command": "adb kill-server",
+        "problemMatcher": []
+      }
+    ]
+  }
+}
