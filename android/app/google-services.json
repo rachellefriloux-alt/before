@@ -33,35 +33,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:502422630076:android:a626423852e7ee29f12ab9",
-        "android_client_info": {
-          "package_name": "com.yourorg.sallie.cloud"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "502422630076-abc123def456ghi789jkl012mno345pqr.firebaseapp.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDB50vD2NM1ng2Q3043itbbeTSMUoc4LTY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "502422630076-abc123def456ghi789jkl012mno345pqr.firebaseapp.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"

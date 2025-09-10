@@ -1,14 +1,9 @@
 apply plugin: "com.android.application"
-// apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
-// apply plugin: 'com.google.gms.google-services'
-// apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 // apply plugin: 'com.sallie.plugin-injection' // Removed - plugin not found
-
-// Configure Kotlin
-// kotlin {
-//     jvmToolchain(17)
-// }
 
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
@@ -19,12 +14,12 @@ def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 react {
     entryFile = file("../../App.tsx")
     reactNativeDir = file("../../node_modules/react-native")
-    hermesCommand = "C:/Users/chell/Desktop/Sallie AI/android/hermes-debug.bat"
+    hermesCommand = "../../node_modules/react-native/sdks/hermesc/%OS-BIN%/hermesc"
     codegenDir = file("../../node_modules/@react-native/codegen")
 
     // Use Expo CLI to bundle the app, this ensures the Metro config
     // works correctly with Expo projects.
-    cliFile = file("../../node_modules/@expo/cli/build/bin/cli")
+    cliFile = file("../../node_modules/@expo/cli")
     bundleCommand = "export:embed"
 
     /* Folders */
@@ -85,8 +80,9 @@ def enableSeparateBuildPerCPUArchitecture = true
  */
 def enableResourceOptimization = true
 
-// Apply path shortening for CMake to avoid Windows path length issues
-// Removed afterEvaluate block that was causing Android tasks conflict
+// Note: removed an `afterEvaluate { android { ... } }` wrapper that recreated the
+// android closure and caused task-creation ordering errors on some Gradle versions.
+// CMake/dex/aapt options are configured in the main `android {}` block below instead.
 
 /**
  * The preferred build flavor of JavaScriptCore (JSC)

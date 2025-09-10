@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Image, ActivityIndicator, StyleSheet, Text } from 'react-native';
+import { View, Image, ActivityIndicator, StyleSheet } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import { useTheme } from './ThemeSystem';
 
@@ -312,19 +312,11 @@ export const OptimizedAvatar: React.FC<OptimizedAvatarProps> = ({
     if (!uri) {
         return (
             <View style={[avatarStyle, { backgroundColor: theme.colors.surface, justifyContent: 'center', alignItems: 'center' }]}>
-                {placeholder ? (
-                    <Image
-                        source={{ uri: placeholder }}
-                        style={avatarStyle}
-                        resizeMode="cover"
-                    />
-                ) : (
-                    <View style={[avatarStyle, { backgroundColor: theme.colors.primary, justifyContent: 'center', alignItems: 'center' }]}>
-                        <Text style={{ color: theme.colors.onPrimary, fontSize: size * 0.4, fontWeight: 'bold' }}>
-                            ?
-                        </Text>
-                    </View>
-                )}
+                <Image
+                    source={placeholder ? { uri: placeholder } : require('../assets/images/default-avatar.png')}
+                    style={avatarStyle}
+                    resizeMode="cover"
+                />
             </View>
         );
     }

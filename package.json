@@ -4,17 +4,13 @@
   "description": "Sallie Sovereign - A beautiful, owner-only, offline-first React Native + Android launcher hybrid with advanced AI capabilities",
   "main": "expo-router/entry",
   "scripts": {
-    "start": "expo start --clear",
-    "start:cache": "expo start",
+    "start": "expo start",
     "android": "expo run:android",
-    "android:clear": "expo run:android --clear",
     "ios": "expo run:ios",
     "web": "expo start --web",
     "prebuild": "expo prebuild",
     "build:android": "expo run:android --variant release",
     "build:ios": "expo run:ios --configuration Release",
-    "cache:clear": "expo r -c",
-    "metro:clear": "powershell -Command \"Remove-Item -Path 'node_modules/.cache/metro' -Recurse -Force -ErrorAction SilentlyContinue; New-Item -ItemType Directory -Path 'node_modules/.cache/metro' -Force\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -49,7 +45,7 @@
     "expo-blur": "~14.1.0",
     "expo-brightness": "^13.1.4",
     "expo-camera": "~16.1.0",
-    "expo-constants": "~17.1.0",
+  "expo-constants": "~17.0.8",
     "expo-contacts": "~14.1.0",
     "expo-crypto": "~14.1.0",
     "expo-device": "~7.0.2",
@@ -60,7 +56,7 @@
     "expo-image-picker": "~16.1.0",
     "expo-intent-launcher": "~12.1.0",
     "expo-linear-gradient": "^14.1.5",
-    "expo-linking": "~7.1.0",
+  "expo-linking": "~7.0.5",
     "expo-location": "~18.1.0",
     "expo-media-library": "~17.1.0",
     "expo-network": "~7.1.0",
@@ -72,7 +68,7 @@
     "expo-status-bar": "~2.1.0",
     "expo-symbols": "~0.2.2",
     "expo-system-ui": "~4.0.9",
-    "expo-task-manager": "^14.0.6",
+    "expo-task-manager": "~11.1.0",
     "expo-web-browser": "~14.1.0",
     "express": "^5.1.0",
     "firebase": "^12.2.1",
@@ -136,3 +132,4 @@
     }
   }
 }
+
