@@ -80,7 +80,9 @@ react {
     // hermesCommand = "$rootDir/my-custom-hermesc/bin/hermesc"
     //
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
-    hermesFlags = ["-O3", "-output-source-map", "-Werror", "-w"]
+    // Use compatible Hermes compiler flags. '-O3' is not supported by some hermesc
+    // binaries on Windows; use '-O' for optimization instead.
+    hermesFlags = ["-O", "-output-source-map", "-Werror", "-w"]
 
     /* Autolinking */
     autolinkLibrariesWithApp()

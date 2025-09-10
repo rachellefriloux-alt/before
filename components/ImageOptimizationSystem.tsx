@@ -310,10 +310,16 @@ export const OptimizedAvatar: React.FC<OptimizedAvatarProps> = ({
     };
 
     if (!uri) {
+        // Use an inline 1x1 transparent PNG data URI as a safe fallback when the static
+        // asset is not present. This avoids Metro failing the bundle when a required
+        // file is missing while preserving a harmless image source for layout.
+        const transparentPngDataUri =
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
+
         return (
             <View style={[avatarStyle, { backgroundColor: theme.colors.surface, justifyContent: 'center', alignItems: 'center' }]}>
                 <Image
-                    source={placeholder ? { uri: placeholder } : require('../assets/images/default-avatar.png')}
+                    source={placeholder ? { uri: placeholder } : { uri: transparentPngDataUri }}
                     style={avatarStyle}
                     resizeMode="cover"
                 />
