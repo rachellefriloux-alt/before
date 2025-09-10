@@ -74,30 +74,30 @@ export const preloadComponent = (importFunc: () => Promise<any>) => {
 
 // Lazy load UserProfileManager
 export const LazyUserProfileManager = withLazyLoading(
-    () => import('./UserProfileManager.js'),
+    () => import('./UserProfileManager'),
     undefined
 );
 
 // Lazy load AppSettingsManager
 export const LazyAppSettingsManager = withLazyLoading(
-    () => import('./AppSettingsManager.js'),
+    () => import('./AppSettingsManager'),
     undefined
 );
 
 // Lazy load DataExportImportManager
 export const LazyDataExportImportManager = withLazyLoading(
-    () => import('./DataExportImportManager.js'),
+    () => import('./DataExportImportManager'),
     undefined
 );
 
 // Lazy load screens
 export const LazyProfileScreen = withLazyLoading(
-    () => import('../app/screens/ProfileScreen.js'),
+    () => import('../app/screens/ProfileScreen'),
     undefined
 );
 
 export const LazyDataManagementScreen = withLazyLoading(
-    () => import('../app/screens/DataManagementScreen.js'),
+    () => import('../app/screens/DataManagementScreen'),
     undefined
 );
 
@@ -107,21 +107,21 @@ export const LazyDataManagementScreen = withLazyLoading(
 export const LAZY_LOAD_CONFIG = {
     // Critical components loaded immediately
     critical: [
-        () => import('./ThemeSystem.js'),
-        () => import('./FontManager.js'),
+    () => import('./ThemeSystem'),
+    () => import('./FontManager'),
     ],
 
     // Heavy components loaded on demand
     heavy: [
-        () => import('./UserProfileManager.js'),
-        () => import('./AppSettingsManager.js'),
-        () => import('./DataExportImportManager.js'),
+    () => import('./UserProfileManager'),
+    () => import('./AppSettingsManager'),
+    () => import('./DataExportImportManager'),
     ],
 
     // Screens loaded on navigation
     screens: [
-        () => import('../app/screens/ProfileScreen.js'),
-        () => import('../app/screens/DataManagementScreen.js'),
+    () => import('../app/screens/ProfileScreen'),
+    () => import('../app/screens/DataManagementScreen'),
     ],
 };
 

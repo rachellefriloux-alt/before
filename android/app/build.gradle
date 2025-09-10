@@ -17,9 +17,30 @@ react {
     hermesCommand = "../../node_modules/react-native/sdks/hermesc/%OS-BIN%/hermesc"
     codegenDir = file("../../node_modules/@react-native/codegen")
 
-    // Use Expo CLI to bundle the app, this ensures the Metro config
-    // works correctly with Expo projects.
-    cliFile = file("../../node_modules/@expo/cli")
+        // Use Expo CLI to bundle the app, this ensures the Metro config
+        // works correctly with Expo projects. The @expo/cli package may be
+        // a directory (bin executable inside) or a file. Gradle expects a
+        // file input for the Hermes bundling task, so prefer the CLI entry
+        // file when available.
+        def expoCliPath = file("../../node_modules/@expo/cli")
+        if (expoCliPath.exists() && expoCliPath.isDirectory()) {
+            // common entry point inside the package
+                            // prefer the built CLI entry used by the package
+                            def builtCli = new File(expoCliPath, 'build/bin/cli')
+                            if (builtCli.exists()) {
+                                cliFile = builtCli
+                            } else {
+                                def candidate = new File(expoCliPath, 'bin/expo-cli.js')
+                                if (candidate.exists()) {
+                                    cliFile = candidate
+                                } else {
+                                    // fallback to the package directory (some setups) to avoid breaking dev flow
+                                    cliFile = expoCliPath
+                                }
+                            }
+        } else {
+            cliFile = expoCliPath
+        }
     bundleCommand = "export:embed"
 
     /* Folders */
