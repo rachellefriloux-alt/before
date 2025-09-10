@@ -133,16 +133,15 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
-        externalNativeBuild {
-            cmake {
-                cppFlags "-Wno-dollar-in-identifier-extension"
-                // Use shorter build paths to avoid CMake path length issues
-                arguments "-DCMAKE_OBJECT_PATH_MAX=500"
-            }
+    externalNativeBuild {
+        cmake {
+            cppFlags "-Wno-dollar-in-identifier-extension"
+            // Use shorter build paths to avoid CMake path length issues
+            arguments "-DCMAKE_OBJECT_PATH_MAX=500"
         }
     }
-
-    flavorDimensions "mode"
+    missingDimensionStrategy "mode", "cloud"
+}    flavorDimensions "mode"
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -280,11 +279,11 @@ dependencies {
     }
 
     // Firebase dependencies
-    implementation 'com.google.firebase:firebase-analytics:22.0.2'
-    implementation 'com.google.firebase:firebase-auth:23.0.0'
-    implementation 'com.google.firebase:firebase-firestore:25.0.0'
-    implementation 'com.google.firebase:firebase-storage:21.0.0'
-    implementation 'com.google.firebase:firebase-crashlytics:19.0.3'
+    implementation 'com.google.firebase:firebase-analytics:22.1.0'
+    implementation 'com.google.firebase:firebase-auth:23.1.0'
+    implementation 'com.google.firebase:firebase-firestore:25.1.0'
+    implementation 'com.google.firebase:firebase-storage:21.0.1'
+    implementation 'com.google.firebase:firebase-crashlytics:19.1.0'
 }
 
 // Plugin injection system removed - custom plugins not implemented
