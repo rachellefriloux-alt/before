@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { AndroidLauncher, AppInfo } from '../utils/AndroidLauncher';
+import EnhancedAndroidLauncher, { EnhancedAppInfo, IntelligentRecommendation } from '../utils/EnhancedAndroidLauncher';
 
 interface App {
     id: string;
@@ -23,27 +24,74 @@ export default function AppGrid({ onAppPress }: AppGridProps) {
     const [filteredApps, setFilteredApps] = useState<AppInfo[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
     const [launcher] = useState(() => new AndroidLauncher());
+    const [enhancedLauncher] = useState(() => new EnhancedAndroidLauncher());
+    const [recommendations, setRecommendations] = useState<IntelligentRecommendation[]>([]);
+    const [systemInfo, setSystemInfo] = useState<any>(null);
+    const [isEnhanced, setIsEnhanced] = useState(false);
 
     // Load apps from Android launcher
     useEffect(() => {
         const initializeLauncher = async () => {
             try {
-                const initialized = await launcher.initialize();
-                if (initialized) {
-                    const installedApps = launcher.getInstalledApps();
-                    setApps(installedApps);
-                    setFilteredApps(installedApps);
+                // Try enhanced launcher first
+                const enhancedInit = await enhancedLauncher.initialize();
+                if (enhancedInit) {
+                    console.log('Enhanced launcher initialized successfully');
+                    const enhancedApps = enhancedLauncher.getInstalledApps({ sortBy: 'ai_score', includeAI: true });
+                    // Convert enhanced apps to basic format for compatibility
+                    const compatibleApps = enhancedApps.map(app => ({
+                        id: app.packageName,
+                        name: app.appName,
+                        package: app.packageName,
+                        icon: '',
+                        category: app.category,
+                        packageName: app.packageName,
+                        appName: app.appName,
+                        isSystemApp: app.isSystemApp,
+                        versionName: app.versionName,
+                        lastUpdateTime: app.lastUpdateTime,
+                        installTime: app.installTime,
+                    }));
+                    setApps(compatibleApps);
+                    setFilteredApps(compatibleApps);
+                    setIsEnhanced(true);
+                    
+                    // Get intelligent recommendations
+                    const recs = await enhancedLauncher.getIntelligentRecommendations();
+                    setRecommendations(recs);
+                    
+                    // Get system info
+                    const sysInfo = enhancedLauncher.getSystemInfo();
+                    setSystemInfo(sysInfo);
                 } else {
-                    console.warn('Failed to initialize Android launcher, using mock data');
-                    // Keep existing mock data as fallback
+                    // Fallback to basic launcher
+                    const initialized = await launcher.initialize();
+                    if (initialized) {
+                        const installedApps = launcher.getInstalledApps();
+                        setApps(installedApps);
+                        setFilteredApps(installedApps);
+                    } else {
+                        console.warn('Failed to initialize any launcher, using mock data');
+                    }
                 }
             } catch (error) {
                 console.error('Error initializing launcher:', error);
+                // Final fallback to basic launcher
+                try {
+                    const initialized = await launcher.initialize();
+                    if (initialized) {
+                        const installedApps = launcher.getInstalledApps();
+                        setApps(installedApps);
+                        setFilteredApps(installedApps);
+                    }
+                } catch (fallbackError) {
+                    console.error('Fallback launcher also failed:', fallbackError);
+                }
             }
         };
 
         initializeLauncher();
-    }, [launcher]);
+    }, [launcher, enhancedLauncher]);
 
     const categories = [
         { id: 'all', name: 'All', icon: '📱', count: apps.length },
@@ -68,9 +116,25 @@ export default function AppGrid({ onAppPress }: AppGridProps) {
 
     const handleAppPress = async (app: AppInfo) => {
         try {
-            const launched = await launcher.launchApp(app.packageName);
-            if (launched) {
-                onAppPress(app.appName);
+            if (isEnhanced) {
+                // Use enhanced launcher with intelligent context
+                const context = { 
+                    userIntent: 'launch',
+                    timestamp: Date.now(),
+                    systemInfo: systemInfo,
+                };
+                const launched = await enhancedLauncher.launchApp(app.packageName, context);
+                if (launched) {
+                    onAppPress(app.appName);
+                    // Update recommendations after app launch
+                    const newRecs = await enhancedLauncher.getIntelligentRecommendations();
+                    setRecommendations(newRecs);
+                }
+            } else {
+                const launched = await launcher.launchApp(app.packageName);
+                if (launched) {
+                    onAppPress(app.appName);
+                }
             }
         } catch (error) {
             console.error('Failed to launch app:', error);

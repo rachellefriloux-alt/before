@@ -9,8 +9,8 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 44899
-externalPort = 3001
+localPort = 44683
+externalPort = 3000
 
 [workflows]
 runButton = "Project"
@@ -62,19 +62,20 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Sallie Launcher Dev"
+args = "Sallie Enhanced Launcher"
 
 [[workflows.workflow]]
-name = "Sallie Launcher Dev"
+name = "Sallie Enhanced Launcher"
 author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "NODE_OPTIONS=\"--max-old-space-size=16384\" npm start"
+waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm start"
-waitForPort = 5000
-
 [agent]
 expertMode = true
+integrations = ["javascript_openai:1.0.0", "javascript_anthropic:1.0.0"]

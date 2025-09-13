@@ -24,6 +24,7 @@
     "test:all": "npm run typecheck && npm run lint && npm run test:coverage"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.37.0",
     "@expo/cli": "^54.0.4",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/slider": "^5.0.1",
@@ -73,6 +74,7 @@
     "expo-web-browser": "~14.1.0",
     "express": "^5.1.0",
     "firebase": "^12.2.1",
+    "openai": "^5.20.2",
     "react": "18.3.1",
     "react-native": "0.76.9",
     "react-native-bootsplash": "^6.1.3",
