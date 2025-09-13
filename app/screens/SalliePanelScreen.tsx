@@ -19,7 +19,7 @@ import { useDeviceStore } from '../store/device';
 import SallieAvatar from '../components/SallieAvatar';
 import ConversationBubble from '../components/ConversationBubble';
 import VoiceButton from '../components/VoiceButton';
-import { SallieBrain } from '../ai/SallieBrain';
+import { SallieBrain } from '../services/SallieBrain';
 
 interface Message {
     id: string;
