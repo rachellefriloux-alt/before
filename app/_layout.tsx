@@ -75,7 +75,15 @@ export default function RootLayout() {
     return (
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
             <OnboardingProvider>
-                <Stack initialRouteName={initialRoute}>
+                {/* Glass Background */}
+                <Stack 
+                    initialRouteName={initialRoute}
+                    screenOptions={{
+                        contentStyle: {
+                            backgroundColor: 'rgba(248, 250, 252, 0.9)', // Global glass backdrop
+                        }
+                    }}
+                >
                     <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
                     <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
                     <Stack.Screen name="+not-found" />

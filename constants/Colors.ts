@@ -254,5 +254,71 @@ export const SallieThemes = {
     },
     motifs: ['💙', '🌊', '👑', '💎', '⚡', '🌌'],
     mood: 'deep and regal'
+  },
+
+  // ✨ GLASSMORPHISM THEME - Modern Glass Aesthetic
+  glassAesthetic: {
+    name: 'Glass Aesthetic',
+    colors: {
+      ...Colors.light,
+      // Glass-like transparent backgrounds
+      background: 'rgba(255, 255, 255, 0.1)',
+      surface: 'rgba(255, 255, 255, 0.15)',
+      surfaceElevated: 'rgba(255, 255, 255, 0.2)',
+      card: 'rgba(255, 255, 255, 0.1)',
+      
+      // Subtle glass tints
+      primary: 'rgba(20, 184, 166, 0.8)',    // Teal with transparency
+      accent: 'rgba(6, 182, 212, 0.7)',      // Aqua with transparency
+      mystical: 'rgba(139, 92, 246, 0.6)',   // Purple with transparency
+      
+      // Glass borders and shadows
+      border: 'rgba(255, 255, 255, 0.2)',
+      borderFocus: 'rgba(20, 184, 166, 0.6)',
+      overlay: 'rgba(0, 0, 0, 0.1)',
+      
+      // Glass text colors
+      text: 'rgba(15, 23, 42, 0.9)',
+      textSecondary: 'rgba(100, 116, 139, 0.8)',
+      
+      // Glass gradients with transparency
+      gradient: {
+        primary: 'linear-gradient(135deg, rgba(20, 184, 166, 0.8) 0%, rgba(16, 185, 129, 0.6) 100%)',
+        mystical: 'linear-gradient(135deg, rgba(139, 92, 246, 0.7) 0%, rgba(59, 130, 246, 0.5) 100%)',
+        surface: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        glass: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        backdrop: 'linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%)'
+      },
+      
+      // Enhanced glass shadows with blur
+      shadows: {
+        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        glassSm: '0 2px 8px 0 rgba(31, 38, 135, 0.2)',
+        glassMd: '0 4px 16px 0 rgba(31, 38, 135, 0.25)',
+        glassLg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        glassXl: '0 16px 64px 0 rgba(31, 38, 135, 0.4)',
+        sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+      }
+    },
+    fonts: {
+      elegant: 'Inter',
+      modern: 'Inter',
+      signature: 'Inter'
+    },
+    motifs: ['✨', '💎', '🔮', '💠', '🌟', '⚪'],
+    mood: 'transparent and ethereal',
+    
+    // Glass-specific styling properties
+    glass: {
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)', // Safari support
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      borderRadius: 16,
+      background: 'rgba(255, 255, 255, 0.1)',
+      boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+    }
   }
 } as const;

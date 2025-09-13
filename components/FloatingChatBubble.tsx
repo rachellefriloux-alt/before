@@ -22,7 +22,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { Colors } from '@/constants/Colors';
+import { Colors, SallieThemes } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 interface Message {
@@ -40,7 +40,7 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
 export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) {
   const colorScheme = useColorScheme();
-  const colors = Colors[colorScheme ?? 'light'];
+  const colors = SallieThemes.glassAesthetic.colors;
   
   // Bubble state
   const [isExpanded, setIsExpanded] = useState(false);
@@ -376,7 +376,14 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     zIndex: 1000,
-    shadowOffset: { width: 0, height: 4 },
+    backgroundColor: 'rgba(255, 255, 255, 0.15)', // Glass bubble
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.37,
+    shadowRadius: 32,
+    shadowColor: 'rgba(31, 38, 135, 1)',
+    elevation: 10,
   },
   bubbleContent: {
     flex: 1,
@@ -412,6 +419,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     overflow: 'hidden',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Glass modal
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
+    borderBottomWidth: 0,
   },
   chatHeader: {
     flexDirection: 'row',

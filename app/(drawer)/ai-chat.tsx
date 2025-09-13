@@ -22,7 +22,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '@/constants/Colors';
+import { Colors, SallieThemes } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 interface Message {
@@ -42,7 +42,7 @@ interface SalliePersonality {
 
 export default function AIChatScreen() {
   const colorScheme = useColorScheme();
-  const colors = Colors[colorScheme ?? 'light'];
+  const colors = SallieThemes.glassAesthetic.colors;
   
   // Chat state
   const [messages, setMessages] = useState<Message[]>([
@@ -356,6 +356,7 @@ export default function AIChatScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'rgba(248, 250, 252, 0.9)', // Glass backdrop
   },
   backgroundOverlay: {
     position: 'absolute',
@@ -467,10 +468,13 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 20,
     borderWidth: 1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)', // Glass background
+    borderColor: 'rgba(255, 255, 255, 0.2)', // Glass border
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.37,
+    shadowRadius: 32,
+    shadowColor: 'rgba(31, 38, 135, 1)',
+    elevation: 8,
   },
   messageText: {
     fontSize: 16,
@@ -517,6 +521,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     maxHeight: 120,
     marginRight: 12,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Glass input
+    borderColor: 'rgba(255, 255, 255, 0.2)', // Glass border
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 16,
+    shadowColor: 'rgba(31, 38, 135, 1)',
   },
   sendButton: {
     width: 44,
