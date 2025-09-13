@@ -9,7 +9,7 @@ import {
     Alert,
     FlatList,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useThemeStore } from '../store/theme';
 import { EnhancedButton } from './EnhancedButton';
 import { EnhancedCard } from './EnhancedCard';

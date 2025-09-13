@@ -10,7 +10,8 @@ import {
     StatusBar,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
+import type { ColorValue } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
 import { usePersonaStore } from '../store/persona';
 import { useMemoryStore } from '../store/memory';
@@ -231,7 +232,7 @@ export default function OnboardingScreen() {
 
             {/* Background Gradient */}
             <LinearGradient
-                colors={currentTheme.gradients.background}
+                colors={currentTheme.gradients.background as any}
                 style={styles.backgroundGradient}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}

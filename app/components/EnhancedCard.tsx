@@ -8,7 +8,7 @@ import {
     ViewStyle,
     Dimensions,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useThemeStore } from '../store/theme';
 
 const { width } = Dimensions.get('window');

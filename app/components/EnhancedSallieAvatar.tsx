@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
+import type { ColorValue } from 'react-native';
 import { useThemeStore } from '../store/theme';
 import { usePersonaStore } from '../store/persona';
 
@@ -81,21 +82,21 @@ export default function EnhancedSallieAvatar({
     
     switch (emotion) {
       case 'happy':
-        return ['#FFD700', '#FFA500', '#FF8C00'];
+        return ['#FFD700', '#FFA500', '#FF8C00'] as const;
       case 'sad':
-        return ['#87CEEB', '#4682B4', '#1E90FF'];
+        return ['#87CEEB', '#4682B4', '#1E90FF'] as const;
       case 'angry':
-        return ['#FF4500', '#DC143C', '#B22222'];
+        return ['#FF4500', '#DC143C', '#B22222'] as const;
       case 'calm':
-        return ['#98FB98', '#32CD32', '#228B22'];
+        return ['#98FB98', '#32CD32', '#228B22'] as const;
       case 'excited':
-        return ['#FF69B4', '#FF1493', '#DC143C'];
+        return ['#FF69B4', '#FF1493', '#DC143C'] as const;
       case 'thoughtful':
-        return ['#DDA0DD', '#9370DB', '#8A2BE2'];
+        return ['#DDA0DD', '#9370DB', '#8A2BE2'] as const;
       case 'concerned':
-        return ['#F0E68C', '#DAA520', '#B8860B'];
+        return ['#F0E68C', '#DAA520', '#B8860B'] as const;
       default:
-        return baseGradient;
+        return (baseGradient.length > 0 ? baseGradient : ['#E6E6FA', '#9370DB']) as readonly ColorValue[];
     }
   };
 
@@ -193,7 +194,7 @@ export default function EnhancedSallieAvatar({
       
       {/* Main Avatar */}
       <LinearGradient
-        colors={gradientColors}
+        colors={gradientColors as any}
         style={[
           styles.avatar,
           {

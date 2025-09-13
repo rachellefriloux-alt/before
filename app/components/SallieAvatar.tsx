@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Animated, Text } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface SallieAvatarProps {
   emotion: string;
@@ -12,21 +12,21 @@ export default function SallieAvatar({ emotion, size, animated = true }: SallieA
   const getEmotionColors = () => {
     switch (emotion) {
       case 'happy':
-        return ['#FFD700', '#FFA500'];
+        return ['#FFD700', '#FFA500'] as const;
       case 'sad':
-        return ['#87CEEB', '#4682B4'];
+        return ['#87CEEB', '#4682B4'] as const;
       case 'angry':
-        return ['#FF4500', '#DC143C'];
+        return ['#FF4500', '#DC143C'] as const;
       case 'calm':
-        return ['#98FB98', '#32CD32'];
+        return ['#98FB98', '#32CD32'] as const;
       case 'excited':
-        return ['#FF69B4', '#FF1493'];
+        return ['#FF69B4', '#FF1493'] as const;
       case 'thoughtful':
-        return ['#DDA0DD', '#9370DB'];
+        return ['#DDA0DD', '#9370DB'] as const;
       case 'concerned':
-        return ['#F0E68C', '#DAA520'];
+        return ['#F0E68C', '#DAA520'] as const;
       default:
-        return ['#E6E6FA', '#9370DB'];
+        return ['#E6E6FA', '#9370DB'] as const;
     }
   };
 

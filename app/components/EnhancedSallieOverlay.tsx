@@ -8,7 +8,8 @@ import {
     Dimensions,
     PanResponder,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
+import type { ColorValue } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
 import { usePersonaStore } from '../store/persona';
 import { useMemoryStore } from '../store/memory';
@@ -274,8 +275,8 @@ export default function EnhancedSallieOverlay() {
                 <LinearGradient
                     colors={
                         isListening
-                            ? [currentTheme.colors.error, currentTheme.colors.warning]
-                            : currentTheme.gradients.sallie
+                            ? [currentTheme.colors.error, currentTheme.colors.warning] as const
+                            : (currentTheme.gradients.sallie as any)
                     }
                     style={[
                         styles.gradient,

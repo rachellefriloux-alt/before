@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as DocumentPicker from 'expo-document-picker';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useThemeStore } from '../store/theme';
 import { EnhancedButton } from './EnhancedButton';
 import { EnhancedCard } from './EnhancedCard';

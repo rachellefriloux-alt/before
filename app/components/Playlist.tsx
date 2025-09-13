@@ -8,7 +8,7 @@ import {
     Image,
     Dimensions,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { AudioTrack } from './AudioPlayer';
 import { audioManager } from '../utils/AudioManager';
 import { useThemeStore } from '../store/theme';

@@ -9,7 +9,7 @@ import {
     PanResponder,
 } from 'react-native';
 import { Audio } from 'expo-av';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useThemeStore } from '../store/theme';
 
 const { width } = Dimensions.get('window');

@@ -8,7 +8,7 @@ import {
     Dimensions,
     Vibration,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Audio } from 'expo-av';
 import * as Speech from 'expo-speech';
 import * as Haptics from 'expo-haptics';

@@ -8,7 +8,7 @@ import {
     Dimensions,
     TouchableOpacity,
 } from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { AudioPlayer, AudioTrack } from '../components/AudioPlayer';
 import { Playlist } from '../components/Playlist';
 import { audioManager } from '../utils/AudioManager';
