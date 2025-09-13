@@ -68,6 +68,87 @@ export default function DrawerLayout() {
                         ),
                     }}
                 />
+
+                {/* Emotional Support */}
+                <Drawer.Screen
+                    name="emotional-support"
+                    options={{
+                        title: 'Emotional Support',
+                        drawerLabel: 'Emotional Support',
+                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
+                            <IconSymbol name="heart.fill" size={size} color={color} />
+                        ),
+                    }}
+                />
+
+                {/* Profile */}
+                <Drawer.Screen
+                    name="profile"
+                    options={{
+                        title: 'Profile',
+                        drawerLabel: 'Profile',
+                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
+                            <IconSymbol name="person.fill" size={size} color={color} />
+                        ),
+                    }}
+                />
+
+                {/* Achievements */}
+                <Drawer.Screen
+                    name="achievements"
+                    options={{
+                        title: 'Achievements',
+                        drawerLabel: 'Achievements',
+                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
+                            <IconSymbol name="star.fill" size={size} color={color} />
+                        ),
+                    }}
+                />
+
+                {/* Journal */}
+                <Drawer.Screen
+                    name="journal"
+                    options={{
+                        title: 'Journal',
+                        drawerLabel: 'Journal',
+                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
+                            <IconSymbol name="book.fill" size={size} color={color} />
+                        ),
+                    }}
+                />
+
+                {/* Settings */}
+                <Drawer.Screen
+                    name="settings"
+                    options={{
+                        title: 'Settings',
+                        drawerLabel: 'Settings',
+                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
+                            <IconSymbol name="gearshape.fill" size={size} color={color} />
+                        ),
+                    }}
+                />
+
+                {/* Help */}
+                <Drawer.Screen
+                    name="help"
+                    options={{
+                        title: 'Help',
+                        drawerLabel: 'Help',
+                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
+                            <IconSymbol name="questionmark.circle.fill" size={size} color={color} />
+                        ),
+                    }}
+                />
+
+                {/* Custom Drawer Content - Hidden from navigation */}
+                <Drawer.Screen
+                    name="drawer-content"
+                    options={{
+                        drawerItemStyle: { display: 'none' }, // Hide from menu
+                        title: 'Drawer Content',
+                    }}
+                />
             </Drawer>
         </ToastProvider>
     );
