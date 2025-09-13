@@ -1,6 +1,6 @@
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore, MemoryItem } from '../store/memory';
-import { useDeviceStore } from '../store/device';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore, MemoryItem } from '../../store/memory';
+import { useDeviceStore } from '../../store/device';
 import { EmotionalIntelligence } from './EmotionalIntelligence';
 import { OpenAIIntegration } from './OpenAIIntegration';
 
@@ -57,7 +57,7 @@ export class SallieBrain {
         userInput,
         currentEmotion: personaState.emotion,
         memoryContext: relevantMemories,
-        personality: personaState.personality,
+        personality: personaState.personality.map(p => `${p.name}: ${p.value}`).join(', '),
         conversationHistory: this.conversationHistory.slice(-10), // Last 10 exchanges
       };
 
@@ -92,7 +92,7 @@ export class SallieBrain {
   }
 
   private getRelevantMemories(userInput: string, memoryState: any): MemoryItem[] {
-    const searchResults = memoryState.searchMemories(userInput);
+    const searchResults = memoryState.getMemoriesByTag('conversation');
     const emotionallyRelevant = memoryState.getMemoriesByEmotion(memoryState.emotion);
     const recentMemories = memoryState.shortTerm.slice(-5);
 

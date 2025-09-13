@@ -356,20 +356,20 @@ export default function AdvancedVoiceInteraction({
     const getStateColor = () => {
         switch (voiceState) {
             case 'listening':
-                return currentTheme.colors.info;
+                return currentTheme.colors.semantic.info[500];
             case 'processing':
-                return currentTheme.colors.warning;
+                return currentTheme.colors.semantic.warning[500];
             case 'speaking':
-                return currentTheme.colors.success;
+                return currentTheme.colors.semantic.success[500];
             case 'error':
-                return currentTheme.colors.error;
+                return currentTheme.colors.semantic.error[500];
             default:
-                return currentTheme.colors.primary;
+                return currentTheme.colors.primary[500];
         }
     };
 
     return (
-        <View style={[styles.container, { backgroundColor: currentTheme.colors.background }]}>
+        <View style={[styles.container, { backgroundColor: currentTheme.colors.semantic.background.primary }]}>
             {/* Waveform Visualization */}
             {(voiceState === 'listening' || voiceState === 'speaking') && (
                 <View style={styles.waveformContainer}>

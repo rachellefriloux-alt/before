@@ -132,6 +132,7 @@ export interface ContextAwareness {
   conversationTone: string;
   relationshipStage: string;
   contextDepth: number;
+  emotionalIntensity: number;
   sharedExperiences: string[];
   moodTrajectory: string;
   energyLevel: string;

@@ -46,10 +46,10 @@ export class PersonaEngine extends EventEmitter {
   private conversationPatterns: ConversationPattern[] = [];
 
   // Advanced features
-  public metrics: PersonaMetrics;
+  public metrics!: PersonaMetrics;
   private plugins: Map<string, Plugin> = new Map();
   private conversationFlows: Map<string, ConversationFlow> = new Map();
-  public moodProfile: MoodProfile;
+  public moodProfile!: MoodProfile;
   private responseCache: Map<string, CacheEntry> = new Map();
   private languagePack: Map<string, LanguagePack> = new Map();
   private healthMonitor: HealthMonitor = {} as HealthMonitor;

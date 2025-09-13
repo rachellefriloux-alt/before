@@ -467,7 +467,8 @@ export const useEnhancedPersonaStore = create<EnhancedPersonaState>()(
         },
         setItem: (name, value) => {
           // Don't persist the PersonaEngine instance itself
-          const { personaEngine, ...persistedState } = value;
+          const parsedValue = typeof value === 'string' ? JSON.parse(value) : value;
+          const { personaEngine, ...persistedState } = parsedValue;
           storage.set(name, JSON.stringify(persistedState));
         },
         removeItem: (name) => {
