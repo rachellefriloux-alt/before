@@ -1,4 +1,4 @@
-package com.sallie.app
+package com.sallie.app.cloud
 
 import android.app.Application
 import android.content.res.Configuration

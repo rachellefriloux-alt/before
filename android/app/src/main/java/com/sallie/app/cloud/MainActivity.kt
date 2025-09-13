@@ -1,4 +1,4 @@
-package com.sallie.app
+package com.sallie.app.cloud
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
