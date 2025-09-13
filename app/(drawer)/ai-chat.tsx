@@ -470,11 +470,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: 'rgba(20, 184, 166, 0.12)', // Mystical teal glass background
     borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam glass border
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.4,
-    shadowRadius: 32,
-    shadowColor: 'rgba(20, 184, 166, 1)', // Teal shadow
-    elevation: 8,
+    // React Native compatible shadows
+    shadowColor: '#14b8a6', // Teal shadow color
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6, // Android shadow
   },
   messageText: {
     fontSize: 16,
@@ -523,10 +524,12 @@ const styles = StyleSheet.create({
     marginRight: 12,
     backgroundColor: 'rgba(16, 185, 129, 0.1)', // Emerald glass input
     borderColor: 'rgba(94, 234, 212, 0.25)', // Seafoam glass border
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    shadowColor: 'rgba(16, 185, 129, 1)', // Emerald shadow
+    // React Native compatible shadows
+    shadowColor: '#10b981', // Emerald shadow color
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3, // Android shadow
   },
   sendButton: {
     width: 44,

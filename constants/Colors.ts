@@ -326,14 +326,18 @@ export const SallieThemes = {
     motifs: ['✨', '💎', '🌊', '🌿', '💫', '🔮'],
     mood: 'mystical glass with teal soul',
     
-    // Mystical glass-specific styling properties
+    // React Native compatible glass styling properties
     glass: {
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)', // Safari support
-      border: '1px solid rgba(94, 234, 212, 0.3)', // Seafoam glass border
+      // Use standard React Native properties only
+      borderWidth: 1,
+      borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam glass border  
       borderRadius: 16,
-      background: 'rgba(20, 184, 166, 0.1)', // Teal glass background
-      boxShadow: '0 8px 32px 0 rgba(20, 184, 166, 0.4)' // Teal glass shadow
+      backgroundColor: 'rgba(20, 184, 166, 0.1)', // Teal glass background
+      shadowColor: 'rgba(20, 184, 166, 1)', // Teal shadow for iOS
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.4,
+      shadowRadius: 32,
+      elevation: 8, // Android shadow
     }
   }
 } as const;
