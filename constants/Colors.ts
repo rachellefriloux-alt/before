@@ -3,8 +3,8 @@
  * Jewel tone palette + warm neutrals + bold accents for mythic AI companion
  */
 
-// PERSONALIZED JEWEL PALETTE - Teals, Emeralds & Shining Blues
-const jeweltones = {
+// PERSONALIZED JEWEL PALETTE - Teals, Blues, Silvers & Golds
+const personalPalette = {
   // Shining Teals & Emerald Greens
   shimmeringTeal: '#14b8a6',    // Luminous teal that shines
   emeraldShine: '#10b981',      // Bright emerald green
@@ -12,16 +12,31 @@ const jeweltones = {
   forestEmerald: '#059669',     // Deep emerald wisdom
   seafoamTeal: '#5eead4',       // Light shimmering seafoam
   
-  // Luminous Blues
+  // Luminous Blues Collection
   crystalBlue: '#0ea5e9',       // Clear crystal blue
   sapphireGlow: '#3b82f6',      // Glowing sapphire
   oceanDeep: '#0369a1',         // Deep ocean blue
   skyShimmer: '#0284c7',        // Shimmering sky blue
+  royalBlue: '#1e40af',         // Rich royal blue
+  periwinkle: '#8b5fbf',        // Soft periwinkle blue
   
-  // Natural Soul Colors  
+  // Elegant Silver Tones
+  moonlightSilver: '#e2e8f0',   // Soft moonlight silver
+  pearlShimmer: '#f1f5f9',      // Pearl shimmer
+  platinumGleam: '#cbd5e1',     // Platinum gleam
+  starlightTone: '#f8fafc',     // Starlight tone
+  mistySilver: '#94a3b8',       // Misty silver
+  
+  // Warm Gold Collection
+  sunriseGold: '#fbbf24',       // Warm sunrise gold
+  honeyAmber: '#f59e0b',        // Rich honey amber
+  champagneSparkle: '#fde047',  // Champagne sparkle
+  bronzeWarmth: '#d97706',      // Bronze warmth
+  rosegoldGlow: '#f97316',      // Rose gold glow
+  
+  // Soul Connection Colors  
   amethyst: '#8b5cf6',          // Mystical purple
   ruby: '#dc2626',              // Passionate red
-  topaz: '#d97706',             // Golden warmth
 };
 
 // NATURAL SOUL NEUTRALS - Personal Connection Colors
@@ -47,8 +62,8 @@ const personalEnergy = {
 };
 
 // PRIMARY THEME COLORS - Your Personal Palette
-const tintColorLight = jeweltones.shimmeringTeal;
-const tintColorDark = jeweltones.emeraldShine;
+const tintColorLight = personalPalette.shimmeringTeal;
+const tintColorDark = personalPalette.emeraldShine;
 
 export const Colors = {
   light: {
@@ -61,40 +76,45 @@ export const Colors = {
     tint: tintColorLight,
     
     // Your Personal Jewel Tone Palette
-    primary: jeweltones.shimmeringTeal,
+    primary: personalPalette.shimmeringTeal,
     accent: personalEnergy.aquaMarine,
-    mystical: jeweltones.amethyst,
-    wisdom: jeweltones.forestEmerald,
-    energy: personalEnergy.goldenHour,
-    shine: jeweltones.seafoamTeal,
-    glow: jeweltones.crystalBlue,
+    mystical: personalPalette.amethyst,
+    wisdom: personalPalette.forestEmerald,
+    energy: personalPalette.sunriseGold,
+    shine: personalPalette.seafoamTeal,
+    glow: personalPalette.crystalBlue,
+    silver: personalPalette.platinumGleam,
+    gold: personalPalette.honeyAmber,
     
     // Natural Semantic Colors
-    success: jeweltones.emeraldShine,
-    warning: personalEnergy.goldenHour,
-    error: jeweltones.ruby,
-    info: jeweltones.sapphireGlow,
+    success: personalPalette.emeraldShine,
+    warning: personalPalette.sunriseGold,
+    error: personalPalette.ruby,
+    info: personalPalette.sapphireGlow,
     
     // UI Elements with Natural Touch
     icon: naturalSoul.riverstone,
     iconSecondary: naturalSoul.driftwood,
     border: '#e2e8f0',
-    borderFocus: jeweltones.shimmeringTeal,
+    borderFocus: personalPalette.shimmeringTeal,
     tabIconDefault: naturalSoul.riverstone,
-    tabIconSelected: jeweltones.shimmeringTeal,
+    tabIconSelected: personalPalette.shimmeringTeal,
     overlay: 'rgba(15, 23, 42, 0.1)',
     card: '#ffffff',
     shadow: naturalSoul.charcoal,
     
-    // Personal Gradient Collection - Teals & Emeralds
+    // Personal Gradient Collection - Teals, Blues, Silvers & Golds
     gradient: {
-      primary: `linear-gradient(135deg, ${jeweltones.shimmeringTeal} 0%, ${jeweltones.emeraldShine} 100%)`,
-      mystical: `linear-gradient(135deg, ${jeweltones.amethyst} 0%, ${jeweltones.crystalBlue} 100%)`,
-      wisdom: `linear-gradient(135deg, ${jeweltones.forestEmerald} 0%, ${jeweltones.deepTeal} 100%)`,
-      energy: `linear-gradient(135deg, ${personalEnergy.goldenHour} 0%, ${personalEnergy.coralSunset} 100%)`,
+      primary: `linear-gradient(135deg, ${personalPalette.shimmeringTeal} 0%, ${personalPalette.emeraldShine} 100%)`,
+      mystical: `linear-gradient(135deg, ${personalPalette.amethyst} 0%, ${personalPalette.crystalBlue} 100%)`,
+      wisdom: `linear-gradient(135deg, ${personalPalette.forestEmerald} 0%, ${personalPalette.deepTeal} 100%)`,
+      energy: `linear-gradient(135deg, ${personalPalette.sunriseGold} 0%, ${personalPalette.rosegoldGlow} 100%)`,
       surface: `linear-gradient(135deg, ${naturalSoul.pearl} 0%, ${naturalSoul.moonstone} 100%)`,
-      shine: `linear-gradient(135deg, ${jeweltones.seafoamTeal} 0%, ${jeweltones.shimmeringTeal} 50%, ${jeweltones.crystalBlue} 100%)`,
-      ocean: `linear-gradient(135deg, ${jeweltones.deepTeal} 0%, ${jeweltones.oceanDeep} 50%, ${jeweltones.sapphireGlow} 100%)`
+      shine: `linear-gradient(135deg, ${personalPalette.seafoamTeal} 0%, ${personalPalette.shimmeringTeal} 50%, ${personalPalette.crystalBlue} 100%)`,
+      ocean: `linear-gradient(135deg, ${personalPalette.deepTeal} 0%, ${personalPalette.oceanDeep} 50%, ${personalPalette.sapphireGlow} 100%)`,
+      silver: `linear-gradient(135deg, ${personalPalette.starlightTone} 0%, ${personalPalette.platinumGleam} 50%, ${personalPalette.mistySilver} 100%)`,
+      gold: `linear-gradient(135deg, ${personalPalette.champagneSparkle} 0%, ${personalPalette.sunriseGold} 50%, ${personalPalette.bronzeWarmth} 100%)`,
+      royal: `linear-gradient(135deg, ${personalPalette.royalBlue} 0%, ${personalPalette.sapphireGlow} 50%, ${personalPalette.crystalBlue} 100%)`
     },
     
     // Natural Enhanced Shadows
@@ -103,8 +123,10 @@ export const Colors = {
       md: '0 4px 6px -1px rgb(15, 23, 42 / 0.1), 0 2px 4px -2px rgb(15, 23, 42 / 0.06)',
       lg: '0 10px 15px -3px rgb(15, 23, 42 / 0.12), 0 4px 6px -4px rgb(15, 23, 42 / 0.08)',
       xl: '0 20px 25px -5px rgb(15, 23, 42 / 0.15), 0 8px 10px -6px rgb(15, 23, 42 / 0.1)',
-      teal: `0 8px 32px -8px ${jeweltones.shimmeringTeal}40`,
-      emerald: `0 8px 32px -8px ${jeweltones.emeraldShine}40`
+      teal: `0 8px 32px -8px ${personalPalette.shimmeringTeal}40`,
+      emerald: `0 8px 32px -8px ${personalPalette.emeraldShine}40`,
+      gold: `0 8px 32px -8px ${personalPalette.sunriseGold}40`,
+      silver: `0 8px 32px -8px ${personalPalette.platinumGleam}40`
     }
   },
   dark: {
@@ -117,40 +139,45 @@ export const Colors = {
     tint: tintColorDark,
     
     // Dark Personal Jewel Tones
-    primary: jeweltones.emeraldShine,
+    primary: personalPalette.emeraldShine,
     accent: personalEnergy.aquaMarine,
-    mystical: jeweltones.amethyst,
+    mystical: personalPalette.amethyst,
     wisdom: personalEnergy.mintBreeze,
-    energy: personalEnergy.goldenHour,
-    shine: jeweltones.seafoamTeal,
-    glow: jeweltones.crystalBlue,
+    energy: personalPalette.sunriseGold,
+    shine: personalPalette.seafoamTeal,
+    glow: personalPalette.crystalBlue,
+    silver: personalPalette.moonlightSilver,
+    gold: personalPalette.champagneSparkle,
     
     // Dark Natural Semantic Colors
-    success: jeweltones.emeraldShine,
-    warning: personalEnergy.goldenHour,
+    success: personalPalette.emeraldShine,
+    warning: personalPalette.sunriseGold,
     error: '#f87171',
-    info: jeweltones.crystalBlue,
+    info: personalPalette.crystalBlue,
     
     // Dark Natural UI Elements
     icon: naturalSoul.driftwood,
     iconSecondary: naturalSoul.riverstone,
     border: '#334155',
-    borderFocus: jeweltones.emeraldShine,
+    borderFocus: personalPalette.emeraldShine,
     tabIconDefault: naturalSoul.riverstone,
-    tabIconSelected: jeweltones.emeraldShine,
+    tabIconSelected: personalPalette.emeraldShine,
     overlay: 'rgba(0, 0, 0, 0.7)',
     card: naturalSoul.slate,
     shadow: '#000000',
     
-    // Dark Personal Gradients
+    // Dark Personal Gradients - Blues, Silvers & Golds
     gradient: {
-      primary: `linear-gradient(135deg, ${jeweltones.emeraldShine} 0%, ${jeweltones.shimmeringTeal} 100%)`,
-      mystical: `linear-gradient(135deg, ${jeweltones.amethyst} 0%, ${jeweltones.crystalBlue} 100%)`,
-      wisdom: `linear-gradient(135deg, ${personalEnergy.mintBreeze} 0%, ${jeweltones.forestEmerald} 100%)`,
-      energy: `linear-gradient(135deg, ${personalEnergy.goldenHour} 0%, ${personalEnergy.coralSunset} 100%)`,
+      primary: `linear-gradient(135deg, ${personalPalette.emeraldShine} 0%, ${personalPalette.shimmeringTeal} 100%)`,
+      mystical: `linear-gradient(135deg, ${personalPalette.amethyst} 0%, ${personalPalette.crystalBlue} 100%)`,
+      wisdom: `linear-gradient(135deg, ${personalEnergy.mintBreeze} 0%, ${personalPalette.forestEmerald} 100%)`,
+      energy: `linear-gradient(135deg, ${personalPalette.sunriseGold} 0%, ${personalPalette.rosegoldGlow} 100%)`,
       surface: `linear-gradient(135deg, ${naturalSoul.slate} 0%, #334155 100%)`,
-      shine: `linear-gradient(135deg, ${jeweltones.seafoamTeal} 0%, ${jeweltones.shimmeringTeal} 50%, ${jeweltones.crystalBlue} 100%)`,
-      ocean: `linear-gradient(135deg, ${jeweltones.deepTeal} 0%, ${jeweltones.oceanDeep} 50%, ${jeweltones.sapphireGlow} 100%)`
+      shine: `linear-gradient(135deg, ${personalPalette.seafoamTeal} 0%, ${personalPalette.shimmeringTeal} 50%, ${personalPalette.crystalBlue} 100%)`,
+      ocean: `linear-gradient(135deg, ${personalPalette.deepTeal} 0%, ${personalPalette.oceanDeep} 50%, ${personalPalette.sapphireGlow} 100%)`,
+      silver: `linear-gradient(135deg, ${personalPalette.mistySilver} 0%, ${personalPalette.moonlightSilver} 50%, ${personalPalette.platinumGleam} 100%)`,
+      gold: `linear-gradient(135deg, ${personalPalette.bronzeWarmth} 0%, ${personalPalette.sunriseGold} 50%, ${personalPalette.champagneSparkle} 100%)`,
+      royal: `linear-gradient(135deg, ${personalPalette.royalBlue} 0%, ${personalPalette.sapphireGlow} 50%, ${personalPalette.periwinkle} 100%)`
     },
     
     // Dark Natural Shadows
@@ -159,71 +186,73 @@ export const Colors = {
       md: '0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3)',
       lg: '0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4)',
       xl: '0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5)',
-      teal: `0 8px 32px -8px ${jeweltones.shimmeringTeal}60`,
-      emerald: `0 8px 32px -8px ${jeweltones.emeraldShine}60`
+      teal: `0 8px 32px -8px ${personalPalette.shimmeringTeal}60`,
+      emerald: `0 8px 32px -8px ${personalPalette.emeraldShine}60`,
+      gold: `0 8px 32px -8px ${personalPalette.sunriseGold}60`,
+      silver: `0 8px 32px -8px ${personalPalette.moonlightSilver}60`
     }
   },
 };
 
-// SALLIE'S VISUAL APPEARANCE THEMES
+// SALLIE'S PERSONALIZED APPEARANCE THEMES
 export const SallieThemes = {
-  default: {
-    name: 'Mystical Sovereign',
-    colors: Colors.light,
+  tealWisdom: {
+    name: 'Teal Wisdom',
+    colors: { ...Colors.light, primary: personalPalette.shimmeringTeal, accent: personalPalette.emeraldShine },
     fonts: {
       elegant: 'Crimson Text',     // Elegant serif
       modern: 'Inter',             // Modern sans
       signature: 'Dancing Script'   // Signature script
     },
-    motifs: ['✨', '🔮', '💎', '🌟', '⚡', '🎭'],
-    mood: 'wise and mystical'
+    motifs: ['🌊', '💎', '🌿', '✨', '🔮', '🌟'],
+    mood: 'wise and flowing'
   },
   
-  cosmic: {
-    name: 'Cosmic Strategist',
-    colors: { ...Colors.dark, primary: boldAccents.cosmic },
+  silverMystique: {
+    name: 'Silver Mystique',
+    colors: { ...Colors.dark, primary: personalPalette.platinumGleam, accent: personalPalette.crystalBlue },
     fonts: {
       elegant: 'Playfair Display',
       modern: 'Poppins',
       signature: 'Great Vibes'
     },
-    motifs: ['🌌', '⭐', '🌙', '✨', '🔭', '🪐'],
-    mood: 'cosmic and infinite'
+    motifs: ['🌙', '✨', '💫', '🔮', '⭐', '🌌'],
+    mood: 'elegant and mystical'
   },
   
-  nature: {
-    name: 'Forest Sage',
-    colors: { ...Colors.light, primary: jeweltones.jade, accent: jeweltones.emerald },
+  emeraldNature: {
+    name: 'Emerald Nature',
+    colors: { ...Colors.light, primary: personalPalette.forestEmerald, accent: personalPalette.seafoamTeal },
     fonts: {
       elegant: 'Libre Baskerville',
       modern: 'Source Sans Pro',
       signature: 'Kaushan Script'
     },
-    motifs: ['🌿', '🍃', '🌳', '🦋', '🌺', '🏔️'],
+    motifs: ['🌿', '🍃', '🌳', '💚', '🌺', '🦋'],
     mood: 'natural and grounded'
   },
   
-  fire: {
-    name: 'Phoenix Rising',
-    colors: { ...Colors.light, primary: jeweltones.ruby, accent: boldAccents.sunset },
+  goldenRadiance: {
+    name: 'Golden Radiance',
+    colors: { ...Colors.light, primary: personalPalette.sunriseGold, accent: personalPalette.honeyAmber },
     fonts: {
       elegant: 'Cormorant Garamond',
       modern: 'Nunito Sans',
       signature: 'Pacifico'
     },
-    motifs: ['🔥', '🌅', '🦅', '⚡', '💥', '🌋'],
-    mood: 'passionate and transformative'
+    motifs: ['☀️', '✨', '🌅', '💛', '⚡', '🌟'],
+    mood: 'radiant and warm'
   },
   
-  ocean: {
-    name: 'Deep Waters',
-    colors: { ...Colors.light, primary: boldAccents.ocean, accent: jeweltones.sapphire },
+  royalBlue: {
+    name: 'Royal Blue Depths',
+    colors: { ...Colors.dark, primary: personalPalette.royalBlue, accent: personalPalette.sapphireGlow },
     fonts: {
       elegant: 'Merriweather',
       modern: 'Open Sans',
       signature: 'Satisfy'
     },
-    motifs: ['🌊', '🐚', '🏖️', '⛵', '🐙', '💙'],
-    mood: 'calm and flowing'
+    motifs: ['💙', '🌊', '👑', '💎', '⚡', '🌌'],
+    mood: 'deep and regal'
   }
-};
+} as const;

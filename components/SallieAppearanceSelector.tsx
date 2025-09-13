@@ -30,7 +30,7 @@ interface SallieAppearanceSelectorProps {
 
 export function SallieAppearanceSelector({ 
   onThemeSelect, 
-  currentTheme = 'default' 
+  currentTheme = 'tealWisdom' 
 }: SallieAppearanceSelectorProps) {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
@@ -75,7 +75,7 @@ export function SallieAppearanceSelector({
 
   const handleThemeSelection = (themeKey: string) => {
     setSelectedTheme(themeKey);
-    const theme = SallieThemes[themeKey];
+    const theme = (SallieThemes as any)[themeKey];
     onThemeSelect?.(theme);
   };
 
@@ -119,6 +119,7 @@ export function SallieAppearanceSelector({
       <View style={styles.themeGallery}>
         {Object.entries(SallieThemes).map(([key, theme]) => {
           const isSelected = selectedTheme === key;
+          const typedTheme = theme as any; // Type assertion for theme access
           
           return (
             <TouchableOpacity
@@ -138,20 +139,20 @@ export function SallieAppearanceSelector({
               <View 
                 style={[
                   styles.themePreview,
-                  { backgroundColor: theme.colors.surface }
+                  { backgroundColor: typedTheme.colors.surface }
                 ]}
               >
                 {/* Color Palette Preview */}
                 <View style={styles.colorPalette}>
-                  <View style={[styles.colorDot, { backgroundColor: theme.colors.primary }]} />
-                  <View style={[styles.colorDot, { backgroundColor: theme.colors.accent }]} />
-                  <View style={[styles.colorDot, { backgroundColor: theme.colors.success }]} />
-                  <View style={[styles.colorDot, { backgroundColor: theme.colors.mystical }]} />
+                  <View style={[styles.colorDot, { backgroundColor: typedTheme.colors.primary }]} />
+                  <View style={[styles.colorDot, { backgroundColor: typedTheme.colors.accent }]} />
+                  <View style={[styles.colorDot, { backgroundColor: typedTheme.colors.success }]} />
+                  <View style={[styles.colorDot, { backgroundColor: typedTheme.colors.mystical || typedTheme.colors.primary }]} />
                 </View>
                 
                 {/* Motif Display */}
                 <View style={styles.motifContainer}>
-                  {theme.motifs.slice(0, 3).map((motif, index) => (
+                  {typedTheme.motifs.slice(0, 3).map((motif: string, index: number) => (
                     <Text key={index} style={styles.motif}>{motif}</Text>
                   ))}
                 </View>
@@ -159,22 +160,22 @@ export function SallieAppearanceSelector({
 
               {/* Theme Info */}
               <View style={styles.themeInfo}>
-                <Text style={[styles.themeName, { color: theme.colors.primary }]}>
-                  {theme.name}
+                <Text style={[styles.themeName, { color: typedTheme.colors.primary }]}>
+                  {typedTheme.name}
                 </Text>
                 <Text style={[styles.themeMood, { color: colors.textSecondary }]}>
-                  {theme.mood}
+                  {typedTheme.mood}
                 </Text>
                 
                 {/* Font Preview */}
                 <View style={styles.fontPreview}>
-                  <Text style={[styles.elegantFont, { color: theme.colors.text }]}>
+                  <Text style={[styles.elegantFont, { color: typedTheme.colors.text }]}>
                     Elegant
                   </Text>
-                  <Text style={[styles.modernFont, { color: theme.colors.textSecondary }]}>
+                  <Text style={[styles.modernFont, { color: typedTheme.colors.textSecondary || colors.textSecondary }]}>
                     Modern
                   </Text>
-                  <Text style={[styles.signatureFont, { color: theme.colors.primary }]}>
+                  <Text style={[styles.signatureFont, { color: typedTheme.colors.primary }]}>
                     Script
                   </Text>
                 </View>
@@ -204,13 +205,14 @@ export function SallieAppearanceSelector({
 
       {/* Apply Button */}
       <View style={styles.actionContainer}>
-        <EnhancedButton
-          title={`Embrace the ${SallieThemes[selectedTheme]?.name} Form`}
-          onPress={() => handleThemeSelection(selectedTheme)}
-          variant="primary"
-          size="lg"
+        <TouchableOpacity
           style={[styles.applyButton, { backgroundColor: colors.primary }]}
-        />
+          onPress={() => handleThemeSelection(selectedTheme)}
+        >
+          <Text style={[styles.applyButtonText, { color: colors.card }]}>
+            Embrace the {(SallieThemes as any)[selectedTheme]?.name} Form
+          </Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -361,5 +363,12 @@ const styles = StyleSheet.create({
   applyButton: {
     borderRadius: 25,
     paddingVertical: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  applyButtonText: {
+    fontSize: 18,
+    fontWeight: '700',
+    letterSpacing: 0.5,
   },
 });
