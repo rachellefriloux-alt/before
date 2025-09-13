@@ -24,6 +24,7 @@
     "test:all": "npm run typecheck && npm run lint && npm run test:coverage"
   },
   "dependencies": {
+    "@expo/cli": "^54.0.4",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/slider": "^5.0.1",
     "@react-native-firebase/app": "^23.3.0",
@@ -45,7 +46,7 @@
     "expo-blur": "~14.1.0",
     "expo-brightness": "^13.1.4",
     "expo-camera": "~17.0.0",
-  "expo-constants": "~17.0.8",
+    "expo-constants": "~17.0.8",
     "expo-contacts": "~14.1.0",
     "expo-crypto": "~14.1.0",
     "expo-device": "~7.0.2",
@@ -56,7 +57,7 @@
     "expo-image-picker": "~16.1.0",
     "expo-intent-launcher": "~12.1.0",
     "expo-linear-gradient": "^14.1.5",
-  "expo-linking": "~7.0.5",
+    "expo-linking": "~7.0.5",
     "expo-location": "~18.1.0",
     "expo-media-library": "~17.1.0",
     "expo-network": "~7.1.0",
@@ -132,4 +133,3 @@
     }
   }
 }
-
