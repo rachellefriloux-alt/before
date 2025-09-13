@@ -168,6 +168,7 @@ export class EnhancedAndroidLauncher {
   private anthropic: Anthropic | null = null;
   private eventListeners: { [key: string]: any[] } = {};
   private automationInterval: NodeJS.Timeout | null = null;
+  private appStateSubscription: any = null;
   private usageTracker: Map<string, any> = new Map();
   private aiCache: Map<string, any> = new Map();
   private securityAlerts: any[] = [];
@@ -507,7 +508,7 @@ Format as JSON with fields: recommendations, security_notes, alternatives, autom
       }, 30000); // Update every 30 seconds
 
       // Listen for system events
-      AppState.addEventListener('change', this.handleAppStateChange.bind(this));
+      this.appStateSubscription = AppState.addEventListener('change', this.handleAppStateChange.bind(this));
       
       // Battery monitoring
       Battery.addBatteryLevelListener(this.handleBatteryChange.bind(this));
@@ -1372,7 +1373,9 @@ Return insights as JSON: {"patterns": [], "recommendations": [], "automation_sug
     }
 
     // Clean up event listeners
-    AppState.removeEventListener('change', this.handleAppStateChange);
+    if (this.appStateSubscription) {
+      this.appStateSubscription.remove();
+    }
     
     console.log('Enhanced Android Launcher shutdown complete');
   }
