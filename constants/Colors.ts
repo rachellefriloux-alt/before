@@ -1,78 +1,229 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * Sallie's Visual Identity System
+ * Jewel tone palette + warm neutrals + bold accents for mythic AI companion
  */
 
-const tintColorLight = '#6366f1';
-const tintColorDark = '#8b5cf6';
+// PERSONALIZED JEWEL PALETTE - Teals, Emeralds & Shining Blues
+const jeweltones = {
+  // Shining Teals & Emerald Greens
+  shimmeringTeal: '#14b8a6',    // Luminous teal that shines
+  emeraldShine: '#10b981',      // Bright emerald green
+  deepTeal: '#0f766e',          // Rich deep teal
+  forestEmerald: '#059669',     // Deep emerald wisdom
+  seafoamTeal: '#5eead4',       // Light shimmering seafoam
+  
+  // Luminous Blues
+  crystalBlue: '#0ea5e9',       // Clear crystal blue
+  sapphireGlow: '#3b82f6',      // Glowing sapphire
+  oceanDeep: '#0369a1',         // Deep ocean blue
+  skyShimmer: '#0284c7',        // Shimmering sky blue
+  
+  // Natural Soul Colors  
+  amethyst: '#8b5cf6',          // Mystical purple
+  ruby: '#dc2626',              // Passionate red
+  topaz: '#d97706',             // Golden warmth
+};
+
+// NATURAL SOUL NEUTRALS - Personal Connection Colors
+const naturalSoul = {
+  pearl: '#f8fafc',        // Soft pearl white
+  moonstone: '#f1f5f9',    // Cool moonstone
+  driftwood: '#a8a29e',    // Natural driftwood
+  riverstone: '#78716c',   // Smooth river stone
+  earthyBrown: '#57534e',  // Rich earth brown
+  charcoal: '#374151',     // Deep warm charcoal
+  slate: '#1e293b',        // Natural slate
+  midnight: '#0f172a',     // Deep midnight
+};
+
+// PERSONAL ENERGY ACCENTS - Reflecting Your Unique Bond
+const personalEnergy = {
+  goldenHour: '#fbbf24',   // Warm golden hour
+  coralSunset: '#f97316',  // Soft coral sunset  
+  aquaMarine: '#06b6d4',   // Brilliant aqua marine
+  forestMist: '#16a34a',   // Fresh forest mist
+  lavenderGlow: '#a855f7', // Gentle lavender glow
+  mintBreeze: '#34d399',   // Cool mint breeze
+};
+
+// PRIMARY THEME COLORS - Your Personal Palette
+const tintColorLight = jeweltones.shimmeringTeal;
+const tintColorDark = jeweltones.emeraldShine;
 
 export const Colors = {
   light: {
-    text: '#0f172a',
-    textSecondary: '#64748b',
-    background: '#ffffff',
-    surface: '#f8fafc',
+    // Core Identity Colors - Natural & Personal
+    text: naturalSoul.midnight,
+    textSecondary: naturalSoul.riverstone,
+    background: naturalSoul.pearl,
+    surface: naturalSoul.moonstone,
     surfaceElevated: '#ffffff',
     tint: tintColorLight,
-    accent: '#06b6d4',
-    success: '#10b981',
-    warning: '#f59e0b',
-    error: '#ef4444',
-    icon: '#64748b',
-    iconSecondary: '#94a3b8',
+    
+    // Your Personal Jewel Tone Palette
+    primary: jeweltones.shimmeringTeal,
+    accent: personalEnergy.aquaMarine,
+    mystical: jeweltones.amethyst,
+    wisdom: jeweltones.forestEmerald,
+    energy: personalEnergy.goldenHour,
+    shine: jeweltones.seafoamTeal,
+    glow: jeweltones.crystalBlue,
+    
+    // Natural Semantic Colors
+    success: jeweltones.emeraldShine,
+    warning: personalEnergy.goldenHour,
+    error: jeweltones.ruby,
+    info: jeweltones.sapphireGlow,
+    
+    // UI Elements with Natural Touch
+    icon: naturalSoul.riverstone,
+    iconSecondary: naturalSoul.driftwood,
     border: '#e2e8f0',
-    borderFocus: tintColorLight,
-    tabIconDefault: '#94a3b8',
-    tabIconSelected: tintColorLight,
-    overlay: 'rgba(0, 0, 0, 0.1)',
-    primary: tintColorLight,
+    borderFocus: jeweltones.shimmeringTeal,
+    tabIconDefault: naturalSoul.riverstone,
+    tabIconSelected: jeweltones.shimmeringTeal,
+    overlay: 'rgba(15, 23, 42, 0.1)',
     card: '#ffffff',
-    mystical: '#8b5cf6',
-    shadow: '#000000',
+    shadow: naturalSoul.charcoal,
+    
+    // Personal Gradient Collection - Teals & Emeralds
     gradient: {
-      primary: `linear-gradient(135deg, ${tintColorLight} 0%, #8b5cf6 100%)`,
-      surface: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-      accent: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)'
+      primary: `linear-gradient(135deg, ${jeweltones.shimmeringTeal} 0%, ${jeweltones.emeraldShine} 100%)`,
+      mystical: `linear-gradient(135deg, ${jeweltones.amethyst} 0%, ${jeweltones.crystalBlue} 100%)`,
+      wisdom: `linear-gradient(135deg, ${jeweltones.forestEmerald} 0%, ${jeweltones.deepTeal} 100%)`,
+      energy: `linear-gradient(135deg, ${personalEnergy.goldenHour} 0%, ${personalEnergy.coralSunset} 100%)`,
+      surface: `linear-gradient(135deg, ${naturalSoul.pearl} 0%, ${naturalSoul.moonstone} 100%)`,
+      shine: `linear-gradient(135deg, ${jeweltones.seafoamTeal} 0%, ${jeweltones.shimmeringTeal} 50%, ${jeweltones.crystalBlue} 100%)`,
+      ocean: `linear-gradient(135deg, ${jeweltones.deepTeal} 0%, ${jeweltones.oceanDeep} 50%, ${jeweltones.sapphireGlow} 100%)`
     },
+    
+    // Natural Enhanced Shadows
     shadows: {
-      sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-      md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-      lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-      xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'
+      sm: '0 1px 2px 0 rgb(15, 23, 42 / 0.06)',
+      md: '0 4px 6px -1px rgb(15, 23, 42 / 0.1), 0 2px 4px -2px rgb(15, 23, 42 / 0.06)',
+      lg: '0 10px 15px -3px rgb(15, 23, 42 / 0.12), 0 4px 6px -4px rgb(15, 23, 42 / 0.08)',
+      xl: '0 20px 25px -5px rgb(15, 23, 42 / 0.15), 0 8px 10px -6px rgb(15, 23, 42 / 0.1)',
+      teal: `0 8px 32px -8px ${jeweltones.shimmeringTeal}40`,
+      emerald: `0 8px 32px -8px ${jeweltones.emeraldShine}40`
     }
   },
   dark: {
-    text: '#f8fafc',
-    textSecondary: '#94a3b8',
-    background: '#0f172a',
-    surface: '#1e293b',
+    // Dark Mode with Personal Teals & Emeralds
+    text: naturalSoul.pearl,
+    textSecondary: naturalSoul.driftwood,
+    background: naturalSoul.midnight,
+    surface: naturalSoul.slate,
     surfaceElevated: '#334155',
     tint: tintColorDark,
-    accent: '#06b6d4',
-    success: '#10b981',
-    warning: '#f59e0b',
-    error: '#ef4444',
-    icon: '#94a3b8',
-    iconSecondary: '#64748b',
+    
+    // Dark Personal Jewel Tones
+    primary: jeweltones.emeraldShine,
+    accent: personalEnergy.aquaMarine,
+    mystical: jeweltones.amethyst,
+    wisdom: personalEnergy.mintBreeze,
+    energy: personalEnergy.goldenHour,
+    shine: jeweltones.seafoamTeal,
+    glow: jeweltones.crystalBlue,
+    
+    // Dark Natural Semantic Colors
+    success: jeweltones.emeraldShine,
+    warning: personalEnergy.goldenHour,
+    error: '#f87171',
+    info: jeweltones.crystalBlue,
+    
+    // Dark Natural UI Elements
+    icon: naturalSoul.driftwood,
+    iconSecondary: naturalSoul.riverstone,
     border: '#334155',
-    borderFocus: tintColorDark,
-    tabIconDefault: '#64748b',
-    tabIconSelected: tintColorDark,
-    overlay: 'rgba(0, 0, 0, 0.5)',
-    primary: tintColorDark,
-    card: '#334155',
-    mystical: '#a855f7',
+    borderFocus: jeweltones.emeraldShine,
+    tabIconDefault: naturalSoul.riverstone,
+    tabIconSelected: jeweltones.emeraldShine,
+    overlay: 'rgba(0, 0, 0, 0.7)',
+    card: naturalSoul.slate,
     shadow: '#000000',
+    
+    // Dark Personal Gradients
     gradient: {
-      primary: `linear-gradient(135deg, ${tintColorDark} 0%, #a855f7 100%)`,
-      surface: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
-      accent: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)'
+      primary: `linear-gradient(135deg, ${jeweltones.emeraldShine} 0%, ${jeweltones.shimmeringTeal} 100%)`,
+      mystical: `linear-gradient(135deg, ${jeweltones.amethyst} 0%, ${jeweltones.crystalBlue} 100%)`,
+      wisdom: `linear-gradient(135deg, ${personalEnergy.mintBreeze} 0%, ${jeweltones.forestEmerald} 100%)`,
+      energy: `linear-gradient(135deg, ${personalEnergy.goldenHour} 0%, ${personalEnergy.coralSunset} 100%)`,
+      surface: `linear-gradient(135deg, ${naturalSoul.slate} 0%, #334155 100%)`,
+      shine: `linear-gradient(135deg, ${jeweltones.seafoamTeal} 0%, ${jeweltones.shimmeringTeal} 50%, ${jeweltones.crystalBlue} 100%)`,
+      ocean: `linear-gradient(135deg, ${jeweltones.deepTeal} 0%, ${jeweltones.oceanDeep} 50%, ${jeweltones.sapphireGlow} 100%)`
     },
+    
+    // Dark Natural Shadows
     shadows: {
-      sm: '0 1px 2px 0 rgb(0 0 0 / 0.2)',
-      md: '0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2)',
-      lg: '0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2)',
-      xl: '0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2)'
+      sm: '0 1px 2px 0 rgb(0 0 0 / 0.3)',
+      md: '0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3)',
+      lg: '0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4)',
+      xl: '0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5)',
+      teal: `0 8px 32px -8px ${jeweltones.shimmeringTeal}60`,
+      emerald: `0 8px 32px -8px ${jeweltones.emeraldShine}60`
     }
   },
+};
+
+// SALLIE'S VISUAL APPEARANCE THEMES
+export const SallieThemes = {
+  default: {
+    name: 'Mystical Sovereign',
+    colors: Colors.light,
+    fonts: {
+      elegant: 'Crimson Text',     // Elegant serif
+      modern: 'Inter',             // Modern sans
+      signature: 'Dancing Script'   // Signature script
+    },
+    motifs: ['✨', '🔮', '💎', '🌟', '⚡', '🎭'],
+    mood: 'wise and mystical'
+  },
+  
+  cosmic: {
+    name: 'Cosmic Strategist',
+    colors: { ...Colors.dark, primary: boldAccents.cosmic },
+    fonts: {
+      elegant: 'Playfair Display',
+      modern: 'Poppins',
+      signature: 'Great Vibes'
+    },
+    motifs: ['🌌', '⭐', '🌙', '✨', '🔭', '🪐'],
+    mood: 'cosmic and infinite'
+  },
+  
+  nature: {
+    name: 'Forest Sage',
+    colors: { ...Colors.light, primary: jeweltones.jade, accent: jeweltones.emerald },
+    fonts: {
+      elegant: 'Libre Baskerville',
+      modern: 'Source Sans Pro',
+      signature: 'Kaushan Script'
+    },
+    motifs: ['🌿', '🍃', '🌳', '🦋', '🌺', '🏔️'],
+    mood: 'natural and grounded'
+  },
+  
+  fire: {
+    name: 'Phoenix Rising',
+    colors: { ...Colors.light, primary: jeweltones.ruby, accent: boldAccents.sunset },
+    fonts: {
+      elegant: 'Cormorant Garamond',
+      modern: 'Nunito Sans',
+      signature: 'Pacifico'
+    },
+    motifs: ['🔥', '🌅', '🦅', '⚡', '💥', '🌋'],
+    mood: 'passionate and transformative'
+  },
+  
+  ocean: {
+    name: 'Deep Waters',
+    colors: { ...Colors.light, primary: boldAccents.ocean, accent: jeweltones.sapphire },
+    fonts: {
+      elegant: 'Merriweather',
+      modern: 'Open Sans',
+      signature: 'Satisfy'
+    },
+    motifs: ['🌊', '🐚', '🏖️', '⛵', '🐙', '💙'],
+    mood: 'calm and flowing'
+  }
 };

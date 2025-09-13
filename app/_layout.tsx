@@ -16,7 +16,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
     const colorScheme = useColorScheme();
-    const { profile, isAuthenticated } = useUserStore();
+    const { profile } = useUserStore();
     const [navigationComponents, setNavigationComponents] = useState<{
         ThemeProvider: any;
         DarkTheme: any;

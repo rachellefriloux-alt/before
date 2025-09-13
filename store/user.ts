@@ -57,8 +57,9 @@ export const useUserStore = create<UserState>()(
         profile: state.profile ? {
           ...state.profile,
           onboarding: {
-            ...state.profile.onboarding,
             completed: true,
+            currentStep: state.profile.onboarding?.currentStep || 0,
+            answers: state.profile.onboarding?.answers || {},
           },
         } : null,
       })),
@@ -79,8 +80,9 @@ export const useUserStore = create<UserState>()(
         profile: state.profile ? {
           ...state.profile,
           onboarding: {
-            ...state.profile.onboarding,
+            completed: state.profile.onboarding?.completed || false,
             currentStep: step,
+            answers: state.profile.onboarding?.answers || {},
           },
         } : null,
       })),
@@ -89,7 +91,8 @@ export const useUserStore = create<UserState>()(
         profile: state.profile ? {
           ...state.profile,
           onboarding: {
-            ...state.profile.onboarding,
+            completed: state.profile.onboarding?.completed || false,
+            currentStep: state.profile.onboarding?.currentStep || 0,
             answers: { ...state.profile.onboarding?.answers, ...answers },
           },
         } : null,
