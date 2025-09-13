@@ -11,16 +11,20 @@
 // These can be imported directly in components when needed
 
 export const SallieImages = {
-  // Main App Icons
+  // Main App Icons - Perfect Blend of Mystical + Authentic
   icons: {
-    mainAppIcon: require('@/attached_assets/generated_images/Refined_mystical_app_icon_88515a58.png'),
-    chatBubbleAvatar: require('@/attached_assets/generated_images/Enhanced_mystical_chat_avatar_d6cf72c0.png'),
+    mainAppIcon: require('@/attached_assets/generated_images/Sophisticated_mystical_feminine_icon_6dfeaa71.png'),
+    chatBubbleAvatar: require('@/attached_assets/generated_images/Elegant_mystical_chat_presence_6a7fcafd.png'),
     brandLogo: require('@/attached_assets/generated_images/Sallie_brand_text_logo_fdc184fd.png'),
+    // Alternative versions
+    authenticIcon: require('@/attached_assets/generated_images/Authentic_mystical_app_icon_c9db53e1.png'),
+    sigilAvatar: require('@/attached_assets/generated_images/Sophisticated_chat_avatar_sigil_54e13f0d.png'),
   },
   
-  // Avatar Expressions
+  // Avatar Expressions - Refined Mystical Character  
   avatars: {
-    expressions: require('@/attached_assets/generated_images/Polished_mystical_expressions_873c6818.png'),
+    expressions: require('@/attached_assets/generated_images/Refined_mystical_mood_expressions_12d2ac3e.png'),
+    polishedExpressions: require('@/attached_assets/generated_images/Polished_mystical_expressions_873c6818.png'),
     originalExpressions: require('@/attached_assets/generated_images/Sallie_avatar_expressions_5ff8440b.png'),
   },
   
@@ -32,9 +36,11 @@ export const SallieImages = {
     splashScreen: require('@/attached_assets/generated_images/App_splash_screen_2cbbf02b.png'),
   },
   
-  // Backgrounds
+  // Backgrounds - Sophisticated Mystical Textures
   backgrounds: {
-    mysticalPattern: require('@/attached_assets/generated_images/Mystical_background_pattern_ea581f26.png'),
+    mysticalPattern: require('@/attached_assets/generated_images/Sophisticated_mystical_background_47470f95.png'),
+    textilePattern: require('@/attached_assets/generated_images/Authentic_textile_background_00e945de.png'),
+    originalPattern: require('@/attached_assets/generated_images/Mystical_background_pattern_ea581f26.png'),
   },
   
   // Themes
@@ -42,9 +48,10 @@ export const SallieImages = {
     previewCards: require('@/attached_assets/generated_images/Theme_preview_cards_e842a197.png'),
   },
   
-  // Achievements
+  // Achievements - Authentic Medallions
   achievements: {
-    badges: require('@/attached_assets/generated_images/Achievement_badges_collection_758fc471.png'),
+    badges: require('@/attached_assets/generated_images/Authentic_achievement_medallions_27272893.png'),
+    originalBadges: require('@/attached_assets/generated_images/Achievement_badges_collection_758fc471.png'),
   },
   
   // Onboarding
