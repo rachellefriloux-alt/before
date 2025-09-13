@@ -1,4 +1,5 @@
 <resources>
   <string name="app_name">Sallie Sovereign</string>
   <string name="expo_system_ui_user_interface_style" translatable="false">automatic</string>
+  <string name="expo_runtime_version">exposdk:54.0.0</string>
 </resources>

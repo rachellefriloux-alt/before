@@ -1,8 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { MMKV } from 'react-native-mmkv';
-
-const storage = new MMKV();
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface EmotionRecord {
   emotion: string;
@@ -169,18 +167,7 @@ export const usePersonaStore = create<PersonaState>()(
     }),
     {
       name: 'persona-store',
-      storage: createJSONStorage(() => ({
-        getItem: (name) => {
-          const value = storage.getString(name);
-          return value ? JSON.parse(value) : null;
-        },
-        setItem: (name, value) => {
-          storage.set(name, JSON.stringify(value));
-        },
-        removeItem: (name) => {
-          storage.delete(name);
-        },
-      })),
+      storage: createJSONStorage(() => AsyncStorage),
     }
   )
 );

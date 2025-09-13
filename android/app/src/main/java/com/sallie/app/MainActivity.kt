@@ -1,4 +1,4 @@
-package com.yourorg.sallie
+package com.sallie.app
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

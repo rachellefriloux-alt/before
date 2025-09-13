@@ -1,9 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { MMKV } from 'react-native-mmkv';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { ColorValue } from 'react-native';
-
-const storage = new MMKV();
 
 interface ThemeGradient {
   [key: string]: readonly ColorValue[];
@@ -211,18 +209,7 @@ export const useThemeStore = create<ThemeState>()(
     }),
     {
       name: 'theme-store',
-      storage: createJSONStorage(() => ({
-        getItem: (name) => {
-          const value = storage.getString(name);
-          return value ? JSON.parse(value) : null;
-        },
-        setItem: (name, value) => {
-          storage.set(name, JSON.stringify(value));
-        },
-        removeItem: (name) => {
-          storage.delete(name);
-        },
-      })),
+      storage: createJSONStorage(() => AsyncStorage),
     }
   )
 );
