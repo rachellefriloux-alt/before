@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1036741251722",
+    "project_id": "sallie2025001",
+    "storage_bucket": "sallie2025001.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036741251722:android:49fff50dfbab956edd5373",
+        "android_client_info": {
+          "package_name": "com.sallie.app.cloud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaQJLn_pOrdbNfzo0vh5hGfQ11cudv3b0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
