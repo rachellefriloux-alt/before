@@ -7,9 +7,11 @@
     "icon": "./assets/images/icon.png",
     "scheme": "sallie",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "sdkVersion": "54.0.0",
-    "runtimeVersion": "1.0.0",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
     "platforms": ["ios", "android", "web"],
     "ios": {
       "supportsTablet": true,
