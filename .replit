@@ -9,10 +9,6 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 33477
-externalPort = 3000
-
-[[ports]]
 localPort = 38799
 externalPort = 3002
 
@@ -78,7 +74,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "NODE_OPTIONS=\"--max-old-space-size=16384\" npm start"
+args = "NODE_OPTIONS=\"--max-old-space-size=8192\" npx expo start --tunnel --clear --port 5000"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
