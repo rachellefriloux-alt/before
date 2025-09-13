@@ -80,7 +80,7 @@ export default function RootLayout() {
                     initialRouteName={initialRoute}
                     screenOptions={{
                         contentStyle: {
-                            backgroundColor: 'rgba(248, 250, 252, 0.9)', // Global glass backdrop
+                            backgroundColor: 'rgba(20, 184, 166, 0.08)', // Mystical teal glass backdrop
                         }
                     }}
                 >

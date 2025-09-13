@@ -376,13 +376,13 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     zIndex: 1000,
-    backgroundColor: 'rgba(255, 255, 255, 0.15)', // Glass bubble
+    backgroundColor: 'rgba(20, 184, 166, 0.15)', // Mystical teal glass bubble
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.2)',
+    borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam border
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.37,
+    shadowOpacity: 0.4,
     shadowRadius: 32,
-    shadowColor: 'rgba(31, 38, 135, 1)',
+    shadowColor: 'rgba(20, 184, 166, 1)', // Teal shadow
     elevation: 10,
   },
   bubbleContent: {
@@ -419,9 +419,9 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     overflow: 'hidden',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Glass modal
+    backgroundColor: 'rgba(16, 185, 129, 0.1)', // Emerald glass modal
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.2)',
+    borderColor: 'rgba(94, 234, 212, 0.25)', // Seafoam glass border
     borderBottomWidth: 0,
   },
   chatHeader: {

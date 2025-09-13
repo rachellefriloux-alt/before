@@ -256,51 +256,66 @@ export const SallieThemes = {
     mood: 'deep and regal'
   },
 
-  // ✨ GLASSMORPHISM THEME - Modern Glass Aesthetic
+  // ✨ GLASSMORPHISM THEME - Mystical Glass with Teal, Emerald & Gold
   glassAesthetic: {
-    name: 'Glass Aesthetic',
+    name: 'Mystical Glass Aesthetic',
     colors: {
       ...Colors.light,
-      // Glass-like transparent backgrounds
-      background: 'rgba(255, 255, 255, 0.1)',
-      surface: 'rgba(255, 255, 255, 0.15)',
-      surfaceElevated: 'rgba(255, 255, 255, 0.2)',
-      card: 'rgba(255, 255, 255, 0.1)',
+      // Mystical glass backgrounds with teal/emerald tints
+      background: 'rgba(20, 184, 166, 0.08)',        // Shimmering teal backdrop
+      surface: 'rgba(16, 185, 129, 0.12)',           // Emerald glass surface  
+      surfaceElevated: 'rgba(94, 234, 212, 0.15)',   // Seafoam elevated glass
+      card: 'rgba(20, 184, 166, 0.1)',               // Teal glass cards
       
-      // Subtle glass tints
-      primary: 'rgba(20, 184, 166, 0.8)',    // Teal with transparency
-      accent: 'rgba(6, 182, 212, 0.7)',      // Aqua with transparency
-      mystical: 'rgba(139, 92, 246, 0.6)',   // Purple with transparency
+      // Mystical glass tints - same beautiful colors but transparent
+      primary: 'rgba(20, 184, 166, 0.85)',           // Shimmering teal
+      accent: 'rgba(16, 185, 129, 0.75)',            // Emerald shine  
+      mystical: 'rgba(139, 92, 246, 0.7)',           // Amethyst mystical
+      wisdom: 'rgba(5, 150, 105, 0.8)',              // Forest emerald wisdom
+      energy: 'rgba(251, 191, 36, 0.8)',             // Sunrise gold energy
+      shine: 'rgba(94, 234, 212, 0.7)',              // Seafoam shine
+      glow: 'rgba(14, 165, 233, 0.75)',              // Crystal blue glow
+      silver: 'rgba(226, 232, 240, 0.8)',            // Moonlight silver
+      gold: 'rgba(245, 158, 11, 0.8)',               // Honey amber gold
       
-      // Glass borders and shadows
-      border: 'rgba(255, 255, 255, 0.2)',
-      borderFocus: 'rgba(20, 184, 166, 0.6)',
-      overlay: 'rgba(0, 0, 0, 0.1)',
+      // Mystical glass borders with color hints
+      border: 'rgba(94, 234, 212, 0.25)',            // Seafoam glass border
+      borderFocus: 'rgba(20, 184, 166, 0.7)',        // Teal focus border
+      overlay: 'rgba(15, 118, 110, 0.15)',           // Deep teal overlay
       
-      // Glass text colors
-      text: 'rgba(15, 23, 42, 0.9)',
-      textSecondary: 'rgba(100, 116, 139, 0.8)',
+      // Enhanced glass text with mystical tints
+      text: 'rgba(15, 23, 42, 0.95)',
+      textSecondary: 'rgba(15, 118, 110, 0.8)',      // Deep teal secondary text
       
-      // Glass gradients with transparency
+      // Mystical glass gradients with signature colors
       gradient: {
-        primary: 'linear-gradient(135deg, rgba(20, 184, 166, 0.8) 0%, rgba(16, 185, 129, 0.6) 100%)',
-        mystical: 'linear-gradient(135deg, rgba(139, 92, 246, 0.7) 0%, rgba(59, 130, 246, 0.5) 100%)',
-        surface: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
-        glass: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%)',
-        backdrop: 'linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%)'
+        primary: `linear-gradient(135deg, rgba(20, 184, 166, 0.8) 0%, rgba(16, 185, 129, 0.6) 100%)`,
+        mystical: `linear-gradient(135deg, rgba(139, 92, 246, 0.7) 0%, rgba(14, 165, 233, 0.5) 100%)`,
+        wisdom: `linear-gradient(135deg, rgba(5, 150, 105, 0.8) 0%, rgba(15, 118, 110, 0.6) 100%)`,
+        energy: `linear-gradient(135deg, rgba(251, 191, 36, 0.8) 0%, rgba(245, 158, 11, 0.6) 100%)`,
+        surface: `linear-gradient(135deg, rgba(94, 234, 212, 0.15) 0%, rgba(20, 184, 166, 0.05) 100%)`,
+        glass: `linear-gradient(135deg, rgba(20, 184, 166, 0.25) 0%, rgba(16, 185, 129, 0.1) 100%)`,
+        backdrop: `linear-gradient(135deg, rgba(20, 184, 166, 0.12) 0%, rgba(5, 150, 105, 0.08) 100%)`,
+        shine: `linear-gradient(135deg, rgba(94, 234, 212, 0.7) 0%, rgba(20, 184, 166, 0.5) 50%, rgba(14, 165, 233, 0.6) 100%)`,
+        silver: `linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(226, 232, 240, 0.6) 50%, rgba(148, 163, 184, 0.4) 100%)`,
+        gold: `linear-gradient(135deg, rgba(253, 224, 71, 0.8) 0%, rgba(251, 191, 36, 0.6) 50%, rgba(217, 119, 6, 0.5) 100%)`
       },
       
-      // Enhanced glass shadows with blur
+      // Mystical glass shadows with teal/emerald tints
       shadows: {
-        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        glassSm: '0 2px 8px 0 rgba(31, 38, 135, 0.2)',
-        glassMd: '0 4px 16px 0 rgba(31, 38, 135, 0.25)',
-        glassLg: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        glassXl: '0 16px 64px 0 rgba(31, 38, 135, 0.4)',
-        sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+        glass: '0 8px 32px 0 rgba(20, 184, 166, 0.4)',        // Teal glass shadow
+        glassSm: '0 2px 8px 0 rgba(16, 185, 129, 0.25)',      // Emerald small shadow
+        glassMd: '0 4px 16px 0 rgba(20, 184, 166, 0.3)',      // Teal medium shadow
+        glassLg: '0 8px 32px 0 rgba(5, 150, 105, 0.35)',      // Forest emerald large shadow
+        glassXl: '0 16px 64px 0 rgba(15, 118, 110, 0.4)',     // Deep teal extra large shadow
+        teal: `0 8px 32px -8px rgba(20, 184, 166, 0.5)`,      // Signature teal glow
+        emerald: `0 8px 32px -8px rgba(16, 185, 129, 0.5)`,   // Signature emerald glow
+        gold: `0 8px 32px -8px rgba(251, 191, 36, 0.5)`,      // Signature gold glow
+        silver: `0 8px 32px -8px rgba(226, 232, 240, 0.5)`,   // Signature silver glow
+        sm: '0 1px 3px 0 rgba(15, 118, 110, 0.15), 0 1px 2px 0 rgba(20, 184, 166, 0.1)',
+        md: '0 4px 6px -1px rgba(20, 184, 166, 0.2), 0 2px 4px -1px rgba(16, 185, 129, 0.15)',
+        lg: '0 10px 15px -3px rgba(5, 150, 105, 0.25), 0 4px 6px -2px rgba(20, 184, 166, 0.2)',
+        xl: '0 20px 25px -5px rgba(15, 118, 110, 0.3), 0 10px 10px -5px rgba(20, 184, 166, 0.25)'
       }
     },
     fonts: {
@@ -308,17 +323,17 @@ export const SallieThemes = {
       modern: 'Inter',
       signature: 'Inter'
     },
-    motifs: ['✨', '💎', '🔮', '💠', '🌟', '⚪'],
-    mood: 'transparent and ethereal',
+    motifs: ['✨', '💎', '🌊', '🌿', '💫', '🔮'],
+    mood: 'mystical glass with teal soul',
     
-    // Glass-specific styling properties
+    // Mystical glass-specific styling properties
     glass: {
       backdropFilter: 'blur(20px)',
       WebkitBackdropFilter: 'blur(20px)', // Safari support
-      border: '1px solid rgba(255, 255, 255, 0.2)',
+      border: '1px solid rgba(94, 234, 212, 0.3)', // Seafoam glass border
       borderRadius: 16,
-      background: 'rgba(255, 255, 255, 0.1)',
-      boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      background: 'rgba(20, 184, 166, 0.1)', // Teal glass background
+      boxShadow: '0 8px 32px 0 rgba(20, 184, 166, 0.4)' // Teal glass shadow
     }
   }
 } as const;

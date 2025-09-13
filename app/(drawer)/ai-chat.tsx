@@ -356,7 +356,7 @@ export default function AIChatScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(248, 250, 252, 0.9)', // Glass backdrop
+    backgroundColor: 'rgba(20, 184, 166, 0.08)', // Mystical teal glass backdrop
   },
   backgroundOverlay: {
     position: 'absolute',
@@ -468,12 +468,12 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 20,
     borderWidth: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0.15)', // Glass background
-    borderColor: 'rgba(255, 255, 255, 0.2)', // Glass border
+    backgroundColor: 'rgba(20, 184, 166, 0.12)', // Mystical teal glass background
+    borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam glass border
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.37,
+    shadowOpacity: 0.4,
     shadowRadius: 32,
-    shadowColor: 'rgba(31, 38, 135, 1)',
+    shadowColor: 'rgba(20, 184, 166, 1)', // Teal shadow
     elevation: 8,
   },
   messageText: {
@@ -521,12 +521,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     maxHeight: 120,
     marginRight: 12,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Glass input
-    borderColor: 'rgba(255, 255, 255, 0.2)', // Glass border
+    backgroundColor: 'rgba(16, 185, 129, 0.1)', // Emerald glass input
+    borderColor: 'rgba(94, 234, 212, 0.25)', // Seafoam glass border
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.3,
     shadowRadius: 16,
-    shadowColor: 'rgba(31, 38, 135, 1)',
+    shadowColor: 'rgba(16, 185, 129, 1)', // Emerald shadow
   },
   sendButton: {
     width: 44,
