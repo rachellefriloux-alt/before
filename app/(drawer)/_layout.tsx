@@ -55,7 +55,9 @@ export default function DrawerLayout() {
                             <IconSymbol name="house.fill" size={size} color={color} />
                         ),
                     }}
-                />                    {/* AI Features */}
+                />
+
+                {/* AI Features */}
                 <Drawer.Screen
                     name="ai-chat"
                     options={{
@@ -64,84 +66,6 @@ export default function DrawerLayout() {
                         drawerIcon: ({ color, size }: { color: string; size: number }) => (
                             <IconSymbol name="brain" size={size} color={color} />
                         ),
-                    }}
-                />
-
-                <Drawer.Screen
-                    name="emotional-support"
-                    options={{
-                        title: 'Emotional Support',
-                        drawerLabel: 'Emotional Support',
-                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
-                            <IconSymbol name="heart.fill" size={size} color={color} />
-                        ),
-                    }}
-                />
-
-                {/* User Features */}
-                <Drawer.Screen
-                    name="profile"
-                    options={{
-                        title: 'My Profile',
-                        drawerLabel: 'My Profile',
-                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
-                            <IconSymbol name="person.circle.fill" size={size} color={color} />
-                        ),
-                    }}
-                />
-
-                <Drawer.Screen
-                    name="achievements"
-                    options={{
-                        title: 'Achievements',
-                        drawerLabel: 'Achievements',
-                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
-                            <IconSymbol name="trophy.fill" size={size} color={color} />
-                        ),
-                    }}
-                />
-
-                <Drawer.Screen
-                    name="journal"
-                    options={{
-                        title: 'Growth Journal',
-                        drawerLabel: 'Growth Journal',
-                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
-                            <IconSymbol name="book.fill" size={size} color={color} />
-                        ),
-                    }}
-                />
-
-                {/* Settings & Support */}
-                <Drawer.Screen
-                    name="settings"
-                    options={{
-                        title: 'Settings',
-                        drawerLabel: 'Settings',
-                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
-                            <IconSymbol name="gear" size={size} color={color} />
-                        ),
-                    }}
-                />
-
-                <Drawer.Screen
-                    name="help"
-                    options={{
-                        title: 'Help & Support',
-                        drawerLabel: 'Help & Support',
-                        drawerIcon: ({ color, size }: { color: string; size: number }) => (
-                            <IconSymbol name="questionmark.circle.fill" size={size} color={color} />
-                        ),
-                    }}
-                />
-
-                {/* Custom Drawer Content */}
-                <Drawer.Screen
-                    name="drawer-content"
-                    options={{
-                        drawerLabel: () => null, // Hide from drawer
-                        title: 'Drawer Content',
-                        headerShown: false,
                     }}
                 />
             </Drawer>
