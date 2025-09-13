@@ -4,7 +4,7 @@
   "description": "Sallie Sovereign - A beautiful, owner-only, offline-first React Native + Android launcher hybrid with advanced AI capabilities",
   "main": "expo-router/entry",
   "scripts": {
-    "start": "expo start",
+    "start": "NODE_OPTIONS=\"--max-old-space-size=8192\" expo start --clear --port 5000",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",

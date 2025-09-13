@@ -6,7 +6,14 @@ const config = getDefaultConfig(__dirname);
 config.server = {
   ...config.server,
   port: 5000,
-  host: '0.0.0.0',
+};
+
+// Memory optimization settings
+config.maxWorkers = 2;
+config.resolver = {
+  ...config.resolver,
+  // Limit the number of files processed to reduce memory usage  
+  resolverMainFields: ['react-native', 'browser', 'main'],
 };
 
 module.exports = config;
