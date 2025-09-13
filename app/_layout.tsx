@@ -10,6 +10,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { useUserStore } from '@/store/user';
+import { FloatingChatBubble } from '@/components/FloatingChatBubble';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -60,14 +61,9 @@ export default function RootLayout() {
         return null;
     }
 
-    // Determine initial route based on onboarding status
-    const getInitialRoute = () => {
-        if (!profile) return '(onboarding)/stage0';
-        if (!profile.onboarding?.completed) return '(onboarding)/stage0';
-        return '(drawer)';
-    };
-
-    const initialRoute = getInitialRoute();
+    // For now, default to drawer to show the working app
+    // TODO: Add onboarding back when (onboarding) routes are implemented
+    const initialRoute = '(drawer)';
 
     // Show loading while navigation components are being loaded
     if (!navigationComponents) {
@@ -85,6 +81,8 @@ export default function RootLayout() {
                     <Stack.Screen name="+not-found" />
                 </Stack>
                 <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+                {/* Floating Chat Bubble - Available everywhere in the app */}
+                <FloatingChatBubble visible={true} />
             </OnboardingProvider>
         </ThemeProvider>
     );

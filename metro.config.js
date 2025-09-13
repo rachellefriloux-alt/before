@@ -29,6 +29,12 @@ config.resolver = {
     '@ai': path.resolve(__dirname, './ai'),
     '@assets': path.resolve(__dirname, './assets'),
   },
+  // Exclude server files from mobile bundle
+  blockList: [
+    /.*\/assets\/server\/.*/,
+    /.*\/scripts\/.*/,
+    /.*\.mjs$/,
+  ],
 };
 
 module.exports = config;
