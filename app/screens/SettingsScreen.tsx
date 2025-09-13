@@ -10,10 +10,10 @@ import {
     Modal,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useDeviceStore } from '../store/device';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
-import { useThemeStore } from '../store/theme';
+import { useDeviceStore } from '../../store/device';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { useThemeStore } from '../../store/theme';
 import SettingsSection from '../components/SettingsSection';
 import SettingsItem from '../components/SettingsItem';
 import AppSettingsManager from '../../components/AppSettingsManager';

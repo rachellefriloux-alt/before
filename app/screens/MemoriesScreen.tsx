@@ -10,8 +10,8 @@ import {
   Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useMemoryStore, MemoryItem } from '../store/memory';
-import { usePersonaStore } from '../store/persona';
+import { useMemoryStore, MemoryItem } from '../../store/memory';
+import { usePersonaStore } from '../../store/persona';
 import MemoryCard from '../components/MemoryCard';
 import MemoryStats from '../components/MemoryStats';
 

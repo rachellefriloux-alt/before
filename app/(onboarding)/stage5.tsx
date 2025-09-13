@@ -5,7 +5,7 @@ import { OnboardingStage } from '@/components/onboarding/OnboardingStage';
 import { OnboardingButton } from '@/components/onboarding/OnboardingButton';
 import { ProgressIndicator } from '@/components/onboarding/ProgressIndicator';
 import { SkipButton } from '@/components/onboarding/SkipButton';
-import { useUserStore } from '@/app/store/user';
+import { useUserStore } from '@/store/user';
 
 export default function Stage5() {
   const { profile } = useUserStore();

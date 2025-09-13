@@ -16,16 +16,19 @@ import { Linking } from 'react-native';
 import * as IntentLauncher from 'expo-intent-launcher';
 import { Audio } from 'expo-av';
 import * as Speech from 'expo-speech';
+import { Ionicons } from '@expo/vector-icons';
+import { Modal } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
-import { useDeviceStore } from '../store/device';
-import { useThemeStore } from '../store/theme';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { useDeviceStore } from '../../store/device';
+import { useThemeStore } from '../../store/theme';
 import EnhancedSallieAvatar from '../components/EnhancedSallieAvatar';
 import AdvancedVoiceInteraction from '../components/AdvancedVoiceInteraction';
 import AppGrid from '../components/AppGrid';
 import QuickActions from '../components/QuickActions';
 import EmotionMeter from '../components/EmotionMeter';
+import CameraVision from '../components/CameraVision';
 
 const { width, height } = Dimensions.get('window');
 
@@ -53,6 +56,7 @@ export default function HomeLauncherScreen() {
     const [currentTime, setCurrentTime] = useState(new Date());
     const [greeting, setGreeting] = useState('');
     const [showVoicePanel, setShowVoicePanel] = useState(false);
+    const [showCameraVision, setShowCameraVision] = useState(false);
     const [isListening, setIsListening] = useState(false);
     const [transcription, setTranscription] = useState('');
     const [aiResponse, setAiResponse] = useState('');
@@ -93,6 +97,14 @@ export default function HomeLauncherScreen() {
 
     const handleVoicePress = () => {
         setShowVoicePanel(!showVoicePanel);
+    };
+
+    const handleCameraPress = () => {
+        setShowCameraVision(true);
+    };
+
+    const handleCameraClose = () => {
+        setShowCameraVision(false);
     };
 
     const handleAppPress = async (appName: string) => {
@@ -237,7 +249,7 @@ export default function HomeLauncherScreen() {
 
             {/* Background Gradient */}
             <LinearGradient
-                colors={currentTheme.gradients.background}
+                colors={currentTheme.gradients.background.length >= 2 ? currentTheme.gradients.background as readonly [string, string, ...string[]] : [currentTheme.colors.background, currentTheme.colors.surface] as readonly [string, string]}
                 style={styles.backgroundGradient}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
@@ -267,17 +279,31 @@ export default function HomeLauncherScreen() {
                             </Text>
                         </View>
 
-                        <TouchableOpacity onPress={handleSalliePress} style={styles.sallieButton}>
-                            <EnhancedSallieAvatar
-                                size={80}
-                                animated={animations}
-                                interactive={true}
-                                showEmotionRing={true}
-                                showPulse={intensity > 0.7}
-                                onPress={handleSalliePress}
-                                onLongPress={handleVoicePress}
-                            />
-                        </TouchableOpacity>
+                        <View style={styles.avatarSection}>
+                            <TouchableOpacity onPress={handleSalliePress} style={styles.sallieButton}>
+                                <EnhancedSallieAvatar
+                                    size={80}
+                                    animated={animations}
+                                    interactive={true}
+                                    showEmotionRing={true}
+                                    showPulse={intensity > 0.7}
+                                    onPress={handleSalliePress}
+                                    onLongPress={handleVoicePress}
+                                />
+                            </TouchableOpacity>
+                            
+                            {/* Camera Vision Button */}
+                            <TouchableOpacity 
+                                onPress={handleCameraPress} 
+                                style={[styles.cameraButton, { backgroundColor: currentTheme.colors.accent }]}
+                            >
+                                <Ionicons 
+                                    name="camera" 
+                                    size={20} 
+                                    color={currentTheme.colors.background} 
+                                />
+                            </TouchableOpacity>
+                        </View>
                     </View>
 
                     {/* Enhanced Greeting Section */}
@@ -362,6 +388,18 @@ export default function HomeLauncherScreen() {
                     </View>
                 </ScrollView>
             </Animated.View>
+
+            {/* Camera Vision Modal */}
+            <Modal
+                visible={showCameraVision}
+                animationType="slide"
+                presentationStyle="fullScreen"
+            >
+                <CameraVision 
+                    onClose={handleCameraClose}
+                    embedded={false}
+                />
+            </Modal>
         </SafeAreaView>
     );
 }
@@ -403,8 +441,30 @@ const styles = StyleSheet.create({
         marginTop: 5,
         opacity: 0.8,
     },
+    avatarSection: {
+        alignItems: 'center',
+        position: 'relative',
+    },
     sallieButton: {
         padding: 5,
+    },
+    cameraButton: {
+        position: 'absolute',
+        bottom: -5,
+        right: -5,
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
     greetingSection: {
         marginHorizontal: 20,

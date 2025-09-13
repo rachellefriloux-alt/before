@@ -11,7 +11,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { AudioTrack } from './AudioPlayer';
 import { audioManager } from '../utils/AudioManager';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 
 const { width } = Dimensions.get('window');
 

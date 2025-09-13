@@ -1,6 +1,6 @@
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore, MemoryItem } from '../store/memory';
-import { useDeviceStore } from '../store/device';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore, MemoryItem } from '../../store/memory';
+import { useDeviceStore } from '../../store/device';
 import { EmotionalIntelligence } from './EmotionalIntelligence';
 import { OpenAIIntegration } from './OpenAIIntegration';
 

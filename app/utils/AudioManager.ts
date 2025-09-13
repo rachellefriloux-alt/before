@@ -1,4 +1,5 @@
-import { Audio } from 'expo-av';
+import { Audio, InterruptionModeIOS, InterruptionModeAndroid } from 'expo-av';
+import { Platform } from 'react-native';
 
 export interface AudioTrack {
   id: string;
@@ -31,16 +32,47 @@ export class AudioManager {
 
   private async initializeAudio() {
     try {
-      await Audio.setAudioModeAsync({
+      // Create base configuration that works across all platforms
+      const baseConfig = {
         staysActiveInBackground: true,
-        playsInSilentModeIOS: true,
         shouldDuckAndroid: true,
         playThroughEarpieceAndroid: false,
-        interruptionModeIOS: 'doNotMix' as any,
-        interruptionModeAndroid: 'doNotMix' as any,
-      });
+        interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
+      };
+
+      // Add iOS-specific configuration only when on iOS
+      const audioConfig = Platform.OS === 'ios' ? {
+        ...baseConfig,
+        playsInSilentModeIOS: true,
+        interruptionModeIOS: InterruptionModeIOS.DuckOthers,
+      } : baseConfig;
+
+      await Audio.setAudioModeAsync(audioConfig);
+      console.log('Audio mode initialized successfully for platform:', Platform.OS);
     } catch (error) {
       console.error('Failed to initialize audio mode:', error);
+      console.log('Attempting fallback audio configuration...');
+      
+      // Fallback configuration with minimal settings
+      try {
+        const fallbackConfig = Platform.OS === 'ios' ? {
+          staysActiveInBackground: true,
+          playsInSilentModeIOS: true,
+          interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        } : {
+          staysActiveInBackground: true,
+          shouldDuckAndroid: false,
+          playThroughEarpieceAndroid: false,
+          interruptionModeAndroid: InterruptionModeAndroid.DoNotMix,
+        };
+        
+        await Audio.setAudioModeAsync(fallbackConfig);
+        console.log('Fallback audio mode initialized successfully');
+      } catch (fallbackError) {
+        console.error('Fallback audio initialization also failed:', fallbackError);
+        // Continue without audio mode settings - the app should still work
+        console.log('Audio will use default system settings');
+      }
     }
   }
 

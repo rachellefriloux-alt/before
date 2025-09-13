@@ -10,7 +10,7 @@ import {
 import { VideoPlayer, VideoTrack } from '../components/VideoPlayer';
 import { VideoPlaylist } from '../components/VideoPlaylist';
 import { videoManager } from '../utils/VideoManager';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 
 const sampleVideos: VideoTrack[] = [
     {

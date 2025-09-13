@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 import DataExportImportManager from '../../components/DataExportImportManager';
 
 export default function DataManagementScreen() {

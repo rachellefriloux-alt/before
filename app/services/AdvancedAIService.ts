@@ -1,6 +1,6 @@
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
-import { useThemeStore } from '../store/theme';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { useThemeStore } from '../../store/theme';
 
 interface AIContext {
   emotion: string;

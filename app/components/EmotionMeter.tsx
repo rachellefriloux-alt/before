@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { usePersonaStore } from '../store/persona';
+import { usePersonaStore } from '../../store/persona';
 
 export default function EmotionMeter() {
   const { emotion, intensity, valence, arousal } = usePersonaStore();

@@ -12,7 +12,7 @@ import {
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
 import { PanGestureHandlerGestureEvent, PanGestureHandlerStateChangeEvent } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 import { EnhancedButton } from './EnhancedButton';
 import { EnhancedCard } from './EnhancedCard';
 

@@ -8,8 +8,8 @@ import {
     Dimensions,
 } from 'react-native';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
 
 const { width, height } = Dimensions.get('window');
 

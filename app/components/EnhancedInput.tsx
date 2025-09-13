@@ -11,7 +11,7 @@ import {
     TextInputProps,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 
 export type InputVariant =
     | 'default'

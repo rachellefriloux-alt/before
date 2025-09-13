@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { MemoryItem } from '../store/memory';
+import { MemoryItem } from '../../store/memory';
 
 interface MemoryCardProps {
   memory: MemoryItem;

@@ -14,8 +14,8 @@ import * as SecureStore from 'expo-secure-store';
 import { SallieBrain } from '../services/SallieBrain';
 import OpenAI from 'openai';
 import Anthropic from '@anthropic-ai/sdk';
-import { usePersonaStore } from '../store/persona';
-import { useDeviceStore } from '../store/device';
+import { usePersonaStore } from '../../store/persona';
+import { useDeviceStore } from '../../store/device';
 
 // Enhanced interfaces for comprehensive device management
 export interface EnhancedAppInfo {

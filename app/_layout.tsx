@@ -9,7 +9,7 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
-import { useUserStore } from '@/app/store/user';
+import { useUserStore } from '@/store/user';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();

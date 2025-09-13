@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import type { ColorValue } from 'react-native';
-import { useThemeStore } from '../store/theme';
-import { usePersonaStore } from '../store/persona';
+import { useThemeStore } from '../../store/theme';
+import { usePersonaStore } from '../../store/persona';
 
 const { width } = Dimensions.get('window');
 

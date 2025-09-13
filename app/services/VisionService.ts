@@ -2,9 +2,9 @@ import * as FileSystem from 'expo-file-system';
 import { CameraIntegration, CameraResult } from '../utils/CameraIntegration';
 import { OpenAIIntegration, OpenAIResponse } from './OpenAIIntegration';
 import { EmotionalIntelligence, EmotionalAnalysis } from './EmotionalIntelligence';
-import { useMemoryStore, MemoryItem } from '../store/memory';
-import { usePersonaStore } from '../store/persona';
-import { useDeviceStore } from '../store/device';
+import { useMemoryStore, MemoryItem } from '../../store/memory';
+import { usePersonaStore } from '../../store/persona';
+import { useDeviceStore } from '../../store/device';
 
 export interface VisionAnalysis {
   description: string;

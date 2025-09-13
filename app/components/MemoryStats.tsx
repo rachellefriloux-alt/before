@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useMemoryStore } from '../store/memory';
-import { usePersonaStore } from '../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { usePersonaStore } from '../../store/persona';
 
 export default function MemoryStats() {
   const { shortTerm, episodic, semantic, emotional } = useMemoryStore();

@@ -10,15 +10,18 @@ import {
     KeyboardAvoidingView,
     Platform,
     Alert,
+    Modal,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // import { useNavigation } from '@react-navigation/native';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
-import { useDeviceStore } from '../store/device';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { useDeviceStore } from '../../store/device';
 import SallieAvatar from '../components/SallieAvatar';
 import ConversationBubble from '../components/ConversationBubble';
 import VoiceButton from '../components/VoiceButton';
+import CameraVision from '../components/CameraVision';
 import { SallieBrain } from '../services/SallieBrain';
 
 interface Message {
@@ -66,6 +69,7 @@ export default function SalliePanelScreen() {
     const [inputText, setInputText] = useState('');
     const [isTyping, setIsTyping] = useState(false);
     const [isListening, setIsListening] = useState(false);
+    const [showCameraVision, setShowCameraVision] = useState(false);
 
     const scrollViewRef = useRef<ScrollView>(null);
     const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -105,7 +109,6 @@ export default function SalliePanelScreen() {
 
         // Add to memory
         addShortTerm({
-            type: 'episodic',
             content: `User said: "${userMessage.text}"`,
             tags: ['conversation', 'user_input'],
             importance: 0.6,
@@ -137,7 +140,6 @@ export default function SalliePanelScreen() {
                     aiResponse.memoryUpdates.forEach(update => {
                         if (update.type === 'create' && update.memory) {
                             addShortTerm({
-                                type: update.memory.type || 'episodic',
                                 content: update.memory.content || '',
                                 tags: update.memory.tags || [],
                                 importance: update.memory.importance || 0.5,
@@ -228,6 +230,14 @@ export default function SalliePanelScreen() {
         }
     };
 
+    const handleCameraPress = () => {
+        setShowCameraVision(true);
+    };
+
+    const handleCameraClose = () => {
+        setShowCameraVision(false);
+    };
+
     const clearConversation = () => {
         Alert.alert(
             'Clear Conversation',
@@ -240,7 +250,6 @@ export default function SalliePanelScreen() {
                     onPress: () => {
                         setMessages([messages[0]]); // Keep welcome message
                         addEpisodic({
-                            type: 'episodic',
                             content: 'User cleared conversation history',
                             tags: ['conversation', 'clear', 'action'],
                             importance: 0.5,
@@ -323,6 +332,17 @@ export default function SalliePanelScreen() {
                             />
 
                             <View style={styles.inputButtons}>
+                                <TouchableOpacity
+                                    style={styles.cameraButton}
+                                    onPress={handleCameraPress}
+                                >
+                                    <Ionicons 
+                                        name="camera" 
+                                        size={20} 
+                                        color="#4ECDC4" 
+                                    />
+                                </TouchableOpacity>
+                                
                                 <VoiceButton
                                     isListening={isListening}
                                     onPress={handleVoicePress}
@@ -343,6 +363,18 @@ export default function SalliePanelScreen() {
                     </View>
                 </KeyboardAvoidingView>
             </Animated.View>
+
+            {/* Camera Vision Modal */}
+            <Modal
+                visible={showCameraVision}
+                animationType="slide"
+                presentationStyle="fullScreen"
+            >
+                <CameraVision 
+                    onClose={handleCameraClose}
+                    embedded={false}
+                />
+            </Modal>
         </SafeAreaView>
     );
 }
@@ -454,6 +486,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 10,
+    },
+    cameraButton: {
+        width: 35,
+        height: 35,
+        borderRadius: 17.5,
+        backgroundColor: 'rgba(78, 205, 196, 0.2)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: '#4ECDC4',
+        marginRight: 10,
     },
     sendButton: {
         width: 35,

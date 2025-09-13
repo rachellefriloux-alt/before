@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { Video, AVPlaybackStatus, ResizeMode } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 
 const { width } = Dimensions.get('window');
 

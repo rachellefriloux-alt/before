@@ -12,7 +12,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AudioPlayer, AudioTrack } from '../components/AudioPlayer';
 import { Playlist } from '../components/Playlist';
 import { audioManager } from '../utils/AudioManager';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 
 const { width, height } = Dimensions.get('window');
 

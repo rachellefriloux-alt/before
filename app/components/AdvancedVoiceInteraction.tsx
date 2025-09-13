@@ -12,9 +12,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Audio } from 'expo-av';
 import * as Speech from 'expo-speech';
 import * as Haptics from 'expo-haptics';
-import { useThemeStore } from '../store/theme';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
+import { useThemeStore } from '../../store/theme';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
 
 const { width } = Dimensions.get('window');
 

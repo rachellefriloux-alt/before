@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // import { useNavigation } from '@react-navigation/native';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
-import { useDeviceStore } from '../store/device';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { useDeviceStore } from '../../store/device';
 
 interface LogEntry {
     id: string;

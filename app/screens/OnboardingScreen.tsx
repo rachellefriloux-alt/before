@@ -13,10 +13,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import type { ColorValue } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
-import { usePersonaStore } from '../store/persona';
-import { useMemoryStore } from '../store/memory';
-import { useDeviceStore } from '../store/device';
-import { useThemeStore } from '../store/theme';
+import { usePersonaStore } from '../../store/persona';
+import { useMemoryStore } from '../../store/memory';
+import { useDeviceStore } from '../../store/device';
+import { useThemeStore } from '../../store/theme';
 import EnhancedSallieAvatar from '../components/EnhancedSallieAvatar';
 
 const { width, height } = Dimensions.get('window');

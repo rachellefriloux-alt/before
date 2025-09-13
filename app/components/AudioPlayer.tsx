@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { Audio } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useThemeStore } from '../store/theme';
+import { useThemeStore } from '../../store/theme';
 
 const { width } = Dimensions.get('window');
 
