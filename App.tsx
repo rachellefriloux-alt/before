@@ -5,24 +5,24 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 // Import screens
-import HomeLauncherScreen from './app/screens/HomeLauncherScreen';
-import SalliePanelScreen from './app/screens/SalliePanelScreen';
-import OnboardingScreen from './app/screens/OnboardingScreen';
-import SettingsScreen from './app/screens/SettingsScreen';
-import MemoriesScreen from './app/screens/MemoriesScreen';
-import DebugConsoleScreen from './app/screens/DebugConsoleScreen';
-import ProfileScreen from './app/screens/ProfileScreen';
-import DataManagementScreen from './app/screens/DataManagementScreen';
+import HomeLauncherScreen from './src/screens/HomeLauncherScreen';
+import SalliePanelScreen from './src/screens/SalliePanelScreen';
+import OnboardingScreen from './src/screens/OnboardingScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import MemoriesScreen from './src/screens/MemoriesScreen';
+import DebugConsoleScreen from './src/screens/DebugConsoleScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import DataManagementScreen from './src/screens/DataManagementScreen';
 
 // Import components
-import EnhancedSallieOverlay from './app/components/EnhancedSallieOverlay';
+import EnhancedSallieOverlay from './src/components/EnhancedSallieOverlay';
 import { preloadCriticalComponents } from './components/LazyLoadingSystem';
 
 // Import stores
-import { usePersonaStore } from './app/store/persona';
-import { useMemoryStore } from './app/store/memory';
-import { useDeviceStore } from './app/store/device';
-import { useThemeStore } from './app/store/theme';
+import { usePersonaStore } from './store/persona';
+import { useMemoryStore } from './store/memory';
+import { useDeviceStore } from './store/device';
+import { useThemeStore } from './store/theme';
 
 // Import orchestrator
 import { systemOrchestrator } from './core/SystemOrchestrator';

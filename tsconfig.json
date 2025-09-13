@@ -6,10 +6,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
-      ],
-      "@app/*": [
         "./app/*"
+      ],
+      "@src/*": [
+        "./src/*"
       ],
       "@core/*": [
         "./core/*"
@@ -18,16 +18,16 @@
         "./ui/*"
       ],
       "@store/*": [
-        "./app/store/*"
+        "./store/*"
       ],
       "@components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "@screens/*": [
-        "./app/screens/*"
+        "./src/screens/*"
       ],
       "@utils/*": [
-        "./utils/*"
+        "./src/utils/*"
       ],
       "@types/*": [
         "./types/*"
