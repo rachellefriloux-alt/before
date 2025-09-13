@@ -13,6 +13,7 @@ localPort = 8082
 externalPort = 3000
 
 [workflows]
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "Dev Server"
@@ -53,6 +54,27 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npx eas build --platform android --profile preview"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Sallie Launcher Dev"
+
+[[workflows.workflow]]
+name = "Sallie Launcher Dev"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx expo start --clear --port 5000"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [agent]
 expertMode = true
