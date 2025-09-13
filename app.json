@@ -17,7 +17,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.yourorg.sallie"
+      "package": "com.sallie.launcher"
     },
     "web": {
       "bundler": "metro",

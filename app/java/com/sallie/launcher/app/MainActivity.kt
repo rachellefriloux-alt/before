@@ -6,7 +6,7 @@
  * Last-Reviewed: 2025-08-28T00:00:00Z
  */
 
-package com.sallie.app
+package com.sallie.launcher.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
