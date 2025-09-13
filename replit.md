@@ -38,6 +38,12 @@ Sallie Sovereign is a sophisticated AI-powered Android launcher with advanced em
 - **AI Integration**: Ready for external AI service connections
 - **Android Studio**: Project configured for migration
 
+### Windows Development Environment
+- **Node.js 18 LTS** required on Windows machine
+- **JDK 17** required for Android development
+- **npm install** must be run in Windows project directory
+- After setup, sync project in Android Studio to resolve all dependencies
+
 ## Recent Changes
 - Package structure updated from `com.yourorg.sallie` to `com.sallie.app`
 - All Android build configurations updated
