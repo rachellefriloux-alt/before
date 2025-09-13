@@ -21,6 +21,7 @@ import { BlurView } from 'expo-blur';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useTheme } from './ThemeSystem';
+import { createShadowStyle } from '@/utils/shadowStyles';
 
 // Toast types
 export type ToastType = 'success' | 'info' | 'warning' | 'error' | 'custom';
@@ -614,11 +615,13 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         paddingHorizontal: 16,
         paddingVertical: 12,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.15,
-        shadowRadius: 5,
-        elevation: 6,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 3 },
+            shadowOpacity: 0.15,
+            shadowRadius: 5,
+            elevation: 6,
+        }),
         minWidth: 250,
         maxWidth: 500,
         overflow: 'hidden',

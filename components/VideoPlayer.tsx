@@ -24,6 +24,7 @@ import { getFontStyle } from './FontManager';
 import { usePressAnimation } from './AnimationSystem';
 import { Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
+import { createShadowStyle } from '@/utils/shadowStyles';
 
 const { width, height } = Dimensions.get('window');
 
@@ -315,13 +316,13 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(({
             backgroundColor: theme.colors.surface,
             borderRadius: compact ? theme.borderRadius.small : theme.borderRadius.medium,
             overflow: 'hidden',
-            ...(!compact && {
-                elevation: 4,
+            ...(!compact && createShadowStyle({
                 shadowColor: theme.colors.text.primary,
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 0.1,
                 shadowRadius: 4,
-            }),
+                elevation: 4,
+            })),
         },
         videoContainer: {
             position: 'relative',

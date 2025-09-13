@@ -24,6 +24,7 @@ import {
 } from 'react-native';
 import { Colors, SallieThemes } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { createAnimatedShadowStyle, createShadowStyle } from '@/utils/shadowStyles';
 
 interface Message {
   id: string;
@@ -193,8 +194,9 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
 
   if (!visible) return null;
 
-  const glowStyle = {
+  const glowStyle = createAnimatedShadowStyle({
     shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: glowAnimation.interpolate({
       inputRange: [0, 1],
       outputRange: [0.2, 0.8],
@@ -207,7 +209,7 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
       inputRange: [0, 1],
       outputRange: [4, 12],
     }),
-  };
+  });
 
   const renderMessage = (message: Message) => {
     const isUser = message.sender === 'user';
@@ -380,15 +382,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam border
     // Cross-platform shadows
-    ...(Platform.OS === 'web' ? {
-      boxShadow: '0px 6px 12px 0px rgba(20, 184, 166, 0.35)'
-    } : {
-      shadowColor: '#14b8a6', // Teal shadow color
+    ...createShadowStyle({
+      shadowColor: '#14b8a6',
       shadowOffset: { width: 0, height: 6 },
       shadowOpacity: 0.35,
       shadowRadius: 12,
-      elevation: 8, // Android shadow
-    })
+      elevation: 8,
+    }),
   },
   bubbleContent: {
     flex: 1,

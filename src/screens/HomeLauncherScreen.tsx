@@ -18,17 +18,18 @@ import { Audio } from 'expo-av';
 import * as Speech from 'expo-speech';
 import { Ionicons } from '@expo/vector-icons';
 import { Modal } from 'react-native';
+import { createShadowStyle } from '../../utils/shadowStyles';
 // import { useNavigation } from '@react-navigation/native';
 import { usePersonaStore } from '../store/persona';
 import { useMemoryStore } from '../store/memory';
 import { useDeviceStore } from '../store/device';
 import { useThemeStore } from '../store/theme';
-import EnhancedSallieAvatar from './components/EnhancedSallieAvatar';
-import AdvancedVoiceInteraction from './components/AdvancedVoiceInteraction';
-import AppGrid from './components/AppGrid';
-import QuickActions from './components/QuickActions';
-import EmotionMeter from './components/EmotionMeter';
-import CameraVision from './components/CameraVision';
+import EnhancedSallieAvatar from '../components/EnhancedSallieAvatar';
+import AdvancedVoiceInteraction from '../components/AdvancedVoiceInteraction';
+import AppGrid from '../components/AppGrid';
+import QuickActions from '../components/QuickActions';
+import EmotionMeter from '../components/EmotionMeter';
+import CameraVision from '../components/CameraVision';
 
 const { width, height } = Dimensions.get('window');
 
@@ -244,12 +245,12 @@ export default function HomeLauncherScreen() {
     };
 
     return (
-        <SafeAreaView style={[styles.container, { backgroundColor: currentTheme.colors.background }]}>
-            <StatusBar barStyle="light-content" backgroundColor={currentTheme.colors.background} />
+        <SafeAreaView style={[styles.container, { backgroundColor: currentTheme.colors.semantic.background.primary }]}>
+            <StatusBar barStyle="light-content" backgroundColor={currentTheme.colors.semantic.background.primary} />
 
             {/* Background Gradient */}
             <LinearGradient
-                colors={currentTheme.gradients.background.length >= 2 ? currentTheme.gradients.background as readonly [string, string, ...string[]] : [currentTheme.colors.background, currentTheme.colors.surface] as readonly [string, string]}
+                colors={currentTheme.colors.gradients.length >= 2 ? [currentTheme.colors.gradients[0].colors[0].color, currentTheme.colors.gradients[0].colors[1]?.color || currentTheme.colors.primary[500]] as readonly [string, string, ...string[]] : [currentTheme.colors.semantic.background.primary, currentTheme.colors.semantic.surface.primary] as readonly [string, string]}
                 style={styles.backgroundGradient}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
@@ -263,14 +264,14 @@ export default function HomeLauncherScreen() {
                     {/* Enhanced Header Section */}
                     <View style={styles.header}>
                         <View style={styles.timeSection}>
-                            <Text style={[styles.time, { color: currentTheme.colors.text }]}>
+                            <Text style={[styles.time, { color: currentTheme.colors.semantic.text.primary }]}>
                                 {currentTime.toLocaleTimeString('en-US', {
                                     hour: '2-digit',
                                     minute: '2-digit',
                                     hour12: true
                                 })}
                             </Text>
-                            <Text style={[styles.date, { color: currentTheme.colors.textSecondary }]}>
+                            <Text style={[styles.date, { color: currentTheme.colors.semantic.text.secondary }]}>
                                 {currentTime.toLocaleDateString('en-US', {
                                     weekday: 'long',
                                     month: 'long',
@@ -295,27 +296,27 @@ export default function HomeLauncherScreen() {
                             {/* Camera Vision Button */}
                             <TouchableOpacity 
                                 onPress={handleCameraPress} 
-                                style={[styles.cameraButton, { backgroundColor: currentTheme.colors.accent }]}
+                                style={[styles.cameraButton, { backgroundColor: currentTheme.colors.accent[500] }]}
                             >
                                 <Ionicons 
                                     name="camera" 
                                     size={20} 
-                                    color={currentTheme.colors.background} 
+                                    color={currentTheme.colors.semantic.background.primary} 
                                 />
                             </TouchableOpacity>
                         </View>
                     </View>
 
                     {/* Enhanced Greeting Section */}
-                    <View style={[styles.greetingSection, { backgroundColor: currentTheme.colors.surface }]}>
-                        <Text style={[styles.greeting, { color: currentTheme.colors.text }]}>
+                    <View style={[styles.greetingSection, { backgroundColor: currentTheme.colors.semantic.surface.primary }]}>
+                        <Text style={[styles.greeting, { color: currentTheme.colors.semantic.text.primary }]}>
                             {greeting}
                         </Text>
-                        <Text style={[styles.subtitle, { color: currentTheme.colors.textSecondary }]}>
+                        <Text style={[styles.subtitle, { color: currentTheme.colors.semantic.text.secondary }]}>
                             I'm here to help you conquer the day with grace and grit
                         </Text>
                         <View style={styles.emotionIndicator}>
-                            <Text style={[styles.emotionText, { color: currentTheme.colors.accent }]}>
+                            <Text style={[styles.emotionText, { color: currentTheme.colors.accent[500] }]}>
                                 Feeling {emotion} • {Math.round(intensity * 100)}% intensity
                             </Text>
                         </View>
@@ -323,7 +324,7 @@ export default function HomeLauncherScreen() {
 
                     {/* Voice Interaction Panel */}
                     {showVoicePanel && (
-                        <View style={[styles.voicePanel, { backgroundColor: currentTheme.colors.card }]}>
+                        <View style={[styles.voicePanel, { backgroundColor: currentTheme.colors.semantic.surface.secondary }]}>
                             <AdvancedVoiceInteraction
                                 onVoiceStart={handleVoiceStart}
                                 onVoiceEnd={handleVoiceEnd}
@@ -334,51 +335,51 @@ export default function HomeLauncherScreen() {
                     )}
 
                     {/* Enhanced Emotion Meter */}
-                    <View style={[styles.emotionSection, { backgroundColor: currentTheme.colors.surface }]}>
-                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.text }]}>
+                    <View style={[styles.emotionSection, { backgroundColor: currentTheme.colors.semantic.surface.primary }]}>
+                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.semantic.text.primary }]}>
                             Emotional State
                         </Text>
                         <EmotionMeter />
                     </View>
 
                     {/* Enhanced Quick Actions */}
-                    <View style={[styles.quickActionsSection, { backgroundColor: currentTheme.colors.surface }]}>
-                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.text }]}>
+                    <View style={[styles.quickActionsSection, { backgroundColor: currentTheme.colors.semantic.surface.primary }]}>
+                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.semantic.text.primary }]}>
                             Quick Actions
                         </Text>
                         <QuickActions />
                     </View>
 
                     {/* Enhanced App Grid */}
-                    <View style={[styles.appGridSection, { backgroundColor: currentTheme.colors.surface }]}>
-                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.text }]}>
+                    <View style={[styles.appGridSection, { backgroundColor: currentTheme.colors.semantic.surface.primary }]}>
+                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.semantic.text.primary }]}>
                             Your Apps
                         </Text>
                         <AppGrid onAppPress={handleAppPress} />
                     </View>
 
                     {/* Enhanced Memory Summary */}
-                    <View style={[styles.memorySection, { backgroundColor: currentTheme.colors.surface }]}>
-                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.text }]}>
+                    <View style={[styles.memorySection, { backgroundColor: currentTheme.colors.semantic.surface.primary }]}>
+                        <Text style={[styles.sectionTitle, { color: currentTheme.colors.semantic.text.primary }]}>
                             Recent Memories
                         </Text>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             {shortTerm.slice(-5).map((memory) => (
                                 <LinearGradient
                                     key={memory.id}
-                                    colors={[currentTheme.colors.card, currentTheme.colors.surface]}
+                                    colors={[currentTheme.colors.semantic.surface.secondary, currentTheme.colors.semantic.surface.primary]}
                                     style={styles.memoryCard}
                                     start={{ x: 0, y: 0 }}
                                     end={{ x: 1, y: 1 }}
                                 >
-                                    <Text style={[styles.memoryContent, { color: currentTheme.colors.text }]} numberOfLines={2}>
+                                    <Text style={[styles.memoryContent, { color: currentTheme.colors.semantic.text.primary }]} numberOfLines={2}>
                                         {memory.content}
                                     </Text>
-                                    <Text style={[styles.memoryTime, { color: currentTheme.colors.textSecondary }]}>
+                                    <Text style={[styles.memoryTime, { color: currentTheme.colors.semantic.text.secondary }]}>
                                         {new Date(memory.timestamp).toLocaleTimeString()}
                                     </Text>
-                                    <View style={[styles.memoryEmotionBadge, { backgroundColor: currentTheme.colors.accent }]}>
-                                        <Text style={[styles.memoryEmotion, { color: currentTheme.colors.background }]}>
+                                    <View style={[styles.memoryEmotionBadge, { backgroundColor: currentTheme.colors.accent[500] }]}>
+                                        <Text style={[styles.memoryEmotion, { color: currentTheme.colors.semantic.background.primary }]}>
                                             {memory.emotion}
                                         </Text>
                                     </View>
@@ -457,28 +458,26 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         justifyContent: 'center',
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+        }),
     },
     greetingSection: {
         marginHorizontal: 20,
         marginBottom: 20,
         padding: 20,
         borderRadius: 16,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+        }),
     },
     greeting: {
         fontSize: 32,
@@ -502,56 +501,52 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginBottom: 20,
         borderRadius: 16,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+        }),
     },
     emotionSection: {
         marginHorizontal: 20,
         marginBottom: 20,
         padding: 20,
         borderRadius: 16,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+        }),
     },
     quickActionsSection: {
         marginHorizontal: 20,
         marginBottom: 20,
         padding: 20,
         borderRadius: 16,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+        }),
     },
     appGridSection: {
         marginHorizontal: 20,
         marginBottom: 20,
         padding: 20,
         borderRadius: 16,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+        }),
     },
     sectionTitle: {
         fontSize: 22,
@@ -563,14 +558,13 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         padding: 20,
         borderRadius: 16,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 4,
+        ...createShadowStyle({
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+        }),
     },
     memoryCard: {
         padding: 16,
