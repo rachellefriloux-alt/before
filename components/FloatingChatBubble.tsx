@@ -379,12 +379,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(20, 184, 166, 0.15)', // Mystical teal glass bubble
     borderWidth: 1,
     borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam border
-    // React Native compatible shadows
-    shadowColor: '#14b8a6', // Teal shadow color
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.35,
-    shadowRadius: 12,
-    elevation: 8, // Android shadow
+    // Cross-platform shadows
+    ...(Platform.OS === 'web' ? {
+      boxShadow: '0px 6px 12px 0px rgba(20, 184, 166, 0.35)'
+    } : {
+      shadowColor: '#14b8a6', // Teal shadow color
+      shadowOffset: { width: 0, height: 6 },
+      shadowOpacity: 0.35,
+      shadowRadius: 12,
+      elevation: 8, // Android shadow
+    })
   },
   bubbleContent: {
     flex: 1,

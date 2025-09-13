@@ -1,3 +1,6 @@
+// Import Platform for cross-platform styling  
+import { Platform } from 'react-native';
+
 /**
  * Sallie's Visual Identity System
  * Jewel tone palette + warm neutrals + bold accents for mythic AI companion
@@ -326,18 +329,22 @@ export const SallieThemes = {
     motifs: ['✨', '💎', '🌊', '🌿', '💫', '🔮'],
     mood: 'mystical glass with teal soul',
     
-    // React Native compatible glass styling properties
+    // Cross-platform glass styling properties
     glass: {
-      // Use standard React Native properties only
       borderWidth: 1,
       borderColor: 'rgba(94, 234, 212, 0.3)', // Seafoam glass border  
       borderRadius: 16,
       backgroundColor: 'rgba(20, 184, 166, 0.1)', // Teal glass background
-      shadowColor: 'rgba(20, 184, 166, 1)', // Teal shadow for iOS
-      shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.4,
-      shadowRadius: 32,
-      elevation: 8, // Android shadow
+      // Cross-platform shadow - works on both native and web
+      ...(Platform.OS === 'web' ? {
+        boxShadow: '0px 8px 32px 0px rgba(20, 184, 166, 0.4)'
+      } : {
+        shadowColor: '#14b8a6', // Teal shadow 
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: 0.4,
+        shadowRadius: 32,
+        elevation: 8, // Android shadow
+      })
     }
   }
 } as const;
