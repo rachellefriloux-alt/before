@@ -67,6 +67,26 @@ export class OpenAIIntegration {
     }
   }
 
+  async generateVisionResponse(systemPrompt: string, userInput: string, base64Image: string): Promise<OpenAIResponse> {
+    // Check if we should use AI or fallback
+    if (!this.config.apiKey || !this.isAPIAvailable()) {
+      return this.getFallbackResponse(userInput);
+    }
+
+    try {
+      const response = await this.callOpenAIVision(systemPrompt, userInput, base64Image);
+      return this.processOpenAIResponse(response);
+    } catch (error) {
+      console.error('OpenAI Vision API error:', error);
+      
+      if (this.config.enableFallback) {
+        return this.getFallbackResponse(userInput);
+      } else {
+        throw error;
+      }
+    }
+  }
+
   private async callOpenAI(systemPrompt: string, userInput: string): Promise<any> {
     const messages = [
       {
@@ -140,6 +160,53 @@ export class OpenAIIntegration {
     return await response.json();
   }
 
+  private async callOpenAIVision(systemPrompt: string, userInput: string, base64Image: string): Promise<any> {
+    const messages = [
+      {
+        role: 'system',
+        content: systemPrompt,
+      },
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'text',
+            text: userInput,
+          },
+          {
+            type: 'image_url',
+            image_url: {
+              url: `data:image/jpeg;base64,${base64Image}`,
+              detail: 'auto'
+            }
+          }
+        ],
+      },
+    ];
+
+    const requestBody = {
+      model: 'gpt-4o', // Use vision-capable model
+      messages,
+      max_tokens: this.config.maxTokens,
+      temperature: this.config.temperature,
+    };
+
+    const response = await fetch(`${this.baseURL}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${this.config.apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    if (!response.ok) {
+      throw new Error(`OpenAI Vision API error: ${response.status} ${response.statusText}`);
+    }
+
+    return await response.json();
+  }
+
   private processOpenAIResponse(response: any): OpenAIResponse {
     try {
       const choice = response.choices[0];
@@ -160,11 +227,16 @@ export class OpenAIIntegration {
           } : undefined,
         };
       } else {
-        // Fallback to regular message content
+        // Fallback to regular message content (for vision responses)
         return {
           content: choice.message.content || this.getRandomFallback(),
           confidence: 0.6,
           reasoning: 'Standard response without tool use',
+          tokenUsage: response.usage ? {
+            prompt: response.usage.prompt_tokens,
+            completion: response.usage.completion_tokens,
+            total: response.usage.total_tokens,
+          } : undefined,
         };
       }
     } catch (error) {
