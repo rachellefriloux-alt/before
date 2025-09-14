@@ -49,9 +49,6 @@ export default function RootLayout() {
     });
 
     // Expo Router uses Error Boundaries to catch errors in the routing components.
-    useEffect(() => {
-        if (error) throw error;
-    }, [error]);
 
     // Hide splash screen immediately since we're not loading custom fonts
     useEffect(() => {
