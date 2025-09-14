@@ -2,9 +2,10 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Platform } from 'react-native';
 import 'react-native-reanimated';
+import { ThemeProvider, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
@@ -14,59 +15,31 @@ import { FloatingChatBubble } from '@/components/FloatingChatBubble';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
     const colorScheme = useColorScheme();
     const { profile } = useUserStore();
-    const [navigationComponents, setNavigationComponents] = useState<{
-        ThemeProvider: any;
-        DarkTheme: any;
-        DefaultTheme: any;
-    } | null>(null);
 
-    useEffect(() => {
-        // Dynamic import for navigation components to avoid CommonJS/ESM conflicts
-        const loadNavigationComponents = async () => {
-            try {
-                const navModule = await import('@react-navigation/native');
-                setNavigationComponents({
-                    ThemeProvider: navModule.ThemeProvider,
-                    DarkTheme: navModule.DarkTheme,
-                    DefaultTheme: navModule.DefaultTheme,
-                });
-            } catch (error) {
-                console.error('Failed to load navigation components:', error);
-            }
-        };
-
-        loadNavigationComponents();
-    }, []);
     const [loaded] = useFonts({
         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
 
-    // Expo Router uses Error Boundaries to catch errors in the routing components.
-
-    // Hide splash screen immediately since we're not loading custom fonts
+    // Hide splash screen when fonts are loaded
     useEffect(() => {
         if (loaded) {
             SplashScreen.hideAsync();
         }
     }, [loaded]);
 
-    // For now, default to drawer to show the working app
-    // TODO: Add onboarding back when (onboarding) routes are implemented
-    const initialRoute = '(drawer)';
-
-    // Show loading while navigation components are being loaded
-    if (!navigationComponents) {
+    if (!loaded) {
         return null;
     }
 
-    const { ThemeProvider, DarkTheme, DefaultTheme } = navigationComponents;
+    // For now, default to drawer to show the working app
+    // TODO: Add onboarding back when (onboarding) routes are implemented
+    const initialRoute = '(drawer)';
 
     return (
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
