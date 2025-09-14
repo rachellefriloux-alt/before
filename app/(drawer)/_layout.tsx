@@ -1,6 +1,8 @@
 import { Drawer } from 'expo-router/drawer';
 import React from 'react';
 import { Platform, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
@@ -13,6 +15,24 @@ export default function DrawerLayout() {
     const colorScheme = useColorScheme();
     const colors = Colors[colorScheme ?? 'light'];
     const { theme } = useTheme();
+
+    const [loaded] = useFonts({
+        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    });
+
+    const showSplash = React.useCallback(async () => {
+        await SplashScreen.preventAutoHideAsync();
+    }, []);
+
+    React.useEffect(() => {
+        if (loaded) {
+            showSplash();
+        }
+    }, [loaded, showSplash]);
+
+    if (!loaded) {
+        return null;
+    }
 
     return (
         <ToastProvider>
