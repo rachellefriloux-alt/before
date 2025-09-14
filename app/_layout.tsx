@@ -11,7 +11,7 @@ import { ThemeProvider, DarkTheme, DefaultTheme } from '@react-navigation/native
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { useUserStore } from '@/store/user';
-import { FloatingChatBubble } from '@/components/FloatingChatBubble';
+import FloatingChatBubble from '@/components/FloatingChatBubble';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
