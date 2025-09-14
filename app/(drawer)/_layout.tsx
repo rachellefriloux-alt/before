@@ -20,15 +20,11 @@ export default function DrawerLayout() {
         SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
     });
 
-    const showSplash = React.useCallback(async () => {
-        await SplashScreen.preventAutoHideAsync();
-    }, []);
-
     React.useEffect(() => {
         if (loaded) {
-            showSplash();
+            SplashScreen.hideAsync();
         }
-    }, [loaded, showSplash]);
+    }, [loaded]);
 
     if (!loaded) {
         return null;

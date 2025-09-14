@@ -44,8 +44,8 @@ export default function RootLayout() {
 
         loadNavigationComponents();
     }, []);
-    const [loaded, error] = useFonts({
-        // Using built-in fonts to avoid path issues
+    const [loaded] = useFonts({
+        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
 
     // Expo Router uses Error Boundaries to catch errors in the routing components.
@@ -55,8 +55,10 @@ export default function RootLayout() {
 
     // Hide splash screen immediately since we're not loading custom fonts
     useEffect(() => {
-        SplashScreen.hideAsync();
-    }, []);
+        if (loaded) {
+            SplashScreen.hideAsync();
+        }
+    }, [loaded]);
 
     // For now, default to drawer to show the working app
     // TODO: Add onboarding back when (onboarding) routes are implemented
@@ -75,7 +77,7 @@ export default function RootLayout() {
                 <GestureHandlerRootView style={{ flex: 1 }}>
                     <SafeAreaProvider>
                         {/* Glass Background */}
-                        <Stack 
+                        <Stack
                             initialRouteName={initialRoute}
                             screenOptions={{
                                 contentStyle: {
