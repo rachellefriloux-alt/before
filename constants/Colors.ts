@@ -198,4 +198,112 @@ export const SallieThemes = {
     motifs: ['⟐', '⟑', '⟒', '⟓', '⟔', '⟕'],
     mood: 'free-spirited yet refined'
   },
+
+  crimsonLux: {
+    name: 'Crimson Luxe',
+    colors: { ...Colors.dark, primary: sophisticatedPalette.ruby, accent: sophisticatedPalette.silver, background: '#0A0A0A' },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['♦', '◆', '⬧', '⬨', '⬩', '⬪'],
+    mood: 'bold and luxurious'
+  },
+
+  platinumEdge: {
+    name: 'Platinum Edge',
+    colors: { ...Colors.light, primary: sophisticatedPalette.titanium, accent: sophisticatedPalette.charcoal, surface: '#F8F8F8' },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['⟡', '⟢', '⟣', '⟤', '⟥', '⟦'],
+    mood: 'industrial elegance'
+  },
+
+  amethystVision: {
+    name: 'Amethyst Vision',
+    colors: { ...Colors.dark, primary: sophisticatedPalette.amethyst, accent: sophisticatedPalette.pearl, background: sophisticatedPalette.obsidian },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['◈', '◉', '◊', '○', '◎', '●'],
+    mood: 'mystical and wise'
+  },
+
+  goldStandard: {
+    name: 'Gold Standard',
+    colors: { ...Colors.light, primary: sophisticatedPalette.amber, accent: sophisticatedPalette.obsidian, surface: sophisticatedPalette.cream },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['⬟', '⬠', '⬡', '⬢', '⬣', '⬤'],
+    mood: 'prestigious and warm'
+  },
+
+  shadowMaster: {
+    name: 'Shadow Master',
+    colors: { ...Colors.dark, primary: sophisticatedPalette.gunmetal, accent: sophisticatedPalette.chrome, background: '#050505' },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['◢', '◣', '◤', '◥', '◦', '◧'],
+    mood: 'commanding and mysterious'
+  },
+
+  emeraldDepth: {
+    name: 'Emerald Depth',
+    colors: { ...Colors.dark, primary: sophisticatedPalette.emerald, accent: sophisticatedPalette.bone, background: '#0C1411' },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['◈', '◇', '◆', '❖', '⬧', '⬨'],
+    mood: 'natural sophistication'
+  },
+
+  stormSilver: {
+    name: 'Storm Silver',
+    colors: { ...Colors.light, primary: sophisticatedPalette.steel, accent: sophisticatedPalette.sapphire, surface: '#F2F2F2' },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['⟐', '⟑', '⟒', '⟓', '⟔', '⟕'],
+    mood: 'dynamic and refined'
+  },
+
+  blackDiamond: {
+    name: 'Black Diamond',
+    colors: { ...Colors.dark, primary: sophisticatedPalette.charcoal, accent: sophisticatedPalette.platinum, background: '#000000' },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['◆', '♦', '⬧', '⬨', '◈', '◇'],
+    mood: 'ultimate elegance'
+  },
+
+  ivoryTower: {
+    name: 'Ivory Tower',
+    colors: { ...Colors.light, primary: sophisticatedPalette.bone, accent: sophisticatedPalette.emerald, surface: sophisticatedPalette.ivory },
+    fonts: {
+      elegant: 'SF Pro Display',
+      modern: 'Inter',
+      signature: 'SF Pro Text'
+    },
+    motifs: ['⬟', '⬠', '⬡', '⬢', '⬣', '⬤'],
+    mood: 'pure sophistication'
+  },
 } as const;
