@@ -5,7 +5,8 @@ module.exports = function (api) {
     plugins: [
       // Required for react-native-reanimated (using worklets plugin)
       ['react-native-worklets/plugin', {
-        globals: ['__scanCodes']
+        globals: ['__scanCodes'],
+        processNestedWorklets: true
       }],
     ],
   };

@@ -7,6 +7,7 @@ import Animated, {
   useSharedValue,
   withSpring,
   interpolate,
+  runOnJS,
 } from 'react-native-reanimated';
 
 interface PersonalityTrait {

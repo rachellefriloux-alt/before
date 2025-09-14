@@ -50,7 +50,7 @@ export function SallieMoodVisualizer({
       -1,
       false
     );
-  }, []);
+  }, [pulseAnimation, rotationAnimation]);
 
   const pulseStyle = useAnimatedStyle(() => {
     const scale = interpolate(

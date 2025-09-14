@@ -7,6 +7,7 @@ import Animated, {
   withTiming,
   runOnJS,
 } from 'react-native-reanimated';
+import { createSafeAnimation } from '../../utils/animationUtils';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 
 interface OnboardingButtonProps {
