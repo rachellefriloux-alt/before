@@ -1,0 +1,23 @@
+Logs for your project will appear below. Press Ctrl+C to exit.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+Android Bundling failed 24142ms node_modules\expo-router\entry.js (1622 modules)
+Unable to resolve "../assets/fonts/SpaceMono-Regular.ttf" from "app\(drawer)\_layout.tsx"
+  18 |                                                                                                                                                        
+  19 |     const [loaded] = useFonts({
+> 20 |         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),                                                                                   
+     |                             ^
+  21 |     });                                                                                                                                                
+  22 |                                                                                                                                                        
+  23 |     const showSplash = React.useCallback(async () => {
+
+Import stack:
+
+ app\(drawer)\_layout.tsx
+ | import "../assets/fonts/SpaceMono-Regular.ttf"                                                                                                             
+
+ app (require.context)
