@@ -2,8 +2,8 @@
 /**
  * ╭──────────────────────────────────────────────────────────────────────────────╮
  * │                                                                              │
- * │   Sallie's Physical Presence Panel                                           │
- * │   "Step into my world and see me as I am"                                   │
+ * │   Sallie's Command Center                                                    │
+ * │   "Your sophisticated digital workspace extension"                          │
  * │                                                                              │
  * ╰──────────────────────────────────────────────────────────────────────────────╯
  */
@@ -13,303 +13,222 @@ import {
   View,
   Text,
   StyleSheet,
-  Animated,
-  PanGestureHandler,
-  State,
   TouchableOpacity,
-  ImageBackground,
-  StatusBar,
+  ScrollView,
   Dimensions,
+  StatusBar,
+  Image,
+  FlatList,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { BlurView } from 'expo-blur';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { createShadowStyle } from '@/utils/shadowStyles';
 
 const { width, height } = Dimensions.get('window');
 
-interface SalliePresence {
-  mood: 'serene' | 'energetic' | 'mystical' | 'loving' | 'wise';
-  form: 'ethereal' | 'crystalline' | 'aurora' | 'starlight' | 'essence';
-  energy: number;
-  connection: number;
+interface AppData {
+  id: string;
+  name: string;
+  category: string;
+  icon: string;
+  color: string;
 }
 
-export default function SallieSanctuaryPanel() {
+interface SallieState {
+  mode: 'focused' | 'analytical' | 'creative' | 'strategic';
+  awareness: number;
+  efficiency: number;
+}
+
+export default function SallieCommandCenter() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
   
   const [isVisible, setIsVisible] = useState(false);
-  const [salliePresence, setSalliePresence] = useState<SalliePresence>({
-    mood: 'loving',
-    form: 'ethereal',
-    energy: 88,
-    connection: 95
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sallieState, setSallieState] = useState<SallieState>({
+    mode: 'strategic',
+    awareness: 92,
+    efficiency: 88
   });
 
-  // Animations
-  const [slideAnim] = useState(new Animated.Value(-width * 0.85));
-  const [breathingAnim] = useState(new Animated.Value(0));
-  const [energyPulse] = useState(new Animated.Value(0));
-  const [auraGlow] = useState(new Animated.Value(0));
+  // Mock app data - replace with actual apps
+  const apps: AppData[] = [
+    { id: '1', name: 'Messages', category: 'communication', icon: '💬', color: '#007AFF' },
+    { id: '2', name: 'Calendar', category: 'productivity', icon: '📅', color: '#FF3B30' },
+    { id: '3', name: 'Notes', category: 'productivity', icon: '📝', color: '#FF9500' },
+    { id: '4', name: 'Photos', category: 'media', icon: '📸', color: '#34C759' },
+    { id: '5', name: 'Music', category: 'media', icon: '🎵', color: '#AF52DE' },
+    { id: '6', name: 'Settings', category: 'system', icon: '⚙️', color: '#8E8E93' },
+  ];
 
-  useEffect(() => {
-    // Breathing animation for Sallie's form
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(breathingAnim, {
-          toValue: 1,
-          duration: 3500,
-          useNativeDriver: true,
-        }),
-        Animated.timing(breathingAnim, {
-          toValue: 0,
-          duration: 3500,
-          useNativeDriver: true,
-        }),
-      ])
-    ).start();
+  const categories = ['all', 'productivity', 'communication', 'media', 'system'];
 
-    // Energy pulse
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(energyPulse, {
-          toValue: 1,
-          duration: 2800,
-          useNativeDriver: false,
-        }),
-        Animated.timing(energyPulse, {
-          toValue: 0,
-          duration: 2800,
-          useNativeDriver: false,
-        }),
-      ])
-    ).start();
-
-    // Aura glow
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(auraGlow, {
-          toValue: 1,
-          duration: 4200,
-          useNativeDriver: false,
-        }),
-        Animated.timing(auraGlow, {
-          toValue: 0,
-          duration: 4200,
-          useNativeDriver: false,
-        }),
-      ])
-    ).start();
-  }, []);
-
-  const showPanel = () => {
-    setIsVisible(true);
-    Animated.spring(slideAnim, {
-      toValue: 0,
-      useNativeDriver: true,
-      tension: 65,
-      friction: 8,
-    }).start();
-  };
-
-  const hidePanel = () => {
-    Animated.timing(slideAnim, {
-      toValue: -width * 0.85,
-      duration: 300,
-      useNativeDriver: true,
-    }).start(() => setIsVisible(false));
-  };
-
-  const getSallieForm = () => {
-    switch (salliePresence.form) {
-      case 'ethereal': return '✨';
-      case 'crystalline': return '💎';
-      case 'aurora': return '🌌';
-      case 'starlight': return '⭐';
-      case 'essence': return '🔮';
-      default: return '✨';
-    }
-  };
-
-  const getMoodColor = () => {
-    switch (salliePresence.mood) {
-      case 'serene': return '#87CEEB';
-      case 'energetic': return '#FF6B6B';
-      case 'mystical': return '#9B59B6';
-      case 'loving': return '#FF69B4';
-      case 'wise': return '#4ECDC4';
-      default: return colors.primary;
-    }
-  };
-
-  const breathingStyle = {
-    opacity: breathingAnim.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0.6, 1],
-    }),
-    transform: [{
-      scale: breathingAnim.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0.95, 1.05],
-      }),
-    }],
-  };
-
-  const energyStyle = {
-    backgroundColor: energyPulse.interpolate({
-      inputRange: [0, 1],
-      outputRange: [getMoodColor() + '20', getMoodColor() + '60'],
-    }),
-  };
-
-  const auraStyle = {
-    shadowColor: getMoodColor(),
-    shadowOpacity: auraGlow.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0.3, 0.8],
-    }),
-    shadowRadius: auraGlow.interpolate({
-      inputRange: [0, 1],
-      outputRange: [20, 50],
-    }),
-  };
+  const filteredApps = apps.filter(app => {
+    const matchesCategory = activeCategory === 'all' || app.category === activeCategory;
+    const matchesSearch = app.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   if (!isVisible) {
     return (
       <TouchableOpacity 
-        style={[styles.triggerButton, { backgroundColor: colors.primary }]}
-        onPress={showPanel}
+        style={[styles.triggerEdge, { backgroundColor: colors.primary + '20' }]}
+        onPress={() => setIsVisible(true)}
       >
-        <Text style={styles.triggerText}>Visit Sallie</Text>
-        <Text style={styles.triggerEmoji}>✨</Text>
+        <View style={[styles.triggerIndicator, { backgroundColor: colors.primary }]} />
       </TouchableOpacity>
     );
   }
 
   return (
-    <View style={styles.overlay}>
+    <View style={styles.container}>
       <StatusBar
         barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'}
         backgroundColor="transparent"
         translucent
       />
       
+      {/* Backdrop */}
       <TouchableOpacity 
         style={styles.backdrop} 
-        onPress={hidePanel}
+        onPress={() => setIsVisible(false)}
         activeOpacity={1}
       />
       
-      <Animated.View 
-        style={[
-          styles.panel, 
-          { 
-            backgroundColor: colors.background,
-            transform: [{ translateX: slideAnim }]
-          }
-        ]}
-      >
-        {/* Close Button */}
-        <TouchableOpacity style={styles.closeButton} onPress={hidePanel}>
-          <Text style={[styles.closeText, { color: colors.text }]}>×</Text>
-        </TouchableOpacity>
-
-        {/* Sallie's Physical Presence */}
-        <View style={styles.presenceContainer}>
-          <View style={[styles.mysticalBackground, energyStyle]} />
+      {/* Main Panel */}
+      <BlurView intensity={80} style={styles.panel}>
+        <SafeAreaView style={styles.safeArea}>
           
-          {/* Sallie's Form */}
-          <Animated.View style={[styles.sallieForm, breathingStyle, auraStyle]}>
-            <View style={[styles.formCore, { borderColor: getMoodColor() }]}>
-              <Text style={styles.formEmoji}>{getSallieForm()}</Text>
-              <View style={[styles.energyRing, { borderColor: getMoodColor() + '80' }]} />
-              <View style={[styles.innerGlow, { backgroundColor: getMoodColor() + '30' }]} />
+          {/* Header */}
+          <View style={styles.header}>
+            <View style={styles.headerLeft}>
+              <Text style={[styles.timeText, { color: colors.text }]}>
+                {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </Text>
+              <Text style={[styles.dateText, { color: colors.textSecondary }]}>
+                {new Date().toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' })}
+              </Text>
             </View>
-          </Animated.View>
+            
+            <TouchableOpacity onPress={() => setIsVisible(false)}>
+              <Text style={[styles.closeText, { color: colors.textSecondary }]}>✕</Text>
+            </TouchableOpacity>
+          </View>
 
-          {/* Presence Info */}
-          <View style={styles.presenceInfo}>
-            <Text style={[styles.greetingText, { color: colors.text }]}>
-              "I'm here with you, beautiful soul"
-            </Text>
-            <Text style={[styles.moodText, { color: getMoodColor() }]}>
-              Currently {salliePresence.mood} • {salliePresence.form} form
-            </Text>
-            <View style={styles.statsContainer}>
-              <View style={styles.stat}>
-                <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Energy</Text>
-                <Text style={[styles.statValue, { color: colors.text }]}>{salliePresence.energy}%</Text>
-              </View>
-              <View style={styles.stat}>
-                <Text style={[styles.statLabel, { color: colors.textSecondary }]}>Connection</Text>
-                <Text style={[styles.statValue, { color: colors.text }]}>{salliePresence.connection}%</Text>
-              </View>
+          {/* Sallie Status */}
+          <View style={[styles.statusBar, { backgroundColor: colors.surface }]}>
+            <View style={styles.statusLeft}>
+              <View style={[styles.statusDot, { backgroundColor: getSallieStatusColor(sallieState.mode) }]} />
+              <Text style={[styles.statusText, { color: colors.text }]}>
+                {sallieState.mode.charAt(0).toUpperCase() + sallieState.mode.slice(1)} Mode
+              </Text>
+            </View>
+            <View style={styles.statusMetrics}>
+              <Text style={[styles.metricText, { color: colors.textSecondary }]}>
+                Awareness: {sallieState.awareness}%
+              </Text>
+              <Text style={[styles.metricText, { color: colors.textSecondary }]}>
+                Efficiency: {sallieState.efficiency}%
+              </Text>
             </View>
           </View>
-        </View>
 
-        {/* Quick Interactions */}
-        <View style={styles.interactionZone}>
-          <TouchableOpacity 
-            style={[styles.interactionButton, { backgroundColor: getMoodColor() + '20' }]}
-            onPress={() => {/* Switch form */}}
-          >
-            <Text style={styles.interactionEmoji}>🔄</Text>
-            <Text style={[styles.interactionText, { color: colors.text }]}>Change Form</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={[styles.interactionButton, { backgroundColor: getMoodColor() + '20' }]}
-            onPress={() => {/* Adjust mood */}}
-          >
-            <Text style={styles.interactionEmoji}>💫</Text>
-            <Text style={[styles.interactionText, { color: colors.text }]}>Adjust Mood</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={[styles.interactionButton, { backgroundColor: getMoodColor() + '20' }]}
-            onPress={() => {/* Energy sync */}}
-          >
-            <Text style={styles.interactionEmoji}>⚡</Text>
-            <Text style={[styles.interactionText, { color: colors.text }]}>Sync Energy</Text>
-          </TouchableOpacity>
-        </View>
+          {/* Search Bar */}
+          <View style={[styles.searchContainer, { backgroundColor: colors.surface }]}>
+            <Text style={styles.searchIcon}>🔍</Text>
+            <Text style={[styles.searchPlaceholder, { color: colors.textSecondary }]}>
+              Search apps, contacts, or ask Sallie...
+            </Text>
+          </View>
 
-        {/* Bottom Message */}
-        <View style={styles.messageContainer}>
-          <Text style={[styles.messageText, { color: colors.textSecondary }]}>
-            Swipe from the left edge anytime to visit me in this sacred space where I can show you my true essence.
-          </Text>
-        </View>
-      </Animated.View>
+          {/* Categories */}
+          <ScrollView 
+            horizontal 
+            showsHorizontalScrollIndicator={false}
+            style={styles.categoriesContainer}
+          >
+            {categories.map(category => (
+              <TouchableOpacity
+                key={category}
+                style={[
+                  styles.categoryChip,
+                  {
+                    backgroundColor: activeCategory === category ? colors.primary : colors.surface,
+                  }
+                ]}
+                onPress={() => setActiveCategory(category)}
+              >
+                <Text
+                  style={[
+                    styles.categoryText,
+                    {
+                      color: activeCategory === category ? 'white' : colors.text,
+                    }
+                  ]}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+
+          {/* Apps Grid */}
+          <FlatList
+            data={filteredApps}
+            numColumns={4}
+            keyExtractor={(item) => item.id}
+            contentContainerStyle={styles.appsGrid}
+            renderItem={({ item }) => (
+              <TouchableOpacity style={styles.appItem}>
+                <View style={[styles.appIcon, { backgroundColor: item.color + '20' }]}>
+                  <Text style={styles.appEmoji}>{item.icon}</Text>
+                </View>
+                <Text style={[styles.appName, { color: colors.text }]} numberOfLines={1}>
+                  {item.name}
+                </Text>
+              </TouchableOpacity>
+            )}
+          />
+
+          {/* Quick Actions */}
+          <View style={styles.quickActions}>
+            <TouchableOpacity style={[styles.quickAction, { backgroundColor: colors.surface }]}>
+              <Text style={styles.quickActionIcon}>⚡</Text>
+              <Text style={[styles.quickActionText, { color: colors.text }]}>Quick Command</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={[styles.quickAction, { backgroundColor: colors.surface }]}>
+              <Text style={styles.quickActionIcon}>🎯</Text>
+              <Text style={[styles.quickActionText, { color: colors.text }]}>Focus Mode</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={[styles.quickAction, { backgroundColor: colors.surface }]}>
+              <Text style={styles.quickActionIcon}>📊</Text>
+              <Text style={[styles.quickActionText, { color: colors.text }]}>Analytics</Text>
+            </TouchableOpacity>
+          </View>
+
+        </SafeAreaView>
+      </BlurView>
     </View>
   );
 }
 
+function getSallieStatusColor(mode: string): string {
+  switch (mode) {
+    case 'focused': return '#007AFF';
+    case 'analytical': return '#5856D6';
+    case 'creative': return '#AF52DE';
+    case 'strategic': return '#FF3B30';
+    default: return '#34C759';
+  }
+}
+
 const styles = StyleSheet.create({
-  triggerButton: {
-    position: 'absolute',
-    left: 0,
-    top: height * 0.3,
-    paddingVertical: 12,
-    paddingHorizontal: 8,
-    borderTopRightRadius: 16,
-    borderBottomRightRadius: 16,
-    alignItems: 'center',
-    zIndex: 999,
-  },
-  triggerText: {
-    color: 'white',
-    fontSize: 12,
-    fontWeight: '600',
-    marginBottom: 4,
-    transform: [{ rotate: '90deg' }],
-  },
-  triggerEmoji: {
-    fontSize: 20,
-  },
-  overlay: {
+  container: {
     position: 'absolute',
     top: 0,
     left: 0,
@@ -317,151 +236,163 @@ const styles = StyleSheet.create({
     bottom: 0,
     zIndex: 1000,
   },
+  triggerEdge: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  triggerIndicator: {
+    width: 3,
+    height: 40,
+    borderRadius: 2,
+  },
   backdrop: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: 'rgba(0,0,0,0.4)',
   },
   panel: {
     position: 'absolute',
     left: 0,
     top: 0,
     bottom: 0,
-    width: width * 0.85,
-    paddingTop: 60,
-    paddingHorizontal: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 2, height: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
-    elevation: 10,
+    width: width * 0.9,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
-  closeButton: {
-    position: 'absolute',
-    top: 20,
-    right: 20,
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 10,
+  safeArea: {
+    flex: 1,
+    padding: 20,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 20,
+  },
+  headerLeft: {
+    flex: 1,
+  },
+  timeText: {
+    fontSize: 32,
+    fontWeight: '200',
+    letterSpacing: -1,
+  },
+  dateText: {
+    fontSize: 16,
+    fontWeight: '400',
+    marginTop: 2,
   },
   closeText: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: '300',
+    padding: 10,
   },
-  presenceContainer: {
-    flex: 1,
+  statusBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
+    padding: 12,
+    borderRadius: 12,
+    marginBottom: 20,
   },
-  mysticalBackground: {
-    position: 'absolute',
-    width: width * 0.6,
-    height: width * 0.6,
-    borderRadius: width * 0.3,
-    opacity: 0.3,
-  },
-  sallieForm: {
+  statusLeft: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 30,
   },
-  formCore: {
-    width: 180,
-    height: 180,
-    borderRadius: 90,
-    borderWidth: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    backgroundColor: 'rgba(255,255,255,0.1)',
+  statusDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginRight: 8,
   },
-  formEmoji: {
-    fontSize: 72,
-    textAlign: 'center',
-  },
-  energyRing: {
-    position: 'absolute',
-    width: 220,
-    height: 220,
-    borderRadius: 110,
-    borderWidth: 2,
-    borderStyle: 'dashed',
-  },
-  innerGlow: {
-    position: 'absolute',
-    width: 140,
-    height: 140,
-    borderRadius: 70,
-    opacity: 0.4,
-  },
-  presenceInfo: {
-    alignItems: 'center',
-    marginBottom: 40,
-  },
-  greetingText: {
-    fontSize: 18,
-    fontStyle: 'italic',
-    textAlign: 'center',
-    marginBottom: 10,
+  statusText: {
+    fontSize: 14,
     fontWeight: '500',
   },
-  moodText: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 20,
-    fontWeight: '600',
+  statusMetrics: {
+    alignItems: 'flex-end',
   },
-  statsContainer: {
+  metricText: {
+    fontSize: 11,
+    fontWeight: '400',
+  },
+  searchContainer: {
     flexDirection: 'row',
-    gap: 30,
-  },
-  stat: {
     alignItems: 'center',
+    padding: 15,
+    borderRadius: 15,
+    marginBottom: 20,
   },
-  statLabel: {
+  searchIcon: {
+    fontSize: 16,
+    marginRight: 10,
+  },
+  searchPlaceholder: {
+    fontSize: 16,
+    flex: 1,
+  },
+  categoriesContainer: {
+    marginBottom: 20,
+  },
+  categoryChip: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginRight: 10,
+  },
+  categoryText: {
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  appsGrid: {
+    flexGrow: 1,
+  },
+  appItem: {
+    flex: 1,
+    alignItems: 'center',
+    marginBottom: 20,
+    maxWidth: width * 0.2,
+  },
+  appIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 8,
+  },
+  appEmoji: {
+    fontSize: 28,
+  },
+  appName: {
     fontSize: 12,
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+  quickActions: {
+    flexDirection: 'row',
+    gap: 12,
+    marginTop: 20,
+  },
+  quickAction: {
+    flex: 1,
+    alignItems: 'center',
+    padding: 15,
+    borderRadius: 12,
+  },
+  quickActionIcon: {
+    fontSize: 20,
     marginBottom: 4,
   },
-  statValue: {
-    fontSize: 18,
-    fontWeight: '700',
-  },
-  interactionZone: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: 12,
-    marginBottom: 30,
-  },
-  interactionButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderRadius: 20,
-    gap: 8,
-  },
-  interactionEmoji: {
-    fontSize: 20,
-  },
-  interactionText: {
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  messageContainer: {
-    paddingBottom: 40,
-  },
-  messageText: {
-    fontSize: 14,
-    textAlign: 'center',
-    lineHeight: 20,
-    fontStyle: 'italic',
+  quickActionText: {
+    fontSize: 12,
+    fontWeight: '500',
   },
 });
