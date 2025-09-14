@@ -4,7 +4,9 @@ module.exports = function (api) {
     presets: ['babel-preset-expo'],
     plugins: [
       // Required for react-native-reanimated
-      'react-native-reanimated/plugin',
+      ['react-native-reanimated/plugin', {
+        globals: ['__scanCodes']
+      }],
     ],
   };
 };
