@@ -53,6 +53,14 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
       timestamp: new Date(),
     }
   ]);
+  
+  // Enhanced Messenger-like features
+  const [quickReplies, setQuickReplies] = useState([
+    "How are you?", "What's new?", "Help me with...", "Let's chat!"
+  ]);
+  const [showQuickReplies, setShowQuickReplies] = useState(true);
+  const [isVoiceMode, setIsVoiceMode] = useState(false);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [unreadCount, setUnreadCount] = useState(1);
@@ -331,8 +339,40 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
                 )}
               </ScrollView>
 
-              {/* Quick Input */}
+              {/* Quick Replies */}
+              {showQuickReplies && (
+                <View style={[styles.quickRepliesContainer, { backgroundColor: colors.surface }]}>
+                  <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                    {quickReplies.map((reply, index) => (
+                      <TouchableOpacity
+                        key={index}
+                        style={[styles.quickReplyButton, { backgroundColor: colors.background, borderColor: colors.border }]}
+                        onPress={() => {
+                          setInputText(reply);
+                          setShowQuickReplies(false);
+                        }}
+                      >
+                        <Text style={[styles.quickReplyText, { color: colors.text }]}>
+                          {reply}
+                        </Text>
+                      </TouchableOpacity>
+                    ))}
+                  </ScrollView>
+                </View>
+              )}
+
+              {/* Enhanced Input Area */}
               <View style={[styles.quickInputContainer, { backgroundColor: colors.surface }]}>
+                {/* Voice/Emoji Toggle */}
+                <TouchableOpacity
+                  style={[styles.inputActionButton, { backgroundColor: isVoiceMode ? colors.accent : colors.background }]}
+                  onPress={() => setIsVoiceMode(!isVoiceMode)}
+                >
+                  <Text style={styles.inputActionText}>
+                    {isVoiceMode ? '🎤' : '😊'}
+                  </Text>
+                </TouchableOpacity>
+
                 <TextInput
                   style={[
                     styles.quickInput,
@@ -344,11 +384,13 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
                   ]}
                   value={inputText}
                   onChangeText={setInputText}
-                  placeholder="Quick message to Sallie..."
+                  placeholder={isVoiceMode ? "Hold to record voice message..." : "Message Sallie..."}
                   placeholderTextColor={colors.textSecondary}
-                  multiline
+                  multiline={!isVoiceMode}
                   maxLength={500}
                 />
+
+                {/* Enhanced Send Button */}
                 <TouchableOpacity
                   style={[
                     styles.quickSendButton,
@@ -358,9 +400,19 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
                     },
                   ]}
                   onPress={sendMessage}
-                  disabled={!inputText.trim() || isTyping}
+                  disabled={!inputText.trim() && !isVoiceMode || isTyping}
                 >
-                  <Text style={styles.quickSendText}>→</Text>
+                  <Text style={styles.quickSendText}>
+                    {isVoiceMode ? '🎤' : '→'}
+                  </Text>
+                </TouchableOpacity>
+
+                {/* Quick Actions */}
+                <TouchableOpacity
+                  style={[styles.inputActionButton, { backgroundColor: colors.background }]}
+                  onPress={() => {/* Open full feature menu */}}
+                >
+                  <Text style={styles.inputActionText}>⚡</Text>
                 </TouchableOpacity>
               </View>
             </KeyboardAvoidingView>
@@ -496,22 +548,51 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontStyle: 'italic',
   },
+  quickRepliesContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(94, 234, 212, 0.2)',
+  },
+  quickReplyButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    borderWidth: 1,
+    marginRight: 8,
+  },
+  quickReplyText: {
+    fontSize: 13,
+    fontWeight: '500',
+  },
   quickInputContainer: {
     flexDirection: 'row',
     alignItems: 'flex-end',
-    paddingHorizontal: 16,
+    paddingHorizontal: 12,
     paddingVertical: 12,
     paddingBottom: Platform.OS === 'ios' ? 32 : 12,
+    gap: 8,
+  },
+  inputActionButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(94, 234, 212, 0.3)',
+  },
+  inputActionText: {
+    fontSize: 16,
   },
   quickInput: {
     flex: 1,
-    borderRadius: 16,
+    borderRadius: 20,
     borderWidth: 1,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
     fontSize: 14,
     maxHeight: 80,
-    marginRight: 8,
   },
   quickSendButton: {
     width: 36,
@@ -519,6 +600,11 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
   },
   quickSendText: {
     fontSize: 16,

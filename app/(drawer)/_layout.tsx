@@ -59,6 +59,13 @@ export default function DrawerLayout() {
 
                 {/* AI Features */}
                 <Drawer.Screen
+                    name="sallie-sanctuary"
+                    options={{
+                        drawerLabel: '✨ Visit Sallie',
+                        title: '✨ Sallie\'s Sanctuary',
+                    }}
+                />
+                <Drawer.Screen
                     name="ai-chat"
                     options={{
                         title: 'AI Companion',

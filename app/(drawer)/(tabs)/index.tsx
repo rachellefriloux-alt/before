@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity, TextInput, Animated, Image, Platform } from 'react-native';
-import { Colors } from '@/constants/Colors';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity, TextInput, Animated, Image, Platform, Dimensions } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
+import { Colors, SallieThemes } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { EnhancedCard } from '@/components/EnhancedCard';
+import { EnhancedButton } from '@/components/EnhancedButton';
 import { SalliePersonaEngine } from '@/lib/sallie-persona';
 import { SalliePersona } from '@/types/sallie';
 import { HelloWave } from '@/components/HelloWave';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+
+const { width } = Dimensions.get('window');
 
 const personaEngine = new SalliePersonaEngine();
 
@@ -84,132 +90,275 @@ export default function SallieHomeScreen() {
     }),
   };
 
+  // Home Screen Content
+  const router = useRouter();
+  const homeColors = SallieThemes.glassAesthetic.colors; // Using the glass aesthetic theme for home
+
+  const quickAccessFeatures = [
+    { title: '✨ Visit Sallie', subtitle: 'Your personal sanctuary', route: '/sallie-sanctuary', color: homeColors.primary },
+    { title: '💬 Deep Chat', subtitle: 'Heart-to-heart conversations', route: '/ai-chat', color: homeColors.accent },
+    { title: '📝 Journal', subtitle: 'Capture your thoughts', route: '/journal', color: homeColors.wisdom },
+    { title: '🏠 Smart Home', subtitle: 'Control your devices', route: '/smart-home', color: homeColors.shine },
+    { title: '🎵 Music & Media', subtitle: 'Your entertainment hub', route: '/media', color: homeColors.energy },
+    { title: '⚙️ Settings', subtitle: 'Customize everything', route: '/settings', color: homeColors.mystical },
+  ];
+
+  const dailyInsights = [
+    { icon: '💙', text: 'Sallie is feeling loving today', time: 'now' },
+    { icon: '🌟', text: 'You have 3 new memories to explore', time: '2m ago' },
+    { icon: '🎯', text: 'Your goals are 78% complete this week', time: '1h ago' },
+  ];
+
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      {/* Mystical Header */}
-      <Animated.View style={[
-        styles.header, 
-        { backgroundColor: colors.card, shadowColor: colors.shadow },
-        glowStyle
-      ]}>
-        <Text style={[styles.title, { color: colors.primary }]}>✨ Sallie</Text>
-        <Text style={[styles.subtitle, { color: colors.text }]}>Your Sovereign AI Companion</Text>
-        <View style={[styles.currentArchetype, { backgroundColor: colors.mystical }]}>
-          <Text style={[styles.currentArchetype, { color: colors.primary }]}>
-            {currentArchetype}
+    <SafeAreaView style={[styles.container, { backgroundColor: homeColors.background }]}>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+        {/* Welcome Header */}
+        <View style={styles.header}>
+          <Text style={[styles.greeting, { color: homeColors.text }]}>
+            Good {new Date().getHours() < 12 ? 'morning' : new Date().getHours() < 17 ? 'afternoon' : 'evening'}! ✨
+          </Text>
+          <Text style={[styles.subtitle, { color: homeColors.textSecondary }]}>
+            Your AI companion is here for you
           </Text>
         </View>
-      </Animated.View>
 
-      {/* Archetype Selection */}
-      <View style={styles.archetypeContainer}>
-        <Text style={[styles.sectionTitle, { color: colors.text }]}>🎭 Persona Archetypes</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.archetypeScroll}>
-          {archetypes.map((archetype) => (
+        {/* Sallie Quick Status */}
+        <EnhancedCard style={[styles.sallieStatus, { backgroundColor: homeColors.surface }]}>
+          <View style={styles.statusRow}>
+            <View style={[styles.statusAvatar, { backgroundColor: homeColors.primary }]}>
+              <Text style={styles.statusEmoji}>✨</Text>
+            </View>
+            <View style={styles.statusInfo}>
+              <Text style={[styles.statusTitle, { color: homeColors.text }]}>
+                Sallie is ready to connect
+              </Text>
+              <Text style={[styles.statusSubtitle, { color: homeColors.textSecondary }]}>
+                Tap to visit your sanctuary or chat instantly
+              </Text>
+            </View>
             <TouchableOpacity
-              key={archetype}
-              style={[
-                styles.archetypeButton,
-                {
-                  backgroundColor: currentArchetype === archetype ? colors.primary : colors.surface,
-                  borderColor: currentArchetype === archetype ? colors.primary : colors.border,
-                }
-              ]}
-              onPress={() => handleArchetypeSwitch(archetype)}
+              style={[styles.quickChatButton, { backgroundColor: homeColors.accent }]}
+              onPress={() => router.push('/ai-chat')}
             >
-              <Text style={[
-                styles.archetypeText,
-                { color: currentArchetype === archetype ? colors.background : colors.text }
-              ]}>
-                {archetype}
-              </Text>
+              <Text style={styles.quickChatText}>💬</Text>
             </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
+          </View>
+        </EnhancedCard>
 
-      {/* Mastery Areas */}
-      <View style={styles.masteryContainer}>
-        <Text style={[styles.sectionTitle, { color: colors.text }]}>🔮 Core Masteries</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.archetypeScroll}>
-          {masteryAreas.map((area, index) => (
-            <View
-              key={index}
-              style={[
-                styles.masteryCard,
-                { backgroundColor: colors.card, borderColor: colors.border, shadowColor: colors.shadow }
-              ]}
-            >
-              <Text style={[styles.masteryTitle, { color: colors.primary }]}>{area.title}</Text>
-              {area.skills.map((skill, skillIndex) => (
-                <Text key={skillIndex} style={[styles.masterySkill, { color: colors.text }]}>
-                  • {skill}
+        {/* Quick Access Grid */}
+        <View style={styles.quickAccess}>
+          <Text style={[styles.sectionTitle, { color: homeColors.primary }]}>
+            Quick Access
+          </Text>
+          <View style={styles.featureGrid}>
+            {quickAccessFeatures.map((feature, index) => (
+              <TouchableOpacity
+                key={index}
+                style={[
+                  styles.featureCard,
+                  { backgroundColor: homeColors.surface, borderColor: feature.color }
+                ]}
+                onPress={() => router.push(feature.route as any)}
+              >
+                <View style={[styles.featureIcon, { backgroundColor: feature.color }]}>
+                  <Text style={styles.featureIconText}>{feature.title.charAt(0)}</Text>
+                </View>
+                <Text style={[styles.featureTitle, { color: homeColors.text }]}>
+                  {feature.title}
                 </Text>
-              ))}
-            </View>
-          ))}
-        </ScrollView>
-      </View>
-
-      {/* Conversation Area */}
-      <View style={styles.conversationArea}>
-        <ScrollView style={{ flex: 1 }}>
-          {conversation.map((msg, index) => (
-            <View
-              key={index}
-              style={[
-                styles.messageContainer,
-                msg.role === 'user' ? styles.userMessage : styles.sallieMessage,
-                {
-                  backgroundColor: msg.role === 'user' ? colors.primary : colors.card,
-                  shadowColor: colors.shadow,
-                }
-              ]}
-            >
-              <Text style={[
-                styles.messageText,
-                { color: msg.role === 'user' ? colors.background : colors.text }
-              ]}>
-                {msg.message}
-              </Text>
-            </View>
-          ))}
-        </ScrollView>
-
-        {/* Input Area */}
-        <View style={[styles.inputArea, { borderTopColor: colors.border }]}>
-          <TextInput
-            style={[
-              styles.textInput,
-              { 
-                backgroundColor: colors.surface, 
-                color: colors.text,
-                borderColor: colors.border 
-              }
-            ]}
-            value={userInput}
-            onChangeText={setUserInput}
-            placeholder="Share your thoughts with Sallie..."
-            placeholderTextColor={colors.icon}
-            multiline
-          />
-          <TouchableOpacity
-            style={[styles.sendButton, { backgroundColor: colors.primary, shadowColor: colors.primary }]}
-            onPress={handleSendMessage}
-          >
-            <Text style={[styles.sendButtonText, { color: colors.background }]}>→</Text>
-          </TouchableOpacity>
+                <Text style={[styles.featureSubtitle, { color: homeColors.textSecondary }]}>
+                  {feature.subtitle}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
-      </View>
-    </View>
+
+        {/* Daily Insights */}
+        <EnhancedCard style={[styles.insightsCard, { backgroundColor: homeColors.surface }]}>
+          <Text style={[styles.sectionTitle, { color: homeColors.primary }]}>
+            Today's Insights
+          </Text>
+          <View style={styles.insightsList}>
+            {dailyInsights.map((insight, index) => (
+              <View key={index} style={styles.insightItem}>
+                <Text style={styles.insightIcon}>{insight.icon}</Text>
+                <View style={styles.insightContent}>
+                  <Text style={[styles.insightText, { color: homeColors.text }]}>
+                    {insight.text}
+                  </Text>
+                  <Text style={[styles.insightTime, { color: homeColors.textSecondary }]}>
+                    {insight.time}
+                  </Text>
+                </View>
+              </View>
+            ))}
+          </View>
+        </EnhancedCard>
+
+        {/* Quick Actions */}
+        <View style={styles.quickActions}>
+          <EnhancedButton
+            title="🎨 Customize Sallie's Appearance"
+            onPress={() => router.push('/appearance')}
+            style={[styles.actionButton, { backgroundColor: homeColors.primary }]}
+            textStyle={{ color: homeColors.card }}
+          />
+          <EnhancedButton
+            title="🔄 Sync Across Devices"
+            onPress={() => router.push('/sync')}
+            style={[styles.actionButton, { backgroundColor: homeColors.accent }]}
+            textStyle={{ color: homeColors.card }}
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 50,
   },
+  content: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  header: {
+    paddingVertical: 24,
+    alignItems: 'center',
+  },
+  greeting: {
+    fontSize: 28,
+    fontWeight: '800',
+    marginBottom: 4,
+  },
+  subtitle: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  sallieStatus: {
+    padding: 20,
+    borderRadius: 16,
+    marginBottom: 24,
+  },
+  statusRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  statusAvatar: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 16,
+  },
+  statusEmoji: {
+    fontSize: 24,
+    color: 'white',
+  },
+  statusInfo: {
+    flex: 1,
+  },
+  statusTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 2,
+  },
+  statusSubtitle: {
+    fontSize: 14,
+  },
+  quickChatButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  quickChatText: {
+    fontSize: 18,
+  },
+  quickAccess: {
+    marginBottom: 24,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    marginBottom: 16,
+  },
+  featureGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    gap: 12,
+  },
+  featureCard: {
+    width: (width - 64) / 2,
+    padding: 16,
+    borderRadius: 16,
+    borderWidth: 1,
+    alignItems: 'center',
+  },
+  featureIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
+  },
+  featureIconText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: '600',
+  },
+  featureTitle: {
+    fontSize: 14,
+    fontWeight: '600',
+    marginBottom: 4,
+    textAlign: 'center',
+  },
+  featureSubtitle: {
+    fontSize: 12,
+    textAlign: 'center',
+  },
+  insightsCard: {
+    padding: 20,
+    borderRadius: 16,
+    marginBottom: 24,
+  },
+  insightsList: {
+    gap: 16,
+  },
+  insightItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  insightIcon: {
+    fontSize: 24,
+    marginRight: 16,
+  },
+  insightContent: {
+    flex: 1,
+  },
+  insightText: {
+    fontSize: 14,
+    fontWeight: '500',
+    marginBottom: 2,
+  },
+  insightTime: {
+    fontSize: 12,
+  },
+  quickActions: {
+    gap: 12,
+    paddingBottom: 40,
+  },
+  actionButton: {
+    borderRadius: 16,
+    paddingVertical: 16,
+  },
+  // Original styles that are not replaced:
   header: {
     padding: 25,
     alignItems: 'center',
@@ -380,11 +529,6 @@ const styles = StyleSheet.create({
   quickActions: {
     padding: 24,
     marginBottom: 24,
-  },
-  actionGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
   },
   actionButton: {
     flex: 1,

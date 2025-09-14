@@ -80,8 +80,8 @@ export const Colors = {
     
     // Your Personal Jewel Tone Palette
     primary: personalPalette.shimmeringTeal,
-    accent: personalEnergy.aquaMarine,
-    mystical: personalPalette.amethyst,
+    accent: personalPalette.emeraldShine,
+    mystical: personalPalette.crystalBlue,
     wisdom: personalPalette.forestEmerald,
     energy: personalPalette.sunriseGold,
     shine: personalPalette.seafoamTeal,
