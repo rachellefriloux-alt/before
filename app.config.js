@@ -1,188 +1,64 @@
-const { config } = require('dotenv');
-const fs = require('fs');
+const { getDefaultConfig } = require('expo/metro-config');
 
-// Determine which flavor is being built based on environment or build variant
-const buildFlavor = process.env.EXPO_BUILD_FLAVOR || process.env.FLAVOR || 'cloud';
-
-// Load the appropriate .env file based on flavor
-const envFile = buildFlavor === 'localOnly' ? '.env.localOnly' : '.env.cloud';
-
-// Check if the flavor-specific .env file exists, fallback to .env.local
-if (fs.existsSync(envFile)) {
-  config({ path: envFile });
-  console.log(`✅ Loaded ${envFile} for ${buildFlavor} flavor`);
-} else {
-  config({ path: '.env.local' });
-  console.log(`⚠️  Fallback to .env.local (${envFile} not found)`);
+// Try to load dotenv, but don't fail if it's missing
+try {
+  require('dotenv').config();
+} catch (error) {
+  console.warn('dotenv not found, using environment variables as-is');
 }
 
-module.exports = ({ config }) => {
-  const isLocalOnly = buildFlavor === 'localOnly';
-  
-  return {
-    expo: {
-      name: isLocalOnly ? 'Sallie Local' : 'Sallie Sovereign',
-      slug: 'sallie-sovereign',
-      version: '1.0.0',
-      orientation: 'portrait',
-      icon: './assets/images/icon.png',
-      scheme: 'sallie',
-      userInterfaceStyle: 'automatic',
-      newArchEnabled: false,
-      sdkVersion: '54.0.0',
-      runtimeVersion: {
-        policy: 'sdkVersion'
+const config = getDefaultConfig(__dirname);
+
+// Enable support for .env files
+config.resolver.sourceExts.push('env');
+
+module.exports = {
+  expo: {
+    name: "Sallie Sovereign",
+    slug: "sallie-sovereign",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/images/icon.png",
+    userInterfaceStyle: "automatic",
+    splash: {
+      image: "./assets/images/splash-icon.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff"
+    },
+    assetBundlePatterns: [
+      "**/*"
+    ],
+    ios: {
+      supportsTablet: true
+    },
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/images/adaptive-icon.png",
+        backgroundColor: "#FFFFFF"
       },
-      platforms: ['ios', 'android', 'web'],
-      ios: {
-        supportsTablet: true,
-        bundleIdentifier: isLocalOnly ? 'com.sallie.app.local' : 'com.sallie.app.cloud',
-        buildNumber: '1',
-        infoPlist: {
-          NSCameraUsageDescription: 'This app uses the camera to capture photos and videos for Sallie\'s AI features.',
-          NSMicrophoneUsageDescription: 'This app uses the microphone for voice interactions and audio recording.',
-          NSLocationWhenInUseUsageDescription: 'This app uses location for context-aware AI assistance.',
-          NSContactsUsageDescription: 'This app uses contacts to help manage your personal connections.',
-          NSPhotoLibraryUsageDescription: 'This app uses photo library access to share and manage your images.',
-          NSBluetoothAlwaysUsageDescription: 'This app uses Bluetooth for device connectivity features.'
+      package: "com.sallie.app",
+      versionCode: 1
+    },
+    web: {
+      bundler: "metro",
+      output: "static",
+      favicon: "./assets/images/favicon.png"
+    },
+    plugins: [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          image: "./assets/images/splash-icon.png",
+          imageWidth: 200,
+          resizeMode: "contain",
+          backgroundColor: "#ffffff"
         }
-      },
-      android: {
-        adaptiveIcon: {
-          foregroundImage: './assets/images/adaptive-icon.png',
-          backgroundColor: '#ffffff'
-        },
-        edgeToEdgeEnabled: true,
-        package: isLocalOnly ? 'com.sallie.app.local' : 'com.sallie.app.cloud',
-        versionCode: 1,
-        compileSdkVersion: 35,
-        targetSdkVersion: 35,
-        minSdkVersion: 24,
-        buildToolsVersion: '35.0.0',
-        permissions: [
-          'CAMERA',
-          'RECORD_AUDIO',
-          'VIBRATE',
-          'READ_EXTERNAL_STORAGE',
-          'WRITE_EXTERNAL_STORAGE',
-          'READ_MEDIA_IMAGES',
-          'READ_MEDIA_VIDEO',
-          'READ_MEDIA_AUDIO',
-          'ACCESS_COARSE_LOCATION',
-          'ACCESS_FINE_LOCATION',
-          'READ_CONTACTS',
-          'WRITE_CONTACTS',
-          'INTERNET',
-          'ACCESS_NETWORK_STATE',
-          'MODIFY_AUDIO_SETTINGS',
-          'WAKE_LOCK',
-          'RECEIVE_BOOT_COMPLETED',
-          'POST_NOTIFICATIONS',
-          'BLUETOOTH',
-          'BLUETOOTH_ADMIN',
-          'BLUETOOTH_CONNECT',
-          'BLUETOOTH_SCAN',
-          'ACCESS_WIFI_STATE',
-          'CHANGE_WIFI_STATE'
-        ],
-        blockedPermissions: [
-          'ANDROID_RECEIVE_LEGACY_BROADCAST'
-        ],
-        config: {
-          branch: {
-            apikey: ''
-          }
-        },
-        enableProguardInReleaseBuilds: true,
-        enableSeparateBuildPerCPUArchitecture: true,
-        packagingOptions: {
-          pickFirst: [
-            '**/armeabi-v7a/libc++_shared.so',
-            '**/arm64-v8a/libc++_shared.so',
-            '**/x86/libc++_shared.so',
-            '**/x86_64/libc++_shared.so'
-          ]
-        },
-        buildTypes: {
-          debug: {
-            developmentClient: true
-          },
-          release: {
-            minifyEnabled: true,
-            shrinkResources: true
-          }
-        }
-      },
-      web: {
-        bundler: 'metro',
-        output: 'static',
-        favicon: './assets/images/favicon.png'
-      },
-      plugins: [
-        [
-          'expo-camera',
-          {
-            cameraPermission: 'Allow Sallie to access your camera to capture photos and videos for AI analysis.',
-            microphonePermission: 'Allow Sallie to access your microphone for voice interactions.',
-            recordAudioAndroid: true
-          }
-        ],
-        [
-          'expo-media-library',
-          {
-            photosPermission: 'Allow Sallie to access your photo library to share and manage images.',
-            savePhotosPermission: 'Allow Sallie to save photos to your library.',
-            isAccessMediaLocationEnabled: true
-          }
-        ],
-        [
-          'expo-av',
-          {
-            microphonePermission: 'Allow Sallie to access your microphone for audio recording and voice features.'
-          }
-        ],
-        [
-          'expo-notifications',
-          {
-            icon: './assets/images/notification-icon.png',
-            color: '#ffffff'
-          }
-        ],
-        [
-          'expo-location',
-          {
-            locationAlwaysAndWhenInUsePermission: 'Allow Sallie to use your location for context-aware assistance.',
-            locationAlwaysPermission: 'Allow Sallie to access your location in the background for proactive assistance.',
-            locationWhenInUsePermission: 'Allow Sallie to use your location when the app is open.',
-            isIosBackgroundLocationEnabled: false,
-            isAndroidBackgroundLocationEnabled: false,
-            isAndroidForegroundServiceEnabled: true
-          }
-        ],
-        [
-          'expo-contacts',
-          {
-            contactsPermission: 'Allow Sallie to access your contacts to help manage your personal connections.'
-          }
-        ],
-        [
-          'expo-image-picker',
-          {
-            photosPermission: 'Allow Sallie to access your photo library.',
-            cameraPermission: 'Allow Sallie to access your camera.'
-          }
-        ]
-      ],
-      experiments: {
-        typedRoutes: true
-      },
-      extra: {
-        buildFlavor: buildFlavor,
-        isLocalOnly: isLocalOnly,
-        eas: {
-          projectId: ''
-        }
-      }
-    }
-  };
+      ]
+    ],
+    experiments: {
+      typedRoutes: true
+    },
+    scheme: "sallie"
+  }
 };

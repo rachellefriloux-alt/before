@@ -1,0 +1,90 @@
+PS X:\Sallie-AI> npx expo install --fix
+env: load .env.local .env
+env: export OPENAI_API_KEY CLAUDE_API_KEY PERPLEXITY_API_KEY FIREBASE_API
+_KEY FIREBASE_AUTH_DOMAIN FIREBASE_PROJECT_ID FIREBASE_STORAGE_BUCKET FIR
+EBASE_MESSAGING_SENDER_ID FIREBASE_APP_ID KEYSTORE_FILE KEYSTORE_PASSWORD
+ KEY_ALIAS KEY_PASSWORD EXPO_PUBLIC_API_URL EXPO_PUBLIC_FIREBASE_API_KEY 
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN EXPO_PUBLIC_FIREBASE_PROJECT_ID EXPO_PUB
+LIC_FIREBASE_STORAGE_BUCKET EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID EXPO_PUBLIC_FIREBASE_APP_ID
+[dotenv@17.2.2] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+The following packages should be updated for best compatibility with the installed expo version:
+  @react-native-async-storage/async-storage@1.23.1 - expected version: 2.2.0
+  expo-battery@9.1.4 - expected version: ~10.0.7
+  expo-blur@14.1.5 - expected version: ~15.0.7
+  expo-brightness@13.1.4 - expected version: ~14.0.7
+  expo-constants@17.0.8 - expected version: ~18.0.8
+  expo-contacts@14.1.1 - expected version: ~15.0.8
+  expo-crypto@14.1.5 - expected version: ~15.0.7
+  expo-device@7.0.3 - expected version: ~8.0.7
+  expo-document-picker@13.0.3 - expected version: ~14.0.7
+  expo-file-system@18.1.11 - expected version: ~19.0.14
+  expo-haptics@14.1.4 - expected version: ~15.0.7
+  expo-image@2.1.7 - expected version: ~3.0.8
+  expo-image-picker@16.1.4 - expected version: ~17.0.8
+  expo-intent-launcher@12.1.5 - expected version: ~13.0.7
+  expo-linear-gradient@14.1.5 - expected version: ~15.0.7
+  expo-linking@7.0.5 - expected version: ~8.0.8
+  expo-location@18.1.6 - expected version: ~19.0.7
+  expo-media-library@17.1.7 - expected version: ~18.1.1
+  expo-network@7.1.5 - expected version: ~8.0.7
+  expo-notifications@0.31.4 - expected version: ~0.32.11
+  expo-router@4.0.21 - expected version: ~6.0.4
+  expo-secure-store@14.1.1 - expected version: ~15.0.7
+  expo-speech@13.1.7 - expected version: ~14.0.7
+  expo-splash-screen@0.30.10 - expected version: ~31.0.10
+  expo-status-bar@2.1.0 - expected version: ~3.0.8
+  expo-symbols@0.2.2 - expected version: ~1.0.7
+  expo-system-ui@4.0.9 - expected version: ~6.0.7
+  expo-task-manager@11.1.1 - expected version: ~14.0.7
+  react@18.3.1 - expected version: 19.1.0            
+  react-native@0.76.9 - expected version: 0.81.4
+  react-native-gesture-handler@2.20.2 - expected version: ~2.28.0
+  react-native-reanimated@3.16.7 - expected version: ~4.1.0              
+  react-native-screens@4.4.0 - expected version: ~4.16.0   
+  react-native-svg@15.8.0 - expected version: 15.12.1   
+  react-native-web@0.19.13 - expected version: ^0.21.0
+  @types/react@18.3.24 - expected version: ~19.1.10   
+  eslint-config-expo@7.1.2 - expected version: ~10.0.0
+Your project may not work correctly until you install the expected versions of the packages.
+› Installing 38 SDK 54.0.0 compatible native modules using npm
+> npm install
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error
+npm error While resolving: sallie_sovereign@1.0.0
+npm error Found: react@19.1.0
+npm error node_modules/react
+npm error   react@"19.1.0" from the root project
+npm error   peer react@"^18.0.0 || ^19.0.0" from react-native-web@0.21.1
+npm error   node_modules/react-native-web
+npm error     react-native-web@"^0.21.0" from the root project
+npm error
+npm error Could not resolve dependency:
+npm error peer react@"^19.1.1" from react-dom@19.1.1
+npm error node_modules/react-dom
+npm error   peer react-dom@"^18.0.0 || ^19.0.0" from react-native-web@0.21.1
+npm error   node_modules/react-native-web
+npm error     react-native-web@"^0.21.0" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error                                                                                                                                                     
+npm error                                                                                                                                                     
+npm error For a full report see:
+npm error C:\Users\chell\AppData\Local\npm-cache\_logs\2025-09-14T05_14_04_943Z-eresolve-report.txt
+npm error A complete log of this run can be found in: C:\Users\chell\AppData\Local\npm-cache\_logs\2025-09-14T05_14_04_943Z-debug-0.log
+Error: npm install exited with non-zero code: 1
+Error: npm install exited with non-zero code: 1
+    at ChildProcess.completionListener (X:\Sallie-AI\node_modules\@expo\spawn-async\build\spawnAsync.js:42:23)
+    at Object.onceWrapper (node:events:623:26)
+    at ChildProcess.emit (node:events:508:28)
+    at cp.emit (X:\Sallie-AI\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)
+    ...
+    at spawnAsync (X:\Sallie-AI\node_modules\@expo\spawn-async\build\spawnAsync.js:7:23)
+    at NpmPackageManager.runAsync (X:\Sallie-AI\node_modules\@expo\package-manager\build\node\BasePackageManager.js:41:42)
+    at X:\Sallie-AI\node_modules\@expo\package-manager\build\node\NpmPackageManager.js:36:20
+    at X:\Sallie-AI\node_modules\@expo\package-manager\build\utils\spawn.js:14:34
+PS X:\Sallie-AI> 
