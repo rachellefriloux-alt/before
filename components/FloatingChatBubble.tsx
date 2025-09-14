@@ -42,7 +42,7 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) {
   const colorScheme = useColorScheme();
   const colors = SallieThemes.glassAesthetic.colors;
-  
+
   // Bubble state
   const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -53,7 +53,7 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
       timestamp: new Date(),
     }
   ]);
-  
+
   // Enhanced Messenger-like features
   const [quickReplies, setQuickReplies] = useState([
     "How are you?", "What's new?", "Help me with...", "Let's chat!"
@@ -64,7 +64,7 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [unreadCount, setUnreadCount] = useState(1);
-  
+
   // Animations
   const bubblePosition = useRef(new Animated.ValueXY({ 
     x: screenWidth - 80, 
@@ -90,15 +90,15 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
       ),
       onPanResponderRelease: (_, gestureState) => {
         bubblePosition.flattenOffset();
-        
+
         // Snap to edges like Facebook Messenger
         const snapToLeftEdge = gestureState.moveX < screenWidth / 2;
         const newX = snapToLeftEdge ? 20 : screenWidth - 80;
-        
+
         // Keep within screen bounds
         const newY = Math.max(50, Math.min(screenHeight - 100, 
           (bubblePosition.y as any)._value + gestureState.dy));
-        
+
         Animated.spring(bubblePosition, {
           toValue: { x: newX, y: newY },
           useNativeDriver: false,
@@ -221,7 +221,7 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
 
   const renderMessage = (message: Message) => {
     const isUser = message.sender === 'user';
-    
+
     return (
       <View
         key={message.id}
