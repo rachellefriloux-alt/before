@@ -1,3 +1,4 @@
+
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -8,7 +9,6 @@ import 'react-native-reanimated';
 import { ThemeProvider, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { Colors } from '@/constants/Colors';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { useUserStore } from '@/store/user';
 import { FloatingChatBubble } from '@/components/FloatingChatBubble';
@@ -46,7 +46,6 @@ export default function RootLayout() {
             <OnboardingProvider>
                 <GestureHandlerRootView style={{ flex: 1 }}>
                     <SafeAreaProvider>
-                        {/* Glass Background */}
                         <Stack
                             initialRouteName={initialRoute}
                             screenOptions={{
@@ -60,7 +59,6 @@ export default function RootLayout() {
                             <Stack.Screen name="+not-found" />
                         </Stack>
                         <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-                        {/* Floating Chat Bubble - Available everywhere in the app */}
                         <FloatingChatBubble visible={true} />
                     </SafeAreaProvider>
                 </GestureHandlerRootView>
