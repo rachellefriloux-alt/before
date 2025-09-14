@@ -1,6 +1,7 @@
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 import 'react-native-reanimated';
@@ -44,7 +45,7 @@ export default function RootLayout() {
         loadNavigationComponents();
     }, []);
     const [loaded, error] = useFonts({
-        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+        // Using built-in fonts to avoid path issues
     });
 
     // Expo Router uses Error Boundaries to catch errors in the routing components.
@@ -52,16 +53,10 @@ export default function RootLayout() {
         if (error) throw error;
     }, [error]);
 
-    // Wait for fonts to load, then hide the splash screen.
+    // Hide splash screen immediately since we're not loading custom fonts
     useEffect(() => {
-        if (loaded) {
-            SplashScreen.hideAsync();
-        }
-    }, [loaded]);
-
-    if (!loaded) {
-        return null;
-    }
+        SplashScreen.hideAsync();
+    }, []);
 
     // For now, default to drawer to show the working app
     // TODO: Add onboarding back when (onboarding) routes are implemented
