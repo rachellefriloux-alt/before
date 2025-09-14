@@ -83,7 +83,7 @@ val jscFlavor = "org.webkit:android-jsc:+"
 android {
     ndkVersion = rootProject.extra["ndkVersion"] as String
     buildToolsVersion = rootProject.extra["buildToolsVersion"] as String
-    compileSdk = rootProject.extra["compileSdkVersion"] as Int
+    compileSdk = 34
 
     namespace = "com.sallie.app"
     
@@ -92,8 +92,8 @@ android {
     }
     defaultConfig {
         applicationId = "com.sallie.app"
-        minSdk = rootProject.extra["minSdkVersion"] as Int
-        targetSdk = rootProject.extra["targetSdkVersion"] as Int
+        minSdk = 23
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
         

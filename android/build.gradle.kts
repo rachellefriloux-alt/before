@@ -4,24 +4,24 @@
 apply(from = "path-shortener.gradle")
 
 buildscript {
-    extra.apply {
-        set("buildToolsVersion", findProperty("android.buildToolsVersion") ?: "35.0.0")
-        set("minSdkVersion", (findProperty("android.minSdkVersion") as? String)?.toInt() ?: 24)
-        set("compileSdkVersion", (findProperty("android.compileSdkVersion") as? String)?.toInt() ?: 35)
-        set("targetSdkVersion", (findProperty("android.targetSdkVersion") as? String)?.toInt() ?: 35)
-        set("kotlinVersion", findProperty("android.kotlinVersion") ?: "2.0.0")
-        set("ndkVersion", "27.0.12077973")
-    }
-    
+    val buildToolsVersion by extra("34.0.0")
+    val minSdkVersion by extra(23)
+    val compileSdkVersion by extra(34)
+    val targetSdkVersion by extra(34)
+    val ndkVersion by extra("26.1.10909125")
+    val kotlinVersion by extra("1.9.22")
+
     repositories {
         google()
         mavenCentral()
     }
-    
+
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        classpath("com.android.tools.build:gradle:8.1.4")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("com.google.gms:google-services:4.4.2")
+        classpath("com.google.firebase:firebase-crashlytics-gradle:3.0.2")
     }
 }
 
@@ -37,15 +37,6 @@ apply(plugin = "dev.expo.gradle")
 
 allprojects {
     repositories {
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url = uri("../../node_modules/react-native/android")
-        }
-        maven {
-            // Android JSC is installed from npm
-            url = uri("../../node_modules/jsc-android/dist")
-        }
-
         google()
         mavenCentral()
         maven { url = uri("https://www.jitpack.io") }
