@@ -1,3 +1,4 @@
+
 /**
  * ╭──────────────────────────────────────────────────────────────────────────────╮
  * │                                                                              │
@@ -7,12 +8,11 @@
  * ╰──────────────────────────────────────────────────────────────────────────────╯
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
-  Animated,
   PanResponder,
   Dimensions,
   StyleSheet,
@@ -22,6 +22,18 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withRepeat,
+  withSequence,
+  runOnJS,
+  useAnimatedGestureHandler,
+  interpolate,
+  Easing,
+} from 'react-native-reanimated';
+import { PanGestureHandler } from 'react-native-gesture-handler';
 import { Colors, SallieThemes } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { createAnimatedShadowStyle, createShadowStyle } from '@/utils/shadowStyles';
@@ -65,85 +77,84 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
   const [isTyping, setIsTyping] = useState(false);
   const [unreadCount, setUnreadCount] = useState(1);
 
-  // Animations
-  const bubblePosition = useRef(new Animated.ValueXY({ 
-    x: screenWidth - 80, 
-    y: screenHeight * 0.7 
-  })).current;
-  const [pulseAnimation] = useState(new Animated.Value(1));
-  const [glowAnimation] = useState(new Animated.Value(0));
-  const scrollViewRef = useRef<ScrollView>(null);
+  // Reanimated values
+  const translateX = useSharedValue(screenWidth - 80);
+  const translateY = useSharedValue(screenHeight * 0.7);
+  const scale = useSharedValue(1);
+  const glowOpacity = useSharedValue(0);
+  const scrollViewRef = React.useRef<ScrollView>(null);
 
-  // PanResponder for draggable bubble
-  const panResponder = useRef(
-    PanResponder.create({
-      onMoveShouldSetPanResponder: () => !isExpanded,
-      onPanResponderGrant: () => {
-        bubblePosition.setOffset({
-          x: (bubblePosition.x as any)._value,
-          y: (bubblePosition.y as any)._value,
-        });
-      },
-      onPanResponderMove: Animated.event(
-        [null, { dx: bubblePosition.x, dy: bubblePosition.y }],
-        { useNativeDriver: false }
-      ),
-      onPanResponderRelease: (_, gestureState) => {
-        bubblePosition.flattenOffset();
-
-        // Snap to edges like Facebook Messenger
-        const snapToLeftEdge = gestureState.moveX < screenWidth / 2;
-        const newX = snapToLeftEdge ? 20 : screenWidth - 80;
-
-        // Keep within screen bounds
-        const newY = Math.max(50, Math.min(screenHeight - 100, 
-          (bubblePosition.y as any)._value + gestureState.dy));
-
-        Animated.spring(bubblePosition, {
-          toValue: { x: newX, y: newY },
-          useNativeDriver: false,
-        }).start();
-      },
-    })
-  ).current;
-
+  // Animations with Reanimated
   useEffect(() => {
     // Pulse animation for attention
     if (unreadCount > 0) {
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(pulseAnimation, {
-            toValue: 1.2,
-            duration: 1000,
-            useNativeDriver: true,
-          }),
-          Animated.timing(pulseAnimation, {
-            toValue: 1,
-            duration: 1000,
-            useNativeDriver: true,
-          }),
-        ])
-      ).start();
+      scale.value = withRepeat(
+        withSequence(
+          withTiming(1.2, { duration: 1000, easing: Easing.out(Easing.ease) }),
+          withTiming(1, { duration: 1000, easing: Easing.out(Easing.ease) })
+        ),
+        -1,
+        true
+      );
     } else {
-      pulseAnimation.setValue(1);
+      scale.value = withTiming(1, { duration: 300 });
     }
 
     // Glow animation for magical effect
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(glowAnimation, {
-          toValue: 1,
-          duration: 3000,
-          useNativeDriver: false,
-        }),
-        Animated.timing(glowAnimation, {
-          toValue: 0,
-          duration: 3000,
-          useNativeDriver: false,
-        }),
-      ])
-    ).start();
+    glowOpacity.value = withRepeat(
+      withSequence(
+        withTiming(1, { duration: 3000, easing: Easing.out(Easing.ease) }),
+        withTiming(0, { duration: 3000, easing: Easing.out(Easing.ease) })
+      ),
+      -1,
+      true
+    );
   }, [unreadCount]);
+
+  // Pan gesture handler
+  const gestureHandler = useAnimatedGestureHandler({
+    onStart: (_, context) => {
+      if (isExpanded) return;
+      context.startX = translateX.value;
+      context.startY = translateY.value;
+    },
+    onActive: (event, context) => {
+      if (isExpanded) return;
+      translateX.value = context.startX + event.translationX;
+      translateY.value = context.startY + event.translationY;
+    },
+    onEnd: (event) => {
+      if (isExpanded) return;
+      
+      // Snap to edges like Facebook Messenger
+      const snapToLeftEdge = event.absoluteX < screenWidth / 2;
+      const newX = snapToLeftEdge ? 20 : screenWidth - 80;
+      
+      // Keep within screen bounds
+      const newY = Math.max(50, Math.min(screenHeight - 100, translateY.value));
+      
+      translateX.value = withTiming(newX, { duration: 300, easing: Easing.out(Easing.ease) });
+      translateY.value = withTiming(newY, { duration: 300, easing: Easing.out(Easing.ease) });
+    },
+  });
+
+  // Animated styles
+  const bubbleAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        { translateX: translateX.value },
+        { translateY: translateY.value },
+        { scale: scale.value },
+      ],
+    };
+  });
+
+  const glowAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      shadowOpacity: interpolate(glowOpacity.value, [0, 1], [0.2, 0.8]),
+      elevation: interpolate(glowOpacity.value, [0, 1], [4, 12]),
+    };
+  });
 
   const sendMessage = async () => {
     if (!inputText.trim()) return;
@@ -202,23 +213,6 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
 
   if (!visible) return null;
 
-  const glowStyle = createAnimatedShadowStyle({
-    shadowColor: colors.primary,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: glowAnimation.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0.2, 0.8],
-    }),
-    shadowRadius: glowAnimation.interpolate({
-      inputRange: [0, 1],
-      outputRange: [4, 16],
-    }),
-    elevation: glowAnimation.interpolate({
-      inputRange: [0, 1],
-      outputRange: [4, 12],
-    }),
-  });
-
   const renderMessage = (message: Message) => {
     const isUser = message.sender === 'user';
 
@@ -255,36 +249,33 @@ export function FloatingChatBubble({ visible = true }: FloatingChatBubbleProps) 
   return (
     <>
       {/* Floating Bubble */}
-      <Animated.View
-        style={[
-          styles.floatingBubble,
-          {
-            backgroundColor: colors.primary,
-            transform: [
-              { translateX: bubblePosition.x },
-              { translateY: bubblePosition.y },
-              { scale: pulseAnimation },
-            ],
-          },
-          glowStyle,
-        ]}
-        {...panResponder.panHandlers}
-      >
-        <TouchableOpacity
-          style={styles.bubbleContent}
-          onPress={toggleChat}
-          activeOpacity={0.8}
+      <PanGestureHandler onGestureEvent={gestureHandler}>
+        <Animated.View
+          style={[
+            styles.floatingBubble,
+            {
+              backgroundColor: colors.primary,
+            },
+            bubbleAnimatedStyle,
+            glowAnimatedStyle,
+          ]}
         >
-          <Text style={styles.bubbleEmoji}>✨</Text>
-          {unreadCount > 0 && (
-            <View style={[styles.unreadBadge, { backgroundColor: '#ff4444' }]}>
-              <Text style={styles.unreadText}>
-                {unreadCount > 9 ? '9+' : unreadCount.toString()}
-              </Text>
-            </View>
-          )}
-        </TouchableOpacity>
-      </Animated.View>
+          <TouchableOpacity
+            style={styles.bubbleContent}
+            onPress={toggleChat}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.bubbleEmoji}>✨</Text>
+            {unreadCount > 0 && (
+              <View style={[styles.unreadBadge, { backgroundColor: '#ff4444' }]}>
+                <Text style={styles.unreadText}>
+                  {unreadCount > 9 ? '9+' : unreadCount.toString()}
+                </Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        </Animated.View>
+      </PanGestureHandler>
 
       {/* Expanded Chat Modal */}
       <Modal
