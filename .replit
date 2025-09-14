@@ -110,6 +110,19 @@ mode = "sequential"
 task = "shell.exec"
 args = "NODE_OPTIONS=\"--max-old-space-size=8192\" npx expo start --tunnel --clear --port 5000"
 
+[[workflows.workflow]]
+name = "Android Dev"
+author = 46798082
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx expo prebuild --platform android --clean"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx expo run:android"
+
 [agent]
 expertMode = true
 integrations = ["javascript_openai:1.0.0", "javascript_anthropic:1.0.0"]
