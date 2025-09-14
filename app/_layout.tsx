@@ -12,8 +12,11 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { useUserStore } from '@/store/user';
 import FloatingChatBubble from '@/components/FloatingChatBubble';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { GestureHandlerRootView, PanGestureHandler, State } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Animated, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
