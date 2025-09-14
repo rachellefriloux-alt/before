@@ -29,7 +29,7 @@ localPort = 46739
 externalPort = 3001
 
 [workflows]
-runButton = "Project"
+runButton = "Sallie Web Dev"
 
 [[workflows.workflow]]
 name = "Dev Server"
@@ -91,6 +91,15 @@ waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow]]
+name = "Sallie Web Dev"
+author = 46798082
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "NODE_OPTIONS=\"--max-old-space-size=8192\" npx expo start --web --port 5000"
 
 [agent]
 expertMode = true
