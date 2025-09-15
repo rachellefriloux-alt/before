@@ -7,7 +7,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { EnhancedCard } from '@/components/EnhancedCard';
 import { EnhancedButton } from '@/components/EnhancedButton';
 import { SalliePersonaEngine } from '@/lib/sallie-persona';
-import { SalliePersona } from '@/types/sallie';
+import { SalliePersona } from '@/sallie';
 import { HelloWave } from '@/components/HelloWave';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -22,7 +22,7 @@ export default function SallieHomeScreen() {
 
   const [currentArchetype, setCurrentArchetype] = useState<SalliePersona['archetype']>('Loyal Strategist');
   const [userInput, setUserInput] = useState('');
-  const [conversation, setConversation] = useState<Array<{role: 'user' | 'sallie', message: string, timestamp: Date}>>([]);
+  const [conversation, setConversation] = useState<Array<{ role: 'user' | 'sallie', message: string, timestamp: Date }>>([]);
   const [glowAnimation] = useState(new Animated.Value(0));
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function SallieHomeScreen() {
 
   const archetypes: SalliePersona['archetype'][] = [
     'Loyal Strategist',
-    'Wise Counselor', 
+    'Wise Counselor',
     'Creative Catalyst',
     'Protective Guardian',
     'Empathetic Healer'

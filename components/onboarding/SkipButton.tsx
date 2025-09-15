@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
-import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/user';
 
 interface SkipButtonProps {
     onSkip?: () => void;

@@ -6,7 +6,7 @@ import { OnboardingButton } from '@/components/onboarding/OnboardingButton';
 import { ProgressIndicator } from '@/components/onboarding/ProgressIndicator';
 import { SkipButton } from '@/components/onboarding/SkipButton';
 import { RestartButton } from '@/components/onboarding/RestartButton';
-import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/user';
 
 export default function Stage6() {
   const { profile, completeOnboarding, resetOnboarding } = useUserStore();

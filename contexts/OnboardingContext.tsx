@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode, useEffect } from 'react';
-import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/user';
 
 export interface QAAnswer {
   name?: string;
