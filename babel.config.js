@@ -3,11 +3,8 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      // Required for react-native-reanimated (using worklets plugin)
-      ['react-native-worklets/plugin', {
-        globals: ['__scanCodes'],
-        processNestedWorklets: true
-      }],
+      // Required for react-native-reanimated
+      ['react-native-reanimated/plugin'],
     ],
   };
 };
