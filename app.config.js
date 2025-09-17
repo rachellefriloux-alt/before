@@ -1,17 +1,3 @@
-const { getDefaultConfig } = require('expo/metro-config');
-
-// Try to load dotenv, but don't fail if it's missing
-try {
-  require('dotenv').config();
-} catch (error) {
-  console.warn('dotenv not found, using environment variables as-is');
-}
-
-const config = getDefaultConfig(__dirname);
-
-// Enable support for .env files
-config.resolver.sourceExts.push('env');
-
 module.exports = {
   expo: {
     name: "Sallie Sovereign",
@@ -25,9 +11,7 @@ module.exports = {
       resizeMode: "contain",
       backgroundColor: "#ffffff"
     },
-    assetBundlePatterns: [
-      "**/*"
-    ],
+    assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true
     },
