@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { OnboardingButton } from './OnboardingButton';
-import { useUserStore } from '@/user';
+import { useUserStore } from '@/store/user';
 
 type QAAnswer = {
   name?: string;
