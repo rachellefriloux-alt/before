@@ -35,6 +35,8 @@ interface UserState {
   resetOnboarding: () => void;
   setOnboardingStep: (step: number) => void;
   setOnboardingAnswers: (answers: OnboardingAnswers) => void;
+  setOnboardingAnswer: (key: keyof OnboardingAnswers, value: string) => void;
+  updateOnboarding: (updates: Partial<{ completed: boolean; currentStep: number; answers: OnboardingAnswers }>) => void;
   clearProfile: () => void;
 }
 
