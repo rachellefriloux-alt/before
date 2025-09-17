@@ -1,4 +1,3 @@
-
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -10,7 +9,7 @@ import { ThemeProvider, DarkTheme, DefaultTheme } from '@react-navigation/native
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
-import { useUserStore } from '@/user';
+import { useUserStore } from '@/store/user';
 import FloatingChatBubble from '@/components/FloatingChatBubble';
 import { GestureHandlerRootView, PanGestureHandler, State } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
