@@ -98,6 +98,28 @@ export const useUserStore = create<UserState>()(
         } : null,
       })),
 
+      setOnboardingAnswer: (key, value) => set((state) => ({
+        profile: state.profile ? {
+          ...state.profile,
+          onboarding: {
+            completed: state.profile.onboarding?.completed || false,
+            currentStep: state.profile.onboarding?.currentStep || 0,
+            answers: { ...state.profile.onboarding?.answers, [key]: value },
+          },
+        } : null,
+      })),
+
+      updateOnboarding: (updates) => set((state) => ({
+        profile: state.profile ? {
+          ...state.profile,
+          onboarding: {
+            completed: updates.completed ?? (state.profile.onboarding?.completed || false),
+            currentStep: updates.currentStep ?? (state.profile.onboarding?.currentStep || 0),
+            answers: { ...(state.profile.onboarding?.answers || {}), ...(updates.answers || {}) },
+          },
+        } : null,
+      })),
+
       clearProfile: () => set({
         profile: null,
         isOnboardingComplete: false,
