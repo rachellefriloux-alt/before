@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.sallie.app-debug-62:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.sallie.app-main-64:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.sallie.app-debug-62:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.sallie.app-main-64:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.sallie.app-debug-62:/mipmap-anydpi-v26_ic_launcher1.xml.flat",
+        "source": "com.sallie.app-main-64:/mipmap-anydpi-v26/ic_launcher1.xml"
+    }
+]
