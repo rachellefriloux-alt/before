@@ -23,7 +23,18 @@ tasks.register("buildAll") {
     description = "Builds all Sallie modules"
     group = "build"
     
-    dependsOn(subprojects.map { "${it.path}:build" })
+    // Only include projects that actually have build tasks
+    dependsOn(
+        ":ai:build",
+        ":core:build", 
+        ":identity:build",
+        ":onboarding:build",
+        ":personaCore:build",
+        ":responseTemplates:build",
+        ":tone:build",
+        ":values:build",
+        ":features:feature:build"
+    )
 }
 
 tasks.register("testAll") {
