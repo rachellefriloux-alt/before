@@ -1,0 +1,276 @@
+{
+  "moves": [
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\SallieLogger.js",
+      "to": "X:\\Sallie-AI\\assets\\src\\SallieLogger.js"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\SallieInterface.js",
+      "to": "X:\\Sallie-AI\\assets\\src\\ui\\SallieInterface.js"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\VoiceInteractionSystem.ts.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\ai\\VoiceInteractionSystem.ts.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\VoiceInteractionSystem.ts.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\ai\\VoiceInteractionSystem.ts.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\PerformanceMonitoringSystem.ts",
+      "to": "X:\\Sallie-AI\\PerformanceMonitoringSystem.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\PredictiveSuggestionsEngine.ts",
+      "to": "X:\\Sallie-AI\\PredictiveSuggestionsEngine.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\ResearchLearningSystem.ts",
+      "to": "X:\\Sallie-AI\\ResearchLearningSystem.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\ResearchService.ts",
+      "to": "X:\\Sallie-AI\\ResearchService.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\SallieInterface.js",
+      "to": "X:\\Sallie-AI\\SallieInterface.js"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\SallieLogger.js",
+      "to": "X:\\Sallie-AI\\SallieLogger.js"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\SystemOrchestrator.ts",
+      "to": "X:\\Sallie-AI\\SystemOrchestrator.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\VisionService.ts",
+      "to": "X:\\Sallie-AI\\VisionService.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ai\\VoiceInteractionSystem.ts",
+      "to": "X:\\Sallie-AI\\VoiceInteractionSystem.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\persona.ts",
+      "to": "X:\\Sallie-AI\\apps\\android-launcher\\src\\src\\store\\persona.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\persona.ts.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\store\\persona.ts.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\persona.ts.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\store\\persona.ts.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\PersonalityResponseModifier.kt",
+      "to": "X:\\Sallie-AI\\packages\\features\\features\\feature\\src\\main\\kotlin\\feature\\personality\\PersonalityResponseModifier.kt"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\PersonalityViewModel.kt",
+      "to": "X:\\Sallie-AI\\packages\\features\\features\\feature\\src\\main\\kotlin\\feature\\personality\\PersonalityViewModel.kt"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\persona.ts",
+      "to": "X:\\Sallie-AI\\persona.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\PersonalityBridge.ts",
+      "to": "X:\\Sallie-AI\\PersonalityBridge.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\PersonalityEvolutionChart.tsx",
+      "to": "X:\\Sallie-AI\\PersonalityEvolutionChart.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\PersonalityResponseModifier.kt",
+      "to": "X:\\Sallie-AI\\PersonalityResponseModifier.kt"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\PersonalityViewModel.kt",
+      "to": "X:\\Sallie-AI\\PersonalityViewModel.kt"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\personaProfiles.json",
+      "to": "X:\\Sallie-AI\\personaProfiles.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\persona\\sallie-persona.ts",
+      "to": "X:\\Sallie-AI\\sallie-persona.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\EnhancedSallieAvatar.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\components\\EnhancedSallieAvatar.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\EnhancedSallieOverlay.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\components\\EnhancedSallieOverlay.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieAvatar.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\components\\SallieAvatar.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieOverlay.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\components\\SallieOverlay.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\ProgressBarAnimated.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\components\\ProgressBarAnimated.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\EnhancedSallieAvatar.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\components\\EnhancedSallieAvatar.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\EnhancedSallieOverlay.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\components\\EnhancedSallieOverlay.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieAvatar.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\components\\SallieAvatar.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieOverlay.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\components\\SallieOverlay.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\ProgressBarAnimated.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\components\\ProgressBarAnimated.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\EnhancedSallieAvatar.tsx",
+      "to": "X:\\Sallie-AI\\EnhancedSallieAvatar.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\EnhancedSallieOverlay.tsx",
+      "to": "X:\\Sallie-AI\\EnhancedSallieOverlay.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\PersonaVisualization.vue",
+      "to": "X:\\Sallie-AI\\PersonaVisualization.vue"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\PlatformEnhancements.tsx",
+      "to": "X:\\Sallie-AI\\PlatformEnhancements.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\ProgressBarAnimated.tsx",
+      "to": "X:\\Sallie-AI\\ProgressBarAnimated.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieAvatar.tsx",
+      "to": "X:\\Sallie-AI\\SallieAvatar.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieMoodVisualizer.tsx",
+      "to": "X:\\Sallie-AI\\SallieMoodVisualizer.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieOverlay.tsx",
+      "to": "X:\\Sallie-AI\\SallieOverlay.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\components\\SallieThemeCreator.tsx",
+      "to": "X:\\Sallie-AI\\SallieThemeCreator.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SettingsScreen.tsx",
+      "to": "X:\\Sallie-AI\\apps\\android-launcher\\src\\src\\screens\\SettingsScreen.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\NotificationSettingsScreen.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\screens\\NotificationSettingsScreen.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SettingsScreen.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\screens\\SettingsScreen.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\NotificationSettingsScreen.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\screens\\NotificationSettingsScreen.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SettingsScreen.tsx.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\screens\\SettingsScreen.tsx.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\NotificationSettingsScreen.tsx",
+      "to": "X:\\Sallie-AI\\NotificationSettingsScreen.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\PhoneControlDashboard.tsx",
+      "to": "X:\\Sallie-AI\\PhoneControlDashboard.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SallieCoreScreen.tsx",
+      "to": "X:\\Sallie-AI\\SallieCoreScreen.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SallieCoreScreen.vue",
+      "to": "X:\\Sallie-AI\\SallieCoreScreen.vue"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SettingsScreen.tsx",
+      "to": "X:\\Sallie-AI\\SettingsScreen.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\ui\\screens\\SystemControlPanel.tsx",
+      "to": "X:\\Sallie-AI\\SystemControlPanel.tsx"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\settings.json",
+      "to": "X:\\Sallie-AI\\.vscode\\settings.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\theme.ts",
+      "to": "X:\\Sallie-AI\\apps\\android-launcher\\src\\src\\store\\theme.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\theme.ts.html",
+      "to": "X:\\Sallie-AI\\coverage\\app\\store\\theme.ts.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\theme.ts.html",
+      "to": "X:\\Sallie-AI\\coverage\\lcov-report\\app\\store\\theme.ts.html"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\theme.ts",
+      "to": "X:\\Sallie-AI\\packages\\common\\constants\\theme.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\user-settings.json",
+      "to": "X:\\Sallie-AI\\packages\\features\\onboarding\\.config\\eas-cli-nodejs\\user-settings.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\settings.json",
+      "to": "X:\\Sallie-AI\\settings.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\theme.ts",
+      "to": "X:\\Sallie-AI\\theme.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\themeGenerator.ts",
+      "to": "X:\\Sallie-AI\\themeGenerator.ts"
+    },
+    {
+      "from": "X:\\Sallie-AI\\src\\config\\user-settings.json",
+      "to": "X:\\Sallie-AI\\user-settings.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\assets\\data\\toneMap.json",
+      "to": "X:\\Sallie-AI\\packages\\persona\\tone\\toneMap.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\assets\\data\\toneMap.json",
+      "to": "X:\\Sallie-AI\\toneMap.json"
+    },
+    {
+      "from": "X:\\Sallie-AI\\assets\\data\\valuesMap.json",
+      "to": "X:\\Sallie-AI\\valuesMap.json"
+    }
+  ]
+}

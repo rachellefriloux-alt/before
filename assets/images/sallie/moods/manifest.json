@@ -1,0 +1,226 @@
+{
+  "version": "1.0.0",
+  "description": "Sallie's comprehensive mood visual library",
+  "moods": [
+    {
+      "name": "calm",
+      "assets": {
+        "avatar": "sallie/moods/calm_avatar.svg",
+        "icon": "sallie/moods/calm_icon.svg",
+        "decoration": "sallie/moods/calm_decoration.svg",
+        "background": "sallie/moods/calm_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "focused",
+      "assets": {
+        "avatar": "sallie/moods/focused_avatar.svg",
+        "icon": "sallie/moods/focused_icon.svg",
+        "decoration": "sallie/moods/focused_decoration.svg",
+        "background": "sallie/moods/focused_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "energetic",
+      "assets": {
+        "avatar": "sallie/moods/energetic_avatar.svg",
+        "icon": "sallie/moods/energetic_icon.svg",
+        "decoration": "sallie/moods/energetic_decoration.svg",
+        "background": "sallie/moods/energetic_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "creative",
+      "assets": {
+        "avatar": "sallie/moods/creative_avatar.svg",
+        "icon": "sallie/moods/creative_icon.svg",
+        "decoration": "sallie/moods/creative_decoration.svg",
+        "background": "sallie/moods/creative_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "supportive",
+      "assets": {
+        "avatar": "sallie/moods/supportive_avatar.svg",
+        "icon": "sallie/moods/supportive_icon.svg",
+        "decoration": "sallie/moods/supportive_decoration.svg",
+        "background": "sallie/moods/supportive_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "protective",
+      "assets": {
+        "avatar": "sallie/moods/protective_avatar.svg",
+        "icon": "sallie/moods/protective_icon.svg",
+        "decoration": "sallie/moods/protective_decoration.svg",
+        "background": "sallie/moods/protective_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "playful",
+      "assets": {
+        "avatar": "sallie/moods/playful_avatar.svg",
+        "icon": "sallie/moods/playful_icon.svg",
+        "decoration": "sallie/moods/playful_decoration.svg",
+        "background": "sallie/moods/playful_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "wise",
+      "assets": {
+        "avatar": "sallie/moods/wise_avatar.svg",
+        "icon": "sallie/moods/wise_icon.svg",
+        "decoration": "sallie/moods/wise_decoration.svg",
+        "background": "sallie/moods/wise_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "mystical",
+      "assets": {
+        "avatar": "sallie/moods/mystical_avatar.svg",
+        "icon": "sallie/moods/mystical_icon.svg",
+        "decoration": "sallie/moods/mystical_decoration.svg",
+        "background": "sallie/moods/mystical_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    },
+    {
+      "name": "determined",
+      "assets": {
+        "avatar": "sallie/moods/determined_avatar.svg",
+        "icon": "sallie/moods/determined_icon.svg",
+        "decoration": "sallie/moods/determined_decoration.svg",
+        "background": "sallie/moods/determined_background.svg"
+      },
+      "sizes": [
+        "24x24",
+        "32x32",
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128"
+      ],
+      "formats": [
+        "svg",
+        "png",
+        "webp"
+      ]
+    }
+  ]
+}

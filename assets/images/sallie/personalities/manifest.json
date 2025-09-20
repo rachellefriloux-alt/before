@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "description": "Sallie's personality visual library",
+  "personalities": [
+    {
+      "name": "Grace & Grind",
+      "slug": "grace-and-grind",
+      "assets": {
+        "avatar": "sallie/personalities/grace_&_grind_avatar.svg",
+        "icon": "sallie/personalities/grace_&_grind_icon.svg",
+        "theme": "sallie/personalities/grace_&_grind_theme.json"
+      },
+      "sizes": [
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128",
+        "192x192"
+      ],
+      "formats": [
+        "svg",
+        "png"
+      ]
+    },
+    {
+      "name": "Southern Grit",
+      "slug": "southern-grit",
+      "assets": {
+        "avatar": "sallie/personalities/southern_grit_avatar.svg",
+        "icon": "sallie/personalities/southern_grit_icon.svg",
+        "theme": "sallie/personalities/southern_grit_theme.json"
+      },
+      "sizes": [
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128",
+        "192x192"
+      ],
+      "formats": [
+        "svg",
+        "png"
+      ]
+    },
+    {
+      "name": "Soul Care",
+      "slug": "soul-care",
+      "assets": {
+        "avatar": "sallie/personalities/soul_care_avatar.svg",
+        "icon": "sallie/personalities/soul_care_icon.svg",
+        "theme": "sallie/personalities/soul_care_theme.json"
+      },
+      "sizes": [
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128",
+        "192x192"
+      ],
+      "formats": [
+        "svg",
+        "png"
+      ]
+    },
+    {
+      "name": "Midnight Hustle",
+      "slug": "midnight-hustle",
+      "assets": {
+        "avatar": "sallie/personalities/midnight_hustle_avatar.svg",
+        "icon": "sallie/personalities/midnight_hustle_icon.svg",
+        "theme": "sallie/personalities/midnight_hustle_theme.json"
+      },
+      "sizes": [
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128",
+        "192x192"
+      ],
+      "formats": [
+        "svg",
+        "png"
+      ]
+    },
+    {
+      "name": "Creative Visionary",
+      "slug": "creative-visionary",
+      "assets": {
+        "avatar": "sallie/personalities/creative_visionary_avatar.svg",
+        "icon": "sallie/personalities/creative_visionary_icon.svg",
+        "theme": "sallie/personalities/creative_visionary_theme.json"
+      },
+      "sizes": [
+        "48x48",
+        "64x64",
+        "96x96",
+        "128x128",
+        "192x192"
+      ],
+      "formats": [
+        "svg",
+        "png"
+      ]
+    }
+  ]
+}

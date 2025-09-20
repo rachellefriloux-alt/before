@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SallieCard Dimensions -->
+    <dimen name="card_default_elevation">4dp</dimen>
+    <dimen name="card_default_corner_radius">8dp</dimen>
+    
+    <!-- SallieCard Style Attributes -->
+    <declare-styleable name="SallieCard">
+        <attr name="cardTitle" format="string" />
+        <attr name="cardElevation" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,86 @@
+---
+# Expanded AI Orchestration Module Configuration
+
+module:
+  id: expanded-orchestration
+  name: Expanded AI Orchestration Module
+  version: 1.0.0
+  description: Advanced orchestration system for coordinating Sallie's components, optimizing resource allocation, and monitoring system health
+  enabled: true
+
+components:
+  - id: orchestration-controller
+    class: com.sallie.orchestration.ExpandedOrchestrationController
+    autostart: true
+    priority: 10 # High priority for orchestration
+    dependencies:
+      - plugin-registry
+      
+  - id: orchestration-dashboard
+    class: ui/components/OrchestrationDashboard.vue
+    type: ui-component
+    mountPoint: system-dashboard
+    priority: 3
+    dependencies:
+      - orchestration-controller
+
+settings:
+  performance:
+    analyticsCollectionIntervalMs: 60000  # Collect analytics every minute
+    optimizationIntervalMs: 3600000  # Auto-optimize every hour
+    taskHistoryLimit: 1000  # Maximum task history entries to keep
+    
+  resources:
+    defaultMemoryMb: 100.0
+    defaultCpuCores: 0.5
+    lowPriorityMultiplier: 0.5
+    highPriorityMultiplier: 1.5
+    criticalPriorityMultiplier: 2.0
+    
+  communication:
+    messageBufferSize: 100
+    topicBufferSize: 200
+    processingIntervalMs: 10
+    
+  health:
+    checkIntervalMs: 5000  # Check component health every 5 seconds
+    errorThresholdWarning: 5  # Warning after 5 errors
+    errorThresholdError: 10  # Error state after 10 errors
+    errorTimeWindowMs: 60000  # Error window of 1 minute
+
+hooks:
+  - event: system.startup
+    action: initialize
+    priority: 10
+    
+  - event: system.shutdown
+    action: shutdown
+    priority: 90 # Run late in the shutdown sequence
+    
+  - event: system.error
+    action: handleSystemError
+    
+  - event: component.registered
+    action: registerComponent
+    
+  - event: component.unregistered
+    action: unregisterComponent
+
+permissions:
+  - resource: system.components
+    actions: [read, monitor, control]
+    
+  - resource: system.resources
+    actions: [allocate, release, monitor]
+    
+  - resource: system.health
+    actions: [monitor, repair]
+
+ui:
+  routes:
+    - path: /system/orchestration
+      component: OrchestrationDashboard
+      meta:
+        title: System Orchestration
+        icon: fa fa-server
+        requiresPermission: system.orchestration.view

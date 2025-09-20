@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="input_hint">Type a message…</string>
+    <string name="send">Send</string>
+    <string name="voice_input">Voice Input</string>
+    <string name="image_input">Image Input</string>
+    <string name="processing">Processing…</string>
+    <string name="error_processing_input">Error processing input</string>
+</resources>
