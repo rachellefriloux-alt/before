@@ -273,7 +273,7 @@ export default function App() {
                 {contextContent.quickActions.map((action, index) => (
                   <Button
                     key={index}
-                    variant={action.urgent ? "default" : "outline"}
+                    variant={action.urgent === true ? "default" : "outline"}
                     className="h-16 flex-col gap-2"
                     onClick={() => handleActionClick(action.label)}
                   >
