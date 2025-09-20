@@ -54,17 +54,14 @@
         "./assets/*"
       ]
     },
-    "types": [
-      "react-native",
-      "jest",
-      "node"
-    ]
+    "skipLibCheck": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
+    "App.tsx",
+    "core/**/*.ts",
+    "core/**/*.tsx", 
+    "apps/android-launcher/src/**/*.ts",
+    "apps/android-launcher/src/**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
   ],
@@ -73,7 +70,13 @@
     "babel.config.js",
     "metro.config.js",
     "jest.config.js",
-    "App.web.tsx"
-  ],
-  "extends": "expo/tsconfig.base"
+    "App.web.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "src/**",
+    "feature/**",
+    "e/**",
+    "vite.config.ts",
+    "vitest.config.js"
+  ]
 }
