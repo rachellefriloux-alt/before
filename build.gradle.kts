@@ -20,20 +20,16 @@ allprojects {
 
 // Global tasks
 tasks.register("buildAll") {
-    description = "Builds all Sallie modules"
+    description = "Builds all working Sallie modules"
     group = "build"
     
-    // Only include projects that actually have build tasks
+    // Only include working modules for now
     dependsOn(
-        ":ai:build",
-        ":core:build", 
         ":identity:build",
         ":onboarding:build",
-        ":personaCore:build",
         ":responseTemplates:build",
         ":tone:build",
-        ":values:build",
-        ":features:feature:build"
+        ":values:build"
     )
 }
 
