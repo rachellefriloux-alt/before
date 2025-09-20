@@ -139,12 +139,12 @@ export class SmartLauncherExtensions {
   async performAdvancedBatteryOptimization(): Promise<void> {
     try {
       const systemInfo = this.launcher.getSystemInfo();
-      const batteryInfo = systemInfo.battery;
+      const batteryLevel = systemInfo?.batteryLevel || 1.0;
       
-      if (batteryInfo.level < 0.3) {
+      if (batteryLevel < 0.3) {
         // Aggressive optimization for low battery
         await this.applyAggressiveBatteryMode();
-      } else if (batteryInfo.level < 0.6) {
+      } else if (batteryLevel < 0.6) {
         // Moderate optimization
         await this.applyModerateBatteryMode();
       }
@@ -271,7 +271,7 @@ export class SmartLauncherExtensions {
   async intelligentNotificationManagement(): Promise<void> {
     try {
       const currentContext = await this.getCurrentContext();
-      const notifications = await Notifications.getAllPresentedNotificationsAsync();
+      const notifications = await Notifications.getPresentedNotificationsAsync();
       
       for (const notification of notifications) {
         const importance = await this.calculateNotificationImportance(notification, currentContext);
