@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\refs\heads\sallie-1.0
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\refs\remotes\origin\sallie-1.0
----- DIFF ----
-300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec
-0000000000000000000000000000000000000000 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970421 -0500	clone: from https://github.com/rachellefriloux-alt/sallie_1.0.git

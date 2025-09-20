@@ -1,5 +1,5 @@
 /*
- * Salle Persona Module: EnhancedTechnicalCapabilitiesOrchestrator
+ * Sallie Persona Module: EnhancedTechnicalCapabilitiesOrchestrator
  * Purpose: Integrates all technical capabilities including research, autonomous tasks, technical innovation, programming, and code optimization.
  * Author: Migrated and enhanced for Sallie (JavaScript)
  * Privacy: No external network calls; local-only logic

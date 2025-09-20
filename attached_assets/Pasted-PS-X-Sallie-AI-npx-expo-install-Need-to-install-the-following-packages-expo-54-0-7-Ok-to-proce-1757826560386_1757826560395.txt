@@ -1,0 +1,113 @@
+PS X:\Sallie-AI> npx expo install
+Need to install the following packages:
+expo@54.0.7
+Ok to proceed? (y) y
+
+env: load .env.local .env
+env: export OPENAI_API_KEY CLAUDE_API_KEY PERPLEXITY_API_KEY FIREBASE_API
+_KEY FIREBASE_AUTH_DOMAIN FIREBASE_PROJECT_ID FIREBASE_STORAGE_BUCKET FIR
+EBASE_MESSAGING_SENDER_ID FIREBASE_APP_ID KEYSTORE_FILE KEYSTORE_PASSWORD
+ KEY_ALIAS KEY_PASSWORD EXPO_PUBLIC_API_URL EXPO_PUBLIC_FIREBASE_API_KEY 
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN EXPO_PUBLIC_FIREBASE_PROJECT_ID EXPO_PUB
+LIC_FIREBASE_STORAGE_BUCKET EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID EXPO_PUBLIC_FIREBASE_APP_ID
+Error: Error reading Expo config at X:\Sallie-AI\app.config.js:
+
+Cannot find module 'dotenv'
+Require stack:
+- X:\Sallie-AI\app.config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\evalConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\getConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\Config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\installAsync.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\bin\cli
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\expo\bin\cli
+Error: Error reading Expo config at X:\Sallie-AI\app.config.js:
+
+Cannot find module 'dotenv'
+Require stack:
+- X:\Sallie-AI\app.config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\evalConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\getConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\Config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\installAsync.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\bin\cli
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\expo\bin\cli
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)     
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22) 
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)        
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (X:\Sallie-AI\app.config.js:1:33)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)        
+PS X:\Sallie-AI> npx expo install --fix
+env: load .env.local .env
+env: export OPENAI_API_KEY CLAUDE_API_KEY PERPLEXITY_API_KEY FIREBASE_API
+_KEY FIREBASE_AUTH_DOMAIN FIREBASE_PROJECT_ID FIREBASE_STORAGE_BUCKET FIR
+EBASE_MESSAGING_SENDER_ID FIREBASE_APP_ID KEYSTORE_FILE KEYSTORE_PASSWORD
+ KEY_ALIAS KEY_PASSWORD EXPO_PUBLIC_API_URL EXPO_PUBLIC_FIREBASE_API_KEY 
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN EXPO_PUBLIC_FIREBASE_PROJECT_ID EXPO_PUB
+LIC_FIREBASE_STORAGE_BUCKET EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID EXPO_PUBLIC_FIREBASE_APP_ID
+Error: Error reading Expo config at X:\Sallie-AI\app.config.js:
+
+Cannot find module 'dotenv'
+Require stack:
+- X:\Sallie-AI\app.config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\evalConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\getConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\Config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\checkPackages.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\installAsync.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\bin\cli
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\expo\bin\cli
+Error: Error reading Expo config at X:\Sallie-AI\app.config.js:
+
+Cannot find module 'dotenv'
+Require stack:
+- X:\Sallie-AI\app.config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\evalConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\getConfig.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\Config.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\config\build\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\checkPackages.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\installAsync.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\src\install\index.js
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\@expo\cli\build\bin\cli
+- C:\Users\chell\AppData\Local\npm-cache\_npx\249ca9fcd30c476a\node_modules\expo\bin\cli
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)     
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22) 
+    at Module._load (node:internal/modules/cjs/loader:1226:37)           
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)        
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)          
+    at Module.require (node:internal/modules/cjs/loader:1503:12)         
+    at require (node:internal/modules/helpers:152:16)                    
+    at Object.<anonymous> (X:\Sallie-AI\app.config.js:1:33)              
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)        
+PS X:\Sallie-AI> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

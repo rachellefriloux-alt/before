@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\workers\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\language-jvm\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
----- DIFF ----
-org.gradle.language.jvm.internal.JvmLanguageServices
-org.gradle.workers.internal.WorkersServices

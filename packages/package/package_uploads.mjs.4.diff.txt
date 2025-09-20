@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\uploads.mjs
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\core\uploads.mjs
----- DIFF ----
-export { toFile } from "../internal/to-file.mjs";
-export * from "./core/uploads.mjs";

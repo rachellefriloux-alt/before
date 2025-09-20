@@ -1,5 +1,5 @@
 /*
- * Salle Persona Module: ResearchLearningSystem
+ * Sallie Persona Module: ResearchLearningSystem
  * Purpose: Implements advanced research capabilities, knowledge acquisition, skill learning, and application.
  * Author: Migrated and enhanced for Sallie (JavaScript)
  * Privacy: No external network calls; local-only logic

@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\resources\audio\audio.js.map
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\resources\audio.js.map
----- DIFF ----
-{"version":3,"file":"audio.js","sourceRoot":"","sources":["../src/resources/audio.ts"],"names":[],"mappings":";AAAA,sFAAsF;;;AAEtF,2DAA8B"}
-{"version":3,"file":"audio.js","sourceRoot":"","sources":["../../src/resources/audio/audio.ts"],"names":[],"mappings":";AAAA,sFAAsF;;;;AAEtF,qDAAkD;AAClD,+DAAsC;AACtC,wCAAmE;AACnE,+EAAsD;AACtD,wDAc0B;AAC1B,2EAAkD;AAClD,oDAMwB;AAExB,MAAa,KAAM,SAAQ,sBAAW;IAAtC;;QACE,mBAAc,GAAqC,IAAI,iBAAiB,CAAC,cAAc,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;QACtG,iBAAY,GAAiC,IAAI,eAAe,CAAC,YAAY,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;QAC5F,WAAM,GAAqB,IAAI,SAAS,CAAC,MAAM,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IAChE,CAAC;CAAA;AAJD,sBAIC;AAWD,KAAK,CAAC,cAAc,GAAG,+BAAc,CAAC;AACtC,KAAK,CAAC,YAAY,GAAG,2BAAY,CAAC;AAClC,KAAK,CAAC,MAAM,GAAG,eAAM,CAAC"}

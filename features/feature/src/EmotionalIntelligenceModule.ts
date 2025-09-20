@@ -1,16 +1,16 @@
 /*
-Salle Persona Module: EmotionalIntelligenceModule
+Sallie Persona Module: EmotionalIntelligenceModule
 Detects user mood, interprets humor/sarcasm, expresses empathy, and adapts communication style.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 
-// Salle Persona Module: EmotionalIntelligenceModule
+// Sallie Persona Module: EmotionalIntelligenceModule
 // Detects user mood, interprets humor/sarcasm, expresses empathy, and adapts communication style.
-// Follows Salle architecture, modularity, and privacy rules.
+// Follows Sallie architecture, modularity, and privacy rules.
 
 export class EmotionalIntelligenceModule {
-  // Basic sentiment analysis (stub)
+  // Basic sentiment analysis using keyword matching
   detectMood(input: string): string {
     const lower = input.toLowerCase();
     if (lower.includes("happy") || lower.includes(":)")) return "happy";

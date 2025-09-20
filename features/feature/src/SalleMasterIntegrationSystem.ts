@@ -9,7 +9,7 @@ import { PerformanceMonitoringSystem } from './PerformanceMonitoringSystem';
 import { EnhancedErrorHandler } from './EnhancedErrorHandler';
 import { AccessibilityEnhancementSystem } from './AccessibilityEnhancementSystem';
 import { CodeOptimizationSystem } from './CodeOptimizationSystem';
-import { FeatureFlagManager } from '../../core/featureFlags';
+import { isEnabled, setFlag, getAllFlags } from '../../../core/featureFlags';
 
 interface SystemHealthReport {
   overall: {
@@ -47,6 +47,7 @@ export class SalleMasterIntegrationSystem {
   private healthCheckInterval: NodeJS.Timeout | null = null;
   private lastHealthCheck: SystemHealthReport | null = null;
   private healthCheckCallbacks: ((report: SystemHealthReport) => void)[] = [];
+  private lastOptimizationTime: number | null = null;
 
   constructor() {
     this.performanceMonitor = new PerformanceMonitoringSystem();
@@ -65,7 +66,7 @@ export class SalleMasterIntegrationSystem {
     });
 
     // Enable accessibility monitoring if feature flag is enabled
-    if (FeatureFlagManager.isEnabled('ACCESSIBILITY_ENHANCED')) {
+    if (isEnabled('ACCESSIBILITY_ENHANCED')) {
       this.accessibilitySystem.enableRealTimeMonitoring((report) => {
         this.handleAccessibilityUpdate(report);
       });
@@ -183,8 +184,17 @@ export class SalleMasterIntegrationSystem {
   }
 
   private getLastOptimizationTime(): number | undefined {
-    // This would track when optimizations were last run
-    return Date.now() - (60 * 60 * 1000); // Placeholder: 1 hour ago
+    // Track when optimizations were last run
+    if (this.lastOptimizationTime) {
+      return this.lastOptimizationTime;
+    }
+
+    // If no optimization has been run yet, return undefined
+    return undefined;
+  }
+
+  public recordOptimizationRun(): void {
+    this.lastOptimizationTime = Date.now();
   }
 
   private generateMasterRecommendations(
@@ -255,8 +265,8 @@ export class SalleMasterIntegrationSystem {
     }
 
     // Auto-enable features based on context
-    if (report.accessibility.criticalIssues > 0 && !FeatureFlagManager.isEnabled('ACCESSIBILITY_ENHANCED')) {
-      FeatureFlagManager.enable('ACCESSIBILITY_ENHANCED');
+    if (report.accessibility.criticalIssues > 0 && !isEnabled('ACCESSIBILITY_ENHANCED')) {
+      setFlag('ACCESSIBILITY_ENHANCED', true);
     }
   }
 
@@ -362,18 +372,18 @@ export class SalleMasterIntegrationSystem {
     // Automatically optimize feature flags based on context
     
     if (context.deviceInfo?.lowMemory) {
-      FeatureFlagManager.disable('PERFORMANCE_PROFILING');
-      FeatureFlagManager.disable('REAL_TIME_ANALYTICS');
+      setFlag('PERFORMANCE_PROFILING', false);
+      setFlag('REAL_TIME_ANALYTICS', false);
     }
 
     if (context.userPreferences?.accessibility) {
-      FeatureFlagManager.enable('ACCESSIBILITY_ENHANCED');
-      FeatureFlagManager.enable('HAPTIC_FEEDBACK');
+      setFlag('ACCESSIBILITY_ENHANCED', true);
+      setFlag('HAPTIC_FEEDBACK', true);
     }
 
     if (context.deviceInfo?.highPerformance) {
-      FeatureFlagManager.enable('ADVANCED_VOICE_COMMANDS');
-      FeatureFlagManager.enable('PREDICTIVE_ASSISTANCE');
+      setFlag('ADVANCED_VOICE_COMMANDS', true);
+      setFlag('PREDICTIVE_ASSISTANCE', true);
     }
   }
 
@@ -432,7 +442,7 @@ export class SalleMasterIntegrationSystem {
     return {
       timestamp: Date.now(),
       lastHealthCheck: this.lastHealthCheck,
-      featureFlags: FeatureFlagManager.getAllFlags(),
+      featureFlags: getAllFlags(),
       errorHistory: this.errorHandler.getErrorHistory().slice(-10),
       performanceMetrics: this.performanceMonitor.getCurrentMetrics(),
       systemInsights: this.getSystemInsights()

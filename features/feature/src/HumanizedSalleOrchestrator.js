@@ -1,8 +1,8 @@
 /*
-Salle Persona Module: HumanizedSalleOrchestrator
+Sallie Persona Module: HumanizedSallieOrchestrator
 Integrates all advanced human-like features (cognitive, emotional, technical, proactive, personalization)
 into a cohesive system that functions with human-like qualities and awareness.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 const CognitiveModule = require('./CognitiveModule');
@@ -11,7 +11,7 @@ const TechnicalProwessModule = require('./TechnicalProwessModule');
 const ProactiveHelperModule = require('./ProactiveHelperModule');
 const PersonalizationModule = require('./PersonalizationModule');
 
-class HumanizedSalleOrchestrator {
+class HumanizedSallieOrchestrator {
     constructor() {
         this.cognitive = new CognitiveModule();
         this.emotional = new EmotionalIntelligenceModule();
@@ -64,4 +64,4 @@ class HumanizedSalleOrchestrator {
     }
 }
 
-module.exports = HumanizedSalleOrchestrator;
+module.exports = HumanizedSallieOrchestrator;

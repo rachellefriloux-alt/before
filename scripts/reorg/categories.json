@@ -1,0 +1,78 @@
+{
+  "groups": [
+    {
+      "target": "src/ai",
+      "patterns": [
+        "AccessibilityEnhancementSystem.ts",
+        "PredictiveSuggestionsEngine.ts",
+        "PerformanceMonitoringSystem.ts",
+        "ResearchLearningSystem.ts",
+        "ResearchService.ts",
+        "SystemOrchestrator.ts",
+        "VisionService.ts",
+        "VoiceInteractionSystem.ts",
+        "VoiceSystemManager.ts",
+        "SallieInterface.js",
+        "SallieLogger.js"
+      ]
+    },
+    {
+      "target": "src/persona",
+      "patterns": [
+        "persona.ts",
+        "personaProfiles.json",
+        "sallie-persona.ts",
+        "PersonalityBridge.ts",
+        "PersonalityEvolutionChart.tsx",
+        "PersonalityResponseModifier.kt",
+        "PersonalityViewModel.kt"
+      ]
+    },
+    {
+      "target": "src/ui/components",
+      "patterns": [
+        "SallieAvatar.tsx",
+        "SallieMoodVisualizer.tsx",
+        "SallieOverlay.tsx",
+        "SallieThemeCreator.tsx",
+        "PersonaVisualization.vue",
+        "PlatformEnhancements.tsx",
+        "ProgressBarAnimated.tsx"
+      ]
+    },
+    {
+      "target": "src/ui/screens",
+      "patterns": [
+        "SallieCoreScreen.tsx",
+        "SallieCoreScreen.vue",
+        "PhoneControlDashboard.tsx",
+        "SystemControlPanel.tsx",
+        "SettingsScreen.tsx"
+      ]
+    },
+    {
+      "target": "src/config",
+      "patterns": [
+        "theme.ts",
+        "themeGenerator.ts",
+        "settings.json"
+      ]
+    },
+    {
+      "target": "assets/data",
+      "patterns": [
+        "valuesMap.json",
+        "toneMap.json"
+      ]
+    }
+  ],
+  "exclusions": [
+    "node_modules",
+    ".git",
+    "android",
+    "ios",
+    "build",
+    "gradle",
+    "scripts/reorg"
+  ]
+}

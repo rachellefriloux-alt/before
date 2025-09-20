@@ -1254,15 +1254,110 @@ export class MultiModalPersonaResonance {
     const _timeSignature = timeSignature; // reserved for future integration
     }
 
-    blendGradients(primary, secondary, weight) { /* eslint-disable-line no-unused-vars */
-        // Blend two CSS gradients
-        // This would implement gradient blending logic
-        return primary; // Placeholder
+    blendGradients(primary, secondary, weight) {
+        // Blend two CSS gradients based on weight (0-1)
+        if (!primary || !secondary) return primary || secondary || '';
+
+        // Parse gradient strings (simplified implementation)
+        const primaryColors = this.parseGradientColors(primary);
+        const secondaryColors = this.parseGradientColors(secondary);
+
+        if (primaryColors.length === 0) return secondary;
+        if (secondaryColors.length === 0) return primary;
+
+        // Blend colors at corresponding positions
+        const blendedColors = [];
+        const maxLength = Math.max(primaryColors.length, secondaryColors.length);
+
+        for (let i = 0; i < maxLength; i++) {
+            const primaryColor = primaryColors[i] || primaryColors[primaryColors.length - 1];
+            const secondaryColor = secondaryColors[i] || secondaryColors[secondaryColors.length - 1];
+
+            const blendedColor = this.blendColors(primaryColor, secondaryColor, weight);
+            blendedColors.push(blendedColor);
+        }
+
+        // Reconstruct gradient string
+        return `linear-gradient(45deg, ${blendedColors.join(', ')})`;
     }
 
-    blendColorPalettes(primary, secondary, weight) { /* eslint-disable-line no-unused-vars */
-        // Blend two color palettes
-        // This would implement color blending logic
-        return primary; // Placeholder
+    blendColorPalettes(primary, secondary, weight) {
+        // Blend two color palettes based on weight (0-1)
+        if (!primary || !secondary) return primary || secondary || {};
+
+        const blendedPalette = {};
+
+        // Get all color keys from both palettes
+        const allKeys = new Set([...Object.keys(primary), ...Object.keys(secondary)]);
+
+        for (const key of allKeys) {
+            const primaryColor = primary[key];
+            const secondaryColor = secondary[key];
+
+            if (primaryColor && secondaryColor) {
+                // Blend both colors
+                blendedPalette[key] = this.blendColors(primaryColor, secondaryColor, weight);
+            } else {
+                // Use whichever color exists
+                blendedPalette[key] = primaryColor || secondaryColor;
+            }
+        }
+
+        return blendedPalette;
+    }
+
+    /**
+     * Helper method to parse colors from gradient string
+     */
+    parseGradientColors(gradientString) {
+        // Simple parser for gradient colors (simplified implementation)
+        const colorRegex = /#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3}|rgb\([^)]+\)|rgba\([^)]+\)/g;
+        return gradientString.match(colorRegex) || [];
+    }
+
+    /**
+     * Helper method to blend two colors
+     */
+    blendColors(color1, color2, weight) {
+        // Parse colors to RGB
+        const rgb1 = this.parseColorToRgb(color1);
+        const rgb2 = this.parseColorToRgb(color2);
+
+        if (!rgb1 || !rgb2) return color1;
+
+        // Blend RGB values
+        const blendedRgb = {
+            r: Math.round(rgb1.r * (1 - weight) + rgb2.r * weight),
+            g: Math.round(rgb1.g * (1 - weight) + rgb2.g * weight),
+            b: Math.round(rgb1.b * (1 - weight) + rgb2.b * weight)
+        };
+
+        return `rgb(${blendedRgb.r}, ${blendedRgb.g}, ${blendedRgb.b})`;
+    }
+
+    /**
+     * Helper method to parse color to RGB
+     */
+    parseColorToRgb(color) {
+        // Handle hex colors
+        if (color.startsWith('#')) {
+            const hex = color.substring(1);
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return { r, g, b };
+        }
+
+        // Handle rgb/rgba colors
+        const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+        if (rgbMatch) {
+            return {
+                r: parseInt(rgbMatch[1]),
+                g: parseInt(rgbMatch[2]),
+                b: parseInt(rgbMatch[3])
+            };
+        }
+
+        return null;
     }
 }

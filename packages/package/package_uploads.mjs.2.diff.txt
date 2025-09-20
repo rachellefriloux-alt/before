@@ -1,6 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\uploads.mjs
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\resources\uploads.mjs
----- DIFF ----
-// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
-export * from "./uploads/index.mjs";
-export * from "./core/uploads.mjs";

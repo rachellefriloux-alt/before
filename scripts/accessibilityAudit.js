@@ -16,7 +16,7 @@ const { execSync } = require('child_process');
  * accessibilityAudit.js: Standards-compliant accessibility audit script for Vue components.
  * - Scans all .vue files for ARIA, alt text, keyboard navigation, and contrast issues.
  * - Integrates with axe-core CLI for real audits and generates a report.
- * - Follows Salle modularity, reporting, and privacy standards.
+ * - Follows Sallie modularity, reporting, and privacy standards.
  */
 
 function auditComponentAccessibility(componentPath) {

@@ -1176,17 +1176,206 @@ export class MultiModalPersonaResonance {
         return baseSignature;
     }
 
-    // Placeholder methods for applying the new features (to be implemented in UI integration)
+    /**
+     * Apply visual sensory lock to UI
+     * @param {Object} visualLock - The visual lock configuration
+     * @param {string} userId - The user ID
+     */
     async applyVisualLock(visualLock, userId) {
-        // Apply visual sensory lock to UI
-        // This would integrate with the visual rendering system
-        console.log(`Applying visual lock for user ${userId}:`, visualLock);
+        try {
+            // Apply visual sensory lock to UI
+            // This integrates with the visual rendering system
+
+            console.log(`Applying visual lock for user ${userId}:`, visualLock);
+
+            // Extract lock parameters
+            const {
+                opacity = 0.7,
+                blur = 5,
+                grayscale = 0.5,
+                duration = 3000,
+                easing = 'ease-in-out'
+            } = visualLock;
+
+            // Create CSS filter string
+            const filterValue = `blur(${blur}px) grayscale(${grayscale * 100}%) opacity(${opacity})`;
+
+            // Apply to document body or specific elements
+            if (typeof document !== 'undefined') {
+                const body = document.body;
+                const originalFilter = body.style.filter || '';
+
+                // Apply the visual lock
+                body.style.filter = filterValue;
+                body.style.transition = `filter ${duration}ms ${easing}`;
+
+                // Store original state for restoration
+                body.dataset.originalFilter = originalFilter;
+                body.dataset.visualLockActive = 'true';
+
+                // Auto-remove after duration
+                setTimeout(() => {
+                    this.removeVisualLock(userId);
+                }, duration);
+            }
+
+            return { success: true, message: 'Visual lock applied successfully' };
+        } catch (error) {
+            console.error('Error applying visual lock:', error);
+            return { success: false, error: error.message };
+        }
     }
 
+    /**
+     * Remove visual sensory lock from UI
+     * @param {string} userId - The user ID
+     */
+    async removeVisualLock(userId) {
+        try {
+            console.log(`Removing visual lock for user ${userId}`);
+
+            if (typeof document !== 'undefined') {
+                const body = document.body;
+
+                // Restore original filter
+                const originalFilter = body.dataset.originalFilter || '';
+                body.style.filter = originalFilter;
+                body.style.transition = 'filter 500ms ease-out';
+
+                // Clean up data attributes
+                delete body.dataset.originalFilter;
+                delete body.dataset.visualLockActive;
+            }
+
+            return { success: true, message: 'Visual lock removed successfully' };
+        } catch (error) {
+            console.error('Error removing visual lock:', error);
+            return { success: false, error: error.message };
+        }
+    }
+
+    /**
+     * Apply auditory sensory lock
+     * @param {Object} auditoryLock - The auditory lock configuration
+     * @param {string} userId - The user ID
+     */
     async applyAuditoryLock(auditoryLock, userId) {
-        // Apply auditory sensory lock
-        // This would integrate with the audio system
-        console.log(`Applying auditory lock for user ${userId}:`, auditoryLock);
+        try {
+            // Apply auditory sensory lock
+            // This integrates with the audio system
+
+            console.log(`Applying auditory lock for user ${userId}:`, auditoryLock);
+
+            // Extract lock parameters
+            const {
+                volume = 0.3,
+                pitch = 0.8,
+                reverb = 0.5,
+                duration = 3000,
+                fadeIn = 500,
+                fadeOut = 500
+            } = auditoryLock;
+
+            // Store current audio state
+            const audioState = {
+                originalVolume: 1.0,
+                originalPitch: 1.0,
+                originalReverb: 0.0,
+                lockStartTime: Date.now(),
+                duration,
+                fadeIn,
+                fadeOut
+            };
+
+            // Apply audio modifications
+            if (typeof window !== 'undefined' && window.AudioContext) {
+                // Create audio context if needed
+                if (!this.audioContext) {
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+
+                // Create gain node for volume control
+                const gainNode = this.audioContext.createGain();
+                gainNode.gain.setValueAtTime(volume, this.audioContext.currentTime);
+
+                // Create filter node for pitch/reverb effects
+                const filterNode = this.audioContext.createBiquadFilter();
+                filterNode.type = 'lowpass';
+                filterNode.frequency.setValueAtTime(pitch * 1000, this.audioContext.currentTime);
+
+                // Create convolver for reverb effect
+                const convolverNode = this.audioContext.createConvolver();
+                // Note: In a full implementation, you'd load an impulse response for reverb
+                // For now, we'll use a simple gain-based approximation
+                const reverbGainNode = this.audioContext.createGain();
+                reverbGainNode.gain.setValueAtTime(reverb, this.audioContext.currentTime);
+
+                // Connect nodes: source -> gain -> filter -> convolver -> reverbGain -> destination
+                gainNode.connect(filterNode);
+                filterNode.connect(convolverNode);
+                convolverNode.connect(reverbGainNode);
+                reverbGainNode.connect(this.audioContext.destination);
+
+                // Store for cleanup
+                this.activeAuditoryLocks = this.activeAuditoryLocks || {};
+                this.activeAuditoryLocks[userId] = {
+                    gainNode,
+                    filterNode,
+                    convolverNode,
+                    reverbGainNode,
+                    audioState,
+                    timeoutId: setTimeout(() => {
+                        this.removeAuditoryLock(userId);
+                    }, duration)
+                };
+            }
+
+            return { success: true, message: 'Auditory lock applied successfully' };
+        } catch (error) {
+            console.error('Error applying auditory lock:', error);
+            return { success: false, error: error.message };
+        }
+    }
+
+    /**
+     * Remove auditory sensory lock
+     * @param {string} userId - The user ID
+     */
+    async removeAuditoryLock(userId) {
+        try {
+            console.log(`Removing auditory lock for user ${userId}`);
+
+            if (this.activeAuditoryLocks && this.activeAuditoryLocks[userId]) {
+                const lockData = this.activeAuditoryLocks[userId];
+
+                // Clear timeout
+                if (lockData.timeoutId) {
+                    clearTimeout(lockData.timeoutId);
+                }
+
+                // Disconnect audio nodes
+                if (lockData.gainNode) {
+                    lockData.gainNode.disconnect();
+                }
+                if (lockData.filterNode) {
+                    lockData.filterNode.disconnect();
+                }
+                if (lockData.convolverNode) {
+                    lockData.convolverNode.disconnect();
+                }
+                if (lockData.reverbGainNode) {
+                    lockData.reverbGainNode.disconnect();
+                }
+
+                // Remove from active locks
+                delete this.activeAuditoryLocks[userId];
+            }
+
+            return { success: true, message: 'Auditory lock removed successfully' };
+        } catch (error) {
+            console.error('Error removing auditory lock:', error);
+            return { success: false, error: error.message };
+        }
     }
 
     async applyHapticLock(hapticLock, userId) {
@@ -1231,15 +1420,110 @@ export class MultiModalPersonaResonance {
         console.log(`Adjusting dialogue pacing for user ${userId}:`, timeSignature);
     }
 
-    blendGradients(primary, secondary, weight) { /* eslint-disable-line no-unused-vars */
-        // Blend two CSS gradients
-        // This would implement gradient blending logic
-        return primary; // Placeholder
+    blendGradients(primary, secondary, weight) {
+        // Blend two CSS gradients based on weight (0-1)
+        if (!primary || !secondary) return primary || secondary || '';
+
+        // Parse gradient strings (simplified implementation)
+        const primaryColors = this.parseGradientColors(primary);
+        const secondaryColors = this.parseGradientColors(secondary);
+
+        if (primaryColors.length === 0) return secondary;
+        if (secondaryColors.length === 0) return primary;
+
+        // Blend colors at corresponding positions
+        const blendedColors = [];
+        const maxLength = Math.max(primaryColors.length, secondaryColors.length);
+
+        for (let i = 0; i < maxLength; i++) {
+            const primaryColor = primaryColors[i] || primaryColors[primaryColors.length - 1];
+            const secondaryColor = secondaryColors[i] || secondaryColors[secondaryColors.length - 1];
+
+            const blendedColor = this.blendColors(primaryColor, secondaryColor, weight);
+            blendedColors.push(blendedColor);
+        }
+
+        // Reconstruct gradient string
+        return `linear-gradient(45deg, ${blendedColors.join(', ')})`;
     }
 
-    blendColorPalettes(primary, secondary, weight) { /* eslint-disable-line no-unused-vars */
-        // Blend two color palettes
-        // This would implement color blending logic
-        return primary; // Placeholder
+    blendColorPalettes(primary, secondary, weight) {
+        // Blend two color palettes based on weight (0-1)
+        if (!primary || !secondary) return primary || secondary || {};
+
+        const blendedPalette = {};
+
+        // Get all color keys from both palettes
+        const allKeys = new Set([...Object.keys(primary), ...Object.keys(secondary)]);
+
+        for (const key of allKeys) {
+            const primaryColor = primary[key];
+            const secondaryColor = secondary[key];
+
+            if (primaryColor && secondaryColor) {
+                // Blend both colors
+                blendedPalette[key] = this.blendColors(primaryColor, secondaryColor, weight);
+            } else {
+                // Use whichever color exists
+                blendedPalette[key] = primaryColor || secondaryColor;
+            }
+        }
+
+        return blendedPalette;
+    }
+
+    /**
+     * Helper method to parse colors from gradient string
+     */
+    parseGradientColors(gradientString) {
+        // Simple parser for gradient colors (simplified implementation)
+        const colorRegex = /#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3}|rgb\([^)]+\)|rgba\([^)]+\)/g;
+        return gradientString.match(colorRegex) || [];
+    }
+
+    /**
+     * Helper method to blend two colors
+     */
+    blendColors(color1, color2, weight) {
+        // Parse colors to RGB
+        const rgb1 = this.parseColorToRgb(color1);
+        const rgb2 = this.parseColorToRgb(color2);
+
+        if (!rgb1 || !rgb2) return color1;
+
+        // Blend RGB values
+        const blendedRgb = {
+            r: Math.round(rgb1.r * (1 - weight) + rgb2.r * weight),
+            g: Math.round(rgb1.g * (1 - weight) + rgb2.g * weight),
+            b: Math.round(rgb1.b * (1 - weight) + rgb2.b * weight)
+        };
+
+        return `rgb(${blendedRgb.r}, ${blendedRgb.g}, ${blendedRgb.b})`;
+    }
+
+    /**
+     * Helper method to parse color to RGB
+     */
+    parseColorToRgb(color) {
+        // Handle hex colors
+        if (color.startsWith('#')) {
+            const hex = color.substring(1);
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return { r, g, b };
+        }
+
+        // Handle rgb/rgba colors
+        const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+        if (rgbMatch) {
+            return {
+                r: parseInt(rgbMatch[1]),
+                g: parseInt(rgbMatch[2]),
+                b: parseInt(rgbMatch[3])
+            };
+        }
+
+        return null;
     }
 }

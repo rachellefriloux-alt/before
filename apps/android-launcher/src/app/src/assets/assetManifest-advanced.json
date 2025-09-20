@@ -1,0 +1,44 @@
+[
+  {
+    "name": "avatar_seasonal_winter",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/winter_avatar.svg",
+    "tags": ["avatar", "seasonal", "winter"]
+  },
+  {
+    "name": "avatar_seasonal_summer",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/summer_avatar.svg",
+    "tags": ["avatar", "seasonal", "summer"]
+  },
+  {
+    "name": "icon_achievement",
+    "type": "svg",
+    "source": "heroicons",
+    "url": "https://heroicons.com/achievement.svg",
+    "tags": ["icon", "achievement"]
+  },
+  {
+    "name": "illus_milestone",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/milestone.svg",
+    "tags": ["illustration", "milestone"]
+  },
+  {
+    "name": "anim_confetti",
+    "type": "lottie",
+    "source": "lottiefiles",
+    "url": "https://assets.lottiefiles.com/datafiles/confetti.json",
+    "tags": ["animation", "confetti", "celebrate"]
+  },
+  {
+    "name": "anim_levelup",
+    "type": "lottie",
+    "source": "lottiefiles",
+    "url": "https://assets.lottiefiles.com/datafiles/levelup.json",
+    "tags": ["animation", "levelup", "milestone"]
+  }
+]

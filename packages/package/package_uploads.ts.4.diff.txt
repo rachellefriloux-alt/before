@@ -1,7 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\src\uploads.ts
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\src\core\uploads.ts
----- DIFF ----
-export { type Uploadable } from '../internal/uploads';
-export { toFile, type ToFileInput } from '../internal/to-file';
-/** @deprecated Import from ./core/uploads instead */
-export * from './core/uploads';

@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\yocto-queue\license
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\merge-descriptors\license
----- DIFF ----
-Copyright (c) Jonathan Ong <me@jongleberry.com>
-Copyright (c) Douglas Christopher Wilson <doug@somethingdoug.com>

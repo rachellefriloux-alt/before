@@ -1,191 +1,138 @@
 // Salle Persona Module
-// ResearchService.js - JavaScript research service for topic-based research
-// All code uses standard JavaScript features; fully compatible with JavaScript runtime.
-
+// ResearchService.js
 class ResearchService {
     constructor() {
-        this.researchHistory = [];
-        this.currentResearch = null;
-        this.sources = new Map();
         this.cache = new Map();
+        this.sources = [];
     }
 
-    async researchTopic(topic, options = {}) {
-        const {
-            depth = 'basic',
-            sources = ['web', 'local'],
-            timeout = 30000
-        } = options;
-
-        this.currentResearch = {
-            topic,
-            startTime: Date.now(),
-            status: 'in-progress'
-        };
-
-        try {
-            const results = await this.performResearch(topic, depth, sources, timeout);
-
-            this.currentResearch.status = 'completed';
-            this.currentResearch.endTime = Date.now();
-            this.currentResearch.results = results;
-
-            this.researchHistory.push(this.currentResearch);
-
-            return results;
-        } catch (error) {
-            this.currentResearch.status = 'failed';
-            this.currentResearch.error = error.message;
-            this.currentResearch.endTime = Date.now();
-
-            throw error;
-        }
-    }
-
-    async performResearch(topic, depth, sources, timeout) {
-        const results = {
-            topic,
-            summary: '',
-            sources: [],
-            relatedTopics: [],
-            confidence: 0,
-            timestamp: Date.now()
-        };
+    async search(query, options = {}) {
+        const { limit = 10, sources = this.sources } = options;
 
         // Check cache first
-        const cacheKey = `${topic}-${depth}`;
+        const cacheKey = `search:${query}`;
         if (this.cache.has(cacheKey)) {
-            const cached = this.cache.get(cacheKey);
-            if (Date.now() - cached.timestamp < 3600000) { // 1 hour cache
-                return cached;
-            }
+            return this.cache.get(cacheKey);
         }
 
-        const promises = sources.map(source => this.querySource(source, topic, depth));
+        // Simulate searching through sources
+        const results = sources
+            .filter(source => source.content && source.content.toLowerCase().includes(query.toLowerCase()))
+            .map(source => ({
+                id: source.id,
+                title: source.title,
+                snippet: this.extractSnippet(source.content, query),
+                relevance: this.calculateRelevance(source.content, query),
+                source
+            }))
+            .sort((a, b) => b.relevance - a.relevance)
+            .slice(0, limit);
 
-        try {
-            const sourceResults = await Promise.race([
-                Promise.all(promises),
-                new Promise((_, reject) =>
-                    setTimeout(() => reject(new Error('Research timeout')), timeout)
-                )
-            ]);
-
-            // Aggregate results
-            results.sources = sourceResults.filter(r => r !== null);
-            results.summary = this.generateSummary(results.sources);
-            results.relatedTopics = this.extractRelatedTopics(results.sources);
-            results.confidence = this.calculateConfidence(results.sources);
-
-            // Cache results
-            this.cache.set(cacheKey, results);
-
-            return results;
-        } catch (error) {
-            console.error('Research failed:', error);
-            throw error;
-        }
+        // Cache results
+        this.cache.set(cacheKey, results);
+        return results;
     }
 
-    async querySource(source, topic, depth) {
+    extractSnippet(content, query) {
+        const index = content.toLowerCase().indexOf(query.toLowerCase());
+        if (index === -1) return '';
+
+        const start = Math.max(0, index - 50);
+        const end = Math.min(content.length, index + query.length + 50);
+        return content.substring(start, end) + (end < content.length ? '...' : '');
+    }
+
+    calculateRelevance(content, query) {
+        // Simple relevance calculation based on frequency
+        const regex = new RegExp(query, 'gi');
+        const matches = content.match(regex);
+        return matches ? matches.length : 0;
+    }
+
+    async getResearchData(topic) {
+        if (this.cache.has(topic)) {
+            return this.cache.get(topic);
+        }
+
+        // Simulate fetching data from external source
         try {
-            switch (source) {
-                case 'web':
-                    return await this.queryWeb(topic, depth);
-                case 'local':
-                    return await this.queryLocal(topic, depth);
-                case 'ai':
-                    return await this.queryAI(topic, depth);
-                default:
-                    return null;
-            }
+            // In a real implementation, this would call an API or database
+            const data = {
+                topic,
+                lastUpdated: new Date().toISOString(),
+                content: `Research information about ${topic}`,
+                references: []
+            };
+
+            this.cache.set(topic, data);
+            return data;
         } catch (error) {
-            console.error(`Failed to query source ${source}:`, error);
             return null;
         }
     }
 
-    async queryWeb(topic, depth) {
-        // Placeholder for web research
-        // In a real implementation, this would use web APIs or scraping
+    async saveResearchData(topic, data) {
+        this.cache.set(topic, data);
+
+        // In a real implementation, you might save to a database here
+        try {
+            // Simulate persisting to storage
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
+
+    async analyzeTopic(topic) {
+        const data = await this.getResearchData(topic);
+        if (!data) {
+            return {
+                topic,
+                summary: "No data available",
+                insights: []
+            };
+        }
+
+        // Simulate analysis
+        const words = data.content.split(/\s+/);
+        const wordCount = words.length;
+
         return {
-            source: 'web',
             topic,
-            content: `Web research results for ${topic}`,
-            relevance: 0.8,
-            depth
+            summary: `Analysis of ${topic} (${wordCount} words)`,
+            insights: [
+                { type: "length", value: wordCount },
+                { type: "complexity", value: this.calculateComplexity(data.content) },
+                { type: "sentiment", value: this.analyzeSentiment(data.content) }
+            ],
+            lastUpdated: data.lastUpdated
         };
     }
 
-    async queryLocal(topic, depth) {
-        // Query local knowledge base or files
-        return {
-            source: 'local',
-            topic,
-            content: `Local research results for ${topic}`,
-            relevance: 0.9,
-            depth
-        };
+    calculateComplexity(text) {
+        // Simple complexity measure based on average word length
+        const words = text.split(/\s+/);
+        const avgLength = words.reduce((sum, word) => sum + word.length, 0) / words.length;
+        return avgLength > 5 ? "High" : avgLength > 4 ? "Medium" : "Low";
     }
 
-    async queryAI(topic, depth) {
-        // Query AI models for information
-        return {
-            source: 'ai',
-            topic,
-            content: `AI research results for ${topic}`,
-            relevance: 0.7,
-            depth
-        };
-    }
+    analyzeSentiment(text) {
+        // Extremely simplified sentiment analysis
+        const positiveWords = ["good", "great", "excellent", "positive", "advantage"];
+        const negativeWords = ["bad", "poor", "negative", "problem", "issue"];
 
-    generateSummary(sources) {
-        if (sources.length === 0) return 'No research results found';
+        let score = 0;
+        const lowerText = text.toLowerCase();
 
-        // Simple summary generation - combine source contents
-        const contents = sources.map(s => s.content).join(' ');
-        return contents.substring(0, 500) + (contents.length > 500 ? '...' : '');
-    }
-
-    extractRelatedTopics(sources) {
-        // Extract related topics from research results
-        const topics = new Set();
-
-        sources.forEach(source => {
-            // Simple keyword extraction (in real implementation, use NLP)
-            const words = source.content.split(' ')
-                .filter(word => word.length > 4)
-                .slice(0, 5);
-            words.forEach(word => topics.add(word));
+        positiveWords.forEach(word => {
+            if (lowerText.includes(word)) score++;
         });
 
-        return Array.from(topics);
-    }
+        negativeWords.forEach(word => {
+            if (lowerText.includes(word)) score--;
+        });
 
-    calculateConfidence(sources) {
-        if (sources.length === 0) return 0;
-
-        const avgRelevance = sources.reduce((sum, s) => sum + (s.relevance || 0), 0) / sources.length;
-        const sourceCount = sources.length;
-
-        // Confidence based on relevance and number of sources
-        return Math.min(avgRelevance * (1 + sourceCount * 0.1), 1);
-    }
-
-    getResearchHistory() {
-        return this.researchHistory.slice();
-    }
-
-    getCurrentResearch() {
-        return this.currentResearch;
-    }
-
-    clearCache() {
-        this.cache.clear();
-    }
-
-    clearHistory() {
-        this.researchHistory = [];
+        return score > 0 ? "Positive" : score < 0 ? "Negative" : "Neutral";
     }
 }
 

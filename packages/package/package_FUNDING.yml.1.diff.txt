@@ -1,6 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\fast-json-stable-stringify\.github\FUNDING.yml
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\balanced-match\.github\FUNDING.yml
----- DIFF ----
-tidelift: "npm/balanced-match"
-patreon: juliangruber
-tidelift: "npm/fast-json-stable-stringify"

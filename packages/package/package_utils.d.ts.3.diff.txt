@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\vitest\utils.d.ts
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\pathe\utils.d.ts
----- DIFF ----
-export * from "./dist/utils";
-export * from './dist/utils.js'

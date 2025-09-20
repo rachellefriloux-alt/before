@@ -14,6 +14,19 @@
         this.cacheMaxSize = 200; // Maximum cache entries
         this.analysisQueue = []; // Queue for batch processing
         this.isProcessing = false; // Prevent concurrent processing
+        this.logger = this.createLogger();
+    }
+
+    createLogger() {
+        // Create a logger that can be disabled in production
+        return {
+            error: (message) => {
+                // In development, you could send to a logging service
+                // For now, we'll store errors in memory for debugging
+                if (!this.errorLog) this.errorLog = [];
+                this.errorLog.push({ timestamp: Date.now(), message, level: 'error' });
+            }
+        };
     }
 
     async initialize() {
@@ -405,11 +418,27 @@
     }
 
     async loadFromStorage() {
-        // Placeholder: Load emotion history from localStorage as JSON array
-        // Expected format: [{ timestamp, message, primaryEmotion, ... }, ...]
-        // Replace with remote storage logic if needed
-        // Example:
-        // const data = localStorage.getItem('emotionHistory');
-        // this.emotionHistory = data ? JSON.parse(data) : [];
+        try {
+            // Load emotion history from localStorage as JSON array
+            const data = localStorage.getItem('emotionHistory');
+            if (data) {
+                const parsedData = JSON.parse(data);
+                this.emotionHistory = Array.isArray(parsedData) ? parsedData : [];
+            } else {
+                this.emotionHistory = [];
+            }
+
+            // Load emotion cache if available
+            const cacheData = localStorage.getItem('emotionCache');
+            if (cacheData) {
+                const parsedCache = JSON.parse(cacheData);
+                this.emotionCache = new Map(Object.entries(parsedCache));
+            }
+        } catch (error) {
+            // Log error using the logger
+            this.logger.error('Error loading emotion data from storage: ' + error.message);
+            this.emotionHistory = [];
+            this.emotionCache = new Map();
+        }
     }
 }

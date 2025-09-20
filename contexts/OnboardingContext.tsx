@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import React, { createContext, useContext, useReducer, ReactNode, useEffect } from 'react';
+import { useUserStore } from '@/store/user';
 
 export interface QAAnswer {
   name?: string;
@@ -65,9 +66,42 @@ const OnboardingContext = createContext<{
 
 export function OnboardingProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(onboardingReducer, initialState);
+  const { profile, setOnboardingAnswer, completeOnboarding, updateOnboarding } = useUserStore();
+
+  // Sync with user store on mount
+  useEffect(() => {
+    if (profile?.onboarding) {
+      // Load existing onboarding data from user store
+      Object.entries(profile.onboarding.answers || {}).forEach(([key, value]) => {
+        if (value) {
+          dispatch({
+            type: 'SET_ANSWER',
+            key: key as keyof QAAnswer,
+            value,
+          });
+        }
+      });
+
+      if (profile.onboarding.completed) {
+        dispatch({ type: 'COMPLETE_ONBOARDING' });
+      }
+    }
+  }, [profile]);
+
+  // Enhanced dispatch to sync with user store
+  const enhancedDispatch = (action: OnboardingAction) => {
+    dispatch(action);
+
+    // Sync specific actions with user store
+    if (action.type === 'SET_ANSWER') {
+      setOnboardingAnswer(action.key, action.value);
+    } else if (action.type === 'COMPLETE_ONBOARDING') {
+      completeOnboarding();
+    }
+  };
 
   return (
-    <OnboardingContext.Provider value={{ state, dispatch }}>
+    <OnboardingContext.Provider value={{ state, dispatch: enhancedDispatch }}>
       {children}
     </OnboardingContext.Provider>
   );

@@ -1,61 +1,64 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "lib": [
       "dom",
       "esnext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "incremental": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
+    "noEmit": true,
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "./*"
       ],
-      "@app/*": [
-        "./app/*"
+      "@src/*": [
+        "./src/*"
       ],
       "@core/*": [
         "./core/*"
       ],
       "@ui/*": [
-        "./app/ui/*"
+        "./ui/*"
       ],
       "@store/*": [
-        "./app/store/*"
+        "./store/*"
       ],
       "@components/*": [
-        "./app/components/*"
+        "./src/components/*"
       ],
       "@screens/*": [
-        "./app/screens/*"
+        "./src/screens/*"
       ],
       "@utils/*": [
-        "./app/utils/*"
+        "./src/utils/*"
       ],
       "@types/*": [
-        "./app/types/*"
+        "./types/*"
       ],
       "@ai/*": [
-        "./app/ai/*"
+        "./ai/*"
       ],
       "@assets/*": [
         "./assets/*"
       ]
-    }
+    },
+    "types": [
+      "react-native",
+      "jest",
+      "node"
+    ]
   },
   "include": [
     "**/*.ts",
@@ -70,8 +73,7 @@
     "babel.config.js",
     "metro.config.js",
     "jest.config.js",
-    "features/**",
-    "assets/server/**"
+    "App.web.tsx"
   ],
   "extends": "expo/tsconfig.base"
 }

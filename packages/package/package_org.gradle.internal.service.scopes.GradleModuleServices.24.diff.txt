@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\workers\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\kotlin-dsl-provider-plugins\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
----- DIFF ----
-org.gradle.kotlin.dsl.provider.plugins.KotlinDslProviderServices
-org.gradle.workers.internal.WorkersServices

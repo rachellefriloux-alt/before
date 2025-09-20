@@ -1,9 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\uploads.js
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\resources\uploads.js
----- DIFF ----
-// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
-const tslib_1 = require("../internal/tslib.js");
-tslib_1.__exportStar(require("./uploads/index.js"), exports);
-const tslib_1 = require("./internal/tslib.js");
-/** @deprecated Import from ./core/uploads instead */
-tslib_1.__exportStar(require("./core/uploads.js"), exports);

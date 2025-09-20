@@ -17,7 +17,7 @@ const storage = new MemStorage();
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { z } from "zod";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { insertUserSchema, insertConversationSchema, insertTaskSchema, insertMemorySchema, insertPersonaStateSchema } from "../sallie/shared/src/schema";
+import { insertUserSchema, insertConversationSchema, insertTaskSchema, insertMemorySchema, insertPersonaStateSchema } from "../../../shared/src/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);

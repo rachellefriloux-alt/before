@@ -1,3 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\build.gradle.kts
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\build.gradle.kts
----- DIFF ----

@@ -1,7 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\workers\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\language-java\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
----- DIFF ----
-org.gradle.api.internal.tasks.CompileServices
-org.gradle.language.java.internal.JavaToolchainServices
-org.gradle.language.java.internal.JavaLanguageServices
-org.gradle.workers.internal.WorkersServices

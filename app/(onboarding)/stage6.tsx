@@ -3,18 +3,33 @@ import { Text, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { OnboardingStage } from '@/components/onboarding/OnboardingStage';
 import { OnboardingButton } from '@/components/onboarding/OnboardingButton';
-import { useOnboarding } from '@/contexts/OnboardingContext';
+import { ProgressIndicator } from '@/components/onboarding/ProgressIndicator';
+import { SkipButton } from '@/components/onboarding/SkipButton';
+import { RestartButton } from '@/components/onboarding/RestartButton';
+import { useUserStore } from '@/store/user';
 
 export default function Stage6() {
-  const { state, dispatch } = useOnboarding();
+  const { profile, completeOnboarding, resetOnboarding } = useUserStore();
 
   const handleComplete = () => {
-    dispatch({ type: 'COMPLETE_ONBOARDING' });
-    router.replace('/(tabs)');
+    completeOnboarding();
+    router.replace('/');
+  };
+
+  const handleSkip = () => {
+    router.replace('/');
+  };
+
+  const handleRestart = () => {
+    resetOnboarding();
+    router.replace('/(onboarding)/stage0');
   };
 
   return (
     <OnboardingStage>
+      <SkipButton onSkip={handleSkip} />
+      <RestartButton onRestart={handleRestart} />
+      <ProgressIndicator currentStep={6} totalSteps={6} />
       <View style={styles.glyphContainer}>
         <View style={styles.userGlyph} />
         <View style={styles.connector} />
@@ -22,7 +37,7 @@ export default function Stage6() {
       </View>
       <Text style={styles.text}>
         The Convergence is complete.{'\n'}
-        From here on, every step is ours, {state.answers.name || "partner"}.
+        From here on, every step is ours, {profile?.onboarding?.answers?.name || "partner"}.
       </Text>
       <OnboardingButton title="Enter Our Space" onPress={handleComplete} />
     </OnboardingStage>

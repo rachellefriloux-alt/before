@@ -1,4 +1,3 @@
-
 import { SalliePersona, CoreBeliefs, MasteryRing, SallieCapabilities } from '../types/sallie';
 
 export const SALLIE_PERSONA: SalliePersona = {
@@ -113,15 +112,18 @@ export const SALLIE_CAPABILITIES: SallieCapabilities = {
   },
 };
 
-export class SalliePersonaEngine {
-  private currentArchetype: SalliePersona['archetype'] = 'Loyal Strategist';
-  private emotionalState: 'empowered' | 'contemplative' | 'celebratory' | 'focused' | 'resilient' = 'focused';
+type ArchetypeType = 'Loyal Strategist' | 'Soul Sister' | 'Systems Architect' | 'Myth-Keeper' | 'Wise Counselor' | 'Creative Catalyst' | 'Protective Guardian' | 'Empathetic Healer';
+type EmotionalStateType = 'empowered' | 'contemplative' | 'celebratory' | 'focused' | 'resilient';
 
-  switchArchetype(newArchetype: SalliePersona['archetype']) {
+export class SalliePersonaEngine {
+  private currentArchetype: ArchetypeType = 'Loyal Strategist';
+  private emotionalState: EmotionalStateType = 'focused';
+
+  switchArchetype(newArchetype: ArchetypeType): void {
     this.currentArchetype = newArchetype;
   }
 
-  setEmotionalState(state: typeof this.emotionalState) {
+  setEmotionalState(state: EmotionalStateType): void {
     this.emotionalState = state;
   }
 
@@ -133,18 +135,30 @@ export class SalliePersonaEngine {
     };
   }
 
+  getCoreBeliefs(): CoreBeliefs {
+    return CORE_BELIEFS;
+  }
+
+  getMasteryRings(): MasteryRing[] {
+    return MASTERY_RINGS;
+  }
+
+  getCapabilities(): SallieCapabilities {
+    return SALLIE_CAPABILITIES;
+  }
+
   getPersonaResponse(query: string): string {
-    const responses: Record<SalliePersona['archetype'], string> = {
+    const responses: Record<ArchetypeType, string> = {
       'Loyal Strategist': `Strategic analysis: ${query}`,
-      'Wise Counselor': `Thoughtful counsel: ${query}`,
-      'Creative Catalyst': `Creative inspiration: ${query}`,
-      'Protective Guardian': `Protective guidance: ${query}`,
-      'Empathetic Healer': `Empathetic healing: ${query}`,
       'Soul Sister': `Heartfelt guidance: ${query}`,
       'Systems Architect': `System design perspective: ${query}`,
       'Myth-Keeper': `Legendary wisdom: ${query}`,
+      'Wise Counselor': `Wise counsel: ${query}`,
+      'Creative Catalyst': `Creative inspiration: ${query}`,
+      'Protective Guardian': `Protective guidance: ${query}`,
+      'Empathetic Healer': `Empathetic healing: ${query}`,
     };
 
-    return responses[this.currentArchetype] || responses['Loyal Strategist'];
+    return responses[this.currentArchetype];
   }
 }

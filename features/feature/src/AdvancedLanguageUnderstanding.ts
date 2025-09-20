@@ -1,8 +1,8 @@
 /*
-Salle Persona Module: AdvancedLanguageUnderstanding
+Sallie Persona Module: AdvancedLanguageUnderstanding
 Implements sophisticated natural language understanding with context tracking, sentiment analysis,
 entity recognition, and conversational context maintenance.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 interface Entity {

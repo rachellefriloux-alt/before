@@ -1,7 +1,7 @@
 /*
-Salle Persona Module: AdvancedMemorySystem
+Sallie Persona Module: AdvancedMemorySystem
 Implements a sophisticated hierarchical memory system with short-term, long-term, and episodic memory.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 type MemoryType = 'short-term' | 'long-term' | 'episodic' | 'semantic';

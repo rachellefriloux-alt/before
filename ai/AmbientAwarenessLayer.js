@@ -250,23 +250,44 @@ class AmbientAwarenessLayer {
      * Device API: Local battery status only
      */
     async readDeviceBattery() {
-        // Simulate battery API reading (would use navigator.getBattery() in browser)
-        const level = Math.random() * 100; // Placeholder
-        let category, value;
+        try {
+            // Use Battery API if available (modern browsers)
+            if ('getBattery' in navigator) {
+                const battery = await navigator.getBattery();
+                const level = battery.level * 100;
 
-        if (level > 80) {
-            category = 'full'; value = 'Fully charged';
-        } else if (level > 50) {
-            category = 'high'; value = 'Good battery level';
-        } else if (level > 20) {
-            category = 'medium'; value = 'Moderate battery level';
-        } else if (level > 5) {
-            category = 'low'; value = 'Low battery warning';
-        } else {
-            category = 'critical'; value = 'Critical battery level';
+                let category, value;
+                if (level > 80) {
+                    category = 'full'; value = 'Fully charged';
+                } else if (level > 50) {
+                    category = 'high'; value = 'Good battery level';
+                } else if (level > 20) {
+                    category = 'medium'; value = 'Moderate battery level';
+                } else if (level > 5) {
+                    category = 'low'; value = 'Low battery warning';
+                } else {
+                    category = 'critical'; value = 'Critical battery level';
+                }
+
+                return { value, category, level: Math.round(level) };
+            } else {
+                // Fallback for devices without Battery API
+                // Could integrate with device-specific APIs here
+                return {
+                    value: 'Battery status unavailable',
+                    category: 'unknown',
+                    level: null
+                };
+            }
+        } catch (error) {
+            // Log error through ambient awareness system
+            this.logAmbientEvent('battery_read_error', { error: error.message });
+            return {
+                value: 'Battery status unavailable',
+                category: 'unknown',
+                level: null
+            };
         }
-
-        return { value, category };
     }
 
     /**
@@ -274,12 +295,37 @@ class AmbientAwarenessLayer {
      * Device API: Local charging status only
      */
     async readDeviceCharging() {
-        // Simulate charging status reading
-        const isCharging = Math.random() > 0.7; // Placeholder
-        const category = isCharging ? 'charging' : 'not_charging';
-        const value = isCharging ? 'Device is charging' : 'Device on battery power';
+        try {
+            // Use Battery API if available
+            if ('getBattery' in navigator) {
+                const battery = await navigator.getBattery();
+                const isCharging = battery.charging;
+                const category = isCharging ? 'charging' : 'not_charging';
+                const value = isCharging ? 'Device is charging' : 'Device on battery power';
 
-        return { value, category };
+                return {
+                    value,
+                    category,
+                    charging: isCharging,
+                    chargingTime: battery.chargingTime,
+                    dischargingTime: battery.dischargingTime
+                };
+            } else {
+                // Fallback for devices without Battery API
+                return {
+                    value: 'Charging status unavailable',
+                    category: 'unknown',
+                    charging: null
+                };
+            }
+        } catch (error) {
+            this.logAmbientEvent('charging_read_error', { error: error.message });
+            return {
+                value: 'Charging status unavailable',
+                category: 'unknown',
+                charging: null
+            };
+        }
     }
 
     /**
@@ -287,25 +333,53 @@ class AmbientAwarenessLayer {
      * Device API: Local connectivity status only
      */
     async readNetworkStatus() {
-        // Simulate network status reading
-        const isOnline = navigator.onLine !== false; // Placeholder
-        let category, value;
+        try {
+            const isOnline = navigator.onLine;
+            let category, value, connectionType = 'unknown';
 
-        if (!isOnline) {
-            category = 'offline'; value = 'No network connection';
-        } else {
-            // Simulate connection quality
-            const quality = Math.random();
-            if (quality > 0.8) {
-                category = 'online'; value = 'Strong connection';
-            } else if (quality > 0.5) {
-                category = 'slow'; value = 'Slow connection';
+            if (!isOnline) {
+                category = 'offline';
+                value = 'No network connection';
             } else {
-                category = 'unstable'; value = 'Unstable connection';
-            }
-        }
+                // Try to get more detailed connection information
+                if ('connection' in navigator) {
+                    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                    if (connection) {
+                        connectionType = connection.effectiveType || 'unknown';
+                        const downlink = connection.downlink || 0;
 
-        return { value, category };
+                        if (downlink > 5) {
+                            category = 'online_fast';
+                            value = 'Fast connection';
+                        } else if (downlink > 1) {
+                            category = 'online';
+                            value = 'Good connection';
+                        } else {
+                            category = 'online_slow';
+                            value = 'Slow connection';
+                        }
+                    }
+                } else {
+                    // Fallback to basic online check
+                    category = 'online';
+                    value = 'Network connection available';
+                }
+            }
+
+            return {
+                value,
+                category,
+                online: isOnline,
+                connectionType: connectionType
+            };
+        } catch (error) {
+            this.logAmbientEvent('network_read_error', { error: error.message });
+            return {
+                value: 'Network status unavailable',
+                category: 'unknown',
+                online: null
+            };
+        }
     }
 
     /**

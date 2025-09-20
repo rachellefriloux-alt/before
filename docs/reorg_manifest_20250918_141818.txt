@@ -1,0 +1,991 @@
+=== Sallie-AI Deep Reorg Manifest ===
+Moved: X:\Sallie-AI\accelerometer-back.svg -> X:\Sallie-AI\assets\icons\accelerometer-back.svg
+Moved: X:\Sallie-AI\accelerometer-front.svg -> X:\Sallie-AI\assets\icons\accelerometer-front.svg
+Moved: X:\Sallie-AI\account-tree.svg -> X:\Sallie-AI\assets\icons\account-tree.svg
+Moved: X:\Sallie-AI\align-content-center.svg -> X:\Sallie-AI\assets\icons\align-content-center.svg
+Moved: X:\Sallie-AI\align-content-end.svg -> X:\Sallie-AI\assets\icons\align-content-end.svg
+Moved: X:\Sallie-AI\align-content-space-around.svg -> X:\Sallie-AI\assets\icons\align-content-space-around.svg
+Moved: X:\Sallie-AI\align-content-space-between.svg -> X:\Sallie-AI\assets\icons\align-content-space-between.svg
+Moved: X:\Sallie-AI\align-content-space-evenly.svg -> X:\Sallie-AI\assets\icons\align-content-space-evenly.svg
+Moved: X:\Sallie-AI\align-content-start.svg -> X:\Sallie-AI\assets\icons\align-content-start.svg
+Moved: X:\Sallie-AI\align-content-stretch.svg -> X:\Sallie-AI\assets\icons\align-content-stretch.svg
+Moved: X:\Sallie-AI\align-items-baseline.svg -> X:\Sallie-AI\assets\icons\align-items-baseline.svg
+Moved: X:\Sallie-AI\align-items-center.svg -> X:\Sallie-AI\assets\icons\align-items-center.svg
+Moved: X:\Sallie-AI\align-items-end.svg -> X:\Sallie-AI\assets\icons\align-items-end.svg
+Moved: X:\Sallie-AI\align-items-start.svg -> X:\Sallie-AI\assets\icons\align-items-start.svg
+Moved: X:\Sallie-AI\align-items-stretch.svg -> X:\Sallie-AI\assets\icons\align-items-stretch.svg
+Moved: X:\Sallie-AI\align-self-center.svg -> X:\Sallie-AI\assets\icons\align-self-center.svg
+Moved: X:\Sallie-AI\align-self-end.svg -> X:\Sallie-AI\assets\icons\align-self-end.svg
+Moved: X:\Sallie-AI\align-self-start.svg -> X:\Sallie-AI\assets\icons\align-self-start.svg
+Moved: X:\Sallie-AI\align-self-stretch.svg -> X:\Sallie-AI\assets\icons\align-self-stretch.svg
+Moved: X:\Sallie-AI\animation.svg -> X:\Sallie-AI\assets\icons\animation.svg
+Moved: X:\Sallie-AI\arrow-back.svg -> X:\Sallie-AI\assets\icons\arrow-back.svg
+Moved: X:\Sallie-AI\arrow-collapse.svg -> X:\Sallie-AI\assets\icons\arrow-collapse.svg
+Moved: X:\Sallie-AI\arrow-down.svg -> X:\Sallie-AI\assets\icons\arrow-down.svg
+Moved: X:\Sallie-AI\arrow-drop-down-dark.svg -> X:\Sallie-AI\assets\icons\arrow-drop-down-dark.svg
+Moved: X:\Sallie-AI\arrow-drop-down-light.svg -> X:\Sallie-AI\assets\icons\arrow-drop-down-light.svg
+Moved: X:\Sallie-AI\arrow-drop-down.svg -> X:\Sallie-AI\assets\icons\arrow-drop-down.svg
+Moved: X:\Sallie-AI\arrow-forward.svg -> X:\Sallie-AI\assets\icons\arrow-forward.svg
+Moved: X:\Sallie-AI\arrow-right-circle.svg -> X:\Sallie-AI\assets\icons\arrow-right-circle.svg
+Moved: X:\Sallie-AI\arrow-up-down-circle.svg -> X:\Sallie-AI\assets\icons\arrow-up-down-circle.svg
+Moved: X:\Sallie-AI\arrow-up-down.svg -> X:\Sallie-AI\assets\icons\arrow-up-down.svg
+Moved: X:\Sallie-AI\arrow-up.svg -> X:\Sallie-AI\assets\icons\arrow-up.svg
+Moved: X:\Sallie-AI\bell.svg -> X:\Sallie-AI\assets\icons\bell.svg
+Moved: X:\Sallie-AI\bezier-curve-filled.svg -> X:\Sallie-AI\assets\icons\bezier-curve-filled.svg
+Moved: X:\Sallie-AI\bin.svg -> X:\Sallie-AI\assets\icons\bin.svg
+Moved: X:\Sallie-AI\bottom-panel-close.svg -> X:\Sallie-AI\assets\icons\bottom-panel-close.svg
+Moved: X:\Sallie-AI\bottom-panel-open.svg -> X:\Sallie-AI\assets\icons\bottom-panel-open.svg
+Moved: X:\Sallie-AI\brackets.svg -> X:\Sallie-AI\assets\icons\brackets.svg
+Moved: X:\Sallie-AI\breakpoint-circle.svg -> X:\Sallie-AI\assets\icons\breakpoint-circle.svg
+Moved: X:\Sallie-AI\breakpoint-crossed-filled.svg -> X:\Sallie-AI\assets\icons\breakpoint-crossed-filled.svg
+Moved: X:\Sallie-AI\breakpoint-crossed.svg -> X:\Sallie-AI\assets\icons\breakpoint-crossed.svg
+Moved: X:\Sallie-AI\browserstack-logo.svg -> X:\Sallie-AI\assets\icons\browserstack-logo.svg
+Moved: X:\Sallie-AI\brush-2.svg -> X:\Sallie-AI\assets\icons\brush-2.svg
+Moved: X:\Sallie-AI\brush-filled.svg -> X:\Sallie-AI\assets\icons\brush-filled.svg
+Moved: X:\Sallie-AI\brush.svg -> X:\Sallie-AI\assets\icons\brush.svg
+Moved: X:\Sallie-AI\bug.svg -> X:\Sallie-AI\assets\icons\bug.svg
+Moved: X:\Sallie-AI\bugcatcher.ico -> X:\Sallie-AI\assets\icons\bugcatcher.ico
+Moved: X:\Sallie-AI\bundle.svg -> X:\Sallie-AI\assets\icons\bundle.svg
+Moved: X:\Sallie-AI\button-magic.svg -> X:\Sallie-AI\assets\icons\button-magic.svg
+Moved: X:\Sallie-AI\calendar-today.svg -> X:\Sallie-AI\assets\icons\calendar-today.svg
+Moved: X:\Sallie-AI\center-focus-weak.svg -> X:\Sallie-AI\assets\icons\center-focus-weak.svg
+Moved: X:\Sallie-AI\check-circle.svg -> X:\Sallie-AI\assets\icons\check-circle.svg
+Moved: X:\Sallie-AI\check-double.svg -> X:\Sallie-AI\assets\icons\check-double.svg
+Moved: X:\Sallie-AI\checker.svg -> X:\Sallie-AI\assets\icons\checker.svg
+Moved: X:\Sallie-AI\checkmark.svg -> X:\Sallie-AI\assets\icons\checkmark.svg
+Moved: X:\Sallie-AI\chevron-double-right.svg -> X:\Sallie-AI\assets\icons\chevron-double-right.svg
+Moved: X:\Sallie-AI\chevron-down.svg -> X:\Sallie-AI\assets\icons\chevron-down.svg
+Moved: X:\Sallie-AI\chevron-left-dot.svg -> X:\Sallie-AI\assets\icons\chevron-left-dot.svg
+Moved: X:\Sallie-AI\chevron-left.svg -> X:\Sallie-AI\assets\icons\chevron-left.svg
+Moved: X:\Sallie-AI\chevron-right.svg -> X:\Sallie-AI\assets\icons\chevron-right.svg
+Moved: X:\Sallie-AI\chevron-up.svg -> X:\Sallie-AI\assets\icons\chevron-up.svg
+Moved: X:\Sallie-AI\class.svg -> X:\Sallie-AI\assets\icons\class.svg
+Moved: X:\Sallie-AI\clear-list.svg -> X:\Sallie-AI\assets\icons\clear-list.svg
+Moved: X:\Sallie-AI\clear.svg -> X:\Sallie-AI\assets\icons\clear.svg
+Moved: X:\Sallie-AI\cloud.svg -> X:\Sallie-AI\assets\icons\cloud.svg
+Moved: X:\Sallie-AI\code-circle.svg -> X:\Sallie-AI\assets\icons\code-circle.svg
+Moved: X:\Sallie-AI\code.svg -> X:\Sallie-AI\assets\icons\code.svg
+Moved: X:\Sallie-AI\colon.svg -> X:\Sallie-AI\assets\icons\colon.svg
+Moved: X:\Sallie-AI\color-picker-filled.svg -> X:\Sallie-AI\assets\icons\color-picker-filled.svg
+Moved: X:\Sallie-AI\color-picker.svg -> X:\Sallie-AI\assets\icons\color-picker.svg
+Moved: X:\Sallie-AI\compress.svg -> X:\Sallie-AI\assets\icons\compress.svg
+Moved: X:\Sallie-AI\console-conditional-breakpoint.svg -> X:\Sallie-AI\assets\icons\console-conditional-breakpoint.svg
+Moved: X:\Sallie-AI\console-logpoint.svg -> X:\Sallie-AI\assets\icons\console-logpoint.svg
+Moved: X:\Sallie-AI\cookie_off.svg -> X:\Sallie-AI\assets\icons\cookie_off.svg
+Moved: X:\Sallie-AI\cookie.svg -> X:\Sallie-AI\assets\icons\cookie.svg
+Moved: X:\Sallie-AI\copy.svg -> X:\Sallie-AI\assets\icons\copy.svg
+Moved: X:\Sallie-AI\corporate-fare.svg -> X:\Sallie-AI\assets\icons\corporate-fare.svg
+Moved: X:\Sallie-AI\credit-card.svg -> X:\Sallie-AI\assets\icons\credit-card.svg
+Moved: X:\Sallie-AI\cross-circle-filled.svg -> X:\Sallie-AI\assets\icons\cross-circle-filled.svg
+Moved: X:\Sallie-AI\cross-circle.svg -> X:\Sallie-AI\assets\icons\cross-circle.svg
+Moved: X:\Sallie-AI\cross.svg -> X:\Sallie-AI\assets\icons\cross.svg
+Moved: X:\Sallie-AI\custom-typography.svg -> X:\Sallie-AI\assets\icons\custom-typography.svg
+Moved: X:\Sallie-AI\database.svg -> X:\Sallie-AI\assets\icons\database.svg
+Moved: X:\Sallie-AI\deployed.svg -> X:\Sallie-AI\assets\icons\deployed.svg
+Moved: X:\Sallie-AI\device-fold.svg -> X:\Sallie-AI\assets\icons\device-fold.svg
+Moved: X:\Sallie-AI\devices.svg -> X:\Sallie-AI\assets\icons\devices.svg
+Moved: X:\Sallie-AI\devtools-thumbnail.svg -> X:\Sallie-AI\assets\icons\devtools-thumbnail.svg
+Moved: X:\Sallie-AI\devtools-tips.svg -> X:\Sallie-AI\assets\icons\devtools-tips.svg
+Moved: X:\Sallie-AI\devtools.svg -> X:\Sallie-AI\assets\icons\devtools.svg
+Moved: X:\Sallie-AI\difference.svg -> X:\Sallie-AI\assets\icons\difference.svg
+Moved: X:\Sallie-AI\dock-bottom.svg -> X:\Sallie-AI\assets\icons\dock-bottom.svg
+Moved: X:\Sallie-AI\dock-left.svg -> X:\Sallie-AI\assets\icons\dock-left.svg
+Moved: X:\Sallie-AI\dock-right.svg -> X:\Sallie-AI\assets\icons\dock-right.svg
+Moved: X:\Sallie-AI\dock-window.svg -> X:\Sallie-AI\assets\icons\dock-window.svg
+Moved: X:\Sallie-AI\document.svg -> X:\Sallie-AI\assets\icons\document.svg
+Moved: X:\Sallie-AI\dog-paw.svg -> X:\Sallie-AI\assets\icons\dog-paw.svg
+Moved: X:\Sallie-AI\domain.svg -> X:\Sallie-AI\assets\icons\domain.svg
+Moved: X:\Sallie-AI\dots-horizontal.svg -> X:\Sallie-AI\assets\icons\dots-horizontal.svg
+Moved: X:\Sallie-AI\dots-vertical.svg -> X:\Sallie-AI\assets\icons\dots-vertical.svg
+Moved: X:\Sallie-AI\download.svg -> X:\Sallie-AI\assets\icons\download.svg
+Moved: X:\Sallie-AI\edit.svg -> X:\Sallie-AI\assets\icons\edit.svg
+Moved: X:\Sallie-AI\empty.svg -> X:\Sallie-AI\assets\icons\empty.svg
+Moved: X:\Sallie-AI\errorWave.svg -> X:\Sallie-AI\assets\icons\errorWave.svg
+Moved: X:\Sallie-AI\exclamation.svg -> X:\Sallie-AI\assets\icons\exclamation.svg
+Moved: X:\Sallie-AI\experiment-check.svg -> X:\Sallie-AI\assets\icons\experiment-check.svg
+Moved: X:\Sallie-AI\experiment.svg -> X:\Sallie-AI\assets\icons\experiment.svg
+Moved: X:\Sallie-AI\extension.svg -> X:\Sallie-AI\assets\icons\extension.svg
+Moved: X:\Sallie-AI\eye.svg -> X:\Sallie-AI\assets\icons\eye.svg
+Moved: X:\Sallie-AI\favicon.ico -> X:\Sallie-AI\assets\icons\favicon.ico
+Moved: X:\Sallie-AI\file-document.svg -> X:\Sallie-AI\assets\icons\file-document.svg
+Moved: X:\Sallie-AI\file-fetch-xhr.svg -> X:\Sallie-AI\assets\icons\file-fetch-xhr.svg
+Moved: X:\Sallie-AI\file-font.svg -> X:\Sallie-AI\assets\icons\file-font.svg
+Moved: X:\Sallie-AI\file-generic.svg -> X:\Sallie-AI\assets\icons\file-generic.svg
+Moved: X:\Sallie-AI\file-image.svg -> X:\Sallie-AI\assets\icons\file-image.svg
+Moved: X:\Sallie-AI\file-json.svg -> X:\Sallie-AI\assets\icons\file-json.svg
+Moved: X:\Sallie-AI\file-manifest.svg -> X:\Sallie-AI\assets\icons\file-manifest.svg
+Moved: X:\Sallie-AI\file-media.svg -> X:\Sallie-AI\assets\icons\file-media.svg
+Moved: X:\Sallie-AI\file-script.svg -> X:\Sallie-AI\assets\icons\file-script.svg
+Moved: X:\Sallie-AI\file-snippet.svg -> X:\Sallie-AI\assets\icons\file-snippet.svg
+Moved: X:\Sallie-AI\file-stylesheet.svg -> X:\Sallie-AI\assets\icons\file-stylesheet.svg
+Moved: X:\Sallie-AI\file-wasm.svg -> X:\Sallie-AI\assets\icons\file-wasm.svg
+Moved: X:\Sallie-AI\file-websocket.svg -> X:\Sallie-AI\assets\icons\file-websocket.svg
+Moved: X:\Sallie-AI\filter-clear.svg -> X:\Sallie-AI\assets\icons\filter-clear.svg
+Moved: X:\Sallie-AI\filter-filled.svg -> X:\Sallie-AI\assets\icons\filter-filled.svg
+Moved: X:\Sallie-AI\filter.svg -> X:\Sallie-AI\assets\icons\filter.svg
+Moved: X:\Sallie-AI\flex-direction.svg -> X:\Sallie-AI\assets\icons\flex-direction.svg
+Moved: X:\Sallie-AI\flex-no-wrap.svg -> X:\Sallie-AI\assets\icons\flex-no-wrap.svg
+Moved: X:\Sallie-AI\flex-wrap.svg -> X:\Sallie-AI\assets\icons\flex-wrap.svg
+Moved: X:\Sallie-AI\flow.svg -> X:\Sallie-AI\assets\icons\flow.svg
+Moved: X:\Sallie-AI\fold-more.svg -> X:\Sallie-AI\assets\icons\fold-more.svg
+Moved: X:\Sallie-AI\folder.svg -> X:\Sallie-AI\assets\icons\folder.svg
+Moved: X:\Sallie-AI\frame-crossed.svg -> X:\Sallie-AI\assets\icons\frame-crossed.svg
+Moved: X:\Sallie-AI\frame-icon.svg -> X:\Sallie-AI\assets\icons\frame-icon.svg
+Moved: X:\Sallie-AI\frame.svg -> X:\Sallie-AI\assets\icons\frame.svg
+Moved: X:\Sallie-AI\gear-filled.svg -> X:\Sallie-AI\assets\icons\gear-filled.svg
+Moved: X:\Sallie-AI\gear.svg -> X:\Sallie-AI\assets\icons\gear.svg
+Moved: X:\Sallie-AI\gears.svg -> X:\Sallie-AI\assets\icons\gears.svg
+Moved: X:\Sallie-AI\global.svg -> X:\Sallie-AI\assets\icons\global.svg
+Moved: X:\Sallie-AI\google.svg -> X:\Sallie-AI\assets\icons\google.svg
+Moved: X:\Sallie-AI\goto-filled.svg -> X:\Sallie-AI\assets\icons\goto-filled.svg
+Moved: X:\Sallie-AI\grid-on.svg -> X:\Sallie-AI\assets\icons\grid-on.svg
+Moved: X:\Sallie-AI\group.svg -> X:\Sallie-AI\assets\icons\group.svg
+Moved: X:\Sallie-AI\heap-snapshot.svg -> X:\Sallie-AI\assets\icons\heap-snapshot.svg
+Moved: X:\Sallie-AI\heap-snapshots.svg -> X:\Sallie-AI\assets\icons\heap-snapshots.svg
+Moved: X:\Sallie-AI\help.svg -> X:\Sallie-AI\assets\icons\help.svg
+Moved: X:\Sallie-AI\history.svg -> X:\Sallie-AI\assets\icons\history.svg
+Moved: X:\Sallie-AI\home.svg -> X:\Sallie-AI\assets\icons\home.svg
+Moved: X:\Sallie-AI\hover.svg -> X:\Sallie-AI\assets\icons\hover.svg
+Moved: X:\Sallie-AI\iframe-crossed.svg -> X:\Sallie-AI\assets\icons\iframe-crossed.svg
+Moved: X:\Sallie-AI\iframe.svg -> X:\Sallie-AI\assets\icons\iframe.svg
+Moved: X:\Sallie-AI\import.svg -> X:\Sallie-AI\assets\icons\import.svg
+Moved: X:\Sallie-AI\indeterminate-question-box.svg -> X:\Sallie-AI\assets\icons\indeterminate-question-box.svg
+Moved: X:\Sallie-AI\info-filled.svg -> X:\Sallie-AI\assets\icons\info-filled.svg
+Moved: X:\Sallie-AI\info.svg -> X:\Sallie-AI\assets\icons\info.svg
+Moved: X:\Sallie-AI\issue-cross-filled.svg -> X:\Sallie-AI\assets\icons\issue-cross-filled.svg
+Moved: X:\Sallie-AI\issue-exclamation-filled.svg -> X:\Sallie-AI\assets\icons\issue-exclamation-filled.svg
+Moved: X:\Sallie-AI\issue-questionmark-filled.svg -> X:\Sallie-AI\assets\icons\issue-questionmark-filled.svg
+Moved: X:\Sallie-AI\issue-text-filled.svg -> X:\Sallie-AI\assets\icons\issue-text-filled.svg
+Moved: X:\Sallie-AI\justify-content-center.svg -> X:\Sallie-AI\assets\icons\justify-content-center.svg
+Moved: X:\Sallie-AI\justify-content-end.svg -> X:\Sallie-AI\assets\icons\justify-content-end.svg
+Moved: X:\Sallie-AI\justify-content-space-around.svg -> X:\Sallie-AI\assets\icons\justify-content-space-around.svg
+Moved: X:\Sallie-AI\justify-content-space-between.svg -> X:\Sallie-AI\assets\icons\justify-content-space-between.svg
+Moved: X:\Sallie-AI\justify-content-space-evenly.svg -> X:\Sallie-AI\assets\icons\justify-content-space-evenly.svg
+Moved: X:\Sallie-AI\justify-content-start.svg -> X:\Sallie-AI\assets\icons\justify-content-start.svg
+Moved: X:\Sallie-AI\justify-items-center.svg -> X:\Sallie-AI\assets\icons\justify-items-center.svg
+Moved: X:\Sallie-AI\justify-items-end.svg -> X:\Sallie-AI\assets\icons\justify-items-end.svg
+Moved: X:\Sallie-AI\justify-items-start.svg -> X:\Sallie-AI\assets\icons\justify-items-start.svg
+Moved: X:\Sallie-AI\justify-items-stretch.svg -> X:\Sallie-AI\assets\icons\justify-items-stretch.svg
+Moved: X:\Sallie-AI\keyboard-arrow-right.svg -> X:\Sallie-AI\assets\icons\keyboard-arrow-right.svg
+Moved: X:\Sallie-AI\keyboard-full.svg -> X:\Sallie-AI\assets\icons\keyboard-full.svg
+Moved: X:\Sallie-AI\keyboard-pen.svg -> X:\Sallie-AI\assets\icons\keyboard-pen.svg
+Moved: X:\Sallie-AI\keyboard.svg -> X:\Sallie-AI\assets\icons\keyboard.svg
+Moved: X:\Sallie-AI\label.svg -> X:\Sallie-AI\assets\icons\label.svg
+Moved: X:\Sallie-AI\large-arrow-right-filled.svg -> X:\Sallie-AI\assets\icons\large-arrow-right-filled.svg
+Moved: X:\Sallie-AI\layers-filled.svg -> X:\Sallie-AI\assets\icons\layers-filled.svg
+Moved: X:\Sallie-AI\layers.svg -> X:\Sallie-AI\assets\icons\layers.svg
+Moved: X:\Sallie-AI\left-panel-close.svg -> X:\Sallie-AI\assets\icons\left-panel-close.svg
+Moved: X:\Sallie-AI\left-panel-open.svg -> X:\Sallie-AI\assets\icons\left-panel-open.svg
+Moved: X:\Sallie-AI\lightbulb-spark.svg -> X:\Sallie-AI\assets\icons\lightbulb-spark.svg
+Moved: X:\Sallie-AI\lightbulb.svg -> X:\Sallie-AI\assets\icons\lightbulb.svg
+Moved: X:\Sallie-AI\lighthouse_logo.svg -> X:\Sallie-AI\assets\icons\lighthouse_logo.svg
+Moved: X:\Sallie-AI\list.svg -> X:\Sallie-AI\assets\icons\list.svg
+Moved: X:\Sallie-AI\location-on.svg -> X:\Sallie-AI\assets\icons\location-on.svg
+Moved: X:\Sallie-AI\lock.svg -> X:\Sallie-AI\assets\icons\lock.svg
+Moved: X:\Sallie-AI\match-case.svg -> X:\Sallie-AI\assets\icons\match-case.svg
+Moved: X:\Sallie-AI\match-whole-word.svg -> X:\Sallie-AI\assets\icons\match-whole-word.svg
+Moved: X:\Sallie-AI\memory.svg -> X:\Sallie-AI\assets\icons\memory.svg
+Moved: X:\Sallie-AI\minus.svg -> X:\Sallie-AI\assets\icons\minus.svg
+Moved: X:\Sallie-AI\mop.svg -> X:\Sallie-AI\assets\icons\mop.svg
+Moved: X:\Sallie-AI\mouse.svg -> X:\Sallie-AI\assets\icons\mouse.svg
+Moved: X:\Sallie-AI\network-settings.svg -> X:\Sallie-AI\assets\icons\network-settings.svg
+Moved: X:\Sallie-AI\node-stack-icon.svg -> X:\Sallie-AI\assets\icons\node-stack-icon.svg
+Moved: X:\Sallie-AI\open-externally.svg -> X:\Sallie-AI\assets\icons\open-externally.svg
+Moved: X:\Sallie-AI\override.svg -> X:\Sallie-AI\assets\icons\override.svg
+Moved: X:\Sallie-AI\palette.svg -> X:\Sallie-AI\assets\icons\palette.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\base\creator_base.svg -> X:\Sallie-AI\assets\icons\creator_base.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\base\mom_base.svg -> X:\Sallie-AI\assets\icons\mom_base.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\events\birthday_overlay.svg -> X:\Sallie-AI\assets\icons\birthday_overlay.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\events\pride_overlay.svg -> X:\Sallie-AI\assets\icons\pride_overlay.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\events\valentines_overlay.svg -> X:\Sallie-AI\assets\icons\valentines_overlay.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\base\creator_base.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\base\mom_base.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\events\birthday_overlay.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\events\pride_overlay.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\events\valentines_overlay.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\moods\high_accent.svg -> X:\Sallie-AI\assets\icons\high_accent.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\moods\low_accent.svg -> X:\Sallie-AI\assets\icons\low_accent.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\moods\reflective_accent.svg -> X:\Sallie-AI\assets\icons\reflective_accent.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\moods\steady_accent.svg -> X:\Sallie-AI\assets\icons\steady_accent.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\seasons\autumn_bg.svg -> X:\Sallie-AI\assets\icons\autumn_bg.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\seasons\spring_bg.svg -> X:\Sallie-AI\assets\icons\spring_bg.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\seasons\summer_bg.svg -> X:\Sallie-AI\assets\icons\summer_bg.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\seasons\winter_bg.svg -> X:\Sallie-AI\assets\icons\winter_bg.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\sparkle_banner\banner.svg -> X:\Sallie-AI\assets\icons\banner.svg
+Moved: X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\sparkle_banner\sparkle.svg -> X:\Sallie-AI\assets\icons\sparkle.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\high_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\low_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\reflective_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\steady_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\autumn_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\spring_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\summer_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\winter_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\sparkle_banner\banner.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\sparkle_banner\sparkle.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\pause-circle.svg -> X:\Sallie-AI\assets\icons\pause-circle.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\pause.svg -> X:\Sallie-AI\assets\icons\pause.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\pen-spark.svg -> X:\Sallie-AI\assets\icons\pen-spark.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\performance-panel-delete-annotation.svg -> X:\Sallie-AI\assets\icons\performance-panel-delete-annotation.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\performance-panel-diagram.svg -> X:\Sallie-AI\assets\icons\performance-panel-diagram.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\performance-panel-entry-label.svg -> X:\Sallie-AI\assets\icons\performance-panel-entry-label.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\performance-panel-time-range.svg -> X:\Sallie-AI\assets\icons\performance-panel-time-range.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\performance.svg -> X:\Sallie-AI\assets\icons\performance.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\person.svg -> X:\Sallie-AI\assets\icons\person.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\photo-camera.svg -> X:\Sallie-AI\assets\icons\photo-camera.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\play.svg -> X:\Sallie-AI\assets\icons\play.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\plus.svg -> X:\Sallie-AI\assets\icons\plus.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\policy.svg -> X:\Sallie-AI\assets\icons\policy.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\popup.svg -> X:\Sallie-AI\assets\icons\popup.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\preview_feature_video_thumbnail.svg -> X:\Sallie-AI\assets\icons\preview_feature_video_thumbnail.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\profile.svg -> X:\Sallie-AI\assets\icons\profile.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\psychiatry.svg -> X:\Sallie-AI\assets\icons\psychiatry.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\record-start.svg -> X:\Sallie-AI\assets\icons\record-start.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\record-stop.svg -> X:\Sallie-AI\assets\icons\record-stop.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\redo.svg -> X:\Sallie-AI\assets\icons\redo.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\refresh.svg -> X:\Sallie-AI\assets\icons\refresh.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\regular-expression.svg -> X:\Sallie-AI\assets\icons\regular-expression.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\replace.svg -> X:\Sallie-AI\assets\icons\replace.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\replay.svg -> X:\Sallie-AI\assets\icons\replay.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\report.svg -> X:\Sallie-AI\assets\icons\report.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\resizeDiagonal.svg -> X:\Sallie-AI\assets\icons\resizeDiagonal.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\resizeHorizontal.svg -> X:\Sallie-AI\assets\icons\resizeHorizontal.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\resizeVertical.svg -> X:\Sallie-AI\assets\icons\resizeVertical.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\resume.svg -> X:\Sallie-AI\assets\icons\resume.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\review.svg -> X:\Sallie-AI\assets\icons\review.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\right-panel-close.svg -> X:\Sallie-AI\assets\icons\right-panel-close.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\right-panel-open.svg -> X:\Sallie-AI\assets\icons\right-panel-open.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\scissors.svg -> X:\Sallie-AI\assets\icons\scissors.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\screen-rotation.svg -> X:\Sallie-AI\assets\icons\screen-rotation.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\search.svg -> X:\Sallie-AI\assets\icons\search.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\select-element.svg -> X:\Sallie-AI\assets\icons\select-element.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\send.svg -> X:\Sallie-AI\assets\icons\send.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\shadow.svg -> X:\Sallie-AI\assets\icons\shadow.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\small-status-dot.svg -> X:\Sallie-AI\assets\icons\small-status-dot.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\smart-assistant.svg -> X:\Sallie-AI\assets\icons\smart-assistant.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\snippet.svg -> X:\Sallie-AI\assets\icons\snippet.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\spark-info.svg -> X:\Sallie-AI\assets\icons\spark-info.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\star.svg -> X:\Sallie-AI\assets\icons\star.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\step-into.svg -> X:\Sallie-AI\assets\icons\step-into.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\step-out.svg -> X:\Sallie-AI\assets\icons\step-out.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\step-over.svg -> X:\Sallie-AI\assets\icons\step-over.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\step.svg -> X:\Sallie-AI\assets\icons\step.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\stop.svg -> X:\Sallie-AI\assets\icons\stop.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\symbol.svg -> X:\Sallie-AI\assets\icons\symbol.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\sync.svg -> X:\Sallie-AI\assets\icons\sync.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\table.svg -> X:\Sallie-AI\assets\icons\table.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\terminal.svg -> X:\Sallie-AI\assets\icons\terminal.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\thumb-down-filled.svg -> X:\Sallie-AI\assets\icons\thumb-down-filled.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\thumb-down.svg -> X:\Sallie-AI\assets\icons\thumb-down.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\thumb-up-filled.svg -> X:\Sallie-AI\assets\icons\thumb-up-filled.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\thumb-up.svg -> X:\Sallie-AI\assets\icons\thumb-up.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\tonality.svg -> X:\Sallie-AI\assets\icons\tonality.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\top-panel-close.svg -> X:\Sallie-AI\assets\icons\top-panel-close.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\top-panel-open.svg -> X:\Sallie-AI\assets\icons\top-panel-open.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\touch-app.svg -> X:\Sallie-AI\assets\icons\touch-app.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\triangle-bottom-right.svg -> X:\Sallie-AI\assets\icons\triangle-bottom-right.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\triangle-down.svg -> X:\Sallie-AI\assets\icons\triangle-down.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\triangle-left.svg -> X:\Sallie-AI\assets\icons\triangle-left.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\triangle-right.svg -> X:\Sallie-AI\assets\icons\triangle-right.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\triangle-up.svg -> X:\Sallie-AI\assets\icons\triangle-up.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\tune.svg -> X:\Sallie-AI\assets\icons\tune.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\undo.svg -> X:\Sallie-AI\assets\icons\undo.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\warning-filled.svg -> X:\Sallie-AI\assets\icons\warning-filled.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\warning.svg -> X:\Sallie-AI\assets\icons\warning.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\watch.svg -> X:\Sallie-AI\assets\icons\watch.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\whatsnew.svg -> X:\Sallie-AI\assets\icons\whatsnew.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\width.svg -> X:\Sallie-AI\assets\icons\width.svg
+Moved: X:\Sallie-AI\node_modules\@react-native\debugger-frontend\dist\third-party\front_end\Images\zoom-in.svg -> X:\Sallie-AI\assets\icons\zoom-in.svg
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-worklets-core\img\banner.svg
+Moved: X:\Sallie-AI\.airtap.yml -> X:\Sallie-AI\config\.airtap.yml
+Moved: X:\Sallie-AI\.istanbul.yml -> X:\Sallie-AI\config\.istanbul.yml
+Moved: X:\Sallie-AI\.stale.yml -> X:\Sallie-AI\config\.stale.yml
+Moved: X:\Sallie-AI\.zuul.yml -> X:\Sallie-AI\config\.zuul.yml
+Moved: X:\Sallie-AI\lh-smoke.yml -> X:\Sallie-AI\config\lh-smoke.yml
+Moved: X:\Sallie-AI\nodejs.yml -> X:\Sallie-AI\config\nodejs.yml
+Moved: X:\Sallie-AI\package-manager-ci.yml -> X:\Sallie-AI\config\package-manager-ci.yml
+Moved: X:\Sallie-AI\.github\workflows\ci.yml -> X:\Sallie-AI\config\ci.yml
+Moved: X:\Sallie-AI\apps\android-launcher\android\android\nodejs\node_modules\npm\node_modules\qrcode-terminal\.travis.yml -> X:\Sallie-AI\config\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\@egjs\hammerjs\.travis.yml
+Moved: X:\Sallie-AI\node_modules\@expo\cli\node_modules\brace-expansion\.github\FUNDING.yml -> X:\Sallie-AI\config\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\@expo\fingerprint\node_modules\brace-expansion\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\@expo\metro-config\node_modules\brace-expansion\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\@typescript-eslint\typescript-estree\node_modules\brace-expansion\.github\FUNDING.yml
+Moved: X:\Sallie-AI\node_modules\@ungap\structured-clone\.github\workflows\node.js.yml -> X:\Sallie-AI\config\node.js.yml
+Moved: X:\Sallie-AI\node_modules\@xmldom\xmldom\lib\.eslintrc.yml -> X:\Sallie-AI\config\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\ajv\scripts\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\.github\FUNDING.yml
+Moved: X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\.github\workflows\build.yml -> X:\Sallie-AI\config\build.yml
+Moved: X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\.github\workflows\publish.yml -> X:\Sallie-AI\config\publish.yml
+Skipped (exists): X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\spec\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array-buffer-byte-length\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array-includes\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.findlast\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.findlastindex\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.flat\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.flatmap\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.tosorted\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\async-function\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\async-limiter\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\available-typed-arrays\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\babel-preset-current-node-syntax\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\balanced-match\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\bl\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\call-bind\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\call-bind-apply-helpers\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\call-bound\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\chrome-launcher\.github\workflows\ci.yml
+Skipped (exists): X:\Sallie-AI\node_modules\chromium-edge-launcher\.github\workflows\ci.yml
+Moved: X:\Sallie-AI\node_modules\compression\node_modules\debug\.coveralls.yml -> X:\Sallie-AI\config\.coveralls.yml
+Skipped (exists): X:\Sallie-AI\node_modules\compression\node_modules\debug\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\concat-map\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\connect\node_modules\debug\.coveralls.yml
+Skipped (exists): X:\Sallie-AI\node_modules\connect\node_modules\debug\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\data-view-buffer\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\data-view-byte-length\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\data-view-byte-offset\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\deep-is\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\define-data-property\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\define-properties\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\dunder-proto\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\es-define-property\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\es-errors\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\es-iterator-helpers\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\es-object-atoms\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\es-shim-unscopables\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\es-to-primitive\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\eslint-plugin-react\node_modules\resolve\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\events\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\events\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\exit\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\expand-template\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\fast-json-stable-stringify\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\fast-json-stable-stringify\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\fast-json-stable-stringify\.github\FUNDING.yml
+Moved: X:\Sallie-AI\node_modules\fast-uri\.github\dependabot.yml -> X:\Sallie-AI\config\dependabot.yml
+Moved: X:\Sallie-AI\node_modules\fast-uri\.github\tests_checker.yml -> X:\Sallie-AI\config\tests_checker.yml
+Skipped (exists): X:\Sallie-AI\node_modules\fast-uri\.github\workflows\ci.yml
+Skipped (exists): X:\Sallie-AI\node_modules\fastq\.github\dependabot.yml
+Skipped (exists): X:\Sallie-AI\node_modules\fastq\.github\workflows\ci.yml
+Skipped (exists): X:\Sallie-AI\node_modules\finalhandler\node_modules\debug\.coveralls.yml
+Skipped (exists): X:\Sallie-AI\node_modules\finalhandler\node_modules\debug\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\for-each\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\function-bind\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\function.prototype.name\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\functions-have-names\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\get-intrinsic\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\get-proto\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\get-symbol-description\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\getenv\.github\workflows\node.js.yml
+Skipped (exists): X:\Sallie-AI\node_modules\github-from-package\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\glob\node_modules\brace-expansion\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\glob-to-regexp\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\gopd\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\has-bigints\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\has-property-descriptors\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\has-proto\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\has-symbols\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\has-tostringtag\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\hasown\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\iconv-lite\.github\dependabot.yml
+Skipped (exists): X:\Sallie-AI\node_modules\internal-slot\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-arguments\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-array-buffer\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-arrayish\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-bigint\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-boolean-object\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-callable\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-data-view\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-date-object\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-finalizationregistry\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-map\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-nan\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-negative-zero\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-number-object\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-set\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-shared-array-buffer\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-string\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-symbol\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-typed-array\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-weakmap\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-weakref\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\is-weakset\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\iterator.prototype\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\json-buffer\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\json-schema-traverse\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\json-schema-traverse\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\json-schema-traverse\spec\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\json-stable-stringify-without-jsonify\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\jsx-ast-utils\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\lighthouse-logger\node_modules\debug\.coveralls.yml
+Skipped (exists): X:\Sallie-AI\node_modules\lighthouse-logger\node_modules\debug\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\makeerror\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\math-intrinsics\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\minimist\.github\FUNDING.yml
+Moved: X:\Sallie-AI\node_modules\napi-build-utils\.github\workflows\run-npm-tests.yml -> X:\Sallie-AI\config\run-npm-tests.yml
+Skipped (exists): X:\Sallie-AI\node_modules\object-inspect\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\object-keys\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\object.assign\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\object.groupby\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\own-keys\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\plist\.github\workflows\ci.yml
+Skipped (exists): X:\Sallie-AI\node_modules\possible-typed-array-names\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\prebuild-install\node_modules\tar-fs\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\pump\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\pump\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\qrcode-terminal\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\qs\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\randombytes\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-ratings\.github\workflows\build.yml
+Moved: X:\Sallie-AI\node_modules\react-native-url-polyfill\.github\labeler.yml -> X:\Sallie-AI\config\labeler.yml
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-url-polyfill\.github\workflows\labeler.yml
+Skipped (exists): X:\Sallie-AI\node_modules\require-directory\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\requireg\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\requireg\node_modules\resolve\.travis.yml
+Moved: X:\Sallie-AI\node_modules\requireg\node_modules\resolve\appveyor.yml -> X:\Sallie-AI\config\appveyor.yml
+Skipped (exists): X:\Sallie-AI\node_modules\requires-port\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\resolve\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\reusify\.github\dependabot.yml
+Skipped (exists): X:\Sallie-AI\node_modules\reusify\.github\workflows\ci.yml
+Skipped (exists): X:\Sallie-AI\node_modules\safe-array-concat\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\safe-push-apply\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\safe-regex-test\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\.github\workflows\build.yml
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\.github\workflows\publish.yml
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\spec\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\send\node_modules\debug\.coveralls.yml
+Skipped (exists): X:\Sallie-AI\node_modules\send\node_modules\debug\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\serve-static\node_modules\debug\.coveralls.yml
+Skipped (exists): X:\Sallie-AI\node_modules\serve-static\node_modules\debug\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\set-function-length\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\set-function-name\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\set-proto\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\shell-quote\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel-list\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel-map\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel-weakmap\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\simple-concat\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\simple-get\.github\dependabot.yml
+Skipped (exists): X:\Sallie-AI\node_modules\simple-get\.github\workflows\ci.yml
+Skipped (exists): X:\Sallie-AI\node_modules\stop-iteration-iterator\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\stream-buffers\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\string-hash-64\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\string.prototype.matchall\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\string.prototype.repeat\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\supports-preserve-symlinks-flag\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\text-table\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-buffer\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-byte-length\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-byte-offset\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-length\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\unbox-primitive\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\walker\.travis.yml
+Skipped (exists): X:\Sallie-AI\node_modules\which-boxed-primitive\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\which-collection\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\which-typed-array\.github\FUNDING.yml
+Skipped (exists): X:\Sallie-AI\node_modules\xml2js\node_modules\xmlbuilder\appveyor.yml
+Moved: X:\Sallie-AI\.flowconfig -> X:\Sallie-AI\config\.flowconfig
+Moved: X:\Sallie-AI\.nvmrc -> X:\Sallie-AI\config\.nvmrc
+Moved: X:\Sallie-AI\metroignore -> X:\Sallie-AI\config\metroignore
+Moved: X:\Sallie-AI\.eslintcache -> X:\Sallie-AI\config\.eslintcache
+Moved: X:\Sallie-AI\node_modules\@babel\highlight\node_modules\color-name\.eslintrc.json -> X:\Sallie-AI\config\.eslintrc.json
+Moved: X:\Sallie-AI\node_modules\@expo\cli\static\template\.eslintrc.js -> X:\Sallie-AI\config\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\@expo\vector-icons\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\@react-native-community\slider\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\ajv\scripts\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\ajv-formats\node_modules\json-schema-traverse\spec\.eslintrc.yml
+Moved: X:\Sallie-AI\node_modules\array-buffer-byte-length\.eslintrc -> X:\Sallie-AI\config\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\array-includes\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.findlast\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.findlastindex\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.flat\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.flatmap\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\array.prototype.tosorted\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\arraybuffer.prototype.slice\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\async-function\.eslintrc
+Moved: X:\Sallie-AI\node_modules\async-limiter\.eslintignore -> X:\Sallie-AI\config\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\available-typed-arrays\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\bplist-parser\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\bplist-parser\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\call-bind\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\call-bind\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\call-bind-apply-helpers\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\call-bound\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\compression\node_modules\debug\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\connect\node_modules\debug\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\data-view-buffer\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\data-view-byte-length\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\data-view-byte-offset\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\define-data-property\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\define-properties\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\dunder-proto\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\entities\src\generated\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\es-abstract\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-define-property\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-errors\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-iterator-helpers\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-object-atoms\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-set-tostringtag\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-shim-unscopables\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\es-to-primitive\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\es-to-primitive\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\eslint-plugin-react\node_modules\resolve\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\expo-application\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-asset\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-av\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-battery\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-blur\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-brightness\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-camera\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-constants\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-contacts\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-crypto\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-device\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-document-picker\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-file-system\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-font\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-haptics\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-image\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-image-picker\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-intent-launcher\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-keep-awake\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-linear-gradient\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-linking\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-location\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-media-library\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-modules-autolinking\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-modules-core\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-network\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-notifications\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-secure-store\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-speech\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-splash-screen\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-status-bar\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-symbols\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-system-ui\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-task-manager\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\expo-web-browser\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\fast-json-stable-stringify\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\finalhandler\node_modules\debug\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\for-each\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\function-bind\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\function-bind\test\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\function.prototype.name\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\functions-have-names\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\get-intrinsic\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\get-proto\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\get-symbol-description\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\globalthis\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\gopd\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\handlebars\bin\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\handlebars\lib\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\has-bigints\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\has-property-descriptors\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\has-proto\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\has-symbols\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\has-tostringtag\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\hasown\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\internal-slot\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-arguments\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-array-buffer\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-async-function\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-bigint\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-boolean-object\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-callable\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-core-module\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-data-view\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-date-object\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-finalizationregistry\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-generator-function\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-map\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-nan\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\is-nan\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-negative-zero\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-number-object\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-regex\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-set\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-shared-array-buffer\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-string\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-symbol\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-typed-array\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-weakmap\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-weakref\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\is-weakset\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\iterator.prototype\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\json-schema-traverse\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\json-schema-traverse\spec\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\jsx-ast-utils\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\jsx-ast-utils\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\lighthouse-logger\node_modules\debug\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\log-symbols\node_modules\color-name\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\math-intrinsics\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\minimist\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object-inspect\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object-is\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object-keys\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.assign\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.entries\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.entries\test\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.fromentries\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.groupby\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.values\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\object.values\test\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\ora\node_modules\color-name\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\own-keys\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\pngjs\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\possible-typed-array-names\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\qs\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-elements\node_modules\color-name\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-paper\node_modules\color-name\.eslintrc.json
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-paper\src\babel\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-ratings\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-url-polyfill\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-url-polyfill\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\reflect.getprototypeof\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\regexp.prototype.flags\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\requireg\node_modules\resolve\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\requireg\node_modules\resolve\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\requireg\node_modules\resolve\test\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\resolve\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\safe-array-concat\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\safe-push-apply\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\safe-regex-test\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\schema-utils\node_modules\json-schema-traverse\spec\.eslintrc.yml
+Skipped (exists): X:\Sallie-AI\node_modules\send\node_modules\debug\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\serve-static\node_modules\debug\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\set-function-length\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\set-function-name\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\set-proto\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\shell-quote\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel-list\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel-map\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\side-channel-weakmap\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\simple-plist\node_modules\bplist-parser\.eslintignore
+Skipped (exists): X:\Sallie-AI\node_modules\simple-plist\node_modules\bplist-parser\.eslintrc.js
+Skipped (exists): X:\Sallie-AI\node_modules\stop-iteration-iterator\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\string.prototype.matchall\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\string.prototype.trim\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\string.prototype.trimend\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\string.prototype.trimstart\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\supports-preserve-symlinks-flag\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-buffer\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-byte-length\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-byte-offset\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\typed-array-length\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\unbox-primitive\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\which-boxed-primitive\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\which-builtin-type\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\which-collection\.eslintrc
+Skipped (exists): X:\Sallie-AI\node_modules\which-typed-array\.eslintrc
+Moved: X:\Sallie-AI\node_modules\@egjs\hammerjs\.babelrc -> X:\Sallie-AI\config\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\esrecurse\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\expo-keep-awake\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\expo-splash-screen\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\gensync\test\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\istanbul-reports\lib\html-spa\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\jsx-ast-utils\.babelrc
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-ratings\.babelrc
+Moved: X:\Sallie-AI\10-stderr.txt -> X:\Sallie-AI\docs\10-stderr.txt
+Moved: X:\Sallie-AI\10-stdout-stderr.txt -> X:\Sallie-AI\docs\10-stdout-stderr.txt
+Moved: X:\Sallie-AI\10-stdout.txt -> X:\Sallie-AI\docs\10-stdout.txt
+Moved: X:\Sallie-AI\100-stderr.txt -> X:\Sallie-AI\docs\100-stderr.txt
+Moved: X:\Sallie-AI\100-stdout-stderr.txt -> X:\Sallie-AI\docs\100-stdout-stderr.txt
+Moved: X:\Sallie-AI\100-stdout.txt -> X:\Sallie-AI\docs\100-stdout.txt
+Moved: X:\Sallie-AI\1000-stderr.txt -> X:\Sallie-AI\docs\1000-stderr.txt
+Moved: X:\Sallie-AI\1000-stdout-stderr.txt -> X:\Sallie-AI\docs\1000-stdout-stderr.txt
+Moved: X:\Sallie-AI\1000-stdout.txt -> X:\Sallie-AI\docs\1000-stdout.txt
+Moved: X:\Sallie-AI\activity_actions.txt -> X:\Sallie-AI\docs\activity_actions.txt
+Moved: X:\Sallie-AI\aes.md -> X:\Sallie-AI\docs\aes.md
+Moved: X:\Sallie-AI\Agent.md -> X:\Sallie-AI\docs\Agent.md
+Moved: X:\Sallie-AI\android_application_profiling.md -> X:\Sallie-AI\docs\android_application_profiling.md
+Moved: X:\Sallie-AI\ANDROID_COMPANION_PORT.md -> X:\Sallie-AI\docs\ANDROID_COMPANION_PORT.md
+Moved: X:\Sallie-AI\android_platform_profiling.md -> X:\Sallie-AI\docs\android_platform_profiling.md
+Moved: X:\Sallie-AI\android-info.txt -> X:\Sallie-AI\docs\android-info.txt
+Moved: X:\Sallie-AI\AndroidVersion.txt -> X:\Sallie-AI\docs\AndroidVersion.txt
+Moved: X:\Sallie-AI\api-lifecycle.md -> X:\Sallie-AI\docs\api-lifecycle.md
+Moved: X:\Sallie-AI\architecture.md -> X:\Sallie-AI\docs\architecture.md
+Moved: X:\Sallie-AI\arInsecureContext.md -> X:\Sallie-AI\docs\arInsecureContext.md
+Moved: X:\Sallie-AI\arInvalidInfoHeader.md -> X:\Sallie-AI\docs\arInvalidInfoHeader.md
+Moved: X:\Sallie-AI\arInvalidRegisterOsSourceHeader.md -> X:\Sallie-AI\docs\arInvalidRegisterOsSourceHeader.md
+Moved: X:\Sallie-AI\arInvalidRegisterOsTriggerHeader.md -> X:\Sallie-AI\docs\arInvalidRegisterOsTriggerHeader.md
+Moved: X:\Sallie-AI\arInvalidRegisterSourceHeader.md -> X:\Sallie-AI\docs\arInvalidRegisterSourceHeader.md
+Moved: X:\Sallie-AI\arInvalidRegisterTriggerHeader.md -> X:\Sallie-AI\docs\arInvalidRegisterTriggerHeader.md
+Moved: X:\Sallie-AI\arNavigationRegistrationUniqueScopeAlreadySet.md -> X:\Sallie-AI\docs\arNavigationRegistrationUniqueScopeAlreadySet.md
+Moved: X:\Sallie-AI\arNavigationRegistrationWithoutTransientUserActivation.md -> X:\Sallie-AI\docs\arNavigationRegistrationWithoutTransientUserActivation.md
+Moved: X:\Sallie-AI\arNoRegisterOsSourceHeader.md -> X:\Sallie-AI\docs\arNoRegisterOsSourceHeader.md
+Moved: X:\Sallie-AI\arNoRegisterOsTriggerHeader.md -> X:\Sallie-AI\docs\arNoRegisterOsTriggerHeader.md
+Moved: X:\Sallie-AI\arNoRegisterSourceHeader.md -> X:\Sallie-AI\docs\arNoRegisterSourceHeader.md
+Moved: X:\Sallie-AI\arNoRegisterTriggerHeader.md -> X:\Sallie-AI\docs\arNoRegisterTriggerHeader.md
+Moved: X:\Sallie-AI\arNoWebOrOsSupport.md -> X:\Sallie-AI\docs\arNoWebOrOsSupport.md
+Moved: X:\Sallie-AI\arOsSourceIgnored.md -> X:\Sallie-AI\docs\arOsSourceIgnored.md
+Moved: X:\Sallie-AI\arOsTriggerIgnored.md -> X:\Sallie-AI\docs\arOsTriggerIgnored.md
+Moved: X:\Sallie-AI\arPermissionPolicyDisabled.md -> X:\Sallie-AI\docs\arPermissionPolicyDisabled.md
+Moved: X:\Sallie-AI\arSourceAndTriggerHeaders.md -> X:\Sallie-AI\docs\arSourceAndTriggerHeaders.md
+Moved: X:\Sallie-AI\arSourceIgnored.md -> X:\Sallie-AI\docs\arSourceIgnored.md
+Moved: X:\Sallie-AI\arTriggerIgnored.md -> X:\Sallie-AI\docs\arTriggerIgnored.md
+Moved: X:\Sallie-AI\arUntrustworthyReportingOrigin.md -> X:\Sallie-AI\docs\arUntrustworthyReportingOrigin.md
+Moved: X:\Sallie-AI\arWebAndOsHeaders.md -> X:\Sallie-AI\docs\arWebAndOsHeaders.md
+Moved: X:\Sallie-AI\asan_ignorelist.txt -> X:\Sallie-AI\docs\asan_ignorelist.txt
+Moved: X:\Sallie-AI\asm.md -> X:\Sallie-AI\docs\asm.md
+Moved: X:\Sallie-AI\ASSET_REQUIREMENTS.md -> X:\Sallie-AI\docs\ASSET_REQUIREMENTS.md
+Moved: X:\Sallie-AI\AUTHORS.md -> X:\Sallie-AI\docs\AUTHORS.md
+Moved: X:\Sallie-AI\AUTONOMOUS_PROGRAMMING_SUMMARY.md -> X:\Sallie-AI\docs\AUTONOMOUS_PROGRAMMING_SUMMARY.md
+Moved: X:\Sallie-AI\BackendSyncService-destroy.txt -> X:\Sallie-AI\docs\BackendSyncService-destroy.txt
+Moved: X:\Sallie-AI\BalancedPool.md -> X:\Sallie-AI\docs\BalancedPool.md
+Moved: X:\Sallie-AI\bcel.md -> X:\Sallie-AI\docs\bcel.md
+Moved: X:\Sallie-AI\bounceTrackingMitigations.md -> X:\Sallie-AI\docs\bounceTrackingMitigations.md
+Moved: X:\Sallie-AI\brand.md -> X:\Sallie-AI\docs\brand.md
+Moved: X:\Sallie-AI\broadcast_actions.txt -> X:\Sallie-AI\docs\broadcast_actions.txt
+Moved: X:\Sallie-AI\bug_report.md -> X:\Sallie-AI\docs\bug_report.md
+Moved: X:\Sallie-AI\c-libutl.md -> X:\Sallie-AI\docs\c-libutl.md
+Moved: X:\Sallie-AI\CacheStorage.md -> X:\Sallie-AI\docs\CacheStorage.md
+Moved: X:\Sallie-AI\categories.txt -> X:\Sallie-AI\docs\categories.txt
+Moved: X:\Sallie-AI\cfi_ignorelist.txt -> X:\Sallie-AI\docs\cfi_ignorelist.txt
+Moved: X:\Sallie-AI\CHECK_ALL_DOCS.md -> X:\Sallie-AI\docs\CHECK_ALL_DOCS.md
+Moved: X:\Sallie-AI\chrome-flags-for-tools.md -> X:\Sallie-AI\docs\chrome-flags-for-tools.md
+Moved: X:\Sallie-AI\CI_CD_PIPELINE.md -> X:\Sallie-AI\docs\CI_CD_PIPELINE.md
+Moved: X:\Sallie-AI\clang_source_info.md -> X:\Sallie-AI\docs\clang_source_info.md
+Moved: X:\Sallie-AI\cldr.md -> X:\Sallie-AI\docs\cldr.md
+Moved: X:\Sallie-AI\client-certificate.md -> X:\Sallie-AI\docs\client-certificate.md
+Moved: X:\Sallie-AI\Client.md -> X:\Sallie-AI\docs\Client.md
+Moved: X:\Sallie-AI\clientHintMetaTagAllowListInvalidOrigin.md -> X:\Sallie-AI\docs\clientHintMetaTagAllowListInvalidOrigin.md
+Moved: X:\Sallie-AI\clientHintMetaTagModifiedHTML.md -> X:\Sallie-AI\docs\clientHintMetaTagModifiedHTML.md
+Moved: X:\Sallie-AI\CMakeLists.txt -> X:\Sallie-AI\docs\CMakeLists.txt
+Moved: X:\Sallie-AI\CoepCoopSandboxedIframeCannotNavigateToCoopPage.md -> X:\Sallie-AI\docs\CoepCoopSandboxedIframeCannotNavigateToCoopPage.md
+Moved: X:\Sallie-AI\CoepCorpNotSameOrigin.md -> X:\Sallie-AI\docs\CoepCorpNotSameOrigin.md
+Moved: X:\Sallie-AI\CoepCorpNotSameOriginAfterDefaultedToSameOriginByCoep.md -> X:\Sallie-AI\docs\CoepCorpNotSameOriginAfterDefaultedToSameOriginByCoep.md
+Moved: X:\Sallie-AI\CoepCorpNotSameSite.md -> X:\Sallie-AI\docs\CoepCorpNotSameSite.md
+Moved: X:\Sallie-AI\CoepFrameResourceNeedsCoepHeader.md -> X:\Sallie-AI\docs\CoepFrameResourceNeedsCoepHeader.md
+Moved: X:\Sallie-AI\collect_etm_data_for_autofdo.md -> X:\Sallie-AI\docs\collect_etm_data_for_autofdo.md
+Moved: X:\Sallie-AI\colorimaging.md -> X:\Sallie-AI\docs\colorimaging.md
+Moved: X:\Sallie-AI\CommunicationSystem_Implementation.md -> X:\Sallie-AI\docs\CommunicationSystem_Implementation.md
+Moved: X:\Sallie-AI\CompatibilityModeQuirks.md -> X:\Sallie-AI\docs\CompatibilityModeQuirks.md
+Moved: X:\Sallie-AI\COMPLETE_CHECKLIST.md -> X:\Sallie-AI\docs\COMPLETE_CHECKLIST.md
+Moved: X:\Sallie-AI\CompletePersonalitySystem.md -> X:\Sallie-AI\docs\CompletePersonalitySystem.md
+Moved: X:\Sallie-AI\ComposeUIComponents_Completion.md -> X:\Sallie-AI\docs\ComposeUIComponents_Completion.md
+Moved: X:\Sallie-AI\CONCEPTS.md -> X:\Sallie-AI\docs\CONCEPTS.md
+Moved: X:\Sallie-AI\ConfigurableFormData.md -> X:\Sallie-AI\docs\ConfigurableFormData.md
+Moved: X:\Sallie-AI\configuration.md -> X:\Sallie-AI\docs\configuration.md
+Moved: X:\Sallie-AI\Connector.md -> X:\Sallie-AI\docs\Connector.md
+Moved: X:\Sallie-AI\ConsentFlow.md -> X:\Sallie-AI\docs\ConsentFlow.md
+Moved: X:\Sallie-AI\consistent-type-specifier-style.md -> X:\Sallie-AI\docs\consistent-type-specifier-style.md
+Moved: X:\Sallie-AI\ContentType.md -> X:\Sallie-AI\docs\ContentType.md
+Moved: X:\Sallie-AI\CookieAttributeValueExceedsMaxSize.md -> X:\Sallie-AI\docs\CookieAttributeValueExceedsMaxSize.md
+Moved: X:\Sallie-AI\cookieCrossSiteRedirectDowngrade.md -> X:\Sallie-AI\docs\cookieCrossSiteRedirectDowngrade.md
+Moved: X:\Sallie-AI\cookieExcludeBlockedWithinRelatedWebsiteSet.md -> X:\Sallie-AI\docs\cookieExcludeBlockedWithinRelatedWebsiteSet.md
+Moved: X:\Sallie-AI\cookieExcludeDomainNonAscii.md -> X:\Sallie-AI\docs\cookieExcludeDomainNonAscii.md
+Moved: X:\Sallie-AI\cookieExcludePortMismatch.md -> X:\Sallie-AI\docs\cookieExcludePortMismatch.md
+Moved: X:\Sallie-AI\cookieExcludeSchemeMismatch.md -> X:\Sallie-AI\docs\cookieExcludeSchemeMismatch.md
+Moved: X:\Sallie-AI\cookieExcludeThirdPartyPhaseoutRead.md -> X:\Sallie-AI\docs\cookieExcludeThirdPartyPhaseoutRead.md
+Moved: X:\Sallie-AI\cookieExcludeThirdPartyPhaseoutSet.md -> X:\Sallie-AI\docs\cookieExcludeThirdPartyPhaseoutSet.md
+Moved: X:\Sallie-AI\Cookies.md -> X:\Sallie-AI\docs\Cookies.md
+Moved: X:\Sallie-AI\cookieWarnDomainNonAscii.md -> X:\Sallie-AI\docs\cookieWarnDomainNonAscii.md
+Moved: X:\Sallie-AI\cookieWarnMetadataGrantRead.md -> X:\Sallie-AI\docs\cookieWarnMetadataGrantRead.md
+Moved: X:\Sallie-AI\cookieWarnMetadataGrantSet.md -> X:\Sallie-AI\docs\cookieWarnMetadataGrantSet.md
+Moved: X:\Sallie-AI\cookieWarnThirdPartyPhaseoutRead.md -> X:\Sallie-AI\docs\cookieWarnThirdPartyPhaseoutRead.md
+Moved: X:\Sallie-AI\cookieWarnThirdPartyPhaseoutSet.md -> X:\Sallie-AI\docs\cookieWarnThirdPartyPhaseoutSet.md
+Moved: X:\Sallie-AI\COPILOT_AGENT_INSTRUCTIONS.md -> X:\Sallie-AI\docs\COPILOT_AGENT_INSTRUCTIONS.md
+Moved: X:\Sallie-AI\copoldilot-instoldructions.md -> X:\Sallie-AI\docs\copoldilot-instoldructions.md
+Moved: X:\Sallie-AI\CopyrightNotice.txt -> X:\Sallie-AI\docs\CopyrightNotice.txt
+Moved: X:\Sallie-AI\corsAllowCredentialsRequired.md -> X:\Sallie-AI\docs\corsAllowCredentialsRequired.md
+Moved: X:\Sallie-AI\corsDisabledScheme.md -> X:\Sallie-AI\docs\corsDisabledScheme.md
+Moved: X:\Sallie-AI\corsDisallowedByMode.md -> X:\Sallie-AI\docs\corsDisallowedByMode.md
+Moved: X:\Sallie-AI\corsHeaderDisallowedByPreflightResponse.md -> X:\Sallie-AI\docs\corsHeaderDisallowedByPreflightResponse.md
+Moved: X:\Sallie-AI\corsInsecurePrivateNetwork.md -> X:\Sallie-AI\docs\corsInsecurePrivateNetwork.md
+Moved: X:\Sallie-AI\corsInvalidHeaderValues.md -> X:\Sallie-AI\docs\corsInvalidHeaderValues.md
+Moved: X:\Sallie-AI\corsLocalNetworkAccessPermissionDenied.md -> X:\Sallie-AI\docs\corsLocalNetworkAccessPermissionDenied.md
+Moved: X:\Sallie-AI\corsMethodDisallowedByPreflightResponse.md -> X:\Sallie-AI\docs\corsMethodDisallowedByPreflightResponse.md
+Moved: X:\Sallie-AI\corsNoCorsRedirectModeNotFollow.md -> X:\Sallie-AI\docs\corsNoCorsRedirectModeNotFollow.md
+Moved: X:\Sallie-AI\corsOriginMismatch.md -> X:\Sallie-AI\docs\corsOriginMismatch.md
+Moved: X:\Sallie-AI\corsPreflightAllowPrivateNetworkError.md -> X:\Sallie-AI\docs\corsPreflightAllowPrivateNetworkError.md
+Moved: X:\Sallie-AI\corsPreflightResponseInvalid.md -> X:\Sallie-AI\docs\corsPreflightResponseInvalid.md
+Moved: X:\Sallie-AI\corsPrivateNetworkPermissionDenied.md -> X:\Sallie-AI\docs\corsPrivateNetworkPermissionDenied.md
+Moved: X:\Sallie-AI\corsRedirectContainsCredentials.md -> X:\Sallie-AI\docs\corsRedirectContainsCredentials.md
+Moved: X:\Sallie-AI\corsWildcardOriginNotAllowed.md -> X:\Sallie-AI\docs\corsWildcardOriginNotAllowed.md
+Moved: X:\Sallie-AI\cspEvalViolation.md -> X:\Sallie-AI\docs\cspEvalViolation.md
+Moved: X:\Sallie-AI\cspInlineViolation.md -> X:\Sallie-AI\docs\cspInlineViolation.md
+Moved: X:\Sallie-AI\cspTrustedTypesPolicyViolation.md -> X:\Sallie-AI\docs\cspTrustedTypesPolicyViolation.md
+Moved: X:\Sallie-AI\cspTrustedTypesSinkViolation.md -> X:\Sallie-AI\docs\cspTrustedTypesSinkViolation.md
+Moved: X:\Sallie-AI\cspURLViolation.md -> X:\Sallie-AI\docs\cspURLViolation.md
+Moved: X:\Sallie-AI\debug_dwarf_unwinding.md -> X:\Sallie-AI\docs\debug_dwarf_unwinding.md
+Moved: X:\Sallie-AI\Debug.md -> X:\Sallie-AI\docs\Debug.md
+Moved: X:\Sallie-AI\default.md -> X:\Sallie-AI\docs\default.md
+Moved: X:\Sallie-AI\deprecation.md -> X:\Sallie-AI\docs\deprecation.md
+Moved: X:\Sallie-AI\DeviceControlIntegration_Completion.md -> X:\Sallie-AI\docs\DeviceControlIntegration_Completion.md
+Moved: X:\Sallie-AI\DeviceControlIntegration.md -> X:\Sallie-AI\docs\DeviceControlIntegration.md
+Moved: X:\Sallie-AI\dfsan_abilist.txt -> X:\Sallie-AI\docs\dfsan_abilist.txt
+Moved: X:\Sallie-AI\DiagnosticsChannel.md -> X:\Sallie-AI\docs\DiagnosticsChannel.md
+Moved: X:\Sallie-AI\Dispatcher.md -> X:\Sallie-AI\docs\Dispatcher.md
+Moved: X:\Sallie-AI\DispatchInterceptor.md -> X:\Sallie-AI\docs\DispatchInterceptor.md
+Moved: X:\Sallie-AI\dom.md -> X:\Sallie-AI\docs\dom.md
+Moved: X:\Sallie-AI\dynalink.md -> X:\Sallie-AI\docs\dynalink.md
+Moved: X:\Sallie-AI\dynamic-import-chunkname.md -> X:\Sallie-AI\docs\dynamic-import-chunkname.md
+Moved: X:\Sallie-AI\edge-flags-for-tools.md -> X:\Sallie-AI\docs\edge-flags-for-tools.md
+Moved: X:\Sallie-AI\EmotionalIntelligenceEnhancement_Implementation.md -> X:\Sallie-AI\docs\EmotionalIntelligenceEnhancement_Implementation.md
+Moved: X:\Sallie-AI\EmotionalIntelligenceEnhancement.md -> X:\Sallie-AI\docs\EmotionalIntelligenceEnhancement.md
+Moved: X:\Sallie-AI\empty_ranging_fw.txt -> X:\Sallie-AI\docs\empty_ranging_fw.txt
+Moved: X:\Sallie-AI\enforce-node-protocol-usage.md -> X:\Sallie-AI\docs\enforce-node-protocol-usage.md
+Moved: X:\Sallie-AI\ENHANCED_COMPONENTS_README.md -> X:\Sallie-AI\docs\ENHANCED_COMPONENTS_README.md
+Moved: X:\Sallie-AI\ENHANCEMENT_SUMMARY.md -> X:\Sallie-AI\docs\ENHANCEMENT_SUMMARY.md
+Moved: X:\Sallie-AI\EnvHttpProxyAgent.md -> X:\Sallie-AI\docs\EnvHttpProxyAgent.md
+Moved: X:\Sallie-AI\Errors.md -> X:\Sallie-AI\docs\Errors.md
+Moved: X:\Sallie-AI\EthicalDilemmaAnalysisFramework.md -> X:\Sallie-AI\docs\EthicalDilemmaAnalysisFramework.md
+Moved: X:\Sallie-AI\EventSource.md -> X:\Sallie-AI\docs\EventSource.md
+Moved: X:\Sallie-AI\executable_commands_reference.md -> X:\Sallie-AI\docs\executable_commands_reference.md
+Moved: X:\Sallie-AI\ExpertModuleEnhancement.md -> X:\Sallie-AI\docs\ExpertModuleEnhancement.md
+Moved: X:\Sallie-AI\export.md -> X:\Sallie-AI\docs\export.md
+Moved: X:\Sallie-AI\exports-last.md -> X:\Sallie-AI\docs\exports-last.md
+Moved: X:\Sallie-AI\extensions.md -> X:\Sallie-AI\docs\extensions.md
+Moved: X:\Sallie-AI\failure-snippet.txt -> X:\Sallie-AI\docs\failure-snippet.txt
+Moved: X:\Sallie-AI\feature_README.md -> X:\Sallie-AI\docs\feature_README.md
+Moved: X:\Sallie-AI\features.txt -> X:\Sallie-AI\docs\features.txt
+Moved: X:\Sallie-AI\federatedAuthRequestAccountsHttpNotFound.md -> X:\Sallie-AI\docs\federatedAuthRequestAccountsHttpNotFound.md
+Moved: X:\Sallie-AI\federatedAuthRequestAccountsInvalidResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestAccountsInvalidResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestAccountsNoResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestAccountsNoResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestApprovalDeclined.md -> X:\Sallie-AI\docs\federatedAuthRequestApprovalDeclined.md
+Moved: X:\Sallie-AI\federatedAuthRequestCanceled.md -> X:\Sallie-AI\docs\federatedAuthRequestCanceled.md
+Moved: X:\Sallie-AI\federatedAuthRequestClientMetadataHttpNotFound.md -> X:\Sallie-AI\docs\federatedAuthRequestClientMetadataHttpNotFound.md
+Moved: X:\Sallie-AI\federatedAuthRequestClientMetadataInvalidResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestClientMetadataInvalidResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestClientMetadataNoResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestClientMetadataNoResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestErrorFetchingSignin.md -> X:\Sallie-AI\docs\federatedAuthRequestErrorFetchingSignin.md
+Moved: X:\Sallie-AI\federatedAuthRequestErrorIdToken.md -> X:\Sallie-AI\docs\federatedAuthRequestErrorIdToken.md
+Moved: X:\Sallie-AI\federatedAuthRequestIdTokenHttpNotFound.md -> X:\Sallie-AI\docs\federatedAuthRequestIdTokenHttpNotFound.md
+Moved: X:\Sallie-AI\federatedAuthRequestIdTokenInvalidRequest.md -> X:\Sallie-AI\docs\federatedAuthRequestIdTokenInvalidRequest.md
+Moved: X:\Sallie-AI\federatedAuthRequestIdTokenInvalidResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestIdTokenInvalidResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestIdTokenNoResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestIdTokenNoResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestInvalidSigninResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestInvalidSigninResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestManifestHttpNotFound.md -> X:\Sallie-AI\docs\federatedAuthRequestManifestHttpNotFound.md
+Moved: X:\Sallie-AI\federatedAuthRequestManifestInvalidResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestManifestInvalidResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestManifestNoResponse.md -> X:\Sallie-AI\docs\federatedAuthRequestManifestNoResponse.md
+Moved: X:\Sallie-AI\federatedAuthRequestTooManyRequests.md -> X:\Sallie-AI\docs\federatedAuthRequestTooManyRequests.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestInvalidAccountsResponse.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestInvalidAccountsResponse.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestInvalidConfigOrWellKnown.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestInvalidConfigOrWellKnown.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNoAccountSharingPermission.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNoAccountSharingPermission.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNoApiPermission.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNoApiPermission.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNoReturningUserFromFetchedAccounts.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNoReturningUserFromFetchedAccounts.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNotIframe.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNotIframe.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNotPotentiallyTrustworthy.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNotPotentiallyTrustworthy.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNotSameOrigin.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNotSameOrigin.md
+Moved: X:\Sallie-AI\federatedAuthUserInfoRequestNotSignedInWithIdp.md -> X:\Sallie-AI\docs\federatedAuthUserInfoRequestNotSignedInWithIdp.md
+Moved: X:\Sallie-AI\Fetch.md -> X:\Sallie-AI\docs\Fetch.md
+Moved: X:\Sallie-AI\fetchingPartitionedBlobURL.md -> X:\Sallie-AI\docs\fetchingPartitionedBlobURL.md
+Moved: X:\Sallie-AI\first.md -> X:\Sallie-AI\docs\first.md
+Moved: X:\Sallie-AI\FONTAWESOME5.md -> X:\Sallie-AI\docs\FONTAWESOME5.md
+Moved: X:\Sallie-AI\FONTAWESOME6.md -> X:\Sallie-AI\docs\FONTAWESOME6.md
+Moved: X:\Sallie-AI\freetype.md -> X:\Sallie-AI\docs\freetype.md
+Moved: X:\Sallie-AI\genericFormAriaLabelledByToNonExistingId.md -> X:\Sallie-AI\docs\genericFormAriaLabelledByToNonExistingId.md
+Moved: X:\Sallie-AI\genericFormAutocompleteAttributeEmptyError.md -> X:\Sallie-AI\docs\genericFormAutocompleteAttributeEmptyError.md
+Moved: X:\Sallie-AI\genericFormDuplicateIdForInputError.md -> X:\Sallie-AI\docs\genericFormDuplicateIdForInputError.md
+Moved: X:\Sallie-AI\genericFormEmptyIdAndNameAttributesForInputError.md -> X:\Sallie-AI\docs\genericFormEmptyIdAndNameAttributesForInputError.md
+Moved: X:\Sallie-AI\genericFormInputAssignedAutocompleteValueToIdOrNameAttributeError.md -> X:\Sallie-AI\docs\genericFormInputAssignedAutocompleteValueToIdOrNameAttributeError.md
+Moved: X:\Sallie-AI\genericFormInputHasWrongButWellIntendedAutocompleteValueError.md -> X:\Sallie-AI\docs\genericFormInputHasWrongButWellIntendedAutocompleteValueError.md
+Moved: X:\Sallie-AI\genericFormInputWithNoLabelError.md -> X:\Sallie-AI\docs\genericFormInputWithNoLabelError.md
+Moved: X:\Sallie-AI\genericFormLabelForMatchesNonExistingIdError.md -> X:\Sallie-AI\docs\genericFormLabelForMatchesNonExistingIdError.md
+Moved: X:\Sallie-AI\genericFormLabelForNameError.md -> X:\Sallie-AI\docs\genericFormLabelForNameError.md
+Moved: X:\Sallie-AI\genericFormLabelHasNeitherForNorNestedInput.md -> X:\Sallie-AI\docs\genericFormLabelHasNeitherForNorNestedInput.md
+Moved: X:\Sallie-AI\genericResponseWasBlockedByORB.md -> X:\Sallie-AI\docs\genericResponseWasBlockedByORB.md
+Moved: X:\Sallie-AI\getting-started.md -> X:\Sallie-AI\docs\getting-started.md
+Moved: X:\Sallie-AI\giflib.md -> X:\Sallie-AI\docs\giflib.md
+Moved: X:\Sallie-AI\googletest-output-test-golden-lin.txt -> X:\Sallie-AI\docs\googletest-output-test-golden-lin.txt
+Moved: X:\Sallie-AI\GOVERNANCE.md -> X:\Sallie-AI\docs\GOVERNANCE.md
+Moved: X:\Sallie-AI\Grammar.txt -> X:\Sallie-AI\docs\Grammar.txt
+Moved: X:\Sallie-AI\group-exports.md -> X:\Sallie-AI\docs\group-exports.md
+Moved: X:\Sallie-AI\harfbuzz.md -> X:\Sallie-AI\docs\harfbuzz.md
+Moved: X:\Sallie-AI\heavyAd.md -> X:\Sallie-AI\docs\heavyAd.md
+Moved: X:\Sallie-AI\hello.txt -> X:\Sallie-AI\docs\hello.txt
+Moved: X:\Sallie-AI\help.txt -> X:\Sallie-AI\docs\help.txt
+Moved: X:\Sallie-AI\hwasan_ignorelist.txt -> X:\Sallie-AI\docs\hwasan_ignorelist.txt
+Moved: X:\Sallie-AI\icu.md -> X:\Sallie-AI\docs\icu.md
+Moved: X:\Sallie-AI\identityProtocols.md -> X:\Sallie-AI\docs\identityProtocols.md
+Moved: X:\Sallie-AI\idleness.txt -> X:\Sallie-AI\docs\idleness.txt
+Moved: X:\Sallie-AI\IMPLEMENTATION_SUMMARY.md -> X:\Sallie-AI\docs\IMPLEMENTATION_SUMMARY.md
+Moved: X:\Sallie-AI\implementation.md -> X:\Sallie-AI\docs\implementation.md
+Moved: X:\Sallie-AI\imports-first.md -> X:\Sallie-AI\docs\imports-first.md
+Moved: X:\Sallie-AI\inferno.md -> X:\Sallie-AI\docs\inferno.md
+Moved: X:\Sallie-AI\INTEGRATION_ENHANCEMENT_PLAN.md -> X:\Sallie-AI\docs\INTEGRATION_ENHANCEMENT_PLAN.md
+Moved: X:\Sallie-AI\INTEGRATION_README.md -> X:\Sallie-AI\docs\INTEGRATION_README.md
+Moved: X:\Sallie-AI\jcup.md -> X:\Sallie-AI\docs\jcup.md
+Moved: X:\Sallie-AI\jit_symbols.md -> X:\Sallie-AI\docs\jit_symbols.md
+Moved: X:\Sallie-AI\jline.md -> X:\Sallie-AI\docs\jline.md
+Moved: X:\Sallie-AI\jopt-simple.md -> X:\Sallie-AI\docs\jopt-simple.md
+Moved: X:\Sallie-AI\jpeg.md -> X:\Sallie-AI\docs\jpeg.md
+Moved: X:\Sallie-AI\jquery.md -> X:\Sallie-AI\docs\jquery.md
+Moved: X:\Sallie-AI\jqueryUI.md -> X:\Sallie-AI\docs\jqueryUI.md
+Moved: X:\Sallie-AI\keystore.properties.template.md -> X:\Sallie-AI\docs\keystore.properties.template.md
+Moved: X:\Sallie-AI\lcms.md -> X:\Sallie-AI\docs\lcms.md
+Moved: X:\Sallie-AI\libpng.md -> X:\Sallie-AI\docs\libpng.md
+Moved: X:\Sallie-AI\LICENCE.md -> X:\Sallie-AI\docs\LICENCE.md
+Moved: X:\Sallie-AI\LICENSE.TXT -> X:\Sallie-AI\docs\LICENSE.TXT
+Moved: X:\Sallie-AI\local.properties.txt -> X:\Sallie-AI\docs\local.properties.txt
+Moved: X:\Sallie-AI\local.properties.txt.md -> X:\Sallie-AI\docs\local.properties.txt.md
+Moved: X:\Sallie-AI\LowTextContrast.md -> X:\Sallie-AI\docs\LowTextContrast.md
+Moved: X:\Sallie-AI\manifest.json.md -> X:\Sallie-AI\docs\manifest.json.md
+Moved: X:\Sallie-AI\max-dependencies.md -> X:\Sallie-AI\docs\max-dependencies.md
+Moved: X:\Sallie-AI\MemorySystem_Completion.md -> X:\Sallie-AI\docs\MemorySystem_Completion.md
+Moved: X:\Sallie-AI\MemorySystem_Documentation.md -> X:\Sallie-AI\docs\MemorySystem_Documentation.md
+Moved: X:\Sallie-AI\MERGE_LOG.md -> X:\Sallie-AI\docs\MERGE_LOG.md
+Moved: X:\Sallie-AI\MERGE_PLAN.md -> X:\Sallie-AI\docs\MERGE_PLAN.md
+Moved: X:\Sallie-AI\mesa3d.md -> X:\Sallie-AI\docs\mesa3d.md
+Moved: X:\Sallie-AI\migration.md -> X:\Sallie-AI\docs\migration.md
+Moved: X:\Sallie-AI\mixedContent.md -> X:\Sallie-AI\docs\mixedContent.md
+Moved: X:\Sallie-AI\MockAgent.md -> X:\Sallie-AI\docs\MockAgent.md
+Moved: X:\Sallie-AI\MockClient.md -> X:\Sallie-AI\docs\MockClient.md
+Moved: X:\Sallie-AI\MockErrors.md -> X:\Sallie-AI\docs\MockErrors.md
+Moved: X:\Sallie-AI\mocking-request.md -> X:\Sallie-AI\docs\mocking-request.md
+Moved: X:\Sallie-AI\MockPool.md -> X:\Sallie-AI\docs\MockPool.md
+Moved: X:\Sallie-AI\MODULE_INDEX.md -> X:\Sallie-AI\docs\MODULE_INDEX.md
+Moved: X:\Sallie-AI\msan_ignorelist.txt -> X:\Sallie-AI\docs\msan_ignorelist.txt
+Moved: X:\Sallie-AI\MultimodalInputProcessing_Completion.md -> X:\Sallie-AI\docs\MultimodalInputProcessing_Completion.md
+Moved: X:\Sallie-AI\MultimodalInputProcessing_Implementation.md -> X:\Sallie-AI\docs\MultimodalInputProcessing_Implementation.md
+Moved: X:\Sallie-AI\named.md -> X:\Sallie-AI\docs\named.md
+Moved: X:\Sallie-AI\namespace.md -> X:\Sallie-AI\docs\namespace.md
+Moved: X:\Sallie-AI\navigatingPartitionedBlobURL.md -> X:\Sallie-AI\docs\navigatingPartitionedBlobURL.md
+Moved: X:\Sallie-AI\newline-after-import.md -> X:\Sallie-AI\docs\newline-after-import.md
+Moved: X:\Sallie-AI\no-absolute-path.md -> X:\Sallie-AI\docs\no-absolute-path.md
+Moved: X:\Sallie-AI\no-amd.md -> X:\Sallie-AI\docs\no-amd.md
+Moved: X:\Sallie-AI\no-anonymous-default-export.md -> X:\Sallie-AI\docs\no-anonymous-default-export.md
+Moved: X:\Sallie-AI\no-commonjs.md -> X:\Sallie-AI\docs\no-commonjs.md
+Moved: X:\Sallie-AI\no-cycle.md -> X:\Sallie-AI\docs\no-cycle.md
+Moved: X:\Sallie-AI\no-default-export.md -> X:\Sallie-AI\docs\no-default-export.md
+Moved: X:\Sallie-AI\no-deprecated.md -> X:\Sallie-AI\docs\no-deprecated.md
+Moved: X:\Sallie-AI\no-duplicates.md -> X:\Sallie-AI\docs\no-duplicates.md
+Moved: X:\Sallie-AI\no-dynamic-require.md -> X:\Sallie-AI\docs\no-dynamic-require.md
+Moved: X:\Sallie-AI\no-empty-named-blocks.md -> X:\Sallie-AI\docs\no-empty-named-blocks.md
+Moved: X:\Sallie-AI\no-extraneous-dependencies.md -> X:\Sallie-AI\docs\no-extraneous-dependencies.md
+Moved: X:\Sallie-AI\no-import-module-exports.md -> X:\Sallie-AI\docs\no-import-module-exports.md
+Moved: X:\Sallie-AI\no-internal-modules.md -> X:\Sallie-AI\docs\no-internal-modules.md
+Moved: X:\Sallie-AI\no-mutable-exports.md -> X:\Sallie-AI\docs\no-mutable-exports.md
+Moved: X:\Sallie-AI\no-named-as-default-member.md -> X:\Sallie-AI\docs\no-named-as-default-member.md
+Moved: X:\Sallie-AI\no-named-as-default.md -> X:\Sallie-AI\docs\no-named-as-default.md
+Moved: X:\Sallie-AI\no-named-default.md -> X:\Sallie-AI\docs\no-named-default.md
+Moved: X:\Sallie-AI\no-named-export.md -> X:\Sallie-AI\docs\no-named-export.md
+Moved: X:\Sallie-AI\no-namespace.md -> X:\Sallie-AI\docs\no-namespace.md
+Moved: X:\Sallie-AI\no-nodejs-modules.md -> X:\Sallie-AI\docs\no-nodejs-modules.md
+Moved: X:\Sallie-AI\no-relative-packages.md -> X:\Sallie-AI\docs\no-relative-packages.md
+Moved: X:\Sallie-AI\no-relative-parent-imports.md -> X:\Sallie-AI\docs\no-relative-parent-imports.md
+Moved: X:\Sallie-AI\no-restricted-paths.md -> X:\Sallie-AI\docs\no-restricted-paths.md
+Moved: X:\Sallie-AI\no-self-import.md -> X:\Sallie-AI\docs\no-self-import.md
+Moved: X:\Sallie-AI\no-unassigned-import.md -> X:\Sallie-AI\docs\no-unassigned-import.md
+Moved: X:\Sallie-AI\no-unresolved.md -> X:\Sallie-AI\docs\no-unresolved.md
+Moved: X:\Sallie-AI\no-unused-modules.md -> X:\Sallie-AI\docs\no-unused-modules.md
+Moved: X:\Sallie-AI\no-useless-path-segments.md -> X:\Sallie-AI\docs\no-useless-path-segments.md
+Moved: X:\Sallie-AI\no-webpack-loader-syntax.md -> X:\Sallie-AI\docs\no-webpack-loader-syntax.md
+Moved: X:\Sallie-AI\NODE-LICENSE.md -> X:\Sallie-AI\docs\NODE-LICENSE.md
+Moved: X:\Sallie-AI\NOTICE.txt -> X:\Sallie-AI\docs\NOTICE.txt
+Moved: X:\Sallie-AI\onboardingProtocols.md -> X:\Sallie-AI\docs\onboardingProtocols.md
+Moved: X:\Sallie-AI\OPTIONAL_ENHANCEMENTS.md -> X:\Sallie-AI\docs\OPTIONAL_ENHANCEMENTS.md
+Moved: X:\Sallie-AI\order.md -> X:\Sallie-AI\docs\order.md
+Moved: X:\Sallie-AI\Personalized_Roadmap.md -> X:\Sallie-AI\docs\Personalized_Roadmap.md
+Moved: X:\Sallie-AI\pkcs11cryptotoken.md -> X:\Sallie-AI\docs\pkcs11cryptotoken.md
+Moved: X:\Sallie-AI\pkcs11wrapper.md -> X:\Sallie-AI\docs\pkcs11wrapper.md
+Moved: X:\Sallie-AI\public_suffix.md -> X:\Sallie-AI\docs\public_suffix.md
+Moved: X:\Sallie-AI\README_SHORTPATH.txt -> X:\Sallie-AI\docs\README_SHORTPATH.txt
+Moved: X:\Sallie-AI\README.md -> X:\Sallie-AI\docs\README.md
+Moved: X:\Sallie-AI\README.txt -> X:\Sallie-AI\docs\README.txt

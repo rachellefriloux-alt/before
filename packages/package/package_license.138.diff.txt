@@ -1,8 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\yocto-queue\license
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\@vue\compiler-core\node_modules\estree-walker\LICENSE
----- DIFF ----
-Copyright (c) 2015-20 [these people](https://github.com/Rich-Harris/estree-walker/graphs/contributors)
-MIT License
-Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)
-
-

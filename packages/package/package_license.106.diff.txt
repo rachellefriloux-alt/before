@@ -1,7 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\yocto-queue\license
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\loupe\LICENSE
----- DIFF ----
-(The MIT License)
-Copyright (c) 2011-2013 Jake Luer jake@alogicalparadox.com
-MIT License
-Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)

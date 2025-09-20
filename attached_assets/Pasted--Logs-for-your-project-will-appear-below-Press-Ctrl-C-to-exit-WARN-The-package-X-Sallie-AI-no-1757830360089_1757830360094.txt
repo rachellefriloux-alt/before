@@ -1,0 +1,14 @@
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+Android Bundled 25869ms node_modules\expo-router\entry.js (1767 modules)
+

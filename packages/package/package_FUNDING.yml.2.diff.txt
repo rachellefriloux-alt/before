@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\fast-json-stable-stringify\.github\FUNDING.yml
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\why-is-node-running\.github\FUNDING.yml
----- DIFF ----
-github: mafintosh
-tidelift: "npm/fast-json-stable-stringify"

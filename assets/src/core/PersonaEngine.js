@@ -84,8 +84,81 @@ export class PersonaEngine {
 
   harmonizeTraits() {
     // Harmonize conflicting traits for stability and growth
-    // Placeholder implementation
-    return { harmonized: true };
+    if (!this.conflictLog || this.conflictLog.length === 0) {
+      return { harmonized: true, message: 'No conflicts to harmonize' };
+    }
+
+    const harmonizationResults = [];
+    const traitAdjustments = {};
+
+    // Analyze conflicts and create harmonization strategy
+    for (const conflict of this.conflictLog) {
+      const { traitA, traitB, severity } = conflict;
+
+      // Calculate harmonization adjustments based on severity
+      const adjustmentFactor = severity * 0.1; // Scale down the adjustment
+
+      // Adjust traits to find middle ground
+      if (!traitAdjustments[traitA]) {
+        traitAdjustments[traitA] = { current: this.personaConfig.communicationStyle[traitA] || 0.5, adjustments: [] };
+      }
+      if (!traitAdjustments[traitB]) {
+        traitAdjustments[traitB] = { current: this.personaConfig.communicationStyle[traitB] || 0.5, adjustments: [] };
+      }
+
+      // Move both traits toward their average
+      const average = (traitAdjustments[traitA].current + traitAdjustments[traitB].current) / 2;
+
+      traitAdjustments[traitA].adjustments.push({
+        target: average,
+        factor: adjustmentFactor,
+        reason: `Harmonizing conflict with ${traitB}`
+      });
+
+      traitAdjustments[traitB].adjustments.push({
+        target: average,
+        factor: adjustmentFactor,
+        reason: `Harmonizing conflict with ${traitA}`
+      });
+
+      harmonizationResults.push({
+        conflict: `${traitA} vs ${traitB}`,
+        severity: severity,
+        strategy: 'balanced_approach',
+        average: average
+      });
+    }
+
+    // Apply harmonization adjustments
+    for (const [traitName, adjustment] of Object.entries(traitAdjustments)) {
+      const { current, adjustments } = adjustment;
+
+      // Calculate weighted average of all adjustments
+      let totalWeight = 0;
+      let weightedSum = 0;
+
+      for (const adj of adjustments) {
+        const weight = adj.factor;
+        totalWeight += weight;
+        weightedSum += adj.target * weight;
+      }
+
+      const newValue = totalWeight > 0 ? weightedSum / totalWeight : current;
+
+      // Update the trait value with smoothing
+      const smoothedValue = current + (newValue - current) * 0.3; // 30% adjustment
+
+      // Ensure value stays within bounds
+      this.personaConfig.communicationStyle[traitName] = Math.min(1.0, Math.max(0.0, smoothedValue));
+    }
+
+    return {
+      harmonized: true,
+      conflictsResolved: harmonizationResults.length,
+      traitAdjustments: traitAdjustments,
+      results: harmonizationResults,
+      message: `Harmonized ${harmonizationResults.length} trait conflicts for better stability`
+    };
   }
 
   getContextualExpression(context) {

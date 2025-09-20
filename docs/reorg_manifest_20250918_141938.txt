@@ -1,0 +1,18 @@
+=== Sallie-AI Deep Reorg Manifest ===
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\base\creator_base.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\base\mom_base.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\events\birthday_overlay.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\events\pride_overlay.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\icon_pipeline\assets\events\valentines_overlay.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\high_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\low_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\reflective_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\moods\steady_accent.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\autumn_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\spring_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\summer_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\seasons\winter_bg.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\sparkle_banner\banner.svg
+Skipped (exists): X:\Sallie-AI\apps\android-launcher\src\app\assets\sparkle_banner\sparkle.svg
+Skipped (exists): X:\Sallie-AI\node_modules\react-native-worklets-core\img\banner.svg
+Skipped (exists): X:\Sallie-AI\reorg_manifest_20250918_141818.txt

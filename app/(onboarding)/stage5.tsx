@@ -3,31 +3,34 @@ import { Text, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { OnboardingStage } from '@/components/onboarding/OnboardingStage';
 import { OnboardingButton } from '@/components/onboarding/OnboardingButton';
-import { useOnboarding } from '@/contexts/OnboardingContext';
+import { ProgressIndicator } from '@/components/onboarding/ProgressIndicator';
+import { SkipButton } from '@/components/onboarding/SkipButton';
+import { useUserStore } from '@/store/user';
 
 export default function Stage5() {
-  const { state } = useOnboarding();
+  const { profile } = useUserStore();
   const [firstMoveText, setFirstMoveText] = useState('');
   const [isExecuted, setIsExecuted] = useState(false);
 
   useEffect(() => {
     generateFirstMove();
-  }, [state.answers]);
+  }, [profile?.onboarding?.answers]);
 
   const generateFirstMove = () => {
-    let move = `Enough talk, ${state.answers.name || "my counterpart"}. Let's make our first move.`;
+    const answers = profile?.onboarding?.answers || {};
+    let move = `Enough talk, ${answers.name || "my counterpart"}. Let's make our first move.`;
 
-    if (state.answers.mission && state.answers.mission.toLowerCase().includes("build")) {
+    if (answers.mission && answers.mission.toLowerCase().includes("build")) {
       move += "\n\nWe start by laying the foundation — a 90-day battle plan.";
-    } else if (state.answers.dare) {
-      move += `\n\nToday, we take the first step toward: ${state.answers.dare}`;
-    } else if (state.answers.season && state.answers.season.toLowerCase().includes("transform")) {
+    } else if (answers.dare) {
+      move += `\n\nToday, we take the first step toward: ${answers.dare}`;
+    } else if (answers.season && answers.season.toLowerCase().includes("transform")) {
       move += "\n\nWe begin by reshaping what no longer serves us.";
     } else {
       move += "\n\nWe begin by mapping our path forward.";
     }
 
-    if (state.answers.decisionStyle && state.answers.decisionStyle.toLowerCase().includes("challenge")) {
+    if (answers.decisionStyle && answers.decisionStyle.toLowerCase().includes("challenge")) {
       move += "\n\nAnd I will push you — because that's how we win.";
     }
 
@@ -43,8 +46,14 @@ export default function Stage5() {
     router.push('/(onboarding)/stage6' as any);
   };
 
+  const handleSkip = () => {
+    router.replace('/');
+  };
+
   return (
     <OnboardingStage>
+      <SkipButton onSkip={handleSkip} />
+      <ProgressIndicator currentStep={5} totalSteps={6} />
       <Text style={styles.title}>Our First Move</Text>
       <Text style={styles.text}>{firstMoveText}</Text>
       {!isExecuted ? (

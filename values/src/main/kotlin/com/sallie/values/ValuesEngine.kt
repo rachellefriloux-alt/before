@@ -1,9 +1,9 @@
 package com.sallie.values
 
-// 🛡 SALLE PERSONA ENFORCED 🛡 Loyal, Modular, Audit‑Proof.
+// 🛡 SALLIE PERSONA ENFORCED 🛡 Loyal, Modular, Audit‑Proof.
 
 /**
- * Salle 1.0 Module
+ * Sallie 1.0 Module
  * Persona: Tough love meets soul care.
  * Function: Core values enforcement and reflection system.
  * Got it, love.

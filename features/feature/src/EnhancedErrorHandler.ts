@@ -253,7 +253,7 @@ export class EnhancedErrorHandler {
     } catch (recoveryError) {
       this.logError({
         ...errorReport,
-        message: `Recovery failed: ${recoveryError.message}`,
+        message: `Recovery failed: ${recoveryError instanceof Error ? recoveryError.message : String(recoveryError)}`,
         severity: 'high'
       });
       return false;
@@ -320,8 +320,8 @@ export class EnhancedErrorHandler {
   } {
     const stats = {
       total: this.errorHistory.length,
-      bySeverity: { low: 0, medium: 0, high: 0, critical: 0 },
-      byType: {},
+      bySeverity: { low: 0, medium: 0, high: 0, critical: 0 } as { [key: string]: number },
+      byType: {} as { [key: string]: number },
       recoveryRate: 0
     };
 

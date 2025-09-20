@@ -12,12 +12,12 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { createServer as createViteServer, createLogger } from "vite";
-import { type Server } from "http";
-import viteConfig from "../vite.config";
+// import { createServer as createViteServer, createLogger } from "vite";
+// import { type Server } from "http";
+// import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 
-const viteLogger = createLogger();
+// const viteLogger = createLogger();
 
 export function log(message: string, source = "express") { // eslint-disable-line @typescript-eslint/no-unused-vars
   // Provenance: Sallie-1/server/vite.ts - formattedTime reserved for future timestamp logging
@@ -31,6 +31,8 @@ export function log(message: string, source = "express") { // eslint-disable-lin
   // Logging removed for production
 }
 
+// Temporarily disabled for Expo/React Native project
+/*
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
     middlewareMode: true,
@@ -78,6 +80,7 @@ export async function setupVite(app: Express, server: Server) {
     }
   });
 }
+*/
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function serveStatic(app: Express) {

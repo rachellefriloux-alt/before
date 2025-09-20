@@ -1,0 +1,3308 @@
+Index: apps/android-launcher/src/app/assets/icon_pipeline/assets/base/creator_base.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/creator_base.svg b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/creator_base.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/creator_base.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="#FFD966" d="M54,4a50,50 0 1,0 0.1,0"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mom_base.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mom_base.svg b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mom_base.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mom_base.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="#C6E5C2" d="M54,4a50,50 0 1,0 0.1,0"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/icon_pipeline/assets/events/birthday_overlay.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/birthday_overlay.svg b/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/birthday_overlay.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/birthday_overlay.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="gold" d="M54 18 L64 38 L86 40 L70 55 L75 77 L54 65 L33 77 L38 55 L22 40 L44 38 Z"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/icon_pipeline/assets/events/pride_overlay.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/pride_overlay.svg b/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/pride_overlay.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/pride_overlay.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,8 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <rect width="18" height="108" x="0" fill="#E40303"/>
+-    <rect width="18" height="108" x="18" fill="#FF8C00"/>
+-    <rect width="18" height="108" x="36" fill="#FFED00"/>
+-    <rect width="18" height="108" x="54" fill="#008026"/>
+-    <rect width="18" height="108" x="72" fill="#004DFF"/>
+-    <rect width="18" height="108" x="90" fill="#750787"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/icon_pipeline/assets/events/valentines_overlay.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/valentines_overlay.svg b/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/valentines_overlay.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/icon_pipeline/assets/events/valentines_overlay.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="red" d="M54 90 L95 50 L75 30 L54 50 L33 30 L13 50 Z"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/moods/high_accent.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/moods/high_accent.svg b/apps/android-launcher/src/app/assets/moods/high_accent.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/moods/high_accent.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="#4FB9FF" d="M34,30c20,-10 40,10 20,25c-20,15 0,35 20,25" />
+-</svg>
+Index: apps/android-launcher/src/app/assets/moods/low_accent.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/moods/low_accent.svg b/apps/android-launcher/src/app/assets/moods/low_accent.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/moods/low_accent.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="#FF4F7D" d="M34,30c20,-10 40,10 20,25c-20,15 0,35 20,25" />
+-</svg>
+Index: apps/android-launcher/src/app/assets/moods/reflective_accent.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/moods/reflective_accent.svg b/apps/android-launcher/src/app/assets/moods/reflective_accent.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/moods/reflective_accent.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="#FFC4D6" d="M34,30c20,-10 40,10 20,25c-20,15 0,35 20,25" />
+-</svg>
+Index: apps/android-launcher/src/app/assets/moods/steady_accent.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/moods/steady_accent.svg b/apps/android-launcher/src/app/assets/moods/steady_accent.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/moods/steady_accent.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="#FFD966" d="M34,30c20,-10 40,10 20,25c-20,15 0,35 20,25" />
+-</svg>
+Index: apps/android-launcher/src/app/assets/seasons/autumn_bg.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/seasons/autumn_bg.svg b/apps/android-launcher/src/app/assets/seasons/autumn_bg.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/seasons/autumn_bg.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <rect width="108" height="108" fill="#D97B3A"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/seasons/spring_bg.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/seasons/spring_bg.svg b/apps/android-launcher/src/app/assets/seasons/spring_bg.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/seasons/spring_bg.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <rect width="108" height="108" fill="#C6E5C2"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/seasons/summer_bg.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/seasons/summer_bg.svg b/apps/android-launcher/src/app/assets/seasons/summer_bg.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/seasons/summer_bg.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <rect width="108" height="108" fill="#FFD966"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/seasons/winter_bg.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/seasons/winter_bg.svg b/apps/android-launcher/src/app/assets/seasons/winter_bg.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/seasons/winter_bg.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <rect width="108" height="108" fill="#4FB9FF"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/sparkle_banner/banner.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/sparkle_banner/banner.svg b/apps/android-launcher/src/app/assets/sparkle_banner/banner.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/sparkle_banner/banner.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <rect width="108" height="20" y="44" fill="gold" opacity="0.7"/>
+-</svg>
+Index: apps/android-launcher/src/app/assets/sparkle_banner/sparkle.svg
+===================================================================
+diff --git a/apps/android-launcher/src/app/assets/sparkle_banner/sparkle.svg b/apps/android-launcher/src/app/assets/sparkle_banner/sparkle.svg
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/assets/sparkle_banner/sparkle.svg	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,3 +0,0 @@
+-<svg width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+-    <path fill="white" d="M54,18 L64,38 L86,40 L70,55 L75,77 L54,65 L33,77 L38,55 L22,40 L44,38 Z" opacity="0.5"/>
+-</svg>
+Index: apps/android-launcher/src/app/src/assets/assetManifest.json
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/assets/assetManifest.json b/apps/android-launcher/src/app/src/assets/assetManifest.json
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/assets/assetManifest.json	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,17 +0,0 @@
+-[
+-  { "name": "avatar_loyal", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/loyal.svg", "tags": ["avatar", "loyal", "mood"] },
+-  { "name": "avatar_strategic", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/strategic.svg", "tags": ["avatar", "strategic", "mood"] },
+-  { "name": "avatar_empathic", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/empathic.svg", "tags": ["avatar", "empathic", "mood"] },
+-  { "name": "avatar_playful", "type": "svg", "source": "humaaans", "url": "https://humaaans.com/playful.svg", "tags": ["avatar", "playful", "mood"] },
+-  { "name": "avatar_resourceful", "type": "svg", "source": "open-doodles", "url": "https://opendoodles.com/resourceful.svg", "tags": ["avatar", "resourceful", "mood"] },
+-  { "name": "icon_shield", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/shield.svg", "tags": ["icon", "loyalty"] },
+-  { "name": "icon_compass", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/compass.svg", "tags": ["icon", "strategy"] },
+-  { "name": "icon_heartline", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/heart.svg", "tags": ["icon", "empathy"] },
+-  { "name": "icon_puzzle", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/puzzle.svg", "tags": ["icon", "resourceful"] },
+-  { "name": "illus_onboarding", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/onboarding.svg", "tags": ["illustration", "onboarding"] },
+-  { "name": "illus_empty_loyal", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/empty_loyal.svg", "tags": ["illustration", "empty", "loyal"] },
+-  { "name": "illus_empty_playful", "type": "svg", "source": "open-doodles", "url": "https://opendoodles.com/empty_playful.svg", "tags": ["illustration", "empty", "playful"] },
+-  { "name": "anim_avatar_moodshift_loyal", "type": "lottie", "source": "lottiefiles", "url": "https://assets.lottiefiles.com/datafiles/loyal.json", "tags": ["animation", "avatar", "loyal"] },
+-  { "name": "anim_avatar_moodshift_strategic", "type": "lottie", "source": "lottiefiles", "url": "https://assets.lottiefiles.com/datafiles/strategic.json", "tags": ["animation", "avatar", "strategic"] },
+-  { "name": "anim_avatar_moodshift_playful", "type": "lottie", "source": "lottiefiles", "url": "https://assets.lottiefiles.com/datafiles/playful.json", "tags": ["animation", "avatar", "playful"] }
+-]
+Index: apps/android-launcher/src/app/src/assets/assetManifest-advanced.json
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/assets/assetManifest-advanced.json b/apps/android-launcher/src/app/src/assets/assetManifest-advanced.json
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/assets/assetManifest-advanced.json	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,44 +0,0 @@
+-[
+-  {
+-    "name": "avatar_seasonal_winter",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/winter_avatar.svg",
+-    "tags": ["avatar", "seasonal", "winter"]
+-  },
+-  {
+-    "name": "avatar_seasonal_summer",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/summer_avatar.svg",
+-    "tags": ["avatar", "seasonal", "summer"]
+-  },
+-  {
+-    "name": "icon_achievement",
+-    "type": "svg",
+-    "source": "heroicons",
+-    "url": "https://heroicons.com/achievement.svg",
+-    "tags": ["icon", "achievement"]
+-  },
+-  {
+-    "name": "illus_milestone",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/milestone.svg",
+-    "tags": ["illustration", "milestone"]
+-  },
+-  {
+-    "name": "anim_confetti",
+-    "type": "lottie",
+-    "source": "lottiefiles",
+-    "url": "https://assets.lottiefiles.com/datafiles/confetti.json",
+-    "tags": ["animation", "confetti", "celebrate"]
+-  },
+-  {
+-    "name": "anim_levelup",
+-    "type": "lottie",
+-    "source": "lottiefiles",
+-    "url": "https://assets.lottiefiles.com/datafiles/levelup.json",
+-    "tags": ["animation", "levelup", "milestone"]
+-  }
+-]
+Index: apps/android-launcher/src/app/src/assets/assetManifest-expanded.json
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/assets/assetManifest-expanded.json b/apps/android-launcher/src/app/src/assets/assetManifest-expanded.json
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/assets/assetManifest-expanded.json	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,108 +0,0 @@
+-// Example: Add more assets to assetManifest.json for expanded visual variety
+-[
+-  {
+-    "name": "avatar_loyal",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/loyal.svg",
+-    "tags": ["avatar", "loyal", "mood"]
+-  },
+-  {
+-    "name": "avatar_strategic",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/strategic.svg",
+-    "tags": ["avatar", "strategic", "mood"]
+-  },
+-  {
+-    "name": "avatar_empathic",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/empathic.svg",
+-    "tags": ["avatar", "empathic", "mood"]
+-  },
+-  {
+-    "name": "avatar_playful",
+-    "type": "svg",
+-    "source": "humaaans",
+-    "url": "https://humaaans.com/playful.svg",
+-    "tags": ["avatar", "playful", "mood"]
+-  },
+-  {
+-    "name": "avatar_resourceful",
+-    "type": "svg",
+-    "source": "open-doodles",
+-    "url": "https://opendoodles.com/resourceful.svg",
+-    "tags": ["avatar", "resourceful", "mood"]
+-  },
+-  {
+-    "name": "icon_shield",
+-    "type": "svg",
+-    "source": "heroicons",
+-    "url": "https://heroicons.com/shield.svg",
+-    "tags": ["icon", "loyalty"]
+-  },
+-  {
+-    "name": "icon_compass",
+-    "type": "svg",
+-    "source": "heroicons",
+-    "url": "https://heroicons.com/compass.svg",
+-    "tags": ["icon", "strategy"]
+-  },
+-  {
+-    "name": "icon_heartline",
+-    "type": "svg",
+-    "source": "heroicons",
+-    "url": "https://heroicons.com/heart.svg",
+-    "tags": ["icon", "empathy"]
+-  },
+-  {
+-    "name": "icon_puzzle",
+-    "type": "svg",
+-    "source": "heroicons",
+-    "url": "https://heroicons.com/puzzle.svg",
+-    "tags": ["icon", "resourceful"]
+-  },
+-  {
+-    "name": "illus_onboarding",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/onboarding.svg",
+-    "tags": ["illustration", "onboarding"]
+-  },
+-  {
+-    "name": "illus_empty_loyal",
+-    "type": "svg",
+-    "source": "undraw",
+-    "url": "https://undraw.co/illustrations/empty_loyal.svg",
+-    "tags": ["illustration", "empty", "loyal"]
+-  },
+-  {
+-    "name": "illus_empty_playful",
+-    "type": "svg",
+-    "source": "open-doodles",
+-    "url": "https://opendoodles.com/empty_playful.svg",
+-    "tags": ["illustration", "empty", "playful"]
+-  },
+-  {
+-    "name": "anim_avatar_moodshift_loyal",
+-    "type": "lottie",
+-    "source": "lottiefiles",
+-    "url": "https://assets.lottiefiles.com/datafiles/loyal.json",
+-    "tags": ["animation", "avatar", "loyal"]
+-  },
+-  {
+-    "name": "anim_avatar_moodshift_strategic",
+-    "type": "lottie",
+-    "source": "lottiefiles",
+-    "url": "https://assets.lottiefiles.com/datafiles/strategic.json",
+-    "tags": ["animation", "avatar", "strategic"]
+-  },
+-  {
+-    "name": "anim_avatar_moodshift_playful",
+-    "type": "lottie",
+-    "source": "lottiefiles",
+-    "url": "https://assets.lottiefiles.com/datafiles/playful.json",
+-    "tags": ["animation", "avatar", "playful"]
+-  }
+-]
+Index: apps/android-launcher/src/app/src/main/java/com/sallie/app/MainActivity.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/java/com/sallie/app/MainActivity.kt b/apps/android-launcher/src/app/src/main/java/com/sallie/app/MainActivity.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/java/com/sallie/app/MainActivity.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,12 +0,0 @@
+-package com.sallie.app
+-
+-import android.os.Bundle
+-import androidx.appcompat.app.AppCompatActivity
+-
+-class MainActivity : AppCompatActivity() {
+-    override fun onCreate(savedInstanceState: Bundle?) {
+-        super.onCreate(savedInstanceState)
+-        // Set a simple layout or content view here
+-        // For now, just use a blank activity
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/java/com/sallie/launcher/PersonaStrings.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/java/com/sallie/launcher/PersonaStrings.kt b/apps/android-launcher/src/app/src/main/java/com/sallie/launcher/PersonaStrings.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/java/com/sallie/launcher/PersonaStrings.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,6 +0,0 @@
+-object PersonaStrings {
+-    const val ACTION_CONFIRM = "Got it, love"
+-    const val ERROR_GENERIC = "Here’s the truth, love — ${'$'}{message}"
+-    const val BTN_OK = "Got it, love"
+-    // Add all UI copy here so tone is enforced globally
+-}
+\ No newline at end of file
+Index: apps/android-launcher/src/app/src/main/kotlin/app/sallie/main/MainActivity.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/app/sallie/main/MainActivity.kt b/apps/android-launcher/src/app/src/main/kotlin/app/sallie/main/MainActivity.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/app/sallie/main/MainActivity.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,267 +0,0 @@
+-/*
+- * Sallie 2.0 Module
+- * Persona: Tough love meets soul care.
+- * Function: Main activity demonstrating personality system integration.
+- * Got it, love.
+- */
+-package app.sallie.main
+-
+-import android.os.Bundle
+-import androidx.activity.ComponentActivity
+-import androidx.activity.compose.setContent
+-import androidx.compose.foundation.layout.*
+-import androidx.compose.material3.*
+-import androidx.compose.runtime.*
+-import androidx.compose.ui.Modifier
+-import androidx.compose.ui.unit.dp
+-import androidx.lifecycle.ViewModelProvider
+-import androidx.lifecycle.viewmodel.compose.viewModel
+-import app.sallie.common.SallieTheme
+-import app.sallie.common.components.Header
+-import app.sallie.common.components.BottomNavigation
+-import feature.personality.AdvancedPersonalitySystem
+-import feature.personality.PersonalityUIConnector
+-import feature.personality.PersonalityViewModel
+-
+-/**
+- * MainActivity - Main entry point for the Sallie 2.0 application
+- * 
+- * This activity demonstrates the integration of the personality system with the UI
+- * and other components of the application.
+- */
+-class MainActivity : ComponentActivity() {
+-    
+-    // ViewModels
+-    private lateinit var personalityViewModel: PersonalityViewModel
+-    
+-    override fun onCreate(savedInstanceState: Bundle?) {
+-        super.onCreate(savedInstanceState)
+-        
+-        // Initialize the personality system and UI connector
+-        val personalitySystem = AdvancedPersonalitySystem.getInstance(applicationContext)
+-        val personalityUIConnector = PersonalityUIConnector(personalitySystem)
+-        
+-        // Set up ViewModels
+-        personalityViewModel = ViewModelProvider(
+-            this, 
+-            PersonalityViewModelFactory(personalityUIConnector)
+-        )[PersonalityViewModel::class.java]
+-        
+-        setContent {
+-            SallieTheme {
+-                MainScreen(personalityViewModel)
+-            }
+-        }
+-    }
+-}
+-
+-/**
+- * Main screen composable that sets up the UI structure
+- */
+-@OptIn(ExperimentalMaterial3Api::class)
+-@Composable
+-fun MainScreen(
+-    personalityViewModel: PersonalityViewModel = viewModel()
+-) {
+-    var selectedTab by remember { mutableStateOf(0) }
+-    val tabs = listOf("Home", "Chat", "Personality", "Settings")
+-    
+-    Scaffold(
+-        topBar = {
+-            Header(title = "Sallie 2.0")
+-        },
+-        bottomBar = {
+-            BottomNavigation(
+-                tabs = tabs,
+-                selectedTab = selectedTab,
+-                onTabSelected = { selectedTab = it }
+-            )
+-        }
+-    ) { paddingValues ->
+-        Box(
+-            modifier = Modifier
+-                .padding(paddingValues)
+-                .fillMaxSize()
+-        ) {
+-            when (selectedTab) {
+-                0 -> HomeScreen()
+-                1 -> ChatScreen()
+-                2 -> PersonalityScreen(personalityViewModel)
+-                3 -> SettingsScreen()
+-            }
+-        }
+-    }
+-}
+-
+-/**
+- * Placeholder for the Home screen
+- */
+-@Composable
+-fun HomeScreen() {
+-    Column(
+-        modifier = Modifier
+-            .fillMaxSize()
+-            .padding(16.dp)
+-    ) {
+-        Text(
+-            text = "Welcome to Sallie 2.0",
+-            style = MaterialTheme.typography.headlineMedium
+-        )
+-        
+-        Spacer(modifier = Modifier.height(16.dp))
+-        
+-        Text(
+-            text = "Your personal assistant with tough love and soul care.",
+-            style = MaterialTheme.typography.bodyLarge
+-        )
+-    }
+-}
+-
+-/**
+- * Placeholder for the Chat screen
+- */
+-@Composable
+-fun ChatScreen() {
+-    Column(
+-        modifier = Modifier
+-            .fillMaxSize()
+-            .padding(16.dp)
+-    ) {
+-        Text(
+-            text = "Chat with Sallie",
+-            style = MaterialTheme.typography.headlineMedium
+-        )
+-        
+-        Spacer(modifier = Modifier.height(16.dp))
+-        
+-        Text(
+-            text = "This is where conversations with Sallie would appear.",
+-            style = MaterialTheme.typography.bodyLarge
+-        )
+-    }
+-}
+-
+-/**
+- * Personality screen that integrates the PersonalityPanel component
+- */
+-@Composable
+-fun PersonalityScreen(viewModel: PersonalityViewModel) {
+-    // In a real implementation, this would host the PersonalityPanel Vue component
+-    // through WebView or a native implementation of the same functionality
+-    
+-    Column(
+-        modifier = Modifier
+-            .fillMaxSize()
+-            .padding(16.dp)
+-    ) {
+-        Text(
+-            text = "Sallie's Personality",
+-            style = MaterialTheme.typography.headlineMedium
+-        )
+-        
+-        Spacer(modifier = Modifier.height(16.dp))
+-        
+-        // Sample display of personality data from the viewModel
+-        when (val state = viewModel.personalityState.collectAsState().value) {
+-            is PersonalityViewModel.UiState.Loading -> {
+-                CircularProgressIndicator()
+-            }
+-            is PersonalityViewModel.UiState.Success -> {
+-                PersonalityContent(state.data)
+-            }
+-            is PersonalityViewModel.UiState.Error -> {
+-                Text(
+-                    text = "Error: ${state.message}",
+-                    style = MaterialTheme.typography.bodyLarge,
+-                    color = MaterialTheme.colorScheme.error
+-                )
+-            }
+-        }
+-    }
+-}
+-
+-/**
+- * Content for the personality screen showing traits
+- */
+-@Composable
+-fun PersonalityContent(data: PersonalityViewModel.PersonalityData) {
+-    Column {
+-        Text(
+-            text = "Current Context: ${data.currentContext.type}",
+-            style = MaterialTheme.typography.titleMedium
+-        )
+-        
+-        Spacer(modifier = Modifier.height(16.dp))
+-        
+-        Text(
+-            text = "Effective Traits",
+-            style = MaterialTheme.typography.titleMedium
+-        )
+-        
+-        Spacer(modifier = Modifier.height(8.dp))
+-        
+-        data.effectiveTraits.forEach { (trait, value) ->
+-            TraitRow(trait = trait, value = value)
+-        }
+-    }
+-}
+-
+-/**
+- * Row displaying a personality trait and its value
+- */
+-@Composable
+-fun TraitRow(trait: String, value: Float) {
+-    Row(
+-        modifier = Modifier
+-            .fillMaxWidth()
+-            .padding(vertical = 4.dp),
+-        horizontalArrangement = Arrangement.SpaceBetween
+-    ) {
+-        Text(text = formatTrait(trait))
+-        
+-        // Simple progress bar representation
+-        LinearProgressIndicator(
+-            progress = value,
+-            modifier = Modifier
+-                .width(200.dp)
+-                .height(8.dp)
+-        )
+-        
+-        Text(text = "${(value * 100).toInt()}%")
+-    }
+-}
+-
+-/**
+- * Placeholder for the Settings screen
+- */
+-@Composable
+-fun SettingsScreen() {
+-    Column(
+-        modifier = Modifier
+-            .fillMaxSize()
+-            .padding(16.dp)
+-    ) {
+-        Text(
+-            text = "Settings",
+-            style = MaterialTheme.typography.headlineMedium
+-        )
+-        
+-        Spacer(modifier = Modifier.height(16.dp))
+-        
+-        Text(
+-            text = "Application settings would go here.",
+-            style = MaterialTheme.typography.bodyLarge
+-        )
+-    }
+-}
+-
+-/**
+- * Formats a trait name for display
+- */
+-fun formatTrait(trait: String): String {
+-    return trait
+-        .replace("_", " ")
+-        .lowercase()
+-        .split(" ")
+-        .joinToString(" ") { it.replaceFirstChar { c -> c.uppercase() } }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/Main.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/Main.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/Main.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/Main.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,5 +0,0 @@
+-package com.sallie.app
+-
+-fun main() {
+-  println("Sallie app is running: Tough love meets soul care.")
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/MainActivity.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/MainActivity.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/MainActivity.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/app/MainActivity.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,46 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: MainActivity
+- * Intent: Handle functionality for MainActivity
+- * Provenance-ID: c8dc3bc0-a1bc-451e-8a2f-be92944df150
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package com.sallie.app
+-
+-import android.os.Bundle
+-import androidx.activity.ComponentActivity
+-import androidx.activity.compose.setContent
+-import androidx.compose.foundation.layout.fillMaxSize
+-import androidx.compose.material3.MaterialTheme
+-import androidx.compose.material3.Surface
+-import androidx.compose.ui.Modifier
+-import com.sallie.dashboard.CompanionMainScreen
+-import com.sallie.dashboard.CompanionViewModel
+-
+-/**
+- * Main activity for the Sallie companion app
+- * Provenance: Created for Sallie companion app on 2025-08-27
+- */
+-class MainActivity : ComponentActivity() {
+-
+-    private lateinit var viewModel: CompanionViewModel
+-
+-    override fun onCreate(savedInstanceState: Bundle?) {
+-        super.onCreate(savedInstanceState)
+-
+-        // Initialize ViewModel
+-        viewModel = CompanionViewModel()
+-
+-        setContent {
+-            MaterialTheme {
+-                Surface(
+-                    modifier = Modifier.fillMaxSize(),
+-                    color = MaterialTheme.colorScheme.background
+-                ) {
+-                    CompanionMainScreen(viewModel = viewModel)
+-                }
+-            }
+-        }
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/dashboard/build.gradle
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/dashboard/build.gradle b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/dashboard/build.gradle
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/dashboard/build.gradle	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,31 +0,0 @@
+-plugins {
+-    id 'com.android.application'
+-    id 'org.jetbrains.kotlin.android'
+-}
+-
+-android {
+-    namespace 'com.sallie.sallecompanion'
+-    compileSdk 34
+-
+-    defaultConfig {
+-        applicationId "com.sallie.sallecompanion"
+-        minSdk 24
+-        targetSdk 34
+-        versionCode 1
+-        versionName "1.0"
+-    }
+-
+-    buildFeatures {
+-        compose true
+-    }
+-    composeOptions {
+-        kotlinCompilerExtensionVersion '1.5.0'
+-    }
+-}
+-
+-dependencies {
+-    implementation project(":shared")
+-    implementation "androidx.compose.ui:ui:1.5.0"
+-    implementation "androidx.compose.material3:material3:1.2.0"
+-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeveloperEasterEgg.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeveloperEasterEgg.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeveloperEasterEgg.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeveloperEasterEgg.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,21 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: DeveloperEasterEgg
+- * Intent: Handle functionality for DeveloperEasterEgg
+- * Provenance-ID: c3e87b69-daee-4df3-ab0a-dc881066fbe6
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package onboarding
+-
+-import android.util.Log
+-import com.yourorg.sallie.BuildConfig
+-
+-object DeveloperEasterEgg {
+-    fun drop(userId: String) {
+-        if (BuildConfig.DEBUG && userId == "Rachelle") {
+-            Log.d("Sallie", "🛠 You see more than they do — here’s the raw persona graph…")
+-            println("Persona state: " + personaState.toString())
+-        }
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceControlManager.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceControlManager.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceControlManager.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceControlManager.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,52 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: DeviceControlManager
+- * Intent: Handle functionality for DeviceControlManager
+- * Provenance-ID: a83dda49-b377-4851-a048-5f7a0e918cc7
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-
+-package device
+-
+-import android.content.Context
+-import android.util.Log
+-import android.bluetooth.BluetoothAdapter
+-import android.net.wifi.WifiManager
+-
+-/**
+- * DeviceControlManager: Discover and control smart home/mobile devices.
+- * - Supports device discovery, secure communication, and automation.
+- * - Modular manager architecture for different device types.
+- * - Permission-based security model with runtime consent.
+- * - App session tracking and interaction management.
+- */
+-class DeviceControlManager(private val context: Context) {
+-    private val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
+-    private val wifiManager: WifiManager = context.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+-
+-    fun discoverBluetoothDevices(): List<String> {
+-        val devices = mutableListOf<String>()
+-        bluetoothAdapter?.bondedDevices?.forEach { device ->
+-            devices.add(device.name ?: "Unknown")
+-        }
+-        return devices
+-    }
+-
+-    fun getConnectedWifiDevices(): List<String> {
+-        // Actual implementation requires network scanning permissions
+-        return listOf("Device1", "Device2")
+-    }
+-
+-    fun sendCommandToDevice(deviceName: String, command: String): Boolean {
+-        Log.d("DeviceControlManager", "Sending command '$command' to $deviceName")
+-        // Implement secure communication logic here
+-        return true
+-    }
+-
+-    fun automateDeviceRoutine(routineName: String): Boolean {
+-        Log.d("DeviceControlManager", "Automating routine: $routineName")
+-        // Implement automation logic here
+-        return true
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceVoiceController.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceVoiceController.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceVoiceController.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DeviceVoiceController.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,13 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: DeviceVoiceController
+- * Intent: Handle functionality for DeviceVoiceController
+- * Provenance-ID: 66a54900-2a1e-4d70-a31a-aaee7672c54c
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-// Salle Persona Module
+-// DeviceVoiceController.kt
+-// Migrated for reference only. Not integrated into JS runtime.
+-
+-// ✔ Enhanced logic added: If needed, port logic to JS for Salle compatibility.
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/DynamicPersonaReveal.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DynamicPersonaReveal.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DynamicPersonaReveal.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/DynamicPersonaReveal.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,20 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: DynamicPersonaReveal
+- * Intent: Handle functionality for DynamicPersonaReveal
+- * Provenance-ID: 94de8c75-8d95-497a-bd3e-3ea86fdee728
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package onboarding
+-
+-import android.util.Log
+-
+-object DynamicPersonaReveal {
+-    fun run() {
+-        Log.d("Sallie", "🧩 Loading creativity module… ✅")
+-        Log.d("Sallie", "🛡 Loyalty shield online… ✅")
+-        Log.d("Sallie", "🔍 Logic core calibrated… ✅")
+-        // Add UI micro-animations here if needed
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/GuidedPersonaTour.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/GuidedPersonaTour.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/GuidedPersonaTour.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/GuidedPersonaTour.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,20 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: GuidedPersonaTour
+- * Intent: Handle functionality for GuidedPersonaTour
+- * Provenance-ID: 8b11ba17-8db1-4adf-9550-59df9ee77ee0
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package onboarding
+-
+-import android.util.Log
+-
+-object GuidedPersonaTour {
+-    fun start() {
+-        Log.d("Sallie", "🗺 Welcome to your guided tour!")
+-        Log.d("Sallie", "✨ I can adapt my persona, analyze tone, and remember your preferences.")
+-        Log.d("Sallie", "🔒 Security modules are always on.")
+-        Log.d("Sallie", "🎨 Custom themes and skills available.")
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/HumanLikeCapabilityOrchestrator.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/HumanLikeCapabilityOrchestrator.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/HumanLikeCapabilityOrchestrator.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/HumanLikeCapabilityOrchestrator.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,52 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: HumanLikeCapabilityOrchestrator
+- * Intent: Handle functionality for HumanLikeCapabilityOrchestrator
+- * Provenance-ID: 7b415a49-6569-467f-8e87-495c79f6813d
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-// Salle Persona: HumanLikeCapabilityOrchestrator
+-package org.sallie.core
+-
+-import org.sallie.core.engine.ProactiveAssistanceEngine
+-import org.sallie.core.interfaces.IProactiveAssistanceEngine
+-
+-
+-class HumanLikeCapabilityOrchestrator(private val engine: IProactiveAssistanceEngine) {
+-    init {
+-        try {
+-            engine.initialize()
+-        } catch (e: Exception) {
+-            println("Error initializing engine: ${e.message}")
+-        }
+-    }
+-
+-    fun handleTask(taskName: String, context: Map<String, Any>): Boolean {
+-        return try {
+-            engine.performTask(taskName, context)
+-            true
+-        } catch (e: Exception) {
+-            println("Error handling task '$taskName': ${e.message}")
+-            false
+-        }
+-    }
+-
+-    fun saveState(): Boolean {
+-        return try {
+-            engine.saveToMemory()
+-            true
+-        } catch (e: Exception) {
+-            println("Error saving state: ${e.message}")
+-            false
+-        }
+-    }
+-
+-    fun reportStatus(): String {
+-        return try {
+-            engine.status
+-        } catch (e: Exception) {
+-            "Error retrieving status: ${e.message}"
+-        }
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingManager.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingManager.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingManager.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingManager.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,42 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: OnboardingManager
+- * Intent: Handle functionality for OnboardingManager
+- * Provenance-ID: c1691379-63a1-4ac8-b394-c3daf70924f5
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package onboarding
+-
+-/**
+- * OnboardingManager: Standards-compliant onboarding flow for new users.
+- * - Supports guided persona tours, dynamic persona reveal, and onboarding memory hooks.
+- * - Extensible for custom onboarding steps, event-driven flows, and analytics.
+- * - Follows Salle privacy, modularity, and audit standards.
+- */
+-class OnboardingManager {
+-    fun startOnboarding() {
+-        println("[OnboardingManager] Starting onboarding flow...")
+-        // Implement onboarding start logic
+-    }
+-
+-    fun guidePersonaTour() {
+-        println("[OnboardingManager] Guiding persona tour...")
+-        // Implement guided persona tour logic
+-    }
+-
+-    fun revealDynamicPersona() {
+-        println("[OnboardingManager] Revealing dynamic persona...")
+-        // Implement dynamic persona reveal logic
+-    }
+-
+-    fun hookOnboardingMemory() {
+-        println("[OnboardingManager] Hooking onboarding memory...")
+-        // Implement onboarding memory hook logic
+-    }
+-
+-    fun completeOnboarding() {
+-        println("[OnboardingManager] Onboarding complete.")
+-        // Implement onboarding completion logic
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingMemoryHook.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingMemoryHook.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingMemoryHook.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingMemoryHook.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,26 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: OnboardingMemoryHook
+- * Intent: Handle functionality for OnboardingMemoryHook
+- * Provenance-ID: 7fc531dd-eacb-4638-a72e-b3273925ba58
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package onboarding
+-
+-import android.content.SharedPreferences
+-import android.util.Log
+-
+-class OnboardingMemoryHook(private val prefs: SharedPreferences) {
+-    private val FAVORITE_COLOR_KEY = "favorite_color"
+-
+-    fun askAndStoreFavoriteColor(color: String) {
+-        Log.d("Sallie", "☕ Still team $color, I presume?")
+-        prefs.edit().putString(FAVORITE_COLOR_KEY, color).apply()
+-    }
+-
+-    fun callbackLater() {
+-        val color = prefs.getString(FAVORITE_COLOR_KEY, "unknown")
+-        Log.d("Sallie", "Remembered favorite color: $color")
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingViewModel.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingViewModel.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingViewModel.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/OnboardingViewModel.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,56 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: OnboardingViewModel
+- * Intent: Handle functionality for OnboardingViewModel
+- * Provenance-ID: bc440671-c4ce-4bd6-a16d-0aa3c46ea09e
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package onboarding
+-
+-import android.content.SharedPreferences
+-import android.util.Log
+-import androidx.lifecycle.ViewModel
+-import com.yourorg.sallie.BuildConfig
+-
+-class OnboardingViewModel(
+-    private val prefs: SharedPreferences,
+-    private val userId: String
+-) : ViewModel() {
+-
+-    private val FIRST_RUN_KEY = "first_run_completed"
+-    private val GIFT_KEY = "first_gift_unlocked"
+-
+-    init {
+-        runOnboardingSequence()
+-    }
+-
+-    private fun runOnboardingSequence() {
+-        if (isFirstRun()) {
+-            DynamicPersonaReveal.run()
+-            logFirstHello()
+-            unlockFirstGift()
+-            if (BuildConfig.DEBUG) GuidedPersonaTour.start()
+-            OnboardingMemoryHook(prefs).askAndStoreFavoriteColor("teal")
+-            DeveloperEasterEgg.drop(userId)
+-        }
+-    }
+-
+-    private fun logFirstHello() {
+-        Log.d("Sallie", "🌟 Oh — it’s you, Rachelle. Systems online, tone modules humming… ready to make some magic together.")
+-        prefs.edit().putBoolean(FIRST_RUN_KEY, false).apply()
+-    }
+-
+-    private fun unlockFirstGift() {
+-        val isFirstGift = prefs.getBoolean(GIFT_KEY, true)
+-        if (isFirstGift) {
+-            Log.d("Sallie", "🎀 Consider this my house‑warming gift — a little extra sparkle for our partnership.")
+-            prefs.edit().putBoolean(GIFT_KEY, false).apply()
+-            unlockThemePack()
+-            enableTonePack()
+-        }
+-    }
+-
+-    private fun isFirstRun(): Boolean =
+-        prefs.getBoolean(FIRST_RUN_KEY, true)
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManager.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManager.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManager.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManager.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,41 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: PersonaCoreManager
+- * Intent: Handle functionality for PersonaCoreManager
+- * Provenance-ID: da00135e-52ad-4a60-9c21-381f4482d5f1
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package personaCore
+-
+-/**
+- * PersonaCoreManager: Standards-compliant persona engine for adaptive personality, tone, and context.
+- * - Supports persona evolution, emotional intelligence, and context-aware adaptation.
+- * - Extensible for custom personas, event-driven updates, and multimodal input.
+- * - Follows Salle privacy, modularity, and audit standards.
+- */
+-class PersonaCoreManager {
+-    fun initialize() {
+-        println("[PersonaCoreManager] Initialization complete.")
+-    }
+-
+-    fun evolvePersona(context: String) {
+-        println("[PersonaCoreManager] Evolving persona for context: $context")
+-        // Implement persona evolution logic
+-    }
+-
+-    fun setTone(tone: String) {
+-        println("[PersonaCoreManager] Setting tone: $tone")
+-        // Implement tone adaptation logic
+-    }
+-
+-    fun getCurrentPersona(): String {
+-        // Return current persona state
+-        return "Sallie"
+-    }
+-
+-    fun handleEvent(event: String) {
+-        println("[PersonaCoreManager] Handling event: $event")
+-        // Implement event-driven persona update logic
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManagerTest.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManagerTest.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManagerTest.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/PersonaCoreManagerTest.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,51 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: PersonaCoreManagerTest
+- * Intent: Handle functionality for PersonaCoreManagerTest
+- * Provenance-ID: e12ae65e-69b5-40b0-a3a7-b9b94256af9a
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package personaCore
+-
+-import org.junit.Test
+-import org.junit.Assert.*
+-
+-/**
+- * PersonaCoreManagerTest: Unit tests for PersonaCoreManager
+- * - Tests initialization, persona evolution, tone setting, and event handling.
+- * - Follows Salle standards for test coverage and reporting.
+- */
+-class PersonaCoreManagerTest {
+-    private val manager = PersonaCoreManager()
+-
+-    @Test
+-    fun testInitialize() {
+-        manager.initialize()
+-        // No exception means success
+-    }
+-
+-    @Test
+-    fun testEvolvePersona() {
+-        manager.evolvePersona("testContext")
+-        // No exception means success
+-    }
+-
+-    @Test
+-    fun testSetTone() {
+-        manager.setTone("friendly")
+-        // No exception means success
+-    }
+-
+-    @Test
+-    fun testGetCurrentPersona() {
+-        val persona = manager.getCurrentPersona()
+-        assertEquals("Sallie", persona)
+-    }
+-
+-    @Test
+-    fun testHandleEvent() {
+-        manager.handleEvent("onboarding")
+-        // No exception means success
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManager.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManager.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManager.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManager.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,37 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: ResponseTemplateManager
+- * Intent: Handle functionality for ResponseTemplateManager
+- * Provenance-ID: a9096cf3-19d6-495c-8b24-5ad515e3060b
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package responseTemplates
+-
+-/**
+- * ResponseTemplateManager: Standards-compliant manager for dynamic response templates.
+- * - Supports persona-aware, context-sensitive, and event-driven response generation.
+- * - Extensible for localization, multimodal output, and custom template sets.
+- * - Follows Salle privacy, modularity, and audit standards.
+- */
+-class ResponseTemplateManager {
+-    fun getTemplate(context: String, persona: String): String {
+-        // Example: Return a template based on context and persona
+-        return "Hello, $persona! Welcome to $context."
+-    }
+-
+-    fun getLocalizedTemplate(context: String, persona: String, locale: String): String {
+-        // Example: Return a localized template
+-        return "[$locale] Hello, $persona! Welcome to $context."
+-    }
+-
+-    fun getEventDrivenTemplate(event: String, persona: String): String {
+-        // Example: Return a template for a specific event
+-        return "Event: $event | Persona: $persona"
+-    }
+-
+-    fun getCustomTemplate(templateId: String): String {
+-        // Example: Return a custom template by ID
+-        return "Custom template for $templateId"
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManagerTest.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManagerTest.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManagerTest.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ResponseTemplateManagerTest.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,45 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: ResponseTemplateManagerTest
+- * Intent: Handle functionality for ResponseTemplateManagerTest
+- * Provenance-ID: 447a1c08-a6a1-4512-bd61-18eca18a4092
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package responseTemplates
+-
+-import org.junit.Test
+-import org.junit.Assert.*
+-
+-/**
+- * ResponseTemplateManagerTest: Unit tests for ResponseTemplateManager
+- * - Tests persona-aware, context-sensitive, event-driven, and custom template generation.
+- * - Follows Salle standards for test coverage and reporting.
+- */
+-class ResponseTemplateManagerTest {
+-    private val manager = ResponseTemplateManager()
+-
+-    @Test
+-    fun testGetTemplate() {
+-        val result = manager.getTemplate("onboarding", "Sallie")
+-        assertEquals("Hello, Sallie! Welcome to onboarding.", result)
+-    }
+-
+-    @Test
+-    fun testGetLocalizedTemplate() {
+-        val result = manager.getLocalizedTemplate("onboarding", "Sallie", "en-US")
+-        assertEquals("[en-US] Hello, Sallie! Welcome to onboarding.", result)
+-    }
+-
+-    @Test
+-    fun testGetEventDrivenTemplate() {
+-        val result = manager.getEventDrivenTemplate("welcome", "Sallie")
+-        assertEquals("Event: welcome | Persona: Sallie", result)
+-    }
+-
+-    @Test
+-    fun testGetCustomTemplate() {
+-        val result = manager.getCustomTemplate("custom1")
+-        assertEquals("Custom template for custom1", result)
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/SampleTest.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/SampleTest.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/SampleTest.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/SampleTest.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,17 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: SampleTest
+- * Intent: Handle functionality for SampleTest
+- * Provenance-ID: 16c289c1-9a67-4a2b-95f0-fa3f61ba94c0
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-package feature
+-import kotlin.test.Test
+-import kotlin.test.assertTrue
+-class SampleTest {
+-    @Test
+-    fun testSample() {
+-        assertTrue(true)
+-    }
+-}
+Index: apps/android-launcher/src/app/src/main/kotlin/com/sallie/ValuesDrivenDecisionEngine.kt
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ValuesDrivenDecisionEngine.kt b/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ValuesDrivenDecisionEngine.kt
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/kotlin/com/sallie/ValuesDrivenDecisionEngine.kt	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,22 +0,0 @@
+-/*
+- * Persona: Tough love meets soul care.
+- * Module: ValuesDrivenDecisionEngine
+- * Intent: Handle functionality for ValuesDrivenDecisionEngine
+- * Provenance-ID: 8982f92f-a6c3-4eb4-bb00-99fbc2851af8
+- * Last-Reviewed: 2025-08-28T00:00:00Z
+- */
+-
+-// Salle Persona: ValuesDrivenDecisionEngine
+-package org.sallie.core.values
+-
+-class ValuesDrivenDecisionEngine {
+-    private val valuesHierarchy = listOf("honesty", "helpfulness", "efficiency", "empathy")
+-    private val valuesWeights = valuesHierarchy.mapIndexed { i, v -> v to (10 - i) }.toMap()
+-
+-    fun decide(options: Map<String, Int>): String =
+-        options.maxByOrNull { (k, v) -> valuesWeights.getOrDefault(k, 0) + v }?.key ?: "undecided"
+-
+-    fun explainDecision(decision: String): String =
+-        valuesWeights[decision]?.let { "Decision is aligned with value: $decision (weight: $it)" }
+-            ?: "No values alignment found for decision: $decision"
+-}
+Index: apps/android-launcher/src/app/src/main/res/drawable/pride_overlay.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/pride_overlay.xml b/apps/android-launcher/src/app/src/main/res/drawable/pride_overlay.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/pride_overlay.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/reflective_accent.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/reflective_accent.xml b/apps/android-launcher/src/app/src/main/res/drawable/reflective_accent.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/reflective_accent.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/rounded_input_background.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/rounded_input_background.xml b/apps/android-launcher/src/app/src/main/res/drawable/rounded_input_background.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/rounded_input_background.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<shape xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:shape="rectangle">
+-    <solid android:color="#FFFFFF" />
+-    <corners android:radius="20dp" />
+-    <stroke android:width="1dp" android:color="#DDDDDD" />
+-</shape>
+Index: apps/android-launcher/src/app/src/main/res/drawable/sparkle.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/sparkle.xml b/apps/android-launcher/src/app/src/main/res/drawable/sparkle.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/sparkle.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/spring_bg.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/spring_bg.xml b/apps/android-launcher/src/app/src/main/res/drawable/spring_bg.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/spring_bg.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/steady_accent.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/steady_accent.xml b/apps/android-launcher/src/app/src/main/res/drawable/steady_accent.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/steady_accent.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/summer_bg.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/summer_bg.xml b/apps/android-launcher/src/app/src/main/res/drawable/summer_bg.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/summer_bg.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/valentines_overlay.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/valentines_overlay.xml b/apps/android-launcher/src/app/src/main/res/drawable/valentines_overlay.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/valentines_overlay.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/drawable/winter_bg.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/winter_bg.xml b/apps/android-launcher/src/app/src/main/res/drawable/winter_bg.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/drawable/winter_bg.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,7 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <!-- Placeholder for SVG content -->
+-</vector>
+Index: apps/android-launcher/src/app/src/main/res/values/colors.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/values/colors.xml b/apps/android-launcher/src/app/src/main/res/values/colors.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/values/colors.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <color name="purple_500">#6200EE</color>
+-    <color name="purple_700">#3700B3</color>
+-    <color name="teal_200">#03DAC5</color>
+-    <color name="teal_700">#018786</color>
+-    <color name="black">#000000</color>
+-    <color name="white">#FFFFFF</color>
+-    <color name="silver">#C0C0C0</color>
+-    <color name="gold">#FFD700</color>
+-</resources>
+Index: apps/android-launcher/src/app/src/main/res/values/strings.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/values/strings.xml b/apps/android-launcher/src/app/src/main/res/values/strings.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/values/strings.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <string name="app_name">Sallie</string>
+-</resources>
+Index: apps/android-launcher/src/app/src/main/res/values/styles.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/values/styles.xml b/apps/android-launcher/src/app/src/main/res/values/styles.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/values/styles.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+-        <item name="colorPrimary">@color/purple_500</item>
+-        <item name="colorPrimaryVariant">@color/purple_700</item>
+-        <item name="colorOnPrimary">@color/white</item>
+-        <item name="colorSecondary">@color/teal_200</item>
+-        <item name="colorSecondaryVariant">@color/teal_700</item>
+-        <item name="colorOnSecondary">@color/black</item>
+-    </style>
+-</resources>
+Index: apps/android-launcher/src/app/src/main/res/values/voice_system_strings.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/res/values/voice_system_strings.xml b/apps/android-launcher/src/app/src/main/res/values/voice_system_strings.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/res/values/voice_system_strings.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,23 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <!-- Voice System Demo Strings -->
+-    <string name="voice_system_demo_title">Sallie Voice System Demo</string>
+-    <string name="status_initializing">Initializing voice system…</string>
+-    <string name="status_ready">Ready</string>
+-    <string name="status_listening">Listening…</string>
+-    <string name="status_processing">Processing…</string>
+-    <string name="status_speaking">Speaking…</string>
+-    <string name="transcription_hint">Transcription will appear here…</string>
+-    <string name="speak_button_text">Speak Text</string>
+-    <string name="enable_wake_word">Enable Wake Word</string>
+-    <string name="disable_wake_word">Disable Wake Word</string>
+-    <string name="permission_denied">Microphone permission denied</string>
+-    <string name="permission_granted">Microphone permission granted</string>
+-    <string name="wake_word_detected">Wake word detected</string>
+-    <string name="speech_detected">Speech detected</string>
+-    <string name="silence_detected">Silence detected</string>
+-    <string name="transcription_complete">Transcription complete</string>
+-    <string name="wake_word_enabled">Wake word detection enabled</string>
+-    <string name="wake_word_disabled">Wake word detection disabled</string>
+-    <string name="default_greeting">Hello, I am Sallie. How can I help you today?</string>
+-</resources>
+Index: apps/android-launcher/src/app/src/main/AndroidManifest.xml
+===================================================================
+diff --git a/apps/android-launcher/src/app/src/main/AndroidManifest.xml b/apps/android-launcher/src/app/src/main/AndroidManifest.xml
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/src/main/AndroidManifest.xml	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,365 +0,0 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+-
+-    <application
+-        android:allowBackup="true"
+-        android:icon="@mipmap/ic_launcher"
+-        android:label="@string/app_name"
+-        android:roundIcon="@mipmap/ic_launcher_round"
+-        android:supportsRtl="true"
+-        android:theme="@style/Theme.App">
+-        <activity
+-            android:name=".MainActivity"
+-            android:exported="true">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-        <activity
+-            android:name=".IconPickerActivity"
+-            android:exported="true"
+-            android:label="Icon Picker" />
+-        <!-- 35 activity-alias entries for dynamic launcher icons -->
+-        <!-- Generated by Copilot for dynamic icon switching -->
+-        <!-- Only one alias should be enabled at a time for launcher icon switching -->
+-        <!-- Example: To switch icon, enable the desired alias and disable others -->
+-        <!-- You can add more aliases if needed -->
+-        <activity-alias android:name=".MainActivityAlias1" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher1" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias2" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher2" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias3" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher3" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias4" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher4" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias5" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher5" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias6" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher6" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias7" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher7" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias8" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher8" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias9" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher9" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias android:name=".MainActivityAlias10" android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher10" android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <!-- ...repeat for 35 aliases... -->
+-        <activity-alias
+-            android:name=".MainActivityAlias11"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher11"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias12"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher12"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias13"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher13"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias14"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher14"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias15"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher15"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias16"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher16"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias17"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher17"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias18"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher18"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias19"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher19"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias20"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher20"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias21"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher21"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias22"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher22"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias23"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher23"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias24"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher24"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias25"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher25"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias26"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher26"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias27"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher27"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias28"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher28"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias29"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher29"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias30"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher30"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias31"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher31"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias32"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher32"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias33"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher33"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias34"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher34"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-        <activity-alias
+-            android:name=".MainActivityAlias35"
+-            android:enabled="false"
+-            android:exported="true"
+-            android:icon="@mipmap/ic_launcher35"
+-            android:targetActivity=".MainActivity">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity-alias>
+-    </application>
+-
+-</manifest>
+Index: apps/android-launcher/src/app/.editorconfig
+===================================================================
+diff --git a/apps/android-launcher/src/app/.editorconfig b/apps/android-launcher/src/app/.editorconfig
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/.editorconfig	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,12 +0,0 @@
+-# EditorConfig is awesome: https://EditorConfig.org
+-
+-# top-most EditorConfig file
+-root = true
+-
+-[*]
+-indent_style = space
+-indent_size = 4
+-end_of_line = crlf
+-charset = utf-8
+-trim_trailing_whitespace = false
+-insert_final_newline = false
+\ No newline at end of file
+Index: apps/android-launcher/src/app/build.gradle.kts
+===================================================================
+diff --git a/apps/android-launcher/src/app/build.gradle.kts b/apps/android-launcher/src/app/build.gradle.kts
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/build.gradle.kts	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,54 +0,0 @@
+-plugins {
+-  id("com.android.application")
+-  kotlin("android")
+-}
+-
+-android {
+-  namespace = "com.sallie.app"
+-  compileSdk = 36
+-
+-  defaultConfig {
+-    applicationId = "com.sallie.app"
+-    minSdk = 24
+-    targetSdk = 34
+-    versionCode = 1
+-    versionName = "1.0"
+-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+-  }
+-
+-  buildTypes {
+-    release {
+-      isMinifyEnabled = false
+-      proguardFiles(
+-        getDefaultProguardFile("proguard-android-optimize.txt"),
+-        "proguard-rules.pro"
+-      )
+-    }
+-    debug {
+-      isMinifyEnabled = false
+-    }
+-  }
+-
+-  compileOptions {
+-    sourceCompatibility = JavaVersion.VERSION_17
+-    targetCompatibility = JavaVersion.VERSION_17
+-  }
+-}
+-
+-kotlin {
+-  compilerOptions {
+-    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+-  }
+-}
+-
+-dependencies {
+-  implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.0")
+-  implementation("androidx.core:core-ktx:1.12.0")
+-  implementation("androidx.appcompat:appcompat:1.6.1")
+-  implementation("com.google.android.material:material:1.11.0")
+-  implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+-  implementation("com.squareup.okhttp3:okhttp:4.12.0")
+-  testImplementation("junit:junit:4.13.2")
+-  androidTestImplementation("androidx.test.ext:junit:1.1.5")
+-  androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
+-}
+Index: apps/android-launcher/src/app/proguard-rules.pro
+===================================================================
+diff --git a/apps/android-launcher/src/app/proguard-rules.pro b/apps/android-launcher/src/app/proguard-rules.pro
+deleted file mode 100644
+--- a/apps/android-launcher/src/app/proguard-rules.pro	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
++++ /dev/null	(revision 27eae69505e0e3bf2075e8a25c5ea154e5e29f4b)
+@@ -1,52 +0,0 @@
+-# ProGuard rules for Sallie Android app
+-# Add project specific ProGuard rules here.
+-
+-# Keep all classes in the main package
+--keep class com.sallie.app.** { *; }
+-
+-# Keep Compose classes
+--keep class androidx.compose.** { *; }
+--keep class androidx.lifecycle.** { *; }
+--keep class androidx.activity.** { *; }
+-
+-# Keep data classes
+--keep class kotlin.Metadata { *; }
+--keep class kotlin.reflect.** { *; }
+-
+-# Keep annotation classes
+--keepattributes *Annotation*
+--keepattributes Signature
+--keepattributes Exceptions
+--keepattributes InnerClasses
+--keepattributes SourceFile
+--keepattributes LineNumberTable
+-
+-# Keep enums
+--keepclassmembers enum * {
+-    public static **[] values();
+-    public static ** valueOf(java.lang.String);
+-}
+-
+-# Keep parcelable classes
+--keep class * implements android.os.Parcelable {
+-  public static final android.os.Parcelable$Creator *;
+-}
+-
+-# Keep ViewModels
+--keep class * extends androidx.lifecycle.ViewModel {
+-    *;
+-}
+-
+-# Optimize for size
+--optimizationpasses 5
+--allowaccessmodification
+--dontpreverify
+--dontwarn android.support.**
+--dontwarn kotlin.**
+-
+-# Remove debug logging
+--assumenosideeffects class android.util.Log {
+-    public static *** d(...);
+-    public static *** v(...);
+-    public static *** i(...);
+-}
+diff --git a/apps/android-launcher/src/app/src/main/java/com/example/sallieos/AllAliases.kt b/apps/android-launcher/src/app/src/main/java/com/example/sallieos/AllAliases.kt
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/src/main/java/com/example/sallieos/ThemeController.kt b/apps/android-launcher/src/app/src/main/java/com/example/sallieos/ThemeController.kt
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/src/main/java/com/sallie/launcher/integration/PhoneControlIntegration.kt b/apps/android-launcher/src/app/src/main/java/com/sallie/launcher/integration/PhoneControlIntegration.kt
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/rounded_edit_background.xml b/apps/android-launcher/src/app/src/main/res/drawable/rounded_edit_background.xml
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/rounded_text_background.xml b/apps/android-launcher/src/app/src/main/res/drawable/rounded_text_background.xml
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/apps/android-launcher/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/apps/android-launcher/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+deleted file mode 100644
+diff --git a/apps/android-launcher/src/app/(drawer)/(tabs)/_layout.tsx b/apps/android-launcher/src/app/(drawer)/(tabs)/_layout.tsx
+deleted file mode 100644
+index 2fb3c85ae166d3fefb7f9a681217616430c05a82..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/(tabs)/explore.tsx b/apps/android-launcher/src/app/(drawer)/(tabs)/explore.tsx
+deleted file mode 100644
+index b4fb5c2889d7bcecd883e529c68fa0371012bb40..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/(tabs)/index.tsx b/apps/android-launcher/src/app/(drawer)/(tabs)/index.tsx
+deleted file mode 100644
+index f8545f99112517eb0e9d6c0a8a39315d0849227f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/_layout.tsx b/apps/android-launcher/src/app/(drawer)/_layout.tsx
+deleted file mode 100644
+index 6e2765d793edd27e45fb6ac9dcfc9ad102152d9b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/explore.tsx b/apps/android-launcher/src/app/(drawer)/explore.tsx
+deleted file mode 100644
+index b2ee64cae37cffb6252dc12918e7093d4637019d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/profile.tsx b/apps/android-launcher/src/app/(drawer)/profile.tsx
+deleted file mode 100644
+index fe4ef6c88a03978f6177cf60656aaa65a441e362..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/sallie-sanctuary.tsx b/apps/android-launcher/src/app/(drawer)/sallie-sanctuary.tsx
+deleted file mode 100644
+index 6ab4afec9158d7d47158e4b062cc2e181db7a337..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/(drawer)/settings.tsx b/apps/android-launcher/src/app/(drawer)/settings.tsx
+deleted file mode 100644
+index 033e8900e1c1aba2a2c5d5ce948a8e31978ffbaf..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/creator.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/creator.png
+deleted file mode 100644
+index 5bdc58739d505e14d52dd044764494c05dbd4d06..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/dreamer.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/dreamer.png
+deleted file mode 100644
+index 48d03634c89cab96e4aec6b1fdcb7467285f3a11..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/explorer.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/explorer.png
+deleted file mode 100644
+index 0aecb6b32e17b4e69bb42c835dc456682453535f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/guardian.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/guardian.png
+deleted file mode 100644
+index f885baa68eea286db67b2bb3599dbcce6ee0f494..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/healer.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/healer.png
+deleted file mode 100644
+index b6de0a734d97aa47a3f1d266af69dbfe89daf13f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mentor.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mentor.png
+deleted file mode 100644
+index 522e5578cd32efbc820c834d78e38cd0197d44f4..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mom.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/mom.png
+deleted file mode 100644
+index fbd1d0edc0ffc409a93b1fb10b332327b83a92fd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/realist.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/realist.png
+deleted file mode 100644
+index fc8e567d304641dff6af10daf031bb1a6bdc43c2..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/rebel.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/rebel.png
+deleted file mode 100644
+index 18f86a3f9c22cf770fe14ed4da3bcf004b8efe27..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/southern_grit.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/southern_grit.png
+deleted file mode 100644
+index 02a664ac7dddacb73e73aa33d6fe0f08aafab5f0..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/visionary.png b/apps/android-launcher/src/app/assets/icon_pipeline/assets/base/visionary.png
+deleted file mode 100644
+index 7142b19559f9441f6f56f539b0a6c6b70cccc81b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/season/spring.png b/apps/android-launcher/src/app/assets/season/spring.png
+deleted file mode 100644
+index 43f48662682d9a4f6d005ac98fe614f798441e15..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/assets/season/winter.png b/apps/android-launcher/src/app/assets/season/winter.png
+deleted file mode 100644
+index 1414e0d5e217dd3f302f21721412c7de73f0819d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/_layout.tsx b/apps/android-launcher/src/app/onboarding/_layout.tsx
+deleted file mode 100644
+index de567310e102e59c03cc6d4de7ec3057d55cfd6c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage0.tsx b/apps/android-launcher/src/app/onboarding/stage0.tsx
+deleted file mode 100644
+index 0e6105639349b2cb6ddc4e6540f6d91de84d1ce6..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage1.tsx b/apps/android-launcher/src/app/onboarding/stage1.tsx
+deleted file mode 100644
+index 333951bdf2efdfdf882abb93054580a630cbf058..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage2.tsx b/apps/android-launcher/src/app/onboarding/stage2.tsx
+deleted file mode 100644
+index 0b1380a76a217e42963c4b9e5e9f291290620cdf..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage3.tsx b/apps/android-launcher/src/app/onboarding/stage3.tsx
+deleted file mode 100644
+index 38b5ee2849d0406d77dacbb61a461620aecc7833..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage4.tsx b/apps/android-launcher/src/app/onboarding/stage4.tsx
+deleted file mode 100644
+index 49351deb6c4d9cefb0296b82efcd76089e60e52b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage5.tsx b/apps/android-launcher/src/app/onboarding/stage5.tsx
+deleted file mode 100644
+index 06a1e1e2910bed9df836b61ea1f0bef41d2122dd..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/onboarding/stage6.tsx b/apps/android-launcher/src/app/onboarding/stage6.tsx
+deleted file mode 100644
+index 07921492de5984102803dd19de2005ed402ff299..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/drawable/ic_launcher_background.png b/apps/android-launcher/src/app/src/main/res/drawable/ic_launcher_background.png
+deleted file mode 100644
+index fc12d078fce4c1df5ddfdfaeabb38dc98003982b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher_foreground.png b/apps/android-launcher/src/app/src/main/res/mipmap-anydpi-v26/ic_launcher_foreground.png
+deleted file mode 100644
+index bb5b8bcc762a45a36d279ab705f8321b48b76e08..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher.png b/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher.png
+deleted file mode 100644
+index 448a55d7937d8b00d4d83d021f904d717d924ffe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher35.png b/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher35.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png b/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index bb5b8bcc762a45a36d279ab705f8321b48b76e08..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher_round.png b/apps/android-launcher/src/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+deleted file mode 100644
+index 0848a316f9df3b5362d44efa5b60ee701646ff1a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher.png
+deleted file mode 100644
+index 448a55d7937d8b00d4d83d021f904d717d924ffe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher11.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher11.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher12.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher12.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher13.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher13.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher14.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher14.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher15.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher15.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher16.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher16.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher17.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher17.png
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher18.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher18.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher19.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher19.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher20.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher20.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher21.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher21.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher22.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher22.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher23.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher23.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher24.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher24.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher25.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher25.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher26.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher26.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher27.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher27.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher28.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher28.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher29.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher29.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher30.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher30.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher31.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher31.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher32.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher32.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher33.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher33.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher34.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher34.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher35.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher35.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher_round.png b/apps/android-launcher/src/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+deleted file mode 100644
+index 0848a316f9df3b5362d44efa5b60ee701646ff1a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+deleted file mode 100644
+index 448a55d7937d8b00d4d83d021f904d717d924ffe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher11.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher11.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher12.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher12.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher13.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher13.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher14.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher14.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher15.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher15.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher16.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher16.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher17.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher17.png
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher18.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher18.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher19.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher19.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher20.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher20.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher21.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher21.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher22.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher22.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher23.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher23.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher24.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher24.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher25.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher25.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher26.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher26.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher27.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher27.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher28.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher28.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher29.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher29.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher30.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher30.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher31.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher31.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher32.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher32.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher33.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher33.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher34.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher34.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher35.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher35.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index bb5b8bcc762a45a36d279ab705f8321b48b76e08..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png b/apps/android-launcher/src/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+deleted file mode 100644
+index 0848a316f9df3b5362d44efa5b60ee701646ff1a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+deleted file mode 100644
+index 448a55d7937d8b00d4d83d021f904d717d924ffe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher11.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher11.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher12.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher12.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher13.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher13.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher14.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher14.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher15.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher15.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher16.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher16.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher17.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher17.png
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher18.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher18.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher19.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher19.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher20.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher20.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher21.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher21.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher22.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher22.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher23.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher23.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher24.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher24.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher25.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher25.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher26.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher26.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher27.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher27.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher28.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher28.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher29.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher29.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher30.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher30.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher31.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher31.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher32.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher32.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher33.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher33.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher34.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher34.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher35.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher35.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index bb5b8bcc762a45a36d279ab705f8321b48b76e08..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+deleted file mode 100644
+index 0848a316f9df3b5362d44efa5b60ee701646ff1a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+deleted file mode 100644
+index 448a55d7937d8b00d4d83d021f904d717d924ffe..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher11.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher11.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher12.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher12.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher13.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher13.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher14.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher14.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher15.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher15.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher16.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher16.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher17.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher17.png
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher18.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher18.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher19.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher19.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher20.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher20.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher21.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher21.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher22.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher22.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher23.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher23.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher24.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher24.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher25.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher25.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher26.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher26.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher27.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher27.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher28.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher28.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher29.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher29.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher30.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher30.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher31.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher31.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher32.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher32.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher33.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher33.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher34.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher34.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher35.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher35.png
+deleted file mode 100644
+index 22ee8ec79e52a680c58d28f148ebebd9bac450e9..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+deleted file mode 100644
+index bb5b8bcc762a45a36d279ab705f8321b48b76e08..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png b/apps/android-launcher/src/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+deleted file mode 100644
+index 0848a316f9df3b5362d44efa5b60ee701646ff1a..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/tabs/explore.tsx b/apps/android-launcher/src/app/tabs/explore.tsx
+deleted file mode 100644
+index e124e19d6bd6636b30422b99cd2e1273d26d5efc..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/+not-found.tsx b/apps/android-launcher/src/app/+not-found.tsx
+deleted file mode 100644
+index 16c585f8eec6f95086a425c5f8ca1b83ee2a1145..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/app/_layout.tsx b/apps/android-launcher/src/app/_layout.tsx
+deleted file mode 100644
+index 58a31fac9e93d0f43f73e967e7a585cb6d54013f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/FadeInView.tsx b/apps/android-launcher/src/src/components/onboarding/FadeInView.tsx
+deleted file mode 100644
+index ed0d9f2aed019801fcbc1dfa9c28879c00e2a9ce..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/OnboardingButton.tsx b/apps/android-launcher/src/src/components/onboarding/OnboardingButton.tsx
+deleted file mode 100644
+index e6c6c8a19628b3a5c90708f2d5245ec40a042e41..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/OnboardingStage.tsx b/apps/android-launcher/src/src/components/onboarding/OnboardingStage.tsx
+deleted file mode 100644
+index 73dc9d3e5cd232b1352c527e438612e60d9d4c37..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/ProgressIndicator.tsx b/apps/android-launcher/src/src/components/onboarding/ProgressIndicator.tsx
+deleted file mode 100644
+index c5551d5d051efe849d9e43b7bbad78649452d9b3..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/PulseAnimation.tsx b/apps/android-launcher/src/src/components/onboarding/PulseAnimation.tsx
+deleted file mode 100644
+index e6a009297245c5507b5dca526041c72945238648..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/QASystem.tsx b/apps/android-launcher/src/src/components/onboarding/QASystem.tsx
+deleted file mode 100644
+index 889087a8ba31c025f52f25fcffad49d1934bf0b8..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/RestartButton.tsx b/apps/android-launcher/src/src/components/onboarding/RestartButton.tsx
+deleted file mode 100644
+index 2f849aa0470db5a3eb1427b911899f9693e193af..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/onboarding/SkipButton.tsx b/apps/android-launcher/src/src/components/onboarding/SkipButton.tsx
+deleted file mode 100644
+index 90efeb7725e05d6934125bb5b383d72407013d0e..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/components/index.ts b/apps/android-launcher/src/src/components/index.ts
+deleted file mode 100644
+index 480a106d677abaf2418539a33e472b0b5333b22c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/constants/Colors.ts b/apps/android-launcher/src/src/constants/Colors.ts
+deleted file mode 100644
+index 06e50b1c6b3e025c189256dc035c83d5629db32c..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/contexts/OnboardingContext.tsx b/apps/android-launcher/src/src/contexts/OnboardingContext.tsx
+deleted file mode 100644
+index 8ee701d5d4279ad10a84eb20473cb54688cd698d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/core/DatabaseIntegration.ts b/apps/android-launcher/src/src/core/DatabaseIntegration.ts
+deleted file mode 100644
+index e09b83d789d48349a3bdbf581f90b44663bef684..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/hooks/useColorScheme.ts b/apps/android-launcher/src/src/hooks/useColorScheme.ts
+deleted file mode 100644
+index e9d47813451da592e5a7302ef3323f333668b005..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/hooks/useThemeColor.ts b/apps/android-launcher/src/src/hooks/useThemeColor.ts
+deleted file mode 100644
+index a6e8c0ab4fc70b8f096ec6a028ee7340a5a60a28..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/providers/graphics/index.ts b/apps/android-launcher/src/src/providers/graphics/index.ts
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/providers/graphics/RemoteGenerationProvider.ts b/apps/android-launcher/src/src/providers/graphics/RemoteGenerationProvider.ts
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/screens/ProfileScreen.tsx b/apps/android-launcher/src/src/screens/ProfileScreen.tsx
+deleted file mode 100644
+index 6c35ffd872b532ecdd82b603c3a77ee5fc0f12eb..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/screens/SalliePanelScreen.tsx b/apps/android-launcher/src/src/screens/SalliePanelScreen.tsx
+deleted file mode 100644
+index 8fe46b13f8e1f0edf2c2709a1c11f324d37daad7..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/screens/VideoScreen.tsx b/apps/android-launcher/src/src/screens/VideoScreen.tsx
+deleted file mode 100644
+index 320f7d93225648dedc7dc72cd711933f1614f3c2..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/screens/VisualShowcaseScreen.tsx b/apps/android-launcher/src/src/screens/VisualShowcaseScreen.tsx
+deleted file mode 100644
+index cbdc60db490db18230863c561970416c23e84d3b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/store/device.ts b/apps/android-launcher/src/src/store/device.ts
+deleted file mode 100644
+index 5bd3edd512bb0e80ccf292cd1ed4ed8342cbdb77..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/store/memory.ts b/apps/android-launcher/src/src/store/memory.ts
+deleted file mode 100644
+index c7640f9d44a835b7d4973409e9cf4a1f3fbfb703..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
+diff --git a/apps/android-launcher/src/src/themes/index.ts b/apps/android-launcher/src/src/themes/index.ts
+deleted file mode 100644
+index e94fa9b963f3caca322c92a809125152696d197d..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+

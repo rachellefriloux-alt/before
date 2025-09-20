@@ -1,13 +1,13 @@
 /*
-Salle Persona Module: ProactiveHelperModule
+Sallie Persona Module: ProactiveHelperModule
 Monitors user activity, offers help, and autonomously completes tasks.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 
-// Salle Persona Module: ProactiveHelperModule
+// Sallie Persona Module: ProactiveHelperModule
 // Monitors user activity, offers help, and autonomously completes tasks.
-// Follows Salle architecture, modularity, and privacy rules.
+// Follows Sallie architecture, modularity, and privacy rules.
 
 export class ProactiveHelperModule {
   private activityLog: string[] = [];

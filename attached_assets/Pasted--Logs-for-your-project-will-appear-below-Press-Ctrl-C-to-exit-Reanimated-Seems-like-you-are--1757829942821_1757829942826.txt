@@ -1,0 +1,128 @@
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+| [Reanimated] Seems like you are using a Babel plugin `react-native-reanimated/plugin`. It was moved to `react-native-worklets` package. Please use `react-native-worklets/plugin` instead.
+| [Reanimated] Seems like you are using a Babel plugin `react-native-reanimated/plugin`. It was moved to `react-native-worklets` package. Please use `react-native-worklets/plugin` instead.
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.6% (500/700)
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.6% (508/707)
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 52.2% (511/707)
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 52.8% (515/709)
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 53.6% (520/710)
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 54.5% (524/710)
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 54.7% (525/710)
+
+
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.3% (533/717)
+
+
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 56.4% (539/718)
+
+
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 56.4% (541/721)
+
+
+
+
+
+
+
+
+
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 56.4% (543/726)
+
+
+
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+| [Reanimated] Seems like you are using a Babel plugin `react-native-reanimated/plugin`. It was moved to `react-native-worklets` package. Please use `react-native-worklets/plugin` instead.
+| [Reanimated] Seems like you are using a Babel plugin `react-native-reanimated/plugin`. It was moved to `react-native-worklets` package. Please use `react-native-worklets/plugin` instead.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.0% ( 867/1029)
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.0% ( 873/1037)
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.0% ( 879/1056)
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.0% ( 886/1095)
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.0% ( 898/1119)
+Android node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 71.0% ( 899/1120)
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+ WARN  The package X:\Sallie-AI\node_modules\use-latest-callback contains an invalid package.json configuration. Consider raising this issue with the package maintainer(s).
+Reason: The resolution for "X:\Sallie-AI\node_modules\use-latest-callback" defined in "exports" is X:\Sallie-AI\node_modules\use-latest-callback\esm.mjs, however this file does not exist. Falling back to file-based resolution.
+Android Bundling failed 24784ms node_modules\expo-router\entry.js (1642 modules)
+Unable to resolve "@/components/SalliePersonalityVisualizer" from "app\(drawer)\sallie-sanctuary.tsx"
+  27 | import { EnhancedButton } from '@/components/EnhancedButton';                                                                                          
+  28 | import { SallieMoodVisualizer } from '@/components/SallieMoodVisualizer';                                                                              
+> 29 | import { SalliePersonalityVisualizer } from '@/components/SalliePersonalityVisualizer';                                                                
+     |                                              ^
+  30 | import { SallieAppearanceSelector } from '@/components/SallieAppearanceSelector';                                                                      
+  31 |                                                                                                                                                        
+  32 | const { width, height } = Dimensions.get('window');                                                                                                    
+
+Import stack:
+
+ app\(drawer)\sallie-sanctuary.tsx
+ | import "@/components/SalliePersonalityVisualizer"                                                                                                          
+
+ app (require.context)
+
+
+
+
+
+
+
+
+
+

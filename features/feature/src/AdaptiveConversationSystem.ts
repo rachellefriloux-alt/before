@@ -1,7 +1,7 @@
 /*
-Salle Persona Module: AdaptiveConversationSystem
+Sallie Persona Module: AdaptiveConversationSystem
 Implements adaptive conversational patterns, dialog management, turn-taking, and contextual responses.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 type ConversationStyle = 'formal' | 'casual' | 'empathetic' | 'professional' | 'humorous';

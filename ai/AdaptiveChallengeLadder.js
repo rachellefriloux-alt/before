@@ -430,9 +430,25 @@ class AdaptiveChallengeLadder {
     /**
      * [NEW][AdaptiveChallengeLadder]: Helper methods
      */
-    isEmotionallyAppropriate(challenge, emotionalArc) { // eslint-disable-line no-unused-vars
-        // Simple appropriateness check (would be more sophisticated in production)
-        return true; // Placeholder - all challenges considered appropriate
+    isEmotionallyAppropriate(challenge, emotionalArc) {
+        // Check if challenge is emotionally appropriate based on user's current state
+        if (!emotionalArc || !challenge) return false;
+
+        const { primaryEmotion, intensity, valence } = emotionalArc;
+
+        // Don't present challenges during high-intensity negative emotions
+        if (intensity > 0.8 && valence < -0.3) {
+            return false;
+        }
+
+        // Adjust challenge difficulty based on emotional state
+        const emotionalAdjustment = this.calculateEmotionalAdjustment(primaryEmotion, intensity);
+
+        // Check if challenge difficulty is appropriate after emotional adjustment
+        const adjustedDifficulty = challenge.difficulty + emotionalAdjustment;
+        const appropriateRange = this.getAppropriateDifficultyRange(emotionalArc);
+
+        return adjustedDifficulty >= appropriateRange.min && adjustedDifficulty <= appropriateRange.max;
     }
 
     isRecentlyFailed(challengeId, userProgress) {
@@ -443,14 +459,30 @@ class AdaptiveChallengeLadder {
         return recentFailures.length > 0;
     }
 
-    getLastSeenDate(challengeId, userHistory) { // eslint-disable-line no-unused-vars
-        // Implementation for finding last seen date
-        return null; // Placeholder
+    getLastSeenDate(challengeId, userHistory) {
+        // Find the most recent date when this challenge was presented to the user
+        if (!userHistory || !Array.isArray(userHistory)) return null;
+
+        const challengeEntries = userHistory
+            .filter(entry => entry.challengeId === challengeId)
+            .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+        return challengeEntries.length > 0 ? new Date(challengeEntries[0].timestamp) : null;
     }
 
-    getHistoricalSuccessRate(challengeId, userHistory) { // eslint-disable-line no-unused-vars
-        // Implementation for calculating historical success rate
-        return 0.5; // Placeholder
+    getHistoricalSuccessRate(challengeId, userHistory) {
+        // Calculate historical success rate for a specific challenge
+        if (!userHistory || !Array.isArray(userHistory)) return 0.5;
+
+        const challengeEntries = userHistory.filter(entry => entry.challengeId === challengeId);
+
+        if (challengeEntries.length === 0) return 0.5; // No history, return neutral rate
+
+        const successfulAttempts = challengeEntries.filter(entry =>
+            entry.action === 'challenge_completed' || entry.action === 'challenge_succeeded'
+        ).length;
+
+        return successfulAttempts / challengeEntries.length;
     }
 
     getSelectionReason(challenge, userProgress) { // eslint-disable-line no-unused-vars
@@ -479,6 +511,53 @@ class AdaptiveChallengeLadder {
         const progress = this.getUserProgress(userId);
         const recentActivity = progress.recentChallenges.slice(0, 7); // Last 7 days worth
         progress.engagementFrequency = recentActivity.length;
+    }
+
+    /**
+     * Helper method to calculate emotional adjustment for challenge difficulty
+     */
+    calculateEmotionalAdjustment(primaryEmotion, intensity) {
+        const emotionalFactors = {
+            'joy': -0.2,      // Reduce difficulty when joyful
+            'sadness': 0.1,   // Slightly increase difficulty when sad
+            'anger': 0.2,     // Increase difficulty when angry
+            'fear': 0.3,      // Significantly increase difficulty when fearful
+            'surprise': 0.0,  // No adjustment for surprise
+            'disgust': 0.1,   // Slightly increase difficulty when disgusted
+            'neutral': 0.0    // No adjustment for neutral
+        };
+
+        const baseAdjustment = emotionalFactors[primaryEmotion] || 0;
+        return baseAdjustment * intensity; // Scale by emotional intensity
+    }
+
+    /**
+     * Helper method to get appropriate difficulty range based on emotional state
+     */
+    getAppropriateDifficultyRange(emotionalArc) {
+        const { intensity, valence } = emotionalArc;
+
+        // Base ranges
+        let minDifficulty = 0.1;
+        let maxDifficulty = 0.9;
+
+        // Adjust based on emotional valence (positive/negative)
+        if (valence < -0.5) {
+            // Very negative emotions - reduce difficulty range
+            maxDifficulty = 0.6;
+        } else if (valence > 0.5) {
+            // Very positive emotions - can handle higher difficulty
+            minDifficulty = 0.2;
+            maxDifficulty = 1.0;
+        }
+
+        // Adjust based on emotional intensity
+        if (intensity > 0.7) {
+            // High intensity - be more conservative
+            maxDifficulty = Math.min(maxDifficulty, 0.7);
+        }
+
+        return { min: minDifficulty, max: maxDifficulty };
     }
 
     /**

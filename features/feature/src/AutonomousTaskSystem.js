@@ -1,5 +1,5 @@
 
-// Salle Persona Module
+// Sallie Persona Module
 // AutonomousTaskSystem.js
 
 class AutonomousTaskSystem {

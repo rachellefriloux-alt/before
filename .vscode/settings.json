@@ -22,5 +22,6 @@
     "docs/configuration.md",
     "docs/roadmap.md"
   ],
-  "todo-tree.tree.disableCompactFolders": false
+  "todo-tree.tree.disableCompactFolders": false,
+  "vscode-autoGit.enabled": false
 }

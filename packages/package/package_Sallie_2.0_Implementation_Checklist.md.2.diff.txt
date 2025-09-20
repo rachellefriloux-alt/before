@@ -1,9 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\docs\Sallie_2.0_Implementation_Checklist.md
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\Sallie_2.0_Implementation_Checklist.md
----- DIFF ----
----
-provenance:
-	repo: Sallie
-	path: /docs
-	scope: canonical
----

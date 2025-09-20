@@ -1,4 +1,5 @@
-# TODO: SalleCompanion → Sallie Android Merge
+# SalleCompanion to Sallie Android Merge
+
 
 - [x] Scaffold launcher side-screen dashboard (6 layouts, modular gestures, setup picker)
 - [x] Port shared models/services/utilities

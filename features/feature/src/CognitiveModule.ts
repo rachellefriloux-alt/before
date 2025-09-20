@@ -1,13 +1,13 @@
 /*
-Salle Persona Module: CognitiveModule
+Sallie Persona Module: CognitiveModule
 Implements advanced mental capabilities: learning, adapting, problem-solving, creative reasoning, and memory recall.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 
-// Salle Persona Module: CognitiveModule
+// Sallie Persona Module: CognitiveModule
 // Implements advanced mental capabilities: learning, adapting, problem-solving, creative reasoning, and memory recall.
-// Follows Salle architecture, modularity, and privacy rules.
+// Follows Sallie architecture, modularity, and privacy rules.
 
 type Interaction = {
   userId: string;

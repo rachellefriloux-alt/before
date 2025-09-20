@@ -1,5 +1,5 @@
 
-// Salle Persona Module
+// Sallie Persona Module
 // AdvancedLanguageUnderstanding.js
 
 class AdvancedLanguageUnderstanding {

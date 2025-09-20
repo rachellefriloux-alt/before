@@ -1,5 +1,5 @@
 /*
- * Salle Persona Module: CreativeTraditionalIntegrator
+ * Sallie Persona Module: CreativeTraditionalIntegrator
  * Purpose: Integrates creative, resourceful, and traditional-modern value perspectives into responses.
  * Author: Migrated and enhanced for Sallie (JavaScript)
  * Privacy: No external network calls; local-only logic

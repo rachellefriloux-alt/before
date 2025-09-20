@@ -1,0 +1,23 @@
+/* MERGE-START: dest(C:\Users\chell\Desktop\newsal\tsconfig.node.json) and sources(C:\Users\chell\Desktop\Sallie\Sallie0\tsconfig.node.json) */
+/* --- dest (C:\Users\chell\Desktop\newsal\tsconfig.node.json) --- */
+/* Merged master for logical file: .\tsconfig.node
+Sources:
+ - C:\Users\chell\Desktop\Sallie\merged_sallie\tsconfig.node.json (hash:DA555A66AC838889BD00BB07A7F4B98879D52979A3468D4A0D2309FD5FE02CB0)
+ - C:\Users\chell\Desktop\Sallie\worktrees\import_Sallie0\tsconfig.node.json (hash:51798F746CCF17AADEDF56D455CD4F4A4C2D7F750C7D313B4DD48C9BD343EC67)
+ */
+
+/* ---- source: C:\Users\chell\Desktop\Sallie\merged_sallie\tsconfig.node.json | ext: .json | sha: DA555A66AC838889BD00BB07A7F4B98879D52979A3468D4A0D2309FD5FE02CB0 ---- */
+[BINARY FILE - original copied to merged_sources: tsconfig.node.json]
+/* ---- source: C:\Users\chell\Desktop\Sallie\worktrees\import_Sallie0\tsconfig.node.json | ext: .json | sha: 51798F746CCF17AADEDF56D455CD4F4A4C2D7F750C7D313B4DD48C9BD343EC67 ---- */
+/* --- source: C:\Users\chell\Desktop\Sallie\Sallie0\tsconfig.node.json --- */
+{
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts", "scripts/**/*", "vite.config.js"]
+}

@@ -1,14 +1,14 @@
 /*
-Salle Persona Module: HumanizedSalleBridge
-Connects the humanized Salle modules with the core system.
-Follows Salle architecture, modularity, and privacy rules.
+Sallie Persona Module: HumanizedSallieBridge
+Connects the humanized Sallie modules with the core system.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
-const { HumanizedSalleOrchestrator } = require('./HumanizedSalleOrchestrator');
+const { HumanizedSallieOrchestrator } = require('./HumanizedSallieOrchestrator');
 
-class HumanizedSalleBridge {
+class HumanizedSallieBridge {
     constructor() {
-        this.orchestrator = new HumanizedSalleOrchestrator();
+        this.orchestrator = new HumanizedSallieOrchestrator();
         this.activeUserIds = new Map();
     }
 
@@ -42,4 +42,4 @@ class HumanizedSalleBridge {
     }
 }
 
-module.exports = HumanizedSalleBridge;
+module.exports = HumanizedSallieBridge;

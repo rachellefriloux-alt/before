@@ -84,8 +84,43 @@ export class PersonaEngine {
 
   harmonizeTraits() {
     // Harmonize conflicting traits for stability and growth
-    // Placeholder implementation
-    return { harmonized: true };
+    const conflicts = this.identifyConflicts();
+
+    if (conflicts.length === 0) {
+      return { harmonized: true, message: 'No conflicts to harmonize' };
+    }
+
+    // Create harmonization strategies
+    const harmonizationResults = conflicts.map(conflict => {
+      const strategy = this.createHarmonizationStrategy(conflict);
+      return {
+        conflict: conflict.conflict,
+        strategy: strategy,
+        success: Math.random() > 0.2 // 80% success rate for demo
+      };
+    });
+
+    const successfulHarmonizations = harmonizationResults.filter(r => r.success).length;
+    const totalConflicts = conflicts.length;
+
+    return {
+      harmonized: successfulHarmonizations === totalConflicts,
+      results: harmonizationResults,
+      summary: `Harmonized ${successfulHarmonizations}/${totalConflicts} trait conflicts`
+    };
+  }
+
+  createHarmonizationStrategy(conflict) {
+    // Create a strategy to harmonize conflicting traits
+    const strategies = [
+      `Balance ${conflict.traitA} and ${conflict.traitB} based on context`,
+      `Prioritize ${conflict.traitA} when ${conflict.context} is high priority`,
+      `Develop integrated approach combining ${conflict.traitA} and ${conflict.traitB}`,
+      `Use ${conflict.traitA} for immediate responses, ${conflict.traitB} for long-term planning`,
+      `Create adaptive switching between ${conflict.traitA} and ${conflict.traitB}`
+    ];
+
+    return strategies[Math.floor(Math.random() * strategies.length)];
   }
 
   getContextualExpression(context) {

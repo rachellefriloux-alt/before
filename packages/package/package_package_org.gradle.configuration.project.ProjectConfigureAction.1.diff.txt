@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\software-diagnostics\META-INF\services\org.gradle.configuration.project.ProjectConfigureAction
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\platform-jvm\META-INF\services\org.gradle.configuration.project.ProjectConfigureAction
----- DIFF ----
-org.gradle.jvm.toolchain.internal.task.ShowToolchainsTaskConfigurator
-org.gradle.api.plugins.internal.SoftwareReportingTasksAutoApplyAction

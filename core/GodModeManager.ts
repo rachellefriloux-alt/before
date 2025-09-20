@@ -1,4 +1,3 @@
-/*
  * Salle 1.0 Module
  * Persona: Tough love meets soul care.
  * Function: GodModeManager - Advanced system control and feature management.

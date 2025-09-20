@@ -1,8 +1,8 @@
 /*
-Salle Persona Module: LoyaltyAndProductivitySystem
+Sallie Persona Module: LoyaltyAndProductivitySystem
 Implements loyalty, productivity, and balance capabilities for Sallie.
 Ensures consistent prioritization of user's values and preferences.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 interface UserValue {

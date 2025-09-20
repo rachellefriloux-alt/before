@@ -1,6 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\yocto-queue\license
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\es-module-lexer\LICENSE
----- DIFF ----
------------
-Copyright (C) 2018-2022 Guy Bedford
-Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)

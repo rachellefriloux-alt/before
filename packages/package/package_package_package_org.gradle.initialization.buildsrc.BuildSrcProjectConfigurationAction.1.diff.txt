@@ -1,6 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\plugin-development\META-INF\services\org.gradle.initialization.buildsrc.BuildSrcProjectConfigurationAction
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\kotlin-dsl-tooling-builders\META-INF\services\org.gradle.initialization.buildsrc.BuildSrcProjectConfigurationAction
----- DIFF ----
-org.gradle.kotlin.dsl.tooling.builders.BuildSrcClassPathModeConfigurationAction
-org.gradle.initialization.buildsrc.GroovyBuildSrcProjectConfigurationAction
-org.gradle.initialization.buildsrc.GradlePluginApiVersionAttributeConfigurationAction

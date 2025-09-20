@@ -13,7 +13,8 @@ export type MoodSignal = {
   validation?: string;
 };
 
-import { analyzeSentiment, extractKeywords } from './nlpEngine';
+// Removed circular import - will use local analysis instead
+// import { analyzeSentiment, extractKeywords } from './nlpEngine';
 
 export interface MoodContext {
   stressLevel?: number;
@@ -22,19 +23,20 @@ export interface MoodContext {
 
 export function parseMoodSignal(input: string, context: MoodContext = {}, persona: string): MoodSignal {
 
-  const sentiment = analyzeSentiment(input);
-  const keywords = extractKeywords(input);
+  // Local sentiment analysis
+  const sentiment = analyzeSentimentLocal(input);
+  const keywords = extractKeywordsLocal(input);
     let tone = 'calm';
     let pacing = 'steady';
     let urgency = 'normal';
     let validation = 'gentle';
-  if (sentiment.valence === 'negative' || (context.stressLevel || 0) > 7) {
+  if (sentiment === 'negative' || (context.stressLevel || 0) > 7) {
       tone = 'sad';
     }
-    if (sentiment.valence === 'positive' || persona === 'optimist' || keywords.topics.includes('happy')) {
+    if (sentiment === 'positive' || persona === 'optimist' || keywords.includes('happy')) {
       tone = 'joy';
     }
-    if (keywords.topics.includes('angry') || sentiment.primaryEmotion === 'anger') {
+    if (keywords.includes('angry') || sentiment === 'angry') {
       tone = 'anger';
     }
   if (input.match(/urgent|now|asap/i)) urgency = 'high';
@@ -51,6 +53,29 @@ export function parseMoodSignal(input: string, context: MoodContext = {}, person
     urgency,
     validation
   };
+}
+
+// Local analysis functions to avoid circular imports
+function analyzeSentimentLocal(input: string): string {
+  const positiveWords = ['happy', 'good', 'great', 'excellent', 'wonderful', 'amazing', 'love', 'joy'];
+  const negativeWords = ['sad', 'bad', 'terrible', 'awful', 'hate', 'angry', 'frustrated', 'upset'];
+
+  const lowerInput = input.toLowerCase();
+  const positiveCount = positiveWords.filter(word => lowerInput.includes(word)).length;
+  const negativeCount = negativeWords.filter(word => lowerInput.includes(word)).length;
+
+  if (positiveCount > negativeCount) return 'positive';
+  if (negativeCount > positiveCount) return 'negative';
+  return 'neutral';
+}
+
+function extractKeywordsLocal(input: string): string[] {
+  // Simple keyword extraction - split by spaces and filter common words
+  const commonWords = ['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'can'];
+  return input.toLowerCase()
+    .split(/\s+/)
+    .filter(word => word.length > 2 && !commonWords.includes(word))
+    .slice(0, 10); // Limit to 10 keywords
 }
 
 export function triggerOverride(signal: MoodSignal, override: string): MoodSignal {

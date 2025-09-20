@@ -282,9 +282,42 @@ class NarrativeContinuityEngine {
         return patterns;
     }
 
-    isPatternRelevant(pattern, emotionalArc) { // eslint-disable-line no-unused-vars
-        // Implementation for pattern relevance checking
-        return Math.random() > 0.5; // Placeholder logic
+    isPatternRelevant(pattern, emotionalArc) {
+        // Check if a pattern is relevant based on emotional arc characteristics
+        if (!emotionalArc || !pattern) return false;
+
+        const { emotionalStates, intensity, duration } = emotionalArc;
+        const { triggers, emotionalMarkers, contextRequirements } = pattern;
+
+        // Check emotional state alignment
+        const hasMatchingEmotions = emotionalStates.some(state =>
+            emotionalMarkers.includes(state.emotion)
+        );
+
+        // Check intensity compatibility
+        const intensityMatch = Math.abs(intensity - pattern.expectedIntensity) < 0.3;
+
+        // Check duration compatibility
+        const durationMatch = duration >= pattern.minDuration;
+
+        // Check context requirements
+        const contextMatch = !contextRequirements ||
+            contextRequirements.every(req => emotionalArc.context?.includes(req));
+
+        // Check for trigger conditions
+        const hasTriggerMatch = triggers.some(trigger =>
+            emotionalArc.triggers?.includes(trigger)
+        );
+
+        // Calculate relevance score
+        let relevanceScore = 0;
+        if (hasMatchingEmotions) relevanceScore += 0.4;
+        if (intensityMatch) relevanceScore += 0.3;
+        if (durationMatch) relevanceScore += 0.2;
+        if (contextMatch) relevanceScore += 0.1;
+        if (hasTriggerMatch) relevanceScore += 0.3;
+
+        return relevanceScore > 0.5; // Threshold for relevance
     }
 
     generateThemeCallback(theme, emotionalArc) { // eslint-disable-line no-unused-vars
@@ -312,9 +345,57 @@ class NarrativeContinuityEngine {
         return `Like the ${symbol} in your journey, you carry the essence of ${motif.theme}.`;
     }
 
-    getActiveMotifsForUser(userId) { // eslint-disable-line no-unused-vars
-        // Implementation for retrieving user's active motifs
-        return ['phoenix_rising', 'anchor_stability']; // Placeholder
+    getActiveMotifsForUser(userId) {
+        // Retrieve user's active narrative motifs based on their journey
+        if (!this.narrativeHistories[userId]) {
+            return ['phoenix_rising']; // Default motif for new users
+        }
+
+        const history = this.narrativeHistories[userId];
+        const motifs = [];
+
+        // Analyze history to determine active motifs
+        const recentPatterns = history.patterns.slice(-10); // Last 10 patterns
+        const emotionalStates = history.emotionalArcs.slice(-5); // Last 5 emotional arcs
+
+        // Check for resilience patterns
+        const resilienceCount = recentPatterns.filter(p =>
+            p.name.includes('resilience') || p.name.includes('overcome')
+        ).length;
+
+        if (resilienceCount >= 3) {
+            motifs.push('phoenix_rising');
+        }
+
+        // Check for stability patterns
+        const stabilityCount = recentPatterns.filter(p =>
+            p.name.includes('stability') || p.name.includes('balance')
+        ).length;
+
+        if (stabilityCount >= 2) {
+            motifs.push('anchor_stability');
+        }
+
+        // Check for growth patterns
+        const growthCount = recentPatterns.filter(p =>
+            p.name.includes('growth') || p.name.includes('learning')
+        ).length;
+
+        if (growthCount >= 2) {
+            motifs.push('seed_sprouting');
+        }
+
+        // Check for transformation patterns
+        const transformationCount = emotionalStates.filter(arc =>
+            arc.intensity > 0.7 && arc.duration > 30 // minutes
+        ).length;
+
+        if (transformationCount >= 2) {
+            motifs.push('butterfly_emergence');
+        }
+
+        // Return default if no motifs identified
+        return motifs.length > 0 ? motifs : ['phoenix_rising'];
     }
 
     getUserNarrativeHistory(userId) {

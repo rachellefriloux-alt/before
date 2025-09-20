@@ -1,5 +1,5 @@
 /*
- * Salle Persona Module: LoyaltyAndValuesIntegrator
+ * Sallie Persona Module: LoyaltyAndValuesIntegrator
  * Purpose: Integrates loyalty, productivity, and pro-life values systems into Sallie's core functionality.
  * Author: Migrated and enhanced for Sallie (JavaScript)
  * Privacy: No external network calls; local-only logic

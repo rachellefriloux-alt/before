@@ -1,6 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\refs\remotes\origin\revert-5-revert-4-Sallie
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\refs\remotes\origin\revert-5-revert-4-Sallie
----- DIFF ----
-613e517c70a12611fc864e8f07fd9a812f5e85ab
-0000000000000000000000000000000000000000 e25c8fd3176dff41fc02916935b2a7ef54c163ce rachellefriloux-alt <rachellefriloux@gmail.com> 1755986674 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: storing head
-e25c8fd3176dff41fc02916935b2a7ef54c163ce 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755986737 -0500	update by push

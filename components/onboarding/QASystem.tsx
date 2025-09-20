@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { OnboardingButton } from './OnboardingButton';
-import { useOnboarding, QAAnswer } from '@/contexts/OnboardingContext';
+import { useUserStore } from '@/store/user';
+
+type QAAnswer = {
+  name?: string;
+  title?: string;
+  location?: string;
+  season?: string;
+  mission?: string;
+  decisionStyle?: string;
+  dare?: string;
+  aesthetics?: string;
+  rhythm?: string;
+  nonnegotiable?: string;
+};
 
 const qaQuestions = [
   { q: "What name should I call you in our space?", key: "name" as keyof QAAnswer },
@@ -21,17 +34,13 @@ interface QASystemProps {
 }
 
 export function QASystem({ onComplete }: QASystemProps) {
-  const { state, dispatch } = useOnboarding();
+  const { setOnboardingAnswer } = useUserStore();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentAnswer, setCurrentAnswer] = useState('');
 
   const handleNext = () => {
     if (currentAnswer.trim()) {
-      dispatch({
-        type: 'SET_ANSWER',
-        key: qaQuestions[currentQuestionIndex].key,
-        value: currentAnswer.trim(),
-      });
+      setOnboardingAnswer(qaQuestions[currentQuestionIndex].key, currentAnswer.trim());
     }
 
     if (currentQuestionIndex < qaQuestions.length - 1) {
@@ -55,9 +64,9 @@ export function QASystem({ onComplete }: QASystemProps) {
         placeholderTextColor="#888"
         multiline
       />
-      <OnboardingButton 
-        title={currentQuestionIndex < qaQuestions.length - 1 ? "Next" : "Complete"} 
-        onPress={handleNext} 
+      <OnboardingButton
+        title={currentQuestionIndex < qaQuestions.length - 1 ? "Next" : "Complete"}
+        onPress={handleNext}
       />
       <Text style={styles.progressText}>
         {currentQuestionIndex + 1} of {qaQuestions.length}

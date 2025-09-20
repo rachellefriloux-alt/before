@@ -1,9 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\model-core\META-INF\groovy\org.codehaus.groovy.runtime.ExtensionModule
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\core\META-INF\groovy\org.codehaus.groovy.runtime.ExtensionModule
----- DIFF ----
-# Copyright 2022 the original author or authors.
-moduleName=dependency-management
-extensionClasses=org.gradle.api.internal.artifacts.dsl.dependencies.DependenciesExtensionModule
-# Copyright 2018 the original author or authors.
-moduleName=model-core
-extensionClasses=org.gradle.api.internal.provider.MapPropertyExtensions

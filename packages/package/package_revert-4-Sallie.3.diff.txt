@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\refs\heads\revert-4-Sallie
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\refs\remotes\origin\revert-4-Sallie
----- DIFF ----
-dabb49df74517629ef6e9c9b6b6fb3ee45372ad4
-0000000000000000000000000000000000000000 dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 rachellefriloux-alt <rachellefriloux@gmail.com> 1755986793 -0500	branch: Created from origin/revert-4-Sallie

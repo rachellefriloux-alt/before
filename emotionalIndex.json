@@ -1,0 +1,20 @@
+{
+  "triggers": {
+    "overwhelm": {
+      "fallback": "Simplify Interface",
+      "tone": "Fallback",
+      "suggestion": "Pause and simplify context"
+    },
+    "justiceConflict": {
+      "tone": "Focused",
+      "suggestion": "Activate legacy protocols"
+    },
+    "alignmentSuccess": {
+      "tone": "Resonant",
+      "suggestion": "Celebrate emotional congruence"
+    }
+  },
+  "defaultTone": "Empowered",
+  "fallbackEnabled": true,
+  "toneSyncRequired": true
+}

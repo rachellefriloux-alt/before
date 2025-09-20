@@ -1,6 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\uploads.d.mts
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\core\uploads.d.mts
----- DIFF ----
-export { type Uploadable } from "../internal/uploads.mjs";
-export { toFile, type ToFileInput } from "../internal/to-file.mjs";
-export * from "./core/uploads.mjs";

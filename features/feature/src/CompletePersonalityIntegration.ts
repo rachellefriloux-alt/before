@@ -1,5 +1,5 @@
 /*
-Salle Persona Module: CompletePersonalityIntegration
+Sallie Persona Module: CompletePersonalityIntegration
 Integrates all personality aspects into Sallie: loyalty, productivity,
 balance, pro-life values, creativity, resourcefulness, logic,
 and balanced traditional-modern values.
@@ -46,9 +46,7 @@ export class CompletePersonalityIntegration {
     );
     
     this.creativeIntegrator = new CreativeTraditionalIntegrator(
-      this.creativeSystem,
-      this.mainIntegrator,
-      this.valuesIntegrator
+      this.mainIntegrator
     );
   }
   

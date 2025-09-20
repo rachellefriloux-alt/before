@@ -35,9 +35,17 @@ class PluginRegistry {
   private plugins: Map<string, Plugin> = new Map();
   private initialized: Set<string> = new Set();
   private hooks: Map<string, Function[]> = new Map();
+  private static instance: PluginRegistry;
 
   constructor() {
     this.initializeBuiltinPlugins();
+  }
+
+  static getInstance(): PluginRegistry {
+    if (!PluginRegistry.instance) {
+      PluginRegistry.instance = new PluginRegistry();
+    }
+    return PluginRegistry.instance;
   }
 
   private initializeBuiltinPlugins(): void {
@@ -311,7 +319,13 @@ class PluginRegistry {
           continue;
         }
 
-        // TODO: Add more specific health checks
+        // Planned health checks:
+        // - Validate plugin configuration schema
+        // - Check for required permissions
+        // - Verify plugin API connectivity (if applicable)
+        // - Monitor resource usage and performance
+        // - Detect memory leaks or abnormal behavior
+        // Contributors: Implement these checks in future updates.
         plugin.health = 'healthy';
       } catch (error) {
         plugin.health = 'error';

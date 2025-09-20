@@ -1,8 +1,8 @@
 /*
-Salle Persona Module: CreativeResourcefulSystem
+Sallie Persona Module: CreativeResourcefulSystem
 Implements enhanced creativity, resourcefulness, and logic capabilities.
 Balances modern knowledge with traditional values in an adaptive framework.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 interface CreativeIdeaTemplate {

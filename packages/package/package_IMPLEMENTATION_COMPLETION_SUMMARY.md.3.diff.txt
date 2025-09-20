@@ -1,9 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\docs\IMPLEMENTATION_COMPLETION_SUMMARY.md
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\IMPLEMENTATION_COMPLETION_SUMMARY.md
----- DIFF ----
----
-provenance:
-	repo: Sallie
-	path: /docs
-	scope: canonical
----

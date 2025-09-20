@@ -1,5 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\workers\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-events\META-INF\services\org.gradle.internal.service.scopes.GradleModuleServices
----- DIFF ----
-org.gradle.internal.build.event.BuildEventServices
-org.gradle.workers.internal.WorkersServices

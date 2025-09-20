@@ -14,7 +14,7 @@ console.log('==========================================');
 const buildConfiguration = {
   buildName: 'sallie-demo-module',
   projectDirectory: './demo-module',
-  tasks: ['clean', 'assemble', 'verifySalleFeatures'],
+  tasks: ['clean', 'assemble', 'verifySallieFeatures'],
   injectedPlugins: [
     'com.sallie.core-validation',
     'com.sallie.persona-enforcement',
@@ -104,9 +104,9 @@ function simulateVerification() {
   console.log('\n🛡️  Running Sallie verification tasks...');
   
   const verificationTasks = [
-    'verifySalleFeatures',
-    'verifySallePrivacy', 
-    'verifySalleLayering'
+    'verifySallieFeatures',
+    'verifySalliePrivacy', 
+    'verifySallieLayering'
   ];
   
   verificationTasks.forEach(task => {

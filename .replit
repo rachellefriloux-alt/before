@@ -1,19 +1,35 @@
 entrypoint = "README.md"
-modules = ["nodejs-20"]
+modules = ["nodejs-20", "java"]
 
 [nix]
 channel = "stable-24_05"
 
 [[ports]]
-localPort = 8081
+localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 5001
+externalPort = 3003
+
+[[ports]]
+localPort = 8081
+externalPort = 8081
 
 [[ports]]
 localPort = 8082
 externalPort = 3000
 
+[[ports]]
+localPort = 46611
+externalPort = 3002
+
+[[ports]]
+localPort = 46739
+externalPort = 3001
+
 [workflows]
-runButton = "Dev Server"
+runButton = "Mobile Dev Server"
 
 [[workflows.workflow]]
 name = "Dev Server"
@@ -54,3 +70,59 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npx eas build --platform android --profile preview"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Sallie Enhanced Launcher"
+
+[[workflows.workflow]]
+name = "Sallie Enhanced Launcher"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "NODE_OPTIONS=\"--max-old-space-size=8192\" npx expo start --tunnel --clear --port 5000"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "Sallie Web Dev"
+author = 46798082
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "NODE_OPTIONS=\"--max-old-space-size=8192\" npx expo start --web --port 5000"
+
+[[workflows.workflow]]
+name = "Mobile Dev Server"
+author = 46798082
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Y\" | NODE_OPTIONS=\"--max-old-space-size=8192\" npx expo start --tunnel --clear --port 5000"
+
+[[workflows.workflow]]
+name = "Android Dev"
+author = 46798082
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx expo prebuild --platform android --clean"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx expo run:android"
+
+[agent]
+expertMode = true
+integrations = ["javascript_openai:1.0.0", "javascript_anthropic:1.0.0"]

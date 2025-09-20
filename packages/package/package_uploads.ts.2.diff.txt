@@ -1,8 +1,0 @@
-BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\src\uploads.ts
-OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\src\resources\uploads.ts
----- DIFF ----
-// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
-export * from './uploads/index';
-
-/** @deprecated Import from ./core/uploads instead */
-export * from './core/uploads';

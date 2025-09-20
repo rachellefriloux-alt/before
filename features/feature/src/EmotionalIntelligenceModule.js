@@ -1,5 +1,5 @@
 
-// Salle Persona Module
+// Sallie Persona Module
 // EmotionalIntelligenceModule.js
 
 class EmotionalIntelligenceModule {

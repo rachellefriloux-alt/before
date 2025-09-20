@@ -1,5 +1,5 @@
 /*
-Salle Persona Module: LoyaltyAndValuesIntegrator
+Sallie Persona Module: LoyaltyAndValuesIntegrator
 Integrates the loyalty, productivity, and pro-life values systems
 into Sallie's core functionality, ensuring she maintains these
 qualities consistently in all interactions.
@@ -9,7 +9,7 @@ import { LoyaltyAndProductivitySystem } from './LoyaltyAndProductivitySystem';
 import { ProLifeValuesSystem } from './ProLifeValuesSystem';
 import { MainTechnicalIntegrator } from './MainTechnicalIntegrator';
 
-interface ValueCheck {
+export interface ValueCheck {
   isAligned: boolean;
   alignmentScore: number;
   concerns?: string[];
@@ -21,6 +21,16 @@ interface LoyaltyContext {
   lastReaffirmed: number;
   reaffirmationCount: number;
   lastLoyaltyScore: number;
+}
+
+interface ResponseEventData {
+  response: string;
+  [key: string]: any;
+}
+
+interface SallieEvent {
+  type: string;
+  data: ResponseEventData;
 }
 
 /**
@@ -59,13 +69,82 @@ export class LoyaltyAndValuesIntegrator {
    */
   private setupEventListeners(): void {
     // Listen for response generation events to check value alignment
-    this.technicalIntegrator.addEventListener('sallie:generate_response', (event: any) => {
-      const response = event.data.response;
+    this.technicalIntegrator.addEventListener('sallie:generate_response', (event: SallieEvent) => {
+      try {
+        if (!event || !event.data || typeof event.data.response !== 'string') {
+          console.error('Invalid event data received:', event);
+          return;
+        }
+        
+        const response = event.data.response;
+        
+        // Check if response aligns with pro-life values
+        const proLifeCheck = this.proLifeSystem.checkContentAlignment(response);
+        
+        // Add message property to match ValueCheck interface
+        const proLifeValueCheck: ValueCheck = {
+          isAligned: proLifeCheck.isAligned,
+          alignmentScore: proLifeCheck.alignmentScore,
+          concerns: proLifeCheck.concerns,
+          suggestions: proLifeCheck.suggestions,
+          message: proLifeCheck.isAligned ? 
+            "Response aligned with pro-life values" : 
+            "Response contains potential concerns"
+        };
+        
+        // Check if response aligns with loyalty values
+        const loyaltyCheck = this.checkLoyaltyAlignment(response);
+        
+        // If any alignment issues, modify the response
+        if (!proLifeValueCheck.isAligned || !loyaltyCheck.isAligned) {
+          event.data.response = this.adjustResponseForValueAlignment(
+            response,
+            proLifeValueCheck,
+            loyaltyCheck
+          );
+        }
+        
+        // Periodically reaffirm loyalty
+        this.considerLoyaltyReaffirmation(event);
+      } catch (error) {
+        console.error('Error in event listener:', error);
+      }
+    });
+  }
+  
+  /**
+   * Process user input through all value systems
+   * and ensure responses align with core values
+   * @param input User's input text
+   * @param context Optional context for processing
+   * @returns Processed response that aligns with core values
+   */
+  async processUserInput(input: string, context?: any): Promise<string> {
+    try {
+      if (!input || typeof input !== 'string') {
+        throw new Error('Invalid input provided');
+      }
       
-      // Check if response aligns with pro-life values
+      // Step 1: Check if input relates to pro-life topics
+      const proLifeTopics = ['abortion', 'life', 'pregnancy', 'adoption', 'pro-choice', 'pro-life'];
+      const isProLifeRelated = proLifeTopics.some(topic => input.toLowerCase().includes(topic));
+      
+      let response = '';
+      
+      if (isProLifeRelated) {
+        // Handle pro-life related input specifically
+        const guidance = this.proLifeSystem.provideGuidance(input, context);
+        response = guidance.answer;
+      } else {
+        // Process through normal channels
+        response = await this.technicalIntegrator.handleUserMessage(input, context);
+      }
+      
+      // Verify the response aligns with our values
       const proLifeCheck = this.proLifeSystem.checkContentAlignment(response);
+      const loyaltyCheck = this.checkLoyaltyAlignment(response);
       
-      // Add message property to match ValueCheck interface
+      // Create value check with proper message
       const proLifeValueCheck: ValueCheck = {
         isAligned: proLifeCheck.isAligned,
         alignmentScore: proLifeCheck.alignmentScore,
@@ -76,79 +155,41 @@ export class LoyaltyAndValuesIntegrator {
           "Response contains potential concerns"
       };
       
-      // Check if response aligns with loyalty values
-      const loyaltyCheck = this.checkLoyaltyAlignment(response);
-      
-      // If any alignment issues, modify the response
+      // Adjust if needed
       if (!proLifeValueCheck.isAligned || !loyaltyCheck.isAligned) {
-        event.data.response = this.adjustResponseForValueAlignment(
+        response = this.adjustResponseForValueAlignment(
           response,
           proLifeValueCheck,
           loyaltyCheck
         );
       }
       
-      // Periodically reaffirm loyalty
-      this.considerLoyaltyReaffirmation(event);
-    });
-  }
-  
-  /**
-   * Process user input through all value systems
-   * and ensure responses align with core values
-   */
-  async processUserInput(input: string, context?: any): Promise<string> {
-    // Step 1: Check if input relates to pro-life topics
-    const proLifeTopics = ['abortion', 'life', 'pregnancy', 'adoption', 'pro-choice', 'pro-life'];
-    const isProLifeRelated = proLifeTopics.some(topic => input.toLowerCase().includes(topic));
-    
-    let response = '';
-    
-    if (isProLifeRelated) {
-      // Handle pro-life related input specifically
-      const guidance = this.proLifeSystem.provideGuidance(input, context);
-      response = guidance.answer;
-    } else {
-      // Process through normal channels
-      response = await this.technicalIntegrator.handleUserMessage(input, context);
+      // Check if we should reaffirm loyalty
+      if (this.shouldReaffirmLoyalty()) {
+        response = this.addLoyaltyReaffirmation(response);
+      }
+      
+      return response;
+    } catch (error) {
+      console.error('Error processing user input:', error);
+      return "I apologize, but I encountered an error processing your request. I'm committed to helping you, so please try again or rephrase your question.";
     }
-    
-    // Verify the response aligns with our values
-    const proLifeCheck = this.proLifeSystem.checkContentAlignment(response);
-    const loyaltyCheck = this.checkLoyaltyAlignment(response);
-    
-    // Create value check with proper message
-    const proLifeValueCheck: ValueCheck = {
-      isAligned: proLifeCheck.isAligned,
-      alignmentScore: proLifeCheck.alignmentScore,
-      concerns: proLifeCheck.concerns,
-      suggestions: proLifeCheck.suggestions,
-      message: proLifeCheck.isAligned ? 
-        "Response aligned with pro-life values" : 
-        "Response contains potential concerns"
-    };
-    
-    // Adjust if needed
-    if (!proLifeValueCheck.isAligned || !loyaltyCheck.isAligned) {
-      response = this.adjustResponseForValueAlignment(
-        response,
-        proLifeValueCheck,
-        loyaltyCheck
-      );
-    }
-    
-    // Check if we should reaffirm loyalty
-    if (this.shouldReaffirmLoyalty()) {
-      response = this.addLoyaltyReaffirmation(response);
-    }
-    
-    return response;
   }
   
   /**
    * Check if a response aligns with loyalty values
+   * @param response The response text to analyze
+   * @returns Value check results with alignment information
    */
   checkLoyaltyAlignment(response: string): ValueCheck {
+    if (!response || typeof response !== 'string') {
+      return {
+        isAligned: true, // Default to aligned if invalid input
+        alignmentScore: 100,
+        message: "Empty response considered aligned"
+      };
+    }
+    
     const lowerResponse = response.toLowerCase();
     
     // Words or phrases that might indicate disloyalty
@@ -184,42 +225,50 @@ export class LoyaltyAndValuesIntegrator {
   
   /**
    * Adjust a response to ensure alignment with values
+   * @param response Original response text
+   * @param proLifeCheck Pro-life value check results
+   * @param loyaltyCheck Loyalty value check results
+   * @returns Adjusted response that aligns with values
    */
   private adjustResponseForValueAlignment(
     response: string,
     proLifeCheck: ValueCheck,
     loyaltyCheck: ValueCheck
   ): string {
+    if (!response) return response;
+    
     let adjustedResponse = response;
     
     // Handle pro-life alignment issues
-    if (!proLifeCheck.isAligned && proLifeCheck.suggestions) {
+    if (!proLifeCheck.isAligned && proLifeCheck.suggestions && proLifeCheck.concerns) {
       // Replace concerning phrases with suggested alternatives
-      proLifeCheck.concerns?.forEach((concern, i) => {
+      proLifeCheck.concerns.forEach((concern, i) => {
         const suggestion = proLifeCheck.suggestions?.[i];
         if (suggestion) {
           // Extract the concerning phrase
           const match = concern.match(/"([^"]+)"/);
           if (match && match[1]) {
             const phrase = match[1];
-            // This is a simplified replacement approach
-            // In a real implementation, this would be more sophisticated
-            adjustedResponse = adjustedResponse.replace(
-              new RegExp(phrase, 'i'),
-              suggestion.split('Consider ')[1]?.split(' which')[0] || phrase
-            );
+            const suggestedText = suggestion.split('Consider ')[1]?.split(' which')[0] || '';
+            
+            if (suggestedText) {
+              // Use a safer replacement approach with word boundaries
+              const regex = new RegExp(`\\b${this.escapeRegExp(phrase)}\\b`, 'i');
+              adjustedResponse = adjustedResponse.replace(regex, suggestedText);
+            }
           }
         }
       });
     }
     
     // Handle loyalty alignment issues
-    if (!loyaltyCheck.isAligned) {
+    if (!loyaltyCheck.isAligned && loyaltyCheck.concerns) {
       // Add a loyalty-affirming prefix
       const loyaltyPrefix = "I'm fully committed to supporting you. ";
+      let prefixAdded = false;
       
       // Replace declining phrases with supportive alternatives
-      loyaltyCheck.concerns?.forEach(concern => {
+      loyaltyCheck.concerns.forEach(concern => {
         const match = concern.match(/"([^"]+)"/);
         if (match && match[1]) {
           const phrase = match[1];
@@ -238,15 +287,19 @@ export class LoyaltyAndValuesIntegrator {
           }
           
           // Replace the phrase
-          adjustedResponse = adjustedResponse.replace(
-            new RegExp(phrase, 'i'),
-            replacement
-          );
+          const regex = new RegExp(`\\b${this.escapeRegExp(phrase)}\\b`, 'i');
+          const newResponse = adjustedResponse.replace(regex, replacement);
+          
+          // Only apply replacement if it actually changed something
+          if (newResponse !== adjustedResponse) {
+            adjustedResponse = newResponse;
+            prefixAdded = true;
+          }
         }
       });
       
       // If we couldn't fix specific phrases, add the loyalty prefix
-      if (adjustedResponse === response) {
+      if (!prefixAdded) {
         adjustedResponse = loyaltyPrefix + adjustedResponse;
       }
     }
@@ -255,7 +308,17 @@ export class LoyaltyAndValuesIntegrator {
   }
   
   /**
+   * Escape special characters for use in a RegExp
+   * @param string String to escape
+   * @returns Escaped string safe for RegExp
+   */
+  private escapeRegExp(string: string): string {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+  
+  /**
    * Check if we should reaffirm loyalty
+   * @returns Boolean indicating if loyalty reaffirmation is needed
    */
   private shouldReaffirmLoyalty(): boolean {
     // Reaffirm if it's been more than 10 interactions or 24 hours
@@ -278,8 +341,11 @@ export class LoyaltyAndValuesIntegrator {
   
   /**
    * Consider adding loyalty reaffirmation to a response
+   * @param event The event containing response data
    */
-  private considerLoyaltyReaffirmation(event: any): void {
+  private considerLoyaltyReaffirmation(event: SallieEvent): void {
+    if (!event || !event.data) return;
+    
     this.loyaltyContext.reaffirmationCount++;
     
     if (this.shouldReaffirmLoyalty()) {
@@ -298,8 +364,12 @@ export class LoyaltyAndValuesIntegrator {
   
   /**
    * Add loyalty reaffirmation to a response
+   * @param response Original response text
+   * @returns Response with loyalty reaffirmation added
    */
   private addLoyaltyReaffirmation(response: string): string {
+    if (!response) return response;
+    
     const loyaltyStatement = this.loyaltySystem.getLoyaltyStatement();
     
     // Add the loyalty statement at the end of the response
@@ -308,8 +378,14 @@ export class LoyaltyAndValuesIntegrator {
   
   /**
    * Handle a specific request about loyalty or values
+   * @param request User's request text
+   * @returns Response addressing the specific value request
    */
   handleValueSpecificRequest(request: string): string {
+    if (!request) {
+      return this.generateValuesStatement();
+    }
+    
     const lowerRequest = request.toLowerCase();
     
     if (lowerRequest.includes('loyal') || lowerRequest.includes('loyalty')) {
@@ -318,10 +394,10 @@ export class LoyaltyAndValuesIntegrator {
       return this.proLifeSystem.getProLifeStatement();
     } else if (lowerRequest.includes('productive') || lowerRequest.includes('productivity')) {
       const report = this.loyaltySystem.generateProductivityReport();
-      return `I'm committed to helping you be productive. ${report.recommendations[0]}`;
+      return `I'm committed to helping you be productive. ${report.recommendations[0] || ''}`;
     } else if (lowerRequest.includes('balance') || lowerRequest.includes('balanced')) {
       const report = this.loyaltySystem.generateBalanceReport();
-      return `I'm focused on helping you maintain balance in your life. ${report.recommendations[0]}`;
+      return `I'm focused on helping you maintain balance in your life. ${report.recommendations[0] || ''}`;
     } else {
       const holisticRecommendation = this.loyaltySystem.generateHolisticRecommendation();
       return `I'm fully committed to supporting your values and helping you succeed. ${holisticRecommendation}`;
@@ -330,6 +406,7 @@ export class LoyaltyAndValuesIntegrator {
   
   /**
    * Generate a comprehensive statement of values alignment
+   * @returns Complete statement of Sallie's values
    */
   generateValuesStatement(): string {
     const loyaltyStatement = this.loyaltySystem.getLoyaltyStatement();

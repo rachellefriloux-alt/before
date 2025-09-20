@@ -69,6 +69,35 @@ export type DeviceIntent = {
   confidence: number;
 }
 
+// Advanced conversation context tracking
+export type ConversationContext = {
+  previousTopics: string[];
+  userPreferences: Record<string, any>;
+  emotionalHistory: Array<{
+      primaryEmotion: any;emotion: string, timestamp: Date
+}>;
+  conversationFlow: 'introduction' | 'deepening' | 'resolution' | 'transition';
+  lastInteractionTime: Date;
+  interactionCount: number;
+};
+
+// Enhanced emotion recognition with more nuanced categories
+export type EnhancedSentimentResult = SentimentAnalysisResult & {
+  emotionalComplexity: 'simple' | 'mixed' | 'complex';
+  emotionalLayers: Array<{emotion: string, intensity: number, layer: 'surface' | 'underlying' | 'contextual'}>;
+  emotionalTrajectory: 'stable' | 'escalating' | 'de-escalating' | 'fluctuating';
+  contextualFactors: string[];
+};
+
+// Advanced intent classification
+export type AdvancedIntentResult = IntentDetectionResult & {
+  subIntent: string;
+  intentHierarchy: string[];
+  conversationalGoal: 'information' | 'action' | 'emotional_support' | 'social' | 'exploratory';
+  urgencyLevel: 'low' | 'medium' | 'high' | 'critical';
+  timeSensitivity: boolean;
+};
+
 /**
  * Perform advanced sentiment analysis on text
  * Detects emotions, intensity, valence, and arousal
@@ -524,56 +553,312 @@ export function extractDeviceIntent(text: string): DeviceIntent {
   };
 }
 
+
 /**
- * Generate mood signal from text analysis
- * Combines sentiment and intent into emotional state
+ * Enhanced sentiment analysis with deeper emotional understanding
  */
-export function generateMoodSignal(text: string): MoodSignal {
-  const sentimentResult = analyzeSentiment(text);
-  const intent = extractIntent(text);
-  
-  let tone = 'calm';
-  let pacing = 'steady';
-  
-  // Map sentiment to tone
-  if (sentimentResult.valence === 'negative') {
-    if (sentimentResult.primaryEmotion === 'angry') {
-      tone = 'anger';
-    } else {
-      tone = 'sad';
-    }
-  } else if (sentimentResult.valence === 'positive') {
-    tone = 'joy';
-  }
-  
-  // Set pacing based on arousal
-  if (sentimentResult.arousal === 'high') {
-    pacing = 'quick';
-  } else if (sentimentResult.arousal === 'low') {
-    pacing = 'relaxed';
-  }
-  
-  // Create mood signal
-  const mood: MoodSignal = {
-    tone,
-    pacing,
-    context: intent.primaryIntent,
-    persona: 'default', // Default persona
-    urgency: 'normal',
-    validation: 'gentle'
+export function analyzeSentimentAdvanced(text: string, context?: ConversationContext): EnhancedSentimentResult {
+  const baseResult = analyzeSentiment(text);
+
+  // Enhanced emotion categories
+  const complexEmotions = {
+    'ambivalence': ['mixed feelings', 'conflicted', 'torn', 'unsure'],
+    'resilience': ['persevering', 'enduring', 'strong', 'resilient'],
+    'vulnerability': ['exposed', 'fragile', 'sensitive', 'open'],
+    'empowerment': ['capable', 'confident', 'empowered', 'strong'],
+    'connection': ['connected', 'bonded', 'related', 'close'],
+    'isolation': ['alone', 'isolated', 'disconnected', 'separate'],
+    'growth': ['learning', 'developing', 'evolving', 'progressing'],
+    'stagnation': ['stuck', 'plateau', 'unchanging', 'static']
   };
-  
-  // Set urgency based on content
-  if (/(urgent|emergency|help|now|immediately)/i.test(text)) {
-    mood.urgency = 'high';
-  } else if (/(when you get a chance|maybe|sometime|later)/i.test(text)) {
-    mood.urgency = 'low';
+
+  // Contextual factors that influence emotion interpretation
+  const contextualFactors: string[] = [];
+  const lowerText = text.toLowerCase();
+
+  // Check for complex emotions
+  Object.entries(complexEmotions).forEach(([emotion, indicators]) => {
+    if (indicators.some(indicator => lowerText.includes(indicator))) {
+      contextualFactors.push(emotion);
+    }
+  });
+
+  // Analyze emotional layers
+  const emotionalLayers: Array<{emotion: string, intensity: number, layer: 'surface' | 'underlying' | 'contextual'}> = [];
+
+  // Surface layer (immediate emotional response)
+  emotionalLayers.push({
+    emotion: baseResult.primaryEmotion,
+    intensity: baseResult.emotionalIntensity,
+    layer: 'surface'
+  });
+
+  // Underlying layer (deeper emotional state)
+  if (context?.emotionalHistory && context.emotionalHistory.length > 0) {
+    const recentEmotions = context.emotionalHistory.slice(-3);
+    const dominantUnderlying = recentEmotions.reduce((acc, curr) => {
+      acc[curr.emotion] = (acc[curr.emotion] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    const underlyingEmotion = Object.entries(dominantUnderlying)
+      .sort(([,a], [,b]) => b - a)[0]?.[0] || 'neutral';
+
+    emotionalLayers.push({
+      emotion: underlyingEmotion,
+      intensity: 0.6,
+      layer: 'underlying'
+    });
   }
-  
-  // Adjust for sentiment intensity
-  if (sentimentResult.emotionalIntensity > 0.7 && sentimentResult.valence === 'negative') {
-    mood.urgency = 'high';
+
+  // Contextual layer (emotion influenced by conversation context)
+  if (context?.previousTopics.includes('work') && lowerText.includes('tired')) {
+    emotionalLayers.push({
+      emotion: 'work_stress',
+      intensity: 0.7,
+      layer: 'contextual'
+    });
+    contextualFactors.push('work_related_stress');
   }
-  
-  return mood;
+
+  // Determine emotional complexity
+  let emotionalComplexity: 'simple' | 'mixed' | 'complex' = 'simple';
+  if (emotionalLayers.length > 2) emotionalComplexity = 'complex';
+  else if (baseResult.secondaryEmotions.length > 1) emotionalComplexity = 'mixed';
+
+  // Analyze emotional trajectory
+  let emotionalTrajectory: 'stable' | 'escalating' | 'de-escalating' | 'fluctuating' = 'stable';
+  if ((context?.emotionalHistory?.length ?? 0) >= 2) {
+    const recent = context?.emotionalHistory?.slice(-2) || [];
+    const intensity1 = recent[0] ? getEmotionIntensity(recent[0].emotion) : 0.5;
+    const intensity2 = recent[1] ? getEmotionIntensity(recent[1].emotion) : 0.5;
+
+    if (intensity2 > intensity1 * 1.2) emotionalTrajectory = 'escalating';
+    else if (intensity2 < intensity1 * 0.8) emotionalTrajectory = 'de-escalating';
+    else if (Math.abs(intensity2 - intensity1) > 0.3) emotionalTrajectory = 'fluctuating';
+  }
+
+  return {
+    ...baseResult,
+    emotionalComplexity,
+    emotionalLayers,
+    emotionalTrajectory,
+    contextualFactors
+  };
+}
+
+/**
+ * Advanced intent detection with hierarchical classification
+ */
+export function extractIntentAdvanced(text: string, context?: ConversationContext): AdvancedIntentResult {
+  const baseResult = extractIntent(text);
+  const lowerText = text.toLowerCase();
+
+  // Enhanced intent hierarchy
+  const intentHierarchy: string[] = [baseResult.primaryIntent];
+
+  // Sub-intent classification
+  let subIntent = '';
+  let conversationalGoal: 'information' | 'action' | 'emotional_support' | 'social' | 'exploratory' = 'information';
+  let urgencyLevel: 'low' | 'medium' | 'high' | 'critical' = 'medium';
+  let timeSensitivity = false;
+
+  // Analyze sub-intents based on primary intent
+  switch (baseResult.primaryIntent) {
+    case 'question':
+      if (/(how are you|how do you feel|what's wrong)/i.test(lowerText)) {
+        subIntent = 'emotional_check_in';
+        conversationalGoal = 'emotional_support';
+      } else if (/(what|how|why)/i.test(lowerText)) {
+        subIntent = 'factual_inquiry';
+        conversationalGoal = 'information';
+      } else {
+        subIntent = 'clarification';
+        conversationalGoal = 'exploratory';
+      }
+      break;
+
+    case 'help':
+      if (/(emotional|feel|support|talk)/i.test(lowerText)) {
+        subIntent = 'emotional_support';
+        conversationalGoal = 'emotional_support';
+      } else {
+        subIntent = 'practical_assistance';
+        conversationalGoal = 'action';
+      }
+      break;
+
+    case 'greeting':
+      subIntent = 'social_connection';
+      conversationalGoal = 'social';
+      break;
+
+    default:
+      subIntent = 'general';
+      conversationalGoal = 'information';
+  }
+
+  intentHierarchy.push(subIntent);
+
+  // Determine urgency level
+  if (/(urgent|emergency|crisis|immediately|now|help)/i.test(lowerText)) {
+    urgencyLevel = 'critical';
+  } else if (/(soon|quickly|asap|important)/i.test(lowerText)) {
+    urgencyLevel = 'high';
+  } else if (/(when you can|eventually|sometime)/i.test(lowerText)) {
+    urgencyLevel = 'low';
+  }
+
+  // Check for time sensitivity
+  timeSensitivity = /(today|tomorrow|this week|deadline|schedule|time)/i.test(lowerText);
+
+  // Adjust confidence based on context
+  let adjustedConfidence = baseResult.confidence;
+  if ((context?.interactionCount ?? 0) > 5) {
+    adjustedConfidence += 0.1; // More confident with established conversation
+  }
+
+  return {
+    ...baseResult,
+    subIntent,
+    intentHierarchy,
+    conversationalGoal,
+    urgencyLevel,
+    timeSensitivity,
+    confidence: Math.min(1, adjustedConfidence)
+  };
+}
+
+/**
+ * Conversation flow analysis
+ */
+export function analyzeConversationFlow(text: string, context?: ConversationContext): {
+  flowState: 'introduction' | 'deepening' | 'resolution' | 'transition';
+  topicContinuity: number; // 0-1 scale
+  emotionalContinuity: number; // 0-1 scale
+  suggestedResponseStrategy: string;
+} {
+  let flowState: 'introduction' | 'deepening' | 'resolution' | 'transition' = 'introduction';
+  let topicContinuity = 0;
+  let emotionalContinuity = 0;
+  let suggestedResponseStrategy = 'acknowledge_and_explore';
+
+  if (!context) {
+    return {
+      flowState,
+      topicContinuity,
+      emotionalContinuity,
+      suggestedResponseStrategy
+    };
+  }
+
+  // Analyze topic continuity
+  const currentTopics = extractKeywords(text).topics;
+  const previousTopics = context.previousTopics.slice(-3);
+
+  const overlappingTopics = currentTopics.filter(topic =>
+    previousTopics.includes(topic)
+  ).length;
+
+  topicContinuity = overlappingTopics / Math.max(currentTopics.length, previousTopics.length, 1);
+
+  // Analyze emotional continuity
+  const currentSentiment = analyzeSentiment(text);
+  const recentEmotions = context.emotionalHistory.slice(-2);
+
+  if (recentEmotions.length > 0) {
+    const avgRecentIntensity = recentEmotions.reduce((sum, e) =>
+      sum + getEmotionIntensity(e.emotion), 0
+    ) / recentEmotions.length;
+
+    emotionalContinuity = 1 - Math.abs(currentSentiment.emotionalIntensity - avgRecentIntensity);
+  }
+
+  // Determine flow state
+  if (context.interactionCount < 3) {
+    flowState = 'introduction';
+    suggestedResponseStrategy = 'build_rapport';
+  } else if (topicContinuity > 0.6 && emotionalContinuity > 0.7) {
+    flowState = 'deepening';
+    suggestedResponseStrategy = 'deepen_understanding';
+  } else if (/(resolved|solved|better|figured it out)/i.test(text)) {
+    flowState = 'resolution';
+    suggestedResponseStrategy = 'celebrate_resolution';
+  } else if (topicContinuity < 0.3) {
+    flowState = 'transition';
+    suggestedResponseStrategy = 'smooth_transition';
+  }
+
+  return {
+    flowState,
+    topicContinuity,
+    emotionalContinuity,
+    suggestedResponseStrategy
+  };
+}
+
+/**
+ * Helper function to get emotion intensity
+ */
+function getEmotionIntensity(emotion: string): number {
+  const intensityMap: Record<string, number> = {
+    'joy': 0.8, 'ecstatic': 0.9, 'happy': 0.7, 'content': 0.5,
+    'sad': 0.6, 'depressed': 0.9, 'angry': 0.8, 'frustrated': 0.7,
+    'anxious': 0.7, 'worried': 0.6, 'calm': 0.4, 'peaceful': 0.5,
+    'excited': 0.8, 'neutral': 0.5
+  };
+  return intensityMap[emotion] || 0.5;
+}
+
+/**
+ * Generate personalized response suggestions based on user context
+ */
+export function generatePersonalizedSuggestions(
+  text: string,
+  context?: ConversationContext
+): {
+  suggestedTopics: string[];
+  recommendedActions: string[];
+  emotionalSupportLevel: 'low' | 'medium' | 'high';
+  personalizationFactors: string[];
+} {
+  const sentiment = analyzeSentiment(text);
+  const intent = extractIntent(text);
+  const keywords = extractKeywords(text);
+
+  const suggestedTopics: string[] = [];
+  const recommendedActions: string[] = [];
+  let emotionalSupportLevel: 'low' | 'medium' | 'high' = 'medium';
+  const personalizationFactors: string[] = [];
+
+  // Analyze user preferences from context
+  if (context?.userPreferences) {
+    personalizationFactors.push(...Object.keys(context.userPreferences));
+  }
+
+  // Generate topic suggestions based on current state
+  if (sentiment.valence === 'negative' && sentiment.emotionalIntensity > 0.6) {
+    suggestedTopics.push('coping_strategies', 'emotional_support', 'self_care');
+    emotionalSupportLevel = 'high';
+    recommendedActions.push('offer_empathy', 'suggest_breathing_exercise');
+  } else if (intent.primaryIntent === 'question') {
+    suggestedTopics.push('exploration', 'learning', 'curiosity');
+    recommendedActions.push('provide_information', 'ask_follow_up_questions');
+  } else if (keywords.topics.includes('work')) {
+    suggestedTopics.push('work_life_balance', 'productivity', 'stress_management');
+    recommendedActions.push('suggest_break', 'offer_time_management_tips');
+  }
+
+  // Add personalization based on history
+  if (context?.emotionalHistory.some(e => e.emotion === 'anxious')) {
+    personalizationFactors.push('anxiety_history');
+    recommendedActions.push('use_grounding_techniques');
+  }
+
+  return {
+    suggestedTopics,
+    recommendedActions,
+    emotionalSupportLevel,
+    personalizationFactors
+  };
 }

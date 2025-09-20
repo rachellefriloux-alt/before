@@ -5,3 +5,20 @@
 expo-env.d.ts
 # @end expo-cli
 node_modules
+
+# Android/IntelliJ
+build/
+.idea/
+.gradle
+local.properties
+*.iml
+
+# Android Studio
+*.jks
+!debug.keystore
+
+# Logs
+*.log
+
+# Environment files
+.env.local

@@ -1,7 +1,7 @@
 /*
-Salle Persona Module: EnhancedSalleDemo
+Sallie Persona Module: EnhancedSalleDemo
 Demonstrates the integration and usage of all enhanced humanized Sallie features.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 import { EnhancedHumanizedOrchestrator } from './EnhancedHumanizedOrchestrator';

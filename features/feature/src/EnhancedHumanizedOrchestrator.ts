@@ -1,7 +1,7 @@
 /*
-Salle Persona Module: EnhancedHumanizedOrchestrator
+Sallie Persona Module: EnhancedHumanizedOrchestrator
 Enhanced orchestrator that integrates all advanced systems: memory, language, relationships, conversations.
-Follows Salle architecture, modularity, and privacy rules.
+Follows Sallie architecture, modularity, and privacy rules.
 */
 
 import { AdvancedMemorySystem } from './AdvancedMemorySystem';
