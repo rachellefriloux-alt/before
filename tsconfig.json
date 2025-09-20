@@ -1,8 +1,23 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "module": "Node16",
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -43,19 +58,7 @@
       "react-native",
       "jest",
       "node"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "jsx": "react-native",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "moduleResolution": "node16",
-    "noEmit": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "customConditions": []
+    ]
   },
   "include": [
     "**/*.ts",
@@ -69,6 +72,8 @@
     "node_modules",
     "babel.config.js",
     "metro.config.js",
-    "jest.config.js"
-  ]
+    "jest.config.js",
+    "App.web.tsx"
+  ],
+  "extends": "expo/tsconfig.base"
 }

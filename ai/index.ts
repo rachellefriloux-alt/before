@@ -14,7 +14,7 @@ export * from './EmotionRecognitionSystem';
 export * from './PredictiveSuggestionsEngine';
 
 // ML Personalization Engine - explicit exports to avoid conflicts
-export {
+export type {
   MLPersonalizationEngine,
   UserProfile,
   ContentItem,
@@ -27,7 +27,7 @@ export * from './VoiceAudioIntegration';
 export * from './ARVRIntegration';
 
 // Security & Privacy System - explicit exports to avoid conflicts
-export {
+export type {
   EncryptionKey,
   PrivacySettings
 } from './SecurityPrivacySystem';
@@ -38,7 +38,7 @@ export * from './MultiPlatformSupport';
 export * from './DatabaseIntegration';
 
 // Social Features - explicit exports to avoid conflicts
-export {
+export type {
   UserProfile as SocialUserProfile,
   PrivacySettings as SocialPrivacySettings,
   SocialStats,
@@ -52,13 +52,13 @@ export * from './QATestingFramework';
 export * from './PersonalFeatures';
 
 // Utilities - explicit exports to avoid conflicts
-export {
+export type {
   MoodSignal,
   MoodContext,
   parseMoodSignal
 } from './moodSignal';
 
-export {
+export type {
   IntentRoute,
   IntentSignal
 } from './intentRouter';

@@ -7,7 +7,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { EnhancedCard } from '@/components/EnhancedCard';
 import { EnhancedButton } from '@/components/EnhancedButton';
 import { SalliePersonaEngine } from '@/lib/sallie-persona';
-import { SalliePersona } from '@/sallie';
+import { SalliePersona } from '@/types/sallie';
 import { HelloWave } from '@/components/HelloWave';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -92,7 +92,7 @@ export default function SallieHomeScreen() {
 
   // Home Screen Content
   const router = useRouter();
-  const homeColors = SallieThemes.glassAesthetic.colors; // Using the glass aesthetic theme for home
+  const homeColors = SallieThemes.executiveSuite.colors; // Using the executive suite theme for home
 
   const quickAccessFeatures = [
     { title: '✨ Visit Sallie', subtitle: 'Your personal sanctuary', route: '/sallie-sanctuary', color: homeColors.primary },
