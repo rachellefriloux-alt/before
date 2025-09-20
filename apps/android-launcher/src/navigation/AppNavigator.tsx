@@ -9,7 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 // Screens
-import SalliePanelScreen from '../screens/SalliePanelScreen';
+import EnhancedSalliePanelScreen from '../screens/EnhancedSalliePanelScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import PersonalityScreen from '../screens/PersonalityScreen';
 import MemoryScreen from '../screens/MemoryScreen';
@@ -47,7 +47,7 @@ function MainTabs() {
     >
       <Tab.Screen 
         name="Sallie" 
-        component={SalliePanelScreen} 
+        component={EnhancedSalliePanelScreen} 
         options={{ title: 'Chat with Sallie' }}
       />
       <Tab.Screen 

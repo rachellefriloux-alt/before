@@ -4,7 +4,7 @@
  */
 
 import { EventEmitter } from 'events';
-import { AIOrchestrationSystem } from '../ai/orchestration/AIOrchestrationIndex';
+import { AIOrchestrationSystem } from './ai/AIOrchestrationSystem';
 import { PersonalitySystem } from './personality/PersonalitySystem';
 import { MemorySystem } from './memory/MemorySystem';
 import { EmotionalEngine } from './emotional/EmotionalEngine';
@@ -69,8 +69,13 @@ export class SallieSystem extends EventEmitter {
 
   private async initializeAIOrchestrator(): Promise<void> {
     console.log('🤖 Initializing AI Orchestrator...');
-    // Will be implemented with the AI orchestration system
-    console.log('⚠️ AI Orchestrator initialization deferred');
+    this.aiOrchestrator = new AIOrchestrationSystem();
+    
+    // Set dependencies
+    this.aiOrchestrator.setMemorySystem(this.memorySystem);
+    this.aiOrchestrator.setPersonalitySystem(this.personalitySystem);
+    
+    await this.aiOrchestrator.initialize();
   }
 
   private async initializeDeviceController(): Promise<void> {
@@ -108,6 +113,10 @@ export class SallieSystem extends EventEmitter {
   }
 
   // Getters for system access
+  getAIOrchestrator(): AIOrchestrationSystem {
+    return this.aiOrchestrator;
+  }
+
   getMemorySystem(): MemorySystem {
     return this.memorySystem;
   }
