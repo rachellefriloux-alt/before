@@ -43,7 +43,7 @@ interface SalliePersonality {
 
 export default function AIChatScreen() {
   const colorScheme = useColorScheme();
-  const colors = SallieThemes.glassAesthetic.colors;
+  const colors = SallieThemes.executiveSuite.colors;
   
   // Chat state
   const [messages, setMessages] = useState<Message[]>([

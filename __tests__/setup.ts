@@ -178,19 +178,19 @@ jest.mock('@react-navigation/native', () => ({
     navigate: jest.fn(),
     goBack: jest.fn()
   }),
-  NavigationContainer: ({ children }) => children
+  NavigationContainer: ({ children }: { children: React.ReactNode }) => children
 }));
 
 jest.mock('@react-navigation/native-stack', () => ({
   createNativeStackNavigator: () => ({
-    Navigator: ({ children }) => children,
-    Screen: ({ children }) => children
+    Navigator: ({ children }: { children: React.ReactNode }) => children,
+    Screen: ({ children }: { children: React.ReactNode }) => children
   })
 }));
 
 jest.mock('@react-navigation/bottom-tabs', () => ({
   createBottomTabNavigator: () => ({
-    Navigator: ({ children }) => children,
-    Screen: ({ children }) => children
+    Navigator: ({ children }: { children: React.ReactNode }) => children,
+    Screen: ({ children }: { children: React.ReactNode }) => children
   })
 }));

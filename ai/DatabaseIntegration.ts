@@ -389,7 +389,7 @@ export class DataSynchronizationManager extends EventEmitter {
       if (this.isOnline) {
         this.performSync();
       }
-    }, this.config.syncInterval);
+    }, this.config.syncInterval) as any;
 
     // Perform initial sync
     if (this.isOnline) {
