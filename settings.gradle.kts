@@ -15,7 +15,7 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         google()
         mavenCentral()
@@ -28,7 +28,7 @@ rootProject.name = "sallie_1.0"
 // include(":app")  // Temporarily disabled to fix Kotlin modules first
 include(":ai")
 include(":core")
-include(":feature")
+include(":features:feature")  // Fixed path to actual feature directory 
 // include(":components")  // Temporarily disabled - has Android dependencies
 include(":identity")
 include(":onboarding")
