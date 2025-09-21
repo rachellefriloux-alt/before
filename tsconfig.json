@@ -1,23 +1,8 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "module": "Node16",
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -54,14 +39,29 @@
         "./assets/*"
       ]
     },
-    "skipLibCheck": true
+    "types": [
+      "react-native",
+      "jest",
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "moduleResolution": "node16",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "customConditions": []
   },
   "include": [
-    "App.tsx",
-    "core/**/*.ts",
-    "core/**/*.tsx", 
-    "apps/android-launcher/src/**/*.ts",
-    "apps/android-launcher/src/**/*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
   ],
@@ -69,14 +69,6 @@
     "node_modules",
     "babel.config.js",
     "metro.config.js",
-    "jest.config.js",
-    "App.web.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    "src/**",
-    "feature/**",
-    "e/**",
-    "vite.config.ts",
-    "vitest.config.js"
+    "jest.config.js"
   ]
 }
