@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 rootProject.name = "sallie_1.0"
 
 // Core modules (temporarily limited to working modules to fix CI builds)
-// include(":app")  // Temporarily disabled to fix Kotlin modules first
+include(":app")  // Re-enabled for Android launcher reorganization
 // include(":ai")    // Temporarily disabled - depends on broken core module
 // include(":core")  // Temporarily disabled - has Android dependencies
 // include(":features:feature")  // Temporarily disabled - missing dependencies
