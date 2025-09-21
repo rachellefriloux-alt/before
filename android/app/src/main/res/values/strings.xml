@@ -1,5 +1,44 @@
 <resources>
-  <string name="app_name">Sallie Sovereign</string>
-  <string name="expo_system_ui_user_interface_style" translatable="false">automatic</string>
-  <string name="expo_runtime_version">exposdk:54.0.0</string>
+  <string name="app_name">Sallie AI Launcher</string>
+  
+  <!-- Demo Activity Strings -->
+  <string-array name="memory_types">
+    <item>Episodic</item>
+    <item>Semantic</item>
+    <item>Emotional</item>
+  </string-array>
+  
+  <!-- Activity Labels -->
+  <string name="emotional_intelligence_demo">Emotional Intelligence Demo</string>
+  <string name="voice_system_demo">Voice System Demo</string>
+  <string name="memory_system_demo">Memory System Demo</string>
+  <string name="communication_demo">Communication Demo</string>
+  
+  <!-- Button Labels -->
+  <string name="analyze_emotion">Analyze Emotion</string>
+  <string name="generate_response">Generate Response</string>
+  <string name="create_memory">Create Memory</string>
+  <string name="search_memories">Search Memories</string>
+  <string name="working_memory">Working Memory</string>
+  <string name="reinforce_memory">Reinforce</string>
+  <string name="show_associations">Associations</string>
+  <string name="speak">Speak</string>
+  <string name="enable_wake_word">Enable Wake Word</string>
+  <string name="disable_wake_word">Disable Wake Word</string>
+  
+  <!-- Status Messages -->
+  <string name="initializing">Initializing...</string>
+  <string name="ready">Ready</string>
+  <string name="listening">Listening...</string>
+  <string name="processing">Processing...</string>
+  <string name="speaking">Speaking...</string>
+  <string name="not_analyzed">Not analyzed</string>
+  <string name="no_response_generated">No response generated</string>
+  
+  <!-- Placeholders -->
+  <string name="enter_message_hint">Enter your message</string>
+  <string name="memory_content_hint">Memory content</string>
+  <string name="search_query_hint">Search query</string>
+  <string name="tap_voice_button">Tap the voice button and start speaking...</string>
+  
 </resources>
