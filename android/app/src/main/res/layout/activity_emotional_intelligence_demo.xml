@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.sallie.launcher.activities.EmotionalIntelligenceDemoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emotional Intelligence Demo"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Input Section -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter your message">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:maxLines="4" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/analyze_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Analyze Emotion"
+            android:enabled="false" />
+
+        <!-- Analysis Results -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Emotion Analysis"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/emotion_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Not analyzed"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/confidence_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:value="0"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    android:enabled="false"
+                    android:visibility="invisible" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/secondary_emotion_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Secondary"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/response_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Generate Response"
+            android:enabled="false" />
+
+        <!-- Response Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Generated Response"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/response_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No response generated"
+                    android:minLines="3"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/component_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Feedback Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rate this response:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/feedback_chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="invisible">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/positive_feedback_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👍 Good"
+                android:checkable="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/neutral_feedback_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="😐 Neutral"
+                android:checkable="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/negative_feedback_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👎 Poor"
+                android:checkable="false" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Calibration Status -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calibration Status"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/calibration_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Not calibrated"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Compassion Level"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="4dp" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/compassion_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:value="50"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    android:enabled="false"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Directness Level"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="4dp" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/directness_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:value="50"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    android:enabled="false"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/reset_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reset Calibration"
+                    style="@style/Widget.Material3.Button.TextButton" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/feedback_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@android:color/holo_green_dark"
+            android:gravity="center"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+</ScrollView>
