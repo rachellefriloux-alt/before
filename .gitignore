@@ -35,6 +35,10 @@ android/gradle/
 dist/
 coverage/
 
+# Firebase service account credentials
+**/serviceAccount.json
+**/*firebase*adminsdk*.json
+
 # Logs
 *.log
 npm-debug.log*
