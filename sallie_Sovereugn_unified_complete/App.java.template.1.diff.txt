@@ -1,0 +1,18 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javaapplication\multi\app\App.java.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javaapplication\App.java.template
+---- DIFF ----
+    public String getGreeting() {
+        return "Hello World!";
+        System.out.println(new App().getGreeting());
+    }
+import ${basePackagePrefix.raw}list.LinkedList;
+import static ${basePackagePrefix.raw}utilities.StringUtils.join;
+import static ${basePackagePrefix.raw}utilities.StringUtils.split;
+import static ${basePackagePrefix.raw}app.MessageUtils.getMessage;
+import org.apache.commons.text.WordUtils;
+
+        LinkedList tokens;
+        tokens = split(getMessage());
+        String result = join(tokens);
+        System.out.println(WordUtils.capitalize(result));
+

@@ -1,0 +1,13 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\components\EmotionMeter.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\EmotionMeter.kt
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: EmotionMeter
+ * Intent: Handle functionality for EmotionMeter
+ * Provenance-ID: f29aa225-2357-4561-bbe1-503da9ab12cc
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+                emotions.map { it.intensity }.average().roundToInt().✔ Enhanced logic addeduble()
+
+                emotions.map { it.intensity }.average().roundToInt().toDouble()

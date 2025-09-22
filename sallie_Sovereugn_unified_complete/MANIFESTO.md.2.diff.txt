@@ -1,0 +1,9 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\docs\MANIFESTO.md
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\MANIFESTO.md
+---- DIFF ----
+---
+provenance:
+	repo: Sallie
+	path: /docs
+	scope: canonical
+---

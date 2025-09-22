@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\src\core\HumanLikeCapabilityOrchestrator.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\src\core\HumanLikeCapabilityOrchestrator.java
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: HumanLikeCapabilityOrchestrator
+ * Intent: Handle functionality for HumanLikeCapabilityOrchestrator
+ * Provenance-ID: 5b253587-c133-4cab-bdc6-49ae3c5201ab
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

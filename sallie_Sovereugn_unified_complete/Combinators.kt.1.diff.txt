@@ -1,0 +1,566 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\kotlin-dsl\org\gradle\kotlin\dsl\execution\Combinators.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\graph-serialization\org\gradle\internal\serialize\graph\Combinators.kt
+---- DIFF ----
+ * Copyright 2020 the original author or authors.
+package org.gradle.internal.serialize.graph
+import org.gradle.internal.extensions.stdlib.uncheckedCast
+import org.gradle.internal.extensions.stdlib.useToRun
+import org.gradle.internal.serialize.BaseSerializerFactory
+import org.gradle.internal.serialize.Decoder
+import org.gradle.internal.serialize.Encoder
+import org.gradle.internal.serialize.Serializer
+import java.io.File
+import java.io.ObjectInputStream
+import java.io.ObjectOutputStream
+import kotlin.coroutines.Continuation
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.coroutineContext
+import kotlin.coroutines.startCoroutine
+import kotlin.coroutines.suspendCoroutine
+fun <T> singleton(value: T): Codec<T> =
+    SingletonCodec(value)
+fun <T> codec(
+    encode: suspend WriteContext.(T) -> Unit,
+    decode: suspend ReadContext.() -> T?
+): Codec<T> = object : Codec<T> {
+    override suspend fun WriteContext.encode(value: T) = encode(value)
+    override suspend fun ReadContext.decode(): T? = decode()
+inline fun <reified T : Any> IsolateContext.ownerService() =
+    ownerService(T::class.java)
+fun <T : Any> IsolateContext.ownerService(serviceType: Class<T>) =
+    isolate.owner.service(serviceType)
+fun <T : Any> reentrant(codec: Codec<T>): Codec<T> = object : Codec<T> {
+    override fun toString(): String = "reentrant $codec"
+    var encodeCall: EncodeFrame<T>? = null
+    var decodeCall: DecodeFrame<T?>? = null
+    override suspend fun WriteContext.encode(value: T) {
+        when (encodeCall) {
+            null -> {
+                encodeCall = EncodeFrame(value, null)
+                encodeLoop(coroutineContext)
+            else -> suspendCoroutine { k ->
+                encodeCall = EncodeFrame(value, k)
+    override suspend fun ReadContext.decode(): T? =
+            immediateMode -> {
+                codec.run { decode() }
+            decodeCall == null -> {
+                decodeCall = DecodeFrame(null)
+                decodeLoop(coroutineContext)
+            else -> suspendCoroutine { k ->
+                decodeCall = DecodeFrame(k)
+    fun WriteContext.encodeLoop(coroutineContext: CoroutineContext) {
+        do {
+            val call = encodeCall!!
+            suspend {
+                codec.run {
+                    encode(call.value)
+            }.startCoroutine(
+                Continuation(coroutineContext) {
+                    when (val k = call.k) {
+                        null -> {
+                            encodeCall = null
+                            it.getOrThrow()
+                        }
+                        else -> k.resumeWith(it)
+            )
+        } while (encodeCall != null)
+    fun ReadContext.decodeLoop(coroutineContext: CoroutineContext): T? {
+        var result: T? = null
+        do {
+            val call = decodeCall!!
+            suspend {
+                codec.run { decode() }
+            }.startCoroutine(
+                Continuation(coroutineContext) {
+                    when (val k = call.k) {
+                        null -> {
+                            decodeCall = null
+                            result = it.getOrThrow()
+                        }
+                        else -> k.resumeWith(it)
+            )
+        } while (decodeCall != null)
+        return result
+class DecodeFrame<T>(val k: Continuation<T>?)
+data class EncodeFrame<T>(val value: T, val k: Continuation<Unit>?)
+data class SingletonCodec<T>(
+    private val singleton: T
+) : Codec<T> {
+    override suspend fun WriteContext.encode(value: T) = Unit
+    override suspend fun ReadContext.decode(): T? = singleton
+data class SerializerCodec<T>(val serializer: Serializer<T>) : Codec<T> {
+    override suspend fun WriteContext.encode(value: T) = serializer.write(this, value)
+    override suspend fun ReadContext.decode(): T = serializer.read(this)
+fun WriteContext.writeClassArray(values: Array<Class<*>>) {
+    writeArray(values) { writeClass(it) }
+fun ReadContext.readClassArray(): Array<Class<*>> =
+    readArray { readClass() }
+suspend fun ReadContext.readList(): List<Any?> =
+    readList { read() }
+inline fun <T : Any?> ReadContext.readList(readElement: () -> T): List<T> =
+    readCollectionInto({ size -> ArrayList(size) }) {
+        readElement()
+suspend fun WriteContext.writeCollection(value: Collection<*>) {
+    writeCollection(value) { write(it) }
+suspend fun <T : MutableCollection<Any?>> ReadContext.readCollectionInto(factory: (Int) -> T): T =
+    readCollectionInto(factory) { read() }
+suspend fun WriteContext.writeMap(value: Map<*, *>) {
+    val size = value.size
+    writeSmallInt(size)
+    val totalWritten = writeMapEntries(value)
+    if (size != totalWritten) {
+        reportCollectionWriteFailure("map", size, totalWritten, value.size)
+suspend fun WriteContext.writeMapEntries(value: Map<*, *>): Int {
+    var totalWritten = 0
+    for (entry in value.entries) {
+        write(entry.key)
+        write(entry.value)
+        ++totalWritten
+    return totalWritten
+suspend fun <T : MutableMap<Any?, Any?>> ReadContext.readMapInto(factory: (Int) -> T): T {
+    val size = readSmallInt()
+    val items = factory(size)
+    readMapEntriesInto(items, size)
+    return items
+suspend fun <K, V, T : MutableMap<K, V>> ReadContext.readMapEntriesInto(items: T, size: Int) {
+    @Suppress("unchecked_cast")
+    repeat(size) {
+        val key = read() as K
+        val value = read() as V
+        items[key] = value
+fun Encoder.writeFile(file: File) {
+    BaseSerializerFactory.FILE_SERIALIZER.write(this, file)
+fun Decoder.readFile(): File =
+    BaseSerializerFactory.FILE_SERIALIZER.read(this)
+fun WriteContext.writeStrings(strings: Collection<String>) {
+    writeCollection(strings) {
+        writeString(it)
+fun Decoder.readStrings(): List<String> =
+    readCollectionInto({ size -> ArrayList(size) }) {
+        readString()
+fun Decoder.readStringsSet(): Set<String> =
+    readCollectionInto({ size -> LinkedHashSet(size) }) {
+        readString()
+inline fun <T, C : Encoder> C.writeCollectionUnchecked(collection: Collection<T>, size: Int, writeElement: (T) -> Unit): Int {
+    writeSmallInt(size)
+    var totalWritten = 0
+    for (element in collection) {
+        writeElement(element)
+        ++totalWritten
+    return totalWritten
+inline fun <T> WriteContext.writeCollection(collection: Collection<T>, writeElement: (T) -> Unit) {
+    val size = collection.size
+    val totalWritten = writeCollectionUnchecked(collection, size, writeElement)
+    if (size != totalWritten) {
+        reportCollectionWriteFailure("collection", size, totalWritten, collection.size)
+}
+inline fun Decoder.readCollection(readElement: () -> Unit) {
+    val size = readSmallInt()
+    repeat(size) {
+        readElement()
+}
+inline fun <T, C : MutableCollection<T>> Decoder.readCollectionInto(
+    containerForSize: (Int) -> C,
+    readElement: () -> T
+): C = buildCollection(containerForSize) {
+    add(readElement())
+}
+inline fun <T, C> Decoder.buildCollection(
+    containerForSize: (Int) -> C,
+    readElement: C.() -> T
+): C {
+    val size = readSmallInt()
+    val container = containerForSize(size)
+    repeat(size) {
+        container.readElement()
+    return container
+}
+inline fun <T : Any?> WriteContext.writeArray(array: Array<T>, writeElement: (T) -> Unit) {
+    writeClass(array.javaClass.componentType)
+    writeSmallInt(array.size)
+    for (element in array) {
+        writeElement(element)
+}
+inline fun <T : Any?> ReadContext.readArray(readElement: () -> T): Array<T> {
+    val componentType = readClass()
+    val size = readSmallInt()
+    val array: Array<T> = java.lang.reflect.Array.newInstance(componentType, size).uncheckedCast()
+    for (i in 0 until size) {
+        array[i] = readElement()
+    return array
+}
+fun <E : Enum<E>> Encoder.writeEnum(value: E) {
+    writeSmallInt(value.ordinal)
+}
+inline fun <reified E : Enum<E>> Decoder.readEnum(): E =
+    readSmallInt().let { ordinal -> enumValues<E>()[ordinal] }
+inline
+fun <reified T : Any> ReadContext.readClassOf(): Class<out T> =
+    readClass().asSubclass(T::class.java)
+ * Workaround for serializing JDK types with complex/opaque state on Java 17+.
+ * **IMPORTANT** Should be avoided for composite/container types as all components would be serialized
+ * using Java serialization.
+fun WriteContext.encodeUsingJavaSerialization(value: Any) {
+    ObjectOutputStream(outputStream).useToRun {
+        writeObject(value)
+}
+fun ReadContext.decodeUsingJavaSerialization(): Any? =
+    ObjectInputStream(inputStream).readObject()
+fun WriteContext.reportCollectionWriteFailure(collectionKind: String, size: Int, totalWritten: Int, sizeAfterIteration: Int) {
+    onError(ConcurrentModificationException("Collection corrupted or changed while iterating")) {
+        text("The $collectionKind size() is $size, but $totalWritten entries were available when iterating over it. ")
+        if (sizeAfterIteration != size) {
+            text("The size changed to $sizeAfterIteration after iterating.")
+        } else {
+            text("The $collectionKind is likely broken or corrupted because of a data race.")
+}
+ * Copyright 2023 the original author or authors.
+package org.gradle.kotlin.dsl.execution
+import org.jetbrains.kotlin.lexer.KotlinLexer
+import org.jetbrains.kotlin.lexer.KtToken
+import org.jetbrains.kotlin.lexer.KtTokens
+import org.jetbrains.kotlin.lexer.KtTokens.CLOSING_QUOTE
+import org.jetbrains.kotlin.lexer.KtTokens.COMMENTS
+import org.jetbrains.kotlin.lexer.KtTokens.IDENTIFIER
+import org.jetbrains.kotlin.lexer.KtTokens.LBRACE
+import org.jetbrains.kotlin.lexer.KtTokens.LBRACKET
+import org.jetbrains.kotlin.lexer.KtTokens.LPAR
+import org.jetbrains.kotlin.lexer.KtTokens.OPEN_QUOTE
+import org.jetbrains.kotlin.lexer.KtTokens.RBRACE
+import org.jetbrains.kotlin.lexer.KtTokens.RBRACKET
+import org.jetbrains.kotlin.lexer.KtTokens.REGULAR_STRING_PART
+import org.jetbrains.kotlin.lexer.KtTokens.RPAR
+import org.jetbrains.kotlin.lexer.KtTokens.SEMICOLON
+import org.jetbrains.kotlin.lexer.KtTokens.WHITE_SPACE
+import kotlin.reflect.KProperty
+internal
+typealias Parser<T> = KotlinLexer.() -> ParserResult<T>
+internal
+class ParserDebugger<T>(val parserBuilder: () -> Parser<T>) {
+    companion object {
+        var level = 0
+        fun <T> debug(name: String, parser: Parser<T>): Parser<T> = {
+            val levelString = "\t".repeat(level)
+            println("${levelString}Parsing with $name @ ${this.currentPosition.offset} ...")
+            level++
+            val result = parser()
+            level--
+            println("${levelString}Parsing with $name done @ ${this.currentPosition.offset}, ${if (result is ParserResult.Success) "successful (${result.result})" else "failed"}")
+            result
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): Parser<T> =
+        // debug(property.name, parserBuilder()) // uncomment to turn on parser debugging
+        parserBuilder()
+internal
+fun <T> debug(parserBuilder: () -> Parser<T>) = ParserDebugger(parserBuilder)
+internal
+inline fun <T, R> Parser<T>.map(crossinline f: (T) -> R): Parser<R> {
+    val parser = this
+    return {
+        parser().map(f)
+internal
+operator fun <T> Parser<T>.invoke(input: String) =
+    KotlinLexer().let { lexer ->
+        lexer.start(input)
+        this(lexer)
+internal
+class ParserRef<T> {
+    operator fun getValue(t: Any?, property: KProperty<*>): Parser<T> =
+        ref
+    operator fun setValue(t: Any?, property: KProperty<*>, value: Parser<T>) {
+        parser = value
+    var parser: Parser<T> = { error("parser cannot be used while it's being constructed") }
+    val ref: Parser<T> = { parser() }
+ * Returns a shell parser, holding a mutable reference to another parser.
+ * Can be combined with other parsers in the usual way and its delegate can be set at a later moment in time.
+ * It can also be used to create recursive parsers.
+ * For example, a parser for a balanced parenthesized symbolic expression can be defined as:
+ * ```kotlin
+ * var parser by reference<String>()
+ * parser = paren(parser) + token(IDENTIFIER) { tokenText }
+ * ```
+ *
+ * This will successfully parse all of the below examples:
+ * ```
+ * ok
+ * (ok)
+ * ((ok))
+ * (((ok)))
+ * ```
+ *
+ * **WARNING** care must be taken to avoid infinite recursion, the delegate parser should always have
+ * an input consuming parser at its front (e.g., in `p = paren(p) + p`, the `p` at the right would
+ * cause an infinite recursion).
+internal
+fun <T> reference(): ParserRef<T> = ParserRef()
+internal
+fun <T> zeroOrMore(parser: Parser<T>): Parser<List<T>> = {
+    val lazyResult: MutableList<T>? = orMore(parser)
+    ParserResult.Success(lazyResult ?: emptyList())
+internal
+fun <T> oneOrMore(parser: Parser<T>): Parser<List<T>> = {
+    when (val lazyResult: MutableList<T>? = orMore(parser)) {
+        null -> failure("Expecting at least one occurrence, but none found")
+        else -> ParserResult.Success(lazyResult as List<T>)
+fun <T> KotlinLexer.orMore(parser: Parser<T>): MutableList<T>? {
+    var lazyResult: MutableList<T>? = null
+    while (tokenType != null) {
+        val mark = currentPosition
+        when (val r = parser()) {
+            is ParserResult.Failure -> {
+                restore(mark)
+                break
+            is ParserResult.Success -> {
+                (lazyResult ?: mutableListOf<T>().also { lazyResult = it })
+                    .add(r.result)
+    return lazyResult
+@JvmName("timesTU")
+internal
+inline operator fun <T, U> Parser<T>.times(crossinline suffix: Parser<U>): Parser<Pair<T, U>> =
+    zip(this, suffix) { p, s -> p to s }
+@JvmName("timesUnitT")
+internal
+inline operator fun <T> Parser<Unit>.times(crossinline suffix: Parser<T>): Parser<T> =
+    zip(this, suffix) { _, s -> s }
+@JvmName("timesUnitUnit")
+internal
+inline operator fun Parser<Unit>.times(crossinline suffix: Parser<Unit>): Parser<Unit> =
+    zipM(this, suffix) { _, _ -> unitSuccess }
+@JvmName("timesTUnit")
+internal
+inline operator fun <T> Parser<T>.times(crossinline suffix: Parser<Unit>): Parser<T> =
+    zip(this, suffix) { p, _ -> p }
+internal
+inline operator fun <T> Parser<T>.plus(crossinline alternative: Parser<T>): Parser<T> =
+    either(this, alternative, { it }, { it })
+internal
+inline fun <T, U> flip(
+    crossinline t: Parser<T>,
+    crossinline u: Parser<U>,
+): Parser<Pair<U, T>> =
+    zip(t, u) { tr, ur -> ur to tr }
+internal
+inline fun <T, U, R> zip(
+    crossinline t: Parser<T>,
+    crossinline u: Parser<U>,
+    crossinline f: (T, U) -> R
+): Parser<R> = {
+    when (val tr = t()) {
+        is ParserResult.Failure -> tr
+        is ParserResult.Success -> when (val ur = u()) {
+            is ParserResult.Failure -> ur
+            is ParserResult.Success -> ParserResult.Success(f(tr.result, ur.result))
+internal
+inline fun <T, U, R> zipM(
+    crossinline t: Parser<T>,
+    crossinline u: Parser<U>,
+    crossinline f: (T, U) -> ParserResult<R>
+): Parser<R> = {
+    when (val tr = t()) {
+        is ParserResult.Failure -> tr
+        is ParserResult.Success -> when (val ur = u()) {
+            is ParserResult.Failure -> ur
+            is ParserResult.Success -> f(tr.result, ur.result)
+        }
+inline fun <L, R, T> either(
+    crossinline left: Parser<L>,
+    crossinline right: Parser<R>,
+    crossinline l: (L) -> T,
+    crossinline r: (R) -> T,
+): Parser<T> = {
+    val mark = currentPosition
+    when (val lr = left()) {
+        is ParserResult.Failure -> {
+            restore(mark)
+            right().map(r)
+        }
+        is ParserResult.Success -> {
+            lr.map(l)
+        }
+internal
+fun <T> optional(parser: Parser<T>): Parser<T?> = {
+    val mark = currentPosition
+    when (val r = parser()) {
+        is ParserResult.Failure -> {
+            restore(mark)
+            nullSuccess
+        }
+        is ParserResult.Success -> r
+internal
+open class Combinator(
+    val ignoresComments: Boolean,
+    val ignoresNewline: Boolean
+) {
+    private
+    val memoizedTokenParsers = mutableMapOf<KtToken, Parser<Unit>>()
+    internal
+    fun token(ktToken: KtToken): Parser<Unit> =
+        memoizedTokenParsers.getOrPut(ktToken) { token(ktToken) { } }
+    internal
+    inline fun <T> token(ktToken: KtToken, crossinline f: KotlinLexer.() -> T): Parser<T> {
+        return {
+            skipWhitespace()
+            when (tokenType) {
+                ktToken -> {
+                    ParserResult.Success(f()).also {
+                        advance()
+                else -> {
+                    failure("Expecting token of type $ktToken, but got $tokenType${if (tokenType == IDENTIFIER) " ('$tokenText')" else ""} instead")
+        }
+    internal
+    fun symbol(): Parser<String> {
+        return {
+            skipWhitespace()
+            when (tokenType) {
+                IDENTIFIER -> {
+                    val result = tokenText
+                    advance()
+                    ParserResult.Success(result)
+                null -> {
+                    failure("Expecting a symbol")
+                }
+                else -> {
+                    failure("Expecting a symbol, but got a token of type '$tokenType' instead")
+                }
+        }
+    internal
+    fun symbol(s: String): Parser<Unit> {
+        return {
+            skipWhitespace()
+            if (tokenType == IDENTIFIER && tokenText == s) {
+                advance()
+                unitSuccess
+            } else if (tokenType == IDENTIFIER) {
+                failure("Expecting symbol '$s', but got '$tokenText' instead")
+            } else if (tokenType == null) {
+                failure("Expecting symbol '$s'")
+            } else {
+                failure("Expecting symbol '$s', but got a token of type '$tokenType' instead")
+        }
+    internal
+    val booleanLiteral =
+        token(KtTokens.TRUE_KEYWORD) { true } + token(KtTokens.FALSE_KEYWORD) { false }
+    /**
+     * Can parse regular integers, unsigned integers, longs, unsigned longs, and HEX and BINARY representations as well.
+     */
+    internal
+    val integerLiteral =
+        token(KtTokens.INTEGER_LITERAL)
+    internal
+    val floatLiteral =
+        token(KtTokens.FLOAT_LITERAL)
+    internal
+    val characterLiteral =
+        token(KtTokens.CHARACTER_LITERAL)
+    internal
+    val stringLiteral =
+        token(OPEN_QUOTE) *
+            token(REGULAR_STRING_PART) { tokenText } *
+            token(CLOSING_QUOTE)
+    internal
+    inline fun <T> paren(crossinline parser: Parser<T>): Parser<T> =
+        token(LPAR) * parser * token(RPAR)
+    internal
+    inline fun <T> bracket(crossinline parser: Parser<T>): Parser<T> =
+        token(LBRACKET) * parser * token(RBRACKET)
+    internal
+    inline fun <T> brace(crossinline parser: Parser<T>): Parser<T> =
+        token(LBRACE) * parser * token(RBRACE)
+    internal
+    fun wsOrNewLine(): Parser<Unit> = {
+        skipWhitespace(true)
+        unitSuccess
+    internal
+    fun notWhiteSpace(): Parser<Unit> = {
+            tokenType == WHITE_SPACE -> {
+                ParserResult.Failure("Unexpected whitespace")
+            }
+            tokenType in COMMENTS -> {
+                ParserResult.Failure("Unexpected comments")
+            }
+            else -> {
+                // no advancing, we don't want to consume whatever is there
+                unitSuccess
+            }
+        }
+    @Suppress("LoopWithTooManyJumpStatements")
+    internal
+    fun statementSeparator(): Parser<Unit> = {
+        var seenSeparator = false
+        while (tokenType != null) {
+            when (tokenType) {
+                WHITE_SPACE -> {
+                    if (hasNewLine()) {
+                        seenSeparator = true
+                    advance()
+                }
+                SEMICOLON -> {
+                    advance()
+                    seenSeparator = true
+                }
+
+                in COMMENTS -> {
+                    if (ignoresComments) {
+                        advance()
+                    } else {
+                        break
+                    }
+                }
+
+                else -> {
+                    break
+                }
+            }
+        }
+        if (seenSeparator) unitSuccess
+        else failure("Expecting STATEMENT SEPARATOR, but not found")
+
+    private
+    fun KotlinLexer.skipWhitespace() {
+        skipWhitespace(ignoresNewline)
+
+    private
+    fun KotlinLexer.skipWhitespace(ignoreNewLine: Boolean) {
+        while (tokenType != null) {
+            when {
+                tokenType == WHITE_SPACE && (ignoreNewLine || !hasNewLine()) -> {
+                    advance()
+                }
+
+                tokenType in COMMENTS -> {
+                    advance()
+                }
+
+                else -> {
+                    break
+                }
+            }
+        }
+
+    private
+    fun KotlinLexer.hasNewLine() =
+        '\n' in tokenSequence
+
+
+internal
+fun failure(reason: String): ParserResult.Failure =
+    ParserResult.Failure(reason)
+
+
+internal
+sealed interface ParserResult<out T> {
+    data class Success<T>(val result: T) : ParserResult<T>
+    data class Failure(val reason: String) : ParserResult<Nothing>
+
+
+internal
+inline fun <R, T> ParserResult<T>.map(f: (T) -> R): ParserResult<R> = when (this) {
+    is ParserResult.Failure -> this
+    is ParserResult.Success -> ParserResult.Success(f(result))
+
+
+val unitSuccess = ParserResult.Success(Unit)
+
+
+private
+val nullSuccess = ParserResult.Success(null)
+

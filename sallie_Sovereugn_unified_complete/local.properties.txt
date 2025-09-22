@@ -1,0 +1,16 @@
+Migrated from sallie_1.00/local.properties.txt
+
+
+sdk.dir=/home/rachelle/Android/Sdk
+
+
+Migrated from sallie_1.00/local.properties.txt
+
+
+sdk.dir=/home/rachelle/Android/Sdk
+
+
+sdk.dir=/home/rachelle/Android/Sdk
+
+
+sdk.dir=/home/rachelle/Android/Sdk

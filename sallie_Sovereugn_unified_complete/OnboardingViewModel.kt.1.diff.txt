@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\onboarding\OnboardingViewModel.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\OnboardingViewModel.kt
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: OnboardingViewModel
+ * Intent: Handle functionality for OnboardingViewModel
+ * Provenance-ID: bc440671-c4ce-4bd6-a16d-0aa3c46ea09e
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

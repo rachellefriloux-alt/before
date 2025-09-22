@@ -1,0 +1,196 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[submodule]
+	active = .
+[remote "origin"]
+	url = https://github.com/rachellefriloux-alt/Sallie.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[lfs]
+	repositoryformatversion = 0
+[branch "codespace-legendary-space-cod-vp67q74j7vrfxq6"]
+	remote = origin
+	merge = refs/heads/codespace-legendary-space-cod-vp67q74j7vrfxq6
+	gk-merge-target = origin/main
+[branch "Sallie"]
+	remote = origin
+	merge = refs/heads/Sallie
+	vscode-merge-base = origin/Sallie
+	gk-merge-base = origin/Sallie
+[branch "revert-5-revert-4-Sallie"]
+	remote = origin
+	merge = refs/heads/revert-5-revert-4-Sallie
+[branch "revert-4-Sallie"]
+	remote = origin
+	merge = refs/heads/revert-4-Sallie
+[branch "salliedone"]
+	vscode-merge-base = origin/main
+	vscode-merge-base = origin/main
+
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/rachellefriloux-alt/Sallie.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	vscode-merge-base = origin/main
+[branch "Sallie"]
+	remote = origin
+	vscode-merge-base = origin/Sallie
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	merge = refs/heads/Sallie
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#4"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#7"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#7"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#7"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#7"
+	github-pr-owner-number = "rachellefriloux-alt#Sallie#7"
+[lfs]
+	repositoryformatversion = 0
+[branch "8-dont-work-android"]
+	remote = origin
+	merge = refs/heads/8-dont-work-android
+[branch "now"]
+	remote = origin
+	merge = refs/heads/now
+
+
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[submodule]
+	active = .
+[remote "origin"]
+	url = https://github.com/rachellefriloux-alt/sallie_1.0.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[lfs]
+	repositoryformatversion = 0
+[branch "changes"]
+	remote = origin
+	merge = refs/heads/changes
+[branch "copilot/fix-5"]
+	remote = origin
+	merge = refs/heads/copilot/fix-5
+[branch "revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff"]
+	remote = origin
+	merge = refs/heads/revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+[branch "sallie-1.0"]
+	remote = origin
+	merge = refs/heads/sallie-1.0
+	vscode-merge-base = origin/sallie-1.0
+[branch "revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1"]
+	remote = origin
+	merge = refs/heads/revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+[branch "copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1"]
+	remote = origin
+	merge = refs/heads/copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+[branch "copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff"]
+	remote = origin
+	merge = refs/heads/copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+[branch "copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1"]
+	remote = origin
+	merge = refs/heads/copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1
+[branch "copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b"]
+	remote = origin
+	merge = refs/heads/copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b
+[branch "copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883"]
+	remote = origin
+	merge = refs/heads/copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883
+[branch "copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d"]
+	remote = origin
+	merge = refs/heads/copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d
+[branch "merg"]
+	remote = origin
+	merge = refs/heads/merg
+[branch "copilot/fix-0b6ecd9d-a699-4698-b30a-b68b38da5d14"]
+	remote = origin
+	merge = refs/heads/copilot/fix-0b6ecd9d-a699-4698-b30a-b68b38da5d14
+
+
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[submodule]
+	active = .
+[remote "origin"]
+	url = https://github.com/rachellefriloux-alt/sallie_1.0.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "sallie-1.0"]
+	remote = origin
+	merge = refs/heads/sallie-1.0
+	vscode-merge-base = origin/sallie-1.0
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+	gk-merge-base = origin/sallie-1.0
+	gk-merge-target = origin/main
+	github-pr-owner-number = "rachellefriloux-alt#sallie_1.0#16"
+[lfs]
+	repositoryformatversion = 0
+
+
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[lfs]
+	repositoryformatversion = 0
+[remote "origin"]
+	url = https://github.com/rachellefriloux-alt/sallie_unified.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	vscode-merge-base = origin/main
+	vscode-merge-base = origin/main

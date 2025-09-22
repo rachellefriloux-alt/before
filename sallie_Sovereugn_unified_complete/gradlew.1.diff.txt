@@ -1,0 +1,17 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradlew
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\e\gradlew
+---- DIFF ----
+# Copyright © 2015-2021 the original authors.
+#       https://github.com/gradle/gradle/blob/HEAD/subprojects/plugins/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+APP_HOME=$( cd "${APP_HOME:-./}" > /dev/null && pwd -P ) || exit
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, JAVA_OPTS, and optsEnvironmentVar are not allowed to contain shell fragments,
+        org.gradle.wrapper.GradleWrapperMain \
+# Copyright © 2015 the original authors.
+# SPDX-License-Identifier: Apache-2.0
+#       https://github.com/gradle/gradle/blob/HEAD/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+APP_HOME=$( cd -P "${APP_HOME:-./}" > /dev/null && printf '%s\n' "$PWD" ) || exit
+CLASSPATH="\\\"\\\""
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and optsEnvironmentVar are not allowed to contain shell fragments,
+        -jar "$APP_HOME/gradle/wrapper/gradle-wrapper.jar" \
+#

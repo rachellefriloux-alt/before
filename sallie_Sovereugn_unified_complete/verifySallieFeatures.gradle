@@ -1,0 +1,52 @@
+// Salle 1.0 – Feature & Persona Auditor
+task verifySalleFeatures {
+    group = "verification"
+    description = "Ensures Salle’s required features, persona, and rules are intact."
+
+    doLast {
+        def projectDir = project.projectDir
+        def srcDir = new File(projectDir, "app/src/main/java")
+        def missing = []
+
+        // 1. Persona header check
+        srcDir.eachFileRecurse { file ->
+            if (file.name.endsWith(".kt")) {
+                def text = file.text
+                if (!text.contains("Salle 1.0 Module") || !text.contains("Got it, love")) {
+                    missing << "Persona header missing in: ${file}"
+                }
+            }
+        }
+
+        // 2. LocalOnly flavor import guard
+        def localOnlyManifest = new File(projectDir, "app/src/localOnly/AndroidManifest.xml")
+        if (localOnlyManifest.exists() && localOnlyManifest.text.contains("INTERNET")) {
+            missing << "INTERNET permission found in localOnly flavor manifest."
+        }
+
+        // 3. Conceptual module presence check
+        def requiredModules = [
+            "PersonaEngineModule.kt",
+            "RoutineSequencerModule.kt",
+            "AnalyticsDashboardModule.kt"
+        ]
+        requiredModules.each { module ->
+            if (!srcDir.text.contains(module)) {
+                missing << "Missing required module: $module"
+            }
+        }
+
+        // 4. MainActivity bloat guard
+        def mainActivity = srcDir.listFiles().find { it.name == "MainActivity.kt" }
+        if (mainActivity && mainActivity.text.readLines().size() > 300) {
+            missing << "MainActivity too large — refactor into modules."
+        }
+
+        if (!missing.isEmpty()) {
+            missing.each { println "❌ $it" }
+            throw new GradleException("Salle 1.0 feature/persona audit failed.")
+        } else {
+            println "✅ Salle 1.0 passes feature/persona audit."
+        }
+    }
+}

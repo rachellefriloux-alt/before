@@ -1,0 +1,20 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\model\cpp\CppTestSuite.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\testing-native\org\gradle\nativeplatform\test\cpp\CppTestSuite.java
+---- DIFF ----
+ * Copyright 2017 the original author or authors.
+package org.gradle.nativeplatform.test.cpp;
+import org.gradle.api.provider.Provider;
+import org.gradle.language.cpp.CppComponent;
+import org.gradle.nativeplatform.test.TestSuiteComponent;
+ * @since 4.4
+public interface CppTestSuite extends CppComponent, TestSuiteComponent {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    Provider<? extends CppTestExecutable> getTestBinary();
+
+ * Copyright 2018 the original author or authors.
+package org.gradle.tooling.model.cpp;
+ * @since 4.10
+public interface CppTestSuite extends CppComponent {

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sallie 1.0 - Visual Customization Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .avatar-preview {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .avatar-display {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .avatar-display:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .avatar-display svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .customization-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .panel-section {
+            margin-bottom: 25px;
+        }
+
+        .panel-section h3 {
+            color: #8b5cf6;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .preset-card {
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .preset-card:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .preset-card.active {
+            border-color: #8b5cf6;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+        }
+
+        .preset-preview {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+
+        .preset-preview svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+        .control-button {
+            padding: 10px 15px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .control-button:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-1px);
+        }
+
+        .control-button.active {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+            color: white;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+            border-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .color-option.active {
+            border-color: white;
+            box-shadow: 0 0 0 2px #8b5cf6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #8b5cf6;
+            color: #8b5cf6;
+        }
+
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .generated-avatars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .generated-avatar {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .generated-avatar:hover {
+            transform: translateY(-3px);
+        }
+
+        .generated-avatar .avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #8b5cf6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .avatar-display {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sallie 1.0 Visual Customization</h1>
+            <p>Choose your look, love. Express yourself with advanced open-source graphics.</p>
+        </div>
+
+        <div class="demo-grid">
+            <div class="avatar-preview">
+                <div class="avatar-display" id="avatarDisplay">
+                    <!-- Avatar SVG will be inserted here -->
+                </div>
+                <h3 id="currentLookName">Grace & Grind</h3>
+                <p id="currentLookDescription">Professional with a touch of elegance</p>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="saveCurrentLook()">Save This Look</button>
+                    <button class="btn btn-secondary" onclick="randomizeAvatar()">Surprise Me</button>
+                </div>
+            </div>
+
+            <div class="customization-panel">
+                <div class="panel-section">
+                    <h3>Choose a Preset</h3>
+                    <div class="preset-grid" id="presetGrid">
+                        <!-- Preset cards will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Style</h3>
+                    <div class="control-grid" id="styleGrid">
+                        <!-- Style buttons will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Hair Style</h3>
+                    <div class="control-grid" id="hairGrid">
+                        <!-- Hair style buttons will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Eye Style</h3>
+                    <div class="control-grid" id="eyeGrid">
+                        <!-- Eye style buttons will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Color Palette</h3>
+                    <div class="color-palette" id="colorPalette">
+                        <!-- Color options will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Mood</h3>
+                    <div class="control-grid" id="moodGrid">
+                        <!-- Mood buttons will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-showcase">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎨</div>
+                <h3>Open Source Graphics</h3>
+                <p>Generated using advanced procedural graphics with full customization control. No locked-in corporate assets.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🧠</div>
+                <h3>Smart Recommendations</h3>
+                <p>AI learns your preferences and suggests looks based on your mood, season, and usage patterns.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔄</div>
+                <h3>Dynamic Updates</h3>
+                <p>Automatically adapts to seasons, events, and mood changes while maintaining your personal style.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💾</div>
+                <h3>Personal Library</h3>
+                <p>Save unlimited custom looks and export in multiple formats. Your visual identity, fully owned.</p>
+            </div>
+        </div>
+
+        <div class="panel-section">
+            <h3>Generated Avatars Gallery</h3>
+            <div class="generated-avatars" id="generatedGallery">
+                <!-- Generated avatars will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Import the avatar generation system
+        // Note: In a real implementation, these would be proper ES6 imports
+        
+        // Mock implementation for demo purposes
+        class AvatarDemo {
+            constructor() {
+                this.currentOptions = {
+                    style: 'portrait',
+                    primaryColor: '#8b5cf6',
+                    secondaryColor: '#f59e0b',
+                    accentColor: '#ec4899',
+                    hairStyle: 2,
+                    eyeStyle: 1,
+                    faceShape: 0,
+                    accessories: ['earrings'],
+                    mood: 'confident',
+                    season: 'summer',
+                    animated: false,
+                    seed: 42
+                };
+                
+                this.presets = [
+                    {
+                        id: 'grace-and-grind',
+                        name: 'Grace & Grind',
+                        description: 'Professional with a touch of elegance',
+                        options: {
+                            style: 'portrait',
+                            primaryColor: '#8b5cf6',
+                            secondaryColor: '#f59e0b',
+                            hairStyle: 2,
+                            eyeStyle: 1,
+                            mood: 'confident'
+                        }
+                    },
+                    {
+                        id: 'southern-grit',
+                        name: 'Southern Grit',
+                        description: 'Warm, strong, and authentic',
+                        options: {
+                            style: 'artistic',
+                            primaryColor: '#d97706',
+                            secondaryColor: '#92400e',
+                            hairStyle: 4,
+                            eyeStyle: 2,
+                            mood: 'determined'
+                        }
+                    },
+                    {
+                        id: 'midnight-hustle',
+                        name: 'Midnight Hustle',
+                        description: 'Sleek and mysterious for late-night productivity',
+                        options: {
+                            style: 'minimal',
+                            primaryColor: '#1f2937',
+                            secondaryColor: '#6366f1',
+                            hairStyle: 1,
+                            eyeStyle: 3,
+                            mood: 'focused'
+                        }
+                    },
+                    {
+                        id: 'soul-care',
+                        name: 'Soul Care',
+                        description: 'Nurturing and peaceful energy',
+                        options: {
+                            style: 'abstract',
+                            primaryColor: '#059669',
+                            secondaryColor: '#10b981',
+                            hairStyle: 6,
+                            eyeStyle: 0,
+                            mood: 'calm'
+                        }
+                    },
+                    {
+                        id: 'creative-vision',
+                        name: 'Creative Vision',
+                        description: 'Artistic and innovative spirit',
+                        options: {
+                            style: 'geometric',
+                            primaryColor: '#7c3aed',
+                            secondaryColor: '#fbbf24',
+                            hairStyle: 8,
+                            eyeStyle: 4,
+                            mood: 'creative'
+                        }
+                    }
+                ];
+                
+                this.initialize();
+            }
+            
+            initialize() {
+                this.setupPresets();
+                this.setupControls();
+                this.generateCurrentAvatar();
+                this.showGeneratedGallery();
+            }
+            
+            setupPresets() {
+                const presetGrid = document.getElementById('presetGrid');
+                presetGrid.innerHTML = this.presets.map(preset => `
+                    <div class="preset-card ${preset.id === 'grace-and-grind' ? 'active' : ''}" 
+                         onclick="avatarDemo.applyPreset('${preset.id}')">
+                        <div class="preset-preview">
+                            ${this.generateMockAvatar(preset.options)}
+                        </div>
+                        <h4>${preset.name}</h4>
+                    </div>
+                `).join('');
+            }
+            
+            setupControls() {
+                // Style controls
+                const styles = ['portrait', 'geometric', 'abstract', 'minimal', 'artistic'];
+                document.getElementById('styleGrid').innerHTML = styles.map(style => `
+                    <button class="control-button ${this.currentOptions.style === style ? 'active' : ''}"
+                            onclick="avatarDemo.updateOption('style', '${style}')">
+                        ${style.charAt(0).toUpperCase() + style.slice(1)}
+                    </button>
+                `).join('');
+                
+                // Hair styles
+                const hairStyles = [
+                    'Classic', 'Pixie', 'Bob', 'Curly', 'Braided', 
+                    'Long', 'Afro', 'Updo', 'Modern'
+                ];
+                document.getElementById('hairGrid').innerHTML = hairStyles.map((style, index) => `
+                    <button class="control-button ${this.currentOptions.hairStyle === index ? 'active' : ''}"
+                            onclick="avatarDemo.updateOption('hairStyle', ${index})">
+                        ${style}
+                    </button>
+                `).join('');
+                
+                // Eye styles
+                const eyeStyles = ['Round', 'Almond', 'Wide', 'Focused', 'Artistic'];
+                document.getElementById('eyeGrid').innerHTML = eyeStyles.map((style, index) => `
+                    <button class="control-button ${this.currentOptions.eyeStyle === index ? 'active' : ''}"
+                            onclick="avatarDemo.updateOption('eyeStyle', ${index})">
+                        ${style}
+                    </button>
+                `).join('');
+                
+                // Color palette
+                const colors = [
+                    { name: 'Purple', primary: '#8b5cf6', secondary: '#f59e0b' },
+                    { name: 'Orange', primary: '#d97706', secondary: '#92400e' },
+                    { name: 'Blue', primary: '#1f2937', secondary: '#6366f1' },
+                    { name: 'Green', primary: '#059669', secondary: '#10b981' },
+                    { name: 'Pink', primary: '#ec4899', secondary: '#f472b6' }
+                ];
+                document.getElementById('colorPalette').innerHTML = colors.map(color => `
+                    <div class="color-option ${this.currentOptions.primaryColor === color.primary ? 'active' : ''}"
+                         style="background: linear-gradient(135deg, ${color.primary}, ${color.secondary})"
+                         onclick="avatarDemo.updateColors('${color.primary}', '${color.secondary}')"
+                         title="${color.name}">
+                    </div>
+                `).join('');
+                
+                // Moods
+                const moods = ['confident', 'calm', 'focused', 'creative', 'determined'];
+                document.getElementById('moodGrid').innerHTML = moods.map(mood => `
+                    <button class="control-button ${this.currentOptions.mood === mood ? 'active' : ''}"
+                            onclick="avatarDemo.updateOption('mood', '${mood}')">
+                        ${mood.charAt(0).toUpperCase() + mood.slice(1)}
+                    </button>
+                `).join('');
+            }
+            
+            applyPreset(presetId) {
+                const preset = this.presets.find(p => p.id === presetId);
+                if (preset) {
+                    this.currentOptions = { ...this.currentOptions, ...preset.options };
+                    document.getElementById('currentLookName').textContent = preset.name;
+                    document.getElementById('currentLookDescription').textContent = preset.description;
+                    
+                    // Update active states
+                    document.querySelectorAll('.preset-card').forEach(card => {
+                        card.classList.remove('active');
+                    });
+                    document.querySelector(`[onclick="avatarDemo.applyPreset('${presetId}')"]`).classList.add('active');
+                    
+                    this.setupControls();
+                    this.generateCurrentAvatar();
+                }
+            }
+            
+            updateOption(key, value) {
+                this.currentOptions[key] = value;
+                this.setupControls();
+                this.generateCurrentAvatar();
+                document.getElementById('currentLookName').textContent = 'Custom Look';
+                document.getElementById('currentLookDescription').textContent = 'Your personalized creation';
+            }
+            
+            updateColors(primary, secondary) {
+                this.currentOptions.primaryColor = primary;
+                this.currentOptions.secondaryColor = secondary;
+                this.setupControls();
+                this.generateCurrentAvatar();
+            }
+            
+            generateCurrentAvatar() {
+                const avatar = this.generateMockAvatar(this.currentOptions);
+                document.getElementById('avatarDisplay').innerHTML = avatar;
+            }
+            
+            generateMockAvatar(options) {
+                // Generate a simple SVG avatar based on options
+                const { style, primaryColor, secondaryColor, hairStyle, eyeStyle, mood } = options;
+                
+                return `
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="faceGrad-${Math.random()}" cx="50%" cy="40%">
+                                <stop offset="0%" stop-color="${primaryColor}" />
+                                <stop offset="100%" stop-color="${this.adjustBrightness(primaryColor, -20)}" />
+                            </radialGradient>
+                            <linearGradient id="hairGrad-${Math.random()}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="${secondaryColor}" />
+                                <stop offset="100%" stop-color="${this.adjustBrightness(secondaryColor, -30)}" />
+                            </linearGradient>
+                        </defs>
+                        
+                        ${this.generateHairSVG(hairStyle, secondaryColor)}
+                        
+                        <circle cx="50" cy="45" r="35" fill="url(#faceGrad-${Math.random()})" />
+                        
+                        ${this.generateEyesSVG(eyeStyle, mood)}
+                        
+                        <path d="M 42 60 Q 50 ${mood === 'calm' ? '63' : '67'} 58 60" 
+                              stroke="${this.adjustBrightness(primaryColor, -40)}" 
+                              stroke-width="2" fill="none" stroke-linecap="round" />
+                    </svg>
+                `;
+            }
+            
+            generateHairSVG(hairStyle, color) {
+                const styles = {
+                    0: `<path d="M 50 25 Q 25 20 20 45 Q 18 65 30 70 Q 50 75 70 70 Q 82 65 80 45 Q 75 20 50 25" fill="${color}" />`,
+                    1: `<ellipse cx="50" cy="30" rx="35" ry="20" fill="${color}" />`,
+                    2: `<path d="M 50 20 Q 20 15 15 40 Q 15 60 25 65 Q 50 70 75 65 Q 85 60 85 40 Q 80 15 50 20" fill="${color}" />`,
+                    3: `<circle cx="35" cy="35" r="12" fill="${color}" />
+                        <circle cx="50" cy="25" r="15" fill="${color}" />
+                        <circle cx="65" cy="35" r="12" fill="${color}" />`,
+                    4: `<path d="M 50 20 Q 20 15 15 40 Q 15 60 25 65 Q 50 70 75 65 Q 85 60 85 40 Q 80 15 50 20" fill="${color}" />
+                        <path d="M 35 35 Q 50 40 65 35" stroke="${this.adjustBrightness(color, 40)}" stroke-width="2" fill="none"/>`,
+                    5: `<path d="M 50 15 Q 15 10 10 40 Q 8 80 30 85 Q 50 90 70 85 Q 92 80 90 40 Q 85 10 50 15" fill="${color}" />`,
+                    6: `<circle cx="50" cy="35" r="30" fill="${color}" />`,
+                    7: `<ellipse cx="50" cy="25" rx="25" ry="15" fill="${color}" />`,
+                    8: `<path d="M 50 25 Q 30 15 25 35 Q 30 50 50 45 Q 70 50 75 35 Q 70 15 50 25" fill="${color}" />`
+                };
+                return styles[hairStyle % 9] || styles[0];
+            }
+            
+            generateEyesSVG(eyeStyle, mood) {
+                const moodFactor = mood === 'focused' ? 0.8 : mood === 'creative' ? 1.2 : 1;
+                const eyeSize = 3 * moodFactor;
+                
+                const styles = {
+                    0: `<circle cx="42" cy="40" r="${eyeSize}" fill="#333" />
+                        <circle cx="58" cy="40" r="${eyeSize}" fill="#333" />
+                        <circle cx="43" cy="38" r="1" fill="white" opacity="0.8"/>
+                        <circle cx="59" cy="38" r="1" fill="white" opacity="0.8"/>`,
+                    1: `<ellipse cx="42" cy="40" rx="${eyeSize + 1}" ry="${eyeSize}" fill="#333" />
+                        <ellipse cx="58" cy="40" rx="${eyeSize + 1}" ry="${eyeSize}" fill="#333" />`,
+                    2: `<ellipse cx="42" cy="40" rx="${eyeSize + 2}" ry="${eyeSize - 1}" fill="#333" />
+                        <ellipse cx="58" cy="40" rx="${eyeSize + 2}" ry="${eyeSize - 1}" fill="#333" />`,
+                    3: `<polygon points="38,38 46,37 46,43 38,42" fill="#333" />
+                        <polygon points="54,37 62,38 62,42 54,43" fill="#333" />`,
+                    4: `<path d="M 38 40 Q 42 35 46 40 Q 42 45 38 40" fill="#333" />
+                        <path d="M 54 40 Q 58 35 62 40 Q 58 45 54 40" fill="#333" />`
+                };
+                return styles[eyeStyle % 5] || styles[0];
+            }
+            
+            adjustBrightness(hex, amount) {
+                const num = parseInt(hex.replace('#', ''), 16);
+                const r = Math.max(0, Math.min(255, (num >> 16) + amount));
+                const g = Math.max(0, Math.min(255, (num >> 8 & 0x00FF) + amount));
+                const b = Math.max(0, Math.min(255, (num & 0x0000FF) + amount));
+                return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
+            }
+            
+            showGeneratedGallery() {
+                const gallery = document.getElementById('generatedGallery');
+                const generatedAvatars = this.presets.map(preset => `
+                    <div class="generated-avatar" onclick="avatarDemo.applyPreset('${preset.id}')">
+                        <div class="avatar">${this.generateMockAvatar(preset.options)}</div>
+                        <h4>${preset.name}</h4>
+                        <p>${preset.description}</p>
+                    </div>
+                `).join('');
+                
+                gallery.innerHTML = generatedAvatars;
+            }
+        }
+        
+        // Global functions for button clicks
+        function saveCurrentLook() {
+            alert('Look saved! In the full app, this would save to your personal library.');
+        }
+        
+        function randomizeAvatar() {
+            const styles = ['portrait', 'geometric', 'abstract', 'minimal', 'artistic'];
+            const colors = [
+                ['#8b5cf6', '#f59e0b'], ['#d97706', '#92400e'], 
+                ['#1f2937', '#6366f1'], ['#059669', '#10b981'], 
+                ['#ec4899', '#f472b6']
+            ];
+            const moods = ['confident', 'calm', 'focused', 'creative', 'determined'];
+            
+            const randomStyle = styles[Math.floor(Math.random() * styles.length)];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            const randomMood = moods[Math.floor(Math.random() * moods.length)];
+            const randomHair = Math.floor(Math.random() * 9);
+            const randomEye = Math.floor(Math.random() * 5);
+            
+            avatarDemo.currentOptions = {
+                ...avatarDemo.currentOptions,
+                style: randomStyle,
+                primaryColor: randomColor[0],
+                secondaryColor: randomColor[1],
+                mood: randomMood,
+                hairStyle: randomHair,
+                eyeStyle: randomEye,
+                seed: Math.floor(Math.random() * 1000)
+            };
+            
+            avatarDemo.setupControls();
+            avatarDemo.generateCurrentAvatar();
+            
+            document.getElementById('currentLookName').textContent = 'Surprise Look';
+            document.getElementById('currentLookDescription').textContent = 'A randomly generated style just for you!';
+        }
+        
+        // Initialize the demo
+        let avatarDemo;
+        document.addEventListener('DOMContentLoaded', () => {
+            avatarDemo = new AvatarDemo();
+        });
+    </script>
+</body>
+</html>

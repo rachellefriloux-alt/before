@@ -1,0 +1,3 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\src\test\kotlin\com\sallie\core\communication\CommunicationBridgeTest.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\bin\test\com\sallie\core\communication\CommunicationBridgeTest.kt
+---- DIFF ----

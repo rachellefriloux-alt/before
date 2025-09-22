@@ -1,0 +1,47 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-plugin-vue\lib\configs\base.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-plugin-vue\lib\configs\flat\base.js
+---- DIFF ----
+module.exports = [
+  {
+    name: 'vue/base/setup',
+    plugins: {
+      get vue() {
+        return require('../../index')
+      }
+    },
+    languageOptions: {
+      sourceType: 'module'
+  {
+    name: 'vue/base/setup-for-vue',
+    files: ['*.vue', '**/*.vue'],
+    plugins: {
+      get vue() {
+        return require('../../index')
+      }
+    },
+    languageOptions: {
+      parser: require('vue-eslint-parser'),
+      sourceType: 'module'
+    },
+    rules: {
+      'vue/comment-directive': 'error',
+      'vue/jsx-uses-vars': 'error'
+    },
+    processor: 'vue/vue'
+  }
+]
+module.exports = {
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  plugins: ['vue'],
+  rules: {
+    'vue/comment-directive': 'error',
+    'vue/jsx-uses-vars': 'error'
+  },
+  overrides: [
+    {
+      files: '*.vue',
+      parser: require.resolve('vue-eslint-parser')
+  ]
+}

@@ -1,0 +1,76 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\internal\consumer\Distribution.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\plugins-distribution\org\gradle\api\distribution\Distribution.java
+---- DIFF ----
+ * Copyright 2012 the original author or authors.
+package org.gradle.api.distribution;
+import org.gradle.api.Action;
+import org.gradle.api.Incubating;
+import org.gradle.api.Named;
+import org.gradle.api.file.CopySpec;
+import org.gradle.api.provider.Property;
+/**
+ * A distribution allows to bundle an application or a library including dependencies, sources...
+ */
+public interface Distribution extends Named {
+    /**
+     * The name of this distribution.
+     */
+    @Override
+    String getName();
+
+    /**
+     * The baseName of the distribution, used in naming the distribution archives.
+     * <p>
+     * If the {@link #getName()} of this distribution is "{@code main}" this defaults to the project's name.
+     * Otherwise it is "{@code $project.name-$this.name}".
+     *
+     * @since 6.0
+     */
+    Property<String> getDistributionBaseName();
+
+    /**
+     * The classifier of the distribution, used as the archive classifier in the archives of this distribution.
+     * <p>
+     * By default, no classifier is added.
+     *
+     * @since 7.6
+     */
+    @Incubating
+    Property<String> getDistributionClassifier();
+
+    /**
+     * The contents of the distribution.
+     */
+    CopySpec getContents();
+
+    /**
+     * Configures the contents of the distribution.
+     * <p>
+     * Can be used to configure the contents of the distribution:
+     * <pre class='autoTested'>
+     * plugins {
+     *     id 'distribution'
+     * }
+     *
+     * distributions {
+     *     main {
+     *         contents {
+     *             from "src/readme"
+     *         }
+     *     }
+     * }
+     * </pre>
+     * The DSL inside the {@code contents\{} } block is the same DSL used for Copy tasks.
+     */
+    CopySpec contents(Action<? super CopySpec> action);
+
+ * Copyright 2011 the original author or authors.
+package org.gradle.tooling.internal.consumer;
+import org.gradle.initialization.BuildCancellationToken;
+import org.gradle.internal.classpath.ClassPath;
+import org.gradle.internal.logging.progress.ProgressLoggerFactory;
+import org.gradle.tooling.internal.protocol.InternalBuildProgressListener;
+public interface Distribution {
+    String getDisplayName();
+    ClassPath getToolingImplementationClasspath(
+        ProgressLoggerFactory progressLoggerFactory, InternalBuildProgressListener progressListener, ConnectionParameters connectionParameters, BuildCancellationToken cancellationToken);

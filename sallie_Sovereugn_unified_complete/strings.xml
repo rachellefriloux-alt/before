@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sallie</string>
+</resources>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multimodal_input_demo">Multimodal Input Demo</string>
+    <string name="input_demo_instructions">Enter text, or use voice or image input to see how Sallie processes and analyzes different input types. Processing results will appear below.</string>
+</resources>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="input_hint">Type a message…</string>
+    <string name="send">Send</string>
+    <string name="voice_input">Voice Input</string>
+    <string name="image_input">Image Input</string>
+    <string name="processing">Processing…</string>
+    <string name="error_processing_input">Error processing input</string>
+</resources>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multimodal_input_demo">Multimodal Input Demo</string>
+    <string name="input_demo_instructions">Enter text, or use voice or image input to see how Sallie processes and analyzes different input types. Processing results will appear below.</string>
+</resources>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="input_hint">Type a message…</string>
+    <string name="send">Send</string>
+    <string name="voice_input">Voice Input</string>
+    <string name="image_input">Image Input</string>
+    <string name="processing">Processing…</string>
+    <string name="error_processing_input">Error processing input</string>
+</resources>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sallie</string>
+</resources>

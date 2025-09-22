@@ -1,0 +1,21 @@
+# pack-refs with: peeled fully-peeled sorted 
+94d75a54be6a43136f2b6e294e403739b3302258 refs/remotes/origin/Sallie
+83646f061f2d56f18b3e3becfd18804072b14eaa refs/remotes/origin/codespace-legendary-space-cod-vp67q74j7vrfxq6
+f43dd7f608b969d2f2c768f7facabe167e358f76 refs/remotes/origin/copilot/fix-8eeed93f-6c8c-4fe4-86d8-b7b577e73e5c
+16bc9a0c25bec648ed7633a5c98406605a464c06 refs/remotes/origin/main
+
+
+# pack-refs with: peeled fully-peeled sorted 
+94d75a54be6a43136f2b6e294e403739b3302258 refs/remotes/origin/Sallie
+16bc9a0c25bec648ed7633a5c98406605a464c06 refs/remotes/origin/main
+
+
+# pack-refs with: peeled fully-peeled sorted 
+afe302ad159e406f9df474330e2043e00496715d refs/remotes/origin/main
+828aa73a0aa089decb2a685ef6150622570d1b65 refs/remotes/origin/sallie-1.0
+
+
+# pack-refs with: peeled fully-peeled sorted 
+68a6d529ab8851797121aead5506b5bd7d0fc4ee refs/remotes/origin/copilot/fix-4312e12a-4f85-4def-8e0f-51720c066af0
+ce78075824ee79474382e15d43918e916df4a471 refs/remotes/origin/main
+300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec refs/remotes/origin/sallie-1.0

@@ -1,0 +1,734 @@
+/*
+ * Sallie 1.0 Module
+  * Persona: Tough love meets soul care.
+   * Function: Visual styling that reflects Sallie's personality and values.
+    * Got it, love.
+     */
+
+     :root {
+         --sallie-primary: #6366f1;
+             --sallie-primary-dark: #4f46e5;
+                 --sallie-secondary: #8b5cf6;
+                     --sallie-accent: #06b6d4;
+                         --sallie-success: #10b981;
+                             --sallie-warning: #f59e0b;
+                                 --sallie-error: #ef4444;
+                                     
+                                         --background-primary: #0f172a;
+                                             --background-secondary: #1e293b;
+                                                 --background-tertiary: #334155;
+                                                     
+                                                         --text-primary: #f8fafc;
+                                                             --text-secondary: #cbd5e1;
+                                                                 --text-muted: #64748b;
+                                                                     
+                                                                         --border-color: #334155;
+                                                                             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                                                                                 --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                                                                                     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+                                                                                         
+                                                                                             --border-radius: 8px;
+                                                                                                 --border-radius-lg: 12px;
+                                                                                                     --transition: all 0.2s ease-in-out;
+                                                                                                     }
+
+                                                                                                     * {
+                                                                                                         margin: 0;
+                                                                                                        }
+
+
+/*
+ * Sallie 1.0 Module
+  * Persona: Tough love meets soul care.
+   * Function: Visual styling that reflects Sallie's personality and values.
+    * Got it, love.
+     */
+
+     :root {
+         --sallie-primary: #6366f1;
+             --sallie-primary-dark: #4f46e5;
+                 --sallie-secondary: #8b5cf6;
+                     --sallie-accent: #06b6d4;
+                         --sallie-success: #10b981;
+                             --sallie-warning: #f59e0b;
+                                 --sallie-error: #ef4444;
+                                     
+                                         --background-primary: #0f172a;
+                                             --background-secondary: #1e293b;
+                                                 --background-tertiary: #334155;
+                                                     
+                                                         --text-primary: #f8fafc;
+                                                             --text-secondary: #cbd5e1;
+                                                                 --text-muted: #64748b;
+                                                                     
+                                                                         --border-color: #334155;
+                                                                             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                                                                                 --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                                                                                     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+                                                                                         
+                                                                                             --border-radius: 8px;
+                                                                                                 --border-radius-lg: 12px;
+                                                                                                     --transition: all 0.2s ease-in-out;
+                                                                                                     }
+
+                                                                                                     * {
+                                                                                                         margin: 0;
+                                                                                                        }
+
+
+
+div.tab td.indentPath {
+    padding-left: 3em;
+}
+
+
+.unavailable {
+    color: #808080;
+}
+
+/*
+ * Copyright 2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.dependencyTree, #insight {
+    border: solid 2px #d0d0d0;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #FFFFEE
+}
+.alreadyRendered > a, .unresolvable > a {
+    border-radius: 4px;
+}
+.alreadyRendered > a {
+    border: solid 1px #EEEEEE;
+    background-color: #EEEEEE !IMPORTANT;
+}
+.hasConflict > a {
+    font-weight: bold !IMPORTANT;
+    color: #FAA732 !IMPORTANT;
+}
+.unresolvable > a {
+    border: solid 1px #DD514C;
+    background-color: #DD514C !IMPORTANT;
+    color: white !IMPORTANT;
+}
+.leaf a {
+    font-style: italic !IMPORTANT;
+}
+.configuration h3 {
+    cursor: pointer;
+}
+.configuration h3 ins {
+    background-image: url(../images/d.png); background-repeat:no-repeat; background-color:white;
+    background-position: -18px 0;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 4px;
+}
+.configuration h3.closed  ins {
+    background-position: 0 0;
+}
+#dependencies {
+    margin-right: 30px;
+}
+#insight {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    display: none;
+    width: 70%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+#dismissInsight {
+    float: right;
+    background:url("../images/d.png") -18px -53px no-repeat !important;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.insightTree {
+    height: 450px;
+    overflow: auto;
+}
+.insightTree a {
+    cursor: default;
+}
+.configurationDescription {
+    font-size: small;
+}
+
+
+
+.summary {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.summary table {
+    border-collapse: collapse;
+}
+
+.summary td {
+    vertical-align: top;
+}
+
+.breadcrumbs, .breadcrumbs a {
+    color: #606060;
+}
+
+.infoBox {
+    width: 110px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.infoBox p {
+    margin: 0;
+}
+
+.counter, .percent {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.duration {
+    width: 125px;
+}
+
+.successRate, .summaryGroup {
+    border: solid 2px #d0d0d0;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.successRate {
+    width: 140px;
+    margin-left: 35px;
+}
+
+.successRate .percent {
+    font-size: 180%;
+}
+
+.success, .success a {
+    color: #008000;
+}
+
+div.success, .successRate.success {
+    background-color: #bbd9bb;
+    border-color: #008000;
+}
+
+.failures, .failures a {
+    color: #b60808;
+}
+
+.skipped, .skipped a {
+    color: #c09853;
+}
+
+div.failures, .successRate.failures {
+    background-color: #ecdada;
+    border-color: #b60808;
+}
+
+ul.linkList {
+    padding-left: 0;
+}
+
+ul.linkList li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.metadata tr.odd {
+    background-color: #f7f7f7;
+    border: solid 1px #d0d0d0;
+}
+
+.metadata tr.even {
+    border: solid 1px #d0d0d0;
+}
+
+.metadata th, .metadata td {
+    padding: 10px;
+    text-align: left;
+}
+
+.metadata a {
+    color: blue;
+}
+
+.metadata .unrenderable {
+    color: darkred;
+}
+
+
+
+#summary {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#summary table {
+    border-collapse: collapse;
+}
+
+#summary td {
+    vertical-align: top;
+}
+
+.breadcrumbs, .breadcrumbs a {
+    color: #606060;
+}
+
+.infoBox {
+    width: 110px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.infoBox p {
+    margin: 0;
+}
+
+.counter, .percent {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#duration {
+    width: 125px;
+}
+
+#successRate, .summaryGroup {
+    border: solid 2px #d0d0d0;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#successRate {
+    width: 140px;
+    margin-left: 35px;
+}
+
+#successRate .percent {
+    font-size: 180%;
+}
+
+.success, .success a {
+    color: #008000;
+}
+
+div.success, #successRate.success {
+    background-color: #bbd9bb;
+    border-color: #008000;
+}
+
+.failures, .failures a {
+    color: #b60808;
+}
+
+.skipped, .skipped a {
+    color: #c09853;
+}
+
+div.failures, #successRate.failures {
+    background-color: #ecdada;
+    border-color: #b60808;
+}
+
+ul.linkList {
+    padding-left: 0;
+}
+
+ul.linkList li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+
+
+div.tab td.indentPath {
+    padding-left: 3em;
+}
+
+
+.unavailable {
+    color: #808080;
+}
+
+/*
+ * Copyright 2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.dependencyTree, #insight {
+    border: solid 2px #d0d0d0;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #FFFFEE
+}
+.alreadyRendered > a, .unresolvable > a {
+    border-radius: 4px;
+}
+.alreadyRendered > a {
+    border: solid 1px #EEEEEE;
+    background-color: #EEEEEE !IMPORTANT;
+}
+.hasConflict > a {
+    font-weight: bold !IMPORTANT;
+    color: #FAA732 !IMPORTANT;
+}
+.unresolvable > a {
+    border: solid 1px #DD514C;
+    background-color: #DD514C !IMPORTANT;
+    color: white !IMPORTANT;
+}
+.leaf a {
+    font-style: italic !IMPORTANT;
+}
+.configuration h3 {
+    cursor: pointer;
+}
+.configuration h3 ins {
+    background-image: url(../images/d.png); background-repeat:no-repeat; background-color:white;
+    background-position: -18px 0;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 4px;
+}
+.configuration h3.closed  ins {
+    background-position: 0 0;
+}
+#dependencies {
+    margin-right: 30px;
+}
+#insight {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    display: none;
+    width: 70%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+#dismissInsight {
+    float: right;
+    background:url("../images/d.png") -18px -53px no-repeat !important;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.insightTree {
+    height: 450px;
+    overflow: auto;
+}
+.insightTree a {
+    cursor: default;
+}
+.configurationDescription {
+    font-size: small;
+}
+
+
+
+.summary {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.summary table {
+    border-collapse: collapse;
+}
+
+.summary td {
+    vertical-align: top;
+}
+
+.breadcrumbs, .breadcrumbs a {
+    color: #606060;
+}
+
+.infoBox {
+    width: 110px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.infoBox p {
+    margin: 0;
+}
+
+.counter, .percent {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.duration {
+    width: 125px;
+}
+
+.successRate, .summaryGroup {
+    border: solid 2px #d0d0d0;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.successRate {
+    width: 140px;
+    margin-left: 35px;
+}
+
+.successRate .percent {
+    font-size: 180%;
+}
+
+.success, .success a {
+    color: #008000;
+}
+
+div.success, .successRate.success {
+    background-color: #bbd9bb;
+    border-color: #008000;
+}
+
+.failures, .failures a {
+    color: #b60808;
+}
+
+.skipped, .skipped a {
+    color: #c09853;
+}
+
+div.failures, .successRate.failures {
+    background-color: #ecdada;
+    border-color: #b60808;
+}
+
+ul.linkList {
+    padding-left: 0;
+}
+
+ul.linkList li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.metadata tr.odd {
+    background-color: #f7f7f7;
+    border: solid 1px #d0d0d0;
+}
+
+.metadata tr.even {
+    border: solid 1px #d0d0d0;
+}
+
+.metadata th, .metadata td {
+    padding: 10px;
+    text-align: left;
+}
+
+.metadata a {
+    color: blue;
+}
+
+.metadata .unrenderable {
+    color: darkred;
+}
+
+
+
+#summary {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#summary table {
+    border-collapse: collapse;
+}
+
+#summary td {
+    vertical-align: top;
+}
+
+.breadcrumbs, .breadcrumbs a {
+    color: #606060;
+}
+
+.infoBox {
+    width: 110px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.infoBox p {
+    margin: 0;
+}
+
+.counter, .percent {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#duration {
+    width: 125px;
+}
+
+#successRate, .summaryGroup {
+    border: solid 2px #d0d0d0;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#successRate {
+    width: 140px;
+    margin-left: 35px;
+}
+
+#successRate .percent {
+    font-size: 180%;
+}
+
+.success, .success a {
+    color: #008000;
+}
+
+div.success, #successRate.success {
+    background-color: #bbd9bb;
+    border-color: #008000;
+}
+
+.failures, .failures a {
+    color: #b60808;
+}
+
+.skipped, .skipped a {
+    color: #c09853;
+}
+
+div.failures, #successRate.failures {
+    background-color: #ecdada;
+    border-color: #b60808;
+}
+
+ul.linkList {
+    padding-left: 0;
+}
+
+ul.linkList li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+
+/*
+ * Sallie 1.0 Module
+  * Persona: Tough love meets soul care.
+   * Function: Visual styling that reflects Sallie's personality and values.
+    * Got it, love.
+     */
+
+     :root {
+         --sallie-primary: #6366f1;
+             --sallie-primary-dark: #4f46e5;
+                 --sallie-secondary: #8b5cf6;
+                     --sallie-accent: #06b6d4;
+                         --sallie-success: #10b981;
+                             --sallie-warning: #f59e0b;
+                                 --sallie-error: #ef4444;
+                                     
+                                         --background-primary: #0f172a;
+                                             --background-secondary: #1e293b;
+                                                 --background-tertiary: #334155;
+                                                     
+                                                         --text-primary: #f8fafc;
+                                                             --text-secondary: #cbd5e1;
+                                                                 --text-muted: #64748b;
+                                                                     
+                                                                         --border-color: #334155;
+                                                                             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                                                                                 --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                                                                                     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+                                                                                         
+                                                                                             --border-radius: 8px;
+                                                                                                 --border-radius-lg: 12px;
+                                                                                                     --transition: all 0.2s ease-in-out;
+                                                                                                     }
+
+                                                                                                     * {
+                                                                                                         margin: 0;
+                                                                                                        }
+
+
+/*
+ * Sallie 1.0 Module
+  * Persona: Tough love meets soul care.
+   * Function: Visual styling that reflects Sallie's personality and values.
+    * Got it, love.
+     */
+
+     :root {
+         --sallie-primary: #6366f1;
+             --sallie-primary-dark: #4f46e5;
+                 --sallie-secondary: #8b5cf6;
+                     --sallie-accent: #06b6d4;
+                         --sallie-success: #10b981;
+                             --sallie-warning: #f59e0b;
+                                 --sallie-error: #ef4444;
+                                     
+                                         --background-primary: #0f172a;
+                                             --background-secondary: #1e293b;
+                                                 --background-tertiary: #334155;
+                                                     
+                                                         --text-primary: #f8fafc;
+                                                             --text-secondary: #cbd5e1;
+                                                                 --text-muted: #64748b;
+                                                                     
+                                                                         --border-color: #334155;
+                                                                             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                                                                                 --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                                                                                     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+                                                                                         
+                                                                                             --border-radius: 8px;
+                                                                                                 --border-radius-lg: 12px;
+                                                                                                     --transition: all 0.2s ease-in-out;
+                                                                                                     }
+
+                                                                                                     * {
+                                                                                                         margin: 0;
+                                                                                                        }

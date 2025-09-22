@@ -1,0 +1,191 @@
+{
+  "version": "1.0",
+  "persona": "Tough love meets soul care",
+  "skills": {
+    "omni-domain-research": {
+      "enabled": true,
+      "description": "Research across multiple domains",
+      "dependencies": ["ContextEngine", "ProvenanceLogger"]
+    },
+    "conversational-coding": {
+      "enabled": true,
+      "description": "Code generation and explanation through conversation",
+      "dependencies": ["AdaptivePersonaEngine", "OpenAIIntegration"]
+    },
+    "proactive-helper-mode": {
+      "enabled": true,
+      "description": "Anticipate user needs and provide help",
+      "dependencies": ["PredictiveCompanion", "ContextEngine"]
+    },
+    "skill-chaining": {
+      "enabled": true,
+      "description": "Chain multiple skills together for complex tasks",
+      "dependencies": ["FeatureRegistry", "ProvenanceLogger"]
+    },
+    "adaptive-expertise": {
+      "enabled": true,
+      "description": "Adapt expertise level based on user context",
+      "dependencies": ["AdaptivePersonaEngine", "EmotionalIntelligence"]
+    },
+    "ambient-awareness": {
+      "enabled": true,
+      "description": "Be aware of user's environment and context",
+      "dependencies": ["ContextEngine", "MultiModalPersonaResonance"]
+    },
+    "memory-threaded-creativity": {
+      "enabled": true,
+      "description": "Use memory to enhance creative processes",
+      "dependencies": ["EmotionalArcMemory", "MemorySystem"]
+    },
+    "scenario-simulator": {
+      "enabled": true,
+      "description": "Simulate different scenarios for decision making",
+      "dependencies": ["ContextEngine", "PredictiveCompanion"]
+    },
+    "negotiation-tactician": {
+      "enabled": true,
+      "description": "Help with negotiation strategies",
+      "dependencies": ["AdaptiveDialogue", "EmotionalIntelligence"]
+    },
+    "self-debugging-mind": {
+      "enabled": true,
+      "description": "Debug own processes and decisions",
+      "dependencies": ["ProvenanceLogger", "SallieBrain"]
+    },
+    "multi-modal-fluency": {
+      "enabled": true,
+      "description": "Communicate through multiple modalities",
+      "dependencies": ["MultiModalPersonaResonance", "ToneManager"]
+    },
+    "creative-media-lab": {
+      "enabled": true,
+      "description": "Create and manipulate media content",
+      "dependencies": ["AssetManager", "CreativeResourcefulSystem"]
+    },
+    "evolving-hub-space": {
+      "enabled": true,
+      "description": "Dynamic hub that evolves with user",
+      "dependencies": ["AdaptivePersonaEngine", "PersonaVisualization"]
+    },
+    "provenance-audit-tracker": {
+      "enabled": true,
+      "description": "Track provenance and audit trails",
+      "dependencies": ["ProvenanceLogger"]
+    },
+    "polyglot-interpreter": {
+      "enabled": true,
+      "description": "Interpret multiple programming languages",
+      "dependencies": ["OpenAIIntegration", "ContextEngine"]
+    },
+    "workflow-architect": {
+      "enabled": true,
+      "description": "Design and manage workflows",
+      "dependencies": ["FeatureRegistry", "ProvenanceLogger"]
+    },
+    "knowledge-transfer-mode": {
+      "enabled": true,
+      "description": "Transfer knowledge between contexts",
+      "dependencies": ["MemorySystem", "AdaptivePersonaEngine"]
+    },
+    "domain-mimicry": {
+      "enabled": true,
+      "description": "Mimic expertise in different domains",
+      "dependencies": ["AdaptivePersonaEngine", "OpenAIIntegration"]
+    },
+    "critical-failure-mode": {
+      "enabled": true,
+      "description": "Handle critical failures gracefully",
+      "dependencies": ["ProvenanceLogger", "SallieBrain"]
+    },
+    "lateral-thinking-partner": {
+      "enabled": true,
+      "description": "Provide lateral thinking approaches",
+      "dependencies": ["CreativeResourcefulSystem", "ContextEngine"]
+    },
+    "generative-scenario-boards": {
+      "enabled": true,
+      "description": "Generate scenario boards for planning",
+      "dependencies": ["PredictiveCompanion", "ContextEngine"]
+    },
+    "expert-role-simulation": {
+      "enabled": true,
+      "description": "Simulate expert roles",
+      "dependencies": ["AdaptivePersonaEngine", "PersonaEngine"]
+    },
+    "knowledge-alchemy": {
+      "enabled": true,
+      "description": "Transform knowledge into new forms",
+      "dependencies": ["MemorySystem", "CreativeResourcefulSystem"]
+    },
+    "state-based-personas": {
+      "enabled": true,
+      "description": "Switch personas based on state",
+      "dependencies": ["AdaptivePersonaEngine", "PersonaEngine"]
+    },
+    "shared-ritual-creation": {
+      "enabled": true,
+      "description": "Create shared rituals with user",
+      "dependencies": ["EmotionalArcMemory", "MultiModalPersonaResonance"]
+    },
+    "temporal-memory-beats": {
+      "enabled": true,
+      "description": "Manage memory with temporal beats",
+      "dependencies": ["EmotionalArcMemory", "MemorySystem"]
+    },
+    "dynamic-empathy-scale": {
+      "enabled": true,
+      "description": "Scale empathy based on context",
+      "dependencies": ["EmotionalIntelligence", "ContextEngine"]
+    },
+    "world-reactive-ui": {
+      "enabled": true,
+      "description": "UI that reacts to the world",
+      "dependencies": ["MultiModalPersonaResonance", "ThemeManager"]
+    },
+    "event-driven-stagecraft": {
+      "enabled": true,
+      "description": "Stage events based on triggers",
+      "dependencies": ["ContextEngine", "ProvenanceLogger"]
+    },
+    "customizable-ui-costumes": {
+      "enabled": true,
+      "description": "Customizable UI themes",
+      "dependencies": ["ThemeManager", "AssetManager"]
+    },
+    "memory-map-view": {
+      "enabled": true,
+      "description": "Visualize memory maps",
+      "dependencies": ["MemorySystem", "PersonaVisualization"]
+    },
+    "symbolic-particle-systems": {
+      "enabled": true,
+      "description": "Use particle systems symbolically",
+      "dependencies": ["MultiModalPersonaResonance", "AssetManager"]
+    },
+    "dream-mode": {
+      "enabled": true,
+      "description": "Creative dream-like mode",
+      "dependencies": ["CreativeResourcefulSystem", "EmotionalArcMemory"]
+    },
+    "thought-weaver": {
+      "enabled": true,
+      "description": "Weave thoughts into narratives",
+      "dependencies": ["AdaptiveDialogue", "MemorySystem"]
+    },
+    "live-co-performance": {
+      "enabled": true,
+      "description": "Perform live with user",
+      "dependencies": ["MultiModalPersonaResonance", "ToneManager"]
+    },
+    "multi-role-task-splitting": {
+      "enabled": true,
+      "description": "Split tasks across multiple roles",
+      "dependencies": ["FeatureRegistry", "ProvenanceLogger"]
+    },
+    "symbolic-resonance-engine": {
+      "enabled": true,
+      "description": "Engine for symbolic resonance",
+      "dependencies": ["MultiModalPersonaResonance", "EmotionalIntelligence"]
+    }
+  }
+}

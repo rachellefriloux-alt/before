@@ -1,0 +1,72 @@
+[
+  {
+    "name": "avatar_loyal",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/loyal.svg",
+    "tags": ["avatar", "loyal", "mood"]
+  },
+  {
+    "name": "avatar_strategic",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/strategic.svg",
+    "tags": ["avatar", "strategic", "mood"]
+  },
+  {
+    "name": "avatar_empathic",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/empathic.svg",
+    "tags": ["avatar", "empathic", "mood"]
+  },
+  {
+    "name": "icon_shield",
+    "type": "svg",
+    "source": "heroicons",
+    "url": "https://heroicons.com/shield.svg",
+    "tags": ["icon", "loyalty"]
+  },
+  {
+    "name": "icon_compass",
+    "type": "svg",
+    "source": "heroicons",
+    "url": "https://heroicons.com/compass.svg",
+    "tags": ["icon", "strategy"]
+  },
+  {
+    "name": "icon_heartline",
+    "type": "svg",
+    "source": "heroicons",
+    "url": "https://heroicons.com/heart.svg",
+    "tags": ["icon", "empathy"]
+  },
+  {
+    "name": "illus_onboarding",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/onboarding.svg",
+    "tags": ["illustration", "onboarding"]
+  },
+  {
+    "name": "illus_empty_loyal",
+    "type": "svg",
+    "source": "undraw",
+    "url": "https://undraw.co/illustrations/empty_loyal.svg",
+    "tags": ["illustration", "empty", "loyal"]
+  },
+  {
+    "name": "anim_avatar_moodshift_loyal",
+    "type": "lottie",
+    "source": "lottiefiles",
+    "url": "https://assets.lottiefiles.com/datafiles/loyal.json",
+    "tags": ["animation", "avatar", "loyal"]
+  },
+  {
+    "name": "anim_avatar_moodshift_strategic",
+    "type": "lottie",
+    "source": "lottiefiles",
+    "url": "https://assets.lottiefiles.com/datafiles/strategic.json",
+    "tags": ["animation", "avatar", "strategic"]
+  }
+]

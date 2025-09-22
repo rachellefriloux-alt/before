@@ -1,0 +1,12 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\espree\lib\version.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\version.js
+---- DIFF ----
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VERSION = void 0;
+exports.VERSION = '5.15.0'; // x-release-please-version
+//# sourceMappingURL=version.js.map
+const version = "10.4.0";
+
+export default version;
+

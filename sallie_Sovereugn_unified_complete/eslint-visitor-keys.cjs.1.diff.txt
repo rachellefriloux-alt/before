@@ -1,0 +1,41 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-visitor-keys\dist\eslint-visitor-keys.cjs
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\@eslint-community\eslint-utils\node_modules\eslint-visitor-keys\dist\eslint-visitor-keys.cjs
+---- DIFF ----
+Object.defineProperty(exports, '__esModule', { value: true });
+        "source"
+        "source"
+        "exported",
+        "source"
+        "source"
+        "local"
+// Disable valid-jsdoc rule because it reports syntax error on the type of @returns.
+// eslint-disable-next-line valid-jsdoc
+    const retv = /** @type {{
+        [type: string]: ReadonlyArray<string>
+    }} */ (Object.assign({}, KEYS));
+        if (Object.prototype.hasOwnProperty.call(retv, type)) {
+/* eslint-disable jsdoc/valid-types -- doesn't allow `readonly`.
+   TODO: remove eslint-disable when https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser/issues/164 is fixed
+*/
+/* eslint-enable jsdoc/valid-types -- doesn't allow `readonly string[]`. TODO: check why */
+        "source",
+        "source",
+        "attributes"
+        "local",
+        "exported"
+    ImportAttribute: [
+        "source",
+        "attributes"
+        "source",
+        "options"
+        "attributes"
+        "key",
+        "value"
+    ],
+/* eslint-disable jsdoc/valid-types -- doesn't allow `readonly`.
+   TODO: remove eslint-disable when https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser/issues/164 is fixed
+*/
+/* eslint-enable jsdoc/valid-types -- doesn't allow `readonly` */
+    const retv = /** @type {{ [type: string]: ReadonlyArray<string> }} */
+        (Object.assign({}, KEYS));
+        if (Object.hasOwn(retv, type)) {

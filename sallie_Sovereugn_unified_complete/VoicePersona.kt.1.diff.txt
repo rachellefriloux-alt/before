@@ -1,0 +1,20 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\components\VoicePersona.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\VoicePersona.kt
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: VoicePersona
+ * Intent: Handle functionality for VoicePersona
+ * Provenance-ID: a3e17934-abd5-438a-ae4b-43f4cdcbfc35
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+/**
+ * VoicePersona: Handles voice synthesis and persona-based voice styles.
+ * - On-device and cloud-based speech recognition.
+ * - Voice biometrics for user identification.
+ * - Emotional voice synthesis and expressive TTS.
+ * - Customizable wake word detection.
+ * - Multimodal voice input (commands, dictation, conversational).
+ */
+
+

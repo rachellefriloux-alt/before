@@ -1,0 +1,20 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\_vendor\zod-to-json-schema\parsers\map.d.ts
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\loupe\lib\map.d.ts
+---- DIFF ----
+import type { Options } from './types.js';
+export default function inspectMap(map: Map<unknown, unknown>, options: Options): string;
+import { ZodMapDef } from 'zod';
+import { JsonSchema7Type } from "../parseDef.js";
+import { Refs } from "../Refs.js";
+import { JsonSchema7RecordType } from "./record.js";
+export type JsonSchema7MapType = {
+    type: 'array';
+    maxItems: 125;
+    items: {
+        type: 'array';
+        items: [JsonSchema7Type, JsonSchema7Type];
+        minItems: 2;
+        maxItems: 2;
+    };
+};
+export declare function parseMapDef(def: ZodMapDef, refs: Refs): JsonSchema7MapType | JsonSchema7RecordType;

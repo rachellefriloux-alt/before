@@ -1,0 +1,13 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javalibrary\LibraryTest.java.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javalibrary\junitjupiter\LibraryTest.java.template
+---- DIFF ----
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+class LibraryTest {
+    @Test void someLibraryMethodReturnsTrue() {
+        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
+import org.junit.Test;
+import static org.junit.Assert.*;
+public class LibraryTest {
+    @Test public void someLibraryMethodReturnsTrue() {
+        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());

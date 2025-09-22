@@ -1,0 +1,15 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\scalaapplication\App.scala.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\scalaapplication\multi\app\App.scala.template
+---- DIFF ----
+import ${basePackagePrefix.raw}utilities.StringUtils
+import org.apache.commons.text.WordUtils
+   def main(args: Array[String]): Unit = {
+        val tokens = StringUtils.split(MessageUtils.getMessage())
+        val result = StringUtils.join(tokens)
+        println(WordUtils.capitalize(result))
+    }
+
+  def main(args: Array[String]): Unit = {
+    println(greeting())
+  }
+  def greeting(): String = "Hello, world!"

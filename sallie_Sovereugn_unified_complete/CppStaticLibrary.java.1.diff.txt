@@ -1,0 +1,19 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\model\cpp\CppStaticLibrary.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\language-native\org\gradle\language\cpp\CppStaticLibrary.java
+---- DIFF ----
+ * Copyright 2017 the original author or authors.
+package org.gradle.language.cpp;
+import org.gradle.api.component.PublishableComponent;
+import org.gradle.language.ComponentWithOutputs;
+import org.gradle.language.nativeplatform.ComponentWithLinkUsage;
+import org.gradle.language.nativeplatform.ComponentWithRuntimeUsage;
+import org.gradle.language.nativeplatform.ComponentWithStaticLibrary;
+ * A static library built from C++ source.
+ * @since 4.5
+public interface CppStaticLibrary extends CppBinary, ComponentWithStaticLibrary, ComponentWithLinkUsage, ComponentWithRuntimeUsage, ComponentWithOutputs, PublishableComponent {
+
+ * Copyright 2018 the original author or authors.
+package org.gradle.tooling.model.cpp;
+ * A C++ static library binary.
+ * @since 4.10
+public interface CppStaticLibrary extends CppBinary {

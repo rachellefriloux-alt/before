@@ -1,0 +1,224 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.3.3/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:inspectClassesForKotlinIC UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestKotlin NO-SOURCE
+> Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:validatePlugins UP-TO-DATE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+> Task :identity:compileKotlin UP-TO-DATE
+> Task :onboarding:compileKotlin UP-TO-DATE
+> Task :onboarding:compileJava NO-SOURCE
+> Task :identity:compileJava NO-SOURCE
+> Task :onboarding:processResources NO-SOURCE
+> Task :onboarding:classes UP-TO-DATE
+> Task :identity:processResources NO-SOURCE
+> Task :identity:classes UP-TO-DATE
+> Task :identity:inspectClassesForKotlinIC UP-TO-DATE
+> Task :onboarding:inspectClassesForKotlinIC UP-TO-DATE
+> Task :onboarding:jar UP-TO-DATE
+> Task :identity:jar UP-TO-DATE
+> Task :personaCore:compileKotlin UP-TO-DATE
+> Task :responseTemplates:compileKotlin UP-TO-DATE
+> Task :responseTemplates:compileJava NO-SOURCE
+> Task :personaCore:compileJava NO-SOURCE
+> Task :responseTemplates:processResources NO-SOURCE
+> Task :personaCore:processResources NO-SOURCE
+> Task :responseTemplates:classes UP-TO-DATE
+> Task :personaCore:classes UP-TO-DATE
+> Task :responseTemplates:inspectClassesForKotlinIC UP-TO-DATE
+> Task :personaCore:inspectClassesForKotlinIC UP-TO-DATE
+> Task :responseTemplates:jar UP-TO-DATE
+> Task :personaCore:jar UP-TO-DATE
+> Task :tone:compileKotlin UP-TO-DATE
+> Task :values:compileKotlin UP-TO-DATE
+> Task :tone:compileJava NO-SOURCE
+> Task :tone:processResources NO-SOURCE
+> Task :tone:classes UP-TO-DATE
+> Task :values:compileJava NO-SOURCE
+> Task :values:processResources NO-SOURCE
+> Task :values:classes UP-TO-DATE
+> Task :tone:inspectClassesForKotlinIC UP-TO-DATE
+> Task :values:inspectClassesForKotlinIC UP-TO-DATE
+> Task :tone:jar UP-TO-DATE
+> Task :core:processResources NO-SOURCE
+> Task :values:jar UP-TO-DATE
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava NO-SOURCE
+> Task :core:classes UP-TO-DATE
+
+> Task :core:run
+🚀 Salle 1.0 - Modular Digital Companion Demo
+==================================================
+
+📋 Policy System Test:
+✅ [2025-08-19 14:50:21] log_note(Demo started) - Local logging allowed
+🗒️ Note: Sallie architecture demo is running
+🚫 [2025-08-19 14:50:21] network_call(example.com) - Network calls prohibited - privacy first
+Network call decision: Network calls prohibited - privacy first
+
+🎭 Persona System Test:
+Current persona: JUST_ME - Authentic, grounded, real
+Persona switched from JUST_ME to EMPOWERED
+New description: Confident, empowering, action-oriented
+
+🎵 Tone System Test:
+Base: 'You've completed the task.'
+Adjusted (EMPOWERING): 'You've completed the task. You've got this!'
+
+💎 Values System Test:
+Privacy action 'store user data locally': ✅ Aligned
+Network action 'send analytics to server': ❌ Violation
+Violations detected: Privacy violation: Analytics tracking
+
+💬 Response Templates Test:
+Empowered response: 'Your power, your choice.'
+Fallback response: 'I'm here for you.'
+
+📊 Recent Activity Log:
+✅ [2025-08-19 14:50:21] log_note(Demo started) - Local logging allowed
+🚫 [2025-08-19 14:50:21] network_call(example.com) - Network calls prohibited - privacy first
+
+🔧 Capability Registry Test:
+Available capabilities: log_note, adjust_mood, device_control
+
+🏛️ Core Values:
+1. Privacy: Your data belongs to you, period
+2. Loyalty: I'm on your team, always
+3. Authenticity: Real talk, no fake personas
+4. Empowerment: Help you become your best self
+5. Integrity: Do what's right, even when hard
+
+✨ Demo completed - All systems operational!
+Privacy-first ✅ • Modular architecture ✅ • Persona integrity ✅
+
+Got it, love. 💛
+
+BUILD SUCCESSFUL in 9s
+26 actionable tasks: 1 executed, 25 up-to-date
+
+
+ onour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.3.3/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:inspectClassesForKotlinIC UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestKotlin NO-SOURCE
+> Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:validatePlugins UP-TO-DATE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+> Task :identity:compileKotlin UP-TO-DATE
+> Task :onboarding:compileKotlin UP-TO-DATE
+> Task :onboarding:compileJava NO-SOURCE
+> Task :identity:compileJava NO-SOURCE
+> Task :onboarding:processResources NO-SOURCE
+> Task :onboarding:classes UP-TO-DATE
+> Task :identity:processResources NO-SOURCE
+> Task :identity:classes UP-TO-DATE
+> Task :identity:inspectClassesForKotlinIC UP-TO-DATE
+> Task :onboarding:inspectClassesForKotlinIC UP-TO-DATE
+> Task :onboarding:jar UP-TO-DATE
+> Task :identity:jar UP-TO-DATE
+> Task :personaCore:compileKotlin UP-TO-DATE
+> Task :responseTemplates:compileKotlin UP-TO-DATE
+> Task :responseTemplates:compileJava NO-SOURCE
+> Task :personaCore:compileJava NO-SOURCE
+> Task :responseTemplates:processResources NO-SOURCE
+> Task :personaCore:processResources NO-SOURCE
+> Task :responseTemplates:classes UP-TO-DATE
+> Task :personaCore:classes UP-TO-DATE
+> Task :responseTemplates:inspectClassesForKotlinIC UP-TO-DATE
+> Task :personaCore:inspectClassesForKotlinIC UP-TO-DATE
+> Task :responseTemplates:jar UP-TO-DATE
+> Task :personaCore:jar UP-TO-DATE
+> Task :tone:compileKotlin UP-TO-DATE
+> Task :values:compileKotlin UP-TO-DATE
+> Task :tone:compileJava NO-SOURCE
+> Task :tone:processResources NO-SOURCE
+> Task :tone:classes UP-TO-DATE
+> Task :values:compileJava NO-SOURCE
+> Task :values:processResources NO-SOURCE
+> Task :values:classes UP-TO-DATE
+> Task :tone:inspectClassesForKotlinIC UP-TO-DATE
+> Task :values:inspectClassesForKotlinIC UP-TO-DATE
+> Task :tone:jar UP-TO-DATE
+> Task :core:processResources NO-SOURCE
+> Task :values:jar UP-TO-DATE
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava NO-SOURCE
+> Task :core:classes UP-TO-DATE
+
+> Task :core:run
+🚀 Salle 1.0 - Modular Digital Companion Demo
+==================================================
+
+📋 Policy System Test:
+✅ [2025-08-19 14:50:21] log_note(Demo started) - Local logging allowed
+🗒️ Note: Sallie architecture demo is running
+🚫 [2025-08-19 14:50:21] network_call(example.com) - Network calls prohibited - privacy first
+Network call decision: Network calls prohibited - privacy first
+
+🎭 Persona System Test:
+Current persona: JUST_ME - Authentic, grounded, real
+Persona switched from JUST_ME to EMPOWERED
+New description: Confident, empowering, action-oriented
+
+🎵 Tone System Test:
+Base: 'You've completed the task.'
+Adjusted (EMPOWERING): 'You've completed the task. You've got this!'
+
+💎 Values System Test:
+Privacy action 'store user data locally': ✅ Aligned
+Network action 'send analytics to server': ❌ Violation
+Violations detected: Privacy violation: Analytics tracking
+
+💬 Response Templates Test:
+Empowered response: 'Your power, your choice.'
+Fallback response: 'I'm here for you.'
+
+📊 Recent Activity Log:
+✅ [2025-08-19 14:50:21] log_note(Demo started) - Local logging allowed
+🚫 [2025-08-19 14:50:21] network_call(example.com) - Network calls prohibited - privacy first
+
+🔧 Capability Registry Test:
+Available capabilities: log_note, adjust_mood, device_control
+
+🏛️ Core Values:
+1. Privacy: Your data belongs to you, period
+2. Loyalty: I'm on your team, always
+3. Authenticity: Real talk, no fake personas
+4. Empowerment: Help you become your best self
+5. Integrity: Do what's right, even when hard
+
+✨ Demo completed - All systems operational!
+Privacy-first ✅ • Modular architecture ✅ • Persona integrity ✅
+
+Got it, love. 💛
+
+BUILD SUCCESSFUL in 9s
+26 actionable tasks: 1 executed, 25 up-to-date

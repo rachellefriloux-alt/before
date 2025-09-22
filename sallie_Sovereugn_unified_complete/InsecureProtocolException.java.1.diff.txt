@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\file-operations\org\gradle\api\internal\resources\InsecureProtocolException.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\dependency-management\org\gradle\api\internal\artifacts\repositories\InsecureProtocolException.java
+---- DIFF ----
+package org.gradle.api.internal.artifacts.repositories;
+package org.gradle.api.internal.resources;

@@ -1,0 +1,9 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\refs\heads\merg
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\refs\heads\merg
+---- DIFF ----
+134946ce96a6f99c8da93cb5de4e763d4784cb07
+0000000000000000000000000000000000000000 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755629847 -0500	branch: Created from origin/merg
+88bf100f743fd369276f112032cc1ff3330f8f0e b2f0fedb59e28ceafe97328e4dcaa157babd4eaf rachellefriloux-alt <rachellefriloux@gmail.com> 1755629871 -0500	merge copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883: Fast-forward
+b2f0fedb59e28ceafe97328e4dcaa157babd4eaf 5944eb1032b0ec58586bd73d7a367b506c995d02 rachellefriloux-alt <rachellefriloux@gmail.com> 1755629960 -0500	commit (merge): Merge branch 'copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d' into merg
+5944eb1032b0ec58586bd73d7a367b506c995d02 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631314 -0500	merge copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1: Fast-forward
+5c14883775ecb40774c19439f9679dc30d8e0fb7 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631336 -0500	merge copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883: Fast-forward

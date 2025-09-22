@@ -1,0 +1,27 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\model\cpp\CppExecutable.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\language-native\org\gradle\language\cpp\CppExecutable.java
+---- DIFF ----
+ * Copyright 2017 the original author or authors.
+package org.gradle.language.cpp;
+import org.gradle.api.component.PublishableComponent;
+import org.gradle.api.file.RegularFile;
+import org.gradle.api.provider.Provider;
+import org.gradle.language.ComponentWithOutputs;
+import org.gradle.language.nativeplatform.ComponentWithExecutable;
+import org.gradle.language.nativeplatform.ComponentWithInstallation;
+import org.gradle.language.nativeplatform.ComponentWithRuntimeUsage;
+ * An executable built from C++ source.
+ * @since 4.2
+public interface CppExecutable extends CppBinary, ComponentWithExecutable, ComponentWithInstallation, ComponentWithOutputs, ComponentWithRuntimeUsage, PublishableComponent {
+    /**
+     * Returns the executable file to use with a debugger for this executable.
+     *
+     * @since 4.5
+     */
+    Provider<RegularFile> getDebuggerExecutableFile();
+
+ * Copyright 2018 the original author or authors.
+package org.gradle.tooling.model.cpp;
+ * A C++ executable binary.
+ * @since 4.10
+public interface CppExecutable extends CppBinary {

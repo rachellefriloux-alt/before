@@ -1,0 +1,8 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\publish\org\gradle\api\publish\internal\versionmapping\DefaultVersionMappingStrategy.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\ivy\org\gradle\api\publish\ivy\internal\versionmapping\DefaultVersionMappingStrategy.java
+---- DIFF ----
+package org.gradle.api.publish.ivy.internal.versionmapping;
+import org.gradle.api.publish.internal.versionmapping.DefaultVariantVersionMappingStrategy;
+import org.gradle.api.publish.internal.versionmapping.VariantVersionMappingStrategyInternal;
+import org.gradle.api.publish.internal.versionmapping.VersionMappingStrategyInternal;
+package org.gradle.api.publish.internal.versionmapping;

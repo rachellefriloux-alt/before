@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\build\intermediates\packaged_manifests\debug\processDebugManifestForPackage\output-metadata.json
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\build\intermediates\merged_manifests\debug\processDebugManifest\output-metadata.json
+---- DIFF ----
+    "type": "MERGED_MANIFESTS",
+    "type": "PACKAGED_MANIFESTS",

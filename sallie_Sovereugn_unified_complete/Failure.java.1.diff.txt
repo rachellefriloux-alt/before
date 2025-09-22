@@ -1,0 +1,60 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\Failure.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\daemon-protocol\org\gradle\launcher\daemon\protocol\Failure.java
+---- DIFF ----
+ * Copyright 2011 the original author or authors.
+package org.gradle.launcher.daemon.protocol;
+ * The base of all kinds of failure results.
+ * <p>
+ * The "value" of this result will be an exception that represents the failure. It may not be {@code null}.
+public class Failure extends Result<Throwable> {
+    public Failure(Throwable value) {
+        super(assertNotNull(value));
+    }
+    private static Throwable assertNotNull(Throwable value) {
+        if (value == null) {
+            throw new IllegalArgumentException("The value parameter of a failure cannot be null");
+        }
+        return value;
+    }
+ * Copyright 2015 the original author or authors.
+package org.gradle.tooling;
+import org.gradle.api.Incubating;
+import org.gradle.tooling.events.problems.Problem;
+import org.jspecify.annotations.Nullable;
+import java.util.List;
+ * Represents a failure. Failures are similar to exceptions but carry less information (only a message, a description and a cause) so
+ * they can be used in a wider scope than just the JVM where the exception failed.
+ *
+ * @since 2.4
+public interface Failure {
+    /**
+     * Returns a short message (typically one line) for the failure.
+     *
+     * @return the failure message
+     */
+    @Nullable
+    String getMessage();
+    /**
+     * Returns a long description of the failure. For example, a stack trace.
+     *
+     * @return a long description of the failure
+     */
+    @Nullable
+    String getDescription();
+
+    /**
+     * Returns the underlying causes for this failure, if any.
+     *
+     * @return the causes for this failure. Returns an empty list if this failure has no causes.
+     */
+    List<? extends Failure> getCauses();
+
+    /**
+     * Returns the problems associated with this failure.
+     * @return The problems, or an empty list if there are no problems.
+     *
+     * @since 8.12
+     */
+    @Incubating
+    List<Problem> getProblems();
+

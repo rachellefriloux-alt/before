@@ -1,0 +1,9 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\entities\lib\generated\decode-data-xml.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\entities\lib\esm\generated\decode-data-xml.js
+---- DIFF ----
+export default new Uint16Array(
+    .map((c) => c.charCodeAt(0)));
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = new Uint16Array(
+    .map(function (c) { return c.charCodeAt(0); }));

@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\src\core\interfaces\IProactiveAssistanceEngine.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\src\core\interfaces\IProactiveAssistanceEngine.java
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: IProactiveAssistanceEngine
+ * Intent: Handle functionality for IProactiveAssistanceEngine
+ * Provenance-ID: ea22ba3f-e28a-4401-9b9f-bebaf376a827
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

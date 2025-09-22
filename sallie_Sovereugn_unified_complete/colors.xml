@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="gold">#FFD700</color>
+</resources>
+
+
+<resources>
+    <!-- Shared palette -->
+    <color name="sallie_pink">#FF4F7D</color>
+    <color name="sallie_sky">#4FB9FF</color>
+    <color name="sallie_gold">#FFD966</color>
+    <color name="sallie_soft_rose">#FFC4D6</color>
+    <color name="sallie_sage">#C6E5C2</color>
+
+    <!-- Default background -->
+    <color name="sallie_launcher_background">@color/sallie_pink</color>
+
+    <!-- Seasonal backgrounds -->
+    <color name="spring_bg">#C6E5C2</color> <!-- fresh sage -->
+    <color name="summer_bg">#FFD966</color> <!-- bright gold -->
+    <color name="autumn_bg">#D97B3A</color> <!-- warm amber -->
+    <color name="winter_bg">#4FB9FF</color> <!-- crisp sky -->
+
+    <!-- Mood accents -->
+    <color name="high_accent">#4FB9FF</color>
+    <color name="steady_accent">#FFD966</color>
+    <color name="reflective_accent">#FFC4D6</color>
+    <color name="low_accent">#FF4F7D</color>
+</resources>
+
+
+<resources>
+    <!-- Shared palette -->
+    <color name="sallie_pink">#FF4F7D</color>
+    <color name="sallie_sky">#4FB9FF</color>
+    <color name="sallie_gold">#FFD966</color>
+    <color name="sallie_soft_rose">#FFC4D6</color>
+    <color name="sallie_sage">#C6E5C2</color>
+
+    <!-- Default background -->
+    <color name="sallie_launcher_background">@color/sallie_pink</color>
+
+    <!-- Seasonal backgrounds -->
+    <color name="spring_bg">#C6E5C2</color> <!-- fresh sage -->
+    <color name="summer_bg">#FFD966</color> <!-- bright gold -->
+    <color name="autumn_bg">#D97B3A</color> <!-- warm amber -->
+    <color name="winter_bg">#4FB9FF</color> <!-- crisp sky -->
+
+    <!-- Mood accents -->
+    <color name="high_accent">#4FB9FF</color>
+    <color name="steady_accent">#FFD966</color>
+    <color name="reflective_accent">#FFC4D6</color>
+    <color name="low_accent">#FF4F7D</color>
+</resources>

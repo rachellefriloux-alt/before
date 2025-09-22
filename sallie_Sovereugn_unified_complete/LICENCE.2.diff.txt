@@ -1,0 +1,6 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\tinyspy\LICENCE
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\std-env\LICENCE
+---- DIFF ----
+Copyright (c) Pooya Parsa <pooya@pi0.io>
+
+Copyright (c) 2022 Tinylibs

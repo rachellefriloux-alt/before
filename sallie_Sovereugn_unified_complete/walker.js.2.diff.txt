@@ -1,0 +1,53 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\estree-walker\src\walker.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\@vue\compiler-core\node_modules\estree-walker\src\walker.js
+---- DIFF ----
+// @ts-check
+/** @typedef { import('estree').BaseNode} BaseNode */
+
+/** @typedef {{
+	skip: () => void;
+	remove: () => void;
+	replace: (node: BaseNode) => void;
+}} WalkerContext */
+		/** @type {BaseNode | null} */
+	 *
+	 * @param {any} parent
+	 * @param {string} prop
+	 * @param {number} index
+	 * @param {BaseNode} node
+		if (parent) {
+			if (index !== null) {
+				parent[prop][index] = node;
+				parent[prop] = node;
+	 *
+	 * @param {any} parent
+	 * @param {string} prop
+	 * @param {number} index
+		if (parent) {
+			if (index !== null) {
+				parent[prop].splice(index, 1);
+/**
+ * @typedef { import('estree').Node} Node
+ * @typedef {{
+ *   skip: () => void;
+ *   remove: () => void;
+ *   replace: (node: Node) => void;
+ * }} WalkerContext
+ */
+		/** @type {Node | null} */
+	 * @template {Node} Parent
+	 * @param {Parent | null | undefined} parent
+	 * @param {keyof Parent | null | undefined} prop
+	 * @param {number | null | undefined} index
+	 * @param {Node} node
+		if (parent && prop) {
+			if (index != null) {
+				/** @type {Array<Node>} */ (parent[prop])[index] = node;
+				/** @type {Node} */ (parent[prop]) = node;
+	 * @template {Node} Parent
+	 * @param {Parent | null | undefined} parent
+	 * @param {keyof Parent | null | undefined} prop
+	 * @param {number | null | undefined} index
+		if (parent && prop) {
+			if (index !== null && index !== undefined) {
+				/** @type {Array<Node>} */ (parent[prop]).splice(index, 1);

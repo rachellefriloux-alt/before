@@ -1,0 +1,22 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\model\cpp\CppApplication.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\language-native\org\gradle\language\cpp\CppApplication.java
+---- DIFF ----
+ * Copyright 2017 the original author or authors.
+package org.gradle.language.cpp;
+import org.gradle.api.provider.Provider;
+ * Configuration for a C++ application, defining the source files that make up the application plus other settings.
+ * <p>An instance of this type is added as a project extension by the C++ Application Plugin.</p>
+ *
+ * @since 4.2
+public interface CppApplication extends ProductionCppComponent {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    Provider<? extends CppExecutable> getDevelopmentBinary();
+
+ * Copyright 2018 the original author or authors.
+package org.gradle.tooling.model.cpp;
+ * A C++ application.
+ * @since 4.10
+public interface CppApplication extends CppComponent {

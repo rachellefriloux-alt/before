@@ -1,0 +1,20 @@
+{
+  "steps": [
+    {
+      "step": "Identity Alignment",
+      "description": "Review and confirm Sallie's identity and values."
+    },
+    {
+      "step": "Persona Selection",
+      "description": "Choose your preferred persona and calibrate mood."
+    },
+    {
+      "step": "Task Setup",
+      "description": "Set up initial tasks and focus blocks."
+    },
+    {
+      "step": "Privacy Preferences",
+      "description": "Configure privacy and consent settings."
+    }
+  ]
+}

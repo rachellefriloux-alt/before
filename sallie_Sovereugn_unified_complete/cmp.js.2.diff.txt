@@ -1,0 +1,66 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\semver\functions\cmp.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\fast-json-stable-stringify\test\cmp.js
+---- DIFF ----
+'use strict';
+var test = require('tape');
+var stringify = require('../');
+test('custom comparison function', function (t) {
+    t.plan(1);
+    var obj = { c: 8, b: [{z:6,y:5,x:4},7], a: 3 };
+    var s = stringify(obj, function (a, b) {
+        return a.key < b.key ? 1 : -1;
+    });
+    t.equal(s, '{"c":8,"b":[{"z":6,"y":5,"x":4},7],"a":3}');
+});
+'use strict'
+const eq = require('./eq')
+const neq = require('./neq')
+const gt = require('./gt')
+const gte = require('./gte')
+const lt = require('./lt')
+const lte = require('./lte')
+const cmp = (a, op, b, loose) => {
+  switch (op) {
+    case '===':
+      if (typeof a === 'object') {
+        a = a.version
+      }
+      if (typeof b === 'object') {
+        b = b.version
+      }
+      return a === b
+    case '!==':
+      if (typeof a === 'object') {
+        a = a.version
+      }
+      if (typeof b === 'object') {
+        b = b.version
+      }
+      return a !== b
+
+    case '':
+    case '=':
+    case '==':
+      return eq(a, b, loose)
+
+    case '!=':
+      return neq(a, b, loose)
+
+    case '>':
+      return gt(a, b, loose)
+
+    case '>=':
+      return gte(a, b, loose)
+
+    case '<':
+      return lt(a, b, loose)
+
+    case '<=':
+      return lte(a, b, loose)
+
+    default:
+      throw new TypeError(`Invalid operator: ${op}`)
+  }
+}
+module.exports = cmp
+

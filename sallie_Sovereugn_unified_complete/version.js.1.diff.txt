@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\espree\lib\version.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-scope\lib\version.js
+---- DIFF ----
+const version = "8.4.0";
+const version = "10.4.0";

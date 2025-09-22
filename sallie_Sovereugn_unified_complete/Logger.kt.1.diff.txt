@@ -1,0 +1,45 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\kotlin-dsl\org\gradle\kotlin\dsl\support\Logger.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\encryption-services\org\gradle\internal\encryption\impl\Logger.kt
+---- DIFF ----
+ * Copyright 2024 the original author or authors.
+package org.gradle.internal.encryption.impl
+import org.gradle.api.logging.Logger
+import org.gradle.api.logging.Logging
+import org.gradle.internal.encryption.EncryptionService
+val logger: Logger = Logging.getLogger(EncryptionService::class.java)
+ * Copyright 2016 the original author or authors.
+package org.gradle.kotlin.dsl.support
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+inline fun <reified T : Any> loggerFor(): Logger =
+    LoggerFactory.getLogger(T::class.java)
+
+internal
+inline fun Logger.trace(msg: () -> String) {
+    if (isTraceEnabled) trace(msg())
+}
+
+
+internal
+inline fun Logger.debug(msg: () -> String) {
+    if (isDebugEnabled) debug(msg())
+}
+
+
+internal
+inline fun Logger.info(msg: () -> String) {
+    if (isInfoEnabled) info(msg())
+}
+
+
+internal
+inline fun Logger.warn(msg: () -> String) {
+    if (isWarnEnabled) warn(msg())
+}
+
+
+internal
+inline fun Logger.error(msg: () -> String) {
+    if (isErrorEnabled) error(msg())
+}
+

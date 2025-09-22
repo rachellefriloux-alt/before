@@ -1,0 +1,9 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javalibrary\LibraryTest.java.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javalibrary\testng\LibraryTest.java.template
+---- DIFF ----
+import org.testng.annotations.*;
+import static org.testng.Assert.*;
+        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
+import org.junit.Test;
+import static org.junit.Assert.*;
+        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());

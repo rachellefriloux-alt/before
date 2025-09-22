@@ -1,0 +1,26 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\dependency-management\org\gradle\internal\component\resolution\failure\exception\GraphValidationException.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\dependency-management\org\gradle\api\internal\artifacts\ivyservice\resolveengine\result\GraphValidationException.java
+---- DIFF ----
+ * Copyright 2018 the original author or authors.
+package org.gradle.api.internal.artifacts.ivyservice.resolveengine.result;
+public class GraphValidationException extends RuntimeException {
+    public GraphValidationException(String message) {
+        super(message);
+ * Copyright 2024 the original author or authors.
+package org.gradle.internal.component.resolution.failure.exception;
+import org.gradle.internal.component.resolution.failure.interfaces.GraphValidationFailure;
+
+import java.util.List;
+
+/**
+ * Exception that occurs while validating a graph after the graph has been constructed.
+ */
+public class GraphValidationException extends AbstractResolutionFailureException {
+    public GraphValidationException(String message, GraphValidationFailure failure, List<String> resolutions) {
+        super(message, failure, resolutions);
+
+    @Override
+    public GraphValidationFailure getFailure() {
+        return (GraphValidationFailure) failure;
+    }
+

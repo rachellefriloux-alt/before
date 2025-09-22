@@ -1,0 +1,31 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\docs\series\FUTURE_ENHANCEMENTS__from__import_sallie_1_0__20250828190022.md
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\docs\FUTURE_ENHANCEMENTS__from__import_sallie_1_0__20250828190022.md
+---- DIFF ----
+---
+provenance:
+	repo: Sallie
+	path: /docs
+	scope: canonical
+---
+ Sallie 2.0 - Future Enhancements Plan
+- Content extraction through specialized providers
+- UI element discovery and interaction through accessibility services
+- Cross-app workflow orchestration and automation
+### Expert Knowledge Modules ✅
+
+**Status: COMPLETE**
+
+This enhancement provides Sallie with specialized expertise across multiple domains, allowing her to offer informed guidance in specific areas of life while maintaining her core values and personality.
+
+**Key Components:**
+- Legal Advisory Module with focus on basic rights, consumer protection, and everyday legal situations
+- Parenting Expertise Module for child development, education approaches, and family dynamics
+- Social Intelligence Module for relationship guidance, conflict resolution, and social skills development
+- Life Coaching Module for goal setting, personal development, and habit formation
+- Common Domain Knowledge Framework for cross-domain expertise integration
+
+**Technical Implementation:**
+- Domain-specific knowledge bases with strong value alignment filtering
+- Specialized reasoning engines for each domain
+
+# Sallie 2.0 - Future Enhancements Plan

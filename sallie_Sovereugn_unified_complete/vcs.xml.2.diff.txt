@@ -1,0 +1,9 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.idea\vcs.xml
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\.idea\vcs.xml
+---- DIFF ----
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="" vcs="Git" />
+<<<<<<< HEAD
+=======
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+>>>>>>> Sallie

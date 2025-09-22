@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\src\core\engine\HierarchicalMemoryManager.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\src\core\engine\HierarchicalMemoryManager.java
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: HierarchicalMemoryManager
+ * Intent: Handle functionality for HierarchicalMemoryManager
+ * Provenance-ID: 707dfe8d-4052-43e9-b0c3-11fed0bec785
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

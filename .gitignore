@@ -26,7 +26,6 @@ buildSrc/.gradle/
 *.jar
 *.pack
 *.exe
-sallie_Sovereugn_unified_complete/
 android/app/build/
 android/.gradle/
 android/gradle/

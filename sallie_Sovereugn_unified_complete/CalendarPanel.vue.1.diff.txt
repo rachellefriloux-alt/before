@@ -1,0 +1,43 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\components\calendar\CalendarPanel.vue
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\CalendarPanel.vue
+---- DIFF ----
+/*
+ * Salle 1.0 Module
+ * Persona: Tough love meets soul care.
+ * Function: CalendarPanel - UI for calendar subsystem.
+ * Got it, love.
+ */
+    <h2>Calendar</h2>
+    <!-- Calendar controls and status here -->
+<script setup>
+defineProps({ manager: { type: Object, default: () => ({}) } })
+<style scoped>
+.calendar-panel { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; }
+    <h3>Calendar & Reminders</h3>
+    <button @click="syncCalendar">Sync Google Calendar</button>
+    <ul>
+      <li v-for="event in events" :key="event.id">{{ event.summary }} - {{ event.start }}</li>
+    </ul>
+    <div v-if="events.length === 0">No events found.</div>
+<script>
+export default {
+  data() {
+    return { events: [] };
+  },
+  mounted() {
+    this.syncCalendar();
+  },
+  methods: {
+    async syncCalendar() {
+      // For demo, mock Google Calendar events
+      // Replace with real API integration and OAuth
+      this.events = [
+        { id: 1, summary: 'Doctor Appointment', start: '2025-08-24 10:00' },
+        { id: 2, summary: 'Team Meeting', start: '2025-08-25 14:00' },
+        { id: 3, summary: 'Bella’s Dance Recital', start: '2025-08-26 18:00' }
+      ];
+    }
+  }
+}
+<style>
+.calendar-panel { margin: 12px 0; }

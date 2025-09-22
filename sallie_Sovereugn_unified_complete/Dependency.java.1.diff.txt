@@ -1,0 +1,25 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\tooling-api\org\gradle\tooling\model\Dependency.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\language-native\org\gradle\swiftpm\internal\Dependency.java
+---- DIFF ----
+ * Copyright 2018 the original author or authors.
+package org.gradle.swiftpm.internal;
+import java.io.Serializable;
+import java.net.URI;
+
+abstract public class Dependency implements Serializable {
+    private final URI url;
+
+    public Dependency(URI url) {
+        this.url = url;
+    }
+
+    public URI getUrl() {
+        return url;
+    }
+
+ * Copyright 2011 the original author or authors.
+package org.gradle.tooling.model;
+/**
+ * Represents an artifact dependency.
+ */
+public interface Dependency {

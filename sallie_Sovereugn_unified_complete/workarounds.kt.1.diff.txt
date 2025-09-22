@@ -1,0 +1,82 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\declarative-dsl-provider\org\gradle\internal\declarativedsl\workarounds.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\configuration-cache\org\gradle\internal\cc\impl\Workarounds.kt
+---- DIFF ----
+package org.gradle.internal.cc.impl
+import org.gradle.api.internal.TaskInternal
+import org.gradle.tooling.model.kotlin.dsl.KotlinDslModelsParameters
+internal
+object Workarounds {
+
+    // TODO:[DefaultBuildTreeLifecycleController.isEligibleToRunTasks()] remove once fixed
+
+    private
+    val ignoredStartParameterProperties = arrayOf(
+        KotlinDslModelsParameters.CORRELATION_ID_GRADLE_PROPERTY_NAME // Changing by IDE
+    )
+
+    fun isIgnoredStartParameterProperty(key: String): Boolean =
+        ignoredStartParameterProperties.contains(key)
+
+
+    fun canReadSystemProperty(from: String): Boolean =
+        withWorkaroundsFor("systemProps") {
+            isBuildScanPlugin(from)
+        }
+
+    fun canReadEnvironmentVariable(from: String): Boolean =
+        withWorkaroundsFor("envVars") {
+            isBuildScanPlugin(from)
+        }
+
+    fun canStartExternalProcesses(from: String): Boolean =
+        withWorkaroundsFor("processes") {
+            isBuildScanPlugin(from)
+        }
+
+    fun canReadFiles(from: String): Boolean =
+        withWorkaroundsFor("files") {
+            isBuildScanPlugin(from)
+        }
+
+    fun canAccessProjectAtExecutionTime(task: TaskInternal) =
+        withWorkaroundsFor("task-project") {
+            task.javaClass.name.run {
+                startsWith("com.android.build.gradle.tasks.ShaderCompile")
+                    || startsWith("com.android.build.gradle.tasks.MapSourceSetPathsTask")
+                    || startsWith("com.android.build.gradle.tasks.MergeResources")
+            }
+        }
+
+    fun canAccessConventions(from: String, area: String) =
+        withWorkaroundsFor(area) {
+            from.startsWith("com.android.build.gradle.tasks.factory.AndroidUnitTest") || callStackHasElement {
+                isBuildScanPlugin(className)
+            }
+        }
+
+    private
+    inline fun callStackHasElement(stackElementMatcher: StackTraceElement.() -> Boolean) = Thread.currentThread().stackTrace.any(stackElementMatcher)
+
+    private
+    fun isBuildScanPlugin(from: String): Boolean = from.run {
+        startsWith("com.gradle.scan.plugin.internal.")
+            || startsWith("com.gradle.enterprise.agent.")
+            || startsWith("com.gradle.enterprise.gradleplugin.testacceleration.")
+    }
+
+    private
+    inline fun withWorkaroundsFor(area: String, isEnabled: () -> Boolean): Boolean =
+        isEnabled() && !shouldDisableInputWorkaroundsFor(area)
+
+    private
+    fun shouldDisableInputWorkaroundsFor(area: String): Boolean =
+        System.getProperty("org.gradle.internal.disable.input.workarounds")?.contains(area, ignoreCase = true) ?: false
+}
+
+package org.gradle.internal.declarativedsl
+import org.gradle.internal.declarativedsl.dom.UnsupportedSyntax
+import org.gradle.internal.declarativedsl.dom.UnsupportedSyntaxCause.AssignmentWithExplicitReceiver
+import org.gradle.internal.declarativedsl.dom.UnsupportedSyntaxCause.ElementWithExplicitReceiver
+// `rootProject.name` doesn't yet have a DCL equivalent and the plugins block uses builder style functions
+val ignoreSomeNonDeclarativeSyntaxWeCurrentlyHaveNoSolutionFor : (UnsupportedSyntax) -> Boolean =
+    { it.cause !in setOf(AssignmentWithExplicitReceiver, ElementWithExplicitReceiver) }

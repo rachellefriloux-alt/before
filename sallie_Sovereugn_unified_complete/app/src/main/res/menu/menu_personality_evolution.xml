@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Sallie 2.0 Module
+    Persona: Tough love meets soul care.
+    Function: Menu for personality evolution activity.
+    Got it, love.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:title="Refresh"
+        app:showAsAction="ifRoom" />
+        
+    <item android:title="Change Context">
+        <menu>
+            <item
+                android:id="@+id/action_context_work"
+                android:title="Work Environment" />
+                
+            <item
+                android:id="@+id/action_context_emotional"
+                android:title="Emotional Support" />
+                
+            <item
+                android:id="@+id/action_context_learning"
+                android:title="Learning Environment" />
+                
+            <item
+                android:id="@+id/action_context_casual"
+                android:title="Casual Conversation" />
+        </menu>
+    </item>
+</menu>

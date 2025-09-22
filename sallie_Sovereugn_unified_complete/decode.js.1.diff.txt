@@ -1,0 +1,179 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\entities\lib\esm\decode.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\entities\lib\decode.js
+---- DIFF ----
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.decodeXML = exports.decodeHTMLStrict = exports.decodeHTMLAttribute = exports.decodeHTML = exports.determineBranch = exports.EntityDecoder = exports.DecodingMode = exports.BinTrieFlags = exports.fromCodePoint = exports.replaceCodePoint = exports.decodeCodePoint = exports.xmlDecodeTree = exports.htmlDecodeTree = void 0;
+var decode_data_html_js_1 = __importDefault(require("./generated/decode-data-html.js"));
+exports.htmlDecodeTree = decode_data_html_js_1.default;
+var decode_data_xml_js_1 = __importDefault(require("./generated/decode-data-xml.js"));
+exports.xmlDecodeTree = decode_data_xml_js_1.default;
+var decode_codepoint_js_1 = __importStar(require("./decode_codepoint.js"));
+exports.decodeCodePoint = decode_codepoint_js_1.default;
+var decode_codepoint_js_2 = require("./decode_codepoint.js");
+Object.defineProperty(exports, "replaceCodePoint", { enumerable: true, get: function () { return decode_codepoint_js_2.replaceCodePoint; } });
+Object.defineProperty(exports, "fromCodePoint", { enumerable: true, get: function () { return decode_codepoint_js_2.fromCodePoint; } });
+var TO_LOWER_BIT = 32;
+var BinTrieFlags;
+})(BinTrieFlags = exports.BinTrieFlags || (exports.BinTrieFlags = {}));
+var DecodingMode;
+})(DecodingMode = exports.DecodingMode || (exports.DecodingMode = {}));
+var EntityDecoder = /** @class */ (function () {
+    function EntityDecoder(
+    EntityDecoder.prototype.startEntity = function (decodeMode) {
+    };
+    EntityDecoder.prototype.write = function (str, offset) {
+    };
+    EntityDecoder.prototype.stateNumericStart = function (str, offset) {
+    };
+    EntityDecoder.prototype.addToNumericResult = function (str, start, end, base) {
+            var digitCount = end - start;
+    };
+    EntityDecoder.prototype.stateNumericHex = function (str, offset) {
+        var startIdx = offset;
+            var char = str.charCodeAt(offset);
+    };
+    EntityDecoder.prototype.stateNumericDecimal = function (str, offset) {
+        var startIdx = offset;
+            var char = str.charCodeAt(offset);
+    };
+    EntityDecoder.prototype.emitNumericEntity = function (lastCp, expectedLength) {
+        this.emitCodePoint((0, decode_codepoint_js_1.replaceCodePoint)(this.result), this.consumed);
+    };
+    EntityDecoder.prototype.stateNamedEntity = function (str, offset) {
+        var decodeTree = this.decodeTree;
+        var current = decodeTree[this.treeIndex];
+        var valueLength = (current & BinTrieFlags.VALUE_LENGTH) >> 14;
+            var char = str.charCodeAt(offset);
+    };
+    EntityDecoder.prototype.emitNotTerminatedNamedEntity = function () {
+        var _b = this, result = _b.result, decodeTree = _b.decodeTree;
+        var valueLength = (decodeTree[result] & BinTrieFlags.VALUE_LENGTH) >> 14;
+    };
+    EntityDecoder.prototype.emitNamedEntityData = function (result, valueLength, consumed) {
+        var decodeTree = this.decodeTree;
+    };
+    EntityDecoder.prototype.end = function () {
+    return EntityDecoder;
+}());
+exports.EntityDecoder = EntityDecoder;
+    var ret = "";
+    var decoder = new EntityDecoder(decodeTree, function (str) { return (ret += (0, decode_codepoint_js_1.fromCodePoint)(str)); });
+        var lastIndex = 0;
+        var offset = 0;
+            var len = decoder.write(str, 
+        var result = ret + str.slice(lastIndex);
+    };
+function determineBranch(decodeTree, current, nodeIdx, char) {
+    var branchCount = (current & BinTrieFlags.BRANCH_LENGTH) >> 7;
+    var jumpOffset = current & BinTrieFlags.JUMP_TABLE;
+        var value = char - jumpOffset;
+    var lo = nodeIdx;
+    var hi = lo + branchCount - 1;
+        var mid = (lo + hi) >>> 1;
+        var midVal = decodeTree[mid];
+exports.determineBranch = determineBranch;
+var htmlDecoder = getDecoder(decode_data_html_js_1.default);
+var xmlDecoder = getDecoder(decode_data_xml_js_1.default);
+function decodeHTML(str, mode) {
+    if (mode === void 0) { mode = DecodingMode.Legacy; }
+exports.decodeHTML = decodeHTML;
+function decodeHTMLAttribute(str) {
+exports.decodeHTMLAttribute = decodeHTMLAttribute;
+function decodeHTMLStrict(str) {
+exports.decodeHTMLStrict = decodeHTMLStrict;
+function decodeXML(str) {
+exports.decodeXML = decodeXML;
+import htmlDecodeTree from "./generated/decode-data-html.js";
+import xmlDecodeTree from "./generated/decode-data-xml.js";
+import decodeCodePoint, { replaceCodePoint, fromCodePoint, } from "./decode_codepoint.js";
+// Re-export for use by eg. htmlparser2
+export { htmlDecodeTree, xmlDecodeTree, decodeCodePoint };
+export { replaceCodePoint, fromCodePoint } from "./decode_codepoint.js";
+const TO_LOWER_BIT = 0b100000;
+export var BinTrieFlags;
+})(BinTrieFlags || (BinTrieFlags = {}));
+export var DecodingMode;
+})(DecodingMode || (DecodingMode = {}));
+export class EntityDecoder {
+    constructor(
+    startEntity(decodeMode) {
+    write(str, offset) {
+    stateNumericStart(str, offset) {
+    addToNumericResult(str, start, end, base) {
+            const digitCount = end - start;
+    stateNumericHex(str, offset) {
+        const startIdx = offset;
+            const char = str.charCodeAt(offset);
+    }
+    stateNumericDecimal(str, offset) {
+        const startIdx = offset;
+            const char = str.charCodeAt(offset);
+    }
+    emitNumericEntity(lastCp, expectedLength) {
+        this.emitCodePoint(replaceCodePoint(this.result), this.consumed);
+    }
+    stateNamedEntity(str, offset) {
+        const { decodeTree } = this;
+        let current = decodeTree[this.treeIndex];
+        let valueLength = (current & BinTrieFlags.VALUE_LENGTH) >> 14;
+            const char = str.charCodeAt(offset);
+    }
+    emitNotTerminatedNamedEntity() {
+        const { result, decodeTree } = this;
+        const valueLength = (decodeTree[result] & BinTrieFlags.VALUE_LENGTH) >> 14;
+    }
+    emitNamedEntityData(result, valueLength, consumed) {
+        const { decodeTree } = this;
+    }
+    end() {
+    }
+    let ret = "";
+    const decoder = new EntityDecoder(decodeTree, (str) => (ret += fromCodePoint(str)));
+        let lastIndex = 0;
+        let offset = 0;
+            const len = decoder.write(str, 
+        const result = ret + str.slice(lastIndex);
+export function determineBranch(decodeTree, current, nodeIdx, char) {
+    const branchCount = (current & BinTrieFlags.BRANCH_LENGTH) >> 7;
+    const jumpOffset = current & BinTrieFlags.JUMP_TABLE;
+    }
+        const value = char - jumpOffset;
+    }
+    let lo = nodeIdx;
+    let hi = lo + branchCount - 1;
+        const mid = (lo + hi) >>> 1;
+        const midVal = decodeTree[mid];
+    }
+const htmlDecoder = getDecoder(htmlDecodeTree);
+const xmlDecoder = getDecoder(xmlDecodeTree);
+export function decodeHTML(str, mode = DecodingMode.Legacy) {
+export function decodeHTMLAttribute(str) {
+export function decodeHTMLStrict(str) {
+export function decodeXML(str) {
+}

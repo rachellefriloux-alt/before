@@ -1,0 +1,55 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint\lib\shared\deep-merge-arrays.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\@eslint\eslintrc\lib\shared\deep-merge-arrays.js
+---- DIFF ----
+    return typeof value === "object" && value !== null && !Array.isArray(value);
+    if (second === void 0) {
+        return first;
+    }
+    if (!isObjectNotArray(first) || !isObjectNotArray(second)) {
+        return second;
+    }
+    const result = { ...first, ...second };
+    for (const key of Object.keys(second)) {
+        if (Object.prototype.propertyIsEnumerable.call(first, key)) {
+            result[key] = deepMergeObjects(first[key], second[key]);
+        }
+    }
+    return result;
+ * @param {T[] | undefined} first Base, default values.
+ * @param {U[] | undefined} second User-specified values.
+    if (!first || !second) {
+        return second || first || [];
+    }
+    return [
+        ...first.map((value, i) => deepMergeObjects(value, second[i])),
+        ...second.slice(first.length)
+    ];
+export { deepMergeArrays };
+"use strict";
+	return typeof value === "object" && value !== null && !Array.isArray(value);
+	if (second === void 0) {
+		return first;
+	}
+	if (!isObjectNotArray(first) || !isObjectNotArray(second)) {
+		return second;
+	}
+	const result = { ...first, ...second };
+	for (const key of Object.keys(second)) {
+		if (Object.prototype.propertyIsEnumerable.call(first, key)) {
+			result[key] = deepMergeObjects(first[key], second[key]);
+		}
+	}
+	return result;
+ * @param {T[]} first Base, default values.
+ * @param {U[]} second User-specified values.
+	if (!first || !second) {
+		return second || first || [];
+	}
+	return [
+		...first.map((value, i) =>
+			deepMergeObjects(value, i < second.length ? second[i] : void 0),
+		),
+		...second.slice(first.length),
+	];
+module.exports = { deepMergeArrays };
+

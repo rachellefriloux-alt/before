@@ -1,0 +1,18 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\openai\_vendor\zod-to-json-schema\parsers\number.d.ts
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\loupe\lib\number.d.ts
+---- DIFF ----
+import type { Options } from './types.js';
+export default function inspectNumber(number: number, options: Options): string;
+import { ZodNumberDef } from 'zod';
+import { ErrorMessages } from "../errorMessages.js";
+import { Refs } from "../Refs.js";
+export type JsonSchema7NumberType = {
+    type: 'number' | 'integer';
+    minimum?: number;
+    exclusiveMinimum?: number;
+    maximum?: number;
+    exclusiveMaximum?: number;
+    multipleOf?: number;
+    errorMessage?: ErrorMessages<JsonSchema7NumberType>;
+};
+export declare function parseNumberDef(def: ZodNumberDef, refs: Refs): JsonSchema7NumberType;

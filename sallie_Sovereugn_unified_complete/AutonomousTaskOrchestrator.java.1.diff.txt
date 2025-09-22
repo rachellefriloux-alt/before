@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\src\core\task\AutonomousTaskOrchestrator.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\src\core\task\AutonomousTaskOrchestrator.java
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: AutonomousTaskOrchestrator
+ * Intent: Handle functionality for AutonomousTaskOrchestrator
+ * Provenance-ID: 1a81444f-4589-4dba-859c-114ace6565ef
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

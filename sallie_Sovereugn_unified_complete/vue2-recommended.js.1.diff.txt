@@ -1,0 +1,33 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-plugin-vue\lib\configs\vue2-recommended.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-plugin-vue\lib\configs\flat\vue2-recommended.js
+---- DIFF ----
+'use strict'
+const config = require('./vue2-strongly-recommended.js')
+module.exports = [
+  ...config,
+  {
+    name: 'vue/vue2-recommended/rules',
+    rules: {
+      'vue/attributes-order': 'warn',
+      'vue/block-order': 'warn',
+      'vue/no-lone-template': 'warn',
+      'vue/no-multiple-slot-args': 'warn',
+      'vue/no-required-prop-with-default': 'warn',
+      'vue/no-v-html': 'warn',
+      'vue/order-in-components': 'warn',
+      'vue/this-in-template': 'warn'
+    }
+]
+
+module.exports = {
+  extends: require.resolve('./vue2-strongly-recommended'),
+  rules: {
+    'vue/attributes-order': 'warn',
+    'vue/block-order': 'warn',
+    'vue/no-lone-template': 'warn',
+    'vue/no-multiple-slot-args': 'warn',
+    'vue/no-required-prop-with-default': 'warn',
+    'vue/no-v-html': 'warn',
+    'vue/order-in-components': 'warn',
+    'vue/this-in-template': 'warn'
+}

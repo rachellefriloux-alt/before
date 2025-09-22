@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\build\intermediates\incremental\mergeDebugShaders\merger.xml
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\build\intermediates\incremental\mergeDebugJniLibFolders\merger.xml
+---- DIFF ----
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\chell\Desktop\Sallie\app\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\chell\Desktop\Sallie\app\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\chell\Desktop\Sallie\app\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\chell\Desktop\Sallie\app\src\debug\shaders"/></dataSet></merger>

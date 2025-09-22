@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\onboarding\DeveloperEasterEgg.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\DeveloperEasterEgg.kt
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: DeveloperEasterEgg
+ * Intent: Handle functionality for DeveloperEasterEgg
+ * Provenance-ID: c3e87b69-daee-4df3-ab0a-dc881066fbe6
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

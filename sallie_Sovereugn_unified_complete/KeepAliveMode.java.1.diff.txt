@@ -1,0 +1,20 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\workers\org\gradle\workers\internal\KeepAliveMode.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\scala\org\gradle\language\scala\tasks\KeepAliveMode.java
+---- DIFF ----
+ * Copyright 2022 the original author or authors.
+package org.gradle.language.scala.tasks;
+import org.gradle.api.Incubating;
+/**
+ * Describes whether a Scala compiler daemon should be reused.
+ *
+ * @since 7.6
+ */
+@Incubating
+     * The compiler is kept alive for a session.
+
+     * The compiler is kept alive across builds.
+
+ * Copyright 2017 the original author or authors.
+package org.gradle.workers.internal;
+     * Keep alive until the end of the build session
+     * Keep alive until the daemon stops

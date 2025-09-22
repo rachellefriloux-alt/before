@@ -1,0 +1,90 @@
+{
+  "orchestration": {
+    "dashboard": {
+      "title": "System Orchestration Dashboard",
+      "system_status": "System Status",
+      "refresh": "Refresh",
+      "optimize": "Optimize System",
+      "optimizing": "Optimizing...",
+      "success_message": "System optimized successfully!",
+      "error_message": "Failed to optimize system"
+    },
+    "resources": {
+      "title": "Resource Utilization",
+      "cpu": "CPU",
+      "memory": "Memory",
+      "active_tasks": "Active Tasks"
+    },
+    "components": {
+      "title": "Component Status",
+      "search_placeholder": "Search components...",
+      "column": {
+        "component": "Component",
+        "status": "Status",
+        "priority": "Priority",
+        "error_count": "Error Count",
+        "actions": "Actions"
+      },
+      "status": {
+        "running": "Running",
+        "warning": "Warning",
+        "error": "Error",
+        "inactive": "Inactive"
+      },
+      "repair": {
+        "button": "Repair Component",
+        "success": "Component {name} repaired successfully",
+        "error": "Failed to repair component {name}"
+      }
+    },
+    "performance": {
+      "title": "Performance Analytics",
+      "success_rate": "Success Rate",
+      "avg_execution_time": "Avg. Execution Time",
+      "total_tasks": "Total Tasks",
+      "recent_tasks": "Recent Tasks",
+      "task": {
+        "name": "Task Name",
+        "component": "Component",
+        "status": "Status",
+        "duration": "Duration",
+        "running": "Running",
+        "success": "Success",
+        "failed": "Failed"
+      }
+    },
+    "health": {
+      "title": "System Health",
+      "status": {
+        "healthy": "Healthy",
+        "degraded": "Degraded",
+        "warning": "Warning",
+        "error": "Error"
+      },
+      "recent_errors": "Recent Errors",
+      "no_errors": "No recent errors detected"
+    },
+    "details": {
+      "title": "Component Details: {name}",
+      "close": "Close",
+      "loading": "Loading component details...",
+      "load_error": "Failed to load component details",
+      "sections": {
+        "status": "Status Information",
+        "performance": "Performance Metrics",
+        "errors": "Recent Errors"
+      },
+      "fields": {
+        "status": "Status:",
+        "error_count": "Error Count:",
+        "last_checked": "Last Checked:",
+        "last_error": "Last Error:",
+        "total_tasks": "Total Tasks:",
+        "success_rate": "Success Rate:",
+        "avg_execution": "Avg Execution Time:",
+        "last_activity": "Last Activity:",
+        "never": "Never"
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\build\intermediates\packaged_res\debug\packageDebugResources\values\values.xml
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir\values\values.xml
+---- DIFF ----

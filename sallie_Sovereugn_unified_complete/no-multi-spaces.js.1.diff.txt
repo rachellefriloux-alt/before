@@ -1,0 +1,271 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint\lib\rules\no-multi-spaces.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-plugin-vue\lib\rules\no-multi-spaces.js
+---- DIFF ----
+ * @fileoverview This rule warns about the usage of extra whitespaces between attributes
+ * @author Armano
+'use strict'
+const path = require('path')
+/**
+ * @param {RuleContext} context
+ * @param {Token} node
+ */
+const isProperty = (context, node) => {
+  const sourceCode = context.getSourceCode()
+  return node.type === 'Punctuator' && sourceCode.getText(node) === ':'
+}
+  meta: {
+    type: 'layout',
+    docs: {
+      description: 'disallow multiple spaces',
+      categories: ['vue3-strongly-recommended', 'vue2-strongly-recommended'],
+      url: 'https://eslint.vuejs.org/rules/no-multi-spaces.html'
+    },
+    fixable: 'whitespace',
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          ignoreProperties: {
+            type: 'boolean'
+          }
+        },
+        additionalProperties: false
+      }
+    ],
+    messages: {
+      multipleSpaces: "Multiple spaces found before '{{displayValue}}'.",
+      useLatestParser:
+        'Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error.'
+    }
+  },
+  /**
+   * @param {RuleContext} context - The rule context.
+   * @returns {RuleListener} AST event handlers.
+   */
+  create(context) {
+    const options = context.options[0] || {}
+    const ignoreProperties = options.ignoreProperties === true
+    return {
+      Program(node) {
+        const sourceCode = context.getSourceCode()
+        if (sourceCode.parserServices.getTemplateBodyTokenStore == null) {
+          const filename = context.getFilename()
+          if (path.extname(filename) === '.vue') {
+            context.report({
+              loc: { line: 1, column: 0 },
+              messageId: 'useLatestParser'
+            })
+          }
+          return
+        }
+        if (!node.templateBody) {
+          return
+        }
+        const tokenStore = sourceCode.parserServices.getTemplateBodyTokenStore()
+        const tokens = tokenStore.getTokens(node.templateBody, {
+          includeComments: true
+        })
+        let prevToken = /** @type {Token} */ (tokens.shift())
+        for (const token of tokens) {
+          const spaces = token.range[0] - prevToken.range[1]
+          const shouldIgnore =
+            ignoreProperties &&
+            (isProperty(context, token) || isProperty(context, prevToken))
+          if (
+            spaces > 1 &&
+            token.loc.start.line === prevToken.loc.start.line &&
+            !shouldIgnore
+          ) {
+            context.report({
+              node: token,
+              loc: {
+                start: prevToken.loc.end,
+                end: token.loc.start
+              },
+              messageId: 'multipleSpaces',
+              fix: (fixer) =>
+                fixer.replaceTextRange(
+                  [prevToken.range[1], token.range[0]],
+                  ' '
+                ),
+              data: {
+                displayValue: sourceCode.getText(token)
+              }
+            })
+          }
+          prevToken = token
+        }
+      }
+    }
+  }
+}
+ * @fileoverview Disallow use of multiple spaces.
+ * @author Nicholas C. Zakas
+ * @deprecated in ESLint v8.53.0
+"use strict";
+const astUtils = require("./utils/ast-utils");
+//------------------------------------------------------------------------------
+// Rule Definition
+//------------------------------------------------------------------------------
+/** @type {import('../types').Rule.RuleModule} */
+	meta: {
+		deprecated: {
+			message: "Formatting rules are being moved out of ESLint core.",
+			url: "https://eslint.org/blog/2023/10/deprecating-formatting-rules/",
+			deprecatedSince: "8.53.0",
+			availableUntil: "10.0.0",
+			replacedBy: [
+				{
+					message:
+						"ESLint Stylistic now maintains deprecated stylistic core rules.",
+					url: "https://eslint.style/guide/migration",
+					plugin: {
+						name: "@stylistic/eslint-plugin",
+						url: "https://eslint.style",
+					},
+					rule: {
+						name: "no-multi-spaces",
+						url: "https://eslint.style/rules/no-multi-spaces",
+					},
+				},
+			],
+		},
+		type: "layout",
+		docs: {
+			description: "Disallow multiple spaces",
+			recommended: false,
+			url: "https://eslint.org/docs/latest/rules/no-multi-spaces",
+		},
+		fixable: "whitespace",
+		schema: [
+			{
+				type: "object",
+				properties: {
+					exceptions: {
+						type: "object",
+						patternProperties: {
+							"^([A-Z][a-z]*)+$": {
+								type: "boolean",
+							},
+						},
+						additionalProperties: false,
+					},
+					ignoreEOLComments: {
+						type: "boolean",
+						default: false,
+					},
+				},
+				additionalProperties: false,
+			},
+		],
+
+		messages: {
+			multipleSpaces: "Multiple spaces found before '{{displayValue}}'.",
+		},
+	},
+
+	create(context) {
+		const sourceCode = context.sourceCode;
+		const options = context.options[0] || {};
+		const ignoreEOLComments = options.ignoreEOLComments;
+		const exceptions = Object.assign(
+			{ Property: true },
+			options.exceptions,
+		);
+		const hasExceptions = Object.keys(exceptions).some(
+			key => exceptions[key],
+		);
+
+		/**
+		 * Formats value of given comment token for error message by truncating its length.
+		 * @param {Token} token comment token
+		 * @returns {string} formatted value
+		 * @private
+		 */
+		function formatReportedCommentValue(token) {
+			const valueLines = token.value.split("\n");
+			const value = valueLines[0];
+			const formattedValue = `${value.slice(0, 12)}...`;
+
+			return valueLines.length === 1 && value.length <= 12
+				? value
+				: formattedValue;
+		}
+
+		//--------------------------------------------------------------------------
+		// Public
+		//--------------------------------------------------------------------------
+
+		return {
+			Program() {
+				sourceCode.tokensAndComments.forEach(
+					(leftToken, leftIndex, tokensAndComments) => {
+						if (leftIndex === tokensAndComments.length - 1) {
+							return;
+						}
+						const rightToken = tokensAndComments[leftIndex + 1];
+
+						// Ignore tokens that don't have 2 spaces between them or are on different lines
+						if (
+							!sourceCode.text
+								.slice(leftToken.range[1], rightToken.range[0])
+								.includes("  ") ||
+							leftToken.loc.end.line < rightToken.loc.start.line
+						) {
+							return;
+						}
+
+						// Ignore comments that are the last token on their line if `ignoreEOLComments` is active.
+						if (
+							ignoreEOLComments &&
+							astUtils.isCommentToken(rightToken) &&
+							(leftIndex === tokensAndComments.length - 2 ||
+								rightToken.loc.end.line <
+									tokensAndComments[leftIndex + 2].loc.start
+										.line)
+						) {
+							return;
+						}
+
+						// Ignore tokens that are in a node in the "exceptions" object
+						if (hasExceptions) {
+							const parentNode = sourceCode.getNodeByRangeIndex(
+								rightToken.range[0] - 1,
+							);
+
+							if (parentNode && exceptions[parentNode.type]) {
+								return;
+							}
+						}
+
+						let displayValue;
+
+						if (rightToken.type === "Block") {
+							displayValue = `/*${formatReportedCommentValue(rightToken)}*/`;
+						} else if (rightToken.type === "Line") {
+							displayValue = `//${formatReportedCommentValue(rightToken)}`;
+						} else {
+							displayValue = rightToken.value;
+						}
+
+						context.report({
+							node: rightToken,
+							loc: {
+								start: leftToken.loc.end,
+								end: rightToken.loc.start,
+							},
+							messageId: "multipleSpaces",
+							data: { displayValue },
+							fix: fixer =>
+								fixer.replaceTextRange(
+									[leftToken.range[1], rightToken.range[0]],
+									" ",
+								),
+						});
+					},
+				);
+			},
+		};
+	},
+};
+

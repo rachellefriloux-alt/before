@@ -1,0 +1,22 @@
+Migrated from sallie_1.00/gradle/wrapper/gradle-wrapper.properties.txt
+
+
+
+
+Migrated from sallie_1.00/gradle/wrapper/gradle-wrapper.properties.txt
+
+
+
+
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.2-bin.zip
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStorePath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+
+
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.2-bin.zip
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStorePath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME

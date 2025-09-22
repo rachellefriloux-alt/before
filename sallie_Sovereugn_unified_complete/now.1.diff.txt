@@ -1,0 +1,7 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\refs\heads\now
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\refs\heads\now
+---- DIFF ----
+731e121d154f1d575b6c87cc1f0c755adcb103d5
+0000000000000000000000000000000000000000 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756640659 -0500	branch: Created from main
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 67f979dae548e81ab30e941ebe89abbde87c1611 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641266 -0500	commit: assest
+67f979dae548e81ab30e941ebe89abbde87c1611 731e121d154f1d575b6c87cc1f0c755adcb103d5 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641705 -0500	merge 8-dont-work-android: Merge made by the 'ort' strategy.

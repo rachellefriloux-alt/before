@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\buildSrc\.gradle\buildOutputCleanup\cache.properties
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.gradle\buildOutputCleanup\cache.properties
+---- DIFF ----
+#Tue Aug 26 12:00:04 CDT 2025
+#Sun Aug 31 07:29:36 CDT 2025

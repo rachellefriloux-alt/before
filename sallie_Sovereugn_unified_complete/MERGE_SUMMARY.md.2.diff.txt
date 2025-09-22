@@ -1,0 +1,30 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\docs\MERGE_SUMMARY.md
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\MERGE_SUMMARY.md
+---- DIFF ----
+- `MERGE_SUMMARY.md` - This documentation file 
+- `vite.config.js` - Vite build tool configuration for modern web development  
+   - Main's `App.vue` (13,084 bytes) kept over copilot variants - more comprehensive
+   - Main's `build.gradle.kts` preserved for full Android project structure
+   - Main's `package.json` kept for complete dependency management
+✅ All merges follow Salle 1.0 Operating Constitution requirements  
+✅ Modular structure preserved with proper module separation  
+✅ Persona header requirements maintained in core files  
+✅ No network permissions added to localOnly flavor  
+✅ Build verification tasks updated and functional  
+---
+provenance:
+	repo: Sallie
+	path: /docs
+	scope: canonical
+---
+- `MERGE_SUMMARY.md` - This documentation file
+- `vite.config.js` - Vite build tool configuration for modern web development
+	- Main's `App.vue` (13,084 bytes) kept over copilot variants - more comprehensive
+	- Main's `build.gradle.kts` preserved for full Android project structure
+	- Main's `package.json` kept for complete dependency management
+✅ All merges follow Salle 1.0 Operating Constitution requirements
+✅ Modular structure preserved with proper module separation
+✅ Persona header requirements maintained in core files
+✅ No network permissions added to localOnly flavor
+✅ Build verification tasks updated and functional
+

@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\.gradle\config.properties
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ai\.gradle\config.properties
+---- DIFF ----
+#Tue Aug 19 10:47:59 CDT 2025
+#Tue Aug 19 13:51:39 CDT 2025

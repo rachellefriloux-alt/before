@@ -1,0 +1,173 @@
+# Core ignores for Sallie repo
+node_modules/
+dist/
+build/
+.gradle/
+.kotlin/
+local.properties
+Thumbs.db
+.DS_Store
+# Add patterns for deduplicated files
+sequinseal.*
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+/node_modules
+/node_modules
+/node_modules/@babel
+/node_modules/esbuild
+/node_modules/nanoid/bin
+
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+### Android / Kotlin ###
+*.iml
+.gradle/
+build/
+*/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+### IntelliJ / IDEA ###
+.idea/
+*.ipr
+*.iws
+*.swp
+
+### JVM ###
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+### Logs ###
+*.log
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Node / Frontend ###
+node_modules/
+dist/
+dist-ssr/
+pnpm-lock.yaml
+yarn.lock
+coverage/
+.nyc_output
+.cache
+
+### Generated ###
+app/build/
+core/build/
+feature/build/
+ai/build/
+components/build/
+
+### Backup / Archives ###
+sallie_workspace_backup.tar.gz
+*.zip
+*.tgz
+*.tar.gz
+
+### Misc ###
+/.idea
+.vscode/**.history
+.env
+
+### Firebase (if present) ###
+google-services.json
+
+serviceAccountKey.json
+*.jks
+keystore.properties
+
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+### Android / Kotlin ###
+*.iml
+.gradle/
+build/
+*/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+### IntelliJ / IDEA ###
+.idea/
+*.ipr
+*.iws
+*.swp
+
+### JVM ###
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+### Logs ###
+*.log
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Node / Frontend ###
+node_modules/
+dist/
+dist-ssr/
+pnpm-lock.yaml
+yarn.lock
+coverage/
+.nyc_output
+.cache
+
+### Generated ###
+app/build/
+core/build/
+feature/build/
+ai/build/
+components/build/
+
+### Backup / Archives ###
+sallie_workspace_backup.tar.gz
+*.zip
+*.tgz
+*.tar.gz
+
+### Misc ###
+/.idea
+.vscode/**.history
+.env
+
+### Firebase (if present) ###
+google-services.json
+
+serviceAccountKey.json
+*.jks
+keystore.properties

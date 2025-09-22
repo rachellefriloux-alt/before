@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\vitest\mocker.d.ts
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\vitest\dist\mocker.d.ts
+---- DIFF ----
+export * from '@vitest/mocker';
+export * from './dist/mocker.js'

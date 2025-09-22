@@ -1,0 +1,27 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\eslint-visitor-keys\lib\visitor-keys.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\@eslint-community\eslint-utils\node_modules\eslint-visitor-keys\lib\visitor-keys.js
+---- DIFF ----
+        "source"
+        "source"
+        "exported",
+        "source"
+        "source"
+        "local"
+/* eslint-disable jsdoc/valid-types -- doesn't allow `readonly`.
+   TODO: remove eslint-disable when https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser/issues/164 is fixed
+*/
+/* eslint-enable jsdoc/valid-types -- doesn't allow `readonly string[]`. TODO: check why */
+        "source",
+        "source",
+        "attributes"
+        "local",
+        "exported"
+    ImportAttribute: [
+        "source",
+        "attributes"
+        "source",
+        "options"
+        "attributes"
+        "key",
+        "value"
+    ],

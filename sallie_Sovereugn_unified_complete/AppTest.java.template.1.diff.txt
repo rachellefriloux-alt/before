@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javaapplication\testng\AppTest.java.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\javaapplication\junitjupiter\AppTest.java.template
+---- DIFF ----
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+class AppTest {
+    @Test void appHasAGreeting() {
+import org.testng.annotations.*;
+import static org.testng.Assert.*;
+public class AppTest {
+    @Test public void appHasAGreeting() {

@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\src\firebaseConfigManager.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\src\firebaseConfigManager.js
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: firebaseConfigManager
+ * Intent: Handle functionality for firebaseConfigManager
+ * Provenance-ID: 4119fc9e-4113-432d-8a66-9b1129b090a0
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

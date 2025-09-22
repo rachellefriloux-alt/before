@@ -1,0 +1,17 @@
+[
+  { "name": "avatar_loyal", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/loyal.svg", "tags": ["avatar", "loyal", "mood"] },
+  { "name": "avatar_strategic", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/strategic.svg", "tags": ["avatar", "strategic", "mood"] },
+  { "name": "avatar_empathic", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/empathic.svg", "tags": ["avatar", "empathic", "mood"] },
+  { "name": "avatar_playful", "type": "svg", "source": "humaaans", "url": "https://humaaans.com/playful.svg", "tags": ["avatar", "playful", "mood"] },
+  { "name": "avatar_resourceful", "type": "svg", "source": "open-doodles", "url": "https://opendoodles.com/resourceful.svg", "tags": ["avatar", "resourceful", "mood"] },
+  { "name": "icon_shield", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/shield.svg", "tags": ["icon", "loyalty"] },
+  { "name": "icon_compass", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/compass.svg", "tags": ["icon", "strategy"] },
+  { "name": "icon_heartline", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/heart.svg", "tags": ["icon", "empathy"] },
+  { "name": "icon_puzzle", "type": "svg", "source": "heroicons", "url": "https://heroicons.com/puzzle.svg", "tags": ["icon", "resourceful"] },
+  { "name": "illus_onboarding", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/onboarding.svg", "tags": ["illustration", "onboarding"] },
+  { "name": "illus_empty_loyal", "type": "svg", "source": "undraw", "url": "https://undraw.co/illustrations/empty_loyal.svg", "tags": ["illustration", "empty", "loyal"] },
+  { "name": "illus_empty_playful", "type": "svg", "source": "open-doodles", "url": "https://opendoodles.com/empty_playful.svg", "tags": ["illustration", "empty", "playful"] },
+  { "name": "anim_avatar_moodshift_loyal", "type": "lottie", "source": "lottiefiles", "url": "https://assets.lottiefiles.com/datafiles/loyal.json", "tags": ["animation", "avatar", "loyal"] },
+  { "name": "anim_avatar_moodshift_strategic", "type": "lottie", "source": "lottiefiles", "url": "https://assets.lottiefiles.com/datafiles/strategic.json", "tags": ["animation", "avatar", "strategic"] },
+  { "name": "anim_avatar_moodshift_playful", "type": "lottie", "source": "lottiefiles", "url": "https://assets.lottiefiles.com/datafiles/playful.json", "tags": ["animation", "avatar", "playful"] }
+]

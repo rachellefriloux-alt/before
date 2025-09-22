@@ -1,0 +1,21 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\platform-native\org\gradle\nativeplatform\toolchain\internal\msvcpp\CCompiler.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\platform-native\org\gradle\nativeplatform\toolchain\internal\gcc\CCompiler.java
+---- DIFF ----
+package org.gradle.nativeplatform.toolchain.internal.gcc;
+import org.gradle.internal.Transformers;
+class CCompiler extends GccCompatibleNativeCompiler<CCompileSpec> {
+    CCompiler(BuildOperationExecutor buildOperationExecutor, CompilerOutputFileNamingSchemeFactory compilerOutputFileNamingSchemeFactory, CommandLineToolInvocationWorker commandLineToolInvocationWorker, CommandLineToolContext invocationContext, String objectFileExtension, boolean useCommandFile, WorkerLeaseService workerLeaseService) {
+        super(buildOperationExecutor, compilerOutputFileNamingSchemeFactory, commandLineToolInvocationWorker, invocationContext, new CCompileArgsTransformer(), Transformers.<CCompileSpec>noOpTransformer(), objectFileExtension, useCommandFile, workerLeaseService);
+    private static class CCompileArgsTransformer extends GccCompilerArgsTransformer<CCompileSpec> {
+        protected String getLanguage() {
+            return "c";
+package org.gradle.nativeplatform.toolchain.internal.msvcpp;
+import org.gradle.api.Transformer;
+import java.util.Optional;
+class CCompiler extends VisualCppNativeCompiler<CCompileSpec> {
+    CCompiler(BuildOperationExecutor buildOperationExecutor, CompilerOutputFileNamingSchemeFactory compilerOutputFileNamingSchemeFactory, CommandLineToolInvocationWorker commandLineToolInvocationWorker, CommandLineToolContext invocationContext, Transformer<CCompileSpec, CCompileSpec> specTransformer, String objectFileExtension, boolean useCommandFile, WorkerLeaseService workerLeaseService) {
+        super(buildOperationExecutor, compilerOutputFileNamingSchemeFactory, commandLineToolInvocationWorker, invocationContext, new CCompilerArgsTransformer(), specTransformer, objectFileExtension, useCommandFile, workerLeaseService);
+    private static class CCompilerArgsTransformer extends VisualCppCompilerArgsTransformer<CCompileSpec> {
+        protected Optional<String> getLanguageOption() {
+            return Optional.of("/TC");
+

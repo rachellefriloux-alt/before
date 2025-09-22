@@ -1,0 +1,15 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.idea\misc.xml
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\.idea\misc.xml
+---- DIFF ----
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK" />
+=======
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+>>>>>>> Sallie

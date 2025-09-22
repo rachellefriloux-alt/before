@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\wrapper\gradle-wrapper.properties
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\e\gradle\wrapper\gradle-wrapper.properties
+---- DIFF ----
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-bin.zip

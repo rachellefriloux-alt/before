@@ -1,0 +1,49 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\HEAD
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\HEAD
+---- DIFF ----
+0000000000000000000000000000000000000000 16bc9a0c25bec648ed7633a5c98406605a464c06 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969872 -0500	clone: from https://github.com/rachellefriloux-alt/Sallie.git
+16bc9a0c25bec648ed7633a5c98406605a464c06 94d75a54be6a43136f2b6e294e403739b3302258 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969966 -0500	checkout: moving from main to Sallie
+94d75a54be6a43136f2b6e294e403739b3302258 e89c2bc775b11130d5981cc289fdac46e467685b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970178 -0500	pull --tags origin Sallie: Fast-forward
+e89c2bc775b11130d5981cc289fdac46e467685b 2069985bd463735596f51aed9ba9155351c03d85 rachellefriloux-alt <rachellefriloux@gmail.com> 1755985427 -0500	pull --tags origin Sallie: Fast-forward
+2069985bd463735596f51aed9ba9155351c03d85 63db7a79ad0d40c082cb46c905f0ff6907d50b9c rachellefriloux-alt <rachellefriloux@gmail.com> 1755985460 -0500	commit: chore: Initialize Sallie workspace configuration
+63db7a79ad0d40c082cb46c905f0ff6907d50b9c 7244244d6d5cc9b511dc0c1a25297d3275bff8a9 rachellefriloux-alt <rachellefriloux@gmail.com> 1755989119 -0500	commit: 1234567890-=
+7244244d6d5cc9b511dc0c1a25297d3275bff8a9 f616eb8da8e071a1206abeb07b2ee6bf5665321a rachellefriloux-alt <rachellefriloux@gmail.com> 1756008088 -0500	commit: done
+f616eb8da8e071a1206abeb07b2ee6bf5665321a 479b7acd8c6a9f6ca2ea679c278021d14ebe12c7 rachellefriloux-alt <rachellefriloux@gmail.com> 1756009551 -0500	commit: done
+479b7acd8c6a9f6ca2ea679c278021d14ebe12c7 b83e780a0d60289802282702a6c4df022b9d87d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1756009629 -0500	commit: buildOutputCleanup
+b83e780a0d60289802282702a6c4df022b9d87d6 6a1acd84b32f19c60761edd946f8d475372dba35 rachellefriloux-alt <rachellefriloux@gmail.com> 1756019185 -0500	commit: maybe
+6a1acd84b32f19c60761edd946f8d475372dba35 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756019241 -0500	pull --tags origin Sallie: Merge made by the 'ort' strategy.
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756616687 -0500	reset: moving to HEAD
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756640480 -0500	reset: moving to HEAD
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641192 -0500	reset: moving to HEAD
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641204 -0500	commit: fucked
+f3b200adb3965276e37f39f406d5af447ed0e7a2 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641261 -0500	checkout: moving from Sallie to now
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 67f979dae548e81ab30e941ebe89abbde87c1611 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641266 -0500	commit: assest
+67f979dae548e81ab30e941ebe89abbde87c1611 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641305 -0500	checkout: moving from now to main
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641436 -0500	reset: moving to HEAD
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641437 -0500	checkout: moving from main to 8-dont-work-android
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641481 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641485 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641491 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641509 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641515 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641530 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641541 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 ee6f8d2aaab479915cab00a5a88abb616cccb5a4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641559 -0500	commit: mjbn,nlm,.
+ee6f8d2aaab479915cab00a5a88abb616cccb5a4 67f979dae548e81ab30e941ebe89abbde87c1611 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641570 -0500	checkout: moving from 8-dont-work-android to now
+67f979dae548e81ab30e941ebe89abbde87c1611 731e121d154f1d575b6c87cc1f0c755adcb103d5 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641705 -0500	merge 8-dont-work-android: Merge made by the 'ort' strategy.
+731e121d154f1d575b6c87cc1f0c755adcb103d5 ee6f8d2aaab479915cab00a5a88abb616cccb5a4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641723 -0500	checkout: moving from now to 8-dont-work-android
+ee6f8d2aaab479915cab00a5a88abb616cccb5a4 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641756 -0500	checkout: moving from 8-dont-work-android to Sallie
+f3b200adb3965276e37f39f406d5af447ed0e7a2 ee6f8d2aaab479915cab00a5a88abb616cccb5a4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641771 -0500	checkout: moving from Sallie to 8-dont-work-android
+ee6f8d2aaab479915cab00a5a88abb616cccb5a4 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642068 -0500	checkout: moving from 8-dont-work-android to main
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 80e26e15210bc504f1f7ba6c0ee0c6f1c675eb14 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642072 -0500	commit: .lmm.m.n.n
+80e26e15210bc504f1f7ba6c0ee0c6f1c675eb14 c9dd081f79a1d3a10b1a41f12adf92e1cabb1cc1 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642081 -0500	commit: Update .gitignore
+c9dd081f79a1d3a10b1a41f12adf92e1cabb1cc1 c403f9155ab721093a1e9cafa057d1b8d1c8eec9 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642096 -0500	pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+c403f9155ab721093a1e9cafa057d1b8d1c8eec9 c403f9155ab721093a1e9cafa057d1b8d1c8eec9 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642184 -0500	reset: moving to HEAD
+c403f9155ab721093a1e9cafa057d1b8d1c8eec9 fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642278 -0500	commit: ,jnk/jn
+fa63503049c4900aaede259e9041610802e2e89c f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642292 -0500	checkout: moving from main to Sallie
+f3b200adb3965276e37f39f406d5af447ed0e7a2 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642358 -0500	checkout: moving from Sallie to Sallie
+f3b200adb3965276e37f39f406d5af447ed0e7a2 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642387 -0500	reset: moving to HEAD
+f3b200adb3965276e37f39f406d5af447ed0e7a2 731e121d154f1d575b6c87cc1f0c755adcb103d5 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642391 -0500	checkout: moving from Sallie to 731e121d154f1d575b6c87cc1f0c755adcb103d5
+731e121d154f1d575b6c87cc1f0c755adcb103d5 fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642400 -0500	checkout: moving from 731e121d154f1d575b6c87cc1f0c755adcb103d5 to main
+fa63503049c4900aaede259e9041610802e2e89c fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642413 -0500	checkout: moving from main to main
+ref: refs/heads/main

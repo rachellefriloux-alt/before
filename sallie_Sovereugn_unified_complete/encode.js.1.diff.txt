@@ -1,0 +1,43 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\entities\lib\esm\encode.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\entities\lib\encode.js
+---- DIFF ----
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.encodeNonAsciiHTML = exports.encodeHTML = void 0;
+var encode_html_js_1 = __importDefault(require("./generated/encode-html.js"));
+var escape_js_1 = require("./escape.js");
+var htmlReplacer = /[\t\n!-,./:-@[-`\f{-}$\x80-\uFFFF]/g;
+function encodeHTML(data) {
+exports.encodeHTML = encodeHTML;
+function encodeNonAsciiHTML(data) {
+    return encodeHTMLTrieRe(escape_js_1.xmlReplacer, data);
+exports.encodeNonAsciiHTML = encodeNonAsciiHTML;
+    var ret = "";
+    var lastIdx = 0;
+    var match;
+        var i = match.index;
+        var char = str.charCodeAt(i);
+        var next = encode_html_js_1.default.get(char);
+                var nextChar = str.charCodeAt(i + 1);
+                var value = typeof next.n === "number"
+            var cp = (0, escape_js_1.getCodePoint)(str, i);
+            ret += "&#x".concat(cp.toString(16), ";");
+import htmlTrie from "./generated/encode-html.js";
+import { xmlReplacer, getCodePoint } from "./escape.js";
+const htmlReplacer = /[\t\n!-,./:-@[-`\f{-}$\x80-\uFFFF]/g;
+export function encodeHTML(data) {
+export function encodeNonAsciiHTML(data) {
+    return encodeHTMLTrieRe(xmlReplacer, data);
+    let ret = "";
+    let lastIdx = 0;
+    let match;
+        const i = match.index;
+        const char = str.charCodeAt(i);
+        let next = htmlTrie.get(char);
+                const nextChar = str.charCodeAt(i + 1);
+                const value = typeof next.n === "number"
+            const cp = getCodePoint(str, i);
+            ret += `&#x${cp.toString(16)};`;

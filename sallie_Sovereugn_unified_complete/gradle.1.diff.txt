@@ -1,0 +1,19 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\e\gradle\gradle-8.5\bin\gradle
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\bin\gradle
+---- DIFF ----
+# Copyright © 2015 the original authors.
+# SPDX-License-Identifier: Apache-2.0
+#       https://github.com/gradle/gradle/blob/HEAD/platforms/jvm/plugins-application/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+APP_HOME=$( cd -P "${APP_HOME:-./}.." > /dev/null && printf '%s\n' "$PWD" ) || exit
+CLASSPATH="\\\"\\\""
+DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'" \"-javaagent:$APP_HOME/lib/agents/gradle-instrumentation-agent-9.0.0.jar\""
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, and optsEnvironmentVar are not allowed to contain shell fragments,
+        -jar "$APP_HOME/lib/gradle-gradle-cli-main-9.0.0.jar" \
+#
+# Copyright © 2015-2021 the original authors.
+#       https://github.com/gradle/gradle/blob/HEAD/subprojects/plugins/src/main/resources/org/gradle/api/internal/plugins/unixStartScript.txt
+APP_HOME=$( cd "${APP_HOME:-./}.." > /dev/null && pwd -P ) || exit
+CLASSPATH=$APP_HOME/lib/gradle-launcher-8.5.jar
+DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'" \"-javaagent:$APP_HOME/lib/agents/gradle-instrumentation-agent-8.5.jar\""
+#   * DEFAULT_JVM_OPTS, JAVA_OPTS, JAVA_OPTS, and optsEnvironmentVar are not allowed to contain shell fragments,
+        org.gradle.launcher.GradleMain \

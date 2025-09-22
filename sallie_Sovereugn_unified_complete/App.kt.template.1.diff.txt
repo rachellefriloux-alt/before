@@ -1,0 +1,16 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\kotlinapplication\multi\app\App.kt.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\kotlinapplication\App.kt.template
+---- DIFF ----
+class App {
+    val greeting: String
+        get() {
+            return "Hello World!"
+        }
+    println(App().greeting)
+}
+import ${basePackagePrefix.raw}utilities.StringUtils
+import org.apache.commons.text.WordUtils
+    val tokens = StringUtils.split(MessageUtils.getMessage())
+    val result = StringUtils.join(tokens)
+    println(WordUtils.capitalize(result))
+

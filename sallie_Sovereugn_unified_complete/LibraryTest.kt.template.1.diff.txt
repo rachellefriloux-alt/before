@@ -1,0 +1,12 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\kotlinlibrary\LibraryTest.kt.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\kotlinlibrary\junitjupiter\LibraryTest.kt.template
+---- DIFF ----
+${fileComment.multilineComment}${packageDecl.javaStatement}
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertTrue
+    @Test
+    fun someLibraryMethodReturnsTrue() {
+${fileComment.multilineComment}${packageDecl.statement}
+import kotlin.test.Test
+import kotlin.test.assertTrue
+    @Test fun someLibraryMethodReturnsTrue() {

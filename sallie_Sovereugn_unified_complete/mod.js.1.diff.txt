@@ -1,0 +1,15 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\cac\mod.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\math-intrinsics\mod.js
+---- DIFF ----
+'use strict';
+
+var $floor = require('./floor');
+
+/** @type {import('./mod')} */
+module.exports = function mod(number, modulo) {
+	var remain = number % modulo;
+	return $floor(remain >= 0 ? remain : remain + modulo);
+};
+
+// Deno users should use mod.ts instead
+export * from './deno/index.ts'

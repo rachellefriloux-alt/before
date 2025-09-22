@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\onboarding\GuidedPersonaTour.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\GuidedPersonaTour.kt
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: GuidedPersonaTour
+ * Intent: Handle functionality for GuidedPersonaTour
+ * Provenance-ID: 8b11ba17-8db1-4adf-9550-59df9ee77ee0
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

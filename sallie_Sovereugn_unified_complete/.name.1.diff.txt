@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.idea\.name
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\core\.idea\.name
+---- DIFF ----
+fingerprint.js
+devices.json

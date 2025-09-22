@@ -1,0 +1,10 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\rollup\dist\getLogFilter.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\rollup\dist\es\getLogFilter.js
+---- DIFF ----
+export { getLogFilter };
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+
+exports.getLogFilter = getLogFilter;
+//# sourceMappingURL=getLogFilter.js.map
+

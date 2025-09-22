@@ -1,0 +1,47 @@
+0000000000000000000000000000000000000000 828aa73a0aa089decb2a685ef6150622570d1b65 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619281 -0500	branch: Created from origin/sallie-1.0
+828aa73a0aa089decb2a685ef6150622570d1b65 ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce rachellefriloux-alt <rachellefriloux@gmail.com> 1755619298 -0500	merge origin/copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff: Fast-forward
+ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619321 -0500	merge revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff: Fast-forward
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 f9944bf40acf49b642f6caa89c01bee90b22de2c rachellefriloux-alt <rachellefriloux@gmail.com> 1755619351 -0500	merge copilot/fix-5: Merge made by the 'ort' strategy.
+f9944bf40acf49b642f6caa89c01bee90b22de2c a7c72619fb430e92634b17eb02d5fc148ba8861a rachellefriloux-alt <rachellefriloux@gmail.com> 1755619981 -0500	commit (merge): Merge branch 'changes' into sallie-1.0
+a7c72619fb430e92634b17eb02d5fc148ba8861a 59b652d89e36a2c8aa29ee054cf141aba3847c5a rachellefriloux-alt <rachellefriloux@gmail.com> 1755620838 -0500	commit (merge): Merge remote-tracking branch 'origin/copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1' into sallie-1.0
+59b652d89e36a2c8aa29ee054cf141aba3847c5a e256b3b300c5de8d3bc5e1b46bc02d3098950393 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621553 -0500	commit (merge): Merge remote-tracking branch 'origin/revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1' into sallie-1.0
+e256b3b300c5de8d3bc5e1b46bc02d3098950393 b2f0fedb59e28ceafe97328e4dcaa157babd4eaf rachellefriloux-alt <rachellefriloux@gmail.com> 1755629455 -0500	merge copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883: Fast-forward
+b2f0fedb59e28ceafe97328e4dcaa157babd4eaf 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755629564 -0500	commit (merge): Merge remote-tracking branch 'origin/copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d' into sallie-1.0
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631646 -0500	merge main: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631669 -0500	merge origin/copilot/fix-0b6ecd9d-a699-4698-b30a-b68b38da5d14: Fast-forward
+5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 21eca8f936cafb3e3f8b358d0ad5394876ccf0cd rachellefriloux-alt <rachellefriloux@gmail.com> 1755632595 -0500	merge main: Fast-forward
+21eca8f936cafb3e3f8b358d0ad5394876ccf0cd 6ccb8835f540719dfa81fbcd73be6379f6a7e54e rachellefriloux-alt <rachellefriloux@gmail.com> 1755634009 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+6ccb8835f540719dfa81fbcd73be6379f6a7e54e 0909869e40ea94dae89f48c4edf9a1215154739e rachellefriloux-alt <rachellefriloux@gmail.com> 1755646721 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+0909869e40ea94dae89f48c4edf9a1215154739e 1de8b79abb77f1920edc92781fbc12dbfd177d3b rachellefriloux-alt <rachellefriloux@gmail.com> 1755654933 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+1de8b79abb77f1920edc92781fbc12dbfd177d3b 46c379ad1a633aed8c550cc85bdba1bdc1d01465 rachellefriloux-alt <rachellefriloux@gmail.com> 1755654970 -0500	merge origin/copilot/fix-18: Merge made by the 'ort' strategy.
+46c379ad1a633aed8c550cc85bdba1bdc1d01465 1401bc74718d315b62d9ac5b03bcd0eafb69c48d rachellefriloux-alt <rachellefriloux@gmail.com> 1755655085 -0500	commit (merge): Merge remote-tracking branch 'origin/copilot/fix-c0ca9033-7f01-46a3-818d-170dc09b697b' into sallie-1.0
+1401bc74718d315b62d9ac5b03bcd0eafb69c48d db3242c880a104bfc2e7986deb95f14c7d89e2dd rachellefriloux-alt <rachellefriloux@gmail.com> 1755814274 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+db3242c880a104bfc2e7986deb95f14c7d89e2dd bd6a310a2803714f440c0e7e9ff1318cd270e93b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970323 -0500	merge main: Merge made by the 'ort' strategy.
+bd6a310a2803714f440c0e7e9ff1318cd270e93b 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970351 -0500	merge origin/copilot/fix-4312e12a-4f85-4def-8e0f-51720c066af0: Merge made by the 'ort' strategy.
+
+
+828aa73a0aa089decb2a685ef6150622570d1b65 f9944bf40acf49b642f6caa89c01bee90b22de2c rachellefriloux-alt <rachellefriloux@gmail.com> 1755619375 -0500	update by push
+f9944bf40acf49b642f6caa89c01bee90b22de2c 59b652d89e36a2c8aa29ee054cf141aba3847c5a rachellefriloux-alt <rachellefriloux@gmail.com> 1755621504 -0500	update by push
+59b652d89e36a2c8aa29ee054cf141aba3847c5a e256b3b300c5de8d3bc5e1b46bc02d3098950393 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621559 -0500	update by push
+e256b3b300c5de8d3bc5e1b46bc02d3098950393 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755629568 -0500	update by push
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631674 -0500	update by push
+5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 21eca8f936cafb3e3f8b358d0ad5394876ccf0cd rachellefriloux-alt <rachellefriloux@gmail.com> 1755632599 -0500	update by push
+21eca8f936cafb3e3f8b358d0ad5394876ccf0cd 6ccb8835f540719dfa81fbcd73be6379f6a7e54e rachellefriloux-alt <rachellefriloux@gmail.com> 1755633997 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: fast-forward
+6ccb8835f540719dfa81fbcd73be6379f6a7e54e 0909869e40ea94dae89f48c4edf9a1215154739e rachellefriloux-alt <rachellefriloux@gmail.com> 1755646710 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: fast-forward
+0909869e40ea94dae89f48c4edf9a1215154739e 47735a79896dbbd1e71cb0a2846eefe143f93e60 rachellefriloux-alt <rachellefriloux@gmail.com> 1755648817 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: fast-forward
+47735a79896dbbd1e71cb0a2846eefe143f93e60 1de8b79abb77f1920edc92781fbc12dbfd177d3b rachellefriloux-alt <rachellefriloux@gmail.com> 1755652936 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: fast-forward
+1de8b79abb77f1920edc92781fbc12dbfd177d3b 1401bc74718d315b62d9ac5b03bcd0eafb69c48d rachellefriloux-alt <rachellefriloux@gmail.com> 1755655096 -0500	update by push
+1401bc74718d315b62d9ac5b03bcd0eafb69c48d db3242c880a104bfc2e7986deb95f14c7d89e2dd rachellefriloux-alt <rachellefriloux@gmail.com> 1755814262 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: fast-forward
+db3242c880a104bfc2e7986deb95f14c7d89e2dd 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970359 -0500	update by push
+
+
+300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec
+
+
+300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec
+
+
+0000000000000000000000000000000000000000 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970421 -0500	clone: from https://github.com/rachellefriloux-alt/sallie_1.0.git
+
+
+300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec

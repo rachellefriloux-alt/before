@@ -1,0 +1,26 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\kotlin-dsl\org\gradle\kotlin\dsl\support\GradleExtensions.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\kotlin-dsl\org\gradle\kotlin\dsl\GradleExtensions.kt
+---- DIFF ----
+package org.gradle.kotlin.dsl
+import org.gradle.api.Plugin
+import org.gradle.api.plugins.PluginAware
+/**
+ * Applies the plugin of the given type [T]. Does nothing if the plugin has already been applied.
+ *
+ * The given class should implement the [Plugin] interface, and be parameterized for a
+ * compatible type of `this`.
+ *
+ * @param T the plugin type.
+ * @see [PluginAware.apply]
+ */
+inline fun <reified T : Plugin<Gradle>> Gradle.apply() =
+    (this as PluginAware).apply<T>()
+package org.gradle.kotlin.dsl.support
+import org.gradle.api.internal.GradleInternal
+inline fun <reified T : Any> Gradle.serviceOf(): T =
+    (gradle as GradleInternal).services.get()
+
+internal
+fun serviceRegistryOf(gradle: Gradle) =
+    (gradle as GradleInternal).services
+

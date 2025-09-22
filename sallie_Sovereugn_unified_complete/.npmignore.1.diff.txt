@@ -1,0 +1,6 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\json-stable-stringify-without-jsonify\.npmignore
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\isexe\.npmignore
+---- DIFF ----
+.nyc_output/
+coverage/
+node_modules

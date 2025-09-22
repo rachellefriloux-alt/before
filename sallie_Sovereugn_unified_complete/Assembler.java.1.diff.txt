@@ -1,0 +1,31 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\platform-native\org\gradle\nativeplatform\toolchain\internal\msvcpp\Assembler.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\platform-native\org\gradle\nativeplatform\toolchain\internal\gcc\Assembler.java
+---- DIFF ----
+package org.gradle.nativeplatform.toolchain.internal.gcc;
+import org.gradle.internal.Transformers;
+import org.gradle.nativeplatform.platform.NativePlatform;
+class Assembler extends GccCompatibleNativeCompiler<AssembleSpec> {
+    Assembler(BuildOperationExecutor buildOperationExecutor, CompilerOutputFileNamingSchemeFactory compilerOutputFileNamingSchemeFactory, CommandLineToolInvocationWorker commandLineTool, CommandLineToolContext invocationContext, String objectFileExtension, boolean useCommandFile, WorkerLeaseService workerLeaseService) {
+        super(buildOperationExecutor, compilerOutputFileNamingSchemeFactory, commandLineTool, invocationContext, new AssemblerArgsTransformer(), Transformers.<AssembleSpec>noOpTransformer(), objectFileExtension, useCommandFile, workerLeaseService);
+            throw new UnsupportedOperationException("Precompiled header arguments cannot be specified for an Assembler compiler.");
+        return super.buildPerFileArgs(genericArgs, sourceArgs, outputArgs, pchArgs);
+    private static class AssemblerArgsTransformer  extends GccCompilerArgsTransformer<AssembleSpec> {
+        @Override
+        protected String getLanguage() {
+            return "assembler";
+        }
+        @Override
+        protected boolean needsStandardIncludes(NativePlatform targetPlatform) {
+            return true;
+        }
+package org.gradle.nativeplatform.toolchain.internal.msvcpp;
+import com.google.common.collect.Iterables;
+import org.gradle.api.Transformer;
+class Assembler extends VisualCppNativeCompiler<AssembleSpec> {
+    Assembler(BuildOperationExecutor buildOperationExecutor, CompilerOutputFileNamingSchemeFactory compilerOutputFileNamingSchemeFactory, CommandLineToolInvocationWorker commandLineTool, CommandLineToolContext invocationContext, Transformer<AssembleSpec, AssembleSpec> specTransformer, String objectFileExtension, boolean useCommandFile, WorkerLeaseService workerLeaseService) {
+        super(buildOperationExecutor, compilerOutputFileNamingSchemeFactory, commandLineTool, invocationContext, new AssemblerArgsTransformer(), specTransformer, objectFileExtension, useCommandFile, workerLeaseService);
+            throw new UnsupportedOperationException("Precompiled header arguments cannot be specified for a Assembler compiler.");
+        // ml/ml64 have position sensitive arguments,
+        // e.g., /Fo must appear before /c and /c must appear before the source file.
+        return Iterables.concat(outputArgs, genericArgs, sourceArgs);
+    private static class AssemblerArgsTransformer extends VisualCppCompilerArgsTransformer<AssembleSpec> {

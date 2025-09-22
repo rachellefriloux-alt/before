@@ -1,0 +1,22 @@
+${fileComment.multilineComment}
+import XCTest
+
+XCTMain([testCase(GreeterTests.allTests)])
+
+
+${fileComment.multilineComment}
+import XCTest
+
+XCTMain([testCase(HelloTests.allTests)])
+
+
+${fileComment.multilineComment}
+import XCTest
+
+XCTMain([testCase(GreeterTests.allTests)])
+
+
+${fileComment.multilineComment}
+import XCTest
+
+XCTMain([testCase(HelloTests.allTests)])

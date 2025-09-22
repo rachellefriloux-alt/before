@@ -1,0 +1,57 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\nth-check\lib\esm\compile.js
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\node_modules\nth-check\lib\compile.js
+---- DIFF ----
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generate = exports.compile = void 0;
+var boolbase_1 = __importDefault(require("boolbase"));
+function compile(parsed) {
+    var a = parsed[0];
+    var b = parsed[1] - 1;
+        return boolbase_1.default.falseFunc;
+        return function (index) { return index <= b; };
+        return function (index) { return index === b; };
+        return b < 0 ? boolbase_1.default.trueFunc : function (index) { return index >= b; };
+    var absA = Math.abs(a);
+    var bMod = ((b % absA) + absA) % absA;
+        ? function (index) { return index >= b && index % absA === bMod; }
+        : function (index) { return index <= b && index % absA === bMod; };
+exports.compile = compile;
+function generate(parsed) {
+    var a = parsed[0];
+    var b = parsed[1] - 1;
+    var n = 0;
+        var aPos_1 = -a;
+        var minValue_1 = ((b % aPos_1) + aPos_1) % aPos_1;
+        return function () {
+            var val = minValue_1 + aPos_1 * n++;
+                function () { return null; }
+                function () { return (n++ === 0 ? b : null); };
+    return function () { return a * n++ + b; };
+exports.generate = generate;
+import boolbase from "boolbase";
+export function compile(parsed) {
+    const a = parsed[0];
+    const b = parsed[1] - 1;
+        return boolbase.falseFunc;
+        return (index) => index <= b;
+        return (index) => index === b;
+        return b < 0 ? boolbase.trueFunc : (index) => index >= b;
+    const absA = Math.abs(a);
+    const bMod = ((b % absA) + absA) % absA;
+        ? (index) => index >= b && index % absA === bMod
+        : (index) => index <= b && index % absA === bMod;
+export function generate(parsed) {
+    const a = parsed[0];
+    let b = parsed[1] - 1;
+    let n = 0;
+        const aPos = -a;
+        const minValue = ((b % aPos) + aPos) % aPos;
+        return () => {
+            const val = minValue + aPos * n++;
+                () => null
+                () => (n++ === 0 ? b : null);
+    return () => a * n++ + b;

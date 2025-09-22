@@ -1,0 +1,59 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "shell",
+      "label": "gradle-build",
+      "command": "gradlew.bat",
+      "args": [
+        "clean",
+        "build"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "preFlight",
+      "type": "shell",
+      "command": "gradlew.bat ktlintCheck && npm run lint && npm test",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "assembleAndInstall",
+      "type": "shell",
+      "command": "gradlew.bat clean assembleDebug installDebug && start cmd /k \"adb logcat | findstr Sallie\"",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "stopLogcat",
+      "type": "shell",
+      "command": "adb kill-server",
+      "problemMatcher": []
+    },
+    {
+      "label": "devDemo",
+      "dependsOn": [
+        "wipeAppData",
+        "assembleAndInstall"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "wipeAppData",
+      "type": "shell",
+      "command": "adb shell pm clear com.yourorg.sallie",
+      "problemMatcher": []
+    }
+	]
+}

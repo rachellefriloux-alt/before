@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\app\Main.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\Main.kt
+---- DIFF ----
+    println("Sallie app is running: Tough love meets soul care.")
+  println("Sallie app is running: Tough love meets soul care.")

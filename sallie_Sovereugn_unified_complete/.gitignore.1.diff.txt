@@ -1,0 +1,27 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.gitignore
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.idea\.gitignore
+---- DIFF ----
+# Default ignored files
+/shelf/
+/workspace.xml
+# Core ignores for Sallie repo
+node_modules/
+dist/
+build/
+.gradle/
+.kotlin/
+local.properties
+Thumbs.db
+.DS_Store
+# Add patterns for deduplicated files
+sequinseal.*
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+node_modules/@babel/parser/bin/babel-parser.js
+/node_modules
+/node_modules
+/node_modules/@babel
+/node_modules/esbuild
+/node_modules/nanoid/bin

@@ -1,0 +1,34 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\platform-base\org\gradle\platform\base\Library.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\ide\org\gradle\plugins\ide\eclipse\model\Library.java
+---- DIFF ----
+ * Copyright 2016 the original author or authors.
+package org.gradle.plugins.ide.eclipse.model;
+import groovy.util.Node;
+import org.gradle.plugins.ide.eclipse.model.internal.FileReferenceFactory;
+ * A classpath entry representing a library.
+public class Library extends AbstractLibrary {
+    public Library(Node node, FileReferenceFactory fileReferenceFactory) {
+        super(node, fileReferenceFactory);
+        setSourcePath(fileReferenceFactory.fromPath((String) node.attribute("sourcepath")));
+    }
+    public Library(FileReference library) {
+        super(library);
+    }
+
+    @Override
+    public String getKind() {
+        return "lib";
+    }
+
+    @Override
+    public String toString() {
+        return "Library" + super.toString();
+    }
+
+ * Copyright 2014 the original author or authors.
+package org.gradle.platform.base;
+import org.gradle.api.Incubating;
+import org.gradle.api.component.Component;
+ * A library that can be linked into or depended on by another software element.
+@Incubating
+public interface Library extends Component {

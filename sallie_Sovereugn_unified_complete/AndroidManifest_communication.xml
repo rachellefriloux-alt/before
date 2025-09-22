@@ -1,0 +1,16 @@
+<!-- This file is an addition to the existing AndroidManifest.xml -->
+<!-- To include the Communication Demo activity, add the following activity definition 
+     inside the <application> tag of your AndroidManifest.xml: -->
+
+<activity
+    android:name="com.sallie.app.demo.CommunicationDemoActivity"
+    android:exported="true"
+    android:label="Communication System Demo"
+    android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+</activity>
+
+<!-- Note: The above snippet should be placed inside the <application> element of your main AndroidManifest.xml file -->

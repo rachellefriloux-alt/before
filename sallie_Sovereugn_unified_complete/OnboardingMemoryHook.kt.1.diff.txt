@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\onboarding\OnboardingMemoryHook.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\main\kotlin\com\sallie\OnboardingMemoryHook.kt
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: OnboardingMemoryHook
+ * Intent: Handle functionality for OnboardingMemoryHook
+ * Provenance-ID: 7fc531dd-eacb-4638-a72e-b3273925ba58
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

@@ -1,0 +1,5 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\swiftapp\LinuxMain.swift.template
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\gradle\gradle-9.0.0\src\build-init\org\gradle\buildinit\tasks\templates\swiftlibrary\LinuxMain.swift.template
+---- DIFF ----
+XCTMain([testCase(HelloTests.allTests)])
+XCTMain([testCase(GreeterTests.allTests)])

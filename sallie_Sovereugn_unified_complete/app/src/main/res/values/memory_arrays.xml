@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="memory_types">
+        <item>Episodic Memory</item>
+        <item>Semantic Memory</item>
+        <item>Emotional Memory</item>
+    </string-array>
+</resources>

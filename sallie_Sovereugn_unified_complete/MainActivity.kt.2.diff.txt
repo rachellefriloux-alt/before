@@ -1,0 +1,15 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\android\app\src\main\java\com\sallie\launcher\MainActivity.kt
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\app\src\java\com\sallie\app\MainActivity.kt
+---- DIFF ----
+package com.sallie.app
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+

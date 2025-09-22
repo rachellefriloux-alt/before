@@ -1,0 +1,10 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\logs\refs\remotes\origin\main
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\.git\refs\remotes\origin\main
+---- DIFF ----
+fa63503049c4900aaede259e9041610802e2e89c
+16bc9a0c25bec648ed7633a5c98406605a464c06 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1756010780 -0500	fetch: fast-forward
+613e517c70a12611fc864e8f07fd9a812f5e85ab 3fc9ed46c317203e9c49786b834a75d8c5781a9b rachellefriloux-alt <rachellefriloux@gmail.com> 1756018814 -0500	fetch: fast-forward
+3fc9ed46c317203e9c49786b834a75d8c5781a9b 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756439699 -0500	fetch: fast-forward
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 5cdf4e9c8654139df2e2333c5bb3e41cc38ad95e rachellefriloux-alt <rachellefriloux@gmail.com> 1756642092 -0500	fetch --progress --prune --recurse-submodules=on-demand origin: fast-forward
+5cdf4e9c8654139df2e2333c5bb3e41cc38ad95e c403f9155ab721093a1e9cafa057d1b8d1c8eec9 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642102 -0500	update by push
+c403f9155ab721093a1e9cafa057d1b8d1c8eec9 fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642282 -0500	update by push

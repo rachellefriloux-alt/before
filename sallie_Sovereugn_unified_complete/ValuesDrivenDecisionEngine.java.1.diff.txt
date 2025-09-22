@@ -1,0 +1,11 @@
+BASE: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\ui\src\core\values\ValuesDrivenDecisionEngine.java
+OTHER: C:\Users\chell\Documents\Sallie_Sovereign\_staging\incoming\src\core\values\ValuesDrivenDecisionEngine.java
+---- DIFF ----
+/*
+ * Persona: Tough love meets soul care.
+ * Module: ValuesDrivenDecisionEngine
+ * Intent: Handle functionality for ValuesDrivenDecisionEngine
+ * Provenance-ID: b0d42d03-9ad4-40cb-8a3d-a174592ddcc3
+ * Last-Reviewed: 2025-08-28T00:00:00Z
+ */
+

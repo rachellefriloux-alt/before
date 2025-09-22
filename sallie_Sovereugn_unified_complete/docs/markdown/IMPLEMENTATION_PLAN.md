@@ -1,0 +1,2 @@
+# IMPLEMENTATION_PLAN.md
+Migrated from sallie_1.00/IMPLEMENTATION_PLAN.md

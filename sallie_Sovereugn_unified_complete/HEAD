@@ -1,0 +1,373 @@
+ref: refs/heads/salliedone
+
+
+0000000000000000000000000000000000000000 16bc9a0c25bec648ed7633a5c98406605a464c06 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969996 -0500	clone: from https://github.com/rachellefriloux-alt/Sallie.git
+16bc9a0c25bec648ed7633a5c98406605a464c06 83646f061f2d56f18b3e3becfd18804072b14eaa rachellefriloux-alt <rachellefriloux@gmail.com> 1755970022 -0500	checkout: moving from main to codespace-legendary-space-cod-vp67q74j7vrfxq6
+83646f061f2d56f18b3e3becfd18804072b14eaa 94d75a54be6a43136f2b6e294e403739b3302258 rachellefriloux-alt <rachellefriloux@gmail.com> 1755970049 -0500	merge origin/Sallie: Fast-forward
+94d75a54be6a43136f2b6e294e403739b3302258 94d75a54be6a43136f2b6e294e403739b3302258 rachellefriloux-alt <rachellefriloux@gmail.com> 1755970066 -0500	checkout: moving from codespace-legendary-space-cod-vp67q74j7vrfxq6 to Sallie
+94d75a54be6a43136f2b6e294e403739b3302258 4135374ed15b279e5affe6ca91f9d4917a5a333b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970103 -0500	merge origin/copilot/fix-8eeed93f-6c8c-4fe4-86d8-b7b577e73e5c: Merge made by the 'ort' strategy.
+4135374ed15b279e5affe6ca91f9d4917a5a333b 94d75a54be6a43136f2b6e294e403739b3302258 rachellefriloux-alt <rachellefriloux@gmail.com> 1755970120 -0500	checkout: moving from Sallie to codespace-legendary-space-cod-vp67q74j7vrfxq6
+94d75a54be6a43136f2b6e294e403739b3302258 4135374ed15b279e5affe6ca91f9d4917a5a333b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970126 -0500	checkout: moving from codespace-legendary-space-cod-vp67q74j7vrfxq6 to Sallie
+4135374ed15b279e5affe6ca91f9d4917a5a333b 16bc9a0c25bec648ed7633a5c98406605a464c06 rachellefriloux-alt <rachellefriloux@gmail.com> 1755970142 -0500	checkout: moving from Sallie to main
+16bc9a0c25bec648ed7633a5c98406605a464c06 4135374ed15b279e5affe6ca91f9d4917a5a333b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970147 -0500	checkout: moving from main to Sallie
+4135374ed15b279e5affe6ca91f9d4917a5a333b e89c2bc775b11130d5981cc289fdac46e467685b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970154 -0500	merge main: Merge made by the 'ort' strategy.
+e89c2bc775b11130d5981cc289fdac46e467685b 18b28a3df03d67a9a92ea3b63530bcd2284b3e4d rachellefriloux-alt <rachellefriloux@gmail.com> 1755975975 -0500	commit: feat: Convert TypeScript modules to JavaScript and implement core functionalities
+18b28a3df03d67a9a92ea3b63530bcd2284b3e4d 2627ba14a0037865ddf5e77a90d0bb90bb703945 rachellefriloux-alt <rachellefriloux@gmail.com> 1755979710 -0500	commit: Refactor code structure and remove redundant changes for improved maintainability
+2627ba14a0037865ddf5e77a90d0bb90bb703945 dc0a6d1024e968364bbad6230bd323f4de892c21 rachellefriloux-alt <rachellefriloux@gmail.com> 1755980877 -0500	commit: feat: Migrate and upgrade Salle Persona modules for Sallie 2.0
+dc0a6d1024e968364bbad6230bd323f4de892c21 d167b821a50306da864f67854891290b661fbaf7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755983373 -0500	commit: feat: Complete implementation of Sallie 2.0 enhancements and documentation updates
+d167b821a50306da864f67854891290b661fbaf7 4764d5dc9fa1c5bd2a4105663ebc3cd2fa9e0a09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755984573 -0500	commit: docs: Update README.dev.md with Firebase setup instructions and CI integration details
+4764d5dc9fa1c5bd2a4105663ebc3cd2fa9e0a09 4764d5dc9fa1c5bd2a4105663ebc3cd2fa9e0a09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755985273 -0500	checkout: moving from Sallie to Sallie
+4764d5dc9fa1c5bd2a4105663ebc3cd2fa9e0a09 2069985bd463735596f51aed9ba9155351c03d85 rachellefriloux-alt <rachellefriloux@gmail.com> 1755985308 -0500	commit: 1111111
+2069985bd463735596f51aed9ba9155351c03d85 e25c8fd3176dff41fc02916935b2a7ef54c163ce rachellefriloux-alt <rachellefriloux@gmail.com> 1755986676 -0500	checkout: moving from Sallie to revert-5-revert-4-Sallie
+e25c8fd3176dff41fc02916935b2a7ef54c163ce 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755986705 -0500	merge origin/revert-4-Sallie: Merge made by the 'ort' strategy.
+613e517c70a12611fc864e8f07fd9a812f5e85ab c90de34156a0e7ab171c66ccfeb813bc941045ae rachellefriloux-alt <rachellefriloux@gmail.com> 1755986748 -0500	checkout: moving from revert-5-revert-4-Sallie to main
+c90de34156a0e7ab171c66ccfeb813bc941045ae 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755986759 -0500	merge revert-5-revert-4-Sallie: Fast-forward
+613e517c70a12611fc864e8f07fd9a812f5e85ab 94d75a54be6a43136f2b6e294e403739b3302258 rachellefriloux-alt <rachellefriloux@gmail.com> 1755986780 -0500	checkout: moving from main to codespace-legendary-space-cod-vp67q74j7vrfxq6
+94d75a54be6a43136f2b6e294e403739b3302258 dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 rachellefriloux-alt <rachellefriloux@gmail.com> 1755986789 -0500	merge origin/revert-4-Sallie: Fast-forward
+dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 rachellefriloux-alt <rachellefriloux@gmail.com> 1755986793 -0500	checkout: moving from codespace-legendary-space-cod-vp67q74j7vrfxq6 to revert-4-Sallie
+dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 rachellefriloux-alt <rachellefriloux@gmail.com> 1755986796 -0500	checkout: moving from revert-4-Sallie to codespace-legendary-space-cod-vp67q74j7vrfxq6
+dabb49df74517629ef6e9c9b6b6fb3ee45372ad4 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755986804 -0500	merge main: Fast-forward
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755986819 -0500	checkout: moving from codespace-legendary-space-cod-vp67q74j7vrfxq6 to revert-5-revert-4-Sallie
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755986830 -0500	checkout: moving from revert-5-revert-4-Sallie to main
+613e517c70a12611fc864e8f07fd9a812f5e85ab 63db7a79ad0d40c082cb46c905f0ff6907d50b9c rachellefriloux-alt <rachellefriloux@gmail.com> 1755986836 -0500	checkout: moving from main to Sallie
+63db7a79ad0d40c082cb46c905f0ff6907d50b9c 613e517c70a12611fc864e8f07fd9a812f5e85ab rachellefriloux-alt <rachellefriloux@gmail.com> 1756017359 -0500	checkout: moving from Sallie to main
+613e517c70a12611fc864e8f07fd9a812f5e85ab 63db7a79ad0d40c082cb46c905f0ff6907d50b9c rachellefriloux-alt <rachellefriloux@gmail.com> 1756017372 -0500	checkout: moving from main to Sallie
+63db7a79ad0d40c082cb46c905f0ff6907d50b9c 213ba084da8d88e6704ce214fb2405d313a7424e rachellefriloux-alt <rachellefriloux@gmail.com> 1756017383 -0500	commit: api
+213ba084da8d88e6704ce214fb2405d313a7424e 2ebcca689885e99866a0b6fe3b0bd923a5a4a580 rachellefriloux-alt <rachellefriloux@gmail.com> 1756017393 -0500	pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+2ebcca689885e99866a0b6fe3b0bd923a5a4a580 3fc9ed46c317203e9c49786b834a75d8c5781a9b rachellefriloux-alt <rachellefriloux@gmail.com> 1756021989 -0500	checkout: moving from Sallie to salliedone
+
+
+0000000000000000000000000000000000000000 16bc9a0c25bec648ed7633a5c98406605a464c06 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969996 -0500	clone: from https://github.com/rachellefriloux-alt/Sallie.git
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970009 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970014 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970035 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970061 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970138 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970162 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970169 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755985115 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755985285 -0500	remote set-head
+16bc9a0c25bec648ed7633a5c98406605a464c06 16bc9a0c25bec648ed7633a5c98406605a464c06 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755985314 -0500	remote set-head
+c90de34156a0e7ab171c66ccfeb813bc941045ae c90de34156a0e7ab171c66ccfeb813bc941045ae Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986675 -0500	remote set-head
+c90de34156a0e7ab171c66ccfeb813bc941045ae c90de34156a0e7ab171c66ccfeb813bc941045ae Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986740 -0500	remote set-head
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986776 -0500	remote set-head
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986810 -0500	remote set-head
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986826 -0500	remote set-head
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986834 -0500	remote set-head
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755986840 -0500	remote set-head
+613e517c70a12611fc864e8f07fd9a812f5e85ab 613e517c70a12611fc864e8f07fd9a812f5e85ab Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755988903 -0500	remote set-head
+3fc9ed46c317203e9c49786b834a75d8c5781a9b 3fc9ed46c317203e9c49786b834a75d8c5781a9b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756017384 -0500	remote set-head
+3fc9ed46c317203e9c49786b834a75d8c5781a9b 3fc9ed46c317203e9c49786b834a75d8c5781a9b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756017397 -0500	remote set-head
+3fc9ed46c317203e9c49786b834a75d8c5781a9b 3fc9ed46c317203e9c49786b834a75d8c5781a9b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756017407 -0500	remote set-head
+3fc9ed46c317203e9c49786b834a75d8c5781a9b 3fc9ed46c317203e9c49786b834a75d8c5781a9b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756021975 -0500	remote set-head
+
+
+ref: refs/remotes/origin/main
+
+
+ref: refs/heads/main
+
+
+0000000000000000000000000000000000000000 16bc9a0c25bec648ed7633a5c98406605a464c06 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969872 -0500	clone: from https://github.com/rachellefriloux-alt/Sallie.git
+16bc9a0c25bec648ed7633a5c98406605a464c06 94d75a54be6a43136f2b6e294e403739b3302258 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969966 -0500	checkout: moving from main to Sallie
+94d75a54be6a43136f2b6e294e403739b3302258 e89c2bc775b11130d5981cc289fdac46e467685b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970178 -0500	pull --tags origin Sallie: Fast-forward
+e89c2bc775b11130d5981cc289fdac46e467685b 2069985bd463735596f51aed9ba9155351c03d85 rachellefriloux-alt <rachellefriloux@gmail.com> 1755985427 -0500	pull --tags origin Sallie: Fast-forward
+2069985bd463735596f51aed9ba9155351c03d85 63db7a79ad0d40c082cb46c905f0ff6907d50b9c rachellefriloux-alt <rachellefriloux@gmail.com> 1755985460 -0500	commit: chore: Initialize Sallie workspace configuration
+63db7a79ad0d40c082cb46c905f0ff6907d50b9c 7244244d6d5cc9b511dc0c1a25297d3275bff8a9 rachellefriloux-alt <rachellefriloux@gmail.com> 1755989119 -0500	commit: 1234567890-=
+7244244d6d5cc9b511dc0c1a25297d3275bff8a9 f616eb8da8e071a1206abeb07b2ee6bf5665321a rachellefriloux-alt <rachellefriloux@gmail.com> 1756008088 -0500	commit: done
+f616eb8da8e071a1206abeb07b2ee6bf5665321a 479b7acd8c6a9f6ca2ea679c278021d14ebe12c7 rachellefriloux-alt <rachellefriloux@gmail.com> 1756009551 -0500	commit: done
+479b7acd8c6a9f6ca2ea679c278021d14ebe12c7 b83e780a0d60289802282702a6c4df022b9d87d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1756009629 -0500	commit: buildOutputCleanup
+b83e780a0d60289802282702a6c4df022b9d87d6 6a1acd84b32f19c60761edd946f8d475372dba35 rachellefriloux-alt <rachellefriloux@gmail.com> 1756019185 -0500	commit: maybe
+6a1acd84b32f19c60761edd946f8d475372dba35 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756019241 -0500	pull --tags origin Sallie: Merge made by the 'ort' strategy.
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756616687 -0500	reset: moving to HEAD
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756640480 -0500	reset: moving to HEAD
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 48855163e21dfb930a38eeba6adfeaa7e5ffbce4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641192 -0500	reset: moving to HEAD
+48855163e21dfb930a38eeba6adfeaa7e5ffbce4 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641204 -0500	commit: fucked
+f3b200adb3965276e37f39f406d5af447ed0e7a2 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641261 -0500	checkout: moving from Sallie to now
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 67f979dae548e81ab30e941ebe89abbde87c1611 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641266 -0500	commit: assest
+67f979dae548e81ab30e941ebe89abbde87c1611 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641305 -0500	checkout: moving from now to main
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641436 -0500	reset: moving to HEAD
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641437 -0500	checkout: moving from main to 8-dont-work-android
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641481 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641485 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641491 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641509 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641515 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641530 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 9d046b4884c7156b5e3b0eca320f0779c17fdf25 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641541 -0500	reset: moving to HEAD
+9d046b4884c7156b5e3b0eca320f0779c17fdf25 ee6f8d2aaab479915cab00a5a88abb616cccb5a4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641559 -0500	commit: mjbn,nlm,.
+ee6f8d2aaab479915cab00a5a88abb616cccb5a4 67f979dae548e81ab30e941ebe89abbde87c1611 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641570 -0500	checkout: moving from 8-dont-work-android to now
+67f979dae548e81ab30e941ebe89abbde87c1611 731e121d154f1d575b6c87cc1f0c755adcb103d5 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641705 -0500	merge 8-dont-work-android: Merge made by the 'ort' strategy.
+731e121d154f1d575b6c87cc1f0c755adcb103d5 ee6f8d2aaab479915cab00a5a88abb616cccb5a4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641723 -0500	checkout: moving from now to 8-dont-work-android
+ee6f8d2aaab479915cab00a5a88abb616cccb5a4 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641756 -0500	checkout: moving from 8-dont-work-android to Sallie
+f3b200adb3965276e37f39f406d5af447ed0e7a2 ee6f8d2aaab479915cab00a5a88abb616cccb5a4 rachellefriloux-alt <rachellefriloux@gmail.com> 1756641771 -0500	checkout: moving from Sallie to 8-dont-work-android
+ee6f8d2aaab479915cab00a5a88abb616cccb5a4 2df3d5f00053df5001886c2afbfb9d6867c8ea80 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642068 -0500	checkout: moving from 8-dont-work-android to main
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 80e26e15210bc504f1f7ba6c0ee0c6f1c675eb14 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642072 -0500	commit: .lmm.m.n.n
+80e26e15210bc504f1f7ba6c0ee0c6f1c675eb14 c9dd081f79a1d3a10b1a41f12adf92e1cabb1cc1 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642081 -0500	commit: Update .gitignore
+c9dd081f79a1d3a10b1a41f12adf92e1cabb1cc1 c403f9155ab721093a1e9cafa057d1b8d1c8eec9 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642096 -0500	pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+c403f9155ab721093a1e9cafa057d1b8d1c8eec9 c403f9155ab721093a1e9cafa057d1b8d1c8eec9 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642184 -0500	reset: moving to HEAD
+c403f9155ab721093a1e9cafa057d1b8d1c8eec9 fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642278 -0500	commit: ,jnk/jn
+fa63503049c4900aaede259e9041610802e2e89c f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642292 -0500	checkout: moving from main to Sallie
+f3b200adb3965276e37f39f406d5af447ed0e7a2 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642358 -0500	checkout: moving from Sallie to Sallie
+f3b200adb3965276e37f39f406d5af447ed0e7a2 f3b200adb3965276e37f39f406d5af447ed0e7a2 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642387 -0500	reset: moving to HEAD
+f3b200adb3965276e37f39f406d5af447ed0e7a2 731e121d154f1d575b6c87cc1f0c755adcb103d5 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642391 -0500	checkout: moving from Sallie to 731e121d154f1d575b6c87cc1f0c755adcb103d5
+731e121d154f1d575b6c87cc1f0c755adcb103d5 fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642400 -0500	checkout: moving from 731e121d154f1d575b6c87cc1f0c755adcb103d5 to main
+fa63503049c4900aaede259e9041610802e2e89c fa63503049c4900aaede259e9041610802e2e89c rachellefriloux-alt <rachellefriloux@gmail.com> 1756642413 -0500	checkout: moving from main to main
+
+
+0000000000000000000000000000000000000000 16bc9a0c25bec648ed7633a5c98406605a464c06 rachellefriloux-alt <rachellefriloux@gmail.com> 1755969872 -0500	clone: from https://github.com/rachellefriloux-alt/Sallie.git
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756640448 -0500	remote set-head
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756641353 -0500	remote set-head
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756641450 -0500	remote set-head
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756641453 -0500	remote set-head
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756641612 -0500	remote set-head
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756641716 -0500	remote set-head
+2df3d5f00053df5001886c2afbfb9d6867c8ea80 2df3d5f00053df5001886c2afbfb9d6867c8ea80 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756641729 -0500	remote set-head
+5cdf4e9c8654139df2e2333c5bb3e41cc38ad95e 5cdf4e9c8654139df2e2333c5bb3e41cc38ad95e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756642092 -0500	remote set-head
+5cdf4e9c8654139df2e2333c5bb3e41cc38ad95e 5cdf4e9c8654139df2e2333c5bb3e41cc38ad95e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756642098 -0500	remote set-head
+c403f9155ab721093a1e9cafa057d1b8d1c8eec9 c403f9155ab721093a1e9cafa057d1b8d1c8eec9 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756642104 -0500	remote set-head
+fa63503049c4900aaede259e9041610802e2e89c fa63503049c4900aaede259e9041610802e2e89c Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756642283 -0500	remote set-head
+
+
+ref: refs/remotes/origin/main
+
+
+ref: refs/heads/sallie-1.0
+
+
+0000000000000000000000000000000000000000 afe302ad159e406f9df474330e2043e00496715d rachellefriloux-alt <rachellefriloux@gmail.com> 1755616759 -0500	clone: from https://github.com/rachellefriloux-alt/sallie_1.0.git
+afe302ad159e406f9df474330e2043e00496715d 869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755616839 -0500	checkout: moving from main to changes
+869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 rachellefriloux-alt <rachellefriloux@gmail.com> 1755618391 -0500	checkout: moving from changes to copilot/fix-5
+4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 afe302ad159e406f9df474330e2043e00496715d rachellefriloux-alt <rachellefriloux@gmail.com> 1755618405 -0500	checkout: moving from copilot/fix-5 to main
+afe302ad159e406f9df474330e2043e00496715d afe302ad159e406f9df474330e2043e00496715d rachellefriloux-alt <rachellefriloux@gmail.com> 1755619215 -0500	reset: moving to HEAD
+afe302ad159e406f9df474330e2043e00496715d e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619268 -0500	merge origin/revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff: Fast-forward
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619278 -0500	checkout: moving from main to revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 828aa73a0aa089decb2a685ef6150622570d1b65 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619281 -0500	checkout: moving from revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to sallie-1.0
+828aa73a0aa089decb2a685ef6150622570d1b65 ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce rachellefriloux-alt <rachellefriloux@gmail.com> 1755619298 -0500	merge origin/copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff: Fast-forward
+ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619321 -0500	merge revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff: Fast-forward
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619331 -0500	checkout: moving from sallie-1.0 to revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619341 -0500	checkout: moving from revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to sallie-1.0
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 f9944bf40acf49b642f6caa89c01bee90b22de2c rachellefriloux-alt <rachellefriloux@gmail.com> 1755619351 -0500	merge copilot/fix-5: Merge made by the 'ort' strategy.
+f9944bf40acf49b642f6caa89c01bee90b22de2c 869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619361 -0500	checkout: moving from sallie-1.0 to changes
+869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 f9944bf40acf49b642f6caa89c01bee90b22de2c rachellefriloux-alt <rachellefriloux@gmail.com> 1755619370 -0500	checkout: moving from changes to sallie-1.0
+f9944bf40acf49b642f6caa89c01bee90b22de2c 4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 rachellefriloux-alt <rachellefriloux@gmail.com> 1755619417 -0500	checkout: moving from sallie-1.0 to copilot/fix-5
+4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 f9944bf40acf49b642f6caa89c01bee90b22de2c rachellefriloux-alt <rachellefriloux@gmail.com> 1755619423 -0500	checkout: moving from copilot/fix-5 to sallie-1.0
+f9944bf40acf49b642f6caa89c01bee90b22de2c a7c72619fb430e92634b17eb02d5fc148ba8861a rachellefriloux-alt <rachellefriloux@gmail.com> 1755619981 -0500	commit (merge): Merge branch 'changes' into sallie-1.0
+a7c72619fb430e92634b17eb02d5fc148ba8861a a7c72619fb430e92634b17eb02d5fc148ba8861a rachellefriloux-alt <rachellefriloux@gmail.com> 1755620386 -0500	reset: moving to HEAD
+a7c72619fb430e92634b17eb02d5fc148ba8861a 59b652d89e36a2c8aa29ee054cf141aba3847c5a rachellefriloux-alt <rachellefriloux@gmail.com> 1755620838 -0500	commit (merge): Merge remote-tracking branch 'origin/copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1' into sallie-1.0
+59b652d89e36a2c8aa29ee054cf141aba3847c5a e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755620864 -0500	checkout: moving from sallie-1.0 to main
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 59b652d89e36a2c8aa29ee054cf141aba3847c5a rachellefriloux-alt <rachellefriloux@gmail.com> 1755620878 -0500	merge sallie-1.0: Fast-forward
+59b652d89e36a2c8aa29ee054cf141aba3847c5a 744d766539c5ef38b613be43b549df92bf58931b rachellefriloux-alt <rachellefriloux@gmail.com> 1755621479 -0500	commit (merge): Merge remote-tracking branch 'origin/revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1'
+744d766539c5ef38b613be43b549df92bf58931b 59b652d89e36a2c8aa29ee054cf141aba3847c5a rachellefriloux-alt <rachellefriloux@gmail.com> 1755621498 -0500	checkout: moving from main to sallie-1.0
+59b652d89e36a2c8aa29ee054cf141aba3847c5a e256b3b300c5de8d3bc5e1b46bc02d3098950393 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621553 -0500	commit (merge): Merge remote-tracking branch 'origin/revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1' into sallie-1.0
+e256b3b300c5de8d3bc5e1b46bc02d3098950393 744d766539c5ef38b613be43b549df92bf58931b rachellefriloux-alt <rachellefriloux@gmail.com> 1755621585 -0500	checkout: moving from sallie-1.0 to main
+744d766539c5ef38b613be43b549df92bf58931b a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621602 -0500	merge sallie-1.0: Merge made by the 'ort' strategy.
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 e256b3b300c5de8d3bc5e1b46bc02d3098950393 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621618 -0500	checkout: moving from main to sallie-1.0
+e256b3b300c5de8d3bc5e1b46bc02d3098950393 4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621640 -0500	checkout: moving from sallie-1.0 to copilot/fix-5
+4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 1b1184593bf91fb0e909cebb59ddfa0efdca62d1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621650 -0500	checkout: moving from copilot/fix-5 to revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+1b1184593bf91fb0e909cebb59ddfa0efdca62d1 e8fe59b479e2bf816a19c611a363f73c179725ee rachellefriloux-alt <rachellefriloux@gmail.com> 1755621656 -0500	checkout: moving from revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+e8fe59b479e2bf816a19c611a363f73c179725ee ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce rachellefriloux-alt <rachellefriloux@gmail.com> 1755621666 -0500	checkout: moving from copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce 869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621676 -0500	checkout: moving from copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to changes
+869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 e142c46e865c40bcfd93e9b06b42191c9f3b7e09 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621683 -0500	checkout: moving from changes to revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+e142c46e865c40bcfd93e9b06b42191c9f3b7e09 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621699 -0500	merge main: Fast-forward
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 5f291514f28eeca40f1590b9ea5918afca437c80 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621710 -0500	checkout: moving from revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1
+5f291514f28eeca40f1590b9ea5918afca437c80 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621725 -0500	merge main: Fast-forward
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621747 -0500	checkout: moving from copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1 to revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621766 -0500	checkout: moving from revert-2-copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621785 -0500	checkout: moving from copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1 to changes
+869e9f95dddb7d4cfa4e7b8fc074505d597ec8a7 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621796 -0500	merge copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1: Fast-forward
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 e256b3b300c5de8d3bc5e1b46bc02d3098950393 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621826 -0500	checkout: moving from changes to sallie-1.0
+e256b3b300c5de8d3bc5e1b46bc02d3098950393 1b1184593bf91fb0e909cebb59ddfa0efdca62d1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621829 -0500	checkout: moving from sallie-1.0 to revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+1b1184593bf91fb0e909cebb59ddfa0efdca62d1 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755621834 -0500	checkout: moving from revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to main
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 1b1184593bf91fb0e909cebb59ddfa0efdca62d1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755622985 -0500	checkout: moving from main to revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+1b1184593bf91fb0e909cebb59ddfa0efdca62d1 33d161a959dfb4975045186abe31d845de4d56cd rachellefriloux-alt <rachellefriloux@gmail.com> 1755623004 -0500	checkout: moving from revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b
+33d161a959dfb4975045186abe31d845de4d56cd a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755623340 -0500	checkout: moving from copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b to main
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 47b0bff203c6b7428fe68f8b7f9f30f5c6af1264 rachellefriloux-alt <rachellefriloux@gmail.com> 1755625005 -0500	checkout: moving from main to copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b
+47b0bff203c6b7428fe68f8b7f9f30f5c6af1264 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755625224 -0500	checkout: moving from copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b to main
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 f3263d7546ab9d883b7e26a98e3148ce492c65c5 rachellefriloux-alt <rachellefriloux@gmail.com> 1755625260 -0500	merge origin/copilot/fix-7e75f29d-dd5c-4e72-b447-fd0c778082b4: Fast-forward
+f3263d7546ab9d883b7e26a98e3148ce492c65c5 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755625435 -0500	commit (merge): Merge branch 'copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b'
+88bf100f743fd369276f112032cc1ff3330f8f0e 47b0bff203c6b7428fe68f8b7f9f30f5c6af1264 rachellefriloux-alt <rachellefriloux@gmail.com> 1755627609 -0500	checkout: moving from main to copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b
+47b0bff203c6b7428fe68f8b7f9f30f5c6af1264 1b1184593bf91fb0e909cebb59ddfa0efdca62d1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755627633 -0500	checkout: moving from copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b to revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+1b1184593bf91fb0e909cebb59ddfa0efdca62d1 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755627644 -0500	checkout: moving from revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 e5a014b53185a4c3ae61056a69f15d16fbc30dd1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755627668 -0500	checkout: moving from copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1 to copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883
+e5a014b53185a4c3ae61056a69f15d16fbc30dd1 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755629433 -0500	checkout: moving from copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883 to main
+88bf100f743fd369276f112032cc1ff3330f8f0e e256b3b300c5de8d3bc5e1b46bc02d3098950393 rachellefriloux-alt <rachellefriloux@gmail.com> 1755629443 -0500	checkout: moving from main to sallie-1.0
+e256b3b300c5de8d3bc5e1b46bc02d3098950393 b2f0fedb59e28ceafe97328e4dcaa157babd4eaf rachellefriloux-alt <rachellefriloux@gmail.com> 1755629455 -0500	merge copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883: Fast-forward
+b2f0fedb59e28ceafe97328e4dcaa157babd4eaf 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755629564 -0500	commit (merge): Merge remote-tracking branch 'origin/copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d' into sallie-1.0
+816c335be8a77e7d841514ec7e1fb0d9e96167ab b2f0fedb59e28ceafe97328e4dcaa157babd4eaf rachellefriloux-alt <rachellefriloux@gmail.com> 1755629577 -0500	checkout: moving from sallie-1.0 to copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883
+b2f0fedb59e28ceafe97328e4dcaa157babd4eaf 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755629580 -0500	checkout: moving from copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883 to sallie-1.0
+816c335be8a77e7d841514ec7e1fb0d9e96167ab a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755629608 -0500	checkout: moving from sallie-1.0 to copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 5340f943ad8b0d309d153d9237802e0bcb316e14 rachellefriloux-alt <rachellefriloux@gmail.com> 1755629615 -0500	checkout: moving from copilot/fix-d2f28040-d0be-4750-ae80-5eaeae4090d1 to copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d
+5340f943ad8b0d309d153d9237802e0bcb316e14 ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce rachellefriloux-alt <rachellefriloux@gmail.com> 1755629633 -0500	checkout: moving from copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d to copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+ca5bcdcac66c1ce9d101b4540c50d0de076ec4ce 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755629660 -0500	merge main: Fast-forward
+88bf100f743fd369276f112032cc1ff3330f8f0e 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755629745 -0500	merge sallie-1.0: Fast-forward
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755629847 -0500	checkout: moving from copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to merg
+88bf100f743fd369276f112032cc1ff3330f8f0e b2f0fedb59e28ceafe97328e4dcaa157babd4eaf rachellefriloux-alt <rachellefriloux@gmail.com> 1755629871 -0500	merge copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883: Fast-forward
+b2f0fedb59e28ceafe97328e4dcaa157babd4eaf 5944eb1032b0ec58586bd73d7a367b506c995d02 rachellefriloux-alt <rachellefriloux@gmail.com> 1755629960 -0500	commit (merge): Merge branch 'copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d' into merg
+5944eb1032b0ec58586bd73d7a367b506c995d02 e8fe59b479e2bf816a19c611a363f73c179725ee rachellefriloux-alt <rachellefriloux@gmail.com> 1755629990 -0500	checkout: moving from merg to copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+e8fe59b479e2bf816a19c611a363f73c179725ee 5944eb1032b0ec58586bd73d7a367b506c995d02 rachellefriloux-alt <rachellefriloux@gmail.com> 1755629996 -0500	checkout: moving from copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to merg
+5944eb1032b0ec58586bd73d7a367b506c995d02 e8fe59b479e2bf816a19c611a363f73c179725ee rachellefriloux-alt <rachellefriloux@gmail.com> 1755630002 -0500	checkout: moving from merg to copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+e8fe59b479e2bf816a19c611a363f73c179725ee 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755630016 -0500	merge sallie-1.0: Fast-forward
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630089 -0500	commit (merge): Merge branch 'merg' into copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+5c14883775ecb40774c19439f9679dc30d8e0fb7 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755630102 -0500	checkout: moving from copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755630108 -0500	checkout: moving from copilot/fix-2561f70f-de34-4613-8ef2-35bfb2e96dff to main
+88bf100f743fd369276f112032cc1ff3330f8f0e 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630141 -0500	checkout: moving from main to copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+5c14883775ecb40774c19439f9679dc30d8e0fb7 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755630148 -0500	checkout: moving from copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to sallie-1.0
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630152 -0500	checkout: moving from sallie-1.0 to copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+5c14883775ecb40774c19439f9679dc30d8e0fb7 4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630217 -0500	checkout: moving from copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to copilot/fix-5
+4c7e4c2df14be3b1f9a87ca49581d2bb11ee8824 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755630233 -0500	merge main: Fast-forward
+88bf100f743fd369276f112032cc1ff3330f8f0e 1b1184593bf91fb0e909cebb59ddfa0efdca62d1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630282 -0500	checkout: moving from copilot/fix-5 to revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+1b1184593bf91fb0e909cebb59ddfa0efdca62d1 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630335 -0500	checkout: moving from revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to changes
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755630345 -0500	merge main: Fast-forward
+88bf100f743fd369276f112032cc1ff3330f8f0e 1b1184593bf91fb0e909cebb59ddfa0efdca62d1 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630354 -0500	checkout: moving from changes to revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1
+1b1184593bf91fb0e909cebb59ddfa0efdca62d1 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755630359 -0500	checkout: moving from revert-3-copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1 to changes
+88bf100f743fd369276f112032cc1ff3330f8f0e 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630373 -0500	merge copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1: Fast-forward
+5c14883775ecb40774c19439f9679dc30d8e0fb7 88bf100f743fd369276f112032cc1ff3330f8f0e rachellefriloux-alt <rachellefriloux@gmail.com> 1755630566 -0500	checkout: moving from changes to main
+88bf100f743fd369276f112032cc1ff3330f8f0e 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630573 -0500	merge changes: Fast-forward
+5c14883775ecb40774c19439f9679dc30d8e0fb7 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630734 -0500	commit (merge): Merge branch 'main' of https://github.com/rachellefriloux-alt/sallie_1.0
+134946ce96a6f99c8da93cb5de4e763d4784cb07 b2f0fedb59e28ceafe97328e4dcaa157babd4eaf rachellefriloux-alt <rachellefriloux@gmail.com> 1755630794 -0500	checkout: moving from main to copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883
+b2f0fedb59e28ceafe97328e4dcaa157babd4eaf 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755630809 -0500	merge main: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631283 -0500	checkout: moving from copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883 to main
+134946ce96a6f99c8da93cb5de4e763d4784cb07 5944eb1032b0ec58586bd73d7a367b506c995d02 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631295 -0500	checkout: moving from main to merg
+5944eb1032b0ec58586bd73d7a367b506c995d02 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631299 -0500	checkout: moving from merg to copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883
+134946ce96a6f99c8da93cb5de4e763d4784cb07 5944eb1032b0ec58586bd73d7a367b506c995d02 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631302 -0500	checkout: moving from copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883 to merg
+5944eb1032b0ec58586bd73d7a367b506c995d02 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631314 -0500	merge copilot/fix-d4a0a8c3-6dc5-4290-8eaa-63676585b9d1: Fast-forward
+5c14883775ecb40774c19439f9679dc30d8e0fb7 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631336 -0500	merge copilot/fix-8fef8858-c3c6-4ccb-b6b5-011cb72df883: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 5c14883775ecb40774c19439f9679dc30d8e0fb7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631378 -0500	checkout: moving from merg to changes
+5c14883775ecb40774c19439f9679dc30d8e0fb7 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631398 -0500	merge merg: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631623 -0500	checkout: moving from changes to merg
+134946ce96a6f99c8da93cb5de4e763d4784cb07 816c335be8a77e7d841514ec7e1fb0d9e96167ab rachellefriloux-alt <rachellefriloux@gmail.com> 1755631638 -0500	checkout: moving from merg to sallie-1.0
+816c335be8a77e7d841514ec7e1fb0d9e96167ab 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631646 -0500	merge main: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631651 -0500	checkout: moving from sallie-1.0 to merg
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631655 -0500	checkout: moving from merg to sallie-1.0
+134946ce96a6f99c8da93cb5de4e763d4784cb07 5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631669 -0500	merge origin/copilot/fix-0b6ecd9d-a699-4698-b30a-b68b38da5d14: Fast-forward
+5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 5340f943ad8b0d309d153d9237802e0bcb316e14 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631757 -0500	checkout: moving from sallie-1.0 to copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d
+5340f943ad8b0d309d153d9237802e0bcb316e14 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631767 -0500	merge main: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 47b0bff203c6b7428fe68f8b7f9f30f5c6af1264 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631814 -0500	checkout: moving from copilot/fix-7938a3b7-103c-4691-90dd-f7f8aa26463d to copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b
+47b0bff203c6b7428fe68f8b7f9f30f5c6af1264 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631820 -0500	merge main: Fast-forward
+134946ce96a6f99c8da93cb5de4e763d4784cb07 5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631856 -0500	checkout: moving from copilot/fix-585a3686-e3aa-4e11-8138-f542c434ad2b to copilot/fix-0b6ecd9d-a699-4698-b30a-b68b38da5d14
+5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755631871 -0500	checkout: moving from copilot/fix-0b6ecd9d-a699-4698-b30a-b68b38da5d14 to sallie-1.0
+5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 134946ce96a6f99c8da93cb5de4e763d4784cb07 rachellefriloux-alt <rachellefriloux@gmail.com> 1755632011 -0500	checkout: moving from sallie-1.0 to main
+134946ce96a6f99c8da93cb5de4e763d4784cb07 21eca8f936cafb3e3f8b358d0ad5394876ccf0cd rachellefriloux-alt <rachellefriloux@gmail.com> 1755632019 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+21eca8f936cafb3e3f8b358d0ad5394876ccf0cd 5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 rachellefriloux-alt <rachellefriloux@gmail.com> 1755632588 -0500	checkout: moving from main to sallie-1.0
+5516700bc7b77fd5430f6dcd546aa7f40ab1efa7 21eca8f936cafb3e3f8b358d0ad5394876ccf0cd rachellefriloux-alt <rachellefriloux@gmail.com> 1755632595 -0500	merge main: Fast-forward
+21eca8f936cafb3e3f8b358d0ad5394876ccf0cd 6ccb8835f540719dfa81fbcd73be6379f6a7e54e rachellefriloux-alt <rachellefriloux@gmail.com> 1755634009 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+6ccb8835f540719dfa81fbcd73be6379f6a7e54e 0909869e40ea94dae89f48c4edf9a1215154739e rachellefriloux-alt <rachellefriloux@gmail.com> 1755646721 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+0909869e40ea94dae89f48c4edf9a1215154739e 1de8b79abb77f1920edc92781fbc12dbfd177d3b rachellefriloux-alt <rachellefriloux@gmail.com> 1755654933 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+1de8b79abb77f1920edc92781fbc12dbfd177d3b 46c379ad1a633aed8c550cc85bdba1bdc1d01465 rachellefriloux-alt <rachellefriloux@gmail.com> 1755654970 -0500	merge origin/copilot/fix-18: Merge made by the 'ort' strategy.
+46c379ad1a633aed8c550cc85bdba1bdc1d01465 1401bc74718d315b62d9ac5b03bcd0eafb69c48d rachellefriloux-alt <rachellefriloux@gmail.com> 1755655085 -0500	commit (merge): Merge remote-tracking branch 'origin/copilot/fix-c0ca9033-7f01-46a3-818d-170dc09b697b' into sallie-1.0
+1401bc74718d315b62d9ac5b03bcd0eafb69c48d db3242c880a104bfc2e7986deb95f14c7d89e2dd rachellefriloux-alt <rachellefriloux@gmail.com> 1755814274 -0500	pull --ff --recurse-submodules --progress origin: Fast-forward
+db3242c880a104bfc2e7986deb95f14c7d89e2dd bd6a310a2803714f440c0e7e9ff1318cd270e93b rachellefriloux-alt <rachellefriloux@gmail.com> 1755970323 -0500	merge main: Merge made by the 'ort' strategy.
+bd6a310a2803714f440c0e7e9ff1318cd270e93b 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970351 -0500	merge origin/copilot/fix-4312e12a-4f85-4def-8e0f-51720c066af0: Merge made by the 'ort' strategy.
+
+
+0000000000000000000000000000000000000000 afe302ad159e406f9df474330e2043e00496715d rachellefriloux-alt <rachellefriloux@gmail.com> 1755616759 -0500	clone: from https://github.com/rachellefriloux-alt/sallie_1.0.git
+afe302ad159e406f9df474330e2043e00496715d afe302ad159e406f9df474330e2043e00496715d Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755616954 -0500	remote set-head
+afe302ad159e406f9df474330e2043e00496715d afe302ad159e406f9df474330e2043e00496715d Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755618978 -0500	remote set-head
+afe302ad159e406f9df474330e2043e00496715d afe302ad159e406f9df474330e2043e00496715d Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755619377 -0500	remote set-head
+59b652d89e36a2c8aa29ee054cf141aba3847c5a 59b652d89e36a2c8aa29ee054cf141aba3847c5a Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755620899 -0500	remote set-head
+59b652d89e36a2c8aa29ee054cf141aba3847c5a 59b652d89e36a2c8aa29ee054cf141aba3847c5a Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621415 -0500	remote set-head
+744d766539c5ef38b613be43b549df92bf58931b 744d766539c5ef38b613be43b549df92bf58931b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621497 -0500	remote set-head
+744d766539c5ef38b613be43b549df92bf58931b 744d766539c5ef38b613be43b549df92bf58931b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621506 -0500	remote set-head
+744d766539c5ef38b613be43b549df92bf58931b 744d766539c5ef38b613be43b549df92bf58931b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621561 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621610 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621616 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621622 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621640 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621649 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621659 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621667 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621675 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621684 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621815 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755621856 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755622981 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755622989 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755623345 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755624999 -0500	remote set-head
+a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 a00e3a8d64dbdb1bf69762a4fa50c4e46e5d96d6 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755625019 -0500	remote set-head
+f3263d7546ab9d883b7e26a98e3148ce492c65c5 f3263d7546ab9d883b7e26a98e3148ce492c65c5 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755625267 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755625459 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755627613 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755627653 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629428 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629439 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629447 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629570 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629639 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629667 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629732 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629752 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629842 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629877 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755629967 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630007 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630096 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630146 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630218 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630242 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630289 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630339 -0500	remote set-head
+88bf100f743fd369276f112032cc1ff3330f8f0e 88bf100f743fd369276f112032cc1ff3330f8f0e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630352 -0500	remote set-head
+6cba494afc24d9d447c01d5f422d278cbaccad74 6cba494afc24d9d447c01d5f422d278cbaccad74 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630581 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630739 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630801 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755630815 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631287 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631384 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631404 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631611 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631629 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631676 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631762 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631774 -0500	remote set-head
+134946ce96a6f99c8da93cb5de4e763d4784cb07 134946ce96a6f99c8da93cb5de4e763d4784cb07 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755631826 -0500	remote set-head
+21eca8f936cafb3e3f8b358d0ad5394876ccf0cd 21eca8f936cafb3e3f8b358d0ad5394876ccf0cd Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755632015 -0500	remote set-head
+21eca8f936cafb3e3f8b358d0ad5394876ccf0cd 21eca8f936cafb3e3f8b358d0ad5394876ccf0cd Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755632021 -0500	remote set-head
+01d8e4ea1a29b56aa8b6bfb2a8308b8d1658cca3 01d8e4ea1a29b56aa8b6bfb2a8308b8d1658cca3 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755632601 -0500	remote set-head
+01d8e4ea1a29b56aa8b6bfb2a8308b8d1658cca3 01d8e4ea1a29b56aa8b6bfb2a8308b8d1658cca3 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755632687 -0500	remote set-head
+73148adf38bd983d87f517817d743411b4844540 73148adf38bd983d87f517817d743411b4844540 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755633998 -0500	remote set-head
+73148adf38bd983d87f517817d743411b4844540 73148adf38bd983d87f517817d743411b4844540 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755634011 -0500	remote set-head
+73148adf38bd983d87f517817d743411b4844540 73148adf38bd983d87f517817d743411b4844540 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755634043 -0500	remote set-head
+73148adf38bd983d87f517817d743411b4844540 6ccb8835f540719dfa81fbcd73be6379f6a7e54e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755645394 -0500	remote set-head
+0909869e40ea94dae89f48c4edf9a1215154739e 0909869e40ea94dae89f48c4edf9a1215154739e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755646711 -0500	remote set-head
+0909869e40ea94dae89f48c4edf9a1215154739e 0909869e40ea94dae89f48c4edf9a1215154739e Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755646725 -0500	remote set-head
+47735a79896dbbd1e71cb0a2846eefe143f93e60 47735a79896dbbd1e71cb0a2846eefe143f93e60 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755648818 -0500	remote set-head
+47735a79896dbbd1e71cb0a2846eefe143f93e60 47735a79896dbbd1e71cb0a2846eefe143f93e60 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755650683 -0500	remote set-head
+1de8b79abb77f1920edc92781fbc12dbfd177d3b 1de8b79abb77f1920edc92781fbc12dbfd177d3b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755652937 -0500	remote set-head
+1de8b79abb77f1920edc92781fbc12dbfd177d3b 1de8b79abb77f1920edc92781fbc12dbfd177d3b Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755654936 -0500	remote set-head
+1401bc74718d315b62d9ac5b03bcd0eafb69c48d 1401bc74718d315b62d9ac5b03bcd0eafb69c48d Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755655099 -0500	remote set-head
+1401bc74718d315b62d9ac5b03bcd0eafb69c48d 1401bc74718d315b62d9ac5b03bcd0eafb69c48d Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755655125 -0500	remote set-head
+1401bc74718d315b62d9ac5b03bcd0eafb69c48d 1401bc74718d315b62d9ac5b03bcd0eafb69c48d Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755655136 -0500	remote set-head
+db3242c880a104bfc2e7986deb95f14c7d89e2dd db3242c880a104bfc2e7986deb95f14c7d89e2dd Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755814264 -0500	remote set-head
+db3242c880a104bfc2e7986deb95f14c7d89e2dd db3242c880a104bfc2e7986deb95f14c7d89e2dd Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755814277 -0500	remote set-head
+db3242c880a104bfc2e7986deb95f14c7d89e2dd db3242c880a104bfc2e7986deb95f14c7d89e2dd Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970001 -0500	remote set-head
+300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970362 -0500	remote set-head
+
+
+ref: refs/remotes/origin/sallie-1.0
+
+
+ref: refs/heads/sallie-1.0
+
+
+0000000000000000000000000000000000000000 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970421 -0500	clone: from https://github.com/rachellefriloux-alt/sallie_1.0.git
+
+
+0000000000000000000000000000000000000000 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec rachellefriloux-alt <rachellefriloux@gmail.com> 1755970421 -0500	clone: from https://github.com/rachellefriloux-alt/sallie_1.0.git
+300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec 300ddaaa7694b03b45dcec8d33ad62cb9c13f0ec Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1755970522 -0500	remote set-head
+
+
+ref: refs/remotes/origin/sallie-1.0
+
+
+ref: refs/heads/main
+
+
+0000000000000000000000000000000000000000 7289a127f926a1a5c7100047a40f83062a2be2a8 rachellefriloux-alt <rachellefriloux@gmail.com> 1756642750 -0500	commit (initial): Initial commit
+
+
+0000000000000000000000000000000000000000 7289a127f926a1a5c7100047a40f83062a2be2a8 Rachelle Friloux <chell@Rachelles_Lptop.(none)> 1756642866 -0500	remote set-head
+
+
+ref: refs/remotes/origin/main
