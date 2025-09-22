@@ -1,5 +1,1 @@
-Checkpoint before assistant change: Add dedicated page for visiting "Sallie" and chat bubble overlay
-
-Update expo-router type definitions to include new route paths for 'sallie' page and associated navigation, enhancing user experience.
-
-Replit-Commit-Author: Assistant
+Create AdvancedMemoryManager.kt
