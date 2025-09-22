@@ -1,12 +1,10 @@
-tree 42a5134494b7a032541fb7cc19af1d554cebde88
-parent 0209e32c4a30960c90cd6dfc6f834a4d84baaa36
-author rachellefriloux <46798082-rachellefriloux@users.noreply.replit.com> 1757775218 +0000
-committer rachellefriloux <46798082-rachellefriloux@users.noreply.replit.com> 1757775218 +0000
+tree fb195f96bb8ee0ba57f51f0cd71efaeace3a41e6
+parent 552a11d65fd94c04d9de9a699e6437a054f54512
+author rachellefriloux <46798082-rachellefriloux@users.noreply.replit.com> 1757827624 +0000
+committer rachellefriloux <46798082-rachellefriloux@users.noreply.replit.com> 1757827624 +0000
 
-Update color themes and add new advanced features
+Checkpoint before assistant change: Add dedicated page for visiting "Sallie" and chat bubble overlay
 
-Update color definitions in AdvancedVoiceInteraction, add emotionalIntensity to ContextAwareness, modify persona personality mapping in SallieBrain, adjust memory search in SallieBrain, refactor storage in enhancedPersona, introduce HapticTab component and new core modules for Creative Powers, Crypto Management, Database Integration, and Flow State Guard.
+Update expo-router type definitions to include new route paths for 'sallie' page and associated navigation, enhancing user experience.
 
-Replit-Commit-Author: Agent
-Replit-Commit-Session-Id: 9693e671-55dd-42ed-88c5-8d71eea85292
-Replit-Commit-Checkpoint-Type: intermediate_checkpoint
+Replit-Commit-Author: Assistant
