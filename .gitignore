@@ -39,6 +39,8 @@ coverage/
 **/*firebase*adminsdk*.json
 sallie_Sovereugn_unified_complete/**/serviceAccount.json
 sallie_Sovereugn_unified_complete/**/*firebase*adminsdk*.json
+sallie_Sovereugn_unified_complete/firebase-config.*.json
+sallie_Sovereugn_unified_complete/**/google-services*.json
 
 # Logs
 *.log
