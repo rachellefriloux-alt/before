@@ -1,8 +1,0 @@
-Remove Firebase Crashlytics integration from the Android build
-
-Removes the `google-services` and `firebase-crashlytics-gradle` classpath dependencies from `android/build.gradle`.
-
-Replit-Commit-Author: Agent
-Replit-Commit-Session-Id: 9693e671-55dd-42ed-88c5-8d71eea85292
-Replit-Commit-Checkpoint-Type: full_checkpoint
-Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/ec7ce131-cd1b-4d2f-b409-f90602448341/9693e671-55dd-42ed-88c5-8d71eea85292/huyY44C
