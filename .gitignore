@@ -37,6 +37,8 @@ coverage/
 # Firebase service account credentials
 **/serviceAccount.json
 **/*firebase*adminsdk*.json
+sallie_Sovereugn_unified_complete/**/serviceAccount.json
+sallie_Sovereugn_unified_complete/**/*firebase*adminsdk*.json
 
 # Logs
 *.log
