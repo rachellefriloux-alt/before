@@ -1,0 +1,7 @@
+Update automation rule creation to include default properties
+
+Modify `addAutomationRule` call to pass a complete `AutomationRule` object with default `id`, `created`, and `triggerCount` fields.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: 9693e671-55dd-42ed-88c5-8d71eea85292
+Replit-Commit-Checkpoint-Type: intermediate_checkpoint

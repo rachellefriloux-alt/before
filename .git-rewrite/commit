@@ -1,0 +1,13 @@
+tree f4e22d73ce705a882da5344a7e03affbb929d4a8
+parent 67d058f34c98f8195e1fbe1b21992e408a97cd94
+parent ddc9a60e1ec00ad1b6f29ac407ae1c53529f0d01
+author rachellefriloux <46798082-rachellefriloux@users.noreply.replit.com> 1757728953 +0000
+committer rachellefriloux <46798082-rachellefriloux@users.noreply.replit.com> 1757728953 +0000
+
+Update dependencies and improve build process
+
+Update multiple dependencies, including `jest`, `react`, and `react-dom`, to their latest versions. Refactor the `jest.config.js` file to use ESM syntax and remove unnecessary configurations related to `transformIgnorePatterns`. This change aims to streamline the testing setup and leverage modern JavaScript features.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: 9693e671-55dd-42ed-88c5-8d71eea85292
+Replit-Commit-Checkpoint-Type: full_checkpoint
